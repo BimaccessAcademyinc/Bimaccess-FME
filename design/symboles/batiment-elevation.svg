@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170" width="200" height="170" role="img" aria-label="Chose du monde réel : bâtiment en élévation simple">
+<path d="M4 162 H196" fill="none" stroke="#23281F" stroke-width="2.5"/>
+<rect x="26" y="22" width="148" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="3"/>
+<path d="M20 22 H180" fill="none" stroke="#23281F" stroke-width="3"/>
+<path d="M40 40 h16 v20 h-16 Z M40 78 h16 v20 h-16 Z M40 116 h16 v20 h-16 Z M72 40 h16 v20 h-16 Z M72 78 h16 v20 h-16 Z M72 116 h16 v20 h-16 Z M104 40 h16 v20 h-16 Z M104 78 h16 v20 h-16 Z M104 116 h16 v20 h-16 Z M136 40 h16 v20 h-16 Z M136 78 h16 v20 h-16 Z M136 116 h16 v20 h-16 Z" fill="none" stroke="#23281F" stroke-width="1.4"/>
+<path d="M88 162 V140 H112 V162" fill="none" stroke="#23281F" stroke-width="1.6"/>
+</svg>

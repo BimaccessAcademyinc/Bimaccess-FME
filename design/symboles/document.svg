@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 190" width="150" height="190" role="img" aria-label="Document : feuille titrée et ses rubriques">
+<rect x="4" y="4" width="142" height="182" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<rect x="0.5" y="0.5" width="149" height="189" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<path d="M4 42 H146 M4 45 H146" fill="none" stroke="#23281F" stroke-width="1"/>
+<path d="M18 22 H112" fill="none" stroke="#23281F" stroke-width="5"/>
+<path d="M18 66 H90 M18 98 H124 M18 112 H110 M18 140 H96 M18 154 H122" fill="none" stroke="#545B4C" stroke-width="3"/>
+<path d="M18 84 H132 M18 128 H132" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+</svg>

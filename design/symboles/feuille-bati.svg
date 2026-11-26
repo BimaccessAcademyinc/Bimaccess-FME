@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 106" width="158" height="106" role="img" aria-label="Feuille de format : bati">
+<rect x="4" y="4" width="150" height="98" fill="#FBFCF8"/>
+<rect x="5" y="5" width="148" height="96" fill="none" stroke="#23281F" stroke-width="2"/>
+<rect x="0.5" y="0.5" width="157" height="105" fill="none" stroke="#23281F" stroke-width="1"/>
+<clipPath id="face"><rect x="0" y="0" width="146" height="94"/></clipPath>
+<g id="contenu" transform="translate(6 6)" clip-path="url(#face)">
+<path d="M14 14 h22 v16 h-22 Z M44 12 h14 v22 h-14 Z M20 46 h30 v14 h-30 Z M70 20 h18 v18 h-18 Z M96 14 h30 v12 h-30 Z M78 52 h24 v22 h-24 Z M112 46 h18 v30 h-18 Z M30 70 h20 v14 h-20 Z" fill="#23281F"/>
+</g>
+</svg>

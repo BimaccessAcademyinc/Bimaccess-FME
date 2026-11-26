@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 106" width="158" height="106" role="img" aria-label="Feuille de format : routes">
+<rect x="4" y="4" width="150" height="98" fill="#FBFCF8"/>
+<rect x="5" y="5" width="148" height="96" fill="none" stroke="#23281F" stroke-width="2"/>
+<rect x="0.5" y="0.5" width="157" height="105" fill="none" stroke="#23281F" stroke-width="1"/>
+<clipPath id="face"><rect x="0" y="0" width="146" height="94"/></clipPath>
+<g id="contenu" transform="translate(6 6)" clip-path="url(#face)">
+<path d="M0 64 C40 60 60 40 90 38 S130 22 146 20 M60 94 C64 70 70 54 90 38" fill="none" stroke="#C4472B" stroke-width="3" stroke-linecap="round"/>
+</g>
+</svg>

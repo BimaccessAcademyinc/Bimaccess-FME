@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 106" width="158" height="106" role="img" aria-label="Feuille de format : hydrographie">
+<rect x="4" y="4" width="150" height="98" fill="#FBFCF8"/>
+<rect x="5" y="5" width="148" height="96" fill="none" stroke="#23281F" stroke-width="2"/>
+<rect x="0.5" y="0.5" width="157" height="105" fill="none" stroke="#23281F" stroke-width="1"/>
+<clipPath id="face"><rect x="0" y="0" width="146" height="94"/></clipPath>
+<g id="contenu" transform="translate(6 6)" clip-path="url(#face)">
+<path d="M92 14 C104 6 124 10 126 22 C128 34 108 38 98 32 C90 28 86 20 92 14 Z" fill="#BFD5E6" stroke="#2F6DA8" stroke-width="1.4"/>
+<path d="M0 70 C30 60 40 30 70 36 S110 70 146 52" fill="none" stroke="#2F6DA8" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+</svg>

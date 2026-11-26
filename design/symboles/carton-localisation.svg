@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 100" width="150" height="100" role="img" aria-label="Carton de localisation : où se trouve la feuille">
+<rect x="3" y="3" width="144" height="94" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<rect x="7.5" y="7.5" width="135" height="85" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<path d="M32 30 h8 M36 26 v8 M32 62 h8 M36 58 v8 M68 30 h8 M72 26 v8 M68 62 h8 M72 58 v8 M104 30 h8 M108 26 v8 M104 62 h8 M108 58 v8" fill="none" stroke="#7D8576" stroke-width="1.2"/>
+<path d="M14 70 C24 58 30 62 40 50 C50 38 44 28 58 22 C72 16 84 26 96 20 C108 14 118 22 126 34 C134 46 126 58 132 70 L132 88 L14 88 Z" fill="#F1F3EC" stroke="#23281F" stroke-width="1.6"/>
+<rect x="78" y="40" width="26" height="18" fill="none" stroke="#23281F" stroke-width="3"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 106" width="158" height="106" role="img" aria-label="Feuille de format : points">
+<rect x="4" y="4" width="150" height="98" fill="#FBFCF8"/>
+<rect x="5" y="5" width="148" height="96" fill="none" stroke="#23281F" stroke-width="2"/>
+<rect x="0.5" y="0.5" width="157" height="105" fill="none" stroke="#23281F" stroke-width="1"/>
+<clipPath id="face"><rect x="0" y="0" width="146" height="94"/></clipPath>
+<g id="contenu" transform="translate(6 6)" clip-path="url(#face)">
+<path d="M17.8 22 a4.2 4.2 0 1 0 8.4 0 a4.2 4.2 0 1 0 -8.4 0 Z M55.8 40 a4.2 4.2 0 1 0 8.4 0 a4.2 4.2 0 1 0 -8.4 0 Z M99.8 18 a4.2 4.2 0 1 0 8.4 0 a4.2 4.2 0 1 0 -8.4 0 Z M31.8 70 a4.2 4.2 0 1 0 8.4 0 a4.2 4.2 0 1 0 -8.4 0 Z M87.8 66 a4.2 4.2 0 1 0 8.4 0 a4.2 4.2 0 1 0 -8.4 0 Z M121.8 50 a4.2 4.2 0 1 0 8.4 0 a4.2 4.2 0 1 0 -8.4 0 Z M69.8 16 a4.2 4.2 0 1 0 8.4 0 a4.2 4.2 0 1 0 -8.4 0 Z" fill="#23281F"/>
+</g>
+</svg>

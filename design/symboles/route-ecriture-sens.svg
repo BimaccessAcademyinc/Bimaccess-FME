@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 60" width="284" height="60" role="img" aria-label="Route d'écriture, avec son sens">
+<path d="M10 30 L250 30" fill="none" stroke="#23281F" stroke-width="11" stroke-linecap="round"/>
+<path d="M10 30 L250 30" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+<path d="M10 30 L250 30" fill="none" stroke="#C4472B" stroke-width="4" stroke-linecap="round"/>
+<path d="M252 16 L278 30 L252 44 Z" fill="#C4472B" stroke="#23281F" stroke-width="2" stroke-linejoin="miter"/>
+</svg>

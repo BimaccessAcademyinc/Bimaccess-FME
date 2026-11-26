@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" width="320" height="300" role="img" aria-label="Entité géographique : bandeau, géométrie, attributs, système de coordonnées">
+<rect x="4" y="4" width="312" height="292" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<rect x="0.5" y="0.5" width="319" height="299" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<path d="M4 50 H316" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<path d="M22 27 H180" fill="none" stroke="#23281F" stroke-width="6"/>
+<path d="M4 132 H316 M4 214 H316" fill="none" stroke="#23281F" stroke-width="1"/>
+<g id="geometrie">
+<path d="M22 66 H120" fill="none" stroke="#545B4C" stroke-width="3"/>
+<path d="M200.0 73.0 L209.0 64.0 M200.0 82.0 L218.0 64.0 M200.0 91.0 L227.0 64.0 M200.0 100.0 L236.0 64.0 M200.0 109.0 L245.0 64.0 M200.0 118.0 L254.0 64.0 M207.0 120.0 L263.0 64.0 M216.0 120.0 L272.0 64.0 M225.0 120.0 L281.0 64.0 M234.0 120.0 L290.0 64.0 M243.0 120.0 L290.0 73.0 M252.0 120.0 L290.0 82.0 M261.0 120.0 L290.0 91.0 M270.0 120.0 L290.0 100.0 M279.0 120.0 L290.0 109.0 M288.0 120.0 L290.0 118.0" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<rect x="200" y="64" width="90" height="56" fill="none" stroke="#23281F" stroke-width="3"/>
+</g>
+<g id="attributs">
+<path d="M22 150 H110 M22 178 H170" fill="none" stroke="#545B4C" stroke-width="3"/>
+<path d="M22 192 H296" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+</g>
+<g id="systeme-coordonnees">
+<path d="M22 232 H170" fill="none" stroke="#545B4C" stroke-width="3"/>
+<circle cx="254" cy="255" r="32" fill="#FBFCF8" stroke="#23281F" stroke-width="2.0"/>
+<ellipse cx="254" cy="255" rx="14.4" ry="32" fill="none" stroke="#23281F" stroke-width="1.4"/>
+<path d="M254 223 V287 M222 255 H286 M226.2 239.0 H281.8 M226.2 271.0 H281.8" fill="none" stroke="#23281F" stroke-width="1.4"/>
+<rect x="257.8" y="241.6" width="13.4" height="9.6" fill="#FBFCF8" stroke="#23281F" stroke-width="2.5"/>
+</g>
+</svg>
