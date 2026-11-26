@@ -14,14 +14,13 @@
  *           et y reste (la question finale ne change rien à l'écran)
  * Suivant : libre à la fin de la narration.
  */
-import { type CSSProperties, type ReactNode } from "react"
 import { defineScene, focusAt, Highlight, illustration, ordered, SceneRoot, sceneTexts, Svg, THEME, tid, Title, Trace, useT, voice, Wipe } from "../../engine"
+import { partBox, RESERVE, RoleName, Source } from "../components/s01-commun"
 
 const ID = "S01"
 const X = sceneTexts(ID, { screen: 6 })
 const V = voice("S01-01")
 const C = THEME.colors
-const SERIF = THEME.fonts.serif
 const CAPS = THEME.fonts.capitales
 
 const PROJET = illustration("s01-projet", ["s01-projet-entreprises", "s01-projet-gouvernement", "s01-projet-manque", "s01-projet-logiciels"])
@@ -61,36 +60,6 @@ const FOCUS = [
   { at: T.voient, on: "fondateurs" },
 ] as const
 
-/** Boîte de balayage d'un groupe du SVG (boîte du groupe et marge, comme `Svg` du moteur) : le nom suit le même bord. */
-function partBox(x: number, y: number, w: number, h: number): CSSProperties {
-  const m = Math.max(8, 0.04 * Math.max(w, h))
-  return { position: "absolute", left: x - m, top: y - m, width: w + 2 * m, height: h + 2 * m }
-}
-
-/** En-tête de cartouche d'une carte de rôle : Barlow 600, 24 px, capitales espacées, centré dans le bandeau. */
-const ROLE: CSSProperties = { fontFamily: CAPS, fontWeight: 600, fontSize: 24, lineHeight: 1.2, letterSpacing: "0.32em", textTransform: "uppercase", color: C.encre, textAlign: "center", paddingLeft: "0.32em" }
-
-/** Texte centré dans une boîte (x, y, w, h) en px de scène, ou relatif à `origin` si donné. */
-function Centered({ x, y, w, h, origin, maxWidth, children, testId }: { readonly x: number; readonly y: number; readonly w: number; readonly h: number; readonly origin?: CSSProperties; readonly maxWidth?: number; readonly children: ReactNode; readonly testId?: string }) {
-  const ox = typeof origin?.left === "number" ? origin.left : 0
-  const oy = typeof origin?.top === "number" ? origin.top : 0
-  return (
-    <div data-testid={testId} style={{ position: "absolute", left: x - ox, top: y - oy, width: w, height: h, display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <div style={{ ...ROLE, maxWidth }}>{children}</div>
-    </div>
-  )
-}
-
-/** Mention de source en marge : calée par le bas à y 820, filet de 220 px dessus, réserve `fond`. */
-function Source({ text, testId }: { readonly text: string; readonly testId: string }) {
-  return (
-    <div data-testid={testId} style={{ position: "absolute", left: 1448, bottom: 1080 - 820, width: 250 }}>
-      <div aria-hidden="true" style={{ width: 220, height: 1.2, background: C.encre, marginBottom: 10 }} />
-      <div style={{ fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: 24, lineHeight: 1.2, color: C.lien, background: C.fond, padding: 2, margin: -2 }}>{text}</div>
-    </div>
-  )
-}
-
 const ENTREPRISES = partBox(170.4, 450.4, 369.2, 199.2)
 const GOUVERNEMENT = partBox(980.4, 450.4, 399.2, 199.2)
 
@@ -121,26 +90,26 @@ function View() {
       </svg>
 
       {/* Nom de lieu du territoire, réserve `fond` */}
-      <div data-testid={tid(ID, "territoire")} style={{ position: "absolute", left: 888, top: 768, padding: 2, background: C.fond, fontFamily: CAPS, fontWeight: 600, fontSize: 34, lineHeight: 1, letterSpacing: "0.3em", textTransform: "uppercase", color: C.encre, whiteSpace: "nowrap" }}>
+      <div data-testid={tid(ID, "territoire")} style={{ position: "absolute", left: 888, top: 768, ...RESERVE, fontFamily: CAPS, fontWeight: 600, fontSize: 34, lineHeight: 1, letterSpacing: "0.3em", textTransform: "uppercase", color: C.encre, whiteSpace: "nowrap" }}>
         {X.screen(1)}
       </div>
 
-      <Centered x={544} y={230} w={432} h={52} testId={tid(ID, "fondateurs")}>
+      <RoleName x={544} y={230} w={432} h={52} testId={tid(ID, "fondateurs")}>
         {X.screen(2)}
-      </Centered>
+      </RoleName>
 
       <Wipe at={T.entreprises} dur={CARDS_WIPE} dir="right" style={ENTREPRISES} testId={tid(ID, "entreprises")}>
-        <Centered x={184} y={454} w={342} h={80} origin={ENTREPRISES} maxWidth={300}>
+        <RoleName x={184} y={454} w={342} h={80} origin={ENTREPRISES} maxWidth={300}>
           {X.screen(3)}
-        </Centered>
+        </RoleName>
       </Wipe>
       <Wipe at={T.entreprises} dur={CARDS_WIPE} dir="right" style={GOUVERNEMENT} testId={tid(ID, "gouvernement")}>
-        <Centered x={994} y={454} w={372} h={80} origin={GOUVERNEMENT} maxWidth={372}>
+        <RoleName x={994} y={454} w={372} h={80} origin={GOUVERNEMENT} maxWidth={372}>
           {X.screen(4)}
-        </Centered>
+        </RoleName>
       </Wipe>
 
-      <Source text={X.screen(5)} testId={tid(ID, "source")} />
+      <Source testId={tid(ID, "source")}>{X.screen(5)}</Source>
 
       <Title text={X.screen(0)} at={T.garde} style={{ position: "absolute", left: 104, top: 84 }} testId={tid(ID, "title")} />
 
