@@ -1,0 +1,41 @@
+{
+  "signature": "bimaccess",
+  "colors": {
+    "background": "#FFFFFF",
+    "ink": "#111418",
+    "muted": "#5E6773",
+    "accent": "#0096C7",
+    "accent2": "#D99A00",
+    "success": "#00A64F",
+    "line": "#C4CAD2",
+    "panel": "#F4F6F8",
+    "panel2": "#E9ECF0",
+    "gridDot": "#D3D8DF",
+    "lineSoft": "#D5DAE1",
+    "lineFaint": "#E6E9ED",
+    "ink2": "#4A525D",
+    "red": "#E0261B",
+    "gold": "#D99A00",
+    "goldText": "#8A6200",
+    "yellowFill": "#FFD400",
+    "green": "#00A64F",
+    "cyan": "#0096C7",
+    "blue": "#1F6BFF",
+    "magenta": "#C800C8",
+    "grip": "#1F6BFF",
+    "gripHover": "#FF6FD8",
+    "gripHot": "#FF2A2A",
+    "selectBg": "#E3EDFB",
+    "tooltip": "#FFFFC8",
+    "shadow": "rgba(17, 20, 24, 0.08)"
+  },
+  "fonts": {
+    "body": "'IBM Plex Sans', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    "mono": "'Azeret Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace",
+    "display": "'Azeret Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace",
+    "paper": "Fraunces, Georgia, 'Times New Roman', serif"
+  },
+  "radius": 0,
+  "grid": 24,
+  "typingCps": 35
+}

@@ -3,3 +3,4 @@ modules/*/L*/sources/pages/
 node_modules/
 dist/
 __pycache__/
+modules/*/L*/banc/storyboard-*/

@@ -7,10 +7,13 @@ Générée par `check_pack.py --remise` depuis `affirmations.yaml` : ne pas modi
 | Affirmation | Énoncé | Confiance | Question |
 |---|---|---|---|
 | A-nom-04 | Safe Software présente FME comme l'acronyme de « Feature Manipulation Engine » ; sa documentation actuelle écrit que FME était « à l'origine » le Feature Manipulation Engine. | forte | Q2 |
+| A-nom-06 | Dans la documentation FME, la géométrie représente l'information de position d'une feature, et peut se composer de points, de lignes ou de surfaces ; des features sans géométrie existent aussi. | moyenne | Q3 |
 | A-nom-07 | Dans FME, les attributs utilisateur font toujours partie de la feature, quel que soit le format dans lequel ils sont stockés. | moyenne | Q3 |
 | A-nom-08 | Toute feature traitée par FME connaît son système de coordonnées et donc sa position sur la Terre. | moyenne | Q3 |
+| A-nom-09 | Selon la documentation, FME lit les données source et stocke l'information de leurs features dans des attributs de format, puis écrit les données de destination en créant un second jeu d'attributs de format. | moyenne | Q3 |
 | A-nom-11 | Safe Software décrit les outils de transformation de FME Workbench comme servant à manipuler la géométrie et les attributs des données spatiales. | moyenne | Q3 |
 | A-nom-12 | Le glossaire de la documentation FME définit l'engine comme le composant de FME qui traite les demandes de travaux en exécutant des espaces de travail (workspaces). | moyenne | Q4 |
+| A-nom-13 | Safe Software décrit FME comme un moteur central au milieu d'un large éventail de formats pris en charge ; les données peuvent être lues depuis n'importe quel format et écrites vers n'importe quel autre. | moyenne | Q4 |
 | A-nom-16 | Dans le vocabulaire des normes de l'information géographique, une feature est l'abstraction d'un phénomène (ou d'une entité) du monde réel. | forte | Q1 |
 | A-origines-02 | Safe Software a été fondée par Don Murray et Dale Lutz. | forte | Q5 |
 | A-origines-07 | Le nom « Safe » vient de SAIF (prononcé comme « safe »), format du projet de départ. | forte | Q7 |
@@ -32,10 +35,7 @@ Générée par `check_pack.py --remise` depuis `affirmations.yaml` : ne pas modi
 - A-nom-02 (contexte) : Le glossaire cité par le W3C donne comme exemples de features presque tout ce qui peut être placé dans le temps et l'espace : bureaux, bâtiments, villes, arbres, pipelines, et précise que les termes feature et objet sont souvent employés comme synonymes.
 - A-nom-03 (contexte) : Simple Feature Access, partie 1, est aussi publiée comme ISO 19125 et décrit l'architecture commune de la géométrie des simple features.
 - A-nom-05 (contexte) : La documentation de Safe Software nomme ses produits actuels « FME Form » (version 2026.3) ; le nom du produit n'y est plus « Feature Manipulation Engine » mais FME, l'expansion étant rappelée comme nom d'origine.
-- A-nom-06 (expert) : Dans la documentation FME, la géométrie représente l'information de position d'une feature, et peut se composer de points, de lignes ou de surfaces ; des features sans géométrie existent aussi.
-- A-nom-09 (expert) : Selon la documentation, FME lit les données source et stocke l'information de leurs features dans des attributs de format, puis écrit les données de destination en créant un second jeu d'attributs de format.
 - A-nom-10 (expert) : La documentation d'FME Form organise le travail en deux gestes distincts : lire et écrire les données avec des readers et des writers, transformer les données avec des transformers.
-- A-nom-13 (expert) : Safe Software décrit FME comme un moteur central au milieu d'un large éventail de formats pris en charge ; les données peuvent être lues depuis n'importe quel format et écrites vers n'importe quel autre.
 - A-nom-14 (contexte) : La documentation d'FME Form décrit une FME Command-Line Engine qui permet de soumettre des demandes de traduction en ligne de commande, et présente Workbench comme l'outil de création des modèles d'FME Flow.
 - A-origines-01 (expert) : Safe Software a été officiellement constituée en société le 13 décembre 1993.
 - A-origines-03 (expert) : Don Murray et Dale Lutz se sont rencontrés en travaillant sur un projet de moteur d'analyse de données chez MacDonald, Dettwiler and Associates (MDA) ; Murray a ensuite quitté MDA pour enseigner au British Columbia Institute of Technology, tout en restant en contact avec Lutz.

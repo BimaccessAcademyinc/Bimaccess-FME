@@ -107,7 +107,7 @@ affirmations:
   question: Q3
   enonce: Dans la documentation FME, la géométrie représente l'information de position d'une feature, et peut se composer
     de points, de lignes ou de surfaces ; des features sans géométrie existent aussi.
-  usage: expert
+  usage: narration
   sources:
   - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/aboutFeatures/feature-type-attributes-about.htm
     titre: About Feature Type Attributes (FME Readers and Writers 2026.3)
@@ -128,11 +128,14 @@ affirmations:
     consulte: 2026-11-26
     extrait: Features with no geometry are also supported.
   contradictions: []
-  verifie: null
+  verifie: true
   repare: true
   note_verification: 'Vérification : l''extrait ne porte que l''information de position. Points, lignes, surfaces et features
     sans géométrie sont sur la page (« Feature geometry may consist of points, lines, or areas. », « Features with no geometry
-    are also supported. ») mais hors extrait. Usage baissé : l''énoncé dit plus que l''extrait.'
+    are also supported. ») mais hors extrait. Usage baissé : l''énoncé dit plus que l''extrait. Revérification : les trois
+    extraits réunis disent l''énoncé (position, points, lignes ou surfaces pour « areas », features sans géométrie). Nuance
+    : « are also supported » se lit « sont aussi prises en charge » plutôt que « existent aussi », sans changer le fait. Usage
+    expert laissé. Orchestrateur : remontée en narration après réparation (sources ajoutées) et revérification.'
 - id: A-nom-07
   question: Q3
   enonce: Dans FME, les attributs utilisateur font toujours partie de la feature, quel que soit le format dans lequel ils
@@ -166,7 +169,7 @@ affirmations:
   question: Q3
   enonce: Selon la documentation, FME lit les données source et stocke l'information de leurs features dans des attributs
     de format, puis écrit les données de destination en créant un second jeu d'attributs de format.
-  usage: expert
+  usage: narration
   sources:
   - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/aboutFeatures/feature-type-attributes-about.htm
     titre: About Feature Type Attributes (FME Readers and Writers 2026.3)
@@ -181,11 +184,13 @@ affirmations:
     consulte: 2026-11-26
     extrait: FME writes the destination data by creating a second set of format attributes.
   contradictions: []
-  verifie: null
+  verifie: true
   repare: true
   note_verification: 'Vérification : l''extrait ne porte que la lecture ; l''écriture (« FME writes the destination data by
     creating a second set of format attributes. ») est une autre phrase de la page, hors extrait. Usage baissé : l''énoncé
-    dit plus que l''extrait.'
+    dit plus que l''extrait. Revérification : les deux extraits réunis disent l''énoncé, lecture puis écriture avec un second
+    jeu d''attributs de format, ni plus ni moins. Usage expert laissé. Orchestrateur : remontée en narration après réparation
+    (sources ajoutées) et revérification.'
 - id: A-nom-10
   question: Q3
   enonce: 'La documentation d''FME Form organise le travail en deux gestes distincts : lire et écrire les données avec des
@@ -203,14 +208,18 @@ affirmations:
     editeur: Safe Software
     niveau: A
     consulte: 2026-11-26
-    extrait: "Reading and Writing Data How to work with Readers and Writers."
+    extrait: Reading and Writing Data How to work with Readers and Writers.
   contradictions: []
-  verifie: null
+  verifie: false
   repare: true
   note_verification: 'Vérification : l''extrait ne parle que des transformers. « Deux gestes distincts » est une lecture de
     la table des matières de l''accueil (Reading and Writing Data, Transforming Data, puis Coordinate Systems et d''autres
-    rubriques) : la page ne dit pas que le travail s''organise en deux gestes. Usage baissé.'
-  note_reparation: 'La page d''accueil liste Reading and Writing Data et Transforming Data comme rubriques parmi d''autres (Coordinate Systems, etc.) ; aucune phrase ne dit que le travail s''organise en deux gestes distincts. Énoncé laissé tel quel.'
+    rubriques) : la page ne dit pas que le travail s''organise en deux gestes. Usage baissé. Revérification : les deux extraits
+    sont deux intitulés de la table des matières (Reading and Writing Data, Transforming Data) ; aucun ne dit que le travail
+    s''organise en « deux gestes distincts », et la page liste d''autres rubriques au même rang. L''énoncé dit plus que les
+    extraits. Usage expert laissé.'
+  note_reparation: La page d'accueil liste Reading and Writing Data et Transforming Data comme rubriques parmi d'autres (Coordinate
+    Systems, etc.) ; aucune phrase ne dit que le travail s'organise en deux gestes distincts. Énoncé laissé tel quel.
 - id: A-nom-11
   question: Q3
   enonce: Safe Software décrit les outils de transformation de FME Workbench comme servant à manipuler la géométrie et les
@@ -247,7 +256,7 @@ affirmations:
   question: Q4
   enonce: Safe Software décrit FME comme un moteur central au milieu d'un large éventail de formats pris en charge ; les données
     peuvent être lues depuis n'importe quel format et écrites vers n'importe quel autre.
-  usage: expert
+  usage: narration
   sources:
   - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
     titre: What is FME (FME Form 2026.3)
@@ -262,11 +271,13 @@ affirmations:
     consulte: 2026-11-26
     extrait: Data can be read from any format and written to any other.
   contradictions: []
-  verifie: null
+  verifie: true
   repare: true
   note_verification: 'Vérification : l''extrait ne porte que le moteur central ; « Data can be read from any format and written
     to any other. » est la phrase suivante, hors extrait. L''énoncé attribue bien la description à l''éditeur. Usage baissé
-    : l''énoncé dit plus que l''extrait.'
+    : l''énoncé dit plus que l''extrait. Revérification : les deux extraits réunis disent l''énoncé (moteur central, lecture
+    depuis n''importe quel format et écriture vers n''importe quel autre), attribué à l''éditeur qui se décrit. Usage expert
+    laissé. Orchestrateur : remontée en narration après réparation (sources ajoutées) et revérification.'
 - id: A-nom-14
   question: Q4
   enonce: La documentation d'FME Form décrit une FME Command-Line Engine qui permet de soumettre des demandes de traduction
@@ -864,12 +875,15 @@ affirmations:
     consulte: 2026-11-26
     extrait: in different applications, databases, and formats, and with different data models and coordinate systems.
   contradictions: []
-  verifie: null
+  verifie: false
   repare: true
   note_verification: 'Vérification : glissement. Le billet de 2009 décrit « a common challenge » actuel (données dispersées),
     pas le problème de départ de Safe. Les conventions de structure et de coordonnées sont dans la suite de la phrase (« with
-    different data models and coordinate systems »), hors extrait. Usage baissé.'
-  note_reparation: 'Le billet de 2009 décrit un défi courant (données dispersées, modèles et systèmes de coordonnées différents), pas le problème de départ de Safe : l''énoncé dit encore plus que les extraits. Énoncé laissé tel quel.'
+    different data models and coordinate systems »), hors extrait. Usage baissé. Revérification : glissement maintenu. Les
+    extraits réunis portent les données dispersées, les modèles de données et les systèmes de coordonnées, mais comme « a
+    common challenge » d''un billet de 2009, pas comme le problème de départ de Safe. Usage expert laissé.'
+  note_reparation: 'Le billet de 2009 décrit un défi courant (données dispersées, modèles et systèmes de coordonnées différents),
+    pas le problème de départ de Safe : l''énoncé dit encore plus que les extraits. Énoncé laissé tel quel.'
 - id: A-sig-02
   question: Q9
   enonce: Selon un article de XYHT, le problème de départ venait de ce que les entreprises forestières de Colombie-Britannique
@@ -889,20 +903,28 @@ affirmations:
     editeur: XYHT
     niveau: B
     consulte: 2026-11-26
-    extrait: However, those companies used different software packages, and the government did not want to mandate that they all use software from the same vendor.
+    extrait: However, those companies used different software packages, and the government did not want to mandate that they
+      all use software from the same vendor.
   - url: https://xyht.com/spatial-itgis/freeing-the-data
     titre: Freeing the data
     editeur: XYHT
     niveau: B
     consulte: 2026-11-26
-    extrait: The Canadian government was trying to keep track of logging by private companies and needed to exchange information with them.
+    extrait: The Canadian government was trying to keep track of logging by private companies and needed to exchange information
+      with them.
   contradictions: []
-  verifie: null
+  verifie: false
   repare: true
   note_verification: 'Lien avec le contexte forestier non confirmé par une deuxième source. Vérification : l''extrait ne porte
     que le choix du gouvernement (format propre et traducteurs) ; les logiciels différents des entreprises sont dans la phrase
-    précédente (« those companies used different software packages »), hors extrait. Usage déjà expert.'
-  note_reparation: 'Les extraits ajoutés relient les logiciels différents et le contexte forestier de Colombie-Britannique (suivi de l''exploitation forestière). La page dit « The Canadian government », l''énoncé « le gouvernement » ; le lien reste sur une seule source B. Énoncé laissé tel quel.'
+    précédente (« those companies used different software packages »), hors extrait. Usage déjà expert. Revérification : les
+    extraits réunis portent le suivi de l''exploitation forestière par des entreprises privées, leurs logiciels différents
+    et le format propre avec traducteurs. Deux glissements : « Colombie-Britannique » est sur la page (« In the early 1990s
+    in British Columbia ») mais hors extrait, coupé au début de la phrase ; « le problème de départ » est une lecture de l''énoncé,
+    l''article raconte le contexte et dit « Safe was born with the successful bid of this contract ». Usage expert laissé.'
+  note_reparation: Les extraits ajoutés relient les logiciels différents et le contexte forestier de Colombie-Britannique
+    (suivi de l'exploitation forestière). La page dit « The Canadian government », l'énoncé « le gouvernement » ; le lien
+    reste sur une seule source B. Énoncé laissé tel quel.
 - id: A-sig-03
   question: Q10
   enonce: La page d'accueil de démarrage de FME annonce « 800+ supported formats » (formats pris en charge).
