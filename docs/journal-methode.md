@@ -25,3 +25,11 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 | La consolidation est l'étape la plus chère | 9,7 min, environ 7 millions de tokens lus en cache, 52 réponses | essai à faire : un script de fusion fourni par le skill, l'agent ne fait que juger |
 | La porte comptait dix questions, la règle de la chaîne en veut quatre | 4 posées, 6 appliquées et révisables | règle reportée au skill |
 | Ilyas veut choisir le thème des planches sur pièces, avant toute planche | | étape 4 de la feuille de route : quatre thèmes, une planche d'exemple chacun |
+| La revérification refuse 3 réparations sur 6 : ajouter des extraits ne sauve pas un énoncé qui dit trop | 3 vérifiées, 3 refusées | un énoncé large se découpe dès la consolidation ; la réparation ne traite que les extraits tronqués |
+
+## 2026-11-26 · Storyboard au banc (FME001-M01-L01)
+
+| Constat | Mesure | Décision |
+|---|---|---|
+| Premier essai du banc sur une étape qui se juge : deux scénaristes sur le même brief, jugés en aveugle par trois relecteurs neufs (la relecture de la chaîne sert de jugement) | | `banc/grille-storyboard.md`, `banc/juger_storyboards.sh` |
+| Le candidat Fable s'arrête à la limite d'usage du compte, valable jusqu'au 2026-11-30 | arrêt au premier tour | candidat remplacé par Sonnet ; l'agent de direction artistique de la chaîne, fixé sur Fable, aurait été bloqué de même : chaque agent fixé sur un modèle doit avoir un modèle de repli écrit dans sa définition |
