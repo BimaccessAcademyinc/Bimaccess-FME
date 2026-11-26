@@ -11,3 +11,8 @@ Même scène pour les quatre : S05 « Un moteur au centre », état final, texte
 | Teledetection.dc.html | 4 · Télédétection | l'imagerie satellite : fond sombre, graticule, chaque format est une tuile matricielle en fausses couleurs, le moteur est un réticule |
 
 La première série (dossier `themes/`) restait dans la charte CAD 2D de BIMaccess, construite pour la formation buildingSMART : le brief de la direction artistique l'imposait. Ilyas l'a écartée le 2026-11-26.
+
+## Choix d'Ilyas (2026-11-26)
+
+Thème 1, carte topographique, à améliorer avec plus de références à la carte ; le fond `#F1F3EC` est gardé.
+Ajouts : bordure graduée noire et blanche, amorces de quadrillage, légende titrée, barre d'échelle sans chiffres, rose des vents, crédit en mention de source ; chaque feuille de format montre un contenu de carte différent (courbes, hydrographie, cadastre, bâti, routes, végétation, points, image), pour dire que les formats portent des données de natures différentes.
