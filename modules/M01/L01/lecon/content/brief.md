@@ -2,9 +2,9 @@
 
 | Point | Valeur |
 |---|---|
-| Sujet | Ce que dit le nom FME (entité géographique, manipulation, moteur), qui l'a créé et pour quel problème de départ, et Safe Software en bref ; première leçon du module FME001-M01, de FME jusqu'à son usage dans le SIG |
+| Sujet | Le problème d'échange de données géographiques que Don Murray et Dale Lutz rencontrent en Colombie-Britannique au début des années 1990, la réponse qu'ils construisent (Safe Software, puis FME), et ce que FME fait d'une donnée géographique ; première leçon du module FME001-M01 |
 | Public | professionnels du BIM et de la construction qui n'ont jamais ouvert FME ; notions de base du SIG non supposées |
-| Objectif | 1. expliquer ce que désignent les trois mots de Feature Manipulation Engine ; 2. dire qui a créé FME, quand, et pour quel problème de départ (l'échange de données géographiques forestières en Colombie-Britannique, le format SAIF) ; 3. reconnaître, devant une donnée géographique, ce qu'est une entité géographique (géométrie, attributs, système de coordonnées) |
+| Objectif | 1. raconter le problème de départ (des logiciels différents qui doivent échanger des données géographiques) et la réponse que FME y apporte ; 2. dire qui a créé FME et quand (Safe Software, 1993 ; FME, 1996) ; 3. reconnaître, devant une donnée géographique, les trois parties d'une entité géographique (géométrie, attributs, système de coordonnées) ; 4. expliquer que FME lit, transforme puis écrit les données, comme un moteur au milieu des formats |
 | Durée maximale | 8 minutes (6 à 8) |
 | Langue | fr |
 | Voix | voix provisoire muette pendant la production (minutage estimé, sous-titres) ; voix finale ElevenLabs après la porte du sens, à décider avec Ilyas |
