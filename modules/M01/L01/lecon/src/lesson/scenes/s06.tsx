@@ -8,8 +8,9 @@
  *   S06-3   « Safe Software décrit FME » : le titre se tape ; courbes de niveau, point
  *           géodésique à la place du manque, `Moteur`
  *   S06-4   « un moteur central » : mise en évidence (cercle) sur le moteur
- *   S06-5   « Les données se lisent depuis » : huit routes de lecture ; aucune mise en évidence
- *   S06-6   « et s'écrivent vers » : huit routes d'écriture : l'étoile
+ *   S06-5   « Les données se lisent depuis » : huit routes de lecture et la légende `Lire` (route bleue) ;
+ *           aucune mise en évidence
+ *   S06-6   « et s'écrivent vers » : huit routes d'écriture et la légende `Écrire` (route rouge) : l'étoile
  *   S06-7   « Pour le problème que Murray et Lutz » : carte des fondateurs
  *   S06-FIN « un logiciel différent n'empêche pas » : les huit feuilles passent au trait plein
  * Suivant : libre à la fin de la narration.
@@ -17,10 +18,11 @@
  * Bouts ronds des routes au moteur : `Trace` n'a pas de prop `cap` (moteur non modifié),
  * l'illustration de secours `s06-bouts` est posée sous les routes.
  */
+import SOURCES from "../../../content/sources.json"
 import { defineScene, focusAt, Highlight, illustration, ordered, SceneRoot, sceneTexts, Svg, THEME, tid, Title, Trace, useT, voice, Wipe } from "../../engine"
 
 const ID = "S06"
-const X = sceneTexts(ID, { screen: 5 })
+const X = sceneTexts(ID, { screen: 7 })
 const V = voice("S06-01")
 const C = THEME.colors
 const SERIF = THEME.fonts.serif
@@ -83,6 +85,11 @@ const LIAISONS: readonly Liaison[] = [
   { lecture: [[487, 439.3], [797.1, 540.4]], ecriture: [[487, 422.5], [801.9, 525.2]] }, // bâti
 ]
 
+/** Légende de marge (Lire / Écrire) : échantillons de route et textes, à droite de la feuille des routes. */
+const LEG_LECTURE: readonly Pt[] = [[1560, 572], [1626, 572]]
+const LEG_ECRITURE: readonly Pt[] = [[1560, 628], [1626, 628]]
+const legende = { position: "absolute", left: 1644, fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: 28, lineHeight: "32px", color: C.encre, background: C.fond, padding: "2px 6px", boxSizing: "content-box", whiteSpace: "nowrap" } as const
+
 /** Une route : trois traits superposés (bord, chaussée, axe), même chemin, même instant. */
 function Route({ points, at, edge, pave, axe, color }: { readonly points: readonly Pt[]; readonly at: number; readonly edge: number; readonly pave: number; readonly axe: number; readonly color: string }) {
   return (
@@ -143,6 +150,9 @@ function View() {
         {LIAISONS.map((l, i) => (
           <Route key={`lecture-${i}`} points={l.lecture} at={T.lecture} edge={13} pave={10} axe={5} color={C.lecture} />
         ))}
+        {/* Légende de marge : un échantillon de route par sens, avec les routes qu'il nomme */}
+        <Route points={LEG_LECTURE} at={T.lecture} edge={13} pave={10} axe={5} color={C.lecture} />
+        <Route points={LEG_ECRITURE} at={T.ecriture} edge={11} pave={8} axe={4} color={C.ecriture} />
         {LIAISONS.map((l, i) => (
           <Route key={`ecriture-${i}`} points={[l.ecriture[1], l.ecriture[0]]} at={T.ecriture} edge={11} pave={8} axe={4} color={C.ecriture} />
         ))}
@@ -151,6 +161,14 @@ function View() {
       {/* Étiquette de groupe, au-dessus des deux feuilles du haut */}
       <Wipe at={T.autour} dur={0.4} dir="right" style={{ position: "absolute", left: 860, top: 186, transform: "translateX(-50%)", fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: 27, lineHeight: "32px", color: C.encre, ...reserve }} testId={tid(ID, "formats")}>
         {X.screen(1)}
+      </Wipe>
+
+      {/* Légende de marge : chaque mot arrive avec les routes qu'il nomme */}
+      <Wipe at={T.lecture} dur={ROUTE_DUR} dir="right" style={{ ...legende, top: 554 }} testId={tid(ID, "lire")}>
+        {X.screen(5)}
+      </Wipe>
+      <Wipe at={T.ecriture} dur={ROUTE_DUR} dir="right" style={{ ...legende, top: 610 }} testId={tid(ID, "ecrire")}>
+        {X.screen(6)}
       </Wipe>
 
       {/* Nom de lieu du moteur, sous le point géodésique, posé à la fin du balayage du moteur */}
@@ -171,9 +189,9 @@ function View() {
 
       {/* Mention de source dans la marge, dès la première image : filet de 220 px, puis le texte */}
       <div style={{ position: "absolute", left: 1448, top: 764, width: 220, height: 0, borderTop: `0.8px solid ${C.encre}` }} />
-      <div data-testid={tid(ID, "source")} style={{ position: "absolute", left: 1442, top: 770, fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: 24, lineHeight: 1.15, color: C.lien, ...reserve }}>
+      <a data-testid={tid(ID, "source")} href={SOURCES.sources.S06} target="_blank" rel="noopener" style={{ position: "absolute", left: 1442, top: 770, fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: 24, lineHeight: 1.15, color: C.lien, textDecoration: "underline", cursor: "pointer", pointerEvents: "auto", ...reserve }}>
         {X.screen(4)}
-      </div>
+      </a>
     </SceneRoot>
   )
 }

@@ -15,6 +15,7 @@
  *   S05-FIN « dans le format attendu » : la carte prend la trame quadrillée de sa feuille
  * Suivant : libre à la fin de la narration.
  */
+import SOURCES from "../../../content/sources.json"
 import { defineScene, ease, focusAt, Highlight, illustration, ordered, prog, SceneRoot, sceneTexts, Svg, THEME, tid, Title, Trace, useT, voice, Wipe } from "../../engine"
 
 const ID = "S05"
@@ -149,9 +150,9 @@ function View() {
 
       {/* Mention de source dans la marge, dès la première image : filet de 220 px, puis le texte */}
       <div style={{ position: "absolute", left: 1448, top: 764, width: 220, height: 0, borderTop: `0.8px solid ${C.encre}` }} />
-      <div data-testid={tid(ID, "source")} style={{ position: "absolute", left: 1442, top: 770, padding: "2px 6px", whiteSpace: "nowrap", background: C.fond, fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: 24, lineHeight: 1.15, color: C.lien }}>
+      <a data-testid={tid(ID, "source")} style={{ position: "absolute", left: 1442, top: 770, padding: "2px 6px", whiteSpace: "nowrap", background: C.fond, fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: 24, lineHeight: 1.15, color: C.lien, textDecoration: "underline", cursor: "pointer", pointerEvents: "auto" }} href={SOURCES.sources.S05} target="_blank" rel="noopener">
         {X.screen(6)}
-      </div>
+      </a>
 
       {/* Carte d'entité : se déplace d'un bloc ; prend la trame quadrillée sur « dans le format attendu » */}
       <div style={{ position: "absolute", left: 0, top: CARD_Y, width: 140, height: 100, transform: `translateX(${cardX}px)` }}>

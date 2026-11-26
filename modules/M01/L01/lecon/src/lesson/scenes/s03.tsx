@@ -17,6 +17,7 @@
  *           le contour se pose sur le globe ; mise en évidence sur la rubrique jusqu'à la fin
  * Suivant : libre à la fin de la narration.
  */
+import SOURCES from "../../../content/sources.json"
 import { defineScene, focusAt, Highlight, illustration, Move, ordered, SceneRoot, sceneTexts, Svg, THEME, tid, Title, Trace, TypeText, useT, voice, Wipe } from "../../engine"
 
 const ID = "S03"
@@ -103,9 +104,9 @@ function View() {
 
       {/* Mention de source dans la marge, dès la première image : filet de 220 px, puis le texte */}
       <div style={{ position: "absolute", left: 1448, top: 764, width: 220, height: 0, borderTop: `0.8px solid ${C.encre}` }} />
-      <div data-testid={tid(ID, "source")} style={{ position: "absolute", left: 1446, top: 770, padding: 2, maxWidth: 250, background: C.fond, fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: 24, lineHeight: 1.15, color: C.lien }}>
+      <a data-testid={tid(ID, "source")} style={{ position: "absolute", left: 1446, top: 770, padding: 2, maxWidth: 250, background: C.fond, fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: 24, lineHeight: 1.15, color: C.lien, textDecoration: "underline", cursor: "pointer", pointerEvents: "auto" }} href={SOURCES.sources.S03} target="_blank" rel="noopener">
         {X.screen(6)}
-      </div>
+      </a>
 
       {/* Bâtiment réel, balayé du sol au toit, et trait du bâtiment vers la feuille */}
       <Svg svg={BATIMENT} at={T.represente} dur={BUILDING_WIPE} dir="up" style={{ position: "absolute", left: 300, top: 600, width: 260, height: 221 }} testId={tid(ID, "batiment")} />

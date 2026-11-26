@@ -5,7 +5,7 @@
  *   S07-1   habillage, feuille d'entité et ses deux traits arrêtés sur leurs manques
  *           (image 0) ; le titre se tape sur « Reste à savoir »
  *   S07-2   « dans quel format » : `Format` se balaie à côté du premier manque
- *   S07-FIN « dans quel système de coordonnées » : `Système de coordonnées` à côté du second manque
+ *   S07-FIN « et dans quel » (début de la seconde partie de la phrase, avant « système de coordonnées ») : `Système de coordonnées` à côté du second manque
  * Suivant : libre à la fin de la narration. Aucune mise en évidence.
  */
 import { defineScene, focusAt, illustration, ordered, SceneRoot, sceneTexts, Svg, THEME, tid, Title, useT, voice, Wipe } from "../../engine"
@@ -24,7 +24,7 @@ const T = ordered(
   {
     title: V.said("Reste à savoir"),
     format: V.said("dans quel format"),
-    systeme: V.said("dans quel système de coordonnées"),
+    systeme: V.said("et dans quel"),
   },
   ID,
 )
@@ -64,7 +64,7 @@ function View() {
       <Wipe at={T.format} dur={0.3} dir="right" style={{ position: "absolute", left: 1004, top: 426, lineHeight: "40px", whiteSpace: "nowrap", ...lieu }} testId={tid(ID, "format")}>
         {X.screen(2)}
       </Wipe>
-      <Wipe at={T.systeme} dur={0.4} dir="right" style={{ position: "absolute", left: 1004, top: 526, width: 296, lineHeight: "40px", ...lieu }} testId={tid(ID, "systeme")}>
+      <Wipe at={T.systeme} dur={0.3} dir="right" style={{ position: "absolute", left: 1004, top: 526, width: 296, lineHeight: "40px", ...lieu }} testId={tid(ID, "systeme")}>
         {X.screen(3)}
       </Wipe>
     </SceneRoot>
