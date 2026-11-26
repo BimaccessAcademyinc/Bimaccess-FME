@@ -1,0 +1,44 @@
+# Modèles candidats du banc d'essai. Un alias par couple fournisseur + modèle.
+# Les identifiants Gemini et OpenRouter se renseignent une fois la clé disponible,
+# depuis le catalogue du fournisseur, jamais de mémoire. Prix : par million de tokens,
+# relevés sur la page de tarifs du fournisseur, avec la date du relevé.
+releve_des_prix: null
+modeles:
+  # Claude : en sous-agent dans Claude Code (champ model: de l'agent), ou par appel.py
+  claude-fable:
+    fournisseur: anthropic
+    id: claude-fable-5-2
+    role: direction artistique, idée créative
+    prix: {entree: null, sortie: null}
+  claude-opus:
+    fournisseur: anthropic
+    id: claude-opus-5-5
+    role: scénario, vérification, construction
+    prix: {entree: null, sortie: null}
+  claude-sonnet:
+    fournisseur: anthropic
+    id: claude-sonnet-5-5
+    role: recherche, application, contrôle
+    prix: {entree: null, sortie: null}
+  claude-haiku:
+    fournisseur: anthropic
+    id: claude-haiku-5-5
+    role: commandes d'outil, contrôles mécaniques
+    prix: {entree: null, sortie: null}
+  # Gemini : par appel.py seulement
+  gemini-pro:
+    fournisseur: gemini
+    id: A_RENSEIGNER
+    role: relecteur d'une autre famille, lecture longue
+    prix: {entree: null, sortie: null}
+  gemini-flash:
+    fournisseur: gemini
+    id: A_RENSEIGNER
+    role: recherche et contrôles bon marché
+    prix: {entree: null, sortie: null}
+  # Modèles ouverts : par appel.py, via OpenRouter
+  ouvert-moyen:
+    fournisseur: openrouter
+    id: A_RENSEIGNER
+    role: contrôles mécaniques, comparaisons de textes
+    prix: {entree: null, sortie: null}

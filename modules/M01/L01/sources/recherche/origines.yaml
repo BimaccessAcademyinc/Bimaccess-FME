@@ -1,0 +1,236 @@
+axe: origines
+affirmations:
+  - id: A-origines-01
+    question: Q5
+    enonce: "Safe Software a été officiellement constituée en société le 13 décembre 1993."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2013/12/20-years-ago-today/
+        titre: "It was 20 years ago today…"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "Dec 13, 1993. The day Safe Software was officially incorporated"
+      - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+        titre: "Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges"
+        editeur: Amerisurv
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "Established on December 13, 1993, Safe Software first began by developing translation technology"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-origines-02
+    question: Q5
+    enonce: "Safe Software a été fondée par Don Murray et Dale Lutz."
+    usage: expert
+    sources:
+      - url: https://xyht.com/spatial-itgis/freeing-the-data
+        titre: "Freeing the data"
+        editeur: XYHT
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "They met when they both worked on a project to build a big data analytical engine at MacDonald, Dettwiler and Associates"
+      - url: https://en.wikipedia.org/wiki/FME_(software)
+        titre: "FME (software)"
+        editeur: Wikipedia
+        niveau: C
+        consulte: 2026-11-26
+        extrait: "The Safe Software company was started in 1993 by Don Murray and Dale Lutz"
+    contradictions: []
+    verifie: null
+    note_verification: "Noms propres : aucune page de l'éditeur ouverte ne les donne ; la recherche web les attribue à des pages safe.com non ouvertes."
+  - id: A-origines-03
+    question: Q5
+    enonce: "Don Murray et Dale Lutz se sont rencontrés en travaillant sur un projet de moteur d'analyse de données chez MacDonald, Dettwiler and Associates (MDA) ; Murray a ensuite quitté MDA pour enseigner au British Columbia Institute of Technology, tout en restant en contact avec Lutz."
+    usage: expert
+    sources:
+      - url: https://xyht.com/spatial-itgis/freeing-the-data
+        titre: "Freeing the data"
+        editeur: XYHT
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "Murray then left MDA to teach at the British Columbia Institute of Technology, but he and Lutz kept in touch."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-origines-04
+    question: Q6
+    enonce: "Le projet de départ était un contrat pour le gouvernement canadien (Colombie-Britannique) visant à suivre l'exploitation forestière par des entreprises privées ; Murray et Lutz ont remporté le contrat portant sur les premiers travaux de ce projet."
+    usage: expert
+    sources:
+      - url: https://xyht.com/spatial-itgis/freeing-the-data
+        titre: "Freeing the data"
+        editeur: XYHT
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "The Canadian government was trying to keep track of logging by private companies"
+      - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+        titre: "Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges"
+        editeur: Amerisurv
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "a proprietary format developed by the BC Government called the Spatial Archive and Interchange Format (SAIF)"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-origines-05
+    question: Q6
+    enonce: "Les premiers travaux de Safe Software portaient sur le passage de données CAD vers le SIG."
+    usage: contexte
+    sources:
+      - url: https://xyht.com/spatial-itgis/freeing-the-data
+        titre: "Freeing the data"
+        editeur: XYHT
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "The company’s early market was moving data from CAD to GIS"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-origines-06
+    question: Q7
+    enonce: "SAIF est le sigle de Spatial Archive and Interchange Format, un format propriétaire développé par le gouvernement de la Colombie-Britannique."
+    usage: expert
+    sources:
+      - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+        titre: "Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges"
+        editeur: Amerisurv
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "a proprietary format developed by the BC Government called the Spatial Archive and Interchange Format (SAIF)"
+      - url: https://en.wikipedia.org/wiki/FME_(software)
+        titre: "FME (software)"
+        editeur: Wikipedia
+        niveau: C
+        consulte: 2026-11-26
+        extrait: "based upon the acronym for the Spatial Archive and Interchange Format"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-origines-07
+    question: Q7
+    enonce: "Le nom « Safe » vient de SAIF (prononcé comme « safe »), format du projet de départ."
+    usage: expert
+    sources:
+      - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+        titre: "Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges"
+        editeur: Amerisurv
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "which by the way, is where the company gets it's name"
+      - url: https://xyht.com/spatial-itgis/freeing-the-data
+        titre: "Freeing the data"
+        editeur: XYHT
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "We made a joke on that when we named the company Safe and got the domain name safe.com"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-origines-08
+    question: Q8
+    enonce: "Selon la presse spécialisée (2008), Safe Software a publié FME le 14 novembre 1996, présenté comme la première solution technologique de traduction et de manipulation de données spatiales."
+    usage: expert
+    sources:
+      - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+        titre: "Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges"
+        editeur: Amerisurv
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "On November 14, 1996, Safe Software released FME, the very first technology solution"
+      - url: https://en.wikipedia.org/wiki/FME_(software)
+        titre: "FME (software)"
+        editeur: Wikipedia
+        niveau: C
+        consulte: 2026-11-26
+        extrait: "the first build was released in 1996"
+    contradictions:
+      - version: "La page d'histoire de l'éditeur place en 1993 « We introduced FME to the world »."
+        source: https://www.safe.com/company
+    verifie: null
+    note_verification: ""
+  - id: A-origines-09
+    question: Q8
+    enonce: "L'éditeur situe en 1993 l'introduction de FME au monde, début d'un parcours qu'il dit durer depuis 33 ans."
+    usage: expert
+    sources:
+      - url: https://www.safe.com/company
+        titre: "Company history (safe.com)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "We introduced FME to the world, marking the beginning of a 33-year journey (and counting) to solving complex data challenges."
+    contradictions:
+      - version: "Presse spécialisée : FME publié le 14 novembre 1996."
+        source: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+    verifie: null
+    note_verification: ""
+  - id: A-origines-10
+    question: Q8
+    enonce: "En 1997, Safe Software a réalisé sa première vente internationale, à l'Arpentage national de Finlande (National Land Survey), qui a adopté FME."
+    usage: expert
+    sources:
+      - url: https://www.safe.com/company
+        titre: "Company history (safe.com)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "Finland’s National Land Survey (NLS) adopted FME, and just like that, we were global."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-origines-11
+    question: Q8
+    enonce: "Esri Sverige a été l'un des premiers revendeurs à valeur ajoutée de Safe Software (entrée datée de 1997 sur la page de l'éditeur)."
+    usage: expert
+    sources:
+      - url: https://www.safe.com/company
+        titre: "Company history (safe.com)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "Ours started with Esri Sverige as one of our first Value-Added Resellers."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-origines-12
+    question: Q8
+    enonce: "Safe Software s'est retrouvée liée très tôt à SDE d'Esri, ce qui lui a apporté de gros projets avec des entreprises de télécommunications et de services publics."
+    usage: contexte
+    sources:
+      - url: https://xyht.com/spatial-itgis/freeing-the-data
+        titre: "Freeing the data"
+        editeur: XYHT
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "The other lucky break for us was that we ended up getting tangled in with Esri’s SDE very close to its beginning."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-origines-13
+    question: Q8
+    enonce: "Le siège de Safe Software à Surrey (Colombie-Britannique) a été dévoilé en 2018."
+    usage: contexte
+    sources:
+      - url: https://www.safe.com/company
+        titre: "Company history (safe.com)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "We unveiled our new headquarters in Surrey, B.C."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q5
+    manque: "Lieu de la fondation en 1993 non trouvé sur une page ouverte (Surrey n'est attesté que comme siège en 2018). Noms des fondateurs : aucune page de l'éditeur ouverte ne les donne. À sourcer."
+  - question: Q5
+    manque: "Parcours de Dale Lutz avant la fondation : seul le passage commun chez MDA est attesté. À sourcer."
+  - question: Q6
+    manque: "Nom exact du client de départ (ministère, organisme) non trouvé ; les sources disent « gouvernement canadien » / « BC Government » sans ministère. À sourcer."
+  - question: Q7
+    manque: "Organisme précis derrière SAIF au-delà de « BC Government », et prononciation « safe » du sigle sur une page ouverte de l'éditeur. À sourcer."
+  - question: Q8
+    manque: "Étapes datées entre 1996 et 1997 (premières versions numérotées, partenariats) non trouvées ; les pages business-in-vancouver (403) et fiche PDF de l'éditeur (illisible) n'ont pu être exploitées."
+visuels: []

@@ -1,0 +1,234 @@
+axe: nom
+affirmations:
+  - id: A-nom-01
+    question: Q1
+    enonce: "Dans la norme ISO 19101, une feature est l'abstraction d'un phénomène du monde réel."
+    usage: expert
+    sources:
+      - url: https://www.w3.org/2015/spatial/track/issues/190
+        titre: "ISSUE-190: SDW BP Glossary Issue: Features (cite la définition ISO 19101)"
+        editeur: W3C
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "Feature: Abstraction of a real world phenomenon."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-02
+    question: Q1
+    enonce: "Le glossaire cité par le W3C donne comme exemples de features presque tout ce qui peut être placé dans le temps et l'espace : bureaux, bâtiments, villes, arbres, pipelines, et précise que les termes feature et objet sont souvent employés comme synonymes."
+    usage: contexte
+    sources:
+      - url: https://www.w3.org/2015/spatial/track/issues/190
+        titre: "ISSUE-190: SDW BP Glossary Issue: Features"
+        editeur: W3C
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "The terms feature and object are often used synonymously."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-03
+    question: Q1
+    enonce: "Simple Feature Access, partie 1, est aussi publiée comme ISO 19125 et décrit l'architecture commune de la géométrie des simple features."
+    usage: contexte
+    sources:
+      - url: https://www.ogc.org/standards/sfa/
+        titre: "Simple Feature Access – Part 1: Common Architecture"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "This part of Simple Features Access (SFA), also called ISO 19125, describes the common architecture"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-04
+    question: Q2
+    enonce: "Safe Software présente FME comme l'acronyme de « Feature Manipulation Engine » ; sa documentation actuelle écrit que FME était « à l'origine » le Feature Manipulation Engine."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+        titre: "What is FME (FME Form 2026.3)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "FME (originally, the “Feature Manipulation Engine”) was designed to overcome many of the problems"
+      - url: https://cdn.safe.com/resources/brochures/SafeSoftware-FactSheet.pdf
+        titre: "Safe Software FactSheet (date non lue)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "Safe Software’s data integration platform, FME (Feature Manipulation Engine) is trusted by over 10,000 organizations in 128 countries."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-05
+    question: Q2
+    enonce: "La documentation de Safe Software nomme ses produits actuels « FME Form » (version 2026.3) ; le nom du produit n'y est plus « Feature Manipulation Engine » mais FME, l'expansion étant rappelée comme nom d'origine."
+    usage: contexte
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+        titre: "What is FME (FME Form 2026.3)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "FME (originally, the “Feature Manipulation Engine”) was designed to overcome many of the problems"
+    contradictions: []
+    verifie: null
+    note_verification: "Déduction du chercheur à partir du mot « originally » et de l'en-tête de version ; l'éditeur ne dit nulle part l'avoir abandonné."
+  - id: A-nom-06
+    question: Q3
+    enonce: "Dans la documentation FME, la géométrie représente l'information de position d'une feature, et peut se composer de points, de lignes ou de surfaces ; des features sans géométrie existent aussi."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/aboutFeatures/feature-type-attributes-about.htm
+        titre: "About Feature Type Attributes (FME Readers and Writers 2026.3)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "The Geometry class represents a feature's positional information."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-07
+    question: Q3
+    enonce: "Dans FME, les attributs utilisateur font toujours partie de la feature, quel que soit le format dans lequel ils sont stockés."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/aboutFeatures/feature-type-attributes-about.htm
+        titre: "About Feature Type Attributes (FME Readers and Writers 2026.3)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "User attributes are always part of the feature no matter which format they are stored in."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-08
+    question: Q3
+    enonce: "Toute feature traitée par FME connaît son système de coordonnées et donc sa position sur la Terre."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/CoordSys/coord_sys_about.htm
+        titre: "About Coordinate Systems (FME Form 2025.2)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "All FME features know about their coordinate system and, therefore, their location on the earth."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-09
+    question: Q3
+    enonce: "Selon la documentation, FME lit les données source et stocke l'information de leurs features dans des attributs de format, puis écrit les données de destination en créant un second jeu d'attributs de format."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/aboutFeatures/feature-type-attributes-about.htm
+        titre: "About Feature Type Attributes (FME Readers and Writers 2026.3)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "FME reads the source data and stores information about its features in format attributes."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-10
+    question: Q3
+    enonce: "La documentation d'FME Form organise le travail en deux gestes distincts : lire et écrire les données avec des readers et des writers, transformer les données avec des transformers."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Home.htm
+        titre: "FME Form Documentation (accueil)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "How to work with Transformers to manipulate data."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-11
+    question: Q3
+    enonce: "Safe Software décrit les outils de transformation de FME Workbench comme servant à manipuler la géométrie et les attributs des données spatiales."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/FME_Components.htm
+        titre: "FME Components (FME Form 2026.3)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "for manipulating the geometry and attributes of spatial data"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-12
+    question: Q4
+    enonce: "Le glossaire de la documentation FME définit l'engine comme le composant de FME qui traite les demandes de travaux en exécutant des espaces de travail (workspaces)."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Terminology/Confluence-Topics/engine.htm
+        titre: "Engine (FME Terminology)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "The component of FME that processes job requests by running workspaces."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-13
+    question: Q4
+    enonce: "Safe Software décrit FME comme un moteur central au milieu d'un large éventail de formats pris en charge ; les données peuvent être lues depuis n'importe quel format et écrites vers n'importe quel autre."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+        titre: "What is FME (FME Form 2026.3)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "FME is a central engine amongst a whole array of supported formats (right)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-14
+    question: Q4
+    enonce: "La documentation d'FME Form décrit une FME Command-Line Engine qui permet de soumettre des demandes de traduction en ligne de commande, et présente Workbench comme l'outil de création des modèles d'FME Flow."
+    usage: contexte
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/FME_Components.htm
+        titre: "FME Components (FME Form 2026.3)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "The FME Command-Line Engine enables translation requests to be submitted at the command-line level."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-nom-15
+    question: Q4
+    enonce: "Dale Lutz, cofondateur de Safe Software, déclare que l'extension ArcGIS Data Interoperability est le produit FME Desktop de Safe sous une autre marque."
+    usage: expert
+    sources:
+      - url: https://xyht.com/spatial-itgis/freeing-the-data
+        titre: "Freeing the data (XYHT)"
+        editeur: XYHT
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "They have the ArcGIS Data Interoperability extension that is our FME desktop product rebranded."
+    contradictions: []
+    verifie: null
+    note_verification: "Propos attribué à Lutz par XYHT ; à recouper avec Esri (axe sig, Q11)."
+lacunes:
+  - question: Q1
+    manque: "Texte intégral d'ISO 19101-1 non lu (iso.org répond 403) ; la définition vient d'une citation du W3C. Définition OGC de « feature » non trouvée sur la page ogc.org/standards/sfa (404 sur docs.ogc.org/is/06-103r4). À sourcer : définition ISO 19109 / OGC."
+  - question: Q2
+    manque: "Date à laquelle Safe a commencé ou cessé d'employer l'expansion « Feature Manipulation Engine » non trouvée ; date de la fiche FactSheet non lue. Wikipedia donne l'expansion mais aucun extrait littéral n'a été obtenu ; fil communautaire Safe « what does fme stand for » non ouvert. Aucune source indépendante de l'éditeur ouverte pour l'expansion (TechTarget 404)."
+  - question: Q3
+    manque: "Page de la documentation définissant la feature en une phrase (modèle : géométrie, attributs, système de coordonnées) non trouvée : les éléments viennent de trois pages distinctes. Phrase « reader à gauche, transformers au centre, writer à droite » vue en extrait de recherche seulement, page non ouverte. À sourcer : glossaire FME (engage.safe.com/liz/glossary renvoie 404)."
+  - question: Q4
+    manque: "Documentation FME Flow sur les engines multiples (extrait de recherche vu, page non ouverte) ; lien « moteur commun » à FME Form, FME Flow et extensions tierces non confirmé par une page ouverte, hors Lutz (B). À sourcer."
+visuels:
+  - id: VIS-01
+    url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+    editeur: Safe Software
+    description: "Figure de la page « What is FME » (légende « (right) ») : FME comme moteur central au milieu des formats pris en charge. Image non vue, seulement signalée par la légende."
+    utilite: "Modèle d'un schéma en étoile pour illustrer « engine »."
+    usage: REDRAW

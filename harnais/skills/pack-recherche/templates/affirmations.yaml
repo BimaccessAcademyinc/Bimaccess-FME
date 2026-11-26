@@ -1,0 +1,28 @@
+# Registre des affirmations d'un axe (recherche/<axe>.yaml) ou de la leçon (affirmations.yaml).
+# La confiance n'est pas écrite ici : check_pack.py la calcule depuis les sources.
+axe: origines            # identifiant court de l'axe, celui du cadrage
+affirmations:
+  - id: A-origines-01
+    question: Q1           # question du cadrage à laquelle l'affirmation répond
+    enonce: "Safe Software a été fondée en 1993 à Surrey, en Colombie-Britannique."
+    usage: narration       # narration | expert | contexte
+    sources:
+      - url: https://www.safe.com/about/history-leadership/
+        titre: "Who We Are"
+        editeur: Safe Software
+        niveau: A            # A | B | C | expert
+        consulte: 2026-11-26
+        extrait: "texte exact de la page, 30 mots au plus"
+    contradictions: []     # [{version: "...", source: url}]
+    verifie: null          # rempli par le vérificateur : true | false
+    note_verification: ""
+lacunes:
+  - question: Q4
+    manque: "Ce qui n'a pas été trouvé, et où on a cherché."
+visuels:
+  - id: VIS-01
+    url: https://example.org/figure
+    editeur: Safe Software
+    description: "Ce que montre réellement le visuel."
+    utilite: "Pourquoi il peut servir la leçon."
+    usage: REFERENCE_ONLY  # REUSE | REDRAW | REFERENCE_ONLY

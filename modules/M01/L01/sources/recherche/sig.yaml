@@ -1,0 +1,160 @@
+axe: sig
+affirmations:
+  - id: A-sig-01
+    question: Q9
+    enonce: "Safe Software décrit le problème de départ comme des données spatiales stockées dans de nombreux systèmes différents, chacun avec ses propres conventions de structure et de coordonnées."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability (billet du 29 avril 2009)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "A common challenge in getting value from data is that it's stored all over the place"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-sig-02
+    question: Q9
+    enonce: "Selon un article de XYHT, le problème de départ venait de ce que les entreprises forestières de Colombie-Britannique utilisaient des logiciels différents, et le gouvernement a choisi d'inventer son propre format avec des traducteurs vers les logiciels commerciaux."
+    usage: expert
+    sources:
+      - url: https://xyht.com/spatial-itgis/freeing-the-data
+        titre: "Freeing the data"
+        editeur: XYHT
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "Instead, it was going to invent its own format and then have translators written from it to the commercial packages in use."
+    contradictions: []
+    verifie: null
+    note_verification: "Lien avec le contexte forestier non confirmé par une deuxième source."
+  - id: A-sig-03
+    question: Q10
+    enonce: "La page d'accueil de démarrage de FME annonce « 800+ supported formats » (formats pris en charge)."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/get-started/
+        titre: "Ready to bring life to your data?"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "800+ supported formats and powerful spatial data capabilities"
+    contradictions:
+      - version: "Autre page de l'éditeur : « over 1,000 integrations » (voir A-sig-04) ; bannière : « 500+ systems »."
+        source: https://fme.safe.com/integrations/
+      - version: "Article XYHT (date non relevée) : environ 400 formats compris par FME."
+        source: https://xyht.com/spatial-itgis/freeing-the-data
+    verifie: null
+    note_verification: "Page sans date de mise à jour visible."
+  - id: A-sig-04
+    question: Q10
+    enonce: "La page des intégrations de FME annonce « over 1,000 integrations »."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/integrations/
+        titre: "Integrations"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "Bring life to your data with over 1,000 integrations."
+    contradictions:
+      - version: "« 800+ supported formats » sur une autre page de l'éditeur."
+        source: https://fme.safe.com/get-started/
+    verifie: null
+    note_verification: ""
+  - id: A-sig-05
+    question: Q11
+    enonce: "L'extension ArcGIS Data Interoperability d'Esri repose sur la technologie FME de Safe Software."
+    usage: narration
+    sources:
+      - url: https://www.esri.com/partners/safe-software-inc-a2T70000000TNdREAW
+        titre: "Safe Software Inc (Esri Partner Network)"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "FME also powers the technology behind the ArcGIS Data Interoperability Extension."
+      - url: https://pro.arcgis.com/en/pro-app/3.2/help/data/data-interoperability/what-is-the-data-interoperability-extension.htm
+        titre: "ArcGIS Data Interoperability extension"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "The ArcGIS Data Interoperability extension for Desktop uses FME technology."
+      - url: https://xyht.com/spatial-itgis/freeing-the-data
+        titre: "Freeing the data"
+        editeur: XYHT
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "They have the ArcGIS Data Interoperability extension that is our FME desktop product rebranded."
+    contradictions:
+      - version: "Dale Lutz (XYHT) parle d'un produit FME « rebranded » ; la documentation Esri dit « uses FME technology » et mentionne un produit distinct, FME Esri Edition, vendu par Safe."
+        source: https://pro.arcgis.com/en/pro-app/3.2/help/data/data-interoperability/what-is-the-data-interoperability-extension.htm
+    verifie: null
+    note_verification: ""
+  - id: A-sig-06
+    question: Q12
+    enonce: "À partir de la version 23.0, FME Desktop devient FME Form et FME Server devient FME Flow ; les versions antérieures gardent leurs noms d'origine."
+    usage: expert
+    sources:
+      - url: https://www.safe.com/?p=168549
+        titre: "Nouveaux noms des produits FME"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "FME 23.0 and beyond will feature the new names."
+      - url: https://en.wikipedia.org/wiki/FME_(software)
+        titre: "FME (software)"
+        editeur: Wikipedia
+        niveau: C
+        consulte: 2026-11-26
+        extrait: "FME Form (formerly FME Desktop)"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-sig-07
+    question: Q12
+    enonce: "Safe Software a son siège à Surrey, en Colombie-Britannique."
+    usage: narration
+    sources:
+      - url: https://safe.com/about/history-leadership
+        titre: "Who We Are"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-26
+        extrait: "We unveiled our new headquarters in Surrey, B.C."
+      - url: https://techcouver.com/2024/10/11/vancouver-tech-anchor-safe-software-ready-for-next-chapter-of-growth/
+        titre: "Vancouver tech anchor Safe Software ready for next chapter of growth"
+        editeur: Techcouver
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "Headquartered in Surrey."
+    contradictions:
+      - version: "Wikipedia et XYHT disent « Vancouver-based » / « Vancouver, BC, area » (région métropolitaine)."
+        source: https://en.wikipedia.org/wiki/FME_(software)
+    verifie: null
+    note_verification: ""
+  - id: A-sig-08
+    question: Q12
+    enonce: "En octobre 2024, Techcouver écrit que Safe Software approche les 300 employés."
+    usage: expert
+    sources:
+      - url: https://techcouver.com/2024/10/11/vancouver-tech-anchor-safe-software-ready-for-next-chapter-of-growth/
+        titre: "Vancouver tech anchor Safe Software ready for next chapter of growth"
+        editeur: Techcouver
+        niveau: B
+        consulte: 2026-11-26
+        extrait: "The company has grown steadily over the years, now approaching 300 employees."
+    contradictions:
+      - version: "XYHT (article ancien) : « a staff of about 150 people » ; chiffre actuel non confirmé."
+        source: https://xyht.com/spatial-itgis/freeing-the-data
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q9
+    manque: "Définition du problème par un tiers indépendant solide (presse, académique) : seul XYHT trouvé ; la page Directions Magazine a répondu en erreur 522. À sourcer."
+  - question: Q10
+    manque: "Date de la page « 800+ formats » non visible ; la fiche PDF de l'éditeur (SafeSoftware-FactSheet.pdf) est illisible en extraction. Aucune source indépendante pour le chiffre. À sourcer."
+  - question: Q11
+    manque: "Année de début du partenariat Esri / de l'extension non trouvée (la page partenaire Esri ne la donne pas ; le billet de blogue Esri a répondu 403). À sourcer."
+  - question: Q12
+    manque: "Date exacte de l'annonce du changement de nom (année de sortie de FME 23.0 non lue sur une page ouverte) et effectif actuel de Safe Software (récent mentionné dans des résultats de recherche, non ouvert). À sourcer."
+visuels: []
