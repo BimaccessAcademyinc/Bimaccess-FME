@@ -1,0 +1,1163 @@
+lecon: FME001-M01-L01
+axes:
+- nom
+- origines
+- sig
+affirmations:
+- id: A-nom-01
+  question: Q1
+  enonce: Dans la norme ISO 19101, une feature est l'abstraction d'un phénomène du monde réel.
+  usage: expert
+  sources:
+  - url: https://www.w3.org/2015/spatial/track/issues/190
+    titre: 'ISSUE-190: SDW BP Glossary Issue: Features (cite la définition ISO 19101)'
+    editeur: W3C
+    niveau: B
+    consulte: 2026-11-26
+    extrait: 'Feature: Abstraction of a real world phenomenon.'
+  contradictions: []
+  verifie: true
+  note_verification: 'Vérification : le W3C cite la définition sous « ISO 19101 and OGC OpenGIS Abstract Specification Topic
+    5 » ; l''attribution à ISO 19101 est fidèle, mais de seconde main.'
+- id: A-nom-02
+  question: Q1
+  enonce: 'Le glossaire cité par le W3C donne comme exemples de features presque tout ce qui peut être placé dans le temps
+    et l''espace : bureaux, bâtiments, villes, arbres, pipelines, et précise que les termes feature et objet sont souvent
+    employés comme synonymes.'
+  usage: contexte
+  sources:
+  - url: https://www.w3.org/2015/spatial/track/issues/190
+    titre: 'ISSUE-190: SDW BP Glossary Issue: Features'
+    editeur: W3C
+    niveau: B
+    consulte: 2026-11-26
+    extrait: The terms feature and object are often used synonymously.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-nom-03
+  question: Q1
+  enonce: Simple Feature Access, partie 1, est aussi publiée comme ISO 19125 et décrit l'architecture commune de la géométrie
+    des simple features.
+  usage: contexte
+  sources:
+  - url: https://www.ogc.org/standards/sfa/
+    titre: 'Simple Feature Access – Part 1: Common Architecture'
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-26
+    extrait: This part of Simple Features Access (SFA), also called ISO 19125, describes the common architecture
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-nom-04
+  question: Q2
+  enonce: Safe Software présente FME comme l'acronyme de « Feature Manipulation Engine » ; sa documentation actuelle écrit
+    que FME était « à l'origine » le Feature Manipulation Engine.
+  usage: narration
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+    titre: What is FME (FME Form 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: FME (originally, the “Feature Manipulation Engine”) was designed to overcome many of the problems
+  - url: https://cdn.safe.com/resources/brochures/SafeSoftware-FactSheet.pdf
+    titre: Safe Software FactSheet (date non lue)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: Safe Software’s data integration platform, FME (Feature Manipulation Engine) is trusted by over 10,000 organizations
+      in 128 countries.
+  - url: https://techcouver.com/2024/10/11/vancouver-tech-anchor-safe-software-ready-for-next-chapter-of-growth/
+    titre: Vancouver tech anchor Safe Software ready for next chapter of growth (Techcouver, 11 oct. 2024)
+    editeur: Techcouver
+    niveau: B
+    consulte: &id001 2026-11-26
+    extrait: The BC firm's flagship product is the Feature Manipulation Engine, or FME.
+  - url: https://www.nsnews.com/technology/don-murray-is-going-for-growth-as-safe-softwares-ceo-9631940
+    titre: Don Murray is going for growth as Safe Software's CEO (article de Business in Vancouver repris par North Shore
+      News)
+    editeur: Business in Vancouver
+    niveau: B
+    consulte: *id001
+    extrait: Its core technology was, and still is, a feature manipulation engine (FME)
+  contradictions: []
+  verifie: true
+  note_verification: 'Sources indépendantes ajoutées (Techcouver, Business in Vancouver), lues dans le cache des pages ; l''usage
+    reste narration. Vérification : « originally » est rendu par « à l''origine » ; l''énoncé ne dit pas que l''expansion
+    est abandonnée.'
+- id: A-nom-05
+  question: Q2
+  enonce: La documentation de Safe Software nomme ses produits actuels « FME Form » (version 2026.3) ; le nom du produit n'y
+    est plus « Feature Manipulation Engine » mais FME, l'expansion étant rappelée comme nom d'origine.
+  usage: contexte
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+    titre: What is FME (FME Form 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: FME (originally, the “Feature Manipulation Engine”) was designed to overcome many of the problems
+  contradictions: []
+  verifie: null
+  note_verification: Déduction du chercheur à partir du mot « originally » et de l'en-tête de version ; l'éditeur ne dit nulle
+    part l'avoir abandonné.
+- id: A-nom-06
+  question: Q3
+  enonce: Dans la documentation FME, la géométrie représente l'information de position d'une feature, et peut se composer
+    de points, de lignes ou de surfaces ; des features sans géométrie existent aussi.
+  usage: expert
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/aboutFeatures/feature-type-attributes-about.htm
+    titre: About Feature Type Attributes (FME Readers and Writers 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: The Geometry class represents a feature's positional information.
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/aboutFeatures/feature-type-attributes-about.htm
+    titre: About Feature Type Attributes (FME Readers and Writers 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: Feature geometry may consist of points, lines, or areas.
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/aboutFeatures/feature-type-attributes-about.htm
+    titre: About Feature Type Attributes (FME Readers and Writers 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: Features with no geometry are also supported.
+  contradictions: []
+  verifie: null
+  repare: true
+  note_verification: 'Vérification : l''extrait ne porte que l''information de position. Points, lignes, surfaces et features
+    sans géométrie sont sur la page (« Feature geometry may consist of points, lines, or areas. », « Features with no geometry
+    are also supported. ») mais hors extrait. Usage baissé : l''énoncé dit plus que l''extrait.'
+- id: A-nom-07
+  question: Q3
+  enonce: Dans FME, les attributs utilisateur font toujours partie de la feature, quel que soit le format dans lequel ils
+    sont stockés.
+  usage: narration
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/aboutFeatures/feature-type-attributes-about.htm
+    titre: About Feature Type Attributes (FME Readers and Writers 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: User attributes are always part of the feature no matter which format they are stored in.
+  contradictions: []
+  verifie: true
+  note_verification: ''
+- id: A-nom-08
+  question: Q3
+  enonce: Toute feature traitée par FME connaît son système de coordonnées et donc sa position sur la Terre.
+  usage: narration
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/CoordSys/coord_sys_about.htm
+    titre: About Coordinate Systems (FME Form 2025.2)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: All FME features know about their coordinate system and, therefore, their location on the earth.
+  contradictions: []
+  verifie: true
+  note_verification: ''
+- id: A-nom-09
+  question: Q3
+  enonce: Selon la documentation, FME lit les données source et stocke l'information de leurs features dans des attributs
+    de format, puis écrit les données de destination en créant un second jeu d'attributs de format.
+  usage: expert
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/aboutFeatures/feature-type-attributes-about.htm
+    titre: About Feature Type Attributes (FME Readers and Writers 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: FME reads the source data and stores information about its features in format attributes.
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/aboutFeatures/feature-type-attributes-about.htm
+    titre: About Feature Type Attributes (FME Readers and Writers 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: FME writes the destination data by creating a second set of format attributes.
+  contradictions: []
+  verifie: null
+  repare: true
+  note_verification: 'Vérification : l''extrait ne porte que la lecture ; l''écriture (« FME writes the destination data by
+    creating a second set of format attributes. ») est une autre phrase de la page, hors extrait. Usage baissé : l''énoncé
+    dit plus que l''extrait.'
+- id: A-nom-10
+  question: Q3
+  enonce: 'La documentation d''FME Form organise le travail en deux gestes distincts : lire et écrire les données avec des
+    readers et des writers, transformer les données avec des transformers.'
+  usage: expert
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Home.htm
+    titre: FME Form Documentation (accueil)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: How to work with Transformers to manipulate data.
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Home.htm
+    titre: FME Form Documentation (accueil)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: "Reading and Writing Data How to work with Readers and Writers."
+  contradictions: []
+  verifie: null
+  repare: true
+  note_verification: 'Vérification : l''extrait ne parle que des transformers. « Deux gestes distincts » est une lecture de
+    la table des matières de l''accueil (Reading and Writing Data, Transforming Data, puis Coordinate Systems et d''autres
+    rubriques) : la page ne dit pas que le travail s''organise en deux gestes. Usage baissé.'
+  note_reparation: 'La page d''accueil liste Reading and Writing Data et Transforming Data comme rubriques parmi d''autres (Coordinate Systems, etc.) ; aucune phrase ne dit que le travail s''organise en deux gestes distincts. Énoncé laissé tel quel.'
+- id: A-nom-11
+  question: Q3
+  enonce: Safe Software décrit les outils de transformation de FME Workbench comme servant à manipuler la géométrie et les
+    attributs des données spatiales.
+  usage: narration
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/FME_Components.htm
+    titre: FME Components (FME Form 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: for manipulating the geometry and attributes of spatial data
+  contradictions: []
+  verifie: true
+  note_verification: 'Vérification : le sujet de l''extrait est « FME Workbench has tools for defining the source and destination
+    dataset structure (or schema), and also for manipulating... » ; « outils de transformation » paraphrase « tools for manipulating
+    ».'
+- id: A-nom-12
+  question: Q4
+  enonce: Le glossaire de la documentation FME définit l'engine comme le composant de FME qui traite les demandes de travaux
+    en exécutant des espaces de travail (workspaces).
+  usage: narration
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Terminology/Confluence-Topics/engine.htm
+    titre: Engine (FME Terminology)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: The component of FME that processes job requests by running workspaces.
+  contradictions: []
+  verifie: true
+  note_verification: ''
+- id: A-nom-13
+  question: Q4
+  enonce: Safe Software décrit FME comme un moteur central au milieu d'un large éventail de formats pris en charge ; les données
+    peuvent être lues depuis n'importe quel format et écrites vers n'importe quel autre.
+  usage: expert
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+    titre: What is FME (FME Form 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: FME is a central engine amongst a whole array of supported formats (right).
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+    titre: What is FME (FME Form 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: Data can be read from any format and written to any other.
+  contradictions: []
+  verifie: null
+  repare: true
+  note_verification: 'Vérification : l''extrait ne porte que le moteur central ; « Data can be read from any format and written
+    to any other. » est la phrase suivante, hors extrait. L''énoncé attribue bien la description à l''éditeur. Usage baissé
+    : l''énoncé dit plus que l''extrait.'
+- id: A-nom-14
+  question: Q4
+  enonce: La documentation d'FME Form décrit une FME Command-Line Engine qui permet de soumettre des demandes de traduction
+    en ligne de commande, et présente Workbench comme l'outil de création des modèles d'FME Flow.
+  usage: contexte
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/FME_Components.htm
+    titre: FME Components (FME Form 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: The FME Command-Line Engine enables translation requests to be submitted at the command-line level.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-nom-16
+  question: Q1
+  enonce: Dans le vocabulaire des normes de l'information géographique, une feature est l'abstraction d'un phénomène (ou d'une
+    entité) du monde réel.
+  usage: narration
+  sources:
+  - url: https://docs.ogc.org/as/17-087r13/17-087r13.html
+    titre: 'OGC Abstract Specification, Features and geometry – Part 1: Feature models (17-087r13, approuvé 2019-03-19)'
+    editeur: OGC
+    niveau: A
+    consulte: *id001
+    extrait: abstraction of real-world phenomena or entity
+  - url: https://www.w3.org/2015/spatial/track/issues/190
+    titre: 'ISSUE-190: SDW BP Glossary Issue: Features (cite la définition ISO 19101)'
+    editeur: W3C
+    niveau: B
+    consulte: *id001
+    extrait: 'Feature: Abstraction of a real world phenomenon.'
+  contradictions: []
+  verifie: true
+  note_verification: 'Deux formulations : OGC 17-087r13 (« phenomena or entity », définition 4.7 marquée 〈geographic information〉)
+    et ISO 19101 citée par le W3C (« a real world phenomenon »). L''énoncé garde le tronc commun. Vérification : définition
+    4.7 de 17-087r13 (〈geographic information〉) et citation ISO 19101 du W3C ; le tronc commun est fidèle.'
+- id: A-origines-01
+  question: Q5
+  enonce: Safe Software a été officiellement constituée en société le 13 décembre 1993.
+  usage: expert
+  sources:
+  - url: https://fme.safe.com/blog/2013/12/20-years-ago-today/
+    titre: It was 20 years ago today…
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: Dec 13, 1993. The day Safe Software was officially incorporated
+  - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+    titre: Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges (communiqué de Safe Software
+      repris par The American Surveyor ; daté « December 10, 2009 » dans le texte, 2008 dans l'URL)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: Established on December 13, 1993, Safe Software first began by developing translation technology
+  contradictions: []
+  verifie: true
+  note_verification: 'Usage baissé de narration à expert : la seconde source (Amerisurv) est un communiqué de Safe Software,
+    donc une seule source indépendante pour le jour exact ; l''année 1993 seule est en A-origines-14. Vérification : « officially
+    incorporated » est bien une date de constitution, ni de fondation au sens large ni de sortie du produit ; « Established
+    » du communiqué est plus vague. Deux pages de l''éditeur : usage expert juste.'
+- id: A-origines-02
+  question: Q5
+  enonce: Safe Software a été fondée par Don Murray et Dale Lutz.
+  usage: narration
+  sources:
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the data
+    editeur: XYHT
+    niveau: B
+    consulte: 2026-11-26
+    extrait: They met when they both worked on a project to build a big data analytical engine at MacDonald, Dettwiler and
+      Associates
+  - url: https://en.wikipedia.org/wiki/FME_(software)
+    titre: FME (software)
+    editeur: Wikipedia
+    niveau: C
+    consulte: 2026-11-26
+    extrait: The Safe Software company was started in 1993 by Don Murray and Dale Lutz
+  - url: https://cdn.safe.com/resources/brochures/SafeSoftware-FactSheet.pdf
+    titre: Safe Software FactSheet (date non lue ; « 180+ employees »)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id001
+    extrait: headquartered in Surrey, where it was co-founded by Don Murray and Dale Lutz in 1993.
+  - url: https://www.nsnews.com/technology/don-murray-is-going-for-growth-as-safe-softwares-ceo-9631940
+    titre: Don Murray is going for growth as Safe Software's CEO (article de Business in Vancouver repris par North Shore
+      News)
+    editeur: Business in Vancouver
+    niveau: B
+    consulte: *id001
+    extrait: in 1993 they founded Safe Software.
+  contradictions: []
+  verifie: true
+  note_verification: 'Usage monté à narration après ajout de la fiche de l''éditeur (A) et de Business in Vancouver (B). Vérification
+    : l''extrait XYHT ne dit que la rencontre chez MDA, pas la fondation (la page dit plus haut « Co-founded and co-led by
+    computer scientists Don Murray and Dale Lutz ») ; le fait est porté par la fiche de l''éditeur et par Business in Vancouver,
+    où « they » désigne Murray et Lutz.'
+- id: A-origines-03
+  question: Q5
+  enonce: Don Murray et Dale Lutz se sont rencontrés en travaillant sur un projet de moteur d'analyse de données chez MacDonald,
+    Dettwiler and Associates (MDA) ; Murray a ensuite quitté MDA pour enseigner au British Columbia Institute of Technology,
+    tout en restant en contact avec Lutz.
+  usage: expert
+  sources:
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the data
+    editeur: XYHT
+    niveau: B
+    consulte: 2026-11-26
+    extrait: Murray then left MDA to teach at the British Columbia Institute of Technology, but he and Lutz kept in touch.
+  - url: https://www.nsnews.com/technology/don-murray-is-going-for-growth-as-safe-softwares-ceo-9631940
+    titre: Don Murray is going for growth as Safe Software's CEO (article de Business in Vancouver repris par North Shore
+      News)
+    editeur: Business in Vancouver
+    niveau: B
+    consulte: *id001
+    extrait: Murray and Lutz, who both have master's degrees in computer science, met while working at MacDonald, Dettwiler
+      and Associates Ltd.
+  - url: https://bcbusiness.ca/business/tech-science/entrepreneur-of-the-year-2024-don-murray-safe-software-bc/
+    titre: 'Entrepreneur of the Year 2024: Safe Software CEO Don Murray (BCBusiness)'
+    editeur: BCBusiness
+    niveau: B
+    consulte: *id001
+    extrait: he worked as a software developer for MacDonald, Dettwiler and Associates, where he met his future business partner,
+      Dale Lutz.
+  contradictions: []
+  verifie: false
+  note_verification: 'Trois sources B indépendantes, aucune de l''éditeur : confiance moyenne, nom propre, reste à la porte.
+    Vérification : les extraits portent la rencontre chez MDA et le départ vers le BCIT, pas le « projet de moteur d''analyse
+    de données », qui n''est que dans l''extrait XYHT de A-origines-02. Énoncé plus large que ses extraits ; usage déjà expert.'
+- id: A-origines-04
+  question: Q6
+  enonce: Le projet de départ était un contrat pour le gouvernement canadien (Colombie-Britannique) visant à suivre l'exploitation
+    forestière par des entreprises privées ; Murray et Lutz ont remporté le contrat portant sur les premiers travaux de ce
+    projet.
+  usage: expert
+  sources:
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the data
+    editeur: XYHT
+    niveau: B
+    consulte: 2026-11-26
+    extrait: The Canadian government was trying to keep track of logging by private companies
+  - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+    titre: Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges (communiqué de Safe Software
+      repris par The American Surveyor ; daté « December 10, 2009 » dans le texte, 2008 dans l'URL)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: a proprietary format developed by the BC Government called the Spatial Archive and Interchange Format (SAIF)
+  contradictions: []
+  verifie: false
+  note_verification: 'Vérification : glissement. Chez XYHT, c''est le gouvernement qui cherche à suivre l''exploitation forestière
+    ; le contrat portait sur un format et des traducteurs (« invent its own format and then have translators written »), pas
+    sur le suivi des coupes. « Remporté le contrat portant sur les premiers travaux » n''est dans aucun extrait, et l''extrait
+    Amerisurv ne parle que de SAIF. Usage déjà expert.'
+- id: A-origines-05
+  question: Q6
+  enonce: Les premiers travaux de Safe Software portaient sur le passage de données CAD vers le SIG.
+  usage: expert
+  sources:
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the data
+    editeur: XYHT
+    niveau: B
+    consulte: 2026-11-26
+    extrait: The company’s early market was moving data from CAD to GIS
+  - url: https://www.geoconnexion.com/in-depth/beyond-geospatial-safe-softwares-journey-to-a-global-ai-driven-integration-platform
+    titre: 'Beyond geospatial: Safe Software''s journey (entretien avec Don Murray, GeoConnexion)'
+    editeur: GeoConnexion
+    niveau: B
+    consulte: *id001
+    extrait: the point was to address file translation and specifically the 'CAD-to-GIS' challenge.
+  contradictions: []
+  verifie: false
+  note_verification: 'Usage monté de contexte à narration après ajout de GeoConnexion (B, propos de Don Murray). Vérification
+    : glissement. XYHT dit « early market » (le marché des débuts, selon Lutz) et GeoConnexion « the point was » à la fondation
+    (propos de Murray) ; aucun ne dit que les premiers travaux portaient sur CAD vers SIG. Les premiers travaux attestés sont
+    la traduction pour SAIF (A-origines-15, A-origines-20), que l''énoncé contredirait à l''écran. Les deux sources B rapportent
+    des propos des fondateurs. Usage baissé.'
+- id: A-origines-06
+  question: Q7
+  enonce: SAIF est le sigle de Spatial Archive and Interchange Format, un format propriétaire développé par le gouvernement
+    de la Colombie-Britannique.
+  usage: expert
+  sources:
+  - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+    titre: Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges (communiqué de Safe Software
+      repris par The American Surveyor ; daté « December 10, 2009 » dans le texte, 2008 dans l'URL)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: a proprietary format developed by the BC Government called the Spatial Archive and Interchange Format (SAIF)
+  - url: https://en.wikipedia.org/wiki/FME_(software)
+    titre: FME (software)
+    editeur: Wikipedia
+    niveau: C
+    consulte: 2026-11-26
+    extrait: based upon the acronym for the Spatial Archive and Interchange Format
+  - url: https://s2k-ftp.cs.berkeley.edu/sequoia/schema/html/saif/foreword.html
+    titre: SAIF 3.1 Foreword (spécification SAIF, Release 3.1, Province de la Colombie-Britannique ; copie Berkeley)
+    editeur: Province de la Colombie-Britannique
+    niveau: A
+    consulte: *id001
+    extrait: In 1991 the Spatial Archive and Interchange Format (SAIF, pronounced safe) was accepted as a draft standard for
+      the exchange of geographic data
+  - url: https://s2k-ftp.cs.berkeley.edu/sequoia/schema/html/saif/saiffaq.html
+    titre: Spatial Archive and Interchange Format (SAIF) FAQ (tenue par Dale Lutz, Safe Software ; copie Berkeley)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id001
+    extrait: SAIF is a product of the Geomatics Unit, Surveys and Resource Mapping Branch (SRMB) of the British Columbia Ministry
+      of Environment, Lands and Parks.
+  contradictions:
+  - version: 'La spécification SAIF dit que SAIF a été approuvé en 1993 comme norme nationale du Canada (CGSB) : le mot «
+      propriétaire » du communiqué ne s''y retrouve pas (voir A-origines-19).'
+    source: https://s2k-ftp.cs.berkeley.edu/sequoia/schema/html/saif/foreword.html
+  verifie: true
+  note_verification: 'Usage laissé à expert à cause du mot « propriétaire », contredit par la spécification ; la narration
+    passe par A-origines-17 et A-origines-18. Vérification : l''extrait du communiqué dit bien « proprietary format developed
+    by the BC Government » ; c''est le mot de l''éditeur, contredit par la spécification (A-origines-19). Usage expert juste.'
+- id: A-origines-07
+  question: Q7
+  enonce: Le nom « Safe » vient de SAIF (prononcé comme « safe »), format du projet de départ.
+  usage: narration
+  sources:
+  - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+    titre: Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges (communiqué de Safe Software
+      repris par The American Surveyor ; daté « December 10, 2009 » dans le texte, 2008 dans l'URL)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: which by the way, is where the company gets it's name
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the data
+    editeur: XYHT
+    niveau: B
+    consulte: 2026-11-26
+    extrait: We made a joke on that when we named the company Safe and got the domain name safe.com
+  - url: https://s2k-ftp.cs.berkeley.edu/sequoia/schema/html/saif/foreword.html
+    titre: SAIF 3.1 Foreword (spécification SAIF, Release 3.1, Province de la Colombie-Britannique ; copie Berkeley)
+    editeur: Province de la Colombie-Britannique
+    niveau: A
+    consulte: *id001
+    extrait: In 1991 the Spatial Archive and Interchange Format (SAIF, pronounced safe) was accepted as a draft standard
+  contradictions: []
+  verifie: true
+  note_verification: 'Usage monté à narration : la spécification SAIF (Province de la C.-B.) atteste la prononciation « safe
+    » ; le lien avec le nom de l''entreprise vient du communiqué de Safe et de Murray dans XYHT. Vérification : le communiqué
+    (« where the company gets it''s name ») et Murray dans XYHT (« We made a joke on that when we named the company Safe »)
+    disent le lien ; la spécification atteste la prononciation.'
+- id: A-origines-08
+  question: Q8
+  enonce: Selon la presse spécialisée (2008), Safe Software a publié FME le 14 novembre 1996, présenté comme la première solution
+    technologique de traduction et de manipulation de données spatiales.
+  usage: expert
+  sources:
+  - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+    titre: Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges (communiqué de Safe Software
+      repris par The American Surveyor ; daté « December 10, 2009 » dans le texte, 2008 dans l'URL)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: On November 14, 1996, Safe Software released FME, the very first technology solution
+  - url: https://en.wikipedia.org/wiki/FME_(software)
+    titre: FME (software)
+    editeur: Wikipedia
+    niveau: C
+    consulte: 2026-11-26
+    extrait: the first build was released in 1996
+  - url: https://community.safe.com/transformers-9/how-old-is-fme-6717
+    titre: How old is FME? (forum communautaire FME, auteur non identifié)
+    editeur: Communauté FME (forum)
+    niveau: C
+    consulte: *id001
+    extrait: I wanted to mark the 16th birthday of FME's official release in the community somehow.
+  contradictions:
+  - version: La page d'histoire de l'éditeur place en 1993 « We introduced FME to the world ».
+    source: https://www.safe.com/company
+  verifie: false
+  note_verification: 'La seconde source d''origine (Amerisurv) est un communiqué de Safe ; le fil du forum renvoie à une annonce
+    de sortie dans un groupe de discussion daté 1996-11 (lien Google Groups non ouvert). Vérification : glissement de source.
+    Amerisurv reprend un communiqué de Safe Software (« Vancouver, BC, December 10, 2009 »), pas un article de la presse spécialisée,
+    et 2008 vient de l''URL, pas du texte. « Première solution » est la revendication de l''éditeur. Usage déjà expert.'
+- id: A-origines-09
+  question: Q8
+  enonce: L'éditeur situe en 1993 l'introduction de FME au monde, début d'un parcours qu'il dit durer depuis 33 ans.
+  usage: expert
+  sources:
+  - url: https://www.safe.com/company
+    titre: Company history (safe.com)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: We introduced FME to the world, marking the beginning of a 33-year journey (and counting) to solving complex
+      data challenges.
+  contradictions:
+  - version: 'Presse spécialisée : FME publié le 14 novembre 1996.'
+    source: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+  verifie: true
+  note_verification: 'Les deux versions de la contradiction viennent de Safe Software (page d''histoire actuelle contre communiqué
+    de 2008) : aucune source indépendante ne date la première sortie. Vérification : « 1993 » est le titre de l''entrée de
+    la page d''histoire qui porte l''extrait ; l''énoncé attribue bien le fait à l''éditeur.'
+- id: A-origines-10
+  question: Q8
+  enonce: En 1997, Safe Software a réalisé sa première vente internationale, à l'Arpentage national de Finlande (National
+    Land Survey), qui a adopté FME.
+  usage: expert
+  sources:
+  - url: https://www.safe.com/company
+    titre: Company history (safe.com)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: Finland’s National Land Survey (NLS) adopted FME, and just like that, we were global.
+  contradictions: []
+  verifie: true
+  note_verification: 'Vérification : l''année et « première vente internationale » viennent du titre de l''entrée (« 1997
+    Safe Software''s first international sale. ») ; l''extrait porte l''adoption par la NLS. Source unique de l''éditeur.'
+- id: A-origines-11
+  question: Q8
+  enonce: Esri Sverige a été l'un des premiers revendeurs à valeur ajoutée de Safe Software (entrée datée de 1997 sur la page
+    de l'éditeur).
+  usage: expert
+  sources:
+  - url: https://www.safe.com/company
+    titre: Company history (safe.com)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: Ours started with Esri Sverige as one of our first Value-Added Resellers.
+  contradictions: []
+  verifie: true
+  note_verification: 'Vérification : « Ours » désigne le réseau de partenaires (entrée « 1997 The first partner connection.
+    »).'
+- id: A-origines-12
+  question: Q8
+  enonce: Safe Software s'est retrouvée liée très tôt à SDE d'Esri, ce qui lui a apporté de gros projets avec des entreprises
+    de télécommunications et de services publics.
+  usage: contexte
+  sources:
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the data
+    editeur: XYHT
+    niveau: B
+    consulte: 2026-11-26
+    extrait: The other lucky break for us was that we ended up getting tangled in with Esri’s SDE very close to its beginning.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-origines-13
+  question: Q8
+  enonce: Le siège de Safe Software à Surrey (Colombie-Britannique) a été dévoilé en 2018.
+  usage: contexte
+  sources:
+  - url: https://www.safe.com/company
+    titre: Company history (safe.com)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: We unveiled our new headquarters in Surrey, B.C.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-origines-14
+  question: Q5
+  enonce: Safe Software a été fondée en 1993.
+  usage: narration
+  sources:
+  - url: https://cdn.safe.com/resources/brochures/SafeSoftware-FactSheet.pdf
+    titre: Safe Software FactSheet (date non lue ; « 180+ employees »)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id001
+    extrait: was co-founded by Don Murray and Dale Lutz in 1993.
+  - url: https://www.nsnews.com/technology/don-murray-is-going-for-growth-as-safe-softwares-ceo-9631940
+    titre: Don Murray is going for growth as Safe Software's CEO (article de Business in Vancouver repris par North Shore
+      News)
+    editeur: Business in Vancouver
+    niveau: B
+    consulte: *id001
+    extrait: in 1993 they founded Safe Software.
+  - url: https://techcouver.com/2023/04/13/data-integration-safe-software-refreshes-brand-target-growth/
+    titre: 'Data integration: Safe Software refreshes brand, target growth (Techcouver, 13 avril 2023)'
+    editeur: Techcouver
+    niveau: B
+    consulte: *id001
+    extrait: In response, Murray and Lutz cofounded Safe Software in 1993.
+  - url: https://www.geoconnexion.com/in-depth/beyond-geospatial-safe-softwares-journey-to-a-global-ai-driven-integration-platform
+    titre: 'Beyond geospatial: Safe Software''s journey (entretien avec Don Murray, GeoConnexion)'
+    editeur: GeoConnexion
+    niveau: B
+    consulte: *id001
+    extrait: When Safe Software 'Safe' was founded in 1993
+  contradictions: []
+  verifie: true
+  note_verification: L'année seule ; le jour exact (13 décembre 1993, constitution) est en A-origines-01.
+- id: A-origines-15
+  question: Q6
+  enonce: Safe Software est née d'un contrat du gouvernement de la Colombie-Britannique, remporté par Murray et Lutz sur appel
+    d'offres.
+  usage: narration
+  sources:
+  - url: https://bcbusiness.ca/business/tech-science/entrepreneur-of-the-year-2024-don-murray-safe-software-bc/
+    titre: 'Entrepreneur of the Year 2024: Safe Software CEO Don Murray (BCBusiness)'
+    editeur: BCBusiness
+    niveau: B
+    consulte: *id001
+    extrait: when the B.C. government posted a request for proposal
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the data
+    editeur: XYHT
+    niveau: B
+    consulte: *id001
+    extrait: Safe was born with the successful bid of this contract
+  - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+    titre: Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges (communiqué de Safe Software
+      repris par The American Surveyor)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id001
+    extrait: Safe Software first began by developing translation technology to support a proprietary format developed by the
+      BC Government
+  contradictions:
+  - version: XYHT écrit « The Canadian government » pour ce même projet en Colombie-Britannique ; BCBusiness et le communiqué
+      disent gouvernement de la C.-B.
+    source: https://xyht.com/spatial-itgis/freeing-the-data
+  verifie: true
+  note_verification: 'Le ministère client n''est nommé par aucune page lue (voir lacunes Q6 et A-origines-18). Vérification
+    : BCBusiness donne l''appel d''offres du gouvernement de la C.-B. et « if we win, we''ll start a company. And we did »
+    ; XYHT « Safe was born with the successful bid of this contract ».'
+- id: A-origines-16
+  question: Q7
+  enonce: La Surveys and Resource Mapping Branch de la Colombie-Britannique a chargé Safe Software de produire la SAIF Toolkit,
+    ensemble de composants logiciels pour utiliser SAIF.
+  usage: contexte
+  sources:
+  - url: https://s2k-ftp.cs.berkeley.edu/sequoia/schema/html/saif/toolkit.html
+    titre: The SAIF Toolkit (site SAIF tenu par Safe Software ; copie Berkeley)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id001
+    extrait: Safe Software Inc has been contracted by SRMB to produce the SAIF Toolkit.
+  contradictions: []
+  verifie: null
+  note_verification: Page du site SAIF tenu par Safe ; la FAQ SAIF est signée par Dale Lutz. Ce contrat (livraison annoncée
+    pour fin 1994) n'est pas forcément le contrat de fondation.
+- id: A-origines-17
+  question: Q7
+  enonce: SAIF (Spatial Archive and Interchange Format, prononcé « safe ») est une norme canadienne d'échange de données géographiques.
+  usage: narration
+  sources:
+  - url: https://s2k-ftp.cs.berkeley.edu/sequoia/schema/html/saif/foreword.html
+    titre: SAIF 3.1 Foreword (spécification SAIF, Release 3.1, Province de la Colombie-Britannique ; copie Berkeley)
+    editeur: Province de la Colombie-Britannique
+    niveau: A
+    consulte: *id001
+    extrait: In 1991 the Spatial Archive and Interchange Format (SAIF, pronounced safe) was accepted as a draft standard for
+      the exchange of geographic data
+  - url: https://s2k-ftp.cs.berkeley.edu/sequoia/schema/html/saif/saiffaq.html
+    titre: Spatial Archive and Interchange Format (SAIF) FAQ (tenue par Dale Lutz, Safe Software ; copie Berkeley)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id001
+    extrait: Spatial Archive and Interchange Format (SAIF, pronounced safe) is a Canadian geomatics standard for the exchange
+      of geographic data.
+  contradictions: []
+  verifie: true
+  note_verification: ''
+- id: A-origines-18
+  question: Q7
+  enonce: SAIF est un produit de la Surveys and Resource Mapping Branch du ministère de l'Environnement, des Terres et des
+    Parcs de la Colombie-Britannique.
+  usage: expert
+  sources:
+  - url: https://s2k-ftp.cs.berkeley.edu/sequoia/schema/html/saif/saiffaq.html
+    titre: Spatial Archive and Interchange Format (SAIF) FAQ (tenue par Dale Lutz, Safe Software ; copie Berkeley)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id001
+    extrait: SAIF is a product of the Geomatics Unit, Surveys and Resource Mapping Branch (SRMB) of the British Columbia Ministry
+      of Environment, Lands and Parks.
+  - url: https://s2k-ftp.cs.berkeley.edu/sequoia/schema/html/saif/foreword.html
+    titre: SAIF 3.1 Foreword (spécification SAIF, Release 3.1, Province de la Colombie-Britannique ; copie Berkeley)
+    editeur: Province de la Colombie-Britannique
+    niveau: A
+    consulte: *id001
+    extrait: Surveys and Resource Mapping Branch, B.C. Ministry of Environment, Lands and Parks
+  contradictions: []
+  verifie: false
+  note_verification: 'La spécification donne la Branch comme adresse de contact de SAIF ; la FAQ dit « product of ». Nom de
+    ministère de l''époque (1994). Vérification : l''extrait de la spécification n''est qu''une adresse de contact (« SAIF
+    Info, Surveys and Resource Mapping Branch... ») et ne dit pas « produit de ». Seule la FAQ, tenue par Safe Software, porte
+    le fait : la confiance calculée repose sur un extrait qui ne le dit pas. Nom propre dit par la voix : usage baissé.'
+- id: A-origines-19
+  question: Q7
+  enonce: SAIF a été approuvé en 1993, par le processus de l'Office des normes générales du Canada (CGSB), comme norme nationale
+    du Canada.
+  usage: contexte
+  sources:
+  - url: https://s2k-ftp.cs.berkeley.edu/sequoia/schema/html/saif/foreword.html
+    titre: SAIF 3.1 Foreword (spécification SAIF, Release 3.1, Province de la Colombie-Britannique ; copie Berkeley)
+    editeur: Province de la Colombie-Britannique
+    niveau: A
+    consulte: *id001
+    extrait: SAIF has been approved (1993) through the CGSB process as a national standard in Canada.
+  - url: https://s2k-ftp.cs.berkeley.edu/sequoia/schema/html/saif/saiffaq.html
+    titre: Spatial Archive and Interchange Format (SAIF) FAQ (tenue par Dale Lutz, Safe Software ; copie Berkeley)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id001
+    extrait: SAIF has been approved (1993) through the CGSB process as a national standard in Canada.
+  contradictions: []
+  verifie: null
+  note_verification: Utile pour ne pas dire « format propriétaire » (A-origines-06).
+- id: A-origines-20
+  question: Q6
+  enonce: Le projet de départ, au début des années 1990, portait sur l'échange de données géographiques forestières en Colombie-Britannique,
+    entre les entreprises forestières et le gouvernement provincial.
+  usage: narration
+  sources:
+  - url: https://techcouver.com/2023/04/13/data-integration-safe-software-refreshes-brand-target-growth/
+    titre: 'Data integration: Safe Software refreshes brand, target growth (Techcouver, 13 avril 2023)'
+    editeur: Techcouver
+    niveau: B
+    consulte: *id001
+    extrait: While working on a geospatial forestry data sharing project in British Columbia in the early 90s, Don Murray
+      and Dale Lutz saw firsthand a challenge to be solved.
+  - url: https://www.bctechnology.com/news/2017/11/7/Surrey-based-Safe-Software-Expands-to-150-Employees---Wins-2017-Corporate-Social-Responsibility-Award.cfm
+    titre: Surrey-based Safe Software Expands to 150 Employees (BC Technology, 7 nov. 2017 ; paragraphe « About Safe Software
+      » du communiqué)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id001
+    extrait: helping forestry companies exchange maps with the provincial government.
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the data
+    editeur: XYHT
+    niveau: B
+    consulte: *id001
+    extrait: The Canadian government was trying to keep track of logging by private companies and needed to exchange information
+      with them.
+  contradictions: []
+  verifie: true
+  note_verification: 'Le paragraphe BC Technology est le texte « About Safe Software » d''un communiqué : source de l''éditeur.
+    Vérification : Techcouver (projet de partage de données forestières, début des années 1990) et le paragraphe « About Safe
+    Software » (« helping forestry companies exchange maps with the provincial government ») disent le fait ; le « Canadian
+    government » de XYHT n''en change pas le sens.'
+- id: A-origines-21
+  question: Q5
+  enonce: Selon Safe Software, l'entreprise a été fondée à Surrey, en Colombie-Britannique.
+  usage: expert
+  sources:
+  - url: https://cdn.safe.com/resources/brochures/SafeSoftware-FactSheet.pdf
+    titre: Safe Software FactSheet (date non lue ; « 180+ employees »)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id001
+    extrait: headquartered in Surrey, where it was co-founded by Don Murray and Dale Lutz in 1993.
+  - url: https://www.bctechnology.com/news/2017/11/7/Surrey-based-Safe-Software-Expands-to-150-Employees---Wins-2017-Corporate-Social-Responsibility-Award.cfm
+    titre: Surrey-based Safe Software Expands to 150 Employees (BC Technology, 7 nov. 2017 ; paragraphe « About Safe Software
+      » du communiqué)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id001
+    extrait: Safe Software was founded in Surrey in 1993
+  contradictions:
+  - version: XYHT situe l'entreprise dans la « Vancouver, BC, area », Wikipedia à Vancouver ; BCBusiness parle de débuts «
+      in garages and spare bedrooms » sans lieu.
+    source: https://xyht.com/spatial-itgis/freeing-the-data
+  verifie: true
+  note_verification: 'Deux pages de l''éditeur, aucune source indépendante pour le lieu de fondation (Surrey n''est attesté
+    par des tiers que comme siège actuel). Vérification : les extraits disent bien « founded in Surrey » et « headquartered
+    in Surrey, where it was co-founded », et l''énoncé l''attribue à l''éditeur. Le doute porte sur le fait : la phrase de
+    la fiche accole le siège actuel au lieu de fondation, et le même communiqué dit « began in a basement » sans lieu. Usage
+    expert juste.'
+- id: A-sig-01
+  question: Q9
+  enonce: Safe Software décrit le problème de départ comme des données spatiales stockées dans de nombreux systèmes différents,
+    chacun avec ses propres conventions de structure et de coordonnées.
+  usage: expert
+  sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability (billet du 29 avril 2009)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: A common challenge in getting value from data is that it's stored all over the place
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability (billet du 29 avril 2009)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: in different applications, databases, and formats, and with different data models and coordinate systems.
+  contradictions: []
+  verifie: null
+  repare: true
+  note_verification: 'Vérification : glissement. Le billet de 2009 décrit « a common challenge » actuel (données dispersées),
+    pas le problème de départ de Safe. Les conventions de structure et de coordonnées sont dans la suite de la phrase (« with
+    different data models and coordinate systems »), hors extrait. Usage baissé.'
+  note_reparation: 'Le billet de 2009 décrit un défi courant (données dispersées, modèles et systèmes de coordonnées différents), pas le problème de départ de Safe : l''énoncé dit encore plus que les extraits. Énoncé laissé tel quel.'
+- id: A-sig-02
+  question: Q9
+  enonce: Selon un article de XYHT, le problème de départ venait de ce que les entreprises forestières de Colombie-Britannique
+    utilisaient des logiciels différents, et le gouvernement a choisi d'inventer son propre format avec des traducteurs vers
+    les logiciels commerciaux.
+  usage: expert
+  sources:
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the data
+    editeur: XYHT
+    niveau: B
+    consulte: 2026-11-26
+    extrait: Instead, it was going to invent its own format and then have translators written from it to the commercial packages
+      in use.
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the data
+    editeur: XYHT
+    niveau: B
+    consulte: 2026-11-26
+    extrait: However, those companies used different software packages, and the government did not want to mandate that they all use software from the same vendor.
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the data
+    editeur: XYHT
+    niveau: B
+    consulte: 2026-11-26
+    extrait: The Canadian government was trying to keep track of logging by private companies and needed to exchange information with them.
+  contradictions: []
+  verifie: null
+  repare: true
+  note_verification: 'Lien avec le contexte forestier non confirmé par une deuxième source. Vérification : l''extrait ne porte
+    que le choix du gouvernement (format propre et traducteurs) ; les logiciels différents des entreprises sont dans la phrase
+    précédente (« those companies used different software packages »), hors extrait. Usage déjà expert.'
+  note_reparation: 'Les extraits ajoutés relient les logiciels différents et le contexte forestier de Colombie-Britannique (suivi de l''exploitation forestière). La page dit « The Canadian government », l''énoncé « le gouvernement » ; le lien reste sur une seule source B. Énoncé laissé tel quel.'
+- id: A-sig-03
+  question: Q10
+  enonce: La page d'accueil de démarrage de FME annonce « 800+ supported formats » (formats pris en charge).
+  usage: expert
+  sources:
+  - url: https://fme.safe.com/get-started/
+    titre: Ready to bring life to your data?
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: 800+ supported formats and powerful spatial data capabilities
+  contradictions:
+  - version: 'Autre page de l''éditeur : « over 1,000 integrations » (voir A-sig-04) ; bannière : « 500+ systems ».'
+    source: https://fme.safe.com/integrations/
+  - version: 'Article XYHT (date non relevée) : environ 400 formats compris par FME.'
+    source: https://xyht.com/spatial-itgis/freeing-the-data
+  verifie: true
+  note_verification: Page sans date de mise à jour visible.
+- id: A-sig-04
+  question: Q10
+  enonce: La page des intégrations de FME annonce « over 1,000 integrations ».
+  usage: expert
+  sources:
+  - url: https://fme.safe.com/integrations/
+    titre: Integrations
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: Bring life to your data with over 1,000 integrations.
+  contradictions:
+  - version: « 800+ supported formats » sur une autre page de l'éditeur.
+    source: https://fme.safe.com/get-started/
+  verifie: true
+  note_verification: ''
+- id: A-sig-05
+  question: Q11
+  enonce: L'extension ArcGIS Data Interoperability d'Esri repose sur la technologie FME de Safe Software.
+  usage: contexte
+  sources:
+  - url: https://www.esri.com/partners/safe-software-inc-a2T70000000TNdREAW
+    titre: Safe Software Inc (Esri Partner Network)
+    editeur: Esri
+    niveau: A
+    consulte: 2026-11-26
+    extrait: FME also powers the technology behind the ArcGIS Data Interoperability Extension.
+  - url: https://pro.arcgis.com/en/pro-app/3.2/help/data/data-interoperability/what-is-the-data-interoperability-extension.htm
+    titre: ArcGIS Data Interoperability extension
+    editeur: Esri
+    niveau: A
+    consulte: 2026-11-26
+    extrait: The ArcGIS Data Interoperability extension for Desktop uses FME technology.
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the data
+    editeur: XYHT
+    niveau: B
+    consulte: 2026-11-26
+    extrait: They have the ArcGIS Data Interoperability extension that is our FME desktop product rebranded.
+  contradictions:
+  - version: Dale Lutz (XYHT) parle d'un produit FME « rebranded » ; la documentation Esri dit « uses FME technology » et
+      mentionne un produit distinct, FME Esri Edition, vendu par Safe.
+    source: https://pro.arcgis.com/en/pro-app/3.2/help/data/data-interoperability/what-is-the-data-interoperability-extension.htm
+  verifie: true
+  note_verification: 'Fusion de A-nom-15 (« Dale Lutz déclare que l''extension ArcGIS Data Interoperability est le produit
+    FME Desktop sous une autre marque », XYHT) : même source, même extrait ; la nuance « rebranded » reste dans les contradictions.
+    Vérification : « uses FME technology » et « powers the technology behind » ; « repose sur » ne reprend pas le « rebranded
+    » de Lutz, laissé en contradiction. Ilyas, porte Q6 : pas d''Esri dans L01 (Esri attend L04).'
+  fusionne_depuis:
+  - A-nom-15
+- id: A-sig-06
+  question: Q12
+  enonce: À partir de la version 23.0, FME Desktop devient FME Form et FME Server devient FME Flow ; les versions antérieures
+    gardent leurs noms d'origine.
+  usage: expert
+  sources:
+  - url: https://www.safe.com/?p=168549
+    titre: Nouveaux noms des produits FME
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: FME 23.0 and beyond will feature the new names.
+  - url: https://en.wikipedia.org/wiki/FME_(software)
+    titre: FME (software)
+    editeur: Wikipedia
+    niveau: C
+    consulte: 2026-11-26
+    extrait: FME Form (formerly FME Desktop)
+  contradictions: []
+  verifie: false
+  note_verification: 'Vérification : l''extrait dit seulement que FME 23.0 et suivantes portent les nouveaux noms. Desktop
+    vers Form n''est porté que par Wikipedia (C) ; Server vers Flow (« FME Flow (formerly FME Server) ») et les versions antérieures
+    (« All previous releases of Desktop, Server, Cloud etc. will be referred to and supported using their original names.
+    ») sont sur la page de l''éditeur, hors extrait. Usage déjà expert.'
+- id: A-sig-07
+  question: Q12
+  enonce: Safe Software a son siège à Surrey, en Colombie-Britannique.
+  usage: narration
+  sources:
+  - url: https://safe.com/about/history-leadership
+    titre: Who We Are
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: We unveiled our new headquarters in Surrey, B.C.
+  - url: https://techcouver.com/2024/10/11/vancouver-tech-anchor-safe-software-ready-for-next-chapter-of-growth/
+    titre: Vancouver tech anchor Safe Software ready for next chapter of growth
+    editeur: Techcouver
+    niveau: B
+    consulte: 2026-11-26
+    extrait: Headquartered in Surrey.
+  contradictions:
+  - version: Wikipedia et XYHT disent « Vancouver-based » / « Vancouver, BC, area » (région métropolitaine).
+    source: https://en.wikipedia.org/wiki/FME_(software)
+  verifie: true
+  note_verification: 'Vérification : l''extrait de l''éditeur est l''entrée de 2018 (dévoilement du siège) ; le siège actuel
+    est porté par Techcouver 2024.'
+- id: A-sig-08
+  question: Q12
+  enonce: En octobre 2024, Techcouver écrit que Safe Software approche les 300 employés.
+  usage: expert
+  sources:
+  - url: https://techcouver.com/2024/10/11/vancouver-tech-anchor-safe-software-ready-for-next-chapter-of-growth/
+    titre: Vancouver tech anchor Safe Software ready for next chapter of growth
+    editeur: Techcouver
+    niveau: B
+    consulte: 2026-11-26
+    extrait: The company has grown steadily over the years, now approaching 300 employees.
+  contradictions:
+  - version: 'XYHT (article ancien) : « a staff of about 150 people » ; chiffre actuel non confirmé.'
+    source: https://xyht.com/spatial-itgis/freeing-the-data
+  - version: 'Fiche de l''éditeur (non datée) : « 180+ employees ».'
+    source: https://cdn.safe.com/resources/brochures/SafeSoftware-FactSheet.pdf
+  - version: 'Business in Vancouver (repris par North Shore News) : « from two people to 270 today ».'
+    source: https://www.nsnews.com/technology/don-murray-is-going-for-growth-as-safe-softwares-ceo-9631940
+  verifie: true
+  note_verification: ''
+- id: A-origines-22
+  question: Q8
+  enonce: La première version de FME sort en 1996, trois ans après la fondation de Safe Software.
+  usage: narration
+  sources:
+  - niveau: expert
+    ref: porte-expert.md#Q1
+    editeur: Ilyas (BIMaccess)
+    consulte: '2026-11-26'
+  - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+    titre: Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges (communiqué de Safe Software
+      repris par The American Surveyor ; daté « December 10, 2009 » dans le texte, 2008 dans l'URL)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: On November 14, 1996, Safe Software released FME, the very first technology solution
+  contradictions:
+  - version: L'éditeur situe en 1993 l'introduction de FME (A-origines-09) ; Ilyas retient 1996.
+    source: https://www.safe.com/company
+  verifie: true
+  note_verification: Décision d'Ilyas, porte Q1 (option « 1993, puis FME en 1996 »).
+- id: A-nom-17
+  question: Q2
+  enonce: FME s'appelait à l'origine Feature Manipulation Engine ; l'éditeur dit aujourd'hui FME.
+  usage: narration
+  sources:
+  - niveau: expert
+    ref: porte-expert.md#Q2
+    editeur: Ilyas (BIMaccess)
+    consulte: '2026-11-26'
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+    titre: What is FME (FME Form 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-26
+    extrait: FME (originally, the “Feature Manipulation Engine”) was designed to overcome many of the problems
+  contradictions: []
+  verifie: true
+  note_verification: Décision d'Ilyas, porte Q2 (nom d'origine).
+lacunes:
+- question: Q1
+  manque: 'Texte intégral d''ISO 19101-1 non lu (iso.org répond 403) ; la définition vient d''une citation du W3C. Définition
+    OGC de « feature » non trouvée sur la page ogc.org/standards/sfa (404 sur docs.ogc.org/is/06-103r4). À sourcer : définition
+    ISO 19109 / OGC. Consolidation : définition OGC lue (17-087r13, A-nom-16) ; texte ISO toujours non lu.'
+  axe: nom
+- question: Q2
+  manque: 'Date à laquelle Safe a commencé ou cessé d''employer l''expansion « Feature Manipulation Engine » non trouvée ;
+    date de la fiche FactSheet non lue. Wikipedia donne l''expansion mais aucun extrait littéral n''a été obtenu ; fil communautaire
+    Safe « what does fme stand for » non ouvert. Aucune source indépendante de l''éditeur ouverte pour l''expansion (TechTarget
+    404). Consolidation : deux sources indépendantes donnent l''expansion (Techcouver 2024, Business in Vancouver), ajoutées
+    à A-nom-04 ; date de début ou d''abandon toujours non trouvée.'
+  axe: nom
+- question: Q3
+  manque: 'Page de la documentation définissant la feature en une phrase (modèle : géométrie, attributs, système de coordonnées)
+    non trouvée : les éléments viennent de trois pages distinctes. Phrase « reader à gauche, transformers au centre, writer
+    à droite » vue en extrait de recherche seulement, page non ouverte. À sourcer : glossaire FME (engage.safe.com/liz/glossary
+    renvoie 404).'
+  axe: nom
+- question: Q4
+  manque: Documentation FME Flow sur les engines multiples (extrait de recherche vu, page non ouverte) ; lien « moteur commun
+    » à FME Form, FME Flow et extensions tierces non confirmé par une page ouverte, hors Lutz (B). À sourcer.
+  axe: nom
+- question: Q5
+  manque: 'Lieu de la fondation en 1993 non trouvé sur une page ouverte (Surrey n''est attesté que comme siège en 2018). Noms
+    des fondateurs : aucune page de l''éditeur ouverte ne les donne. À sourcer. Consolidation : noms des fondateurs sourcés
+    par la fiche de l''éditeur et Business in Vancouver (A-origines-02) ; lieu de fondation attesté seulement par l''éditeur
+    (A-origines-21).'
+  axe: origines
+- question: Q5
+  manque: 'Parcours de Dale Lutz avant la fondation : seul le passage commun chez MDA est attesté. À sourcer.'
+  axe: origines
+- question: Q6
+  manque: 'Nom exact du client de départ (ministère, organisme) non trouvé ; les sources disent « gouvernement canadien »
+    / « BC Government » sans ministère. À sourcer. Consolidation : contrat du gouvernement de la C.-B. sur appel d''offres
+    (A-origines-15) et contexte forestier (A-origines-20) sourcés ; le ministère client reste non nommé (une recherche cite
+    le Ministry of Forests, page ITWorldCanada refusée 403).'
+  axe: origines
+- question: Q7
+  manque: 'Organisme précis derrière SAIF au-delà de « BC Government », et prononciation « safe » du sigle sur une page ouverte
+    de l''éditeur. À sourcer. Consolidation : organisme et prononciation sourcés par la spécification SAIF (A-origines-17,
+    A-origines-18).'
+  axe: origines
+- question: Q8
+  manque: 'Étapes datées entre 1996 et 1997 (premières versions numérotées, partenariats) non trouvées ; les pages business-in-vancouver
+    (403) et fiche PDF de l''éditeur (illisible) n''ont pu être exploitées. Consolidation : la fiche PDF de l''éditeur est
+    lisible par lire_page.py (pdftotext) et sert à A-origines-02, A-origines-14, A-origines-21.'
+  axe: origines
+- question: Q9
+  manque: 'Définition du problème par un tiers indépendant solide (presse, académique) : seul XYHT trouvé ; la page Directions
+    Magazine a répondu en erreur 522. À sourcer.'
+  axe: sig
+- question: Q10
+  manque: 'Date de la page « 800+ formats » non visible ; la fiche PDF de l''éditeur (SafeSoftware-FactSheet.pdf) est illisible
+    en extraction. Aucune source indépendante pour le chiffre. À sourcer. Consolidation : la fiche PDF est lisible ; elle
+    ne donne pas de nombre de formats.'
+  axe: sig
+- question: Q11
+  manque: Année de début du partenariat Esri / de l'extension non trouvée (la page partenaire Esri ne la donne pas ; le billet
+    de blogue Esri a répondu 403). À sourcer.
+  axe: sig
+- question: Q12
+  manque: 'Date exacte de l''annonce du changement de nom (année de sortie de FME 23.0 non lue sur une page ouverte) et effectif
+    actuel de Safe Software (récent mentionné dans des résultats de recherche, non ouvert). À sourcer. Consolidation : effectifs
+    divergents notés sur A-sig-08 (fiche de l''éditeur « 180+ », Business in Vancouver « 270 »).'
+  axe: sig
+- question: Q8
+  axe: origines
+  manque: 'Aucune source indépendante de Safe pour la date de première sortie de FME : 1996 vient d''un communiqué de Safe
+    (2008) et d''un fil du forum ; 1993 vient de la page d''histoire actuelle. L''annonce de 1996 (groupe de discussion, Google
+    Groups) n''a pas été ouverte.'
+visuels:
+- id: VIS-01
+  url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+  editeur: Safe Software
+  description: 'Figure de la page « What is FME » (légende « (right) ») : FME comme moteur central au milieu des formats pris
+    en charge. Image non vue, seulement signalée par la légende.'
+  utilite: Modèle d'un schéma en étoile pour illustrer « engine ».
+  usage: REDRAW
+terminologie:
+- terme: feature
+  francais: entité géographique
+  regle: « entité géographique » partout dans la voix et à l'écran ; « feature » montré une fois comme le mot de l'outil
+  ref: porte-expert.md#Q3
