@@ -32,3 +32,5 @@ FME001-M01-L01 storyboard réécrit (récit),97d54436-af59-5ae1-b5e1-362640cf04f
 "FME001-M01-L01 scènes, trois codeurs en parallèle",97d54436-af59-5ae1-b5e1-362640cf04f2,Codeur a : S01 et S02,claude-opus-5-5,29,58,146470,4521325,35863,0,0,5.9,
 "FME001-M01-L01 scènes, trois codeurs en parallèle",97d54436-af59-5ae1-b5e1-362640cf04f2,Codeur b : S03 et S04,claude-opus-5-5,31,62,154595,5015543,30941,0,0,5.2,
 "FME001-M01-L01 scènes, trois codeurs en parallèle",97d54436-af59-5ae1-b5e1-362640cf04f2,Codeur c : S05 à S07 (Sonnet),claude-sonnet-5-5,18,38,166210,2268663,26135,0,0,5.4,
+FME001-M01-L01 corrections après la porte du sens,97d54436-af59-5ae1-b5e1-362640cf04f2,Correcteur S01 et S02,claude-opus-5-5,51,104,246377,8908144,81095,0,0,12.6,
+FME001-M01-L01 corrections après la porte du sens,97d54436-af59-5ae1-b5e1-362640cf04f2,"Correcteur S03, S05 à S07",claude-sonnet-5-5,8,16,115865,709287,6882,0,0,0.9,

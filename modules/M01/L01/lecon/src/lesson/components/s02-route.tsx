@@ -1,7 +1,7 @@
 /**
  * Route d'écriture de S02 (dans un <svg>) : trois traits superposés, même
- * chemin, même instant, même durée (bord `encre` 11, chaussée `chaussee` 8,
- * axe `ecriture` 4), tracés à vitesse constante, **bouts ronds** et angles
+ * chemin, même instant, même durée (bord `encre` 13, chaussée `chaussee` 9,
+ * axe `ecriture` 5), tracés à vitesse constante, **bouts ronds** et angles
  * vifs (charte : « angles vifs, sauf les bouts ronds des routes »).
  *
  * Écart au moteur : `Trace` est à bouts nets en signature carte et n'a pas de
@@ -14,9 +14,9 @@ import { type Point, prog, THEME, useT } from "../../engine"
 
 const C = THEME.colors
 const LAYERS = [
-  { color: C.encre, width: 11 },
-  { color: C.chaussee, width: 8 },
-  { color: C.ecriture, width: 4 },
+  { color: C.encre, width: 13 },
+  { color: C.chaussee, width: 9 },
+  { color: C.ecriture, width: 5 },
 ] as const
 
 export function Route({ points, at, dur }: { readonly points: readonly Point[]; readonly at: number; readonly dur: number }) {

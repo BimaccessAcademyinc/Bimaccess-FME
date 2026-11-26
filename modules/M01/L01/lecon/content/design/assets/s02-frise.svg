@@ -1,64 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="100 180 1328 680" role="img" aria-label="Du contrat à FME : fondateurs, contrat, frise de 1993 à 1996, SAIF et ses routes de traduction, siège">
-<rect x="104.4" y="226.4" width="439.2" height="189.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="108" y="230" width="432" height="182" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M108 282 H540" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<path d="M183.2 402 H464.8" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<circle cx="301.2" cy="305.4" r="8.4" fill="#23281F"/>
-<path d="M289.2 319.8 L313.2 319.8 L316.8 355.8 L310.8 355.8 L308.4 334.2 L308.4 401.4 L302.4 401.4 L301.2 363 L300 401.4 L294 401.4 L294 334.2 L291.6 355.8 L285.6 355.8 Z" fill="#23281F"/>
-<circle cx="346.8" cy="305.4" r="8.4" fill="#23281F"/>
-<path d="M334.8 319.8 L358.8 319.8 L362.4 355.8 L356.4 355.8 L354 334.2 L354 401.4 L348 401.4 L346.8 363 L345.6 401.4 L339.6 401.4 L339.6 334.2 L337.2 355.8 L331.2 355.8 Z" fill="#23281F"/>
-<rect x="104.4" y="450.4" width="439.2" height="179.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="108" y="454" width="432" height="172" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M108 512 H540 M108 515 H540" fill="none" stroke="#23281F" stroke-width="1"/>
-<path d="M544 540 H1388" fill="none" stroke="#23281F" stroke-width="2.5"/>
-<path d="M1386 528 L1412 540 L1386 552 Z" fill="#23281F"/>
+<rect x="104.4" y="210.4" width="439.2" height="219.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="108" y="214" width="432" height="212" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M108 274 H540" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<path d="M183.2 416 H464.8" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<circle cx="298.4" cy="307.4" r="9.5" fill="#23281F"/>
+<path d="M284.9 323.6 L311.9 323.6 L315.9 364.1 L309.2 364.1 L306.5 339.8 L306.5 415.4 L299.7 415.4 L298.4 372.2 L297 415.4 L290.2 415.4 L290.2 339.8 L287.6 364.1 L280.8 364.1 Z" fill="#23281F"/>
+<circle cx="349.6" cy="307.4" r="9.5" fill="#23281F"/>
+<path d="M336.1 323.6 L363.1 323.6 L367.2 364.1 L360.4 364.1 L357.8 339.8 L357.8 415.4 L351 415.4 L349.6 372.2 L348.3 415.4 L341.5 415.4 L341.5 339.8 L338.8 364.1 L332.1 364.1 Z" fill="#23281F"/>
+<rect x="104.4" y="450.4" width="439.2" height="255.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="108" y="454" width="432" height="248" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M108 524 H540 M108 527 H540" fill="none" stroke="#23281F" stroke-width="1"/>
+<path d="M544 578 H1398" fill="none" stroke="#23281F" stroke-width="3"/>
+<path d="M1396 564 L1424 578 L1396 592 Z" fill="#23281F"/>
 <g id="s02-frise-rubrique">
-<path d="M124 592 H524" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+<path d="M128 652 H520" fill="none" stroke="#7D8576" stroke-width="0.8"/>
 </g>
 <g id="s02-frise-saif">
-<rect x="1060.4" y="280.4" width="189.2" height="139.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="1064" y="284" width="182" height="132" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M1064 340 H1246" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<rect x="1110.4" y="268.4" width="259.2" height="211.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="1114" y="272" width="252" height="204" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M1114 342 H1366" fill="none" stroke="#23281F" stroke-width="1.2"/>
 </g>
 <g id="s02-frise-logiciels">
-<rect x="640.4" y="226.4" width="99.2" height="67.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="643" y="229" width="94" height="62" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M643 241.9 H737" fill="none" stroke="#23281F" stroke-width="1.5"/>
-<path d="M650 235.5 H682" fill="none" stroke="#23281F" stroke-width="3"/>
-<path d="M712 232 h7 v7 h-7 Z M723 232 h7 v7 h-7 Z" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<path d="M643 244.6 H737" fill="none" stroke="#7D8576" stroke-width="0.8"/>
-<path d="M669.2 268.2 H680.4 M699.6 268.2 H710.8" fill="none" stroke="#23281F" stroke-width="1.5"/>
-<path d="M650 258.7 h19.2 v19 h-19.2 Z M680.4 258.7 h19.2 v19 h-19.2 Z M710.8 258.7 h19.2 v19 h-19.2 Z" fill="#FBFCF8" stroke="#23281F" stroke-width="1.6"/>
-<rect x="640.4" y="316.4" width="99.2" height="67.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="643" y="319" width="94" height="62" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M643 331.9 H737" fill="none" stroke="#23281F" stroke-width="1.5"/>
-<path d="M650 325.5 H682" fill="none" stroke="#23281F" stroke-width="3"/>
-<path d="M712 322 h7 v7 h-7 Z M723 322 h7 v7 h-7 Z" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<path d="M643 334.6 H737" fill="none" stroke="#7D8576" stroke-width="0.8"/>
-<rect x="650" y="340" width="80" height="36" fill="none" stroke="#23281F" stroke-width="1.5"/>
-<path d="M650 349 H730 M650 358 H730 M650 367 H730 M678.8 340 V376" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<rect x="640.4" y="406.4" width="99.2" height="67.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="643" y="409" width="94" height="62" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M643 421.9 H737" fill="none" stroke="#23281F" stroke-width="1.5"/>
-<path d="M650 415.5 H682" fill="none" stroke="#23281F" stroke-width="3"/>
-<path d="M712 412 h7 v7 h-7 Z M723 412 h7 v7 h-7 Z" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<path d="M643 424.6 H737" fill="none" stroke="#7D8576" stroke-width="0.8"/>
-<path d="M656.4 460.3 L674 433.7 L699.6 439.4 L694 461.4 Z" fill="none" stroke="#23281F" stroke-width="1.6"/>
-<path d="M706 435.6 L717.2 448.9 L728.4 451.6" fill="none" stroke="#23281F" stroke-width="1.6"/>
+<rect x="664.5" y="226.5" width="129" height="88" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="667.4" y="229.4" width="123.1" height="82.1" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M667.4 246.3 H790.5" fill="none" stroke="#23281F" stroke-width="1.5"/>
+<path d="M675.4 237.9 H718.6" fill="none" stroke="#23281F" stroke-width="3"/>
+<path d="M759.8 233.3 h9.1 v9.1 h-9.1 Z M773.4 233.3 h9.1 v9.1 h-9.1 Z" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<path d="M667.4 249.8 H790.5" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+<path d="M701.2 281.6 H716.1 M741.9 281.6 H756.8" fill="none" stroke="#23281F" stroke-width="1.5"/>
+<path d="M675.4 268.8 h25.8 v25.8 h-25.8 Z M716.1 268.8 h25.8 v25.8 h-25.8 Z M756.8 268.8 h25.8 v25.8 h-25.8 Z" fill="#FBFCF8" stroke="#23281F" stroke-width="1.6"/>
+<rect x="664.5" y="324.5" width="129" height="88" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="667.4" y="327.4" width="123.1" height="82.1" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M667.4 344.3 H790.5" fill="none" stroke="#23281F" stroke-width="1.5"/>
+<path d="M675.4 335.9 H718.6" fill="none" stroke="#23281F" stroke-width="3"/>
+<path d="M759.8 331.3 h9.1 v9.1 h-9.1 Z M773.4 331.3 h9.1 v9.1 h-9.1 Z" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<path d="M667.4 347.8 H790.5" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+<rect x="675.4" y="354.6" width="107.2" height="49.2" fill="none" stroke="#23281F" stroke-width="1.5"/>
+<path d="M675.4 366.9 H782.6 M675.4 379.2 H782.6 M675.4 391.5 H782.6 M713.9 354.6 V403.8" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<rect x="664.5" y="422.5" width="129" height="88" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="667.4" y="425.4" width="123.1" height="82.1" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M667.4 442.3 H790.5" fill="none" stroke="#23281F" stroke-width="1.5"/>
+<path d="M675.4 433.9 H718.6" fill="none" stroke="#23281F" stroke-width="3"/>
+<path d="M759.8 429.3 h9.1 v9.1 h-9.1 Z M773.4 429.3 h9.1 v9.1 h-9.1 Z" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<path d="M667.4 445.8 H790.5" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+<path d="M684 494 L707.5 458 L741.9 465.8 L734.3 495.6 Z" fill="none" stroke="#23281F" stroke-width="1.6"/>
+<path d="M750.4 460.6 L765.5 478.7 L780.4 482.2" fill="none" stroke="#23281F" stroke-width="1.6"/>
 </g>
 <g id="s02-frise-pointes">
-<path d="M1030 290 L1056 304 L1030 318 Z" fill="#C4472B" stroke="#23281F" stroke-width="2" stroke-linejoin="miter"/>
-<path d="M1030 336 L1056 350 L1030 364 Z" fill="#C4472B" stroke="#23281F" stroke-width="2" stroke-linejoin="miter"/>
-<path d="M1030 382 L1056 396 L1030 410 Z" fill="#C4472B" stroke="#23281F" stroke-width="2" stroke-linejoin="miter"/>
+<path d="M1074 308 L1106 324 L1074 340 Z" fill="#C4472B" stroke="#23281F" stroke-width="2" stroke-linejoin="miter"/>
+<path d="M1074 352 L1106 368 L1074 384 Z" fill="#C4472B" stroke="#23281F" stroke-width="2" stroke-linejoin="miter"/>
+<path d="M1074 396 L1106 412 L1074 428 Z" fill="#C4472B" stroke="#23281F" stroke-width="2" stroke-linejoin="miter"/>
 </g>
 <g id="s02-frise-annees">
-<rect x="900" y="534" width="450" height="12" fill="#FBFCF8" stroke="#23281F" stroke-width="1.5"/>
-<path d="M900 534 h150 v12 h-150 Z M1200 534 h150 v12 h-150 Z" fill="#23281F"/>
+<rect x="900" y="571" width="450" height="14" fill="#FBFCF8" stroke="#23281F" stroke-width="1.5"/>
+<path d="M900 571 h150 v14 h-150 Z M1200 571 h150 v14 h-150 Z" fill="#23281F"/>
 </g>
 <g id="s02-frise-lieu">
-<rect x="1100.4" y="736.4" width="299.2" height="83.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="1104" y="740" width="292" height="76" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<circle cx="1140" cy="778" r="11" fill="#FBFCF8" stroke="#23281F" stroke-width="2.5"/>
-<circle cx="1140" cy="778" r="4" fill="#23281F"/>
+<rect x="1104.4" y="770.4" width="319.2" height="85.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="1108" y="774" width="312" height="78" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<circle cx="1146" cy="813" r="12" fill="#FBFCF8" stroke="#23281F" stroke-width="2.5"/>
+<circle cx="1146" cy="813" r="4.5" fill="#23281F"/>
 </g>
 </svg>

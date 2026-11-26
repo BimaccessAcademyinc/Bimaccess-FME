@@ -1,56 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 180 1328 680" role="img" aria-label="Projet forestier : territoire, fondateurs, entreprises et leurs logiciels, gouvernement, échange arrêté sur un manque">
-<path d="M118 204 L760 192 L1410 214 L1404 846 L700 852 L124 836 Z" fill="none" stroke="#23281F" stroke-width="2" stroke-dasharray="16 5 3 5"/>
-<rect x="540.4" y="226.4" width="439.2" height="189.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="544" y="230" width="432" height="182" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M544 282 H976" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<path d="M619.2 402 H900.8" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<circle cx="737.2" cy="305.4" r="8.4" fill="#23281F"/>
-<path d="M725.2 319.8 L749.2 319.8 L752.8 355.8 L746.8 355.8 L744.4 334.2 L744.4 401.4 L738.4 401.4 L737.2 363 L736 401.4 L730 401.4 L730 334.2 L727.6 355.8 L721.6 355.8 Z" fill="#23281F"/>
-<circle cx="782.8" cy="305.4" r="8.4" fill="#23281F"/>
-<path d="M770.8 319.8 L794.8 319.8 L798.4 355.8 L792.4 355.8 L790 334.2 L790 401.4 L784 401.4 L782.8 363 L781.6 401.4 L775.6 401.4 L775.6 334.2 L773.2 355.8 L767.2 355.8 Z" fill="#23281F"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 180 1400 690" role="img" aria-label="Projet forestier : territoire, fondateurs, entreprises et leurs logiciels, gouvernement, échange arrêté sur un manque">
+<path d="M112 196 L770 186 L1420 204 L1426 378 L1494 396 L1490 672 L1424 688 L1418 858 L720 866 L118 852 Z" fill="none" stroke="#23281F" stroke-width="2" stroke-dasharray="16 5 3 5"/>
+<rect x="555.4" y="210.4" width="439.2" height="219.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="559" y="214" width="432" height="212" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M559 274 H991" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<path d="M634.2 416 H915.8" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<circle cx="749.4" cy="307.4" r="9.5" fill="#23281F"/>
+<path d="M735.9 323.6 L762.9 323.6 L766.9 364.1 L760.1 364.1 L757.5 339.8 L757.5 415.4 L750.7 415.4 L749.4 372.2 L748 415.4 L741.2 415.4 L741.2 339.8 L738.6 364.1 L731.8 364.1 Z" fill="#23281F"/>
+<circle cx="800.6" cy="307.4" r="9.5" fill="#23281F"/>
+<path d="M787.1 323.6 L814.1 323.6 L818.2 364.1 L811.4 364.1 L808.8 339.8 L808.8 415.4 L802 415.4 L800.6 372.2 L799.3 415.4 L792.5 415.4 L792.5 339.8 L789.9 364.1 L783.1 364.1 Z" fill="#23281F"/>
 <g id="s01-projet-entreprises">
-<rect x="170.4" y="450.4" width="369.2" height="199.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="174" y="454" width="362" height="192" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M174 534 H536" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<path d="M236.6 636 H473.4" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<circle cx="355" cy="555.4" r="7" fill="#23281F"/>
-<path d="M345 567.4 L365 567.4 L368 597.4 L363 597.4 L361 579.4 L361 635.4 L356 635.4 L355 603.4 L354 635.4 L349 635.4 L349 579.4 L347 597.4 L342 597.4 Z" fill="#23281F"/>
+<rect x="150.4" y="450.4" width="409.2" height="255.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="154" y="454" width="402" height="248" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M154 550 H556" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<path d="M223.9 692 H486.1" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<circle cx="355" cy="587.4" r="9.1" fill="#23281F"/>
+<path d="M342 603 L368 603 L371.9 642 L365.4 642 L362.8 618.6 L362.8 691.4 L356.3 691.4 L355 649.8 L353.7 691.4 L347.2 691.4 L347.2 618.6 L344.6 642 L338.1 642 Z" fill="#23281F"/>
 </g>
 <g id="s01-projet-gouvernement">
-<rect x="980.4" y="450.4" width="399.2" height="199.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="984" y="454" width="392" height="192" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M984 534 H1376" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<path d="M1052 636 H1308" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<circle cx="1180" cy="555.4" r="7" fill="#23281F"/>
-<path d="M1170 567.4 L1190 567.4 L1193 597.4 L1188 597.4 L1186 579.4 L1186 635.4 L1181 635.4 L1180 603.4 L1179 635.4 L1174 635.4 L1174 579.4 L1172 597.4 L1167 597.4 Z" fill="#23281F"/>
+<rect x="990.4" y="450.4" width="409.2" height="255.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="994" y="454" width="402" height="248" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M994 550 H1396" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<path d="M1063.9 692 H1326.1" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<circle cx="1195" cy="587.4" r="9.1" fill="#23281F"/>
+<path d="M1182 603 L1208 603 L1211.9 642 L1205.4 642 L1202.8 618.6 L1202.8 691.4 L1196.3 691.4 L1195 649.8 L1193.7 691.4 L1187.2 691.4 L1187.2 618.6 L1184.6 642 L1178.1 642 Z" fill="#23281F"/>
 </g>
 <g id="s01-projet-manque">
-<rect x="733" y="523" width="54" height="54" fill="#FBF1C8" stroke="#C99700" stroke-width="3" stroke-dasharray="8 5"/>
+<rect x="745" y="548" width="60" height="60" fill="#FBF1C8" stroke="#C99700" stroke-width="3" stroke-dasharray="8 5"/>
 </g>
 <g id="s01-projet-logiciels">
-<rect x="170.4" y="674.4" width="113.2" height="77.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="173" y="677" width="108" height="72" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M173 691.8 H281" fill="none" stroke="#23281F" stroke-width="1.5"/>
-<path d="M180 684.4 H217.9" fill="none" stroke="#23281F" stroke-width="3"/>
-<path d="M254 680.4 h8 v8 h-8 Z M266 680.4 h8 v8 h-8 Z" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<path d="M173 694.9 H281" fill="none" stroke="#7D8576" stroke-width="0.8"/>
-<path d="M202.6 722.8 H215.7 M238.3 722.8 H251.4" fill="none" stroke="#23281F" stroke-width="1.5"/>
-<path d="M180 711.5 h22.6 v22.6 h-22.6 Z M215.7 711.5 h22.6 v22.6 h-22.6 Z M251.4 711.5 h22.6 v22.6 h-22.6 Z" fill="#FBFCF8" stroke="#23281F" stroke-width="1.6"/>
-<rect x="298.4" y="674.4" width="113.2" height="77.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="301" y="677" width="108" height="72" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M301 691.8 H409" fill="none" stroke="#23281F" stroke-width="1.5"/>
-<path d="M308 684.4 H345.9" fill="none" stroke="#23281F" stroke-width="3"/>
-<path d="M382 680.4 h8 v8 h-8 Z M394 680.4 h8 v8 h-8 Z" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<path d="M301 694.9 H409" fill="none" stroke="#7D8576" stroke-width="0.8"/>
-<rect x="308" y="700.8" width="94" height="43.2" fill="none" stroke="#23281F" stroke-width="1.5"/>
-<path d="M308 711.6 H402 M308 722.4 H402 M308 733.2 H402 M341.8 700.8 V744" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<rect x="426.4" y="674.4" width="113.2" height="77.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="429" y="677" width="108" height="72" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M429 691.8 H537" fill="none" stroke="#23281F" stroke-width="1.5"/>
-<path d="M436 684.4 H473.9" fill="none" stroke="#23281F" stroke-width="3"/>
-<path d="M510 680.4 h8 v8 h-8 Z M522 680.4 h8 v8 h-8 Z" fill="none" stroke="#23281F" stroke-width="1.2"/>
-<path d="M429 694.9 H537" fill="none" stroke="#7D8576" stroke-width="0.8"/>
-<path d="M443.5 737.2 L464.2 705.6 L494.3 712.4 L487.7 738.6 Z" fill="none" stroke="#23281F" stroke-width="1.6"/>
-<path d="M501.8 707.9 L515 723.7 L528.1 726.8" fill="none" stroke="#23281F" stroke-width="1.6"/>
+<rect x="150.4" y="730.4" width="126.8" height="86.5" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="153.4" y="733.4" width="121" height="80.6" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M153.4 749.9 H274.3" fill="none" stroke="#23281F" stroke-width="1.5"/>
+<path d="M161.2 741.6 H203.6" fill="none" stroke="#23281F" stroke-width="3"/>
+<path d="M244.1 737.2 h9 v9 h-9 Z M257.5 737.2 h9 v9 h-9 Z" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<path d="M153.4 753.4 H274.3" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+<path d="M186.5 784.7 H201.2 M226.5 784.7 H241.2" fill="none" stroke="#23281F" stroke-width="1.5"/>
+<path d="M161.2 772 h25.3 v25.3 h-25.3 Z M201.2 772 h25.3 v25.3 h-25.3 Z M241.2 772 h25.3 v25.3 h-25.3 Z" fill="#FBFCF8" stroke="#23281F" stroke-width="1.6"/>
+<rect x="291.6" y="730.4" width="126.8" height="86.5" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="294.6" y="733.4" width="121" height="80.6" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M294.6 749.9 H415.5" fill="none" stroke="#23281F" stroke-width="1.5"/>
+<path d="M302.4 741.6 H344.8" fill="none" stroke="#23281F" stroke-width="3"/>
+<path d="M385.3 737.2 h9 v9 h-9 Z M398.7 737.2 h9 v9 h-9 Z" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<path d="M294.6 753.4 H415.5" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+<rect x="302.4" y="760" width="105.3" height="48.4" fill="none" stroke="#23281F" stroke-width="1.5"/>
+<path d="M302.4 772.1 H407.7 M302.4 784.2 H407.7 M302.4 796.3 H407.7 M340.3 760 V808.4" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<rect x="432.7" y="730.4" width="126.8" height="86.5" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="435.7" y="733.4" width="121" height="80.6" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M435.7 749.9 H556.6" fill="none" stroke="#23281F" stroke-width="1.5"/>
+<path d="M443.5 741.6 H485.9" fill="none" stroke="#23281F" stroke-width="3"/>
+<path d="M526.4 737.2 h9 v9 h-9 Z M539.8 737.2 h9 v9 h-9 Z" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<path d="M435.7 753.4 H556.6" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+<path d="M451.9 800.8 L475.1 765.4 L508.8 773 L501.4 802.4 Z" fill="none" stroke="#23281F" stroke-width="1.6"/>
+<path d="M517.2 768 L532 785.7 L546.7 789.1" fill="none" stroke="#23281F" stroke-width="1.6"/>
 </g>
 </svg>

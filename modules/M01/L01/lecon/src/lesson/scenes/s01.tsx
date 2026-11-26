@@ -2,20 +2,23 @@
  * S01 · Chaque entreprise forestière garde son logiciel (scène narrée, clip S01-01).
  * Composition, états et instants : spécification du groupe a, section S01.
  *
+ * Chaque élément arrive au début de la phrase qui le dit (première locution de
+ * la phrase) ; deux éléments d'une même phrase s'enchaînent.
+ *
  *   S01-1   image 0 : territoire et son nom, carte des fondateurs et leurs noms,
- *           mention de source, échelle, rose ; zone du titre vide
+ *           mention de source (lien), échelle, rose ; zone du titre vide
  *   S01-2   « Les entreprises forestières doivent » : cartes des entreprises et du
  *           gouvernement balayées ensemble, avec leurs noms
- *   S01-3   « partager leurs données géographiques » : la liaison se trace des
+ *   S01-3   même phrase, à la fin du balayage des cartes : la liaison se trace des
  *           entreprises vers le gouvernement, puis le manque or se balaie à son arrivée
- *   S01-4   « utilisent des logiciels différents » : les trois fenêtres
- *   S01-5   « garde donc son logiciel » : titre tapé ; mise en évidence sur les fenêtres
- *   S01-FIN « voient de près ce problème » : la mise en évidence passe aux fondateurs
+ *   S01-4   « Or les entreprises utilisent » : les trois fenêtres
+ *   S01-5   « Chaque entreprise garde donc » : titre tapé ; mise en évidence sur les fenêtres
+ *   S01-FIN « Murray et Lutz voient » : la mise en évidence passe aux fondateurs
  *           et y reste (la question finale ne change rien à l'écran)
  * Suivant : libre à la fin de la narration.
  */
 import { defineScene, focusAt, Highlight, illustration, ordered, SceneRoot, sceneTexts, Svg, THEME, tid, Title, Trace, useT, voice, Wipe } from "../../engine"
-import { partBox, RESERVE, RoleName, Source } from "../components/s01-commun"
+import { partBox, RESERVE, RoleName, Source, sourceHref } from "../components/s01-commun"
 
 const ID = "S01"
 const X = sceneTexts(ID, { screen: 6 })
@@ -30,10 +33,9 @@ const ROSE = illustration("rose-des-vents")
 const T = ordered(
   {
     entreprises: V.said("Les entreprises forestières doivent"),
-    partager: V.said("partager leurs données géographiques"),
-    logiciels: V.said("utilisent des logiciels différents"),
-    garde: V.said("garde donc son logiciel"),
-    voient: V.said("voient de près ce problème"),
+    logiciels: V.said("Or les entreprises utilisent"),
+    garde: V.said("Chaque entreprise garde donc"),
+    voient: V.said("Murray et Lutz voient"),
   },
   ID,
 )
@@ -44,10 +46,13 @@ const LINK_TRACE = 0.4
 const GAP_WIPE = 0.25
 const WINDOWS_WIPE = 0.4
 
+/** La liaison part à la fin du balayage des cartes, dans la phrase qui dit le partage. */
+const LINK_AT = T.entreprises + CARDS_WIPE
+
 const BOARDS = [
   { at: 0, on: "S01-1" },
   { at: T.entreprises, on: "S01-2" },
-  { at: T.partager, on: "S01-3" },
+  { at: LINK_AT, on: "S01-3" },
   { at: T.logiciels, on: "S01-4" },
   { at: T.garde, on: "S01-5" },
   { at: T.voient, on: "S01-FIN" },
@@ -60,8 +65,8 @@ const FOCUS = [
   { at: T.voient, on: "fondateurs" },
 ] as const
 
-const ENTREPRISES = partBox(170.4, 450.4, 369.2, 199.2)
-const GOUVERNEMENT = partBox(980.4, 450.4, 399.2, 199.2)
+const ENTREPRISES = partBox(150.4, 450.4, 409.2, 255.2)
+const GOUVERNEMENT = partBox(990.4, 450.4, 409.2, 255.2)
 
 function View() {
   const t = useT()
@@ -75,10 +80,10 @@ function View() {
         parts={[
           { group: "s01-projet-entreprises", at: T.entreprises, dur: CARDS_WIPE, dir: "right" },
           { group: "s01-projet-gouvernement", at: T.entreprises, dur: CARDS_WIPE, dir: "right" },
-          { group: "s01-projet-manque", at: T.partager + LINK_TRACE, dur: GAP_WIPE, dir: "right" },
+          { group: "s01-projet-manque", at: LINK_AT + LINK_TRACE, dur: GAP_WIPE, dir: "right" },
           { group: "s01-projet-logiciels", at: T.logiciels, dur: WINDOWS_WIPE, dir: "right" },
         ]}
-        style={{ position: "absolute", left: 100, top: 180, width: 1328, height: 680 }}
+        style={{ position: "absolute", left: 100, top: 180, width: 1400, height: 690 }}
         testId={tid(ID, "projet")}
       />
       <Svg svg={ECHELLE} at={0} dur={0} style={{ position: "absolute", left: 1480, top: 96, width: 300, height: 34 }} testId={tid(ID, "echelle")} />
@@ -86,37 +91,39 @@ function View() {
 
       {/* Liaison des entreprises vers le gouvernement, arrêtée sur le manque */}
       <svg aria-hidden="true" focusable="false" width={1920} height={1080} viewBox="0 0 1920 1080" style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
-        <Trace points={[[546, 550], [730, 550]]} at={T.partager} dur={LINK_TRACE} color={C.encre} width={2.5} />
+        <Trace points={[[566, 578], [742, 578]]} at={LINK_AT} dur={LINK_TRACE} color={C.encre} width={2.5} />
       </svg>
 
       {/* Nom de lieu du territoire, réserve `fond` */}
-      <div data-testid={tid(ID, "territoire")} style={{ position: "absolute", left: 888, top: 768, ...RESERVE, fontFamily: CAPS, fontWeight: 600, fontSize: 34, lineHeight: 1, letterSpacing: "0.3em", textTransform: "uppercase", color: C.encre, whiteSpace: "nowrap" }}>
+      <div data-testid={tid(ID, "territoire")} style={{ position: "absolute", right: 1920 - 1400, top: 788, ...RESERVE, fontFamily: CAPS, fontWeight: 600, fontSize: 38, lineHeight: 1, letterSpacing: "0.3em", textTransform: "uppercase", color: C.encre, whiteSpace: "nowrap" }}>
         {X.screen(1)}
       </div>
 
-      <RoleName x={544} y={230} w={432} h={52} testId={tid(ID, "fondateurs")}>
+      <RoleName x={559} y={214} w={432} h={60} testId={tid(ID, "fondateurs")}>
         {X.screen(2)}
       </RoleName>
 
       <Wipe at={T.entreprises} dur={CARDS_WIPE} dir="right" style={ENTREPRISES} testId={tid(ID, "entreprises")}>
-        <RoleName x={184} y={454} w={342} h={80} origin={ENTREPRISES} maxWidth={300}>
+        <RoleName x={154} y={454} w={402} h={96} origin={ENTREPRISES} maxWidth={340}>
           {X.screen(3)}
         </RoleName>
       </Wipe>
       <Wipe at={T.entreprises} dur={CARDS_WIPE} dir="right" style={GOUVERNEMENT} testId={tid(ID, "gouvernement")}>
-        <RoleName x={994} y={454} w={372} h={80} origin={GOUVERNEMENT} maxWidth={372}>
+        <RoleName x={994} y={454} w={402} h={96} origin={GOUVERNEMENT} maxWidth={402}>
           {X.screen(4)}
         </RoleName>
       </Wipe>
 
-      <Source testId={tid(ID, "source")}>{X.screen(5)}</Source>
+      <Source href={sourceHref(ID)} testId={tid(ID, "source")}>
+        {X.screen(5)}
+      </Source>
 
       <Title text={X.screen(0)} at={T.garde} style={{ position: "absolute", left: 104, top: 84 }} testId={tid(ID, "title")} />
 
-      <Highlight on={focus === "logiciels"} at={T.garde} style={{ position: "absolute", left: 170, top: 674, width: 370, height: 78 }} testId={tid(ID, "hl-logiciels")}>
+      <Highlight on={focus === "logiciels"} at={T.garde} style={{ position: "absolute", left: 150, top: 730, width: 410, height: 88 }} testId={tid(ID, "hl-logiciels")}>
         {null}
       </Highlight>
-      <Highlight on={focus === "fondateurs"} at={T.voient} style={{ position: "absolute", left: 540, top: 226, width: 440, height: 190 }} testId={tid(ID, "hl-fondateurs")}>
+      <Highlight on={focus === "fondateurs"} at={T.voient} style={{ position: "absolute", left: 555, top: 210, width: 440, height: 220 }} testId={tid(ID, "hl-fondateurs")}>
         {null}
       </Highlight>
     </SceneRoot>

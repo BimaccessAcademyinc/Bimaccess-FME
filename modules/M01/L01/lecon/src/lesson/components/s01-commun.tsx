@@ -5,10 +5,12 @@
  *   partBox   boîte de balayage d'un groupe de SVG, pour qu'un texte HTML posé
  *             dans ce groupe se découvre avec le même bord (même instant, même sens)
  *   RoleName  nom de rôle en en-tête de cartouche, centré dans le bandeau
- *   Source    mention de source en marge, calée par le bas à y 820, filet de 220 px
+ *   Source    mention de source en marge, calée par le bas à y 820, filet de 220 px,
+ *             lien vers l'adresse de la scène (`content/sources.json`)
  *   RESERVE   réserve `fond` d'un texte posé sur la face (amorces de quadrillage)
  */
-import type { CSSProperties, ReactNode } from "react"
+import { type CSSProperties, type ReactNode, useState } from "react"
+import SOURCES from "../../../content/sources.json"
 import { THEME } from "../../engine"
 
 const C = THEME.colors
@@ -26,11 +28,11 @@ export function partBox(x: number, y: number, w: number, h: number): CSSProperti
 /** Réserve d'un texte posé sur la face hors d'une carte : aplat `fond`, 2 px. */
 export const RESERVE: CSSProperties = { background: C.fond, padding: 2 }
 
-/** En-tête de cartouche : Barlow 600, 24 px, capitales, 0,32 em, interligne 1,2, encre (l'interlettrage de fin est compensé à gauche). */
+/** En-tête de cartouche : Barlow 600, 26 px (agrandi depuis 24 px avec la composition), capitales, 0,32 em, interligne 1,2, encre (l'interlettrage de fin est compensé à gauche). */
 const ROLE: CSSProperties = {
   fontFamily: THEME.fonts.capitales,
   fontWeight: 600,
-  fontSize: 24,
+  fontSize: 26,
   lineHeight: 1.2,
   letterSpacing: "0.32em",
   paddingLeft: "0.32em",
@@ -53,16 +55,37 @@ export function RoleName({ x, y, w, h, origin, maxWidth, children, testId }: { r
 }
 
 /**
- * Mention de source (marge) : x 1448, bas à y 820, 250 px au plus ; serif
- * italique 400, 24 px, interligne 1,2, couleur `lien` ; filet `encre` 1,2 px
- * de 220 px, 10 px au-dessus de la première ligne. À la première image.
- * Pas de lien : la cible n'est pas fournie (point ouvert 1 de la spécification).
+ * Adresse de la mention de source d'une scène, lue dans `content/sources.json`
+ * (clé `sources`, tirée du pack). Jamais écrite en dur dans une scène.
  */
-export function Source({ children, testId }: { readonly children: ReactNode; readonly testId: string }) {
+export function sourceHref(id: string): string {
+  const href = (SOURCES.sources as Readonly<Record<string, string | undefined>>)[id]
+  if (!href) throw new Error(`content/sources.json : aucune adresse pour la scène ${id}`)
+  return href
+}
+
+/**
+ * Mention de source (marge) : x 1448, bas à y 820, 250 px au plus ; serif
+ * italique 400, 24 px, interligne 1,2, couleur `lien` (survol `lienSurvol`),
+ * soulignée ; filet `encre` 1,2 px de 220 px, 10 px au-dessus de la première
+ * ligne. À la première image. Lien ouvert dans un nouvel onglet.
+ */
+export function Source({ href, children, testId }: { readonly href: string; readonly children: ReactNode; readonly testId: string }) {
+  const [hover, setHover] = useState(false)
   return (
-    <div data-testid={testId} style={{ position: "absolute", left: 1448, bottom: 1080 - 820, width: 250 }}>
+    <div style={{ position: "absolute", left: 1448, bottom: 1080 - 820, width: 250 }}>
       <div aria-hidden="true" style={{ width: 220, height: 1.2, background: C.encre, marginBottom: 10 }} />
-      <div style={{ fontFamily: THEME.fonts.serif, fontStyle: "italic", fontWeight: 400, fontSize: 24, lineHeight: 1.2, color: C.lien, ...RESERVE, margin: -2 }}>{children}</div>
+      <a
+        data-testid={testId}
+        href={href}
+        target="_blank"
+        rel="noopener"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        style={{ display: "block", fontFamily: THEME.fonts.serif, fontStyle: "italic", fontWeight: 400, fontSize: 24, lineHeight: 1.2, color: hover ? C.lienSurvol : C.lien, textDecoration: "underline", textUnderlineOffset: 3, cursor: "pointer", pointerEvents: "auto", ...RESERVE, margin: -2 }}
+      >
+        {children}
+      </a>
     </div>
   )
 }
