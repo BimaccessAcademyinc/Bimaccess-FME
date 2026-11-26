@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <pattern id="planche-grille" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1" fill="#D3D8DF"/>
+    </pattern>
+  </defs>
+
+  <!-- Espace objet : fond blanc et grille de points de 24 px -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#planche-grille)"/>
+
+  <!-- Feuille de donnée « Conduite d'eau » -->
+  <g id="planche-feuille">
+    <rect x="336" y="104" width="780" height="604" fill="#111418" fill-opacity="0.08"/>
+    <rect x="330" y="96" width="780" height="604" fill="#FFFFFF" stroke="#111418" stroke-width="3" stroke-linejoin="miter"/>
+    <!-- Bandeau titré -->
+    <rect x="331.5" y="97.5" width="777" height="62.5" fill="#F4F6F8"/>
+    <line x1="330" y1="160" x2="1110" y2="160" stroke="#111418" stroke-width="1.4" stroke-linecap="butt"/>
+    <text x="354" y="139" font-family="Azeret Mono" font-weight="400" font-size="30" fill="#111418">Conduite d'eau</text>
+  </g>
+
+  <!-- Cadre principal et tracé de la conduite -->
+  <g id="planche-cadre">
+    <rect x="354" y="184" width="732" height="286" fill="none" stroke="#C4CAD2" stroke-width="1.4" stroke-linejoin="miter"/>
+    <polyline points="354,330 600,330 760,410 1086,410" fill="none" stroke="#111418" stroke-width="4" stroke-linecap="butt" stroke-linejoin="miter"/>
+  </g>
+
+  <!-- Tableau de deux lignes -->
+  <g id="planche-tableau">
+    <rect x="354" y="494" width="366" height="182" fill="none" stroke="#C4CAD2" stroke-width="1.4" stroke-linejoin="miter"/>
+    <line x1="354" y1="585" x2="720" y2="585" stroke="#E6E9ED" stroke-width="1" stroke-linecap="butt"/>
+    <text x="392" y="564" font-family="IBM Plex Sans" font-weight="400" font-size="26" fill="#111418">Usage : eau potable</text>
+    <text x="392" y="636" font-family="IBM Plex Sans" font-weight="400" font-size="26" fill="#111418">Matériau : fonte</text>
+  </g>
+
+  <!-- Cartouche « Repère » : case de titre, case du globe -->
+  <g id="planche-cartouche">
+    <rect x="744" y="494" width="342" height="182" fill="none" stroke="#C4CAD2" stroke-width="1.4" stroke-linejoin="miter"/>
+    <line x1="744" y1="542" x2="1086" y2="542" stroke="#C4CAD2" stroke-width="1.4" stroke-linecap="butt"/>
+    <text x="764" y="527" font-family="Azeret Mono" font-weight="400" font-size="24" fill="#4A525D">Repère</text>
+    <!-- Globe au trait, sans nom de système -->
+    <circle cx="915" cy="609" r="56" fill="none" stroke="#111418" stroke-width="1.6"/>
+    <line x1="915" y1="553" x2="915" y2="665" stroke="#4A525D" stroke-width="1" stroke-linecap="butt"/>
+    <ellipse cx="915" cy="609" rx="22" ry="56" fill="none" stroke="#4A525D" stroke-width="1"/>
+    <ellipse cx="915" cy="609" rx="42" ry="56" fill="none" stroke="#4A525D" stroke-width="1"/>
+    <line x1="864.4" y1="585" x2="965.6" y2="585" stroke="#4A525D" stroke-width="1" stroke-linecap="butt"/>
+    <line x1="864.4" y1="633" x2="965.6" y2="633" stroke="#4A525D" stroke-width="1" stroke-linecap="butt"/>
+    <!-- Point posé sur l'hémisphère visible -->
+    <circle cx="935" cy="585" r="5" fill="#111418"/>
+  </g>
+
+  <!-- Étiquette « Géométrie » : point, oblique, palier -->
+  <g id="planche-nom-geometrie">
+    <circle cx="380" cy="330" r="2" fill="#111418"/>
+    <polyline points="380,330 340,290 96,290" fill="none" stroke="#111418" stroke-width="1.2" stroke-linecap="butt" stroke-linejoin="miter"/>
+    <text x="96" y="280" font-family="Azeret Mono" font-weight="400" font-size="26" fill="#111418">Géométrie</text>
+  </g>
+
+  <!-- Étiquette « Attributs » -->
+  <g id="planche-nom-attributs">
+    <circle cx="370" cy="555" r="2" fill="#111418"/>
+    <polyline points="370,555 335,590 96,590" fill="none" stroke="#111418" stroke-width="1.2" stroke-linecap="butt" stroke-linejoin="miter"/>
+    <text x="96" y="580" font-family="Azeret Mono" font-weight="400" font-size="26" fill="#111418">Attributs</text>
+  </g>
+
+  <!-- Étiquette « Système de coordonnées » : repère qui descend sous la feuille -->
+  <g id="planche-nom-systeme">
+    <circle cx="915" cy="650" r="2" fill="#111418"/>
+    <polyline points="915,650 1027,762 712,762" fill="none" stroke="#111418" stroke-width="1.2" stroke-linecap="butt" stroke-linejoin="miter"/>
+    <text x="1086" y="752" text-anchor="end" font-family="Azeret Mono" font-weight="400" font-size="26" fill="#111418">Système de coordonnées</text>
+  </g>
+
+  <!-- Accolade cyan à angles vifs : cadre principal et cartouche -->
+  <polyline id="planche-accolade" points="1124,184 1140,184 1140,420 1156,430 1140,440 1140,676 1124,676" fill="none" stroke="#0096C7" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/>
+
+  <!-- Mise en évidence unique (état final) : le cartouche -->
+  <g id="planche-evidence">
+    <rect x="736" y="486" width="358" height="198" fill="none" stroke="#1F6BFF" stroke-width="2" stroke-dasharray="10 6" stroke-linejoin="miter"/>
+    <rect x="730" y="480" width="12" height="12" fill="#1F6BFF"/>
+    <rect x="1088" y="480" width="12" height="12" fill="#1F6BFF"/>
+    <rect x="730" y="678" width="12" height="12" fill="#1F6BFF"/>
+    <rect x="1088" y="678" width="12" height="12" fill="#1F6BFF"/>
+  </g>
+
+  <!-- Panneau de choix (composant du lecteur, dessiné pour la comparaison) -->
+  <g id="planche-choix">
+    <rect x="1206" y="128" width="624" height="600" fill="#111418" fill-opacity="0.08"/>
+    <rect x="1200" y="120" width="624" height="600" fill="#FFFFFF" stroke="#D5DAE1" stroke-width="1.4" stroke-linejoin="miter"/>
+    <text font-family="IBM Plex Sans" font-weight="600" font-size="30" fill="#111418">
+      <tspan x="1232" y="178">Quelle partie de cette donnée situe</tspan>
+      <tspan x="1232" y="218">la conduite sur la Terre&#160;?</tspan>
+    </text>
+
+    <!-- a, sélectionné : bord plein et poignées bleues -->
+    <rect x="1232" y="256" width="560" height="64" fill="#E3EDFB" stroke="#1F6BFF" stroke-width="2" stroke-linejoin="miter"/>
+    <rect x="1227" y="251" width="10" height="10" fill="#1F6BFF"/>
+    <rect x="1787" y="251" width="10" height="10" fill="#1F6BFF"/>
+    <rect x="1227" y="315" width="10" height="10" fill="#1F6BFF"/>
+    <rect x="1787" y="315" width="10" height="10" fill="#1F6BFF"/>
+    <text x="1256" y="297" font-family="Azeret Mono" font-weight="400" font-size="26" fill="#111418">a</text>
+    <text x="1296" y="297" font-family="IBM Plex Sans" font-weight="400" font-size="26" fill="#111418">Le tracé de la conduite</text>
+
+    <!-- b -->
+    <rect x="1232" y="336" width="560" height="64" fill="#FFFFFF" stroke="#C4CAD2" stroke-width="1.4" stroke-linejoin="miter"/>
+    <text x="1256" y="377" font-family="Azeret Mono" font-weight="400" font-size="26" fill="#4A525D">b</text>
+    <text x="1296" y="377" font-family="IBM Plex Sans" font-weight="400" font-size="26" fill="#111418">L'usage et le matériau</text>
+
+    <!-- c -->
+    <rect x="1232" y="416" width="560" height="64" fill="#FFFFFF" stroke="#C4CAD2" stroke-width="1.4" stroke-linejoin="miter"/>
+    <text x="1256" y="457" font-family="Azeret Mono" font-weight="400" font-size="26" fill="#4A525D">c</text>
+    <text x="1296" y="457" font-family="IBM Plex Sans" font-weight="400" font-size="26" fill="#111418">Le repère du cartouche</text>
+
+    <!-- Conséquence de a, sans verdict (panneau d'information) -->
+    <rect x="1232" y="504" width="560" height="184" fill="#FFFFFF" stroke="#D5DAE1" stroke-width="1.4" stroke-linejoin="miter"/>
+    <rect x="1232" y="504" width="5" height="184" fill="#0096C7"/>
+    <text font-family="IBM Plex Sans" font-weight="400" font-size="24" fill="#111418">
+      <tspan x="1260" y="546">Le tracé est la géométrie : il porte</tspan>
+      <tspan x="1260" y="582">l'information de position de la conduite.</tspan>
+      <tspan x="1260" y="618">Seul, il ne dit pas où cette position se</tspan>
+      <tspan x="1260" y="654">trouve sur la Terre.</tspan>
+    </text>
+  </g>
+</svg>
