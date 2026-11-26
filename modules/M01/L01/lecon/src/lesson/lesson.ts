@@ -1,12 +1,17 @@
 /**
  * La leçon : toutes les scènes du storyboard, dans son ordre.
  * defineLesson casse au chargement si une scène manque ou est en trop.
- * S02 à S08 sont en attente de leur code (scenes/attente.tsx).
+ * Une scène pas encore composée passe par scenes/attente.tsx.
  */
 import { defineLesson } from "../engine"
-import { exercisePending, narratedPending } from "./scenes/attente"
 import { s01 } from "./scenes/s01"
+import { s02 } from "./scenes/s02"
+import { s03 } from "./scenes/s03"
+import { s04 } from "./scenes/s04"
+import { s05 } from "./scenes/s05"
+import { s06 } from "./scenes/s06"
+import { s07 } from "./scenes/s07"
 
 export const LESSON = defineLesson({
-  scenes: [s01, narratedPending("S02"), exercisePending("S03"), narratedPending("S04"), narratedPending("S05"), narratedPending("S06"), narratedPending("S07"), narratedPending("S08")],
+  scenes: [s01, s02, s03, s04, s05, s06, s07],
 })
