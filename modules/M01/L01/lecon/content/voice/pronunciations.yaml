@@ -1,0 +1,11 @@
+# Prononciations de FME001-M01-L01. Alias appliqués avant l'envoi, mots entiers, sensible à la casse.
+# Familles reprises de CER001 : sigle épelé = lettres à points ; terme anglais = balises d'accent.
+rules:
+  - { grapheme: "Feature Manipulation Engine", alias: "[American accent] Feature Manipulation Engine [French Canadian accent]" }
+  - { grapheme: "Safe Software", alias: "[American accent] Safe Software [French Canadian accent]" }
+  - { grapheme: "Don Murray", alias: "[American accent] Don Murray [French Canadian accent]" }
+  - { grapheme: "Dale Lutz", alias: "[American accent] Dale Lutz [French Canadian accent]" }
+  - { grapheme: "Surrey", alias: "[American accent] Surrey [French Canadian accent]" }
+  - { grapheme: "SAIF", alias: "safe" }
+  - { grapheme: "FME", alias: "F. M. E." }
+  - { grapheme: "SIG", alias: "S. I. G." }
