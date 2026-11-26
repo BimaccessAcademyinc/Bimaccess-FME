@@ -33,3 +33,10 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 |---|---|---|
 | Premier essai du banc sur une étape qui se juge : deux scénaristes sur le même brief, jugés en aveugle par trois relecteurs neufs (la relecture de la chaîne sert de jugement) | | `banc/grille-storyboard.md`, `banc/juger_storyboards.sh` |
 | Le candidat Fable s'arrête à la limite d'usage du compte, valable jusqu'au 2026-11-30 | arrêt au premier tour | candidat remplacé par Sonnet ; l'agent de direction artistique de la chaîne, fixé sur Fable, aurait été bloqué de même : chaque agent fixé sur un modèle doit avoir un modèle de repli écrit dans sa définition |
+
+## 2026-11-26 · Thèmes des planches (FME001)
+
+| Constat | Mesure | Décision |
+|---|---|---|
+| Première série de quatre thèmes écartée par Ilyas : les quatre restaient dans la charte CAD 2D construite pour la formation buildingSMART ; c'est le brief de la direction artistique qui l'imposait (« tous restent dans la signature CAD 2D ») | 1 direction artistique et 4 graphistes, environ 15 min d'agents, refaits | une charte appartient à un cours : un nouveau cours ne l'hérite pas ; l'étape des thèmes propose des identités nées du sujet, et la charte du cours s'écrit seulement après le choix |
+| Deuxième série faite avec l'outil de design (canevas), quatre identités nées du SIG et de l'échange de données, sur la scène qui montre à la fois une entité, des formats et le moteur (S05) | 4 artboards | la scène d'essai d'un thème doit montrer ce qui distingue les thèmes (la S03 ne montrait ni format ni moteur) |

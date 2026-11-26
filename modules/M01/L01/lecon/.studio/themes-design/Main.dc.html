@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Thème 1 · Carte topographique</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&amp;family=Barlow+Condensed:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#7A4A22}a:hover{color:#4F2E12}
+</style>
+</helmet>
+<div style="width: 1920px; height: 1080px; position: relative; overflow: hidden; background: #F1F3EC; font-family: 'Source Serif 4', serif; color: #23281F">
+  <svg width="1920" height="1080" viewBox="0 0 1920 1080" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+    <path d="{{contours}}" fill="none" stroke="#B08A62" stroke-width="1.3"></path>
+    <path d="{{contoursMajor}}" fill="none" stroke="#8E6640" stroke-width="2.2"></path>
+    <path d="{{roads}}" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"></path>
+    <path d="{{roads}}" fill="none" stroke="#C4472B" stroke-width="5" stroke-linecap="round"></path>
+    <path d="{{readRoad}}" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"></path>
+    <path d="{{readRoad}}" fill="none" stroke="#2F6DA8" stroke-width="6" stroke-linecap="round"></path>
+    <rect x="40" y="40" width="1840" height="1000" fill="none" stroke="#23281F" stroke-width="2"></rect>
+    <rect x="52" y="52" width="1816" height="976" fill="none" stroke="#23281F" stroke-width="0.8"></rect>
+  </svg>
+
+  <h1 style="position: absolute; left: 112px; top: 76px; margin: 0; font-size: 66px; font-weight: 600; letter-spacing: -0.01em; line-height: 1">Un moteur au centre.</h1>
+
+  <sc-for list="{{sheets}}" as="s" hint-placeholder-count="8">
+    <div style="position: absolute; left: {{s.left}}px; top: {{s.top}}px; width: 150px; height: 98px; box-sizing: border-box; background: #FBFCF8; border: 2px solid #23281F; outline: 1px solid #23281F; outline-offset: 3px">
+      <svg width="146" height="94" viewBox="0 0 146 94" aria-hidden="true" style="display: block">
+        <path d="M0 31H146M0 63H146M49 0V94M97 0V94" stroke="#C9CFC0" stroke-width="1"></path>
+        <path d="{{s.squiggle}}" fill="none" stroke="#B08A62" stroke-width="1.4"></path>
+      </svg>
+    </div>
+  </sc-for>
+
+  <div style="position: absolute; left: 912px; top: 452px; width: 96px; height: 96px; border: 2px dashed #2F6DA8; border-radius: 50%; box-sizing: border-box"></div>
+  <svg width="64" height="58" viewBox="0 0 64 58" style="position: absolute; left: 928px; top: 466px" role="img" aria-label="Point géodésique : le moteur">
+    <path d="M32 4 L60 54 H4 Z" fill="#FBFCF8" stroke="#23281F" stroke-width="3" stroke-linejoin="miter"></path>
+    <circle cx="32" cy="38" r="5" fill="#23281F"></circle>
+  </svg>
+  <div style="position: absolute; left: 860px; top: 556px; width: 200px; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 34px; letter-spacing: 0.24em; text-transform: uppercase; background: #F1F3EC; padding: 2px 0">Moteur</div>
+
+  <div style="position: absolute; left: 1456px; top: 76px; width: 352px; box-sizing: border-box; padding: 20px 24px; background: #FBFCF8; border: 1.5px solid #23281F; display: flex; flex-direction: column; gap: 18px">
+    <div style="display: flex; align-items: center; gap: 18px">
+      <div style="width: 54px; height: 36px; box-sizing: border-box; border: 2px solid #23281F; outline: 1px solid #23281F; outline-offset: 2px; background: #FBFCF8; flex-shrink: 0"></div>
+      <span style="font-style: italic; font-size: 28px; line-height: 1.15">Formats pris en charge</span>
+    </div>
+    <svg width="300" height="44" viewBox="0 0 300 44" aria-hidden="true">
+      <path d="M8 22 H292" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"></path>
+      <path d="M8 22 H292" stroke="#C4472B" stroke-width="5" stroke-linecap="round"></path>
+    </svg>
+  </div>
+
+  <svg width="60" height="92" viewBox="0 0 60 92" style="position: absolute; left: 1752px; top: 740px" aria-hidden="true">
+    <path d="M30 6 L48 84 L30 70 L12 84 Z" fill="none" stroke="#23281F" stroke-width="2"></path>
+    <path d="M30 6 L30 70 L12 84 Z" fill="#23281F"></path>
+  </svg>
+
+  <a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm" style="position: absolute; left: 1360px; top: 864px; font-style: italic; font-size: 24px">D'après Safe Software</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1920,"height":1080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var cx = 960, cy = 500, rx = 430, ry = 290, n = 8;
+    var sheets = [], roads = '', readRoad = '';
+    for (var i = 0; i < n; i++) {
+      var a = -Math.PI / 2 + i * 2 * Math.PI / n;
+      var x = Math.round(cx + rx * Math.cos(a)), y = Math.round(cy + ry * Math.sin(a));
+      var sq = '';
+      for (var k = 0; k <= 20; k++) {
+        var px = 6 + k * 6.7, py = 47 + 16 * Math.sin(k * 0.55 + i) + 6 * Math.sin(k * 1.3 - i);
+        sq += (k ? 'L' : 'M') + px.toFixed(1) + ' ' + py.toFixed(1);
+      }
+      sheets.push({ left: x - 75, top: y - 49, squiggle: sq });
+      var seg = 'M' + x + ' ' + y + ' L' + cx + ' ' + cy;
+      if (i === 6) { readRoad = seg; } else { roads += seg + ' '; }
+    }
+    function ring(scale, k) {
+      var d = '';
+      for (var j = 0; j <= 96; j++) {
+        var t = j / 96 * Math.PI * 2;
+        var w = 1 + 0.06 * Math.sin(3 * t + k) + 0.035 * Math.sin(5 * t - 2 * k) + 0.02 * Math.sin(9 * t + k * 0.7);
+        var px = cx + 1.18 * rx * scale * w * Math.cos(t), py = cy + 1.18 * ry * scale * w * Math.sin(t);
+        d += (j ? 'L' : 'M') + px.toFixed(1) + ' ' + py.toFixed(1);
+      }
+      return d + 'Z ';
+    }
+    var contours = '', contoursMajor = '';
+    for (var k = 1; k <= 10; k++) {
+      var r = ring(k * 0.11, k);
+      if (k % 5 === 0) { contoursMajor += r; } else { contours += r; }
+    }
+    return { sheets: sheets, roads: roads, readRoad: readRoad, contours: contours, contoursMajor: contoursMajor };
+  }
+}
+</script>
+</body>
+</html>
