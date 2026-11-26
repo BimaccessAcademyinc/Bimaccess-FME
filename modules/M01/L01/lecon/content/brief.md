@@ -7,7 +7,7 @@
 | Objectif | 1. raconter le problème de départ (des logiciels différents qui doivent échanger des données géographiques) et la réponse que FME y apporte ; 2. dire qui a créé FME et quand (Safe Software, 1993 ; FME, 1996) ; 3. reconnaître, devant une donnée géographique, les trois parties d'une entité géographique (géométrie, attributs, système de coordonnées) ; 4. expliquer que FME lit, transforme puis écrit les données, comme un moteur au milieu des formats |
 | Durée maximale | 8 minutes (6 à 8) |
 | Langue | fr |
-| Voix | voix provisoire muette pendant la production (minutage estimé, sous-titres) ; voix finale ElevenLabs après la porte du sens, à décider avec Ilyas |
+| Voix | sans voix pour l'instant, sous-titres seulement : revue de l'animation (décision d'Ilyas, 2026-11-26) ; la voix d'usage (Alexandre Boutin, eleven_v3) est préparée dans content/voice/ sans génération |
 | Contrôle automatique | Playwright utilisable (find-playwright.mjs : Playwright 1.63.0, Chromium 158) |
 | Ton | clair et direct, narration à la troisième personne |
 | Interactivité | un exercice en mode conséquence (sans verdict), proposé par le scénariste là où l'objectif 3 se pratique |

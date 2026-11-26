@@ -26,7 +26,7 @@ Une leçon produite de A à Z, de meilleure qualité que les leçons CER001, plu
 | 6 | Signature « carte » dans le lecteur (troisième signature, polices embarquées hors ligne) | code | à venir |
 | 7 | Spécification et planches des huit scènes, scènes codées sur voix provisoire muette, contrôles verts | graphiste, code, QA | à venir |
 | 8 | Porte du sens : planche par phrase, plus les trois points révisables (durée, exemples, noms des fondateurs) | Ilyas | à venir |
-| 9 | Corrections, voix finale ElevenLabs une seule fois (clé par le formulaire sécurisé), recalage | voix, code | à venir |
+| 9 | Corrections après la porte du sens ; **pas de voix pour l'instant** (décision d'Ilyas, 2026-11-26) : revue de l'animation avec sous-titres ; la voix d'usage est préparée sans génération | graphiste, code | en cours |
 | 10 | Livraison `dist/index.html` et bilan L01 (temps, tokens, défauts vus par Ilyas et ratés par les relecteurs) | QA, orchestrateur | à venir |
 | 11 | Report du harnais dans le dépôt source et export ; L02 à L05 dans la charte FME001, sans étape des thèmes (une charte est en place) | tous | à venir |
 

@@ -1,0 +1,10 @@
+{
+  "_note": "Adresse ouverte par la mention de source de chaque scène ; tirée du pack (affirmations.yaml).",
+  "sources": {
+    "S01": "https://techcouver.com/2023/04/13/data-integration-safe-software-refreshes-brand-target-growth/",
+    "S02": "https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/",
+    "S03": "https://docs.ogc.org/as/17-087r13/17-087r13.html",
+    "S05": "https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/aboutFeatures/feature-type-attributes-about.htm",
+    "S06": "https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm"
+  }
+}
