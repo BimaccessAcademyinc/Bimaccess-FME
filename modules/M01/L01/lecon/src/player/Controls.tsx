@@ -3,9 +3,11 @@
  * image), sous-titres, Suivant avec son verrou visible. Signature bimaccess :
  * curseur rempli à la couleur du programme (variable --p), cadenas au trait
  * d'action-button.html ; le reste est du style (player-bimaccess.css).
+ * Signature carte : même curseur rempli (--p, encre) et même cadenas au trait
+ * (player-carte.css).
  */
 import type { CSSProperties } from "react"
-import { BIM } from "../engine/signature"
+import { BIM, CARTE } from "../engine/signature"
 import { L } from "../i18n"
 
 const Icon = ({ d }: { readonly d: string }) => (
@@ -56,7 +58,7 @@ export function Controls({
   readonly onCaptions: () => void
 }) {
   const max = Math.max(0, duration - 1)
-  const scrubStyle = BIM ? ({ "--p": `${max > 0 ? (100 * Math.min(frame, max)) / max : 0}%` } as CSSProperties) : undefined
+  const scrubStyle = BIM || CARTE ? ({ "--p": `${max > 0 ? (100 * Math.min(frame, max)) / max : 0}%` } as CSSProperties) : undefined
   return (
     <footer className="studio-foot">
       <button type="button" className="studio-btn studio-prev" data-testid="previous" disabled={disabled || isFirst} onClick={onPrevious}>
@@ -86,7 +88,7 @@ export function Controls({
       <div className="studio-next-box">
         {nextAllowed ? null : (
           <span className="studio-lock" data-testid="next-locked" title={L.locked} role="img" aria-label={L.locked}>
-            {BIM ? <Padlock /> : <Icon d={LOCK} />}
+            {BIM || CARTE ? <Padlock /> : <Icon d={LOCK} />}
           </span>
         )}
         <button type="button" className="studio-btn studio-btn-primary studio-next" data-testid="next" disabled={disabled || !nextAllowed} onClick={onNext}>

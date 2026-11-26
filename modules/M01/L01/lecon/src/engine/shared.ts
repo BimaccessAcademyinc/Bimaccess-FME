@@ -1,6 +1,6 @@
 /**
- * Pièces communes aux composants de scène des deux signatures (components.tsx,
- * bimaccess.tsx) : horloge de scène, zone d'action, préfixe des data-testid,
+ * Pièces communes aux composants de scène des signatures (components.tsx,
+ * bimaccess.tsx, carte.tsx) : horloge de scène, zone d'action, préfixe des data-testid,
  * découpage des sous-titres en phrases.
  */
 import { createContext } from "react"
@@ -14,8 +14,8 @@ import type { Word } from "./types"
 export const SceneClock = createContext<{ readonly narrationEnd: number }>({ narrationEnd: 0 })
 
 /**
- * Zone d'action de la scène (signature bimaccess) : élément placé par
- * SceneRoot en bas à droite de la composition (DESIGN.md § 4), où ChoicePanel
+ * Zone d'action de la scène (signatures bimaccess et carte) : élément placé
+ * par SceneRoot en bas à droite de la composition, où ChoicePanel
  * rend VALIDER et CONTINUER. null hors SceneRoot : les boutons restent alors
  * sous le panneau.
  */

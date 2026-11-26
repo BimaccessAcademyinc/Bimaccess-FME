@@ -6,7 +6,7 @@ Le projet joue des contenus narrés et interactifs (formations, présentations, 
 
 ## 1. Pile et contraintes
 
-- Vite 8, React 19, TypeScript strict (`noUncheckedIndexedAccess`, `noUnusedLocals`), Remotion 4 (`remotion`, `@remotion/player`), `yaml` pour la synchronisation, `@fontsource/azeret-mono`, `@fontsource/ibm-plex-sans`, `@fontsource/fraunces` (polices de la signature bimaccess, licence OFL).
+- Vite 8, React 19, TypeScript strict (`noUncheckedIndexedAccess`, `noUnusedLocals`), Remotion 4 (`remotion`, `@remotion/player`), `yaml` pour la synchronisation, `@fontsource/azeret-mono`, `@fontsource/ibm-plex-sans`, `@fontsource/fraunces` (polices de la signature bimaccess), `@fontsource/source-serif-4`, `@fontsource/barlow-condensed` (polices de la signature carte), licence OFL.
 - `vite-plugin-singlefile` : `npm run build` produit `dist/index.html` (JavaScript et CSS en ligne) et `dist/audio/*.mp3` (copiés depuis `public/audio/`, que remplit `scripts/sync.mjs`).
 - La page marche servie (`npm run preview`) **et** en `file://` : aucun `fetch` de données (tout est dans les modules générés), l'audio est lu par `<Html5Audio>` de Remotion depuis un chemin relatif (`audio/S01-01.mp3`).
 - Aucune dépendance réseau à l'exécution. Polices : celles de la signature (§ 9), paquets `@fontsource` mis en ligne dans `dist/index.html` par la construction (`data:font/woff2`) ; signature neutre : polices système. Une autre police s'ajoute de la même façon (paquet, `@font-face` en ligne), jamais par un lien distant.
@@ -19,13 +19,13 @@ Le projet joue des contenus narrés et interactifs (formations, présentations, 
 |---|---|---|
 | `content/brief.md` | besoin, public, durée, ton, langue | Super Agent |
 | `content/storyboard.md` | scènes et textes (format ci-dessous) | Scénariste |
-| `content/design/theme.json` | `signature` (facultatif : le thème ne vaut que pour elle), `colors` (`background`, `ink`, `muted`, `accent`, `accent2`, `success`, `line`, `panel`, et les jetons de la signature : `panel2`, `gridDot`, `lineSoft`, `lineFaint`, `ink2`, `red`, `gold`, `goldText`, `yellowFill`, `green`, `cyan`, `blue`, `magenta`, `grip`, `gripHover`, `gripHot`, `selectBg`, `tooltip`, `shadow`), `fonts` (`body`, `mono`, `display`, `paper`), `radius`, `grid`, `typingCps` ; chaque clé absente prend la valeur par défaut de la signature (§ 9) | Graphiste |
+| `content/design/theme.json` | `signature` (facultatif : le thème ne vaut que pour elle), `colors` (signature carte : les jetons de la charte, § 9, dont les clés communes sont dérivées ; sinon `background`, `ink`, `muted`, `accent`, `accent2`, `success`, `line`, `panel`, et les jetons de la signature : `panel2`, `gridDot`, `lineSoft`, `lineFaint`, `ink2`, `red`, `gold`, `goldText`, `yellowFill`, `green`, `cyan`, `blue`, `magenta`, `grip`, `gripHover`, `gripHot`, `selectBg`, `tooltip`, `shadow`), `fonts` (`body`, `mono`, `display`, `paper`), `radius`, `grid`, `typingCps` ; chaque clé absente prend la valeur par défaut de la signature (§ 9) | Graphiste |
 | `content/design/assets/*.svg` | illustrations, inlinées dans la page (sans prologue XML, sans `<script>`) ; XML bien formé (balises équilibrées, une seule racine `<svg>`) ; groupes animés à part nommés `<g id="fichier-partie">` | Graphiste |
 | `content/design/spec.md` | composition de chaque scène, états (`data-board`), ce qui apparaît sur quels mots | Graphiste |
 | `content/voice/voice-manifest.yaml`, `content/voice/Sxx/Sxx-yy.mp3`, `.alignment.json` | voix ElevenLabs ; absent = contenu sans voix (minutage estimé, sous-titres actifs) | Voix |
 | `content/beats.json` | `{ "S01-01": { "cle": "locution dite mot pour mot" } }` | Code (et Voix par `suggested_beats`) |
 
-`studio.config.json` : `id` (lettres, chiffres, tirets ; clé de progression ; préfixe du code de scène `<id>-<Sxx>`), `title`, `lang` (`fr` ou `en…`, choisit les libellés d'interface), `signature` (`bimaccess`, par défaut, ou `neutral` ; § 9), `program` (code de programme facultatif, majuscules et chiffres, ex. `CER001`), `programColor` (`#RRVVBB`, facultatif : couleur d'un programme absent de la table, ou qui la remplace), `fps` (30), `width` × `height` (1920 × 1080), `voiceStart` (0,4 s : début de la narration d'entrée dans la scène), `tail` (0,8 s après la dernière voix), `intro` (3 s, durée d'une scène sans narration d'entrée), chemins `storyboard`, `manifest`, `beats`, `theme`, `assets`, `speechRate` (minutage estimé sans voix), `acknowledgeRemotionLicense`.
+`studio.config.json` : `id` (lettres, chiffres, tirets ; clé de progression ; préfixe du code de scène `<id>-<Sxx>`), `title`, `lang` (`fr` ou `en…`, choisit les libellés d'interface), `signature` (`bimaccess`, par défaut, `carte` ou `neutral` ; § 9), `program` (code de programme facultatif, majuscules et chiffres, ex. `CER001`), `programColor` (`#RRVVBB`, facultatif : couleur d'un programme absent de la table, ou qui la remplace), `fps` (30), `width` × `height` (1920 × 1080), `voiceStart` (0,4 s : début de la narration d'entrée dans la scène), `tail` (0,8 s après la dernière voix), `intro` (3 s, durée d'une scène sans narration d'entrée), chemins `storyboard`, `manifest`, `beats`, `theme`, `assets`, `speechRate` (minutage estimé sans voix), `acknowledgeRemotionLicense`.
 
 ### Storyboard
 
@@ -74,17 +74,17 @@ clips:
 
 Lit `studio.config.json` et `content/`, écrit `src/generated/` (jamais édité à la main, réécrit seulement s'il change) et `public/audio/`. Imprime chaque repère trouvé (`[sync] S02-01.condenseur = 15.182 s « Dans le condenseur »`, secondes depuis le début du clip) ; un repère introuvable ou ambigu n'a jamais de ligne « = » : `[sync] S02-01.condenseur introuvable « … »`, puis la ligne `ÉCHEC` qui l'explique.
 
-Échoue (code 1, lignes `[sync] ÉCHEC …`) sur : champ de configuration manquant, scène ou section en double, titre de scène mal écrit (`# S02`, `# S02 · `, `# S03 Titre`, `# S2 · …`), `signature` autre que `bimaccess` ou `neutral`, `program` mal écrit (`cer001`) ou inconnu sans `programColor`, `programColor` qui n'est pas `#RRVVBB`, `signature` de `theme.json` inconnue, paquet de police de la signature absent, exercice mal formé (question absente, moins de deux choix, choix mal écrit ou en majuscule, « Attendu » en majuscule, mal écrit ou hors des choix), plus d'une narration linéaire dans une scène, narration vide, manifeste illisible, clip du manifeste absent du storyboard, déclencheur contradictoire, texte du manifeste différent du storyboard, audio ou alignement introuvable, alignement vide, aux instants invalides (null, NaN, négatif) ou qui reculent, ou plus long que `duration_s`, repère pour un clip inconnu, locution de repère introuvable ou ambiguë, couleur ou `typingCps` invalide, SVG mal formé (analyse XML stricte, `scripts/lib/svg-xml.mjs` : balise jamais fermée ou fermée en trop, plusieurs racines, racine autre que `<svg>`, attribut sans guillemets ou en double, entité non XML comme `&nbsp;` ; message avec le fichier et la ligne : `ÉCHEC illustration x.svg, ligne 2 : </svg> ferme <g> ouvert ligne 1 : balise <g> jamais fermée`), SVG qui contient `<script>`, illustration nommée en clair dans `src/lesson/` et absente de `content/design/assets/` (`<Svg name="…">`, `asset("…")`, `illustration("…")`) ou groupe de `parts` absent du fichier (`group: "…"` d'un `<Svg name="…">` ou d'un `<Svg svg={X}>` avec `const X = illustration("…")` dans le même fichier), avec fichier et ligne de la scène.
+Échoue (code 1, lignes `[sync] ÉCHEC …`) sur : champ de configuration manquant, scène ou section en double, titre de scène mal écrit (`# S02`, `# S02 · `, `# S03 Titre`, `# S2 · …`), `signature` autre que `bimaccess`, `carte` ou `neutral`, `program` mal écrit (`cer001`) ou inconnu sans `programColor`, `programColor` qui n'est pas `#RRVVBB`, `signature` de `theme.json` inconnue, paquet de police de la signature absent, exercice mal formé (question absente, moins de deux choix, choix mal écrit ou en majuscule, « Attendu » en majuscule, mal écrit ou hors des choix), plus d'une narration linéaire dans une scène, narration vide, manifeste illisible, clip du manifeste absent du storyboard, déclencheur contradictoire, texte du manifeste différent du storyboard, audio ou alignement introuvable, alignement vide, aux instants invalides (null, NaN, négatif) ou qui reculent, ou plus long que `duration_s`, repère pour un clip inconnu, locution de repère introuvable ou ambiguë, couleur ou `typingCps` invalide, SVG mal formé (analyse XML stricte, `scripts/lib/svg-xml.mjs` : balise jamais fermée ou fermée en trop, plusieurs racines, racine autre que `<svg>`, attribut sans guillemets ou en double, entité non XML comme `&nbsp;` ; message avec le fichier et la ligne : `ÉCHEC illustration x.svg, ligne 2 : </svg> ferme <g> ouvert ligne 1 : balise <g> jamais fermée`), SVG qui contient `<script>`, illustration nommée en clair dans `src/lesson/` et absente de `content/design/assets/` (`<Svg name="…">`, `asset("…")`, `illustration("…")`) ou groupe de `parts` absent du fichier (`group: "…"` d'un `<Svg name="…">` ou d'un `<Svg svg={X}>` avec `const X = illustration("…")` dans le même fichier), avec fichier et ligne de la scène.
 
 `--scenes` (passé par `npm run check`, `npm run build` et `npm run check:scenes`) : après l'écriture, charge `src/lesson/lesson.ts` par Vite (rendu serveur, sans navigateur), ce qui exécute les vérifications de chargement des scènes (`said`, `b`, `word`, `ordered`, `sceneTexts`, `defineScene`, `defineLesson`). Une erreur arrête tout : `[sync] ÉCHEC chargement des scènes : LocutionError : S01-01 : locution introuvable « … »`, code 1, aucune page construite. Seules les erreurs levées au chargement des modules sont vues ainsi ; une erreur levée au rendu (dans `View`) reste du ressort de `npm run test:play`. C'est pourquoi les illustrations se déclarent au niveau du module (`const MAISON = illustration("maison", ["maison-air"])`, vérifié au chargement), et pourquoi sync contrôle en plus les noms écrits en clair (ci-dessus) ; un nom calculé dans `View` n'est vu qu'au rendu.
 
-Avertit seulement (`[sync] attention …`) quand l'alignement ne reprend pas le texte mot pour mot (un dictionnaire de prononciation peut faire dire « P zéro un » pour « P-01 ») : les locutions se cherchent dans ce qui est **dit** ; quand `theme.json` est écrit pour l'autre signature (il est alors ignoré) ; en signature bimaccess, quand `accent` diffère de la couleur du programme, quand le fond n'est pas `#FFFFFF`, quand `radius` n'est pas 0 (le lecteur l'ignore) ; quand `programColor` remplace la couleur d'un programme connu ; quand `program` est donné en signature neutre.
+Avertit seulement (`[sync] attention …`) quand l'alignement ne reprend pas le texte mot pour mot (un dictionnaire de prononciation peut faire dire « P zéro un » pour « P-01 ») : les locutions se cherchent dans ce qui est **dit** ; quand `theme.json` est écrit pour l'autre signature (il est alors ignoré) ; en signature bimaccess, quand `accent` diffère de la couleur du programme, quand le fond n'est pas `#FFFFFF`, quand `radius` n'est pas 0 (le lecteur l'ignore) ; en signature carte, quand le fond n'est pas `#F1F3EC`, quand `radius` ou `grid` ne sont pas 0 ; quand `programColor` remplace la couleur d'un programme connu ; quand `program` est donné en signature neutre.
 
 Modules générés :
 
 - `texts.ts` : `TEXTS[sceneId] = { title, screen: string[], sections: { [nom]: { codes, lines } } }` (`screen` = textes entre accents graves de « Écran » / « Screen ») ; `EXERCISES[sceneId] = { question, choices: [{ key, label, feedback }], expected: string | null }` ; `SCENE_IDS` (ordre du storyboard).
 - `narration.ts` : `CLIPS[clipId] = { id, scene, trigger, text, src: string | null, duration, words: { text, start, end }[], beats: Record<string, number> }` (secondes depuis le début du clip ; type `Clip`).
-- `theme.ts` (`THEME`), `assets.ts` (`ASSETS[nom] = svg`), `meta.ts` (`META = { id, title, lang, fps, width, height, voiceStart, tail, intro, typingCps, acknowledgeRemotionLicense, signature, program, programColor }`, type `Signature = "bimaccess" | "neutral"` ; `program` et `programColor` : `string | null`, couleur résolue par la table des programmes ou `programColor`).
+- `theme.ts` (`THEME`), `assets.ts` (`ASSETS[nom] = svg`), `meta.ts` (`META = { id, title, lang, fps, width, height, voiceStart, tail, intro, typingCps, acknowledgeRemotionLicense, signature, program, programColor }`, type `Signature = "bimaccess" | "carte" | "neutral"` ; `program` et `programColor` : `string | null`, couleur résolue par la table des programmes ou `programColor`).
 - `fonts.css` : `@font-face` des polices de la signature (chemins de paquets `@fontsource`, résolus et mis en ligne par la construction) ; un commentaire seul en signature neutre.
 
 ## 4. Moteur : `src/engine/` (importé par `../../engine` depuis une scène)
@@ -119,8 +119,8 @@ Les erreurs sont levées **au chargement du module de la scène** : `npm run che
 | `Wipe` | `children` (obligatoire), `at`, `dur = 0.5`, `dir = "right" \| "left" \| "down" \| "up"`, `style`, `className`, `testId` ; enveloppe ses enfants dans un `<div>` (positionné par `style`), invisible et inerte avant `at` |
 | `Trace` (dans un `<svg>`) | `d` ou `points`, `at`, `dur = 0.6`, `color`, `width = 4`, `dashed` (motif), `arrow` (avec `points`), `fill` (posé quand le contour est fermé) ; vitesse constante |
 | `TypeText` | `text`, `at`, `cps = META.typingCps`, `caret = true`, `style`, `className`, `testId` ; la partie non tapée garde sa place |
-| `Highlight` (HTML) | `children` (obligatoire), `on`, `pad = 10`, `style`, `testId` : enveloppeur `<div>` en `position: relative` (le placer avec `style`) ; contour tireté et quatre poignées carrées bleues autour des enfants quand `on`, `data-highlight="on"` (bimaccess : tireté et poignées pleines `grip`) |
-| `HighlightRect` (SVG, dans un `<svg>`) | `on`, `x`, `y`, `w`, `h`, `pad = 12` ; `data-highlight="on"` |
+| `Highlight` (HTML) | `children` (obligatoire), `on`, `pad = 10`, `style`, `testId` : enveloppeur `<div>` en `position: relative` (le placer avec `style`) ; contour tireté et quatre poignées carrées bleues autour des enfants quand `on`, `data-highlight="on"` (bimaccess : tireté et poignées pleines `grip`) ; `shape = "rect" | "circle"` et `at` (début du tracé de 0,25 s), lus en signature carte seulement : tireté `accent` 2,5 px (10 6), sans poignée, rectangle à `pad` px ou cercle de rayon demi-diagonale + `pad` |
+| `HighlightRect` (SVG, dans un `<svg>`) | `on`, `x`, `y`, `w`, `h`, `pad = 12` (carte : 10), `at` (carte : début du tracé de 0,25 s) ; `data-highlight="on"` |
 | `Grips` (HTML) | `size = 12`, `offset = -7`, `color = THEME.colors.grip` : quatre poignées pleines aux coins du parent (en `position: relative`), sans `data-highlight` (ce n'est pas une mise en évidence) |
 | `Move` | `children` (obligatoire), `at`, `dur = 0.6`, `from`, `to` (`{ x, y, scale }`), `style` ; enveloppeur `<div>` transformé (origine en haut à gauche) |
 | `rectPath(x, y, w, h)`, `wipeProgress(t, at, dur)` | outils |
@@ -183,7 +183,7 @@ defineLesson({ scenes: [s01, s02, s03] })
 - Adresse `#/3` = scène 3 (tenue à jour pendant la navigation). Choix assumé : l'adresse ouvre la scène même si les précédentes ne sont pas terminées (lien partagé, reprise, tests) ; elle saute donc le verrou de Suivant des scènes d'avant. Un contenu qui doit imposer l'ordre ne doit pas diffuser ces adresses. Clavier : Espace (lecture/pause, hors bouton et champ), flèches gauche/droite (précédent, suivant si permis ; ignorées dans un champ et dans une liste de choix).
 - Sous-titres : actifs par défaut quand la scène n'a pas de voix ; le choix de l'apprenant est conservé (`captions`). Ils s'effacent 0,5 s après la dernière phrase : l'image finale reste la composition.
 - Attributs de `data-testid="stage"` : `data-stage-ready` (« true » quand la scène courante est montée), `data-scene`, `data-frame`, `data-duration`, `data-narration-end` (image de fin de la narration d'entrée), `data-playing`, `data-voice` (audio de la narration d'entrée ou vide), `data-events` (JSON `[{ id, start, audible, src }]`), `data-next` (`open` / `locked`), `data-completed`, `data-revisit`.
-- Thème : `main.tsx` pose `data-signature` sur `<html>` et `THEME` en variables CSS (`--c-*` pour chaque couleur, `--c-program` en bimaccess, `--f-*`, `--radius` (0 en bimaccess), `--ratio`) ; `player.css` met la scène à l'échelle de la fenêtre et, sous 720 px de large, passe les contrôles sur deux lignes ; `player-bimaccess.css` habille la coque et les composants en signature bimaccess.
+- Thème : `main.tsx` pose `data-signature` sur `<html>` et `THEME` en variables CSS (`--c-*` pour chaque couleur, `--c-program` en bimaccess et carte, `--f-*`, `--radius` (0 en bimaccess et carte), `--ratio`, `--comp-w`) ; `player.css` met la scène à l'échelle de la fenêtre et, sous 720 px de large, passe les contrôles sur deux lignes ; `player-bimaccess.css` habille la coque et les composants en signature bimaccess, `player-carte.css` en signature carte.
 - Écrans étroits : la composition 1920 × 1080 est réduite à l'échelle de la fenêtre. Tenue à la verticale (390 px), elle fait environ 0,19 de sa taille (texte de 32 px ≈ 6 px) : un bandeau `data-testid="narrow-hint"` propose de tourner l'appareil et, si le navigateur le permet, un bouton `data-testid="fullscreen"` (plein écran, verrouillage à l'horizontale tenté). À l'horizontale sur téléphone (hauteur ≤ 540 px et largeur ≤ 940 px) ou en plein écran : plus d'en-tête, contrôles sur une ligne, la scène prend la hauteur (844 × 390 → environ 0,29, texte de 32 px ≈ 9 px). Limite connue : le contenu se lit confortablement à partir d'environ 1000 px de large ; un écran de téléphone reste un usage de secours.
 - Libellés d'interface : `src/i18n.ts` seulement (`L.start`, `L.next`, `L.submit`, `L.continue`, `L.captions`…), français ou anglais selon `META.lang`.
 
@@ -210,11 +210,11 @@ La signature graphique se choisit dans `studio.config.json` et ne change que la 
 
 | Clé (`studio.config.json`) | Valeurs | Effet |
 |---|---|---|
-| `signature` | `"bimaccess"` (défaut) ou `"neutral"` ; autre valeur : échec de sync | thème par défaut, polices embarquées, coque, rendu des composants |
+| `signature` | `"bimaccess"` (défaut), `"carte"` ou `"neutral"` ; autre valeur : échec de sync | thème par défaut, polices embarquées, coque, rendu des composants |
 | `program` | code en majuscules et chiffres (`"CER001"`), facultatif | affiché dans la barre d'état (sauf si `id` commence déjà par lui) et sur l'écran « Lancer » ; donne la couleur de programme |
 | `programColor` | `"#RRVVBB"`, facultatif | couleur d'un programme absent de la table, ou qui la remplace (avertissement) |
 
-Table des programmes (`scripts/sync.mjs`, d'après `DESIGN.md` § 2) : `CER001` → cyan ACI 4 `#0096C7`. Un autre code sans `programColor` fait échouer la sync, avec la couleur suivante à prendre (3 vert `#00A64F`, 6 magenta `#C800C8`, 1 rouge `#E0261B`, 2 or `#D99A00`). Exposé dans `META.signature`, `META.program`, `META.programColor` ; `BIM` (booléen) et `PROGRAM_COLOR` (couleur de programme, sinon `accent`) par `../../engine`.
+Table des programmes (`scripts/sync.mjs`, d'après `DESIGN.md` § 2) : `CER001` → cyan ACI 4 `#0096C7`. Un autre code sans `programColor` fait échouer la sync, avec la couleur suivante à prendre (3 vert `#00A64F`, 6 magenta `#C800C8`, 1 rouge `#E0261B`, 2 or `#D99A00`). Exposé dans `META.signature`, `META.program`, `META.programColor` ; `BIM` et `CARTE` (booléens) et `PROGRAM_COLOR` (couleur de programme, sinon `accent`) par `../../engine`.
 
 ### Jetons (signature bimaccess)
 
@@ -267,6 +267,47 @@ Classes CSS des composants de scène (`player-bimaccess.css`, en pixels de compo
 Le code garantit : fond blanc et grille, polices de la charte en ligne, aucun coin arrondi ni ombre floue, poignées et états des boutons, une seule mise en évidence visible (`test:play`), choix et rétroaction de la charte (jamais de rouge pour un verdict), boutons de scène en bas à droite, barre d'état avec code de scène, libellés d'interface sans tiret cadratin.
 
 Reste à l'auteur, dans `storyboard.md`, `spec.md` et les illustrations : titres display de six mots au plus, terminés par un point ; une couleur = une fonction (à écrire dans `spec.md`) ; dessins au trait (plan, coupe, élévation), cinq étiquettes au plus par schéma ; SVG aux couleurs des jetons, sans dégradé, flou ni coin arrondi, traits à bouts nets ; jamais de tiret cadratin ; noms d'entités IFC seulement dans un contenu qui les enseigne ; rien d'important sous les sous-titres (y ≥ 880) ni dans la zone d'action ; `ChoicePanel` dans `SceneRoot`.
+
+### Signature carte
+
+`"signature": "carte"` : signature « carte topographique », la scène est une feuille de carte imprimée. Thème par défaut = jetons de la charte (noms en camelCase) ; les clés communes en sont dérivées par `sync.mjs` après la fusion avec `theme.json`, sauf celles que `theme.json` donne lui-même :
+
+| Clé commune | Jeton | Valeur par défaut |
+|---|---|---|
+| `background` | fond | `#F1F3EC` |
+| `panel`, `tooltip` | papier | `#FBFCF8` |
+| `ink`, `success`, `goldText`, `gripHot` | encre (aucune couleur de verdict ; le libellé du manque en encre) | `#23281F` |
+| `ink2`, `muted` | encre2 | `#545B4C` |
+| `line`, `gridDot` | carroyage | `#7D8576` |
+| `accent`, `cyan`, `blue`, `grip`, `gripHover` | lecture (mise en évidence, choix sélectionné, focus) | `#2F6DA8` |
+| `selectBg` | lectureFond | `#E3ECF4` |
+| `accent2`, `red` | ecriture | `#C4472B` |
+| `gold`, `yellowFill` | manque, manqueFond | `#C99700`, `#FBF1C8` |
+| `green` | terme | `#1E6E3C` |
+| `magenta` | lien | `#7A4A22` |
+| `panel2`, `lineFaint` | survol | `#E5E9DD` |
+| `lineSoft` | verrouTrait | `#A3AA9B` |
+| `shadow` | aucune ombre | `rgba(0, 0, 0, 0)` |
+| `fonts.body`, `fonts.display`, `fonts.paper` | serif : Source Serif 4 | 400, 600, italiques 400 et 600 embarquées |
+| `fonts.mono` | capitales : Barlow Condensed | 500, 600 embarquées |
+
+Autres jetons, sous leur nom seulement : `relief`, `reliefMaitresse`, `chaussee`, `eauFond`, `vegetation`, `vegetationFond`, `imageClair`, `imageFonce`, `lienSurvol`. `radius` 0, `grid` 0. La couleur de programme n'est pas un jeton de scène (`META.programColor`, barre d'état seulement).
+
+| Élément | Rendu carte |
+|---|---|
+| Coque | cadre centré d'un seul bloc ; valeurs de la charte en pixels de composition, mises à l'échelle de la scène (`--u`), avec un plancher de lisibilité : en-tête de feuille de 44 px (Barlow 500 23 px en capitales, 0,12 em, filet double dessous : pastille du programme, programme, code de scène `data-testid="scene-code"`, titre de la scène en serif italique, échelle graphique `data-testid="progress-scale"` (une case par scène : terminées en encre, courante en couleur de programme, à venir en papier), position `03 / 08`), scène sans filet ni ombre, barre de contrôles sous filet double ; écrans Lancer et Fin en cartouche |
+| Boutons de la coque et de la scène | cartouche : Barlow 600 26 px (LANCER 34 px) en capitales, 0,24 em, bordure 2 px et contour 1 px décalé de 3 px ; repos papier, survol `panel2`, actif (et sous-titres actifs) encre pleine, verrouillé gris (`lineSoft`) ; focus trait plein `accent` 3 px ; curseur de narration en petite échelle, cadenas au trait |
+| Scène | fond, feuille (cadre 2 px en 34, bordure graduée en damier de 12 px à cases de 76 px, filets à 46 et 58, carroyage tous les 228 px depuis x 274, y 236), zone d'action `data-zone="actions"` x 1454, y 834, 360 × 140 |
+| `Title` | serif 600, 66 px, -0,01 em, interligne 1, filet double de 300 px tracé avec la frappe |
+| `Bullets` | serif 400, 30 px, puce en aplat carré d'encre |
+| `Diagram` | feuilles : bordure 2 px sur `panel`, contour 1 px décalé de 3 px ; libellés Barlow 600 26 px en capitales, 0,24 em ; liaisons d'encre 2,5 px |
+| `Trace` | bouts nets (`butt`), angles vifs (`miter`) |
+| `Highlight`, `HighlightRect` | tireté `accent` 2,5 px, motif 10 6, sans poignée ni fond ; rectangle à 10 px ou cercle ; tracé en 0,25 s avec `at` |
+| `Callout` | point 4 px, oblique, palier, encre 1,5 px, mot tapé en serif 30 px |
+| `ChoicePanel` | panneau cartouche (`carte-panel`) qui se déroule avec la question (serif 600 32 px) ; choix serif 28 px à lettre en capitales dans une case ; sélection : bord plein `accent` 3 px, fond `selectBg`, lettre pleine ; rétroaction dans le panneau, sous filet double, en-tête en capitales, encre sur papier ; VALIDER et CONTINUER (`carte-btn`) dans la zone d'action |
+| `Captions` | bandeau `panel`, filet 2 px dessus et 0,8 px dessous, serif 34 px, x 104, bas à y 1000, 1 180 px au plus |
+
+Classes CSS des composants de scène (`player-carte.css`, en pixels de composition) : `carte-btn`, `carte-panel` (`carte-panel-question`), `carte-choices`, `carte-choice` (`is-selected`, `is-dimmed`, `carte-choice-key`, `carte-choice-txt`, `carte-choice-mark`), `carte-feedback` (`carte-feedback-head`, `carte-feedback-body`), `carte-sr`.
 
 ### Signature neutre
 

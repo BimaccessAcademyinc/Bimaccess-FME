@@ -17,11 +17,16 @@
  *  · Signature bimaccess : l'en-tête devient la barre d'état mince de la
  *    scène (scene-frame.html) : pastille et code de programme, code de scène
  *    `<id>-<Sxx>`, titre de la scène, barre de progression, position ; le
- *    style est dans player-bimaccess.css. Signature neutre : rendu d'origine.
+ *    style est dans player-bimaccess.css. Signature carte : en-tête de
+ *    feuille (player-carte.css) : pastille et code du programme, code de
+ *    scène, titre de la scène en italique, échelle graphique de progression
+ *    (une case par scène : terminées en encre, courante à la couleur du
+ *    programme, à venir en papier), position. Signature neutre : rendu
+ *    d'origine.
  */
 import type { PlayerRef } from "@remotion/player"
 import { type MouseEvent, useCallback, useEffect, useMemo, useRef, useState } from "react"
-import { BIM } from "../engine/signature"
+import { BIM, CARTE } from "../engine/signature"
 import { META } from "../generated/meta"
 import { L } from "../i18n"
 import { LESSON } from "../lesson/lesson"
@@ -37,6 +42,9 @@ const FPS = META.fps
 const pad = (n: number) => String(n).padStart(2, "0")
 /** Programme affiché à part seulement si l'identifiant ne commence pas déjà par lui (CER001-M01-L01). */
 const PROGRAM_PREFIX = META.program && !META.id.toUpperCase().startsWith(META.program) ? META.program : null
+/** Barre d'état : bimaccess et carte (la carte nomme toujours le programme, avant le code de scène). */
+const STATUS_BAR = BIM || CARTE
+const PROGRAM_LABEL = CARTE ? META.program : PROGRAM_PREFIX
 
 /** Index de scène lu dans l'adresse (#/3 → 2), null si absent ou hors limites. */
 function indexFromHash(): number | null {
@@ -306,12 +314,12 @@ export function App() {
     <RuntimeContext.Provider value={runtime}>
       <div className="studio" ref={shellRef} data-started={started ? "true" : "false"} data-fullscreen={fullscreen ? "true" : "false"}>
         <header className="studio-head">
-          {BIM ? (
+          {STATUS_BAR ? (
             <span className="studio-code" data-testid="scene-code">
               <i className="studio-chip" aria-hidden="true" />
-              {PROGRAM_PREFIX ? (
+              {PROGRAM_LABEL ? (
                 <>
-                  <span className="studio-program">{PROGRAM_PREFIX}</span>
+                  <span className="studio-program">{PROGRAM_LABEL}</span>
                   <span className="studio-sep" aria-hidden="true">
                     ·
                   </span>
@@ -329,6 +337,13 @@ export function App() {
           {BIM ? (
             <span className="studio-progress" aria-hidden="true">
               <i style={{ width: `${(100 * (visit.index + 1)) / N}%` }} />
+            </span>
+          ) : null}
+          {CARTE ? (
+            <span className="studio-scale" data-testid="progress-scale" aria-hidden="true">
+              {SCENES.map((s, i) => (
+                <i key={s.id} className={i === visit.index ? "is-current" : recordOf(progress, s.id).completed ? "is-done" : undefined} />
+              ))}
             </span>
           ) : null}
           <span className="studio-position" data-testid="position" aria-label={`${L.position} ${visit.index + 1} / ${N}`}>
@@ -351,7 +366,7 @@ export function App() {
           {!started ? (
             <div className="studio-overlay" data-testid="start-screen">
               <div className="studio-card">
-                {BIM ? <p className="studio-card-code">{PROGRAM_PREFIX ? `${PROGRAM_PREFIX} · ${META.id}` : META.id}</p> : null}
+                {STATUS_BAR ? <p className="studio-card-code">{PROGRAM_PREFIX ? `${PROGRAM_PREFIX} · ${META.id}` : META.id}</p> : null}
                 <p className="studio-card-title">{META.title}</p>
                 <button type="button" className="studio-btn studio-btn-primary" data-testid="start" onClick={onStart} autoFocus>
                   {hasHistory ? L.resume : L.start}

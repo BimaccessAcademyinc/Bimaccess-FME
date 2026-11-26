@@ -27,7 +27,7 @@ export {
 } from "./exercise"
 export { defineLesson, defineScene, LessonError, type SceneInput } from "./scene"
 // Signature graphique (studio.config.json « signature », « program », « programColor »)
-export { BIM, PROGRAM_COLOR, SHEET_SHADOW, type Signature } from "./signature"
+export { BIM, CARTE, PROGRAM_COLOR, SHEET_SHADOW, type Signature } from "./signature"
 export { asset, type Illustration, illustration, type SceneTexts, sceneTexts, TextError } from "./texts"
 export {
   clipOf,

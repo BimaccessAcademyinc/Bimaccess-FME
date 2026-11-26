@@ -7,8 +7,9 @@
  *
  * Signature (studio.config.json « signature ») : `data-signature` sur <html>
  * choisit les styles de la coque (player.css pour « neutral »,
- * player-bimaccess.css en plus pour « bimaccess ») ; generated/fonts.css
- * porte les polices de la signature (aucune pour « neutral »).
+ * player-bimaccess.css en plus pour « bimaccess », player-carte.css en plus
+ * pour « carte ») ; generated/fonts.css porte les polices de la signature
+ * (aucune pour « neutral »).
  */
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
@@ -18,6 +19,7 @@ import { THEME } from "./generated/theme"
 import { L, LANG } from "./i18n"
 import "./player/player.css"
 import "./player/player-bimaccess.css"
+import "./player/player-carte.css"
 
 const root = document.documentElement
 root.dataset.signature = META.signature
@@ -25,9 +27,12 @@ for (const [k, v] of Object.entries(THEME.colors)) root.style.setProperty(`--c-$
 root.style.setProperty("--f-body", THEME.fonts.body)
 root.style.setProperty("--f-display", THEME.fonts.display)
 root.style.setProperty("--f-mono", THEME.fonts.mono)
-root.style.setProperty("--radius", `${META.signature === "bimaccess" ? 0 : THEME.radius}px`)
+// bimaccess et carte : aucun coin arrondi, quelle que soit la valeur du thème
+const square = META.signature === "bimaccess" || META.signature === "carte"
+root.style.setProperty("--radius", `${square ? 0 : THEME.radius}px`)
 root.style.setProperty("--ratio", String(META.width / META.height))
-if (META.signature === "bimaccess") root.style.setProperty("--c-program", META.programColor ?? THEME.colors.accent)
+root.style.setProperty("--comp-w", String(META.width))
+if (square) root.style.setProperty("--c-program", META.programColor ?? THEME.colors.accent)
 root.lang = LANG
 document.title = META.title
 

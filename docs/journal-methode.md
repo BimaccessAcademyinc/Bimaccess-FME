@@ -41,3 +41,11 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 | Première série de quatre thèmes écartée par Ilyas : les quatre restaient dans la charte CAD 2D construite pour la formation buildingSMART ; c'est le brief de la direction artistique qui l'imposait (« tous restent dans la signature CAD 2D ») | 1 direction artistique et 4 graphistes, environ 15 min d'agents, refaits | une charte appartient à un cours : un nouveau cours ne l'hérite pas ; l'étape des thèmes propose des identités nées du sujet, et la charte du cours s'écrit seulement après le choix |
 | Deuxième série faite avec l'outil de design (canevas), quatre identités nées du SIG et de l'échange de données, sur la scène qui montre à la fois une entité, des formats et le moteur (S05) | 4 artboards | la scène d'essai d'un thème doit montrer ce qui distingue les thèmes (la S03 ne montrait ni format ni moteur) |
 | Ilyas précise que l'étape des thèmes ne se fait que si aucun thème n'est déjà en place pour la leçon | | skill `harnais/skills/themes-planches/` : § 0 « Faut-il cette étape ? » ; L02 à L05 suivent la charte FME001 sans nouveau choix |
+
+## 2026-11-26 · Signature « carte » du lecteur (FME001)
+
+| Constat | Mesure | Décision |
+|---|---|---|
+| Le lecteur ne connaissait que la coque CAD et une coque neutre ; une troisième signature s'ajoute proprement sur le modèle de la coque CAD (thème dérivé des jetons de la charte, polices embarquées, rendu des composants, feuille de style de coque) | 17,7 min d'agent, 66 appels d'outils ; `check`, `build` et le parcours automatique verts, les deux autres signatures toujours vertes | fichiers du template listés pour le report dans le plugin (rapport `.studio/reports/06-code.md`) |
+| `defineLesson` refuse une scène absente : on ne peut pas prouver une coque avec une seule scène sans affaiblir un garde-fou | | scènes d'attente génériques (`attente.tsx`), remplacées une à une par les scènes composées |
+| Les amorces de quadrillage traversent les textes de la scène | vu sur la capture de S01 | à régler à l'étape des planches (zones de réserve sous les textes) |

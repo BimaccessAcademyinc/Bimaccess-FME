@@ -9,8 +9,10 @@
  *
  * Signature (studio.config.json « signature ») : avec « bimaccess », SceneRoot,
  * Title, Bullets, Diagram, Callout, Captions et ChoicePanel délèguent à
- * bimaccess.tsx (signature CAD 2D) ; mêmes props, mêmes attributs de test,
- * même comportement. Le code ci-dessous est le rendu de la signature neutre.
+ * bimaccess.tsx (signature CAD 2D) ; avec « carte », à carte.tsx (carte
+ * topographique) ; mêmes props, mêmes attributs de test, même comportement.
+ * Le code ci-dessous est le rendu de la signature neutre. Les tailles par
+ * défaut (`size`, `gap`) sont celles de chaque signature.
  */
 import { type CSSProperties, type KeyboardEvent, type ReactNode, useContext, useId, useLayoutEffect, useRef } from "react"
 import { useVideoConfig } from "remotion"
@@ -18,9 +20,10 @@ import { THEME } from "../generated/theme"
 import { L } from "../i18n"
 import { HighlightRect, type Point, rectPath, Trace, TypeText, useT, Wipe, type WipeDir, wipeProgress } from "./anim"
 import { BimBullets, BimCallout, BimCaptions, BimChoicePanel, BimDiagram, BimSceneRoot, BimTitle, type ChoicePanelProps } from "./bimaccess"
+import { CarteBullets, CarteCallout, CarteCaptions, CarteChoicePanel, CarteDiagram, CarteSceneRoot, CarteTitle } from "./carte"
 import { select, validate, verdictOf } from "./exercise"
 import { currentSentence, SceneClock, sentencesOf, tid } from "./shared"
-import { BIM } from "./signature"
+import { BIM, CARTE } from "./signature"
 import { asset, type Illustration, svgIds, TextError } from "./texts"
 import { typedUntil } from "./timeline"
 import type { Voice } from "./types"
@@ -34,9 +37,12 @@ const F = THEME.fonts
  * Racine d'une scène : plein cadre, fond du thème, texte non sélectionnable
  * (un double-clic ne doit rien surligner), `data-board` = état affiché.
  * Signature bimaccess : grille de points, icône SCU, zone d'action en bas à droite.
+ * Signature carte : feuille (bordure graduée, triple filet, carroyage) dès
+ * l'image 0, zone d'action en bas à droite.
  */
 export function SceneRoot({ id, board, children, style }: { readonly id: string; readonly board: string; readonly children: ReactNode; readonly style?: CSSProperties }) {
   if (BIM) return <BimSceneRoot id={id} board={board} style={style}>{children}</BimSceneRoot>
+  if (CARTE) return <CarteSceneRoot id={id} board={board} style={style}>{children}</CarteSceneRoot>
   return (
     <div
       data-board={board}
@@ -58,9 +64,14 @@ export function SceneRoot({ id, board, children, style }: { readonly id: string;
   )
 }
 
-/** Titre tapé à cadence fixe. Signature bimaccess : display Azeret Mono 200 en MAJUSCULES. */
-export function Title({ text, at, size = 64, style, testId }: { readonly text: string; readonly at: number; readonly size?: number; readonly style?: CSSProperties; readonly testId?: string }) {
+/** Titre tapé à cadence fixe. Signature bimaccess : display Azeret Mono 200 en MAJUSCULES. Signature carte : serif 600, 66 px, filet double. */
+export function Title({ text, at, size, style, testId }: { readonly text: string; readonly at: number; readonly size?: number; readonly style?: CSSProperties; readonly testId?: string }) {
   if (BIM) return <BimTitle text={text} at={at} size={size} style={style} testId={testId} />
+  if (CARTE) return <CarteTitle text={text} at={at} size={size} style={style} testId={testId} />
+  return <NeutralTitle text={text} at={at} size={size} style={style} testId={testId} />
+}
+
+function NeutralTitle({ text, at, size = 64, style, testId }: { readonly text: string; readonly at: number; readonly size?: number; readonly style?: CSSProperties; readonly testId?: string }) {
   return (
     <h1 style={{ margin: 0, fontFamily: F.display, fontSize: size, lineHeight: 1.15, fontWeight: 700, letterSpacing: "-0.01em", color: C.ink, ...style }}>
       <TypeText text={text} at={at} testId={testId} />
@@ -70,9 +81,14 @@ export function Title({ text, at, size = 64, style, testId }: { readonly text: s
 
 export type BulletItem = { readonly text: string; readonly at: number }
 
-/** Liste dont chaque puce se balaie sur son instant (celui de la phrase qui la dit). Signature bimaccess : puce = accrochage or. */
-export function Bullets({ items, size = 44, gap = 30, style, testIdPrefix }: { readonly items: readonly BulletItem[]; readonly size?: number; readonly gap?: number; readonly style?: CSSProperties; readonly testIdPrefix?: string }) {
+/** Liste dont chaque puce se balaie sur son instant (celui de la phrase qui la dit). Signature bimaccess : puce = accrochage or. Signature carte : serif 30 px, puce = aplat d'encre. */
+export function Bullets({ items, size, gap, style, testIdPrefix }: { readonly items: readonly BulletItem[]; readonly size?: number; readonly gap?: number; readonly style?: CSSProperties; readonly testIdPrefix?: string }) {
   if (BIM) return <BimBullets items={items} size={size} gap={gap} style={style} testIdPrefix={testIdPrefix} />
+  if (CARTE) return <CarteBullets items={items} size={size} gap={gap} style={style} testIdPrefix={testIdPrefix} />
+  return <NeutralBullets items={items} size={size} gap={gap} style={style} testIdPrefix={testIdPrefix} />
+}
+
+function NeutralBullets({ items, size = 44, gap = 30, style, testIdPrefix }: { readonly items: readonly BulletItem[]; readonly size?: number; readonly gap?: number; readonly style?: CSSProperties; readonly testIdPrefix?: string }) {
   return (
     <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap, ...style }}>
       {items.map((item, i) => (
@@ -137,6 +153,7 @@ export function Diagram({
   readonly children?: ReactNode
 }) {
   if (BIM) return <BimDiagram width={width} height={height} nodes={nodes} links={links} focus={focus} style={style} testIdPrefix={testIdPrefix}>{children}</BimDiagram>
+  if (CARTE) return <CarteDiagram width={width} height={height} nodes={nodes} links={links} focus={focus} style={style} testIdPrefix={testIdPrefix}>{children}</CarteDiagram>
   const focused = nodes.find((n) => n.id === focus)
   return (
     <div style={{ position: "relative", width, height, ...style }} data-focus={focus ?? ""}>
@@ -295,10 +312,11 @@ type CalloutProps = { readonly anchor: Point; readonly label: Point; readonly te
  * Repère : un trait tracé d'un point de l'image (`anchor`, petit carré) vers
  * un texte (coin haut gauche en `label`), balayé à la fin du tracé.
  * Signature bimaccess : ligne de repère de la charte (point, oblique, palier,
- * texte mono, encre par défaut).
+ * texte mono, encre par défaut). Signature carte : ligne de repère (point,
+ * oblique, palier, encre 1,5 px), mot tapé en serif.
  */
 export function Callout(props: CalloutProps) {
-  return BIM ? <BimCallout {...props} /> : <NeutralCallout {...props} />
+  return BIM ? <BimCallout {...props} /> : CARTE ? <CarteCallout {...props} /> : <NeutralCallout {...props} />
 }
 
 function NeutralCallout({ anchor, label, text, at, width = 420, color = C.accent2, size = 32, testId }: CalloutProps) {
@@ -323,9 +341,10 @@ function NeutralCallout({ anchor, label, text, at, width = 420, color = C.accent
  * Sous-titres : la phrase en cours, mots déjà dits en encre, mots à venir en
  * gris. Lus dans les mots datés des clips placés (`voices`). Signature
  * bimaccess : bandeau blanc à filet, 34 px, qui laisse libre la zone d'action.
+ * Signature carte : bandeau papier à filets, serif 34 px, à gauche (x 104).
  */
 export function Captions({ voices, size }: { readonly voices: readonly Voice[]; readonly size?: number }) {
-  return BIM ? <BimCaptions voices={voices} size={size} /> : <NeutralCaptions voices={voices} size={size} />
+  return BIM ? <BimCaptions voices={voices} size={size} /> : CARTE ? <CarteCaptions voices={voices} size={size} /> : <NeutralCaptions voices={voices} size={size} />
 }
 
 function NeutralCaptions({ voices, size = 38 }: { readonly voices: readonly Voice[]; readonly size?: number }) {
@@ -367,9 +386,14 @@ function NeutralCaptions({ voices, size = 38 }: { readonly voices: readonly Voic
  * poignées, jamais le tireté de la mise en évidence ; réponse attendue =
  * accrochage ■), rétroaction selon feedback-panel, VALIDER et CONTINUER
  * selon action-button, dans la zone d'action de SceneRoot (bas droite).
+ *
+ * Signature carte : panneau cartouche, sélection = bord plein bleu 3 px et
+ * fond `selectBg` (jamais de tireté), rétroaction en rubrique sous un filet
+ * double sans couleur de verdict, VALIDER et CONTINUER en cartouche dans la
+ * zone d'action de SceneRoot.
  */
 export function ChoicePanel(props: ChoicePanelProps) {
-  return BIM ? <BimChoicePanel {...props} /> : <NeutralChoicePanel {...props} />
+  return BIM ? <BimChoicePanel {...props} /> : CARTE ? <CarteChoicePanel {...props} /> : <NeutralChoicePanel {...props} />
 }
 
 function NeutralChoicePanel({ sceneId, exercise, state, send, at, actedAt, continueAt, onContinue, verdict = false, width = 1180, style }: ChoicePanelProps) {

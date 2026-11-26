@@ -4,7 +4,7 @@ Ce projet produit un contenu narré et interactif (formation, présentation, exp
 
 À lire en entier avant toute tâche. Le contrat détaillé du lecteur est `docs/player-contract.md` : il fait foi.
 
-Signature graphique par défaut de ce template : **`bimaccess`**, la signature « CAD 2D » de BIMaccess (§ 6). `"signature": "neutral"` dans `studio.config.json` redonne la signature neutre d'origine.
+Signature graphique par défaut de ce template : **`bimaccess`**, la signature « CAD 2D » de BIMaccess (§ 6). `"signature": "carte"` donne la signature « carte topographique » (§ 6) ; `"signature": "neutral"` redonne la signature neutre d'origine.
 
 ## 1. Où sont les choses
 
@@ -22,10 +22,12 @@ src/
   generated/                GÉNÉRÉ par npm run sync : ne jamais éditer
   engine/                   moteur de scènes (temps, locutions, animation, composants, exercices)
     bimaccess.tsx           rendu des composants dans la signature bimaccess
+    carte.tsx               rendu des composants dans la signature carte
     cad.tsx                 grammaire CAD : accrochages (Osnap), cotes (Dimension)
   player/                   lecteur (coque, contrôles, progression, horloge, composition Remotion)
     player.css              coque, signature neutre et base commune
     player-bimaccess.css    coque et composants de la signature bimaccess
+    player-carte.css        coque et composants de la signature carte
   lesson/lesson.ts          liste des scènes, dans l'ordre du storyboard
   lesson/scenes/sNN.tsx     une scène par fichier
   i18n.ts                   libellés d'interface fr / en (Lancer, Suivant, Valider…)
@@ -56,7 +58,7 @@ dist/                       page construite (index.html + audio/) : ce qu'on liv
 - Toute modification de `content/` passe par `npm run sync` (inclus dans `check`, `build`, `dev`).
 - `check` et `build` chargent aussi les scènes (`sync --scenes`) : une locution introuvable ou ambiguë dans un `said(…)`, un ordre rompu, un nombre de textes changé les font échouer avec l'erreur nommée, sans construire de page.
 - `test:play` exige une construction à jour (`npm run build` d'abord). Playwright n'est pas une dépendance du projet : il est cherché dans `--from <dossier>`, puis le projet, puis l'installation globale de npm ; `--chromium <chemin>` désigne le navigateur. Codes : 0 conforme, 1 échec, 2 environnement (Playwright absent, ou autre Chromium toujours actif : rien n'a été vérifié). Un verrou machine (`scripts/lib/chromium-lock.mjs`) fait attendre la fin d'un autre Chromium (`--wait-lock <s>`, `--no-wait`).
-- `sync` refuse un SVG mal formé (fichier et ligne), une illustration ou un groupe nommés dans une scène et absents de `content/design/assets/`, une `signature` autre que `bimaccess` ou `neutral`, un `program` mal écrit ou sans couleur connue (sans `programColor`), un `programColor` qui n'est pas `#RRVVBB`.
+- `sync` refuse un SVG mal formé (fichier et ligne), une illustration ou un groupe nommés dans une scène et absents de `content/design/assets/`, une `signature` autre que `bimaccess`, `carte` ou `neutral`, un `program` mal écrit ou sans couleur connue (sans `programColor`), un `programColor` qui n'est pas `#RRVVBB`.
 - Un serveur lancé en arrière-plan s'arrête par son PID, jamais par `pkill -f`. Un seul navigateur de test à la fois, et le fermer.
 
 ## 3. Sources de vérité et rôles
@@ -142,7 +144,7 @@ Puis déclarer la scène dans `src/lesson/lesson.ts`, dans l'ordre du storyboard
 
 ### Primitives disponibles
 
-`useT`, `THEME`, `META`, `Wipe` (balayage), `Trace` (trait tracé, flèche, tireté), `TypeText` (frappe), `Highlight` / `HighlightRect` (contour tireté + poignées), `Grips` (poignées seules), `Move` (position, échelle), `Title`, `Bullets`, `Diagram`, `Svg` (avec `parts` : groupes du SVG révélés chacun sur ses mots) et `illustration("nom", ["groupe"])` (vérifiée au chargement), `Callout` (ligne de repère), `Dimension` (cote), `Osnap` (accrochage), `ChoicePanel`, `SceneRoot`, `tid`, `BIM`, `PROGRAM_COLOR`. Temps : `voice`, `eventVoice`, `.said`, `.saidEnd`, `.word`, `.b`, `.at`, `ordered`, `focusAt`, `prog`, `ease`, `typedUntil`. Props exactes : `docs/player-contract.md` § 4.
+`useT`, `THEME`, `META`, `Wipe` (balayage), `Trace` (trait tracé, flèche, tireté), `TypeText` (frappe), `Highlight` / `HighlightRect` (contour tireté + poignées ; carte : tireté bleu sans poignée, `shape="circle"` et `at` pour le tracé), `Grips` (poignées seules), `Move` (position, échelle), `Title`, `Bullets`, `Diagram`, `Svg` (avec `parts` : groupes du SVG révélés chacun sur ses mots) et `illustration("nom", ["groupe"])` (vérifiée au chargement), `Callout` (ligne de repère), `Dimension` (cote), `Osnap` (accrochage), `ChoicePanel`, `SceneRoot`, `tid`, `BIM`, `CARTE`, `PROGRAM_COLOR`. Temps : `voice`, `eventVoice`, `.said`, `.saidEnd`, `.word`, `.b`, `.at`, `ordered`, `focusAt`, `prog`, `ease`, `typedUntil`. Props exactes : `docs/player-contract.md` § 4.
 
 ## 5. Grammaire d'animation
 
@@ -157,7 +159,7 @@ Puis déclarer la scène dans `src/lesson/lesson.ts`, dans l'ordre du storyboard
 
 ## 6. Signature graphique
 
-`studio.config.json` : `"signature"` (`"bimaccess"` par défaut, ou `"neutral"`), `"program"` (code de programme facultatif, ex. `"CER001"`) ou `"programColor"` (`#RRVVBB`, pour un programme sans couleur connue). `sync` les valide et les expose dans `META` (`signature`, `program`, `programColor`). Une scène ne teste pas la signature : elle passe par les composants du moteur et par `THEME`.
+`studio.config.json` : `"signature"` (`"bimaccess"` par défaut, `"carte"` ou `"neutral"`), `"program"` (code de programme facultatif, ex. `"CER001"`) ou `"programColor"` (`#RRVVBB`, pour un programme sans couleur connue). `sync` les valide et les expose dans `META` (`signature`, `program`, `programColor`). Une scène ne teste pas la signature : elle passe par les composants du moteur et par `THEME`.
 
 **bimaccess** : signature « CAD 2D » de BIMaccess. La référence est `design-system/DESIGN.md` du dépôt de la formation (fichier à lire, ce template n'en recopie que ce que le code applique). Le code applique :
 
@@ -179,6 +181,24 @@ Puis déclarer la scène dans `src/lesson/lesson.ts`, dans l'ordre du storyboard
 | Libellés d'interface sans tiret cadratin ; en-têtes de rétroaction « Réponse attendue », « À revoir » | `src/i18n.ts` |
 
 Ce qui reste à l'auteur (le code ne peut pas le garantir) : titres display de six mots au plus, terminés par un point (le storyboard garde la casse, le style met en majuscules) ; une couleur = une fonction (chaleur, froid, cotes : à écrire dans `spec.md`) ; dessins au trait (élévation, coupe, plan), cinq étiquettes au plus par schéma ; illustrations SVG aux couleurs des jetons, sans dégradé ni coin arrondi ; jamais de tiret cadratin ; rien sous les sous-titres (y ≥ 880) ni dans la zone d'action (bas droite).
+
+**carte** : signature « carte topographique » : la scène se lit comme une feuille de carte imprimée. La référence est la charte du programme qui l'emploie (ses jetons `tokens.json` et son § 6, valeurs CSS de la coque) ; le code applique :
+
+| Règle de la charte | Où c'est fait |
+|---|---|
+| Jetons de couleur sous leurs noms (camelCase : `fond`, `papier`, `encre`, `encre2`, `carroyage`, `relief`, `reliefMaitresse`, `chaussee`, `ecriture`, `lecture`, `lectureFond`, `eauFond`, `vegetation`, `vegetationFond`, `imageClair`, `imageFonce`, `terme`, `manque`, `manqueFond`, `lien`, `lienSurvol`, `survol`, `verrouTrait`) ; les clés communes en sont dérivées (`background` = fond, `panel` = papier, `ink` = encre, `ink2` et `muted` = encre2, `line` = carroyage, `accent` = lecture, `panel2` = survol, `selectBg` = lectureFond, `lineSoft` = verrouTrait…) sauf si `theme.json` les donne ; polices `serif` et `capitales` (→ `body`, `display`, `paper` et `mono`) | `content/design/theme.json`, défauts et dérivation dans `scripts/sync.mjs` |
+| Couleur de programme (`programColor`) seulement dans la barre d'état : pastille, case courante de l'échelle | `App.tsx`, `player-carte.css` |
+| Polices Source Serif 4 (400, 600, italiques 400 et 600) et Barlow Condensed (500, 600), en ligne dans la page | `sync.mjs` → `src/generated/fonts.css` |
+| Fond `background`, feuille dès l'image 0 et jamais animée (cadre 2 px, bordure graduée en damier, filets à 46 et 58, carroyage), aucune grille de points ni icône SCU, zone d'action x 1454, y 834, 360 × 140 | `SceneRoot` |
+| En-tête de feuille : barre d'état de 44 px (à l'échelle de la scène), filet double, pastille et programme, code de scène, titre en italique, échelle graphique de progression (une case par scène), position | `App.tsx`, `player-carte.css` |
+| Aplats et traits, aucun coin arrondi, aucune ombre, angles vifs | `player-carte.css`, `carte.tsx`, `Trace` |
+| Boutons en cartouche (double filet, capitales espacées) : repos papier, survol, actif encre pleine, verrouillé gris ; focus en trait plein bleu | coque : `player-carte.css` ; scène : classe `carte-btn` |
+| Titre de scène serif 600 66 px, filet double de 300 px ; puces en aplat d'encre ; lignes de repère encre 1,5 px, mot tapé | `Title`, `Bullets`, `Callout` |
+| Mise en évidence : tireté bleu 2,5 px (10 6), sans poignée, rectangle à 10 px ou cercle (`shape="circle"`), tracé en 0,25 s avec `at` ; une seule à la fois | `Highlight`, `HighlightRect` |
+| Panneau d'exercice cartouche, choix sélectionné à bord plein bleu 3 px et fond lecture-fond, rétroaction en rubrique sous filet double, sans couleur de verdict | `ChoicePanel` |
+| Sous-titres : bandeau papier à filets (2 px, 0,8 px), serif 34 px, x 104, bas à y 1000, 1 180 px au plus | `Captions` |
+
+Reste à l'auteur : la règle du sens, une couleur = une fonction (les couleurs de thème cartographique seulement dans une feuille de format), symboles et habillage de marge (légende, échelle, rose) dans les illustrations, textes de 23 px et plus, rien sous les sous-titres ni dans la zone d'action. `Trace` n'a pas de bouts ronds en carte : les routes à bouts ronds se dessinent dans le SVG.
 
 **neutral** : rendu d'origine du template (fond papier, polices système, coins arrondis), thème par défaut neutre. Un `theme.json` qui porte `"signature": "bimaccess"` ne s'applique pas à la signature neutre (avertissement de sync) : retirer la clé ou écrire un thème neutre pour l'adapter.
 
