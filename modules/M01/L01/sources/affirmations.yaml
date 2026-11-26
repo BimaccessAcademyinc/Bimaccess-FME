@@ -1141,6 +1141,27 @@ affirmations:
   verifie: true
   note_verification: Ajoutée par l'orchestrateur pour l'ouverture « problème » demandée par Ilyas ; source unique (presse
     spécialisée). Confirmée par Ilyas, porte Q11 (2026-11-26).
+- id: A-origines-24
+  question: Q6
+  enonce: Safe Software commence par développer une technologie de traduction pour un format du gouvernement de la Colombie-Britannique,
+    SAIF.
+  usage: narration
+  sources:
+  - url: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+    titre: Safe Software Celebrates 15 Years of Solving Spatial Data Interoperability Challenges (communiqué de Safe Software
+      repris par The American Surveyor)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id001
+    extrait: Safe Software first began by developing translation technology to support a proprietary format developed by the
+      BC Government
+  contradictions:
+  - version: '« proprietary format » chez l''éditeur ; norme canadienne approuvée selon la spécification SAIF (A-origines-19)
+      : ne pas dire « propriétaire »'
+    source: https://amerisurv.com/2008/12/10/safe-software-celebrates-15-years-of-solving-spatial-data-interoperability-challenges/
+  verifie: null
+  note_verification: 'Ajoutée par l''orchestrateur : lien du récit entre le projet, SAIF et FME, demandé par la relecture
+    (le contrat ne fait pas naître FME).'
 lacunes:
 - question: Q1
   manque: 'Texte intégral d''ISO 19101-1 non lu (iso.org répond 403) ; la définition vient d''une citation du W3C. Définition

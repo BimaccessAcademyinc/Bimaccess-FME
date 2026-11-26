@@ -1,4 +1,4 @@
-# Brief · Feature Manipulation Engine : un nom qui dit le métier
+# Brief · FME : partager les données géographiques entre logiciels
 
 | Point | Valeur |
 |---|---|

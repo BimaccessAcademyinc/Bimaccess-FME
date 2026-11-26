@@ -26,6 +26,7 @@ Générée par `check_pack.py --remise` depuis `affirmations.yaml` : ne pas modi
 | A-nom-17 | FME s'appelait à l'origine Feature Manipulation Engine ; l'éditeur dit aujourd'hui FME. | forte | Q2 |
 | A-nom-18 | FME permet de partager des données géographiques entre des logiciels différents. | forte | Q9 |
 | A-origines-23 | Les entreprises forestières utilisaient des logiciels différents, et le gouvernement ne voulait pas leur imposer un même éditeur. | forte | Q6 |
+| A-origines-24 | Safe Software commence par développer une technologie de traduction pour un format du gouvernement de la Colombie-Britannique, SAIF. | moyenne | Q6 |
 
 ## Terminologie décidée
 
