@@ -28,7 +28,7 @@ Une leçon produite de A à Z, de meilleure qualité que les leçons CER001, plu
 | 8 | Porte du sens : planche par phrase, plus les trois points révisables (durée, exemples, noms des fondateurs) | Ilyas | à venir |
 | 9 | Corrections, voix finale ElevenLabs une seule fois (clé par le formulaire sécurisé), recalage | voix, code | à venir |
 | 10 | Livraison `dist/index.html` et bilan L01 (temps, tokens, défauts vus par Ilyas et ratés par les relecteurs) | QA, orchestrateur | à venir |
-| 11 | Report du harnais dans le dépôt source et export ; L02 à L05 dans la charte FME001 | tous | à venir |
+| 11 | Report du harnais dans le dépôt source et export ; L02 à L05 dans la charte FME001, sans étape des thèmes (une charte est en place) | tous | à venir |
 
 ## 3. Les améliorations du harnais essayées ici
 
