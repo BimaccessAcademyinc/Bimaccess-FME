@@ -22,3 +22,6 @@ FME001 charte du module,97d54436-af59-5ae1-b5e1-362640cf04f2,Graphiste : charte 
 FME001-M01-L01 signature carte du lecteur,97d54436-af59-5ae1-b5e1-362640cf04f2,Code : signature carte du lecteur,claude-opus-5-5,57,114,283479,13495732,97388,0,0,17.7,
 "FME001-M01-L01 spécification des scènes, arrêtée (storyboard refusé)",97d54436-af59-5ae1-b5e1-362640cf04f2,Graphiste : spec des 8 scènes,claude-opus-5-5,26,52,460762,5743476,144142,0,0,24.8,
 FME001-M01-L01 storyboard réécrit (récit),97d54436-af59-5ae1-b5e1-362640cf04f2,"Scénariste : réécriture, partir du problème",claude-opus-5-5,23,46,158875,3243365,52901,0,0,7.9,
+"FME001-M01-L01 storyboard réécrit, trois relecteurs",97d54436-af59-5ae1-b5e1-362640cf04f2,Relecteur examinateur (v2),claude-sonnet-5-5,5,10,84018,455473,12019,0,0,1.4,
+"FME001-M01-L01 storyboard réécrit, trois relecteurs",97d54436-af59-5ae1-b5e1-362640cf04f2,Relecteur professionnel (v2),claude-sonnet-5-5,5,10,72625,449656,6217,0,0,0.7,
+"FME001-M01-L01 storyboard réécrit, trois relecteurs",97d54436-af59-5ae1-b5e1-362640cf04f2,Relecteur œil d'Ilyas (v2),claude-opus-5-5,11,22,85632,1199613,14507,0,0,2.4,
