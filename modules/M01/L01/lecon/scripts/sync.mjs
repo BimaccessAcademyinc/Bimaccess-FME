@@ -18,7 +18,8 @@
  *     qui complètent ou remplacent les repères suggérés.
  *   - thème (JSON, facultatif) et dossier d'illustrations SVG.
  *   - signature graphique (studio.config.json « signature » : « bimaccess »,
- *     par défaut, ou « neutral ») et programme (« program », « programColor ») :
+ *     par défaut, « carte » ou « neutral ») et programme (« program »,
+ *     « programColor ») :
  *     valeurs validées, exposées dans META ; le thème par défaut et les polices
  *     embarquées suivent la signature. Un thème qui porte « signature » ne
  *     s'applique qu'à cette signature (sinon : thème par défaut, avertissement).
@@ -93,10 +94,17 @@ if (cfg.id && !/^[a-z0-9][a-z0-9-]*$/i.test(cfg.id)) fail(`studio.config.json : 
 /**
  * Signatures : « bimaccess » (signature CAD 2D de BIMaccess, design-system
  * DESIGN.md : fond blanc à grille de points, Azeret Mono et IBM Plex Sans,
- * couleurs ACI, poignées, aucun coin arrondi) et « neutral » (signature
- * neutre d'origine : fond papier, polices système, coins arrondis).
+ * couleurs ACI, poignées, aucun coin arrondi), « carte » (signature « carte
+ * topographique » : feuille imprimée à bordure graduée et carroyage, fond
+ * #F1F3EC, Source Serif 4 et Barlow Condensed, aplats et traits, mise en
+ * évidence tiretée bleue sans poignée, aucun coin arrondi ni ombre) et
+ * « neutral » (signature neutre d'origine : fond papier, polices système,
+ * coins arrondis).
  */
-const SIGNATURES = ["bimaccess", "neutral"]
+const SIGNATURES = ["bimaccess", "carte", "neutral"]
+const SIGNATURE_LIST = "« bimaccess » (signature CAD 2D de BIMaccess), « carte » (signature carte topographique) ou « neutral » (signature neutre)"
+/** Signatures qui affichent le programme (pastille, code, couleur) dans la barre d'état. */
+const PROGRAM_SIGNATURES = ["bimaccess", "carte"]
 const DEFAULT_SIGNATURE = "bimaccess"
 /**
  * Couleur ACI de chaque programme de formation (DESIGN.md § 2, « Couleurs par
@@ -110,7 +118,7 @@ const HEX = /^#[0-9A-Fa-f]{6}$/
 
 const signature = cfg.signature ?? DEFAULT_SIGNATURE
 if (!SIGNATURES.includes(signature)) {
-  fail(`studio.config.json : « signature » vaut ${JSON.stringify(cfg.signature)} : valeurs possibles « bimaccess » (signature CAD 2D de BIMaccess) ou « neutral » (signature neutre)`)
+  fail(`studio.config.json : « signature » vaut ${JSON.stringify(cfg.signature)} : valeurs possibles ${SIGNATURE_LIST}`)
 }
 let program = null
 let programColor = null
@@ -134,7 +142,7 @@ if (cfg.programColor !== undefined && cfg.programColor !== null) {
 } else if (program && !programColor) {
   fail(`studio.config.json : programme « ${program} » sans couleur connue (programmes connus : ${Object.keys(PROGRAMS).join(", ")}) : ajouter « programColor », la couleur ACI suivante selon DESIGN.md § 2 (${NEXT_PROGRAM_COLORS})`)
 }
-if (signature === "neutral" && (program || programColor)) warn("studio.config.json : « program » et « programColor » n'ont d'effet visible qu'avec la signature « bimaccess »")
+if (!PROGRAM_SIGNATURES.includes(signature) && SIGNATURES.includes(signature) && (program || programColor)) warn(`studio.config.json : « program » et « programColor » n'ont d'effet visible qu'avec les signatures ${PROGRAM_SIGNATURES.map((x) => `« ${x} »`).join(" et ")}`)
 
 /* ── Storyboard ─────────────────────────────────────────────────────────── */
 
@@ -460,12 +468,58 @@ for (const key of Object.keys(extraBeats)) if (!CLIPS[key]) fail(`repères pour 
  * (couleur de l'ombre décalée des panneaux). `grid` :
  * pas de la grille de points en pixels de composition (0 = aucune grille).
  *
+ * carte : jetons de la charte « carte topographique » (tokens.json de la
+ * charte, noms en camelCase : encre-2 → encre2, relief-maitresse →
+ * reliefMaitresse, lecture-fond → lectureFond…), polices `serif` (Source
+ * Serif 4) et `capitales` (Barlow Condensed). Les clés communes que lisent le
+ * moteur et les scènes (background, ink, accent…) en sont DÉRIVÉES après la
+ * fusion avec theme.json (CARTE_ALIASES) : un thème qui change « lecture »
+ * change aussi accent, blue, cyan, grip, sauf si la clé commune est donnée
+ * elle-même. La couleur de programme n'est pas un jeton de scène : elle vit
+ * dans META.programColor (barre d'état seulement). `grid` 0 (aucune grille de
+ * points : la feuille porte un carroyage), `radius` 0.
+ *
  * neutral : thème d'origine du template (fond papier, polices système, coins
  * arrondis) ; ses clés supplémentaires reprennent les couleurs neutres les
  * plus proches et ne servent qu'aux scènes qui les nomment.
  */
 const SYSTEM_SANS = "system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
 const SYSTEM_MONO = "ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace"
+/** Fond de la signature carte (charte § 2 : aucun autre fond de page). */
+const CARTE_FOND = "#F1F3EC"
+/** Clés communes du thème → jeton de la charte carte dont elles prennent la valeur (ou valeur fixe). */
+const CARTE_ALIASES = {
+  colors: {
+    background: "fond",
+    ink: "encre",
+    muted: "encre2",
+    accent: "lecture", // mise en évidence, choix sélectionné, focus
+    accent2: "ecriture",
+    success: "encre", // aucune couleur de verdict
+    line: "carroyage",
+    panel: "papier",
+    panel2: "survol",
+    gridDot: "carroyage",
+    lineSoft: "verrouTrait",
+    lineFaint: "survol",
+    ink2: "encre2",
+    red: "ecriture",
+    gold: "manque",
+    goldText: "encre", // le libellé du manque s'écrit en encre, jamais en or
+    yellowFill: "manqueFond",
+    green: "terme",
+    cyan: "lecture",
+    blue: "lecture",
+    magenta: "lien",
+    grip: "lecture",
+    gripHover: "lecture",
+    gripHot: "encre",
+    selectBg: "lectureFond",
+    tooltip: "papier",
+    shadow: { value: "rgba(0, 0, 0, 0)" }, // aucune ombre
+  },
+  fonts: { body: "serif", display: "serif", paper: "serif", mono: "capitales" },
+}
 const DEFAULT_THEMES = {
   bimaccess: {
     colors: {
@@ -542,12 +596,46 @@ const DEFAULT_THEMES = {
     grid: 0,
     typingCps: 35,
   },
+  carte: {
+    colors: {
+      fond: CARTE_FOND,
+      papier: "#FBFCF8",
+      encre: "#23281F",
+      encre2: "#545B4C",
+      carroyage: "#7D8576",
+      relief: "#B08A62",
+      reliefMaitresse: "#8E6640",
+      chaussee: "#FFFFFF",
+      ecriture: "#C4472B",
+      lecture: "#2F6DA8",
+      lectureFond: "#E3ECF4",
+      eauFond: "#BFD5E6",
+      vegetation: "#6E8B4E",
+      vegetationFond: "#D3DFC3",
+      imageClair: "#9DAF8A",
+      imageFonce: "#5F7550",
+      terme: "#1E6E3C",
+      manque: "#C99700",
+      manqueFond: "#FBF1C8",
+      lien: "#7A4A22",
+      lienSurvol: "#4F2E12",
+      survol: "#E5E9DD",
+      verrouTrait: "#A3AA9B",
+    },
+    fonts: {
+      serif: "'Source Serif 4', Georgia, serif",
+      capitales: "'Barlow Condensed', 'Arial Narrow', sans-serif",
+    },
+    radius: 0,
+    grid: 0,
+    typingCps: 35,
+  },
 }
 const DEFAULT_THEME = DEFAULT_THEMES[signature] ?? DEFAULT_THEMES[DEFAULT_SIGNATURE]
 const themePath = cfg.theme ? at(cfg.theme) : null
 let userTheme = themePath && existsSync(themePath) ? readJson(themePath, "thème") : {}
 if (userTheme.signature !== undefined && !SIGNATURES.includes(userTheme.signature)) {
-  fail(`thème ${cfg.theme} : « signature » vaut ${JSON.stringify(userTheme.signature)} : « bimaccess » ou « neutral » (ou retirer la clé : le thème vaut alors pour toutes les signatures)`)
+  fail(`thème ${cfg.theme} : « signature » vaut ${JSON.stringify(userTheme.signature)} : ${SIGNATURES.map((x) => `« ${x} »`).join(", ")} (ou retirer la clé : le thème vaut alors pour toutes les signatures)`)
 } else if (userTheme.signature !== undefined && userTheme.signature !== signature && SIGNATURES.includes(signature)) {
   // Thème écrit pour l'autre signature : la signature choisie garde son rendu par défaut
   warn(`thème ${cfg.theme} écrit pour la signature « ${userTheme.signature} » : ignoré, la signature « ${signature} » prend son thème par défaut (changer ou retirer sa clé « signature » pour l'appliquer)`)
@@ -555,6 +643,20 @@ if (userTheme.signature !== undefined && !SIGNATURES.includes(userTheme.signatur
 }
 const { signature: _themeSignature, ...themeKeys } = userTheme
 const THEME = { ...DEFAULT_THEME, ...themeKeys, colors: { ...DEFAULT_THEME.colors, ...(themeKeys.colors ?? {}) }, fonts: { ...DEFAULT_THEME.fonts, ...(themeKeys.fonts ?? {}) } }
+if (signature === "carte") {
+  // Clés communes dérivées des jetons de la charte (après fusion), sauf celles que theme.json donne lui-même ; elles passent en tête
+  for (const part of ["colors", "fonts"]) {
+    const derived = {}
+    for (const [key, from] of Object.entries(CARTE_ALIASES[part])) {
+      const own = themeKeys[part]?.[key]
+      if (own !== undefined) derived[key] = own
+      else if (typeof from === "object") derived[key] = from.value
+      else if (THEME[part][from] === undefined) fail(`thème : jeton « ${from} » de la signature carte absent (clé « ${key} » dérivée de lui)`)
+      else derived[key] = THEME[part][from]
+    }
+    THEME[part] = { ...derived, ...THEME[part] }
+  }
+}
 for (const [k, v] of Object.entries(THEME.colors)) if (typeof v !== "string" || !v.trim()) fail(`thème : couleur « ${k} » invalide`)
 for (const [k, v] of Object.entries(THEME.fonts)) if (typeof v !== "string" || !v.trim()) fail(`thème : police « ${k} » invalide`)
 if (!(Number(THEME.typingCps) > 0)) fail(`thème : « typingCps » doit être un nombre positif`)
@@ -569,6 +671,12 @@ if (signature === "bimaccess") {
   if (String(THEME.colors.background).toUpperCase() !== "#FFFFFF") {
     warn(`thème : fond ${THEME.colors.background} ; la signature bimaccess a un fond toujours blanc #FFFFFF (DESIGN.md § 2 : jamais de noir, de crème ni de beige)`)
   }
+}
+if (signature === "carte") {
+  // Charte carte : aplats et traits, angles vifs ; un seul fond de page
+  if (Number(THEME.radius) !== 0) warn(`thème : « radius » vaut ${THEME.radius} ; la signature carte n'a aucun coin arrondi : le lecteur l'ignore`)
+  if (String(THEME.colors.background).toUpperCase() !== CARTE_FOND) warn(`thème : fond ${THEME.colors.background} ; la signature carte a un fond ${CARTE_FOND} partout (charte, § 2 : aucun autre fond de page)`)
+  if (Number(THEME.grid) !== 0) warn(`thème : « grid » vaut ${THEME.grid} ; la signature carte n'a pas de grille de points (la feuille porte un carroyage) : le lecteur l'ignore`)
 }
 
 const ASSETS = {}
@@ -647,8 +755,10 @@ for (const file of sourcesOf(lessonDir)) {
  * requête réseau, page lisible en file://). Fraunces (espace papier : 300,
  * 600, 600 italique) n'est embarquée que si une scène ou une illustration
  * l'emploie (`fonts.paper` ou « Fraunces » dans src/lesson/, « Fraunces »
- * dans un SVG) : aucun composant du moteur ne l'utilise. Signature neutre :
- * aucune police (polices système).
+ * dans un SVG) : aucun composant du moteur ne l'utilise. Signature carte :
+ * Source Serif 4 (400, 600, italiques 400 et 600) et Barlow Condensed (500,
+ * 600), mêmes paquets, même mise en ligne. Signature neutre : aucune police
+ * (polices système).
  */
 const usesPaperFont = () =>
   sourcesOf(lessonDir).some((f) => /\bfonts\.paper\b|Fraunces/.test(readFileSync(f, "utf8"))) || Object.values(ASSETS).some((svg) => /Fraunces/.test(svg))
@@ -657,6 +767,10 @@ const FONT_FACES = {
     { family: "Azeret Mono", pkg: "@fontsource/azeret-mono", file: "azeret-mono", faces: [[200], [300], [400], [500]] },
     { family: "IBM Plex Sans", pkg: "@fontsource/ibm-plex-sans", file: "ibm-plex-sans", faces: [[400], [500], [600]] },
     { family: "Fraunces", pkg: "@fontsource/fraunces", file: "fraunces", faces: [[300], [600], [600, "italic"]], when: usesPaperFont },
+  ],
+  carte: [
+    { family: "Source Serif 4", pkg: "@fontsource/source-serif-4", file: "source-serif-4", faces: [[400], [600], [400, "italic"], [600, "italic"]] },
+    { family: "Barlow Condensed", pkg: "@fontsource/barlow-condensed", file: "barlow-condensed", faces: [[500], [600]] },
   ],
   neutral: [],
 }
@@ -733,7 +847,7 @@ const metaBase = JSON.stringify(
 const metaSignature = `,\n  "signature": ${JSON.stringify(signature)} as Signature,\n  "program": ${JSON.stringify(program)} as string | null,\n  "programColor": ${JSON.stringify(programColor)} as string | null\n}`
 write(
   "meta.ts",
-  `/** Signature graphique : « bimaccess » (CAD 2D, design-system DESIGN.md) ou « neutral ». */\nexport type Signature = "bimaccess" | "neutral"\n\nexport const META = ${metaBase.replace(/\n}$/, metaSignature)} as const\n`,
+  `/** Signature graphique : « bimaccess » (CAD 2D, design-system DESIGN.md), « carte » (carte topographique) ou « neutral ». */\nexport type Signature = ${SIGNATURES.map((x) => JSON.stringify(x)).join(" | ")}\n\nexport const META = ${metaBase.replace(/\n}$/, metaSignature)} as const\n`,
 )
 {
   const file = join(gen, "fonts.css")
