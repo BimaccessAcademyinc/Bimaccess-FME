@@ -821,6 +821,22 @@ const write = (name, body) => {
   const next = HEAD + body
   if (!existsSync(file) || readFileSync(file, "utf8") !== next) writeFileSync(file, next)
 }
+/* Typographie française des textes affichés (écran, exercices) : espace insécable
+ * avant « : ; ? ! » et à l'intérieur des guillemets, pour qu'aucun signe ne commence
+ * une ligne. La narration n'est pas touchée : les locutions s'y calent mot pour mot. */
+if ((cfg.lang ?? "fr") === "fr") {
+  const nbsp = (t) => (typeof t === "string" ? t.replace(/ ([:;?!»])/g, "\u00a0$1").replace(/« /g, "«\u00a0") : t)
+  for (const id of Object.keys(TEXTS)) {
+    TEXTS[id].title = nbsp(TEXTS[id].title)
+    TEXTS[id].screen = TEXTS[id].screen.map(nbsp)
+  }
+  for (const id of Object.keys(EXERCISES)) {
+    const ex = EXERCISES[id]
+    ex.question = nbsp(ex.question)
+    ex.choices = ex.choices.map((c) => ({ ...c, label: nbsp(c.label), feedback: nbsp(c.feedback) }))
+  }
+}
+
 write("texts.ts", `export const TEXTS: Readonly<Record<string, { readonly title: string; readonly screen: readonly string[]; readonly sections: Readonly<Record<string, { readonly codes: readonly string[]; readonly lines: readonly string[] }>> }>> = ${JSON.stringify(TEXTS, null, 2)}\n\nexport const EXERCISES: Readonly<Record<string, { readonly question: string; readonly choices: readonly { readonly key: string; readonly label: string; readonly feedback: string }[]; readonly expected: string | null }>> = ${JSON.stringify(EXERCISES, null, 2)}\n\nexport const SCENE_IDS = ${JSON.stringify(scenes.map((s) => s.id))} as const\n`)
 write("narration.ts", `import type { Clip } from "../engine/types"\n\nexport const CLIPS: Readonly<Record<string, Clip>> = ${JSON.stringify(CLIPS)}\n`)
 write("theme.ts", `export const THEME = ${JSON.stringify(THEME, null, 2)} as const\n`)
