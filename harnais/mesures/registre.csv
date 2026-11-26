@@ -2,3 +2,4 @@ etape,session,agent,modèle,réponses,entrée,cache écrit,cache lu,sortie,reche
 FME001-M01-L01 recherche par axes,97d54436-af59-5ae1-b5e1-362640cf04f2,Chercheur axe nom,claude-sonnet-5-5,14,30,108734,1177908,13417,6,23,2.2,
 FME001-M01-L01 recherche par axes,97d54436-af59-5ae1-b5e1-362640cf04f2,Chercheur axe origines,claude-sonnet-5-5,11,24,99538,865081,9308,2,17,1.8,
 FME001-M01-L01 recherche par axes,97d54436-af59-5ae1-b5e1-362640cf04f2,Chercheur axe sig,claude-sonnet-5-5,11,24,102602,887202,9688,4,19,1.6,
+FME001-M01-L01 consolidation,97d54436-af59-5ae1-b5e1-362640cf04f2,Consolidateur du pack L01,claude-opus-5-5,52,106,192781,6952659,54083,7,0,9.7,

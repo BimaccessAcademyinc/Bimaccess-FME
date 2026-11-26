@@ -31,7 +31,7 @@ Après la porte, `source-pack.md` et `affirmations.yaml` sont la matière de la 
 3. **Consolidation.** Un agent fusionne les axes, garde un seul énoncé par fait, réunit les sources d'un même fait, note les contradictions sans les trancher, écrit `source-pack.md` et `porte-expert.md`.
 4. **Contrôle mécanique.** `python3 scripts/check_pack.py <leçon>/sources --extraits` doit sortir en 0. Le script **calcule** la confiance de chaque affirmation à partir de ses sources (celle qu'un agent écrit à la main est ignorée et signalée), et vérifie que **chaque extrait figure mot pour mot** dans le texte brut de sa page : un extrait introuvable sur une affirmation de narration est une erreur.
 5. **Vérification du sens.** Un agent `verificateur`, qui n'a rien cherché, lit chaque affirmation de narration à côté de son extrait, et seulement là où le script ne pouvait pas lire la page, rouvre la page. La présence de l'extrait est déjà prouvée par le script : il juge seulement si l'extrait **dit bien** l'énoncé, sans glissement (une date de constitution n'est pas une date de sortie du produit, un siège actuel n'est pas le lieu de fondation). Il peut baisser l'usage d'une affirmation, ou la marquer `verifie: false` avec la raison. Il ne réécrit aucun énoncé.
-6. **Porte de l'expert.** Dix questions au plus, l'option recommandée en premier, chacune avec ses sources. L'expert répond dans `porte-expert.md`. Une réponse de l'expert devient une source de niveau `expert` (§ 3). Une question sans réponse laisse l'affirmation hors de la narration, et la production continue.
+6. **Porte de l'expert.** Dix questions au plus dans le fichier, l'option recommandée en premier, chacune avec ses sources ; l'orchestrateur en **pose quatre au plus** à l'expert, celles qui pèsent le plus sur la leçon (titre, fil, terme central, fait que la voix dira), et applique l'option recommandée aux autres, notée « appliqué, révisable » sous la question, comme le veut la règle des portes de la chaîne. L'expert répond dans `porte-expert.md`. Une réponse de l'expert devient une source de niveau `expert` (§ 3). Une question sans réponse laisse l'affirmation hors de la narration, et la production continue.
 
 ## 3. Sources et confiance
 
@@ -68,6 +68,8 @@ Une date, un chiffre ou un nom propre que la voix dira demande la confiance `for
 - `extrait` : la phrase de la page qui porte le fait, recopiée telle quelle, 30 mots au plus, dans la langue de la page.
 - `consulte` : la date du jour de la lecture, `AAAA-MM-JJ`.
 - Une contradiction entre sources se note dans `contradictions`, avec les deux versions ; on ne choisit pas.
+- Avant de déclarer une lacune, chercher dans toutes les pages déjà lues : `lire_page.py <sources> --cache "<mot>"` (première passe de FME001 : la fiche PDF « illisible » portait les fondateurs, l'année et le siège).
+- Un article de presse qui reprend un communiqué compte pour l'éditeur (`editeur` de l'entreprise, niveau `A`), pas pour la presse : repère la dateline, la rubrique « About <entreprise> », le contact presse. `check_pack.py --extraits` le signale sur les sources `B` et `C`.
 - Ce qui n'a pas été trouvé va dans les lacunes du pack, jamais comblé de mémoire. Une connaissance générale sans source s'écrit en lacune, avec « à sourcer » : elle ne devient pas une affirmation.
 - Marques, captures d'écran et logos de l'éditeur : dans la banque visuelle, en `REFERENCE_ONLY` ou `REDRAW` ; jamais `REUSE` sans licence écrite.
 

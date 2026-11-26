@@ -9,6 +9,7 @@ Usage :
   python3 lire_page.py <dossier sources/> <url>                 télécharge et met en cache, affiche le chemin
   python3 lire_page.py <dossier sources/> <url> --chercher "mot" affiche les phrases qui contiennent le mot
   python3 lire_page.py <dossier sources/> <url> --texte          affiche tout le texte
+  python3 lire_page.py <dossier sources/> --cache "mot"          cherche dans toutes les pages déjà lues
 
 Le cache vit dans <sources>/pages/ (non versionné : textes de tiers). Le client s'annonce
 pour ce qu'il est ; un site qui refuse (401, 403, 429) est respecté, jamais contourné :
@@ -94,6 +95,19 @@ def main(argv: list[str]) -> int:
         print(__doc__)
         return 2
     sources, url = Path(argv[0]), argv[1]
+    if url == "--cache" and len(argv) >= 3:
+        mot = argv[2].lower()
+        n = 0
+        for c in sorted((sources / "pages").glob("*.txt")):
+            entete, _, texte = c.read_text(encoding="utf-8").partition("\n---\n")
+            phrases = [p.strip() for p in re.split(r"(?<=[.!?])\s+|\n{2,}", re.sub(r"[ \t]+", " ", texte)) if mot in p.lower()]
+            if phrases:
+                n += len(phrases)
+                print(entete.splitlines()[0])
+                for p in phrases[:5]:
+                    print(f"  - {p[:300]}")
+        print(f"{n} phrase(s) avec « {mot} » dans le cache")
+        return 0
     try:
         cache = lire(sources, url)
     except urllib.error.HTTPError as e:

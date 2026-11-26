@@ -32,6 +32,7 @@ ID_RE = re.compile(r"^A-[a-z0-9-]+-\d{2,3}$")
 CITE_RE = re.compile(r"\[(A-[a-z0-9-]+-\d{2,3})(?:\s*,\s*(A-[a-z0-9-]+-\d{2,3}))*\]")
 CITE_ONE_RE = re.compile(r"A-[a-z0-9-]+-\d{2,3}")
 CHIFFRE_RE = re.compile(r"\d")
+COMMUNIQUE_RE = re.compile(r"^\s*about (?!us\b|about\b|the\b)[a-z0-9&.' -]{2,40}\s*:?\s*$|\bmedia contacts?\s*:|\bpress contacts?\s*:|\bfor more information,? (please )?contact\b|\bprnewswire\b|\bbusiness wire\b|\bmarketwired\b|\bglobe ?newswire\b|\bcision\b", re.M)
 
 
 def confiance(sources: list[dict]) -> str:
@@ -231,6 +232,9 @@ def controle_extraits(dossier: Path, affs: dict[str, dict], r: Rapport) -> Count
                 continue
             texte = lire_page.normaliser(lire_page.texte_du_cache(dossier, url) or "")
             extrait = lire_page.normaliser(str(s["extrait"]).strip(" .\"'"))
+            brut = (lire_page.texte_du_cache(dossier, url) or "").lower()
+            if s.get("niveau") in ("B", "C") and COMMUNIQUE_RE.search(brut):
+                r.avi(ou, f"la page de « {s.get('editeur')} » ressemble à un communiqué (rubrique « about … », contact presse, fil de presse) : vérifier l'éditeur réel, qui compte pour l'indépendance")
             if extrait and extrait in texte:
                 bilan["mot pour mot"] += 1
             else:
@@ -263,6 +267,18 @@ def autotest() -> int:
         obtenu = confiance(src)
         if obtenu != attendu:
             print(f"échec confiance {[s.get('editeur') for s in src]} : {obtenu} au lieu de {attendu}")
+            ok = False
+    communiques = ["Surrey, BC - Safe today announced.\n\nAbout Safe Software\nSafe makes FME.",
+                   "Growth ahead.\nMedia contact: Jane"]
+    pas_communiques = ["GC: In your recent press release, it says growth.", "Menu\n\nAbout us\n\nNews",
+                       "It helps businesses make informed decisions."]
+    for x in communiques:
+        if not COMMUNIQUE_RE.search(x.lower()):
+            print(f"échec : communiqué non repéré : {x[:40]!r}")
+            ok = False
+    for x in pas_communiques:
+        if COMMUNIQUE_RE.search(x.lower()):
+            print(f"échec : faux communiqué : {x[:40]!r}")
             ok = False
     with tempfile.TemporaryDirectory() as t:
         d = Path(t)
