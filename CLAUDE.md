@@ -28,7 +28,7 @@ Une leçon sans pack fourni passe d'abord par le skill `harnais/skills/pack-rech
 | `modules/M01/plan-module.md` | plan du module |
 | `modules/M01/Lyy/` | une leçon : `sources/`, puis le projet Studio de la leçon |
 
-Identifiants : programme `FME001`, leçon `FME001-M01-L01`, scène `FME001-M01-L01-S01`. Couleur de programme : vert ACI `#00A64F` (à confirmer par Ilyas).
+Identifiants : programme `FME001`, leçon `FME001-M01-L01`, scène `FME001-M01-L01-S01`. Couleur de programme : vert ACI `#00A64F`.
 
 ## Conventions
 
