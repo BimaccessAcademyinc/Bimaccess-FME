@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80" role="img" aria-label="Frise : échelle graduée en années, deux jalons, bout ouvert">
 <path d="M6 40 H120" fill="none" stroke="#23281F" stroke-width="2.5"/>
-<rect x="120" y="34" width="160" height="12" fill="#FBFCF8" stroke="#23281F" stroke-width="1.5"/>
+<rect x="120" y="34" width="120" height="12" fill="#FBFCF8" stroke="#23281F" stroke-width="1.5"/>
 <path d="M120 34 h40 v12 h-40 Z M200 34 h40 v12 h-40 Z" fill="#23281F"/>
-<path d="M280 40 H298" fill="none" stroke="#23281F" stroke-width="2.5"/>
+<path d="M240 40 H298" fill="none" stroke="#23281F" stroke-width="2.5"/>
 <path d="M296 30 L316 40 L296 50 Z" fill="#23281F"/>
 <path d="M120 14 V66 M240 14 V66" fill="none" stroke="#23281F" stroke-width="2"/>
 </svg>
