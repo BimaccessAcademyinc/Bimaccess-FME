@@ -122,3 +122,11 @@ Options :
 Sans réponse : option 1.
 
 Réponse d'Ilyas : non posée. Appliqué, révisable : option 1, les étapes de 1997 n'entrent pas.
+
+# Deuxième porte · ouverture « problème » (2026-11-26)
+
+## Q11 · Pour l'ouverture « problème », la voix peut-elle dire que les entreprises forestières utilisaient des logiciels différents, et que le gouvernement ne voulait pas leur imposer un même éditeur ?
+
+Ce que disent les sources : XYHT seul (presse spécialisée) [A-origines-23]. Question ajoutée le 2026-11-26, quand Ilyas a demandé que la leçon commence par le problème.
+
+Réponse d'Ilyas : oui, confirmé (2026-11-26). A-origines-23 passe en narration.

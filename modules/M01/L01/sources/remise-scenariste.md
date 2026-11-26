@@ -24,6 +24,8 @@ Générée par `check_pack.py --remise` depuis `affirmations.yaml` : ne pas modi
 | A-sig-07 | Safe Software a son siège à Surrey, en Colombie-Britannique. | forte | Q12 |
 | A-origines-22 | La première version de FME sort en 1996, trois ans après la fondation de Safe Software. | forte | Q8 |
 | A-nom-17 | FME s'appelait à l'origine Feature Manipulation Engine ; l'éditeur dit aujourd'hui FME. | forte | Q2 |
+| A-nom-18 | FME permet de partager des données géographiques entre des logiciels différents. | forte | Q9 |
+| A-origines-23 | Les entreprises forestières utilisaient des logiciels différents, et le gouvernement ne voulait pas leur imposer un même éditeur. | forte | Q6 |
 
 ## Terminologie décidée
 

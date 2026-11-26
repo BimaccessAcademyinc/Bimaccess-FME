@@ -206,9 +206,11 @@ def controle_dossier(dossier: Path) -> tuple[Rapport, dict[str, dict]]:
                 r.avi("source-pack.md", f"{k} (narration) n'est citée nulle part dans le pack")
     porte = dossier / "porte-expert.md"
     if porte.exists():
-        n = len(re.findall(r"^#{2,3}\s*Q\d+", porte.read_text(encoding="utf-8"), re.M))
-        if n > MAX_QUESTIONS_PORTE:
-            r.err("porte-expert.md", f"{n} questions (au plus {MAX_QUESTIONS_PORTE}) : regrouper, ou passer le reste en contexte")
+        # une porte par titre de niveau 1 : une nouvelle porte (demande de l'expert) ouvre son propre compte
+        for k, bloc in enumerate(re.split(r"^#\s", porte.read_text(encoding="utf-8"), flags=re.M)):
+            n = len(re.findall(r"^#{2,3}\s*Q\d+", bloc, re.M))
+            if n > MAX_QUESTIONS_PORTE:
+                r.err("porte-expert.md", f"porte {k} : {n} questions (au plus {MAX_QUESTIONS_PORTE}) : regrouper, ou passer le reste en contexte")
     return r, toutes
 
 

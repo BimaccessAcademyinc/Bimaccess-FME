@@ -49,3 +49,11 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 | Le lecteur ne connaissait que la coque CAD et une coque neutre ; une troisième signature s'ajoute proprement sur le modèle de la coque CAD (thème dérivé des jetons de la charte, polices embarquées, rendu des composants, feuille de style de coque) | 17,7 min d'agent, 66 appels d'outils ; `check`, `build` et le parcours automatique verts, les deux autres signatures toujours vertes | fichiers du template listés pour le report dans le plugin (rapport `.studio/reports/06-code.md`) |
 | `defineLesson` refuse une scène absente : on ne peut pas prouver une coque avec une seule scène sans affaiblir un garde-fou | | scènes d'attente génériques (`attente.tsx`), remplacées une à une par les scènes composées |
 | Les amorces de quadrillage traversent les textes de la scène | vu sur la capture de S01 | à régler à l'étape des planches (zones de réserve sous les textes) |
+
+## 2026-11-26 · Storyboard refusé sur la forme (FME001-M01-L01)
+
+| Constat | Mesure | Décision |
+|---|---|---|
+| Ilyas refuse le storyboard sur la forme : « ça fait livre pour bébé » ; il aime la vulgarisation, pas la façon (leçon bâtie sur le sigle comme une devinette, traduction mot à mot, ton scolaire, titres mignons). Trois relecteurs neufs et deux scénaristes ne l'avaient pas vu : la grille de CER001 ne nommait pas ce défaut | 1 storyboard au banc, 3 relectures, 1 correction ; spécification des scènes arrêtée en cours (17 illustrations écartées) | grille du pilote G22 à G25 (`harnais/grille-ilyas-pilote.md`) ; réécriture en partant du problème |
+| L'ouverture « problème » demandait un fait à source unique (logiciels différents des entreprises forestières) | 2 affirmations ajoutées depuis le cache ; une confirmée par Ilyas (deuxième porte, Q11) | une demande de l'expert qui change le fil ouvre une deuxième porte ; `check_pack.py` compte les questions porte par porte |
+| Leçon de chaîne : le ton se juge avant la charte et la coque, pas après ; une porte courte de l'expert sur l'ouverture d'une scène (titre et narration de S01) aurait évité la spécification perdue | | ajouter à la chaîne une porte du ton : S01 en entier montrée à l'expert dès le storyboard, avant tout dessin |

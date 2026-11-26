@@ -268,7 +268,7 @@ affirmations:
     titre: What is FME (FME Form 2026.3)
     editeur: Safe Software
     niveau: A
-    consulte: 2026-11-26
+    consulte: &id002 2026-11-26
     extrait: Data can be read from any format and written to any other.
   contradictions: []
   verifie: true
@@ -1099,6 +1099,48 @@ affirmations:
   contradictions: []
   verifie: true
   note_verification: Décision d'Ilyas, porte Q2 (nom d'origine).
+- id: A-nom-18
+  question: Q9
+  enonce: FME permet de partager des données géographiques entre des logiciels différents.
+  usage: narration
+  sources:
+  - url: https://www.nsnews.com/technology/don-murray-is-going-for-growth-as-safe-softwares-ceo-9631940
+    titre: Don Murray is going for growth as Safe Software's CEO
+    editeur: Business in Vancouver
+    niveau: B
+    consulte: '2026-11-26'
+    extrait: a platform that allowed certain types of data formats, such as geographic information system (GIS) data, which
+      includes things like maps, to be shared across different software applications.
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+    titre: What is FME (FME Form 2026.3)
+    editeur: Safe Software
+    niveau: A
+    consulte: *id002
+    extrait: Data can be read from any format and written to any other.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-origines-23
+  question: Q6
+  enonce: Les entreprises forestières utilisaient des logiciels différents, et le gouvernement ne voulait pas leur imposer
+    un même éditeur.
+  usage: narration
+  sources:
+  - niveau: expert
+    ref: porte-expert.md#Q11
+    editeur: Ilyas (BIMaccess)
+    consulte: '2026-11-26'
+  - url: https://xyht.com/spatial-itgis/freeing-the-data
+    titre: Freeing the Data
+    editeur: XYHT
+    niveau: B
+    consulte: '2026-11-26'
+    extrait: However, those companies used different software packages, and the government did not want to mandate that they
+      all use software from the same vendor.
+  contradictions: []
+  verifie: true
+  note_verification: Ajoutée par l'orchestrateur pour l'ouverture « problème » demandée par Ilyas ; source unique (presse
+    spécialisée). Confirmée par Ilyas, porte Q11 (2026-11-26).
 lacunes:
 - question: Q1
   manque: 'Texte intégral d''ISO 19101-1 non lu (iso.org répond 403) ; la définition vient d''une citation du W3C. Définition
