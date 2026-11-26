@@ -1,0 +1,30 @@
+[
+  {
+    "id": "S05",
+    "phrases": [
+      "Une entité quitte son logiciel dans un format de départ, et l'équipe qui la reçoit en attend un autre.",
+      "FME commence par lire les données source.",
+      "Ses outils de transformation manipulent la géométrie et les attributs des données.",
+      "FME peut alors écrire les données de destination dans le format attendu, celui que le logiciel de l'équipe sait ouvrir.",
+      "État final de la scène."
+    ]
+  },
+  {
+    "id": "S06",
+    "phrases": [
+      "Autour de FME, les formats pris en charge forment un large éventail.",
+      "Safe Software décrit FME comme un moteur central au milieu de ces formats.",
+      "Les données se lisent depuis n'importe lequel d'entre eux, et s'écrivent vers n'importe quel autre.",
+      "Pour le problème que Murray et Lutz avaient vu de près, c'est la réponse : un logiciel différent n'empêche pas l'échange.",
+      "C'est aussi la situation de toute équipe qui reçoit des données géographiques d'un autre bureau, sur un autre logiciel.",
+      "État final de la scène."
+    ]
+  },
+  {
+    "id": "S07",
+    "phrases": [
+      "Reste à savoir où vit une entité géographique : dans quel format est-elle stockée, et dans quel système de coordonnées ?",
+      "État final de la scène."
+    ]
+  }
+]
