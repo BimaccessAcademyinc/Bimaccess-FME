@@ -65,7 +65,10 @@ Une date, un chiffre ou un nom propre que la voix dira demande la confiance `for
 ## 4. Règles d'écriture des affirmations
 
 - Un énoncé, un fait. Paraphrase en français, sans adjectif de jugement (« pionnier », « leader »), sauf si l'énoncé dit justement qui le revendique (« Safe Software se présente comme… »).
-- `extrait` : la phrase de la page qui porte le fait, recopiée telle quelle, 30 mots au plus, dans la langue de la page.
+- `extrait` : la phrase de la page qui porte le fait, recopiée telle quelle, 30 mots au plus, dans la langue de la page. Un énoncé qui résume deux phrases a deux extraits (deux entrées de source, même page) ; sinon il se découpe. C'était le premier motif de refus du vérificateur.
+- Une source ne compte que si **son propre extrait** dit le fait : une adresse de contact ou une phrase voisine ajoutée pour gagner une source indépendante gonfle la confiance.
+- Les mots de la source se gardent : « early market » ne devient pas « premiers travaux », « a common challenge » ne devient pas « le problème de départ », le but d'un client ne devient pas l'objet du contrat.
+- Une date se lit dans le texte de la page, jamais dans son URL.
 - `consulte` : la date du jour de la lecture, `AAAA-MM-JJ`.
 - Une contradiction entre sources se note dans `contradictions`, avec les deux versions ; on ne choisit pas.
 - Avant de déclarer une lacune, chercher dans toutes les pages déjà lues : `lire_page.py <sources> --cache "<mot>"` (première passe de FME001 : la fiche PDF « illisible » portait les fondateurs, l'année et le siège).

@@ -6,6 +6,8 @@ Usage :
   python3 check_pack.py --axe <fichier.yaml>      un seul fichier d'axe (contrôle du chercheur)
   python3 check_pack.py <dossier sources/> --extraits   en plus : télécharge chaque source
                                                   (lire_page.py) et vérifie que l'extrait y figure mot pour mot
+  python3 check_pack.py <dossier sources/> --remise   en plus : écrit remise-scenariste.md, la liste
+                                                  de ce que la voix peut dire, tirée du registre
   python3 check_pack.py --test                    auto-test
 
 La confiance de chaque affirmation est calculée ici, depuis ses sources ;
@@ -136,7 +138,8 @@ def controle_affirmations(fichier: str, d: dict, r: Rapport, questions: set[str]
                 r.err(ou, "date ou chiffre dit par la voix en confiance moyenne : passer en « expert » ou ajouter une source indépendante")
             if a.get("verifie") is False:
                 r.err(ou, "le vérificateur l'a refusée (verifie: false) : elle ne peut rester en narration")
-        if a.get("contradictions") and usage == "narration":
+        tranchee = any(x.get("niveau") == "expert" for x in sources)
+        if a.get("contradictions") and usage == "narration" and not tranchee:
             r.avi(ou, "contradiction notée sur une affirmation de narration : à mettre à la porte de l'expert")
         vus[str(aid)] = a
     for k, v in enumerate(d.get("visuels") or []):
@@ -244,6 +247,28 @@ def controle_extraits(dossier: Path, affs: dict[str, dict], r: Rapport) -> Count
     return bilan
 
 
+def ecrire_remise(dossier: Path, affs: dict[str, dict]) -> Path:
+    """La remise au scénariste se génère du registre : elle ne peut pas diverger des usages vérifiés."""
+    reg = yaml.safe_load((dossier / "affirmations.yaml").read_text(encoding="utf-8")) if (dossier / "affirmations.yaml").exists() else {}
+    lignes = ["# Remise au scénariste", "",
+              "Générée par `check_pack.py --remise` depuis `affirmations.yaml` : ne pas modifier à la main.", "",
+              "## Ce que la voix et l'écran peuvent dire", "",
+              "| Affirmation | Énoncé | Confiance | Question |", "|---|---|---|---|"]
+    for k, a in affs.items():
+        if a.get("usage") == "narration" and a.get("verifie") is not False:
+            lignes.append(f"| {k} | {a.get('enonce', '')} | {a['_confiance']} | {a.get('question', '')} |")
+    lignes += ["", "## Terminologie décidée", ""]
+    for t in reg.get("terminologie") or []:
+        lignes.append(f"- **{t.get('terme')}** : {t.get('regle', t.get('francais', ''))} ({t.get('ref', '')})")
+    lignes += ["", "## Ce qui ne se dit pas (contexte, ou en attente de l'expert)", ""]
+    for k, a in affs.items():
+        if a.get("usage") != "narration" or a.get("verifie") is False:
+            lignes.append(f"- {k} ({a.get('usage')}) : {a.get('enonce', '')}")
+    sortie = dossier / "remise-scenariste.md"
+    sortie.write_text("\n".join(lignes) + "\n", encoding="utf-8")
+    return sortie
+
+
 def afficher(r: Rapport, affs: dict[str, dict]) -> int:
     if affs:
         print(f"{len(affs)} affirmations\n" + resume(affs))
@@ -308,12 +333,15 @@ def main(argv: list[str]) -> int:
         dossier = p.parent.parent if p.parent.name == "recherche" else p.parent
         affs = controle_affirmations(p.name, d, r, questions_du_cadrage(dossier)) if d else {}
         return afficher(r, affs)
-    if argv and Path(argv[0]).is_dir() and set(argv[1:]) <= {"--extraits"}:
+    if argv and Path(argv[0]).is_dir() and set(argv[1:]) <= {"--extraits", "--remise"}:
         r, affs = controle_dossier(Path(argv[0]))
         if "--extraits" in argv:
             bilan = controle_extraits(Path(argv[0]), affs, r)
             print("extraits : " + ", ".join(f"{k} {v}" for k, v in bilan.items()))
-        return afficher(r, affs)
+        code = afficher(r, affs)
+        if "--remise" in argv and code == 0:
+            print(f"remise écrite : {ecrire_remise(Path(argv[0]), affs)}")
+        return code
     print(__doc__)
     return 2
 

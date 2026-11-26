@@ -18,15 +18,15 @@ Une leçon produite de A à Z, de meilleure qualité que les leçons CER001, plu
 | Étape | Livrable | Rôle | État au 2026-11-26 |
 |---|---|---|---|
 | 0 | Plan du module, cadrage L01 | orchestrateur, Ilyas | fait, à corriger par Ilyas |
-| 1 | Pack de recherche L01 : axes, consolidation, extraits vérifiés par script | chercheurs, consolidateur | en cours |
-| 2 | Porte de l'expert du pack (dix questions au plus) | Ilyas | à venir |
+| 1 | Pack de recherche L01 : axes, consolidation, extraits vérifiés par script, vérification du sens | chercheurs, consolidateur, vérificateur | fait ; réparation des extraits tronqués en cours |
+| 2 | Porte de l'expert du pack : quatre questions posées, le reste appliqué et révisable | Ilyas | fait (Q1, Q2, Q3, Q6 tranchées le 2026-11-26) |
 | 3 | Storyboard L01, relecture par trois lecteurs | scénariste, relecteurs | à venir |
-| 4 | Trois directions artistiques essayées dans la scène la plus difficile | direction artistique | à venir |
-| 5 | Scènes codées sur voix provisoire muette, planche par phrase | graphiste, code, QA | à venir |
+| 4 | **Thèmes des planches** : le design, avec la direction artistique, propose **quatre thèmes**, chacun avec une **planche d'exemple** jouée sur la scène la plus difficile du storyboard ; aucun thème n'est imposé d'avance, chacun vient de la leçon (ses mots, son pack, les conventions de dessin du SIG et de la cartographie) ; Ilyas choisit un thème pour le module | design, direction artistique, Ilyas | à venir, demandé par Ilyas le 2026-11-26 |
+| 5 | Planches de toutes les scènes dans le thème choisi, scènes codées sur voix provisoire muette, planche par phrase | design, code, QA | à venir |
 | 6 | Porte du sens (planche par phrase vue par Ilyas) | Ilyas | à venir |
 | 7 | Voix finale, recalage, contrôle, livraison | voix, code, QA | à venir |
 | 8 | Bilan L01 : mesures, défauts, causes, corrections du harnais | orchestrateur | à venir |
-| 9 | L02 à L05 avec le harnais corrigé ; report dans le dépôt source et export | tous | à venir |
+| 9 | L02 à L05 dans le thème choisi, avec le harnais corrigé ; report dans le dépôt source et export | tous | à venir |
 
 ## 3. Les améliorations du harnais essayées ici
 
@@ -37,6 +37,9 @@ Une leçon produite de A à Z, de meilleure qualité que les leçons CER001, plu
 | Extraits vérifiés mot pour mot | la lecture web d'un agent résume ; seul le texte brut prouve la citation | `lire_page.py`, `check_pack.py --extraits` | idem |
 | Registre de mesures | « ce qui manque encore » selon le README du harnais | `harnais/mesures/` | `agents/` et plugin |
 | Banc d'essai des modèles | modèles fixés « sans essai comparatif » | `harnais/banc-modeles/` | choix de `model:` des agents justifiés par un essai |
+| Étape des thèmes des planches | la chaîne CER001 essaie trois directions dans une scène ; Ilyas veut quatre thèmes, chacun avec une planche d'exemple, choisis une fois avant toute planche | étape 4 ci-dessus | `REGLES.md` § 10.8 et rôle design |
+| Vérification du sens obligatoire | première passe : 12 affirmations refusées sur 36, dont 7 en narration, alors que tous les extraits étaient exacts | `pack-recherche` § 2.5 | idem |
+| Remise au scénariste générée | le pack lisible a divergé des usages dès la vérification | `check_pack.py --remise` | idem |
 | Agents à outils restreints | chaque sous-agent généraliste paie environ 100 000 tokens de contexte avant de commencer (mesuré) | à faire | définitions d'agents |
 
 ## 4. Les autres modèles

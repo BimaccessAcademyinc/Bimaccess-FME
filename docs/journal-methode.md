@@ -14,3 +14,14 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 | L'axe « nom » n'a aucune affirmation forte : l'éditeur est presque la seule source | 0 forte sur 15 | le cadrage doit prévoir des sources indépendantes |
 | Chaque sous-agent généraliste démarre avec environ 100 000 tokens de contexte en cache (prompt système et liste d'outils) | 99 538 à 108 734 tokens écrits en cache par chercheur | essayer des définitions d'agents à outils restreints et mesurer l'écart |
 | Le compteur d'appels d'outils de `tokens.py` sautait des blocs (une réponse s'étale sur plusieurs lignes) | 0 recherche comptée au lieu de 12 | usage compté une fois par réponse, outils sur chaque ligne |
+
+## 2026-11-26 · Consolidation, vérification, porte (FME001-M01-L01)
+
+| Constat | Mesure | Décision |
+|---|---|---|
+| Deux « articles de presse » étaient des communiqués de Safe Software, comptés en B par les chercheurs : la confiance était gonflée | 2 sources reclassées, 1 affirmation descendue en expert | `check_pack.py` signale un communiqué sur une source B ou C (rubrique « About … », contact presse, fil de presse) ; règle d'écriture au skill |
+| Des pages déjà en cache portaient ce que les chercheurs avaient déclaré manquant | fiche PDF : fondateurs, année, siège | `lire_page.py --cache` avant toute lacune |
+| Le vérificateur refuse ce que les scripts ne voient pas | 12 refus sur 36 ; 6 extraits tronqués, des mots durcis (« early market » devenu « premiers travaux »), une année prise dans l'URL | consignes au skill : un extrait par fait, une source ne compte que si son extrait dit le fait, l'année se lit dans le texte |
+| La consolidation est l'étape la plus chère | 9,7 min, environ 7 millions de tokens lus en cache, 52 réponses | essai à faire : un script de fusion fourni par le skill, l'agent ne fait que juger |
+| La porte comptait dix questions, la règle de la chaîne en veut quatre | 4 posées, 6 appliquées et révisables | règle reportée au skill |
+| Ilyas veut choisir le thème des planches sur pièces, avant toute planche | | étape 4 de la feuille de route : quatre thèmes, une planche d'exemple chacun |

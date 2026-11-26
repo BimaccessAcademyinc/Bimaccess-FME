@@ -13,7 +13,7 @@ Options :
 
 Sans réponse : option 1 ; ni le 13 décembre ni 1996 ne sont dits.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : option 2, « fondée en 1993, FME sort en 1996 » (2026-11-26). Nouvelle affirmation A-origines-22.
 
 ## Q2 · Le titre « un nom qui dit le métier » tient-il, alors que l'éditeur écrit que FME était « à l'origine » le Feature Manipulation Engine ?
 
@@ -25,7 +25,7 @@ Options :
 
 Sans réponse : option 1.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : option 1, nom d'origine (2026-11-26). Nouvelle affirmation A-nom-17.
 
 ## Q3 · En français, la leçon garde-t-elle « feature » ou traduit-elle (entité, objet géographique) ?
 
@@ -37,7 +37,7 @@ Options :
 
 Sans réponse : option 1, sans glose française ; la définition passe par « abstraction d'un phénomène du monde réel ».
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : option 2, traduire partout par « entité géographique » ; « feature » montré une fois comme le mot de l'outil (2026-11-26). Inscrit dans `terminologie` du registre.
 
 ## Q4 · Qui était le client de départ : la leçon dit-elle seulement « le gouvernement de la Colombie-Britannique », ou nomme-t-elle un ministère ?
 
@@ -49,7 +49,7 @@ Options :
 
 Sans réponse : option 1 ; « gouvernement canadien » ne se dit pas.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : non posée. Appliqué, révisable : option 1, « le gouvernement de la Colombie-Britannique », sans ministère.
 
 ## Q5 · La leçon dit-elle que Safe Software a été fondée à Surrey ?
 
@@ -61,7 +61,7 @@ Options :
 
 Sans réponse : option 1.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : non posée. Appliqué, révisable : option 1, « en Colombie-Britannique » ; Surrey seulement comme siège actuel.
 
 ## Q6 · Comment la leçon présente-t-elle le lien avec Esri, et en a-t-elle besoin pour dire « au centre des échanges SIG » ?
 
@@ -73,7 +73,7 @@ Options :
 
 Sans réponse : option 1.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : option 2, pas d'Esri dans L01 (2026-11-26). A-sig-05 passe en contexte ; Esri attend L04.
 
 ## Q7 · La leçon donne-t-elle un nombre de formats pris en charge ?
 
@@ -85,7 +85,7 @@ Options :
 
 Sans réponse : « un large éventail de formats », sans chiffre.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : non posée. Appliqué, révisable : aucun chiffre ; le repli « un large éventail de formats » reste à sourcer, A-nom-13 ayant été refusée par le vérificateur.
 
 ## Q8 · La leçon dit-elle le parcours des fondateurs avant Safe (MDA, BCIT) ?
 
@@ -97,7 +97,7 @@ Options :
 
 Sans réponse : option 1.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : non posée. Appliqué, révisable : option 1, le parcours des fondateurs ne se dit pas.
 
 ## Q9 · Pour « Safe Software en bref », quels faits d'aujourd'hui la leçon garde-t-elle ?
 
@@ -109,7 +109,7 @@ Options :
 
 Sans réponse : siège à Surrey seulement ; FME Form et FME Flow restent hors narration.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : non posée. Appliqué, révisable : repli « siège à Surrey seulement » ; l'option recommandée reposait sur A-sig-06 (FME Form et FME Flow), refusée par le vérificateur.
 
 ## Q10 · Les premières étapes de 1997 (vente en Finlande, Esri Sverige) entrent-elles dans la leçon ?
 
@@ -121,4 +121,4 @@ Options :
 
 Sans réponse : option 1.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : non posée. Appliqué, révisable : option 1, les étapes de 1997 n'entrent pas.
