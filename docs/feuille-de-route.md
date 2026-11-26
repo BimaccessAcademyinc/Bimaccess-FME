@@ -20,13 +20,15 @@ Une leçon produite de A à Z, de meilleure qualité que les leçons CER001, plu
 | 0 | Plan du module, cadrage L01 | orchestrateur, Ilyas | fait, à corriger par Ilyas |
 | 1 | Pack de recherche L01 : axes, consolidation, extraits vérifiés par script, vérification du sens | chercheurs, consolidateur, vérificateur | fait ; réparation des extraits tronqués en cours |
 | 2 | Porte de l'expert du pack : quatre questions posées, le reste appliqué et révisable | Ilyas | fait (Q1, Q2, Q3, Q6 tranchées le 2026-11-26) |
-| 3 | Storyboard L01, relecture par trois lecteurs | scénariste, relecteurs | à venir |
-| 4 | **Thèmes des planches** : le design, avec la direction artistique, propose **quatre thèmes**, chacun avec une **planche d'exemple** jouée sur la scène la plus difficile du storyboard ; aucun thème n'est imposé d'avance, chacun vient de la leçon (ses mots, son pack, les conventions de dessin du SIG et de la cartographie) ; Ilyas choisit un thème pour le module | design, direction artistique, Ilyas | à venir, demandé par Ilyas le 2026-11-26 |
-| 5 | Planches de toutes les scènes dans le thème choisi, scènes codées sur voix provisoire muette, planche par phrase | design, code, QA | à venir |
-| 6 | Porte du sens (planche par phrase vue par Ilyas) | Ilyas | à venir |
-| 7 | Voix finale, recalage, contrôle, livraison | voix, code, QA | à venir |
-| 8 | Bilan L01 : mesures, défauts, causes, corrections du harnais | orchestrateur | à venir |
-| 9 | L02 à L05 dans le thème choisi, avec le harnais corrigé ; report dans le dépôt source et export | tous | à venir |
+| 3 | Storyboard L01 : deux candidats au banc, trois relecteurs en aveugle, une passe de correction | scénaristes, relecteurs | fait (8 scènes, environ 5 min jouées) |
+| 4 | Thèmes des planches : première série écartée (restée dans la charte CAD de buildingSMART), deuxième série faite avec l'outil de design | direction artistique, design, Ilyas | fait : thème 1 « carte topographique », enrichi de conventions cartographiques, fond `#F1F3EC` |
+| 5 | Charte FME001 « carte topographique » : jetons, typographie, bibliothèque de symboles, coque du lecteur, artboard « Composants » | graphiste | en cours |
+| 6 | Signature « carte » dans le lecteur (troisième signature, polices embarquées hors ligne) | code | à venir |
+| 7 | Spécification et planches des huit scènes, scènes codées sur voix provisoire muette, contrôles verts | graphiste, code, QA | à venir |
+| 8 | Porte du sens : planche par phrase, plus les trois points révisables (durée, exemples, noms des fondateurs) | Ilyas | à venir |
+| 9 | Corrections, voix finale ElevenLabs une seule fois (clé par le formulaire sécurisé), recalage | voix, code | à venir |
+| 10 | Livraison `dist/index.html` et bilan L01 (temps, tokens, défauts vus par Ilyas et ratés par les relecteurs) | QA, orchestrateur | à venir |
+| 11 | Report du harnais dans le dépôt source et export ; L02 à L05 dans la charte FME001 | tous | à venir |
 
 ## 3. Les améliorations du harnais essayées ici
 
