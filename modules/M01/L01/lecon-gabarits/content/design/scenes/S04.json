@@ -1,0 +1,353 @@
+{
+  "gabarit": "fiche-rubriques",
+  "scene": "S04",
+  "ecran": 7,
+  "titre": 0,
+  "source": 6,
+  "habillage": [
+    {
+      "fichier": "echelle-graphique",
+      "x": 1480,
+      "y": 84,
+      "largeur": 300
+    },
+    {
+      "fichier": "rose-des-vents",
+      "x": 1712,
+      "y": 700,
+      "largeur": 116
+    }
+  ],
+  "styles": {
+    "rubrique": {
+      "police": "capitales",
+      "graisse": 600,
+      "taille": 24,
+      "interligne": 1.2,
+      "interlettrage": 0.16,
+      "capitales": true,
+      "couleur": "encre"
+    },
+    "entite": {
+      "police": "capitales",
+      "graisse": 600,
+      "taille": 26,
+      "interligne": 1.15,
+      "interlettrage": 0.32,
+      "capitales": true,
+      "couleur": "terme"
+    },
+    "ligne": {
+      "police": "serif",
+      "graisse": 400,
+      "taille": 28,
+      "interligne": 1.25,
+      "couleur": "encre"
+    }
+  },
+  "illustrations": {
+    "carte": {
+      "fichier": "s04-ill-carte",
+      "x": 104,
+      "y": 540,
+      "largeur": 636
+    },
+    "feuille": {
+      "fichier": "s04-ill-feuille",
+      "x": 764,
+      "y": 195,
+      "largeur": 660
+    },
+    "batiment": {
+      "fichier": "s04-ill-batiment",
+      "x": 177,
+      "y": 200,
+      "largeur": 490,
+      "aplat": "fond"
+    },
+    "contour": {
+      "fichier": "s04-ill-contour",
+      "x": 340.4,
+      "y": 639.4,
+      "largeur": 163.2
+    },
+    "hachure": {
+      "fichier": "s04-ill-hachure",
+      "x": 825.7,
+      "y": 361.3,
+      "largeur": 145.9
+    },
+    "signes": {
+      "fichier": "s04-ill-signes",
+      "x": 1113.9,
+      "y": 383.2,
+      "largeur": 255.0
+    },
+    "globe": {
+      "fichier": "s04-ill-globe",
+      "x": 817.0,
+      "y": 684.6,
+      "largeur": 106.1,
+      "decoupe": "cercle"
+    },
+    "repere": {
+      "fichier": "s04-ill-repere",
+      "x": 841.0,
+      "y": 711.2,
+      "largeur": 32.6
+    }
+  },
+  "feuille": {
+    "illustration": "feuille",
+    "bandes": [
+      294.5,
+      507.0,
+      636.3
+    ]
+  },
+  "traces": {
+    "trait": {
+      "points": [
+        [
+          632.1,
+          257.2
+        ],
+        [
+          766.6,
+          257.2
+        ]
+      ],
+      "epaisseur": 2
+    },
+    "filet": {
+      "points": [
+        [
+          817.0,
+          604.1
+        ],
+        [
+          1371.0,
+          604.1
+        ]
+      ],
+      "couleur": "carroyage",
+      "epaisseur": 1.2
+    }
+  },
+  "textes": {
+    "entite": {
+      "ecran": 1,
+      "style": "entite",
+      "cx": 1094.0,
+      "y": 241.9,
+      "place": "carte",
+      "reserve": "papier"
+    },
+    "geometrie": {
+      "ecran": 2,
+      "style": "rubrique",
+      "x": 817.0,
+      "y": 308.2,
+      "place": "carte",
+      "reserve": "papier"
+    },
+    "attributs": {
+      "ecran": 3,
+      "style": "rubrique",
+      "x": 817.0,
+      "y": 520.4,
+      "place": "carte",
+      "reserve": "papier"
+    },
+    "usage": {
+      "ecran": 4,
+      "style": "ligne",
+      "x": 817.0,
+      "y": 560.2,
+      "place": "carte",
+      "reserve": "papier"
+    },
+    "systeme": {
+      "ecran": 5,
+      "style": "rubrique",
+      "x": 817.0,
+      "y": 650.0,
+      "place": "carte",
+      "reserve": "papier"
+    }
+  },
+  "etapes": [
+    {
+      "debut": true,
+      "etat": "S04-1",
+      "gestes": [
+        {
+          "poser": "carte"
+        },
+        {
+          "poser": "contour"
+        }
+      ]
+    },
+    {
+      "locution": "Traduire une donnée",
+      "gestes": [
+        {
+          "frappe": "titre"
+        }
+      ]
+    },
+    {
+      "locution": "Sur une carte, un bâtiment",
+      "etat": "S04-2"
+    },
+    {
+      "locution": "La donnée, elle",
+      "etat": "S04-3",
+      "gestes": [
+        {
+          "bande": 1,
+          "duree": 0.25
+        },
+        {
+          "balayage": "batiment",
+          "sens": "haut",
+          "duree": 0.5
+        },
+        {
+          "trace": "trait",
+          "duree": 0.4
+        },
+        {
+          "frappe": "entite"
+        }
+      ]
+    },
+    {
+      "locution": "on l'appelle une entité géographique",
+      "etat": "S04-4"
+    },
+    {
+      "locution": "Sa géométrie porte",
+      "etat": "S04-5",
+      "gestes": [
+        {
+          "bande": 2,
+          "duree": 0.25
+        },
+        {
+          "frappe": "geometrie"
+        },
+        {
+          "deplacement": "contour",
+          "vers": [
+            817.0,
+            350.1
+          ],
+          "duree": 0.3,
+          "avec": true
+        },
+        {
+          "balayage": "signes",
+          "sens": "droite",
+          "duree": 0.3
+        }
+      ]
+    },
+    {
+      "locution": "Ici, le contour forme une surface",
+      "etat": "S04-6",
+      "gestes": [
+        {
+          "balayage": "hachure",
+          "sens": "droite",
+          "duree": 0.4
+        }
+      ]
+    },
+    {
+      "locution": "Ses attributs la décrivent",
+      "etat": "S04-7",
+      "gestes": [
+        {
+          "bande": 3,
+          "duree": 0.25
+        },
+        {
+          "frappe": "attributs"
+        },
+        {
+          "frappe": "usage"
+        },
+        {
+          "trace": "filet",
+          "avec": true
+        }
+      ]
+    },
+    {
+      "locution": "Son système de coordonnées",
+      "etat": "S04-FIN",
+      "gestes": [
+        {
+          "bande": 4,
+          "duree": 0.25
+        },
+        {
+          "frappe": "systeme"
+        },
+        {
+          "balayage": "globe",
+          "sens": "bas",
+          "duree": 0.3
+        },
+        {
+          "balayage": "repere",
+          "sens": "bas",
+          "duree": 0.2
+        }
+      ]
+    }
+  ],
+  "evidences": {
+    "contour": {
+      "x": 333.4,
+      "y": 632.4,
+      "largeur": 177.2,
+      "hauteur": 128.1,
+      "de": "Sur une carte, un bâtiment",
+      "a": "La donnée, elle"
+    },
+    "entite": {
+      "x": 897.6,
+      "y": 231.7,
+      "largeur": 392.7,
+      "hauteur": 51.0,
+      "de": "on l'appelle une entité géographique",
+      "a": "Sa géométrie porte"
+    },
+    "geometrie": {
+      "x": 802.5,
+      "y": 303.8,
+      "largeur": 583.1,
+      "hauteur": 191.5,
+      "de": "Sa géométrie porte",
+      "a": "Ses attributs la décrivent"
+    },
+    "attributs": {
+      "x": 802.5,
+      "y": 516.4,
+      "largeur": 583.1,
+      "hauteur": 108.1,
+      "de": "Ses attributs la décrivent",
+      "a": "Son système de coordonnées"
+    },
+    "systeme": {
+      "x": 802.5,
+      "y": 645.7,
+      "largeur": 583.1,
+      "hauteur": 153.2,
+      "de": "Son système de coordonnées"
+    }
+  }
+}
