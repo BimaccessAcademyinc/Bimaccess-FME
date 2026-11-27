@@ -88,3 +88,9 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 - Constat d'Ilyas : images extrêmement pixelisées. Cause : sans réglage, le modèle d'image renvoie environ 1376 × 768, agrandi à 1920 px puis affiché à 2× sur un écran haute définition. Correction : `imageSize` « 4K » (5504 × 3072, gardé à 3840 × 2160), vectorisation faite sur la 4K puis ramenée à la composition ; nette sur écran haute définition.
 - Relecture à l'agrandissement : le modèle avait dessiné un homme et une femme pour les deux fondateurs, un sceau à l'aigle pour le contrat du gouvernement de la Colombie-Britannique, et des pourcentages sous la frise (repris de l'invite). Corrigé dans les plans ; règle ajoutée au skill (relecture des symboles en premier, positions en mots sur une échelle).
 - Mesures : 12 images 4K (essai compris, trois regénérations), environ 3,80 $ ; 11 repérages, environ 0,05 $ ; 30 min de session.
+
+## 2026-11-27 · Voix à la recette V4 du cours, constat sur l'assemblage
+
+- Voix regénérée selon la recette V4 retenue par Ilyas pour CER001 : eleven_v4, Alexandre Boutin, stabilité 0,5, français imposé, termes anglais sans balise d'accent, continuité entre clips. Contrôle d'écriture pour l'oreille du cours (`controle_oreille.py`) : rien à signaler, aucun mot changé. 3 547 caractères, 1 560 crédits (0,44 par caractère). Reste de la recette, non fait : respirations de 0,9 s entre les idées, 0,4 s de silence en fin de clip.
+- Lecteur : bouton pour revoir la scène et vitesse ×0,5 à ×2 (hauteur de la voix gardée).
+- Constat d'Ilyas sur la version planches image : « c'est l'assemblage, un travail de cochon ». Cause : l'étape du graphiste (spécification par scène, place de chaque texte, états sur les mots) et le skill des scènes ont été remplacés par un assemblage automatique (textes posés par règle autour des boîtes de la vision, décor posé d'un coup à l'image 0, trous dans les traits sous les éléments à venir). Les images ne sont pas en cause.

@@ -6,8 +6,8 @@ provider: elevenlabs
 endpoint: POST /v1/text-to-speech/{voice_id}/with-timestamps
 voice_id: IPgYtHTNLjC7Bq7IPHrm
 voice_name: Alexandre Boutin - Professional
-model_id: eleven_v3
-language_code: ""
+model_id: eleven_v4
+language_code: fr
 output_format: mp3_44100_128
 voice_settings:
   stability: 0.5
@@ -18,8 +18,8 @@ voice_settings:
 dictionary: content/voice/pronunciations.yaml
 clip_count: 7
 voiced_count: 7
-total_duration_s: 210.834
-total_characters: 3848
+total_duration_s: 218.426
+total_characters: 3547
 clips:
   - clip_id: S01-01
     scene: S01
@@ -37,7 +37,7 @@ clips:
 
       Comment faire passer les mêmes données géographiques d'un logiciel à l'autre ?
     tts_text: |-
-      Au début des années mille neuf cent quatre-vingt-dix, [American accent] Don Murray [French Canadian accent] et [American accent] Dale Lutz [French Canadian accent] travaillent en Colombie-Britannique sur un projet forestier.
+      Au début des années mille neuf cent quatre-vingt-dix, Don Murray et Dale Lutz travaillent en Colombie-Britannique sur un projet forestier.
 
       Les entreprises forestières doivent y partager leurs données géographiques avec le gouvernement de la Colombie-Britannique.
 
@@ -49,15 +49,13 @@ clips:
 
       Comment faire passer les mêmes données géographiques d'un logiciel à l'autre ?
     dictionary_rules_applied:
-      - Don Murray
-      - Dale Lutz
       - "1990"
-    characters: 682
+    characters: 596
     text_hash: 28d55643c43069d4
-    synth_hash: 5030b2e9188c0566
+    synth_hash: 1bb8c5467587be95
     audio: S01/S01-01.mp3
     alignment: S01/S01-01.alignment.json
-    duration_s: 31.869
+    duration_s: 33.6
     suggested_beats:
       entreprises_forestieres: Entreprises forestières
       gouvernement_colombie_britannique: Gouvernement de la Colombie-Britannique
@@ -83,7 +81,7 @@ clips:
     tts_text: |-
       Le gouvernement lance un appel d'offres, et Murray et Lutz remportent le contrat.
 
-      De ce contrat naît leur entreprise, [American accent] Safe Software [French Canadian accent], fondée en mille neuf cent quatre-vingt-treize.
+      De ce contrat naît leur entreprise, Safe Software, fondée en mille neuf cent quatre-vingt-treize.
 
       Le gouvernement a son format, safe, une norme canadienne d'échange de données géographiques.
 
@@ -91,25 +89,22 @@ clips:
 
       Murray et Lutz commencent par ce travail : leur entreprise développe une technologie de traduction pour safe. Son nom, Safe, vient d'ailleurs de ce format.
 
-      Trois ans après la fondation, en mille neuf cent quatre-vingt-seize, leur entreprise sort la première version de son logiciel, F. M. E., à l'origine [American accent] Feature Manipulation Engine [French Canadian accent].
+      Trois ans après la fondation, en mille neuf cent quatre-vingt-seize, leur entreprise sort la première version de son logiciel, F. M. E., à l'origine Feature Manipulation Engine.
 
       F. M. E. fait passer les données géographiques d'un logiciel à l'autre.
 
-      Aujourd'hui, l'éditeur dit simplement F. M. E.. Son siège est à [American accent] Surrey [French Canadian accent], en Colombie-Britannique.
+      Aujourd'hui, l'éditeur dit simplement F. M. E.. Son siège est à Surrey, en Colombie-Britannique.
     dictionary_rules_applied:
-      - Feature Manipulation Engine
-      - Safe Software
-      - Surrey
       - SAIF
       - "1993"
       - "1996"
       - FME
-    characters: 1005
+    characters: 876
     text_hash: 72a450bf8ae6ef66
-    synth_hash: ab4ee6f810e646b9
+    synth_hash: d4f324e8f34206c3
     audio: S02/S02-01.mp3
     alignment: S02/S02-01.alignment.json
-    duration_s: 54.126
+    duration_s: 55.6
     suggested_beats:
       traduction: Traduction
       feature_manipulation_engine: Feature Manipulation Engine
@@ -131,21 +126,20 @@ clips:
 
       safe est un format, celui du gouvernement de la Colombie-Britannique. C'est aussi une norme canadienne d'échange de données géographiques.
 
-      F. M. E. n'est ni un format ni une norme. C'est un logiciel : un ensemble d'applications qui traitent des données spatiales, le produit phare de [American accent] Safe Software [French Canadian accent].
+      F. M. E. n'est ni un format ni une norme. C'est un logiciel : un ensemble d'applications qui traitent des données spatiales, le produit phare de Safe Software.
 
       Il lit des données dans un format et les écrit dans un autre.
 
       L'éditeur le présente comme une plateforme d'intégration de données. Elle comprend F. M. E. Form, pour construire les traitements, et F. M. E. Flow, pour les automatiser.
     dictionary_rules_applied:
-      - Safe Software
       - SAIF
       - FME
-    characters: 636
+    characters: 593
     text_hash: 189111e5e7619975
-    synth_hash: 77c997516b60161b
+    synth_hash: afc278237aa4391d
     audio: S03/S03-01.mp3
     alignment: S03/S03-01.alignment.json
-    duration_s: 38.269
+    duration_s: 36.64
   - clip_id: S04-01
     scene: S04
     trigger: linear
@@ -173,10 +167,10 @@ clips:
       - FME
     characters: 503
     text_hash: 0f5eaf826ad866a4
-    synth_hash: 60c6a49774a2a477
+    synth_hash: 367c6dd82090e0d2
     audio: S04/S04-01.mp3
     alignment: S04/S04-01.alignment.json
-    duration_s: 31.713
+    duration_s: 34
     suggested_beats:
       entite_geographique: Entité géographique
       attributs: Attributs
@@ -204,10 +198,10 @@ clips:
       - FME
     characters: 360
     text_hash: 625471a530c2c56f
-    synth_hash: 04121c6a9975c038
+    synth_hash: c49c2ed015dc584a
     audio: S05/S05-01.mp3
     alignment: S05/S05-01.alignment.json
-    duration_s: 20.611
+    duration_s: 21.786
     suggested_beats:
       format_depart: Format de départ
       format_attendu: Format attendu
@@ -230,7 +224,7 @@ clips:
     tts_text: |-
       Autour de F. M. E., les formats pris en charge forment un large éventail.
 
-      [American accent] Safe Software [French Canadian accent] décrit F. M. E. comme un moteur central au milieu de ces formats.
+      Safe Software décrit F. M. E. comme un moteur central au milieu de ces formats.
 
       Les données se lisent depuis n'importe lequel d'entre eux, et s'écrivent vers n'importe quel autre.
 
@@ -238,14 +232,13 @@ clips:
 
       C'est aussi la situation de toute équipe qui reçoit des données géographiques d'un autre bureau, sur un autre logiciel.
     dictionary_rules_applied:
-      - Safe Software
       - FME
-    characters: 542
+    characters: 499
     text_hash: 35fa78d4999653c8
-    synth_hash: 228ef6c2c0eabf84
+    synth_hash: 676f0fd1531f172b
     audio: S06/S06-01.mp3
     alignment: S06/S06-01.alignment.json
-    duration_s: 27.324
+    duration_s: 29.44
     suggested_beats:
       formats_pris_charge: Formats pris en charge
       moteur: Moteur
@@ -257,10 +250,10 @@ clips:
     dictionary_rules_applied: []
     characters: 120
     text_hash: 25b538f9ccf68677
-    synth_hash: b067ba2951581f16
+    synth_hash: 7dd05b36e59f82a8
     audio: S07/S07-01.mp3
     alignment: S07/S07-01.alignment.json
-    duration_s: 6.922
+    duration_s: 7.36
     suggested_beats:
       entite_geographique: Entité géographique
       format: Format
