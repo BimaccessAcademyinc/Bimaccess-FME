@@ -1,0 +1,250 @@
+axe: usages
+affirmations:
+  - id: A-usages-01
+    question: Q10
+    enonce: "Selon Esri, l'extension ArcGIS Data Interoperability est un ensemble d'outils ETL spatiaux intégré, qui s'exécute dans le cadre de géotraitement d'ArcGIS et utilise la technologie FME de Safe Software."
+    usage: narration
+    sources:
+      - url: https://pro.arcgis.com/en/pro-app/3.4/help/data/data-interoperability/what-is-the-data-interoperability-extension.htm
+        titre: "ArcGIS Data Interoperability extension"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "is an integrated spatial extract, transform, and load (ETL) toolset that runs in the geoprocessing framework using Safe Software's FME technology."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-usages-02
+    question: Q10
+    enonce: "Selon la documentation d'Esri, une fois l'extension autorisée dans ArcGIS Pro, on crée des outils ETL avec l'application FME Workbench, dans un espace de travail de traduction enregistré dans une boîte à outils."
+    usage: narration
+    sources:
+      - url: https://pro.arcgis.com/en/pro-app/3.4/help/data/data-interoperability/what-is-the-data-interoperability-extension.htm
+        titre: "ArcGIS Data Interoperability extension"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "adds additional out-of-the-box support for creating ETL tools using the FME Workbench application."
+      - url: https://pro.arcgis.com/en/pro-app/3.4/help/data/data-interoperability/what-is-the-data-interoperability-extension.htm
+        titre: "ArcGIS Data Interoperability extension"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "in a translation workspace and save them in a toolbox."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-usages-03
+    question: Q10
+    enonce: "Safe Software décrit Data Interoperability comme essentiellement un sous-ensemble de FME Form."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2025/10/arcgis-data-interop-the-fme-platform-unlocking-more-possibilities-for-your-data/
+        titre: "ArcGIS Data Interop & the FME Platform: Unlocking more possibilities for your data"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "It is essentially a subset of FME Form"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-usages-04
+    question: Q10
+    enonce: "Safe Software présente, parmi les moyens de transformer, nettoyer, restructurer et préparer des données dans ArcGIS, les outils ETL spatiaux, le Quick Translator et Workbench."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2025/10/arcgis-data-interop-the-fme-platform-unlocking-more-possibilities-for-your-data/
+        titre: "ArcGIS Data Interop & the FME Platform: Unlocking more possibilities for your data"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Transform, clean, restructure, and prepare data inside ArcGIS via Spatial ETL tools, the Quick Translator, or Workbench."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-usages-05
+    question: Q10
+    enonce: "Dans un communiqué de février 2011, Safe Software écrit que, depuis près de 15 ans, son partenariat avec Esri permet aux utilisateurs d'ArcGIS d'accéder aux données dont ils ont besoin dans leur environnement Esri."
+    usage: expert
+    sources:
+      - url: https://mundogeo.com/2011/02/09/arcgis-users-gain-wider-spatial-data-access-with-fme-2011/?lang=en
+        titre: "ArcGIS users gain wider spatial data access with FME 2011"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "For nearly 15 years, the partnership between Safe Software and ESRI has enabled ArcGIS users to access the data they need to use within their ESRI environment."
+    contradictions: []
+    verifie: null
+    note_verification: "Texte de communiqué repris par MundoGEO : compte pour l'éditeur. Date de début de l'extension non trouvée."
+  - id: A-usages-06
+    question: Q11
+    enonce: "Selon la documentation de FME Form, la galerie de transformers est un onglet sous le panneau Navigator de Workbench, et ses catégories sont un bon point de départ pour explorer."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/transformers_locating.htm
+        titre: "Locating Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Transformer categories are a good starting point from which to explore"
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/transformers_locating.htm
+        titre: "Locating Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "By default, the Transformer"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-usages-07
+    question: Q11
+    enonce: "La documentation de FME Form indique qu'on peut chercher dans la galerie à la fois les noms et les descriptions des transformers, avec un mot-clé qui peut être un nom partiel ou un ou plusieurs mots décrivant la fonction."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/transformers_locating.htm
+        titre: "Locating Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "You can search the gallery for both transformer names and descriptions."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/transformers_locating.htm
+        titre: "Locating Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The keyword can be a partial transformer"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-usages-08
+    question: Q11
+    enonce: "La documentation des transformers de FME Form dit que la galerie est divisée en catégories, ou qu'on peut voir tous les transformers à la fois, et la présente comme une référence complète des plus de 500 transformers."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Welcome/Welcome.htm
+        titre: "FME Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The Transformer Gallery is divided into different categories, or you can view all transformers at once."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Welcome/Welcome.htm
+        titre: "FME Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This is a comprehensive reference to the 500+ FME transformers."
+    contradictions: []
+    verifie: null
+    note_verification: "Chiffre (500+) : à la porte."
+  - id: A-usages-09
+    question: Q12
+    enonce: "Selon une étude de cas publiée par Safe Software, la Ville de Coquitlam (Colombie-Britannique) utilise FME depuis plus de 20 ans, et son outil Community Baseline consolide des données en vue de décisions stratégiques."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/fme-in-action/customers/the-city-of-coquitlam-creates-community-baseline-tool-to-support-land-use-decision-making/
+        titre: "City of Coquitlam's Community Baseline tool supports land use"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "In British Columbia, the"
+      - url: https://fme.safe.com/fme-in-action/customers/the-city-of-coquitlam-creates-community-baseline-tool-to-support-land-use-decision-making/
+        titre: "City of Coquitlam's Community Baseline tool supports land use"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "has been leveraging FME for over 20 years to support city initiatives, including a recent focus on implementing legislative housing mandates."
+      - url: https://fme.safe.com/fme-in-action/customers/the-city-of-coquitlam-creates-community-baseline-tool-to-support-land-use-decision-making/
+        titre: "City of Coquitlam's Community Baseline tool supports land use"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Their innovative Community Baseline tool, powered by FME, consolidates data into actionable insights for strategic decision-making."
+    contradictions: []
+    verifie: null
+    note_verification: "Source de l'éditeur seul : récit du client rapporté par Safe Software."
+  - id: A-usages-10
+    question: Q12
+    enonce: "La même étude de cas dit que la Ville de Coquitlam utilise FME pour intégrer les statistiques de deux fournisseurs de trottinettes dans un seul tableau de bord."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/fme-in-action/customers/the-city-of-coquitlam-creates-community-baseline-tool-to-support-land-use-decision-making/
+        titre: "City of Coquitlam's Community Baseline tool supports land use"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "In urban mobility, FME has streamlined the analysis of e-scooter program data, integrating statistics from two providers into a single dashboard."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-usages-11
+    question: Q12
+    enonce: "Selon Safe Software, la Ville d'Airdrie a consolidé des données d'infrastructure issues de deux plateformes dans un système unique, et Consortech a développé les espaces de travail FME qui convertissent les données CAO vers le nouveau format SIG de la ville."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/fme-in-action/customers/city-of-airdrie-consolidates-infrastructure-data-with-a-cad-to-gis-migration/
+        titre: "City of Airdrie consolidates infrastructure data with a CAD to GIS migration"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The city needed to consolidate infrastructure data from two platforms into a single, unified system"
+      - url: https://fme.safe.com/fme-in-action/customers/city-of-airdrie-consolidates-infrastructure-data-with-a-cad-to-gis-migration/
+        titre: "City of Airdrie consolidates infrastructure data with a CAD to GIS migration"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Consortech developed the FME workspaces required to convert the CAD data into the city's new GIS format"
+    contradictions: []
+    verifie: null
+    note_verification: "Le texte de la page utilise une apostrophe typographique : vérifier la correspondance."
+  - id: A-usages-12
+    question: Q12
+    enonce: "Une présentation de la tournée FME World Tour 2019 sur Ressources naturelles Canada dit qu'un outil de validation basé sur FME a été mis en place en 2018 pour vérifier que les données soumises respectent la nouvelle structure et le nouveau schéma."
+    usage: expert
+    sources:
+      - url: https://safe.com/presentations/nrcan-cartographic-standards-validation/
+        titre: "NRCAN Cartographic Standards Validation"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "In 2018, a basic FME-based validation toolkit was implemented to ensure that data submissions were done according to the new structure and schema."
+      - url: https://safe.com/presentations/nrcan-cartographic-standards-validation/
+        titre: "NRCAN Cartographic Standards Validation"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Natural Resources Canada has upgraded the standard they use for mapping projects this past year from a Microstation-based drawing format to a File Geodatabase."
+    contradictions: []
+    verifie: null
+    note_verification: "Présentation publiée par Safe Software ; le texte ne dit pas qui parle."
+  - id: A-usages-13
+    question: Q12
+    enonce: "Un article présenté au FIG Working Week 2025 (Brisbane) dit que la Ville de Cockburn, en Australie, a choisi FME de Safe Software pour l'intégration entre TechnologyOne et ArcGIS, avec l'appui de 1Spatial, et que le Change Detector a servi à surveiller les deux systèmes."
+    usage: expert
+    sources:
+      - url: https://www.fig.net/resources/proceedings/fig_proceedings/fig2025/papers/ts01j/TS01J_fellinger_13448_abs.pdf
+        titre: "Enabling integrated local government processes in the cloud - City of Cockburn Case Study"
+        editeur: FIG
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "the city chose Safe Software’s FME for integration, with support from"
+      - url: https://www.fig.net/resources/proceedings/fig_proceedings/fig2025/papers/ts01j/TS01J_fellinger_13448_abs.pdf
+        titre: "Enabling integrated local government processes in the cloud - City of Cockburn Case Study"
+        editeur: FIG
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "FME’s Change Detector was used to monitor TechnologyOne and ArcGIS for changes, triggering workflows and"
+    contradictions: []
+    verifie: null
+    note_verification: "Hors Canada. L'affiliation de l'auteur à Safe Software ou à 1Spatial n'est pas établie par la page lue."
+lacunes:
+  - question: Q10
+    manque: "Depuis quand l'extension existe : à sourcer (seul le communiqué de 2011 parle d'un partenariat de près de 15 ans). Les pages Esri Blog et Safe Support sur la relation FME / Data Interoperability ont refusé (403) : à vérifier à la main."
+  - question: Q12
+    manque: "Aucune organisation publique n'est décrite par sa propre publication : tous les cas lus sont publiés par Safe Software. La documentation de Statistique Canada sur FME a refusé (403) : à vérifier à la main. Presque tout reste de niveau A seul."
+visuels:
+  - id: VIS-01
+    url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/transformers_locating.htm
+    editeur: Safe Software
+    description: "Documentation du panneau Navigator de Workbench et de son onglet Transformer Gallery."
+    utilite: "Montre où chercher un transformer ; à redessiner."
+    usage: REDRAW
