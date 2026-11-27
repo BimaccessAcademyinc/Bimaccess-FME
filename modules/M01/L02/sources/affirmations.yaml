@@ -2,6 +2,7 @@
 # La confiance n'est pas écrite ici : check_pack.py la calcule depuis les sources.
 # 114 affirmations dans les axes, 107 après fusion, 121 avec les ajouts du consolidateur.
 # fusionne_depuis : identifiants abandonnés lors de la fusion d'énoncés identiques.
+# decoupe_de : affirmation nouvelle, plus étroite, découpée d'une affirmation refusée par le vérificateur (2026-11-27) ; l'ancienne reste telle quelle, hors narration. 7 découpes, 128 affirmations.
 lecon: FME001-M01-L02
 axes:
 - interop
@@ -2234,6 +2235,143 @@ affirmations:
   ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
   verifie: null
   note_verification: ''
+- id: A-interop-15
+  question: Q3
+  enonce: Une étude commandée par le NIST a estimé à 15,8 milliards de dollars par an le coût d'une interopérabilité insuffisante dans l'industrie des installations (« capital facilities ») aux États-Unis (bâtiments commerciaux et institutionnels, et installations industrielles), pour l'année 2002 ; ce n'est pas une étude du domaine géographique.
+  usage: narration
+  sources:
+  - url: https://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf
+    titre: NIST GCR 04-867, Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry
+    editeur: NIST
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Based on interviews and survey responses, $15.8 billion in annual interoperability costs were quantified for the capital facilities industry in 2002.
+  - url: https://www.enr.com/articles/30495-study-of-data-roadblocks-costs-tags-capital-facilities-industry-with-15-8-billion-loss-8-9-2004
+    titre: Study of Data Roadblocks Costs Tags Capital Facilities Industry With $15.8 Billion Loss (ENR, 2004-08-09)
+    editeur: Engineering News-Record
+    niveau: B
+    consulte: 2026-11-27
+    extrait: 'has come up with a number: $15.8 billion in 2002.'
+  - url: https://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf
+    titre: NIST GCR 04-867, Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry
+    editeur: NIST
+    niveau: A
+    consulte: 2026-11-27
+    extrait: and Technology (NIST) have commissioned a study to identify and estimate the efficiency losses in the U.S. capital facilities industry resulting from inadequate interoperability
+  - url: https://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf
+    titre: NIST GCR 04-867, Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry
+    editeur: NIST
+    niveau: A
+    consulte: 2026-11-27
+    extrait: prepared for NIST by RTI International and the Logistic Management Institute, estimates the cost of inadequate interoperability in the U.S. capital facilities industry to be $15.8 billion per year
+  - url: https://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf
+    titre: NIST GCR 04-867, Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry
+    editeur: NIST
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Although the focus of the study is on capital facilities—commercial/institutional buildings and industrial facilities—it will benefit key stakeholders throughout the construction industry.
+  contradictions: []
+  decoupe_de: A-interop-10
+  verifie: null
+  note_decoupe: 'Découpée le 2026-11-27 après vérification : la parenthèse garde le découpage de la page (« commercial/institutional buildings and industrial facilities ») au lieu de « bâtiments [...] industriels » ; « aux États-Unis » et « commandée » sont portés par deux extraits ajoutés, même page (avant-propos, « (NIST) have commissioned a study », et « in the U.S. capital facilities industry »), lus dans le cache par lire_page.py. Le sujet de « have commissioned » est, sur la page, le Building and Fire Research Laboratory et l''Advanced Technology Program du NIST (début de phrase coupé par le numéro de page « iii »).'
+- id: A-formats-20
+  question: Q4
+  enonce: Safe Software écrit qu'il y a de nombreuses raisons de devoir transformer des données entre formats, parmi lesquelles l'intégration de données gérées par des systèmes SIG, DAO, en trois dimensions ou de bases de données différents.
+  usage: narration
+  sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: There are many reasons you might need to transform data between formats, including integrating data managed by different GIS, CAD, 3D, or database systems
+  contradictions: []
+  decoupe_de: A-formats-16
+  verifie: null
+  note_decoupe: 'Découpée le 2026-11-27 après vérification : « many reasons [...] including » est gardé : l''intégration est une raison parmi d''autres, pas la description du besoin.'
+- id: A-formats-21
+  question: Q5
+  enonce: Selon Esri, chaque fichier composant un shapefile est limité à 2 Go, ce qui représente un maximum d'environ 70 millions d'entités ponctuelles.
+  usage: expert
+  sources:
+  - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+    titre: Geoprocessing considerations for shapefile output
+    editeur: Esri
+    niveau: A
+    consulte: 2026-11-27
+    extrait: There is a 2 GB size limit for any shapefile component file, which translates to a maximum of roughly 70 million point features.
+  contradictions:
+  - version: La documentation de GDAL écrit que le format peut aller jusqu'à 8 Go, que l'implémentation OGR est limitée à 4 Go, et qu'au-delà de 2 Go c'est déconseillé pour la compatibilité avec d'autres logiciels (« it is not recommended to use a file size over 2GB »), relevé par le vérificateur sur A-formats-11.
+    source: https://gdal.org/en/stable/drivers/vector/shapefile.html
+  decoupe_de: A-formats-11
+  verifie: null
+  note_decoupe: 'Découpée le 2026-11-27 après vérification : la confirmation par GDAL est retirée (la page de GDAL ne la donne pas : voir contradictions). Esri seul, confiance moyenne, deux chiffres : à la porte.'
+- id: A-semantique-31
+  question: Q13
+  enonce: 'Le mot « forêt » ne reçoit pas la même définition partout : les États membres de l''UE appliquent des définitions différentes de la superficie forestière (Agence européenne pour l''environnement), et la littérature rapporte de façon répétée des sens différents donnés au terme.'
+  usage: narration
+  sources:
+  - url: https://www.eea.europa.eu/en/ghg-knowledge-hub/lulucf/guidance/interoperability
+    titre: Interoperability (guide UTCATF, base de connaissances GES)
+    editeur: Agence européenne pour l'environnement
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: Member States apply different definitions for forest area and canopy cover
+  - url: https://eprints.whiterose.ac.uk/122977/7/WINKS_paper_3.pdf
+    titre: 'Talking about Forests: an Example of Sharing Information Expressed with Vague Terms (Gómez Álvarez, Bennett, Richard-Bollans)'
+    editeur: University of Leeds (White Rose eprints)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: We illustrate this with the example of ‘forest’, for which the problematic arising of the assignation of different meanings is repeatedly reported in the literature.
+  contradictions: []
+  decoupe_de: A-semantique-23
+  verifie: null
+  note_decoupe: 'Découpée le 2026-11-27 après vérification : la fin « ce qui met à l''épreuve l''interopérabilité » est retirée, avec son extrait (il porte sur les informations et bases de données géographiques en général, au conditionnel, pas sur la forêt).'
+- id: A-semantique-32
+  question: Q15
+  enonce: 'Safe Software écrit que les données sont stockées un peu partout : dans des applications, des bases de données et des formats différents, et avec des modèles de données et des systèmes de coordonnées différents.'
+  usage: narration
+  sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: it’s stored all over the place – in different applications, databases, and formats, and with different data models and coordinate systems.
+  contradictions: []
+  decoupe_de: A-semantique-17
+  verifie: null
+  note_decoupe: 'Découpée le 2026-11-27 après vérification : « le problème de départ » est retiré ; « A common challenge » n''est pas dit non plus, car ce début de phrase n''est dans aucun extrait (aucun extrait ajouté hors A-interop-10). À relire par le vérificateur : « it''s stored » de l''extrait renvoie à « data », dans le même début de phrase, hors extrait.'
+- id: A-semantique-33
+  question: Q15
+  enonce: La documentation de FME Form présente FME comme un outil conçu pour être une application d'ETL spatial, centrée sur la traduction de données géographiques.
+  usage: narration
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+    titre: What is FME (documentation de FME Form)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: FME was the first tool designed to be a spatial ETL application, focusing on translation of geographic data.
+  contradictions: []
+  decoupe_de: A-semantique-19
+  verifie: null
+  note_decoupe: 'Découpée le 2026-11-27 après vérification : seul le second extrait est repris, sans « le premier » (revendication de l''éditeur). La première moitié (données forcées par un modèle limité) n''est pas reprise : son cadre « Traditionally » n''est dans aucun extrait, et sans lui l''énoncé perd sa modalité.'
+- id: A-semantique-34
+  question: Q13
+  enonce: Le cadre IGIF des Nations Unies écrit que, lorsque la terminologie utilisée dans les modèles de données est différente, elle peut être source de confusion et rendre difficile la mise en correspondance des données.
+  usage: expert
+  sources:
+  - url: https://ggim.un.org/UN-IGIF/documents/FR_SP6-%20Normes_final20240909.pdf
+    titre: 'Cadre intégré de l''information géospatiale (IGIF), Voie stratégique 6 : Normes'
+    editeur: Nations Unies, UN-GGIM (IGIF)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: Lorsque la terminologie utilisée dans les modèles de données est différente, elle peut être source de confusion et rendre difficile la mise en correspondance des données
+  contradictions: []
+  decoupe_de: A-semantique-29
+  verifie: null
+  note_decoupe: 'Découpée le 2026-11-27 après vérification : la modalité de la source (« peut ») est gardée, et seule la moitié portée par l''IGIF est reprise ; la moitié de Chojka (sémantique, « may be even impossible », cas d''un schéma intermédiaire) n''a qu''une source elle aussi. Une source B : confiance faible, à la porte.'
 lacunes:
 - axe: interop
   question: Q1
