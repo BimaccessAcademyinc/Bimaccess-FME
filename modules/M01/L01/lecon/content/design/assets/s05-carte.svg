@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100" role="img" aria-label="Carte d'entité : un contour et sa ligne d'attribut">
-<rect x="1" y="1" width="138" height="98" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<path d="M2 8 H138 M2 20 H138 M2 32 H138 M2 44 H138 M2 56 H138 M2 68 H138 M2 80 H138 M2 92 H138" fill="none" stroke="#7D8576" stroke-width="0.8"/>
-<path d="M24 22 L78 16 L88 52 L30 60 Z" fill="#FBFCF8" stroke="#23281F" stroke-width="3" stroke-linejoin="miter"/>
-<path d="M24 84 H104" fill="none" stroke="#545B4C" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238 170" role="img" aria-label="Carte d'entité : un contour et sa ligne d'attribut">
+<rect x="1" y="1" width="236" height="168" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M2 8 H236 M2 20 H236 M2 32 H236 M2 44 H236 M2 56 H236 M2 68 H236 M2 80 H236 M2 92 H236 M2 104 H236 M2 116 H236 M2 128 H236 M2 140 H236 M2 152 H236 M2 164 H236" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+<path d="M40.8 37.4 L132.6 27.2 L149.6 88.4 L51 102 Z" fill="#FBFCF8" stroke="#23281F" stroke-width="3" stroke-linejoin="miter"/>
+<path d="M40.8 142.8 H176.8" fill="none" stroke="#545B4C" stroke-width="3"/>
 <g id="s05-carte-trame-attendue">
-<rect x="2" y="2" width="136" height="96" fill="#FBFCF8"/>
-<path d="M10 2 V98 M26 2 V98 M42 2 V98 M58 2 V98 M74 2 V98 M90 2 V98 M106 2 V98 M122 2 V98 M2 10 H138 M2 26 H138 M2 42 H138 M2 58 H138 M2 74 H138 M2 90 H138" fill="none" stroke="#7D8576" stroke-width="0.8"/>
-<path d="M24 22 L78 16 L88 52 L30 60 Z" fill="#FBFCF8" stroke="#23281F" stroke-width="3" stroke-linejoin="miter"/>
-<path d="M24 84 H104" fill="none" stroke="#545B4C" stroke-width="3"/>
+<rect x="2" y="2" width="234" height="166" fill="#FBFCF8"/>
+<path d="M10 2 V168 M26 2 V168 M42 2 V168 M58 2 V168 M74 2 V168 M90 2 V168 M106 2 V168 M122 2 V168 M138 2 V168 M154 2 V168 M170 2 V168 M186 2 V168 M202 2 V168 M218 2 V168 M234 2 V168 M2 10 H236 M2 26 H236 M2 42 H236 M2 58 H236 M2 74 H236 M2 90 H236 M2 106 H236 M2 122 H236 M2 138 H236 M2 154 H236" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+<path d="M40.8 37.4 L132.6 27.2 L149.6 88.4 L51 102 Z" fill="#FBFCF8" stroke="#23281F" stroke-width="3" stroke-linejoin="miter"/>
+<path d="M40.8 142.8 H176.8" fill="none" stroke="#545B4C" stroke-width="3"/>
 </g>
 </svg>
