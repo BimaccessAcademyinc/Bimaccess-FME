@@ -13,7 +13,7 @@ affirmations:
 - id: A-interop-01
   question: Q1
   enonce: La directive européenne INSPIRE définit l'interopérabilité comme la possibilité de combiner des jeux de données spatiales et de faire interagir des services sans intervention manuelle répétée, le résultat restant cohérent et la valeur des données et services accrue.
-  usage: expert
+  usage: narration
   sources:
   - url: https://www.legislation.gov.uk/eudr/2007/2/article/3
     titre: Directive 2007/2/EC, article 3 (legislation.gov.uk)
@@ -41,9 +41,9 @@ affirmations:
     extrait: in such a way that the result is coherent and the added value of the data sets and services is enhanced
   contradictions: []
   ajouts_consolidateur: 1 source(s) ajoutée(s) par le consolidateur le 2026-11-27.
-  verifie: null
+  verifie: true
   repare: true
-  note_verification: 'Vérification : L''extrait s''arrête à « without repetitive manual intervention » ; la suite de l''énoncé (résultat cohérent, valeur accrue) est sur la page (« in such a way that the result is coherent and the added value of the data sets and services is enhanced ») mais dans aucun extrait : l''énoncé dit plus que ses extraits. Usage baissé de narration à expert ; un extrait de cette suite (même page) ou un énoncé coupé rend la narration. legislation.gov.uk et EUR-Lex publient le même texte de l''UE : une seule source de fait ; la confiance forte tient par Chojka (B), qui reprend la phrase entière.'
+  note_verification: 'Vérification : L''extrait s''arrête à « without repetitive manual intervention » ; la suite de l''énoncé (résultat cohérent, valeur accrue) est sur la page (« in such a way that the result is coherent and the added value of the data sets and services is enhanced ») mais dans aucun extrait : l''énoncé dit plus que ses extraits. Usage baissé de narration à expert ; un extrait de cette suite (même page) ou un énoncé coupé rend la narration. legislation.gov.uk et EUR-Lex publient le même texte de l''UE : une seule source de fait ; la confiance forte tient par Chojka (B), qui reprend la phrase entière. Seconde passe (2026-11-27) : « in such a way that the result is coherent and the added value [...] is enhanced » porte la fin de l''énoncé ; les extraits ajoutés disent la partie manquante ; l''énoncé ne dit rien de plus que ses extraits. Relever l''usage vers la narration n''est pas du ressort du vérificateur : il suit la confiance calculée (chiffre, date ou nom propre en moyenne restent à la porte).'
   note_reparation: Suite de la définition ajoutée en extrait (même page, legislation.gov.uk), comme la note de vérification le demande.
 - id: A-interop-02
   question: Q1
@@ -226,9 +226,9 @@ affirmations:
     consulte: 2026-11-27
     extrait: Although the focus of the study is on capital facilities—commercial/institutional buildings and industrial facilities—it will benefit key stakeholders throughout the construction industry.
   contradictions: []
-  verifie: null
+  verifie: false
   repare: true
-  note_verification: 'Vérification : Le chiffre, l''année 2002 et le domaine (installations, pas SIG) sont bien dans les extraits. Mais deux éléments de l''énoncé n''y sont pas : « commandée par le NIST » (la page : « prepared for NIST by RTI International and the Logistic Management Institute ») et la parenthèse sur les bâtiments (la page : « capital facilities—commercial/institutional buildings and industrial facilities »). Usage baissé de narration à expert ; deux extraits de plus (même page) le rendent à la narration. ENR rapporte le chiffre de l''étude, il ne le mesure pas.'
+  note_verification: 'Vérification : Le chiffre, l''année 2002 et le domaine (installations, pas SIG) sont bien dans les extraits. Mais deux éléments de l''énoncé n''y sont pas : « commandée par le NIST » (la page : « prepared for NIST by RTI International and the Logistic Management Institute ») et la parenthèse sur les bâtiments (la page : « capital facilities—commercial/institutional buildings and industrial facilities »). Usage baissé de narration à expert ; deux extraits de plus (même page) le rendent à la narration. ENR rapporte le chiffre de l''étude, il ne le mesure pas. Seconde passe (2026-11-27) : « commandée par le NIST » tient : « prepared for NIST » nomme le NIST comme destinataire, et la page dit ailleurs « (NIST) have commissioned a study » (avant-propos, hors extrait). Glissement sur la parenthèse : l''extrait sépare « commercial/institutional buildings » de « industrial facilities », et la page définit le secteur industriel comme « establishments that manufacture commodities as well as public utilities and large energy-producing establishments » ; « bâtiments [...] industriels » réduit des installations (usines, services publics, production d''énergie) à des bâtiments. « américaine » n''est dans aucun extrait (le troisième s''arrête avant « in the U.S. »). Usage expert maintenu.'
   note_reparation: 'Deux extraits ajoutés (même page) : « prepared for NIST » et la parenthèse sur les bâtiments. À relire par le vérificateur : l''énoncé dit « commandée par le NIST » pour « prepared for NIST », et « bâtiments [...] industriels » pour « industrial facilities ».'
 - id: A-interop-11
   question: Q3
@@ -587,7 +587,7 @@ affirmations:
 - id: A-formats-17
   question: Q6
   enonce: GDAL est une bibliothèque de traduction de formats de données géospatiales raster et vecteur, qui présente un modèle abstrait unique pour le raster et un pour le vecteur, quel que soit le format pris en charge.
-  usage: expert
+  usage: narration
   sources:
   - url: https://gdal.org/en/stable/
     titre: GDAL documentation
@@ -604,9 +604,9 @@ affirmations:
   contradictions: []
   fusionne_depuis:
   - A-modeles-11
-  verifie: null
+  verifie: true
   repare: true
-  note_verification: 'Vérification : L''extrait dit le modèle abstrait unique raster et vecteur, pas « bibliothèque de traduction de formats » : la page le dit dans une autre phrase (« GDAL is a translator library for raster and vector geospatial data formats »), hors extrait. Usage baissé de narration à expert ; un second extrait (même page) le rend à la narration.'
+  note_verification: 'Vérification : L''extrait dit le modèle abstrait unique raster et vecteur, pas « bibliothèque de traduction de formats » : la page le dit dans une autre phrase (« GDAL is a translator library for raster and vector geospatial data formats »), hors extrait. Usage baissé de narration à expert ; un second extrait (même page) le rend à la narration. Seconde passe (2026-11-27) : « GDAL is a translator library for raster and vector geospatial data formats » porte « bibliothèque de traduction » ; les extraits ajoutés disent la partie manquante ; l''énoncé ne dit rien de plus que ses extraits. Relever l''usage vers la narration n''est pas du ressort du vérificateur : il suit la confiance calculée (chiffre, date ou nom propre en moyenne restent à la porte).'
   note_reparation: Phrase « translator library » ajoutée en extrait (même page), coupée avant la licence.
 - id: A-formats-18
   question: Q6
@@ -704,9 +704,9 @@ affirmations:
     consulte: 2026-11-27
     extrait: the definitions or description used to group them into types
   contradictions: []
-  verifie: null
+  verifie: true
   repare: true
-  note_verification: 'Vérification : Le premier des quatre aspects manque aux extraits : la page dit « the definitions or description used to group them into types », hors extrait. L''énoncé dit plus que ses extraits.'
+  note_verification: 'Vérification : Le premier des quatre aspects manque aux extraits : la page dit « the definitions or description used to group them into types », hors extrait. L''énoncé dit plus que ses extraits. Seconde passe (2026-11-27) : les quatre aspects sont dans les extraits, texte de la norme (échantillon ISO 19109:2005), pas de seconde main ; les extraits ajoutés disent la partie manquante ; l''énoncé ne dit rien de plus que ses extraits. Relever l''usage vers la narration n''est pas du ressort du vérificateur : il suit la confiance calculée (chiffre, date ou nom propre en moyenne restent à la porte).'
   note_reparation: Premier des quatre aspects ajouté en extrait (même phrase, même page).
 - id: A-modeles-05
   question: Q7
@@ -957,9 +957,9 @@ affirmations:
     consulte: 2026-11-27
     extrait: application schema for the exchanged data, and a second
   contradictions: []
-  verifie: null
+  verifie: true
   repare: true
-  note_verification: 'Vérification : L''extrait ne dit que la seconde mise en correspondance ; la première (du schéma du fournisseur vers le schéma des données échangées) est sur la page, hors extrait. L''énoncé dit plus que son extrait.'
+  note_verification: 'Vérification : L''extrait ne dit que la seconde mise en correspondance ; la première (du schéma du fournisseur vers le schéma des données échangées) est sur la page, hors extrait. L''énoncé dit plus que son extrait. Seconde passe (2026-11-27) : les deux fragments disent la première mise en correspondance (« from the supplier''s application schema to [this] application schema for the exchanged data ») ; l''en-tête intercalé est un artefact de l''échantillon, le sens est entier. Texte de la norme, pas de seconde main ; les extraits ajoutés disent la partie manquante ; l''énoncé ne dit rien de plus que ses extraits. Relever l''usage vers la narration n''est pas du ressort du vérificateur : il suit la confiance calculée (chiffre, date ou nom propre en moyenne restent à la porte).'
   note_reparation: 'Première mise en correspondance ajoutée en deux fragments : dans le texte de l''échantillon, l''en-tête « ISO 19109:2005 » s''intercale au milieu de « to this application schema ».'
 - id: A-modeles-23
   question: Q9
@@ -1044,9 +1044,9 @@ affirmations:
     consulte: 2026-11-27
     extrait: Correpondence tables, known as matching tables are used to establish correspondence between the attributes in the source data model (source schema) and the target data model structure (target schema).
   contradictions: []
-  verifie: null
+  verifie: true
   repare: true
-  note_verification: 'Vérification : L''extrait dit ce que décrit la table de correspondance ; « fait coïncider les attributs du modèle source avec la structure du modèle cible » est dans la phrase précédente, hors extrait (« used to establish correspondence between the attributes in the source data model (source schema) and the target data model structure (target schema) »). L''énoncé dit plus que son extrait.'
+  note_verification: 'Vérification : L''extrait dit ce que décrit la table de correspondance ; « fait coïncider les attributs du modèle source avec la structure du modèle cible » est dans la phrase précédente, hors extrait (« used to establish correspondence between the attributes in the source data model (source schema) and the target data model structure (target schema) »). L''énoncé dit plus que son extrait. Seconde passe (2026-11-27) : « used to establish correspondence between the attributes in the source data model [...] and the target data model structure » dit « fait coïncider » ; le cas portugais est celui de la présentation de la DGT (Carta de Ocupação do Solo, COS 2010). Cas d''un producteur de données, pas exemple d''éditeur de logiciel ; les extraits ajoutés disent la partie manquante ; l''énoncé ne dit rien de plus que ses extraits. Relever l''usage vers la narration n''est pas du ressort du vérificateur : il suit la confiance calculée (chiffre, date ou nom propre en moyenne restent à la porte).'
   note_reparation: Phrase précédente ajoutée en extrait (même page), avec la coquille « Correpondence » de la page.
 - id: A-modeles-28
   question: Q9
@@ -1403,9 +1403,9 @@ affirmations:
     consulte: 2026-11-27
     extrait: 'Extent: France'
   contradictions: []
-  verifie: null
+  verifie: true
   repare: true
-  note_verification: 'Vérification : Aucun extrait ne dit l''étendue « France » : le nom porte « ETRS89-FRA » et le champ « Extent » de la fiche n''est pas dans les extraits. L''énoncé dit plus que ses extraits.'
+  note_verification: 'Vérification : Aucun extrait ne dit l''étendue « France » : le nom porte « ETRS89-FRA » et le champ « Extent » de la fiche n''est pas dans les extraits. L''énoncé dit plus que ses extraits. Seconde passe (2026-11-27) : le champ « Extent » de la fiche porte bien « France » ; les extraits ajoutés disent la partie manquante ; l''énoncé ne dit rien de plus que ses extraits. Relever l''usage vers la narration n''est pas du ressort du vérificateur : il suit la confiance calculée (chiffre, date ou nom propre en moyenne restent à la porte).'
   note_reparation: Champ « Extent » de la fiche ajouté en extrait (même page).
 - id: A-coordonnees-18
   question: Q11
@@ -1471,9 +1471,9 @@ affirmations:
     consulte: 2026-11-27
     extrait: surveying, mapping, charting and position‐based information systems.
   contradictions: []
-  verifie: null
+  verifie: true
   repare: true
-  note_verification: 'Vérification : L''extrait dit l''adoption en 1990 par le gouvernement canadien. La seconde moitié de l''énoncé est sur la page, hors extrait (« NAD83 is the official datum for all federal surveying, mapping, charting and position-based information systems »). L''énoncé dit plus que son extrait. Avis « communiqué » écarté : la page est la fiche technique 02 (février 2010) de l''unité de contrôle géodésique, Lands Division, Alberta Sustainable Resource Development ; « contact us » est la rubrique de fin de fiche. Éditeur juste ; B juste pour une adoption fédérale rapportée par une province.'
+  note_verification: 'Vérification : L''extrait dit l''adoption en 1990 par le gouvernement canadien. La seconde moitié de l''énoncé est sur la page, hors extrait (« NAD83 is the official datum for all federal surveying, mapping, charting and position-based information systems »). L''énoncé dit plus que son extrait. Avis « communiqué » écarté : la page est la fiche technique 02 (février 2010) de l''unité de contrôle géodésique, Lands Division, Alberta Sustainable Resource Development ; « contact us » est la rubrique de fin de fiche. Éditeur juste ; B juste pour une adoption fédérale rapportée par une province. Seconde passe (2026-11-27) : les deux fragments disent « NAD83 is the official datum for all federal [...] position-based information systems » ; l''énoncé omet « surveying » et « charting », il ne dit pas plus. les extraits ajoutés disent la partie manquante ; l''énoncé ne dit rien de plus que ses extraits. Relever l''usage vers la narration n''est pas du ressort du vérificateur : il suit la confiance calculée (chiffre, date ou nom propre en moyenne restent à la porte).'
   note_reparation: 'Seconde moitié ajoutée en deux fragments (même page) : la note de marge « Adoption » s''intercale dans la phrase du texte brut.'
 - id: A-coordonnees-21
   question: Q11
@@ -1585,9 +1585,9 @@ affirmations:
     consulte: 2026-11-27
     extrait: northerly in latitude, and approximately 3.6 arc‐
   contradictions: []
-  verifie: null
+  verifie: true
   repare: true
-  note_verification: 'Vérification : Les fragments ne disent ni ce qui diffère ni de quoi : le début de la phrase, hors extrait, porte le sujet et la moyenne (« On average, the NAD83 coordinates of Alberta Survey Control Markers (ASCMs) differ from current NAD27 »). L''énoncé dit plus que ses extraits. Avis « communiqué » écarté (fiche technique de l''unité de contrôle géodésique de l''Alberta) ; pour les repères de l''Alberta, cette unité est l''organisme concerné : le niveau A se défendrait (confiance moyenne, chiffre, reste en expert). Écart de coordonnées entre deux référentiels, pas écart vu à l''écran.'
+  note_verification: 'Vérification : Les fragments ne disent ni ce qui diffère ni de quoi : le début de la phrase, hors extrait, porte le sujet et la moyenne (« On average, the NAD83 coordinates of Alberta Survey Control Markers (ASCMs) differ from current NAD27 »). L''énoncé dit plus que ses extraits. Avis « communiqué » écarté (fiche technique de l''unité de contrôle géodésique de l''Alberta) ; pour les repères de l''Alberta, cette unité est l''organisme concerné : le niveau A se défendrait (confiance moyenne, chiffre, reste en expert). Écart de coordonnées entre deux référentiels, pas écart vu à l''écran. Seconde passe (2026-11-27) : le début de phrase porte le sujet (repères de contrôle de l''Alberta), la moyenne et « NAD27 » ; « approximately » est dans le fragment de longitude. Écart de coordonnées entre deux référentiels, pas écart vu à l''écran entre deux couches. les extraits ajoutés disent la partie manquante ; l''énoncé ne dit rien de plus que ses extraits. Relever l''usage vers la narration n''est pas du ressort du vérificateur : il suit la confiance calculée (chiffre, date ou nom propre en moyenne restent à la porte).'
   note_reparation: Début de phrase ajouté en extrait (sujet et moyenne), et le fragment qui porte « approximately » pour la longitude (« environ 20 m »), absent des deux premiers extraits ; la note de marge « Differences » coupe la phrase dans le texte brut.
 - id: A-coordonnees-26
   question: Q12
@@ -1613,9 +1613,9 @@ affirmations:
     consulte: 2026-11-27
     extrait: Note that these numbers are averages; the actual change varies throughout the province.
   contradictions: []
-  verifie: null
+  verifie: true
   repare: true
-  note_verification: 'Vérification : L''extrait ne dit ni la cause ni la moyenne : « Because of the change in ellipsoid dimensions » (début de la même phrase) et « Note that these numbers are averages; the actual change varies throughout the province » sont hors extrait. L''énoncé dit plus que son extrait. Même remarque qu''A-coordonnees-25 sur l''éditeur et le niveau. Écart de coordonnées, pas écart vu à l''écran.'
+  note_verification: 'Vérification : L''extrait ne dit ni la cause ni la moyenne : « Because of the change in ellipsoid dimensions » (début de la même phrase) et « Note that these numbers are averages; the actual change varies throughout the province » sont hors extrait. L''énoncé dit plus que son extrait. Même remarque qu''A-coordonnees-25 sur l''éditeur et le niveau. Écart de coordonnées, pas écart vu à l''écran. Seconde passe (2026-11-27) : la cause (« Because of the change in ellipsoid dimensions ») et la moyenne (« these numbers are averages; the actual change varies throughout the province ») sont dans les extraits ; dans le texte brut, la phrase des moyennes suit directement celle des 225 m et 70 m. Écart de coordonnées, pas écart vu à l''écran. les extraits ajoutés disent la partie manquante ; l''énoncé ne dit rien de plus que ses extraits. Relever l''usage vers la narration n''est pas du ressort du vérificateur : il suit la confiance calculée (chiffre, date ou nom propre en moyenne restent à la porte).'
   note_reparation: Cause (début de la même phrase) et mention des moyennes ajoutées en extraits (même page).
 - id: A-coordonnees-27
   question: Q12
@@ -1831,9 +1831,9 @@ affirmations:
     consulte: 2026-11-27
     extrait: These include land-cover and land-use.
   contradictions: []
-  verifie: null
+  verifie: true
   repare: true
-  note_verification: 'Vérification : L''extrait dit les 34 thèmes ; « dont l''occupation du sol et l''utilisation des terres » n''y est pas (la page en parle dans une autre phrase, sur les spécifications des thèmes occupation et usage des sols). L''énoncé dit plus que son extrait.'
+  note_verification: 'Vérification : L''extrait dit les 34 thèmes ; « dont l''occupation du sol et l''utilisation des terres » n''y est pas (la page en parle dans une autre phrase, sur les spécifications des thèmes occupation et usage des sols). L''énoncé dit plus que son extrait. Seconde passe (2026-11-27) : « These include land-cover and land-use. » suit directement la phrase des 34 thèmes, « These » renvoie aux thèmes ; les extraits ajoutés disent la partie manquante ; l''énoncé ne dit rien de plus que ses extraits. Relever l''usage vers la narration n''est pas du ressort du vérificateur : il suit la confiance calculée (chiffre, date ou nom propre en moyenne restent à la porte).'
   note_reparation: Phrase qui suit les 34 thèmes ajoutée en extrait (même page).
 - id: A-semantique-08
   question: Q14
@@ -2123,9 +2123,9 @@ affirmations:
     extrait: Units (MMU), and different production and update intervals.
   contradictions: []
   ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
-  verifie: null
+  verifie: true
   repare: true
-  note_verification: 'Texte sur deux colonnes : la phrase est coupée par la colonne voisine. Une seule source (B). Vérification : « de nombreux pays européens ont produit leurs propres bases » n''est pas dans les extraits : la page dit « many Member Countries (MC) have been [...] producing Land Cover (LC) databases », hors extrait. L''énoncé dit plus que ses extraits.'
+  note_verification: 'Texte sur deux colonnes : la phrase est coupée par la colonne voisine. Une seule source (B). Vérification : « de nombreux pays européens ont produit leurs propres bases » n''est pas dans les extraits : la page dit « many Member Countries (MC) have been [...] producing Land Cover (LC) databases », hors extrait. L''énoncé dit plus que ses extraits. Seconde passe (2026-11-27) : « pays européens » pour « Member Countries (MC) » : la ligne précédente parle des « UE Member States » et l''article des pays d''EIONET ; « pays européens » est moins précis que « pays membres », il ne dit pas plus. « leurs propres bases » : la page met « own » sur les besoins (« to manage and satisfy their own requirements ») ; que ces pays aient produit des bases qui sont les leurs est dit (« have been producing Land Cover (LC) databases »), mais la cause de l''hétérogénéité, des besoins propres, se perd. Pas de glissement de fait ; à la rédaction, garder « pays membres » et « pour leurs propres besoins », les mots de la source. Une seule source B, usage expert maintenu.'
   note_reparation: 'Sujet ajouté en trois fragments (texte sur deux colonnes, la colonne voisine coupe chaque ligne), et la fin « Units (MMU) », absente de l''extrait « Minimum Mapping ». À relire par le vérificateur : l''énoncé dit « pays européens » pour « Member Countries (MC) » (la ligne précédente : « UE Member States »), et « leurs propres bases » quand la page met « own » sur les besoins (« their own requirements »).'
 - id: A-semantique-26
   question: Q14
