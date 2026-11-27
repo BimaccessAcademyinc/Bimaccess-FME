@@ -16,8 +16,8 @@ const install = !process.argv.includes("--no-install")
 const lecons = []
 for (const mod of readdirSync(join(RACINE, "modules")).filter((d) => /^M\d+$/.test(d)).sort()) {
   for (const lec of readdirSync(join(RACINE, "modules", mod)).filter((d) => /^L\d+$/.test(d)).sort()) {
-    // « lecon » et ses variantes « lecon-<méthode> » (comparaisons de méthode)
-    for (const v of readdirSync(join(RACINE, "modules", mod, lec)).filter((d) => /^lecon(-[a-z0-9-]+)?$/.test(d)).sort()) {
+    // seulement la leçon de production « lecon » ; les dossiers d'essai (« lecon-<méthode> ») restent dans le dépôt, hors du lecteur (décision d'Ilyas, 2026-11-27)
+    for (const v of readdirSync(join(RACINE, "modules", mod, lec)).filter((d) => d === "lecon")) {
       const dossier = join(RACINE, "modules", mod, lec, v)
       if (!existsSync(join(dossier, "studio.config.json"))) continue
       const cfg = JSON.parse(readFileSync(join(dossier, "studio.config.json"), "utf8"))
