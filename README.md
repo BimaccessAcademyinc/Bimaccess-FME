@@ -11,6 +11,12 @@ Le module FME001 de BIMaccess Academy : ce qu'est FME (Feature Manipulation Engi
 | `harnais/skills/pack-recherche/SKILL.md` | construire le pack d'une leçon qui n'en a pas |
 | `harnais/banc-modeles/README.md` | comparer les modèles étape par étape |
 
+## La chaîne en essai
+
+![La chaîne du pilote FME001 en essai](docs/chaine-en-essai.svg)
+
+Rôles, outils et fichiers de chaque étape, portes d'Ilyas (bleu), appels payants gardés par son accord (or). Le schéma se génère : changer les listes de `docs/_src/schema_chaine.py`, puis `python3 docs/_src/schema_chaine.py`. Bilan des essais : `docs/essais-qualite.md`.
+
 ## Commandes
 
 ```bash
