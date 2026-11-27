@@ -25,12 +25,21 @@ import { type Boite, poser, sourceHref } from "./pieces"
 
 /**
  * Zone utile de la feuille, la même pour les deux gabarits (px de scène) :
- * du bas du titre au haut des sous-titres, du bord gauche de la face au bord
- * gauche de la marge. La zone d'action (x 1454, y 834) est hors de la zone.
+ * du bas du titre au haut des sous-titres, de x 104 à x 1816 (même retrait
+ * des deux côtés de la face). La colonne de droite fait partie de la zone :
+ * l'essai 1 laissait vide le tiers droit, défaut relevé par Ilyas. La marge
+ * fixe (mention de source, rose des vents) et la zone d'action y comptent
+ * comme occupées (MARGE_OCCUPEE).
  */
-export const ZONE = { x0: 104, y0: 180, x1: 1424, y1: 860 } as const
-/** Plus grand vide toléré dans la composition finale : un quart de la largeur ET un quart de la hauteur de la zone. */
+export const ZONE = { x0: 104, y0: 180, x1: 1816, y1: 860 } as const
+/** Blocs fixes de la marge comptés comme occupés : mention de source et rose (x 1448 à 1828, y 700 à 820), zone d'action (x 1454, y 834). */
+export const MARGE_OCCUPEE = [
+  { x0: 1448, y0: 700, x1: 1828, y1: 820, qui: "marge (source, rose)" },
+  { x0: 1454, y0: 834, x1: 1814, y1: 974, qui: "zone d'action" },
+] as const
+/** Plus grand vide toléré dans la composition finale : un quart de la hauteur de la zone (VIDE_MAX) ET un cinquième de sa largeur (VIDE_MAX_LARGEUR). */
 export const VIDE_MAX = 0.25
+export const VIDE_MAX_LARGEUR = 0.2
 
 export type Revelation = { readonly at: number; readonly dur: number; readonly type: GesteD["type"]; readonly dir: WipeDir; readonly chemin: string }
 
@@ -460,7 +469,7 @@ export function controlerRemplissage(plan: Plan, L: Lecteur): void {
   const nx = Math.ceil(W / PAS)
   const ny = Math.ceil(H / PAS)
   const libre: boolean[][] = Array.from({ length: ny }, () => new Array<boolean>(nx).fill(true))
-  const boites = boitesFinales(plan)
+  const boites: Rect[] = [...boitesFinales(plan), ...MARGE_OCCUPEE]
   for (const b of boites) {
     const i0 = Math.max(0, Math.floor((b.x0 - ZONE.x0) / PAS))
     const i1 = Math.min(nx, Math.ceil((b.x1 - ZONE.x0) / PAS))
@@ -469,7 +478,7 @@ export function controlerRemplissage(plan: Plan, L: Lecteur): void {
     for (let j = j0; j < j1; j++) for (let i = i0; i < i1; i++) (libre[j] as boolean[])[i] = false
   }
   const v = plusGrandVide(libre, nx, ny)
-  if (v.w * PAS > VIDE_MAX * W && v.h * PAS > VIDE_MAX * H) {
+  if (v.w * PAS > VIDE_MAX_LARGEUR * W && v.h * PAS > VIDE_MAX * H) {
     const x0 = ZONE.x0 + v.x * PAS
     const y0 = ZONE.y0 + v.y * PAS
     const x1 = Math.min(ZONE.x1, x0 + v.w * PAS)
@@ -478,7 +487,7 @@ export function controlerRemplissage(plan: Plan, L: Lecteur): void {
     const voisins = boites.filter(bord).map((b) => b.qui)
     L.faute(
       "(composition finale)",
-      `la feuille n'est pas remplie : vide de x ${x0} à ${x1}, y ${y0} à ${y1} (${x1 - x0} × ${y1 - y0} px), plus de ${Math.round(VIDE_MAX * 100)} % de la largeur (${Math.round(VIDE_MAX * W)} px) et de la hauteur (${Math.round(VIDE_MAX * H)} px) de la zone utile x ${ZONE.x0} à ${ZONE.x1}, y ${ZONE.y0} à ${ZONE.y1} ; éléments qui le bordent : ${voisins.join(", ") || "aucun"}`,
+      `la feuille n'est pas remplie : vide de x ${x0} à ${x1}, y ${y0} à ${y1} (${x1 - x0} × ${y1 - y0} px), plus de ${Math.round(VIDE_MAX_LARGEUR * 100)} % de la largeur (${Math.round(VIDE_MAX_LARGEUR * W)} px) et de la hauteur (${Math.round(VIDE_MAX * H)} px) de la zone utile x ${ZONE.x0} à ${ZONE.x1}, y ${ZONE.y0} à ${ZONE.y1} ; éléments qui le bordent : ${voisins.join(", ") || "aucun"}`,
       "agrandir ou déplacer des illustrations vers ce vide (largeur libre, hauteur tirée du viewBox), puis replacer textes, tracés et mises en évidence sur les nouvelles boîtes, sans texte sur un trait ; un texte sans « largeur » compte pour sa largeur mesurée « largeurMesuree » (à recopier de la spécification)",
     )
   }
