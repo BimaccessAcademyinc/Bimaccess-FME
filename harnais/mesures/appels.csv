@@ -1,3 +1,4 @@
 date,etape,alias,fournisseur,modele,entree,sortie,secondes,cout_estime,statut
 2026-11-27T03:56:53,essai de connexion,gemini-flash,gemini,gemini-3.5-flash,0,0,0.1,,http 401
 2026-11-27T03:57:06,essai de connexion,gemini-flash,gemini,gemini-3.5-flash,0,0,0.2,,http 403
+2026-11-27T04:01:02,essai de connexion après facturation,gemini-flash,gemini,gemini-3.5-flash,7,3,1.5,,ok

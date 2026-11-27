@@ -17,8 +17,9 @@
  *   S02-7   « Murray et Lutz commencent par ce travail » : titre tapé
  *   S02-8   même phrase, à la fin de la frappe du titre : mise en évidence A (routes et étiquette)
  *   S02-9   « Trois ans après la fondation » : jalon 1996 tracé, cases des années, puis son libellé tapé
- *   S02-10  même phrase, à la fin de ce libellé : le nom d'origine se tape
- *   S02-11  « FME fait passer » : mise en évidence B (1996 et son nom)
+ *   S02-10  « la première version de son logiciel » : le logo « FME by Safe Software » se balaie sous le jalon 1996
+ *   S02-11  « à l'origine Feature Manipulation Engine » : le nom d'origine se tape sous le logo
+ *   S02-12  « FME fait passer » : mise en évidence B (1996, logo et nom d'origine)
  *   S02-FIN « Son siège est à Surrey » : mise en évidence éteinte ; carte de lieu
  * Suivant : libre à la fin de la narration.
  *
@@ -40,6 +41,8 @@ const CAPS = THEME.fonts.capitales
 const FRISE = illustration("s02-frise", ["s02-frise-rubrique", "s02-frise-saif", "s02-frise-logiciels", "s02-frise-pointes", "s02-frise-annees", "s02-frise-lieu"])
 const ECHELLE = illustration("echelle-graphique")
 const ROSE = illustration("rose-des-vents")
+/** Logo d'origine, jamais recoloré ni déformé (220 px de large, rapport 216 × 103,7). */
+const LOGO = illustration("fme-logo")
 
 /** Une locution par phrase : la première de la phrase qui dit l'élément. */
 const T = ordered(
@@ -50,6 +53,8 @@ const T = ordered(
     echanger: V.said("Pour échanger avec lui"),
     commencent: V.said("Murray et Lutz commencent par ce travail"),
     trois: V.said("Trois ans après la fondation"),
+    logiciel: V.said("la première version de son logiciel"),
+    origine: V.said("à l'origine Feature Manipulation Engine"),
     passer: V.said("FME fait passer"),
     siege: V.said("Son siège est à Surrey"),
   },
@@ -77,7 +82,6 @@ const AT = ordered(
     hlTraduction: typedUntil(X.screen(0), T.commencent),
     annees: T.trois + JALON_TRACE,
     label1996: LABEL_1996_AT,
-    origine: typedUntil(X.screen(7), LABEL_1996_AT),
   },
   `${ID} (enchaînements)`,
 )
@@ -92,8 +96,9 @@ const BOARDS = [
   { at: T.commencent, on: "S02-7" },
   { at: AT.hlTraduction, on: "S02-8" },
   { at: T.trois, on: "S02-9" },
-  { at: AT.origine, on: "S02-10" },
-  { at: T.passer, on: "S02-11" },
+  { at: T.logiciel, on: "S02-10" },
+  { at: T.origine, on: "S02-11" },
+  { at: T.passer, on: "S02-12" },
   { at: T.siege, on: "S02-FIN" },
 ] as const
 
@@ -113,7 +118,7 @@ const ROUTES = [
 ] as const
 
 const SAIF_BOX = partBox(1110.4, 268.4, 259.2, 211.2)
-const LIEU_BOX = partBox(1104.4, 770.4, 319.2, 85.2)
+const LIEU_BOX = partBox(560.4, 770.4, 319.2, 85.2)
 
 /** Ligne de rubrique : serif 400, 30 px (agrandie depuis 28 px avec la composition), interligne 1,25, encre. */
 const RUBRIQUE: CSSProperties = { fontFamily: SERIF, fontWeight: 400, fontSize: 30, lineHeight: 1.25, color: C.encre }
@@ -189,12 +194,14 @@ function View() {
 
       <Jalon x={1350} maxWidth={350} text={X.screen(7)} at={AT.label1996} testId={tid(ID, "jalon-1996")} />
 
-      <div lang="en" style={{ position: "absolute", right: 1920 - 1350 - 2, top: 702, ...RUBRIQUE, ...RESERVE, fontStyle: "italic", whiteSpace: "nowrap" }}>
-        <TypeText text={X.screen(8)} at={AT.origine} testId={tid(ID, "nom-origine")} />
+      <Svg svg={LOGO} at={T.logiciel} dur={SHEET_WIPE} dir="right" style={{ position: "absolute", left: 1130, top: 690, width: 220, height: 106 }} testId={tid(ID, "logo")} />
+
+      <div lang="en" style={{ position: "absolute", right: 1920 - 1350 - 2, top: 804, ...RUBRIQUE, ...RESERVE, fontStyle: "italic", whiteSpace: "nowrap" }}>
+        <TypeText text={X.screen(8)} at={T.origine} testId={tid(ID, "nom-origine")} />
       </div>
 
       <Wipe at={T.siege} dur={SHEET_WIPE} dir="right" style={LIEU_BOX} testId={tid(ID, "lieu")}>
-        <div style={{ position: "absolute", left: 1172 - LIEU_BOX.left, top: 793 - LIEU_BOX.top, fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: 32, lineHeight: 1.2, color: C.encre, whiteSpace: "nowrap" }}>{X.screen(9)}</div>
+        <div style={{ position: "absolute", left: 628 - LIEU_BOX.left, top: 793 - LIEU_BOX.top, fontFamily: SERIF, fontStyle: "italic", fontWeight: 400, fontSize: 32, lineHeight: 1.2, color: C.encre, whiteSpace: "nowrap" }}>{X.screen(9)}</div>
       </Wipe>
 
       <Source href={sourceHref(ID)} testId={tid(ID, "source")}>
@@ -206,7 +213,7 @@ function View() {
       <Highlight on={focus === "traduction"} at={AT.hlTraduction} style={{ position: "absolute", left: 808, top: 188, width: 288, height: 285 }} testId={tid(ID, "hl-traduction")}>
         {null}
       </Highlight>
-      <Highlight on={focus === "fme"} at={T.passer} style={{ position: "absolute", left: 957, top: 609, width: 393, height: 133 }} testId={tid(ID, "hl-fme")}>
+      <Highlight on={focus === "fme"} at={T.passer} style={{ position: "absolute", left: 957, top: 599, width: 393, height: 253 }} testId={tid(ID, "hl-fme")}>
         {null}
       </Highlight>
     </SceneRoot>

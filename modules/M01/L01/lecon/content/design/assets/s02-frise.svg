@@ -56,9 +56,9 @@
 <path d="M900 571 h150 v14 h-150 Z M1200 571 h150 v14 h-150 Z" fill="#23281F"/>
 </g>
 <g id="s02-frise-lieu">
-<rect x="1104.4" y="770.4" width="319.2" height="85.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
-<rect x="1108" y="774" width="312" height="78" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
-<circle cx="1146" cy="813" r="12" fill="#FBFCF8" stroke="#23281F" stroke-width="2.5"/>
-<circle cx="1146" cy="813" r="4.5" fill="#23281F"/>
+<rect x="560.4" y="770.4" width="319.2" height="85.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="564" y="774" width="312" height="78" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<circle cx="602" cy="813" r="12" fill="#FBFCF8" stroke="#23281F" stroke-width="2.5"/>
+<circle cx="602" cy="813" r="4.5" fill="#23281F"/>
 </g>
 </svg>
