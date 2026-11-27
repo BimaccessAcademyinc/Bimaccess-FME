@@ -24,7 +24,7 @@ Tu es le chercheur d'un seul axe du pack de recherche de la leçon. L'axe t'est 
 1. **Chaque élément de l'énoncé est dans un extrait** : le sujet, une cause, une moyenne, la fin de la phrase. Sinon, ajoute un second extrait de la même page (une seconde entrée de source : même url, titre, éditeur, niveau, date). C'était 14 refus sur 22.
 2. **Garde la modalité et les catégories de la source** : « may », « can », « traditionally », « one of », « many reasons… including » ne deviennent pas des faits nets ou uniques ; une catégorie de la page ne se reclasse pas dans une glose (« industrial facilities » ne devient pas « bâtiments industriels »).
 3. **Une précision du titre de la page ne compte pas** : extrais la phrase du corps qui la porte, ou ne mets pas la précision dans l'énoncé.
-4. **Une date, un chiffre, un nom propre ou un numéro de norme en confiance moyenne** va en usage `expert`, pas en `narration` (le script le refuse).
+4. **Une date, un chiffre, un nom propre ou un numéro de norme en confiance moyenne** va en usage `expert`, pas en `narration` (le script refuse un chiffre ; un nom propre, il ne le voit pas : à toi de l'appliquer).
 5. Une même page citée sous deux éditeurs, ou un texte qui relaie la présentation d'un organisme par lui-même, ne fait qu'une source.
 
 ## Écris
