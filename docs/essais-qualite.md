@@ -12,14 +12,14 @@ Projet `modules/M01/L01/lecon-essai/`. Graphiste (skill graphisme) qui compose e
 
 | Mesure | Graphiste | Codeur | Total |
 |---|---|---|---|
-| Temps d'agent | 31 min | à venir | |
-| Tokens | 0,66 M écrits en cache, 18,2 M lus, 0,18 M en sortie | à venir | |
-| Coût des tokens (estimation) | environ 11 à 13 $ | à venir | |
-| Illustrations | 19 dessins livrés, 2 refus (crédits épuisés), 2,67 $ | sans objet | |
+| Temps d'agent | 31 min | 27 min | 58 min pour deux scènes |
+| Tokens | 0,66 M écrits en cache, 18,2 M lus, 0,18 M en sortie | 0,42 M écrits, 26,4 M lus, 0,11 M en sortie | |
+| Coût des tokens (estimation) | environ 11 à 13 $ | environ 9,5 à 11 $ | environ 20 à 24 $ |
+| Illustrations | 19 dessins livrés, 2 refus (crédits épuisés), 2,67 $ | sans objet | 2,67 $ |
 
 | Contrôle | Résultat |
 |---|---|
-| Agent principal | à venir |
+| Agent principal | Assemblage réglé : première image composée (fondateurs, contrat, frise), aucun texte sur un trait, aucun chevauchement, aucun trou, une seule mise en évidence, `test:play` conforme, illustrations au pixel de la spécification. Faiblesses : la composition n'occupe que les deux tiers gauches de la feuille (S02, S04), les illustrations sont petites et plates comparées aux planches 4K, le contour de S04 est un rectangle au lieu de l'empreinte du bâtiment, les hachures et l'emprise sur le globe sortent en gris bruité, la carte de S04 est chargée. Défauts de fichiers relevés par le codeur : fond sombre aux coins du globe, trait parasite au-dessus du contrat, aplats des SVG proches mais pas égaux au jeton `papier`. |
 | Ilyas | à venir |
 
 ## Essais suivants proposés
