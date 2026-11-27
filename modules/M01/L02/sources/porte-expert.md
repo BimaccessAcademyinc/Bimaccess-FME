@@ -15,7 +15,7 @@ Dix questions pour Ilyas, les plus lourdes pour la leçon d'abord. Chacune renvo
 
 **Sans réponse.** Option 1 : A-interop-01 est en narration, vérifiée ; A-interop-02 et A-interop-03 restent hors narration.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : option 1, la définition d'INSPIRE avec les mots de la source (2026-11-27, « je prends tes recommandations »). Source de niveau expert ajoutée à A-interop-01.
 
 ## Q2 · Combien de niveaux d'interopérabilité la leçon nomme-t-elle, et lesquels ?
 
@@ -28,7 +28,7 @@ Réponse d'Ilyas :
 
 **Sans réponse.** Option 1 ; A-interop-04, A-interop-05, A-interop-06 et A-semantique-34 restent hors narration. Si Ilyas confirme que la leçon peut dire qu'une terminologie différente « peut » rendre difficile la mise en correspondance, il l'écrit ici, et A-semantique-34 passe en narration.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : option 1, aucun nombre de niveaux ; l'interopérabilité syntaxique et l'interopérabilité sémantique nommées, les quatre obstacles rattachés à ces deux idées (2026-11-27). Source de niveau expert ajoutée à A-interop-13 et A-interop-14.
 
 ## Q3 · Quel cas réel la voix dit-elle pour chaque obstacle ?
 
@@ -41,7 +41,7 @@ Réponse d'Ilyas :
 
 **Sans réponse.** Option 1 : ces cas sont en narration, vérifiés, ou découpés (A-modeles-33, A-semantique-31) ; A-modeles-17, A-modeles-18 et A-formats-21 restent hors narration.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : option 1, un cas par obstacle : 10 caractères du shapefile, coordonnées (x,y) en colonnes et géométrie de point (exemple de Safe Software), NAD 27 contre NAD 83, la forêt (2026-11-27). Source de niveau expert ajoutée à A-formats-10, A-modeles-33, A-coordonnees-31 et A-semantique-31.
 
 ## Q4 · Le cas de la carte d'occupation du sol portugaise (COS vers INSPIRE) peut-il servir d'exemple de différence de modèle ?
 
@@ -54,7 +54,7 @@ Réponse d'Ilyas :
 
 **Sans réponse.** Option 3 : le cas COS reste hors narration.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : non posée en détail, présentée en bref et acceptée (2026-11-27). Appliqué, révisable : option 3, le cas COS reste hors narration.
 
 ## Q5 · Quel chiffre la voix donne-t-elle pour l'écart entre deux systèmes de coordonnées ?
 
@@ -67,7 +67,7 @@ Réponse d'Ilyas :
 
 **Sans réponse.** Option 1 (en narration, vérifiée) ; A-coordonnees-25, A-coordonnees-26 et A-coordonnees-27 restent hors narration.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : non posée en détail, présentée en bref et acceptée (2026-11-27). Appliqué, révisable : option 1, « de 10 à 100 mètres entre NAD 27 et NAD 83 aux États-Unis », dit comme un écart entre deux référentiels.
 
 ## Q6 · Quels systèmes de coordonnées et codes EPSG la leçon nomme-t-elle ?
 
@@ -80,7 +80,7 @@ Réponse d'Ilyas :
 
 **Sans réponse.** Option 3 : les codes et A-coordonnees-19 restent hors narration (L04 manipule les systèmes).
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : non posée en détail, présentée en bref et acceptée (2026-11-27). Appliqué, révisable : option 3, aucun code EPSG dans L02 ; la leçon dit ce qu'est un code EPSG, les codes viennent en L04.
 
 ## Q7 · La leçon cite-t-elle le coût de 15,8 milliards de dollars du NIST ?
 
@@ -92,7 +92,7 @@ Réponse d'Ilyas :
 
 **Sans réponse.** Option 1 : A-interop-15 est en narration, avec la précision du champ (§ 4 du pack) ; A-interop-10 reste hors narration.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : option 1, le chiffre du NIST cité en une phrase, en disant son champ (2026-11-27). Source de niveau expert ajoutée à A-interop-15.
 
 ## Q8 · La leçon donne-t-elle un nombre de formats pour FME ?
 
@@ -104,7 +104,7 @@ Réponse d'Ilyas :
 
 **Sans réponse.** Option 1.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : non posée en détail, présentée en bref et acceptée (2026-11-27). Appliqué, révisable : option 1, aucun nombre de formats.
 
 ## Q9 · Quels numéros de norme ISO la leçon montre-t-elle ?
 
@@ -117,7 +117,7 @@ Réponse d'Ilyas :
 
 **Sans réponse.** Option 1 ; A-semantique-05, A-semantique-10 et A-semantique-28 restent hors narration.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : non posée en détail, présentée en bref et acceptée (2026-11-27). Appliqué, révisable : option 1, seulement ISO 19136 à côté de GML ; l'OGC nommé, l'ISO/TC 211 non.
 
 ## Q10 · Comment la leçon présente-t-elle le rôle de FME face à ces obstacles ?
 
@@ -129,4 +129,4 @@ Réponse d'Ilyas :
 
 **Sans réponse.** Option 1, avec A-semantique-32 et A-semantique-33 ; A-semantique-17, A-semantique-19 et A-semantique-21 restent hors narration.
 
-Réponse d'Ilyas :
+Réponse d'Ilyas : non posée en détail, présentée en bref et acceptée (2026-11-27). Appliqué, révisable : option 1, le rôle de FME attribué à Safe Software, sans « le premier » ni « très utilisée ».

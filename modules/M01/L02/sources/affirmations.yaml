@@ -16,6 +16,10 @@ affirmations:
   enonce: La directive européenne INSPIRE définit l'interopérabilité comme la possibilité de combiner des jeux de données spatiales et de faire interagir des services sans intervention manuelle répétée, le résultat restant cohérent et la valeur des données et services accrue.
   usage: narration
   sources:
+  - niveau: expert
+    ref: porte-expert.md#Q1
+    editeur: Ilyas (BIMaccess)
+    consulte: '2026-11-27'
   - url: https://www.legislation.gov.uk/eudr/2007/2/article/3
     titre: Directive 2007/2/EC, article 3 (legislation.gov.uk)
     editeur: The National Archives (legislation.gov.uk)
@@ -264,6 +268,10 @@ affirmations:
   enonce: 'L''interopérabilité syntaxique est atteinte quand des systèmes peuvent échanger des données : l''OGC la décrit comme la connexion technique qui permet de transférer les données entre systèmes, une publication académique comme la capacité de communiquer et d''échanger des données.'
   usage: narration
   sources:
+  - niveau: expert
+    ref: porte-expert.md#Q2
+    editeur: Ilyas (BIMaccess)
+    consulte: '2026-11-27'
   - url: https://docs.ogc.org/per/16-059.html
     titre: OGC Testbed-12 Semantic Portrayal, Registry and Mediation Engineering Report
     editeur: Open Geospatial Consortium
@@ -285,6 +293,10 @@ affirmations:
   enonce: 'L''interopérabilité sémantique porte sur le sens : l''OGC la décrit comme l''aspect qui assure que le contenu est compris de la même façon dans les deux systèmes ; une publication académique, citant ISO 19101, comme l''échange, l''interprétation, la compréhension et l''usage justes de l''information géographique entre systèmes.'
   usage: narration
   sources:
+  - niveau: expert
+    ref: porte-expert.md#Q2
+    editeur: Ilyas (BIMaccess)
+    consulte: '2026-11-27'
   - url: https://docs.ogc.org/per/16-059.html
     titre: OGC Testbed-12 Semantic Portrayal, Registry and Mediation Engineering Report
     editeur: Open Geospatial Consortium
@@ -486,6 +498,10 @@ affirmations:
   enonce: Un shapefile n'admet pas de nom de champ de plus de 10 caractères.
   usage: narration
   sources:
+  - niveau: expert
+    ref: porte-expert.md#Q3
+    editeur: Ilyas (BIMaccess)
+    consulte: '2026-11-27'
   - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
     titre: Geoprocessing considerations for shapefile output
     editeur: Esri
@@ -1671,6 +1687,10 @@ affirmations:
   enonce: Dans les États-Unis contigus, le passage de NAD 27 à NAD 83 déplace la position des points (graticule latitude et longitude) de 10 à 100 mètres selon le lieu.
   usage: narration
   sources:
+  - niveau: expert
+    ref: porte-expert.md#Q3
+    editeur: Ilyas (BIMaccess)
+    consulte: '2026-11-27'
   - url: https://nweb.ngs.noaa.gov/TOOLS/Professional_Surveyor_Articles/NADCON.pdf
     titre: 'NGS Toolkit, Part 8: The National Geodetic Survey NADCON Tool (D. M. Mulcare)'
     editeur: NOAA National Geodetic Survey
@@ -2240,6 +2260,10 @@ affirmations:
   enonce: Une étude commandée par le NIST a estimé à 15,8 milliards de dollars par an le coût d'une interopérabilité insuffisante dans l'industrie des installations (« capital facilities ») aux États-Unis (bâtiments commerciaux et institutionnels, et installations industrielles), pour l'année 2002 ; ce n'est pas une étude du domaine géographique.
   usage: narration
   sources:
+  - niveau: expert
+    ref: porte-expert.md#Q7
+    editeur: Ilyas (BIMaccess)
+    consulte: '2026-11-27'
   - url: https://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf
     titre: NIST GCR 04-867, Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry
     editeur: NIST
@@ -2272,7 +2296,8 @@ affirmations:
     extrait: Although the focus of the study is on capital facilities—commercial/institutional buildings and industrial facilities—it will benefit key stakeholders throughout the construction industry.
   contradictions: []
   decoupe_de: A-interop-10
-  verifie: null
+  verifie: true
+  note_verification: 'Vérifiée le 2026-11-27 : le chiffre (15,8 milliards par an, 2002), l''industrie (« U.S. capital facilities industry »), la parenthèse (« commercial/institutional buildings and industrial facilities ») et la commande (« have commissioned a study », par deux laboratoires du NIST, « prepared for NIST ») sont dans les extraits ; NIST et ENR, indépendants, confiance forte. La fin « ce n''est pas une étude du domaine géographique » n''est pas une phrase de la page : c''est une mise en garde du pack, tirée du champ déclaré de l''étude (« the focus of the study is on capital facilities », « construction industry ») ; elle se dit comme cadrage, jamais au nom du NIST. Le sigle GIS ne paraît dans le rapport qu''en liste d''abréviations.'
   note_decoupe: 'Découpée le 2026-11-27 après vérification : la parenthèse garde le découpage de la page (« commercial/institutional buildings and industrial facilities ») au lieu de « bâtiments [...] industriels » ; « aux États-Unis » et « commandée » sont portés par deux extraits ajoutés, même page (avant-propos, « (NIST) have commissioned a study », et « in the U.S. capital facilities industry »), lus dans le cache par lire_page.py. Le sujet de « have commissioned » est, sur la page, le Building and Fire Research Laboratory et l''Advanced Technology Program du NIST (début de phrase coupé par le numéro de page « iii »).'
 - id: A-formats-20
   question: Q4
@@ -2287,7 +2312,8 @@ affirmations:
     extrait: There are many reasons you might need to transform data between formats, including integrating data managed by different GIS, CAD, 3D, or database systems
   contradictions: []
   decoupe_de: A-formats-16
-  verifie: null
+  verifie: true
+  note_verification: 'Vérifiée le 2026-11-27 : l''extrait dit l''énoncé, avec « many reasons [...] including » gardé et les quatre catégories de systèmes (GIS, CAD, 3D, database) ; c''est l''éditeur qui écrit (blogue, 2009), l''énoncé le dit.'
   note_decoupe: 'Découpée le 2026-11-27 après vérification : « many reasons [...] including » est gardé : l''intégration est une raison parmi d''autres, pas la description du besoin.'
 - id: A-formats-21
   question: Q5
@@ -2304,13 +2330,18 @@ affirmations:
   - version: La documentation de GDAL écrit que le format peut aller jusqu'à 8 Go, que l'implémentation OGR est limitée à 4 Go, et qu'au-delà de 2 Go c'est déconseillé pour la compatibilité avec d'autres logiciels (« it is not recommended to use a file size over 2GB »), relevé par le vérificateur sur A-formats-11.
     source: https://gdal.org/en/stable/drivers/vector/shapefile.html
   decoupe_de: A-formats-11
-  verifie: null
+  verifie: true
+  note_verification: 'Vérifiée le 2026-11-27 : l''extrait d''Esri dit les deux chiffres (2 GB par fichier composant, « roughly 70 million point features »), sans plus ; Esri seul, confiance moyenne, deux chiffres : l''usage expert est juste. La contradiction de GDAL reste notée, non tranchée.'
   note_decoupe: 'Découpée le 2026-11-27 après vérification : la confirmation par GDAL est retirée (la page de GDAL ne la donne pas : voir contradictions). Esri seul, confiance moyenne, deux chiffres : à la porte.'
 - id: A-semantique-31
   question: Q13
   enonce: 'Le mot « forêt » ne reçoit pas la même définition partout : les États membres de l''UE appliquent des définitions différentes de la superficie forestière (Agence européenne pour l''environnement), et la littérature rapporte de façon répétée des sens différents donnés au terme.'
   usage: narration
   sources:
+  - niveau: expert
+    ref: porte-expert.md#Q3
+    editeur: Ilyas (BIMaccess)
+    consulte: '2026-11-27'
   - url: https://www.eea.europa.eu/en/ghg-knowledge-hub/lulucf/guidance/interoperability
     titre: Interoperability (guide UTCATF, base de connaissances GES)
     editeur: Agence européenne pour l'environnement
@@ -2325,7 +2356,8 @@ affirmations:
     extrait: We illustrate this with the example of ‘forest’, for which the problematic arising of the assignation of different meanings is repeatedly reported in the literature.
   contradictions: []
   decoupe_de: A-semantique-23
-  verifie: null
+  verifie: true
+  note_verification: 'Vérifiée le 2026-11-27 : l''extrait de l''AEE dit « Member States apply different definitions for forest area » (la page porte sur le suivi UTCATF de l''UE, « EU LULUCF monitoring system », d''où « États membres de l''UE ») ; l''article de Leeds dit que le problème né de sens différents donnés à « forest » est « repeatedly reported in the literature » : l''énoncé en dit un peu moins (les sens différents, pas « the problematic »), sans dire plus. AEE (A) et Leeds (B), indépendants : confiance forte. Le chapeau « ne reçoit pas la même définition partout » résume les deux extraits.'
   note_decoupe: 'Découpée le 2026-11-27 après vérification : la fin « ce qui met à l''épreuve l''interopérabilité » est retirée, avec son extrait (il porte sur les informations et bases de données géographiques en général, au conditionnel, pas sur la forêt).'
 - id: A-semantique-32
   question: Q15
@@ -2346,7 +2378,8 @@ affirmations:
     extrait: it’s stored all over the place – in different applications, databases, and formats, and with different data models and coordinate systems.
   contradictions: []
   decoupe_de: A-semantique-17
-  verifie: null
+  verifie: true
+  note_verification: 'Vérifiée le 2026-11-27 : les deux extraits, même page, disent l''énoncé mot pour mot (« A common challenge in getting value from data », « stored all over the place », applications, bases, formats, modèles de données, systèmes de coordonnées) ; c''est l''éditeur qui écrit, l''énoncé le dit.'
   note_decoupe: 'Découpée le 2026-11-27 après vérification : « le problème de départ » est remplacé par les mots de la page, « A common challenge », porté par un extrait ajouté (même page, cache, accord du coordinateur), qui porte aussi le sujet « data ».'
 - id: A-semantique-33
   question: Q15
@@ -2373,7 +2406,8 @@ affirmations:
     extrait: FME was the first tool designed to be a spatial ETL application, focusing on translation of geographic data.
   contradictions: []
   decoupe_de: A-semantique-19
-  verifie: null
+  verifie: true
+  note_verification: 'Vérifiée le 2026-11-27 : les trois extraits, même page, disent l''énoncé : « Traditionally » gardé, capacités limitées, données forcées à travers un modèle limité, sens perdu à la traduction, FME conçu comme application d''ETL spatial centrée sur la traduction de données géographiques ; la revendication « the first » n''est pas reprise. C''est la documentation de l''éditeur qui parle, l''énoncé le dit.'
   note_decoupe: 'Découpée le 2026-11-27 après vérification : la modalité de la page, « Traditionally », est gardée (« traditionnellement », pas « antérieurs »), portée par un extrait ajouté (même page, cache, accord du coordinateur) ; « le premier » (revendication de l''éditeur) n''est pas repris.'
 - id: A-semantique-34
   question: Q13
@@ -2388,13 +2422,18 @@ affirmations:
     extrait: Lorsque la terminologie utilisée dans les modèles de données est différente, elle peut être source de confusion et rendre difficile la mise en correspondance des données
   contradictions: []
   decoupe_de: A-semantique-29
-  verifie: null
+  verifie: true
+  note_verification: 'Vérifiée le 2026-11-27 : l''énoncé reprend l''extrait de l''IGIF mot pour mot, modalité « peut » gardée. Une source B seule, confiance faible : l''usage expert est juste.'
   note_decoupe: 'Découpée le 2026-11-27 après vérification : la modalité de la source (« peut ») est gardée, et seule la moitié portée par l''IGIF est reprise ; la moitié de Chojka (sémantique, « may be even impossible », cas d''un schéma intermédiaire) n''a qu''une source elle aussi. Une source B : confiance faible, à la porte.'
 - id: A-modeles-33
   question: Q8
   enonce: Safe Software donne comme exemple de transformation entre différentes représentations spatiales celle entre des coordonnées (x,y) stockées dans des colonnes numériques et une géométrie de point stockée dans une colonne de géométrie.
   usage: narration
   sources:
+  - niveau: expert
+    ref: porte-expert.md#Q3
+    editeur: Ilyas (BIMaccess)
+    consulte: '2026-11-27'
   - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
     titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
     editeur: Safe Software
@@ -2415,7 +2454,8 @@ affirmations:
     extrait: point geometry stored in a geometry column
   contradictions: []
   decoupe_de: A-modeles-17
-  verifie: null
+  verifie: true
+  note_verification: 'Vérifiée le 2026-11-27 : sur la page, la liste qui suit « examples of transformations between different spatial representations » met sur une même ligne « (x,y) coordinates stored in numeric columns » et « point geometry stored in a geometry column » ; le signe entre les deux est perdu dans le texte brut, « entre » est donc juste. Exemple donné par l''éditeur, présenté comme tel.'
   note_decoupe: 'Découpée le 2026-11-27 après vérification : extrait de cadre ajouté (même page, lu dans le cache par lire_page.py, accord du coordinateur) ; l''énoncé dit « entre », comme la page (« between »), pas « de... à » : le sens de passage ne se lit pas dans le texte brut.'
 - id: A-modeles-34
   question: Q8
@@ -2442,7 +2482,8 @@ affirmations:
     extrait: attributes associated with area features directly
   contradictions: []
   decoupe_de: A-modeles-18
-  verifie: null
+  verifie: true
+  note_verification: 'Vérifiée le 2026-11-27 : sur la page, la deuxième ligne de la même liste met ensemble « area feature attributes associated with an inside point » et « attributes associated with area features directly » ; « entre » est juste, sens du passage non lisible. Exemple donné par l''éditeur, présenté comme tel.'
   note_decoupe: 'Découpée le 2026-11-27 après vérification : même cas qu''A-modeles-33 : extrait de cadre ajouté (même page, cache), « entre » et non « de... à ».'
 lacunes:
 - axe: interop
