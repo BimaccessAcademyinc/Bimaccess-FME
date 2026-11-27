@@ -1,0 +1,599 @@
+/*
+ * Signature carte (« carte topographique » : la leçon se lit comme une
+ * feuille de carte imprimée).
+ *
+ * 1. Coque du lecteur : règles préfixées par :root[data-signature="carte"]
+ *    (posé par src/main.tsx) ; player.css reste la base commune (mise en
+ *    page, écrans étroits). Le cadre forme un seul bloc centré : en-tête de
+ *    feuille (barre d'état), scène, barre de contrôles. Les valeurs de la
+ *    charte sont en pixels de composition (1920 × 1080) : la coque les met à
+ *    l'échelle de la scène par --u (un pixel de composition, estimé sur la
+ *    fenêtre), avec un plancher de lisibilité en pixels d'écran.
+ * 2. Composants de scène (classes carte-*, rendues seulement dans cette
+ *    signature par src/engine/carte.tsx) : pixels de composition, la scène
+ *    étant mise à l'échelle par le lecteur.
+ *
+ * Charte appliquée : fond `background` partout, aplats et traits, aucun coin
+ * arrondi, aucune ombre, aucun dégradé décoratif ; Barlow Condensed en
+ * capitales espacées (--f-mono) pour la barre d'état et les boutons, Source
+ * Serif 4 (--f-body) pour le texte ; boutons en cartouche (double filet),
+ * repos `panel`, survol `panel2`, actif encre pleine, verrouillé gris ;
+ * focus clavier en trait plein `accent` ; couleur du programme (--c-program)
+ * seulement dans la barre d'état. Couleurs : jetons du thème (--c-*), dont
+ * les clés communes dérivées des jetons de la charte par scripts/sync.mjs.
+ */
+
+/* ── 1. Coque ───────────────────────────────────────────────────────────── */
+
+:root[data-signature="carte"] {
+  /* Un pixel de composition à l'échelle de la scène (estimé sur la fenêtre : la hauteur de la coque en dépend) */
+  --u: clamp(0.3px, min(calc((100vw - 32px) / var(--comp-w, 1920)), calc((100dvh - 150px) * var(--ratio) / var(--comp-w, 1920))), 1px);
+  --bar-h: max(28px, calc(44 * var(--u)));
+  --btn-h: max(34px, calc(60 * var(--u)));
+  --fs-bar: max(12px, calc(23 * var(--u)));
+  --fs-btn: max(12px, calc(26 * var(--u)));
+  /* Barre d'état + contrôles (bouton, filets et marges) + marges du cadre */
+  --chrome: calc(var(--bar-h) + var(--btn-h) + 52px);
+  --frame-w: min(calc(100% - 32px), calc((100dvh - var(--chrome)) * var(--ratio)));
+  -webkit-font-smoothing: antialiased;
+}
+
+:root[data-signature="carte"] .studio {
+  grid-template-rows: auto auto auto auto;
+  align-content: center;
+  padding: 12px 0;
+  box-sizing: border-box;
+}
+
+/* En-tête de feuille : barre d'état au-dessus de la scène, même largeur, filet double dessous */
+:root[data-signature="carte"] .studio-head {
+  justify-self: center;
+  width: var(--frame-w);
+  height: var(--bar-h);
+  box-sizing: border-box;
+  gap: max(10px, calc(22 * var(--u)));
+  padding: 0 max(8px, calc(24 * var(--u)));
+  border-bottom: 3px double var(--c-ink);
+  background: var(--c-background);
+  color: var(--c-ink);
+  font-family: var(--f-mono);
+  font-weight: 500;
+  font-size: var(--fs-bar);
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+:root[data-signature="carte"] .studio-code {
+  display: inline-flex;
+  align-items: center;
+  gap: max(8px, calc(22 * var(--u)));
+  flex: none;
+  white-space: nowrap;
+}
+
+:root[data-signature="carte"] .studio-chip {
+  display: block;
+  flex: none;
+  width: max(8px, calc(14 * var(--u)));
+  height: max(8px, calc(14 * var(--u)));
+  box-sizing: border-box;
+  background: var(--c-program);
+  border: 1px solid var(--c-ink);
+}
+
+:root[data-signature="carte"] .studio-program {
+  font-weight: 600;
+}
+
+:root[data-signature="carte"] .studio-sep {
+  display: none;
+}
+
+:root[data-signature="carte"] .studio-titles {
+  align-items: center;
+}
+
+/* Le titre du contenu est sur l'écran « Lancer » et dans l'onglet : la barre garde code, scène, progression */
+:root[data-signature="carte"] .studio-title {
+  display: none;
+}
+
+:root[data-signature="carte"] .studio-scene-title {
+  font-family: var(--f-body);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--c-ink);
+}
+
+/* Progression en échelle graphique : une case par scène ; terminées en encre, courante à la couleur du programme, à venir en papier */
+:root[data-signature="carte"] .studio-scale {
+  display: flex;
+  flex: none;
+  height: max(8px, calc(12 * var(--u)));
+  box-sizing: content-box;
+  border: 1.5px solid var(--c-ink);
+}
+
+:root[data-signature="carte"] .studio-scale > i {
+  display: block;
+  width: max(10px, calc(34 * var(--u)));
+  background: var(--c-panel);
+  border-right: 1.5px solid var(--c-ink);
+}
+
+:root[data-signature="carte"] .studio-scale > i:last-child {
+  border-right: 0;
+}
+
+:root[data-signature="carte"] .studio-scale > i.is-done {
+  background: var(--c-ink);
+}
+
+:root[data-signature="carte"] .studio-scale > i.is-current {
+  background: var(--c-program);
+}
+
+:root[data-signature="carte"] .studio-position {
+  font-weight: 500;
+  color: var(--c-ink2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scène : la feuille est dessinée dans la scène ; aucun filet, aucune ombre autour */
+:root[data-signature="carte"] .studio-main {
+  padding: 0 16px;
+}
+
+:root[data-signature="carte"] .studio-stage {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--c-background);
+}
+
+/* Barre de contrôles, sous la scène, même largeur, filet double dessus */
+:root[data-signature="carte"] .studio-foot {
+  justify-self: center;
+  width: var(--frame-w);
+  box-sizing: border-box;
+  gap: max(12px, calc(22 * var(--u)));
+  padding: 10px 4px;
+  border-top: 3px double var(--c-ink);
+  background: var(--c-background);
+}
+
+/* Boutons de la coque (LANCER, SUIVANT, PRÉCÉDENT…) : cartouche à double filet, capitales espacées */
+:root[data-signature="carte"] .studio-btn {
+  min-height: var(--btn-h);
+  margin: 4px;
+  padding: 0 max(10px, calc(26 * var(--u))) 0 max(12px, calc(32 * var(--u)));
+  gap: 8px;
+  border: 2px solid var(--c-ink);
+  outline: 1px solid var(--c-ink);
+  outline-offset: 3px;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--c-panel);
+  color: var(--c-ink);
+  font-family: var(--f-mono);
+  font-size: var(--fs-btn);
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Pas de bouton « principal » dans la charte : SUIVANT, LANCER et RECOMMENCER ont le même cartouche */
+:root[data-signature="carte"] .studio-btn-primary {
+  border-color: var(--c-ink);
+  background: var(--c-panel);
+  color: var(--c-ink);
+}
+
+:root[data-signature="carte"] .studio-btn:hover:not(:disabled),
+:root[data-signature="carte"] .studio-icon-btn:hover:not(:disabled) {
+  background: var(--c-panel2);
+}
+
+:root[data-signature="carte"] .studio-btn:active:not(:disabled),
+:root[data-signature="carte"] .studio-icon-btn:active:not(:disabled),
+:root[data-signature="carte"] .studio-captions[aria-pressed="true"] {
+  background: var(--c-ink);
+  color: var(--c-panel);
+}
+
+:root[data-signature="carte"] .studio-btn:disabled,
+:root[data-signature="carte"] .studio-icon-btn:disabled {
+  background: var(--c-background);
+  color: var(--c-ink2);
+  border-color: var(--c-lineSoft);
+  outline-color: var(--c-lineSoft);
+  cursor: not-allowed;
+}
+
+:root[data-signature="carte"] .studio-icon-btn {
+  width: var(--btn-h);
+  height: var(--btn-h);
+  margin: 4px;
+  border: 2px solid var(--c-ink);
+  outline: 1px solid var(--c-ink);
+  outline-offset: 3px;
+  border-radius: 0;
+  background: var(--c-panel);
+  color: var(--c-ink);
+}
+
+:root[data-signature="carte"] .studio-icon-btn svg {
+  width: 50%;
+  height: 50%;
+}
+
+/* Focus clavier : trait plein bleu (lecture), jamais de tireté (le tireté est la mise en évidence) */
+:root[data-signature="carte"] .studio-btn:focus-visible,
+:root[data-signature="carte"] .studio-icon-btn:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 5px;
+}
+
+:root[data-signature="carte"] .studio-scrub:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 4px;
+}
+
+/* Curseur de narration : petite échelle (bord encre 1,5 px, partie lue en encre), poignée cartouche carrée */
+:root[data-signature="carte"] .studio-scrub {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 24px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+:root[data-signature="carte"] .studio-scrub::-webkit-slider-runnable-track {
+  height: 8px;
+  box-sizing: border-box;
+  border: 1.5px solid var(--c-ink);
+  background: linear-gradient(to right, var(--c-ink) var(--p, 0%), var(--c-panel) var(--p, 0%));
+}
+
+:root[data-signature="carte"] .studio-scrub::-moz-range-track {
+  height: 5px;
+  border: 1.5px solid var(--c-ink);
+  background: linear-gradient(to right, var(--c-ink) var(--p, 0%), var(--c-panel) var(--p, 0%));
+}
+
+:root[data-signature="carte"] .studio-scrub::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 18px;
+  margin-top: -6.5px;
+  box-sizing: border-box;
+  border: 2px solid var(--c-ink);
+  border-radius: 0;
+  background: var(--c-panel);
+}
+
+:root[data-signature="carte"] .studio-scrub::-moz-range-thumb {
+  width: 10px;
+  height: 14px;
+  border: 2px solid var(--c-ink);
+  border-radius: 0;
+  background: var(--c-panel);
+}
+
+:root[data-signature="carte"] .studio-scrub:disabled::-webkit-slider-thumb {
+  border-color: var(--c-lineSoft);
+}
+
+:root[data-signature="carte"] .studio-scrub:disabled::-moz-range-thumb {
+  border-color: var(--c-lineSoft);
+}
+
+:root[data-signature="carte"] .studio-next-box {
+  gap: 12px;
+}
+
+:root[data-signature="carte"] .studio-lock {
+  color: var(--c-ink2);
+}
+
+/* Écrans Lancer et Fin : voile limité à la scène, carte en cartouche (bordure 2 px, contour 0,8 px décalé de 4 px) */
+:root[data-signature="carte"] .studio-overlay {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: auto;
+  width: var(--frame-w);
+  transform: translateX(-50%);
+  background: color-mix(in srgb, var(--c-background) 90%, transparent);
+}
+
+:root[data-signature="carte"] .studio-card {
+  align-items: flex-start;
+  gap: max(12px, calc(24 * var(--u)));
+  max-width: max(300px, calc(1000 * var(--u)));
+  padding: max(18px, calc(40 * var(--u))) max(20px, calc(48 * var(--u)));
+  border: 2px solid var(--c-ink);
+  outline: 0.8px solid var(--c-ink);
+  outline-offset: 4px;
+  border-radius: 0;
+  background: var(--c-panel);
+  box-shadow: none;
+  text-align: left;
+}
+
+/* Eyebrow du programme : en-tête de cartouche, encre (la couleur de programme reste dans la barre d'état) */
+:root[data-signature="carte"] .studio-card-code {
+  margin: 0;
+  font-family: var(--f-mono);
+  font-size: max(12px, calc(24 * var(--u)));
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+}
+
+:root[data-signature="carte"] .studio-card-title {
+  font-family: var(--f-body);
+  font-size: max(20px, calc(56 * var(--u)));
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+:root[data-signature="carte"] .studio-card-hint {
+  font-family: var(--f-body);
+  font-style: italic;
+  font-size: max(13px, calc(27 * var(--u)));
+  color: var(--c-ink2);
+}
+
+/* LANCER (et RECOMMENCER) : 34 px, 76 px de haut */
+:root[data-signature="carte"] .studio-card .studio-btn {
+  min-height: max(44px, calc(76 * var(--u)));
+  padding: 0 max(16px, calc(40 * var(--u))) 0 max(18px, calc(48 * var(--u)));
+  font-size: max(14px, calc(34 * var(--u)));
+}
+
+:root[data-signature="carte"] .studio-error {
+  font-family: var(--f-body);
+}
+
+:root[data-signature="carte"] .studio-error code {
+  font-family: var(--f-body);
+}
+
+/* Écran étroit (≤ 720 px) : contrôles sur deux lignes ; la barre d'état reste sur une ligne, sans échelle */
+@media (max-width: 720px) {
+  :root[data-signature="carte"] {
+    --chrome: calc(var(--bar-h) + 2 * var(--btn-h) + 80px);
+  }
+  :root[data-signature="carte"] .studio-titles {
+    flex-direction: row;
+    align-items: center;
+  }
+  :root[data-signature="carte"] .studio-scale {
+    display: none;
+  }
+  :root[data-signature="carte"] .studio-foot {
+    gap: 10px 16px;
+  }
+}
+
+@media (max-width: 720px) and (orientation: portrait) {
+  :root[data-signature="carte"] .studio-narrow {
+    justify-self: center;
+    width: var(--frame-w);
+    box-sizing: border-box;
+    border-top: 0;
+    background: var(--c-background);
+    color: var(--c-ink2);
+    font-family: var(--f-body);
+    font-style: italic;
+  }
+}
+
+/* Téléphone à l'horizontale, ou plein écran : sans barre d'état, la scène prend la hauteur */
+@media (orientation: landscape) and (max-height: 540px) and (max-width: 940px) {
+  :root[data-signature="carte"] {
+    --chrome: calc(var(--btn-h) + 40px);
+  }
+  :root[data-signature="carte"] .studio {
+    padding: 4px 0;
+  }
+  :root[data-signature="carte"] .studio-foot {
+    padding: 4px;
+  }
+}
+
+:root[data-signature="carte"] .studio[data-fullscreen="true"] {
+  --chrome: calc(var(--btn-h) + 40px);
+  --frame-w: min(calc(100% - 32px), calc((100dvh - var(--chrome)) * var(--ratio)));
+  padding: 4px 0;
+}
+
+/* ── 2. Composants de scène (pixels de composition) ─────────────────────── */
+
+/* Boutons d'action de la scène (VALIDER, CONTINUER) : cartouche, double filet, capitales espacées */
+.carte-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  margin: 0;
+  padding: 12px 26px 12px 32px;
+  border: 2px solid var(--c-ink);
+  outline: 1px solid var(--c-ink);
+  outline-offset: 3px;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--c-panel);
+  color: var(--c-ink);
+  font-family: var(--f-mono);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.carte-btn:hover:not(:disabled) {
+  background: var(--c-panel2);
+}
+
+.carte-btn:active:not(:disabled) {
+  background: var(--c-ink);
+  color: var(--c-panel);
+}
+
+.carte-btn:disabled {
+  background: var(--c-background);
+  color: var(--c-ink2);
+  border-color: var(--c-lineSoft);
+  outline-color: var(--c-lineSoft);
+  cursor: not-allowed;
+}
+
+.carte-btn:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 5px;
+}
+
+/* Panneau d'exercice : cartouche papier, bordure 2 px, contour 0,8 px décalé de 4 px */
+.carte-panel {
+  box-sizing: border-box;
+  background: var(--c-panel);
+  border: 2px solid var(--c-ink);
+  outline: 0.8px solid var(--c-ink);
+  outline-offset: 4px;
+  color: var(--c-ink);
+}
+
+.carte-panel-question {
+  margin: 0;
+  padding: 20px 24px 10px;
+  font-family: var(--f-body);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.carte-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 8px 24px 20px;
+}
+
+.carte-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px 18px;
+  border: 1.5px solid var(--c-ink);
+  border-radius: 0;
+  background: var(--c-panel);
+  color: var(--c-ink);
+  font-family: var(--f-body);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.carte-choice-key {
+  display: grid;
+  flex: 0 0 36px;
+  place-items: center;
+  height: 36px;
+  box-sizing: border-box;
+  border: 1.5px solid var(--c-ink);
+  font-family: var(--f-mono);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.carte-choice-txt {
+  flex: 1;
+}
+
+.carte-choice-mark {
+  align-self: center;
+  flex: none;
+  font-family: var(--f-mono);
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.carte-choice:hover:not(:disabled) {
+  background: var(--c-panel2);
+}
+
+/* Choix sélectionné : bord plein bleu 3 px et fond lecture-fond ; jamais de tireté (ce n'est pas une mise en évidence) */
+.carte-choice[aria-checked="true"],
+.carte-choice[aria-checked="true"]:hover {
+  border: 3px solid var(--c-accent);
+  padding: 10.5px 16.5px;
+  background: var(--c-selectBg);
+}
+
+.carte-choice[aria-checked="true"] .carte-choice-key {
+  border-color: var(--c-accent);
+  background: var(--c-accent);
+  color: var(--c-panel);
+}
+
+.carte-choice.is-dimmed {
+  color: var(--c-ink2);
+}
+
+.carte-choice:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 4px;
+}
+
+/* Rétroaction sans verdict : rubrique de la feuille sous un filet double, encre sur papier, aucune couleur ni icône */
+.carte-feedback {
+  margin: 0 24px 22px;
+  padding: 14px 0 0;
+  border-top: 3px double var(--c-ink);
+  font-family: var(--f-body);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--c-ink);
+}
+
+.carte-feedback-head {
+  margin: 0 0 6px;
+  font-family: var(--f-mono);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+/* Texte pour les lecteurs d'écran seulement */
+.carte-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

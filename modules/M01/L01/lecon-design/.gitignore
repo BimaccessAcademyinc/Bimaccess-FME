@@ -1,0 +1,9 @@
+node_modules/
+dist/
+src/generated/
+public/audio/
+.studio/tmp/
+.studio/qa/shots/
+.env
+*.log
+.DS_Store

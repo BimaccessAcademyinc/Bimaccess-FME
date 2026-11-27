@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="256 356 744 308" role="img" aria-label="Entité géographique et deux manques">
+<rect x="260.4" y="360.4" width="419.2" height="299.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="264" y="364" width="412" height="292" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M264 414 H676" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<path d="M384 476 L498 452 L578 494 L564 588 L446 612 L372 562 Z" fill="none" stroke="#23281F" stroke-width="3" stroke-linejoin="miter"/>
+<path d="M680 448 H936 M680 568 H936" fill="none" stroke="#23281F" stroke-width="2.5"/>
+<rect x="940" y="421" width="54" height="54" fill="#FBF1C8" stroke="#C99700" stroke-width="3" stroke-dasharray="8 5"/>
+<rect x="940" y="541" width="54" height="54" fill="#FBF1C8" stroke="#C99700" stroke-width="3" stroke-dasharray="8 5"/>
+</svg>
