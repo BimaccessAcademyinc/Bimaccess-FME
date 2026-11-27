@@ -214,9 +214,9 @@ Le rectangle est celui du tireté ; `de` et `a` sont des locutions ; `a` absent 
 
 ## 6. Remplir la feuille
 
-Décision d'Ilyas après l'essai 1 : la composition finale doit occuper la **zone utile** de la feuille, la même pour les deux gabarits (`ZONE` du moteur) : x 104 à 1816 (même retrait des deux côtés de la face, colonne de droite comprise : l'essai 1 laissait vide le tiers droit, x 1448 à 1816, défaut relevé par Ilyas), y 180 (bas du titre) à 860 (haut des sous-titres). La marge fixe y compte comme occupée (`MARGE_OCCUPEE`) : mention de source et rose des vents (x 1448 à 1828, y 700 à 820), zone d'action (x 1454, y 834). Au-dessus de y 700, la colonne x 1448 à 1816 est donc à remplir par la composition.
+Décision d'Ilyas après l'essai 1 : la composition finale doit occuper la **zone utile** de la feuille, la même pour les deux gabarits (`ZONE` du moteur) : la face de carte de la charte (`CHARTE-FME001.md` § 4) : x 104 à 1424, y 180 (bas du titre) à 860 (haut des sous-titres). La colonne x 1448 à 1830 est la marge (échelle, rose, source) : elle ne se remplit pas. La face peut y déborder jusqu'à x 1500 entre y 360 et y 690 seulement (charte), jamais sur un élément de marge.
 
-Contrôle au chargement : les boîtes de la composition finale (illustrations à leur place d'arrivée, feuille, tracés avec leur épaisseur, frise, années, textes ; ni titre, ni marge, ni mises en évidence) sont posées sur une grille de 10 px ; le plus grand rectangle vide ne doit pas dépasser **à la fois** 20 % de la largeur (342 px, `VIDE_MAX_LARGEUR`) et 25 % de la hauteur (170 px, `VIDE_MAX`) de la zone. Sinon :
+Contrôle au chargement : les boîtes de la composition finale (illustrations à leur place d'arrivée, feuille, tracés avec leur épaisseur, frise, années, textes ; ni titre, ni marge, ni mises en évidence) sont posées sur une grille de 10 px ; le plus grand rectangle vide ne doit pas dépasser **à la fois** 20 % de la largeur (264 px, `VIDE_MAX_LARGEUR`) et 25 % de la hauteur (170 px, `VIDE_MAX`) de la zone. Sinon :
 
 ```
 GabaritError : content/design/scenes/S02.json, champ « (composition finale) » : la feuille n'est pas remplie :
@@ -227,7 +227,7 @@ C'est le vide qu'a la composition S02 de la spécification sous la frise. Pour r
 
 - garder les mêmes illustrations, les mêmes gestes, les mêmes locutions ; changer leurs places et leurs tailles (`largeur` libre, la hauteur suit toujours le `viewBox` : jamais étirée) ;
 - replacer ensuite, sur les nouvelles boîtes, les textes posés dans une illustration, les tracés qui la touchent (routes, trait, jalons) et les rectangles de mise en évidence ; aucun texte sur un trait ; vérifier à la planche ;
-- `Frise` : la frise peut aller de x 104 à 1816 (sa pointe au-dessus de la mention de source, qui commence à y 700) ; jalons et cases se placent sur sa ligne ; un élément au-dessus ou au-dessous de la ligne peut descendre jusqu'à y 860 ;
+- `Frise` : la frise peut aller de x 104 à 1424 (jusqu'à 1500 si elle est entre y 360 et y 690) ; jalons et cases se placent sur sa ligne ; un élément au-dessus ou au-dessous de la ligne peut descendre jusqu'à y 860 ;
 - un texte sans `largeur` compte pour une ligne de largeur nulle : donner `largeurMesuree` (largeur mesurée de la spécification, colonne « Place ») pour qu'il compte en entier ; `lignes` pour un texte à `largeur` sur plusieurs lignes.
 
 Le contrôle voit les boîtes, pas les traits : une illustration au dessin clairsemé compte comme pleine. Il ne remplace pas la planche.

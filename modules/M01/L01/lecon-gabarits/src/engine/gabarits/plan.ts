@@ -24,20 +24,14 @@ import { type AnneesD, type Donnees, type EtapeD, type EvidenceD, type FriseD, t
 import { type Boite, poser, sourceHref } from "./pieces"
 
 /**
- * Zone utile de la feuille, la même pour les deux gabarits (px de scène) :
- * du bas du titre au haut des sous-titres, de x 104 à x 1816 (même retrait
- * des deux côtés de la face). La colonne de droite fait partie de la zone :
- * l'essai 1 laissait vide le tiers droit, défaut relevé par Ilyas. La marge
- * fixe (mention de source, rose des vents) et la zone d'action y comptent
- * comme occupées (MARGE_OCCUPEE).
+ * Zone utile de la feuille, la même pour les deux gabarits (px de scène) : la
+ * face de carte de la charte (CHARTE-FME001 § 4), du bas du titre au haut des
+ * sous-titres, x 104 à 1424. La colonne x 1448 à 1830 est la marge (échelle,
+ * rose, source) : elle ne se remplit pas. La face peut y déborder jusqu'à
+ * x 1500 entre y 360 et y 690 (charte), ce que le contrôle accepte.
  */
-export const ZONE = { x0: 104, y0: 180, x1: 1816, y1: 860 } as const
-/** Blocs fixes de la marge comptés comme occupés : mention de source et rose (x 1448 à 1828, y 700 à 820), zone d'action (x 1454, y 834). */
-export const MARGE_OCCUPEE = [
-  { x0: 1448, y0: 700, x1: 1828, y1: 820, qui: "marge (source, rose)" },
-  { x0: 1454, y0: 834, x1: 1814, y1: 974, qui: "zone d'action" },
-] as const
-/** Plus grand vide toléré dans la composition finale : un quart de la hauteur de la zone (VIDE_MAX) ET un cinquième de sa largeur (VIDE_MAX_LARGEUR). */
+export const ZONE = { x0: 104, y0: 180, x1: 1424, y1: 860 } as const
+/** Plus grand vide toléré dans la composition finale : un cinquième de la largeur (VIDE_MAX_LARGEUR) ET un quart de la hauteur (VIDE_MAX) de la zone. */
 export const VIDE_MAX = 0.25
 export const VIDE_MAX_LARGEUR = 0.2
 
@@ -469,7 +463,7 @@ export function controlerRemplissage(plan: Plan, L: Lecteur): void {
   const nx = Math.ceil(W / PAS)
   const ny = Math.ceil(H / PAS)
   const libre: boolean[][] = Array.from({ length: ny }, () => new Array<boolean>(nx).fill(true))
-  const boites: Rect[] = [...boitesFinales(plan), ...MARGE_OCCUPEE]
+  const boites = boitesFinales(plan)
   for (const b of boites) {
     const i0 = Math.max(0, Math.floor((b.x0 - ZONE.x0) / PAS))
     const i1 = Math.min(nx, Math.ceil((b.x1 - ZONE.x0) / PAS))
