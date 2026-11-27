@@ -8,6 +8,7 @@ import type { CSSProperties, ReactNode } from "react"
 import { THEME } from "../../generated/theme"
 import { Highlight, Move, Trace, TypeText, useT, Wipe, wipeProgress } from "../anim"
 import { SceneRoot, Svg, Title, tid } from "../components"
+import { PAGE } from "../signature"
 import { focusAt } from "../timeline"
 import type { Piece, Plan, PlanIllustration, PlanTexte } from "./plan"
 import { cssDe, Source, Texte } from "./pieces"
@@ -150,7 +151,8 @@ function TexteVue({ id, p, plan }: { readonly id: string; readonly p: PlanTexte;
 /** Vue de la scène d'après son plan. */
 export function vueDe(plan: Plan) {
   const scene = plan.d.scene
-  const C = THEME.colors
+  // Réserve du titre : le fond de la signature (2 px en haut et en bas, 6 px à gauche et à droite)
+  const reserveTitre = (THEME.colors as Readonly<Record<string, string | undefined>>)[PAGE.reserve] ?? THEME.colors.background
   function View() {
     const t = useT()
     const focus = focusAt(plan.focus, t)
@@ -171,7 +173,7 @@ export function vueDe(plan: Plan) {
             {plan.source.texte}
           </Source>
         ) : null}
-        {titre ? <Title text={titre.texte} at={titre.at} style={{ position: "absolute", left: 98, top: 82, padding: "2px 6px", background: t >= titre.at ? C.fond : "transparent" }} testId={tid(scene, "title")} /> : null}
+        {titre ? <Title text={titre.texte} at={titre.at} style={{ position: "absolute", left: PAGE.titre.x - 6, top: PAGE.titre.y - 2, padding: "2px 6px", background: t >= titre.at ? reserveTitre : "transparent" }} testId={tid(scene, "title")} /> : null}
         {plan.evidences.map((e) => (
           <Highlight key={e.d.id} on={focus === e.d.id} at={e.at} pad={0} shape={e.d.forme} style={{ position: "absolute", left: e.d.x, top: e.d.y, width: e.d.largeur, height: e.d.hauteur }} testId={tid(scene, `hl-${e.d.id}`)}>
             {null}

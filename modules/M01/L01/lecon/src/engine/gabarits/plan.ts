@@ -9,23 +9,49 @@
  *     révélé une fois ;
  *   - états : premier à l'image 0, dernier `Sxx-FIN` ;
  *   - mises en évidence : une seule à la fois (intervalles disjoints) ;
- *   - composition finale (controles.ts) : face remplie, rien hors de la face,
- *     aucun texte sur un trait, aucun chevauchement.
+ *   - composition finale (controlerComposition, docs/gabarits.md § 6) : face
+ *     de la signature active remplie, textes et mises en évidence dans la
+ *     face, dessins dans la face ou son débord, aucun texte sur un trait,
+ *     aucun chevauchement ; tous les défauts sont dits ensemble.
  *
  * Aucun instant n'est écrit : chacun vient d'une locution ou d'un repère,
  * plus les durées de la spécification.
  */
 import { META } from "../../generated/meta"
-import { getLength } from "@remotion/paths"
+import { getBoundingBox, getLength, getPointAtLength } from "@remotion/paths"
 import type { Point, WipeDir } from "../anim"
+import { type Cadre, PAGE } from "../signature"
 import { type Illustration, illustration, type SceneTexts, sceneTexts } from "../texts"
 import { type Step, voice } from "../timeline"
 import type { Voice } from "../types"
-import { type AnneesD, type Donnees, type EtapeD, type EvidenceD, type FriseD, type GesteD, type IllustrationD, Lecteur, SENS, type StyleD, type TexteD, type TraceD } from "./donnees"
-import { controlerComposition } from "./controles"
+import { type AnneesD, type Donnees, type EtapeD, type EvidenceD, type FriseD, GabaritError, type GesteD, type IllustrationD, Lecteur, SENS, type StyleD, type TexteD, type TraceD } from "./donnees"
 import { type Boite, poser, sourceHref } from "./pieces"
 
-export { ZONE } from "./controles"
+/**
+ * Zone utile, la même pour les deux gabarits : la face de la signature active
+ * (PAGE.face, signature.ts), du bas du titre au haut des sous-titres ; carte :
+ * x 104 à 1424, y 180 à 860 ; bimaccess et neutral : x 110 à 1810, y 180 à
+ * 860. Un dessin peut déborder dans PAGE.debord (carte : jusqu'à x 1500 entre
+ * y 360 et y 690), jamais un texte ni une mise en évidence.
+ */
+export const ZONE: Cadre = PAGE.face
+
+/**
+ * Seuils des contrôles de la composition finale (docs/gabarits.md § 6), en
+ * fractions de la face de la signature active (carte : 1320 × 680 px) :
+ *
+ *   videCarre       aucun vide où tient un carré de plus de 0,2 × la hauteur
+ *                   de la face (136 px) ;
+ *   bandeLongueur,  aucune bande vide plus longue que 0,4 × la largeur de la
+ *   bandeEpaisseur  face (528 px) et plus épaisse que 0,1 × sa hauteur (68 px) ;
+ *   pas             grille du contrôle de remplissage (px) : les boîtes y sont
+ *                   arrondies vers l'extérieur, un vide se mesure donc au plus
+ *                   juste à un pas près ;
+ *   tolerance       recouvrement toléré entre deux boîtes, ou entre une boîte et
+ *                   un trait (px) : bords qui se touchent, pointe d'une flèche
+ *                   posée sur sa cible.
+ */
+export const COMPOSITION = { videCarre: 0.2, bandeLongueur: 0.4, bandeEpaisseur: 0.1, pas: 5, tolerance: 2 } as const
 
 export type Revelation = { readonly at: number; readonly dur: number; readonly type: GesteD["type"]; readonly dir: WipeDir; readonly chemin: string }
 
@@ -64,6 +90,7 @@ const EPS = 1e-6
 
 export function planifier(d: Donnees): Plan {
   const L: Lecteur = new Lecteur(d.fichier)
+  if (META.width !== 1920 || META.height !== 1080) L.faute("(racine)", `composition de ${META.width} × ${META.height} px : les gabarits et la mise en page des signatures sont en px de scène 1920 × 1080`, "remettre « width » 1920 et « height » 1080 dans studio.config.json, ou écrire la scène à la main")
 
   let X: SceneTexts
   try {
@@ -270,6 +297,7 @@ export function planifier(d: Donnees): Plan {
   for (const [id, m] of moves) {
     const p = illus.get(id)
     if (p) p.move = { at: m.at, dur: m.dur, vers: m.vers }
+    for (const [tid, t] of d.textes) if (t.dans === id) L.faute(`textes.${tid}.dans`, `le texte se balaie avec « ${id} », qui se déplace ensuite (${m.chemin}) : il resterait à la place de départ`, "retirer « dans » et révéler le texte par un geste à sa place d'arrivée, ou ne pas déplacer l'illustration")
   }
 
   const traces = new Map<string, PlanTrace>()
@@ -368,4 +396,322 @@ export function planifier(d: Donnees): Plan {
   }
   controlerComposition(plan)
   return plan
+}
+
+
+/* ── Composition finale ───────────────────────────────────────────────────── */
+
+type Rect = { readonly x0: number; readonly y0: number; readonly x1: number; readonly y1: number }
+type Segment = { readonly a: Point; readonly b: Point; readonly demi: number }
+/** Élément de la composition finale : sa boîte ; pour un trait, ses segments (vides pour un chemin « d » : sa boîte sert) et ses bouts. */
+type Element = Rect & {
+  readonly qui: string
+  readonly sorte: "illustration" | "texte" | "trait"
+  readonly segments: readonly Segment[]
+  readonly bouts: readonly Point[]
+  readonly texte: PlanTexte | null
+}
+
+const TOL = COMPOSITION.tolerance
+/** Nombre en px, une décimale au plus, virgule française. */
+const px = (n: number): string => String(Math.round(n * 10) / 10).replace(".", ",")
+const cadre = (r: Rect): string => `x ${px(r.x0)} à ${px(r.x1)}, y ${px(r.y0)} à ${px(r.y1)}`
+/** Recouvrement de deux boîtes au-delà de la tolérance (null : elles se touchent au plus). */
+function recouvrement(a: Rect, b: Rect): Rect | null {
+  const r = { x0: Math.max(a.x0, b.x0), y0: Math.max(a.y0, b.y0), x1: Math.min(a.x1, b.x1), y1: Math.min(a.y1, b.y1) }
+  return r.x1 - r.x0 > TOL && r.y1 - r.y0 > TOL ? r : null
+}
+/** `b` dans `a`, à `tol` px près. */
+const contient = (a: Rect, b: Rect, tol: number = TOL): boolean => b.x0 >= a.x0 - tol && b.y0 >= a.y0 - tol && b.x1 <= a.x1 + tol && b.y1 <= a.y1 + tol
+const surface = (r: Rect): number => Math.max(0, r.x1 - r.x0) * Math.max(0, r.y1 - r.y0)
+const dedans = (p: Point, r: Rect, marge: number): boolean => p[0] >= r.x0 - marge && p[0] <= r.x1 + marge && p[1] >= r.y0 - marge && p[1] <= r.y1 + marge
+
+/** Le segment [a, b] traverse-t-il l'intérieur de `r` ? (découpage de Liang et Barsky) */
+function segmentCoupe(a: Point, b: Point, r: Rect): boolean {
+  if (r.x1 <= r.x0 || r.y1 <= r.y0) return false
+  const dx = b[0] - a[0]
+  const dy = b[1] - a[1]
+  let t0 = 0
+  let t1 = 1
+  const bords: [number, number][] = [
+    [-dx, a[0] - r.x0],
+    [dx, r.x1 - a[0]],
+    [-dy, a[1] - r.y0],
+    [dy, r.y1 - a[1]],
+  ]
+  for (const [p, q] of bords) {
+    if (p === 0) {
+      if (q <= 0) return false
+    } else {
+      const t = q / p
+      if (p < 0) t0 = Math.max(t0, t)
+      else t1 = Math.min(t1, t)
+      if (t0 >= t1) return false
+    }
+  }
+  return true
+}
+
+/** Un trait touche-t-il la boîte `r` au-delà de la tolérance ? (épaisseur comprise) */
+function traitTouche(trait: Element, r: Rect): boolean {
+  if (trait.segments.length === 0) return recouvrement(trait, r) !== null
+  return trait.segments.some((s) => segmentCoupe(s.a, s.b, { x0: r.x0 - s.demi + TOL, y0: r.y0 - s.demi + TOL, x1: r.x1 + s.demi - TOL, y1: r.y1 + s.demi - TOL }))
+}
+
+/** Dépassements d'une boîte hors d'un cadre, côté par côté (vide : dedans). */
+function depassements(r: Rect, c: Rect): string[] {
+  const out: string[] = []
+  if (r.x0 < c.x0 - 0.05) out.push(`de ${px(c.x0 - r.x0)} px à gauche (x ${px(r.x0)} < ${px(c.x0)})`)
+  if (r.x1 > c.x1 + 0.05) out.push(`de ${px(r.x1 - c.x1)} px à droite (x ${px(r.x1)} > ${px(c.x1)})`)
+  if (r.y0 < c.y0 - 0.05) out.push(`de ${px(c.y0 - r.y0)} px en haut (y ${px(r.y0)} < ${px(c.y0)})`)
+  if (r.y1 > c.y1 + 0.05) out.push(`de ${px(r.y1 - c.y1)} px en bas (y ${px(r.y1)} > ${px(c.y1)})`)
+  return out
+}
+
+/** Une boîte de dessin tient-elle dans la face, ou dans la face et son débord ? */
+function dansFaceOuDebord(r: Rect, f: Rect, debord: Cadre | null): boolean {
+  if (contient(f, r, 0.05)) return true
+  if (!debord) return false
+  const cx0 = Math.max(r.x0, f.x0)
+  const cx1 = Math.min(r.x1, f.x1)
+  const bandes: Rect[] = []
+  if (r.x0 < f.x0) bandes.push({ x0: r.x0, x1: f.x0, y0: r.y0, y1: r.y1 })
+  if (r.x1 > f.x1) bandes.push({ x0: f.x1, x1: r.x1, y0: r.y0, y1: r.y1 })
+  if (r.y0 < f.y0) bandes.push({ x0: cx0, x1: cx1, y0: r.y0, y1: f.y0 })
+  if (r.y1 > f.y1) bandes.push({ x0: cx0, x1: cx1, y0: f.y1, y1: r.y1 })
+  return bandes.every((b) => contient(debord, b, 0.05))
+}
+
+/**
+ * Éléments de la composition finale : illustrations à leur place d'arrivée
+ * (feuille comprise), textes, tracés (épaisseur comprise), frise, années ; ni
+ * le titre, ni la marge (source, habillage), ni les mises en évidence. Un texte
+ * a pour boîte sa largeur (« largeur », ou « largeurMesuree » sur une ligne)
+ * et lignes × taille × interligne de hauteur.
+ */
+export function elementsFinaux(plan: Plan): Element[] {
+  const r: Element[] = []
+  for (const [id, p] of plan.illustrations) {
+    const x = p.move ? p.move.vers[0] : p.boite.left
+    const y = p.move ? p.move.vers[1] : p.boite.top
+    r.push({ x0: x, y0: y, x1: x + p.boite.width, y1: y + p.boite.height, qui: `illustrations.${id}`, sorte: "illustration", segments: [], bouts: [], texte: null })
+  }
+  /** Trait : polyligne `pts` d'épaisseur `e` ; `pointe` : triangle plein posé au bout (frise), compté à ses sommets. */
+  const polyligne = (pts: readonly Point[], e: number, qui: string, pointe: readonly Point[] = []) => {
+    const segments: Segment[] = []
+    for (let i = 1; i < pts.length; i++) segments.push({ a: pts[i - 1] as Point, b: pts[i] as Point, demi: e / 2 })
+    pointe.forEach((p, i) => segments.push({ a: p, b: pointe[(i + 1) % pointe.length] as Point, demi: 0 }))
+    const xs = [...pts.map((p) => p[0] - e / 2), ...pts.map((p) => p[0] + e / 2), ...pointe.map((p) => p[0])]
+    const ys = [...pts.map((p) => p[1] - e / 2), ...pts.map((p) => p[1] + e / 2), ...pointe.map((p) => p[1])]
+    r.push({ x0: Math.min(...xs), y0: Math.min(...ys), x1: Math.max(...xs), y1: Math.max(...ys), qui, sorte: "trait", segments, bouts: [pts[0] as Point, pts[pts.length - 1] as Point, ...pointe], texte: null })
+  }
+  for (const [id, t] of plan.traces) {
+    const e = Math.max(...t.d.couches.map((c) => c.epaisseur))
+    if (t.d.points) polyligne(t.d.points, e, `traces.${id}`)
+    else if (t.d.d) {
+      const b = getBoundingBox(t.d.d)
+      const len = getLength(t.d.d)
+      const bout = (p: { readonly x: number; readonly y: number } | null): Point => (p ? [p.x, p.y] : [b.x1, b.y1])
+      const bouts = [bout(getPointAtLength(t.d.d, 0)), bout(getPointAtLength(t.d.d, len))]
+      r.push({ x0: b.x1 - e / 2, y0: b.y1 - e / 2, x1: b.x2 + e / 2, y1: b.y2 + e / 2, qui: `traces.${id}`, sorte: "trait", segments: [], bouts, texte: null })
+    }
+  }
+  if (plan.frise) {
+    const f = plan.frise
+    polyligne([f.de, f.a], f.epaisseur, "frise", f.pointe)
+  }
+  for (const [id, a] of plan.annees) polyligne([a.d.de, a.d.a], a.d.epaisseur, `annees.${id}`)
+  for (const [id, t] of plan.textes) {
+    const h = t.style.taille * t.style.interligne
+    const w = t.d.largeur ?? t.d.largeurMesuree ?? 0
+    const lignes = t.d.largeur !== null ? (t.d.lignes ?? 1) : 1
+    const x0 = t.d.cx !== null ? t.d.cx - w / 2 : (t.d.x ?? 0)
+    r.push({ x0, y0: t.d.y, x1: x0 + w, y1: t.d.y + h * lignes, qui: `textes.${id}`, sorte: "texte", segments: [], bouts: [], texte: t })
+  }
+  return r
+}
+
+/** Vides refusés de la composition (docs/gabarits.md § 6), du plus grand au plus petit, sans doublon. */
+function videsRefuses(elements: readonly Element[], f: Rect): (Rect & { readonly regle: string })[] {
+  const PAS = COMPOSITION.pas
+  const W = f.x1 - f.x0
+  const H = f.y1 - f.y0
+  const nx = Math.ceil(W / PAS)
+  const ny = Math.ceil(H / PAS)
+  const libre: boolean[][] = Array.from({ length: ny }, () => new Array<boolean>(nx).fill(true))
+  for (const b of elements) {
+    const i0 = Math.max(0, Math.floor((b.x0 - f.x0) / PAS))
+    const i1 = Math.min(nx, Math.ceil((b.x1 - f.x0) / PAS))
+    const j0 = Math.max(0, Math.floor((b.y0 - f.y0) / PAS))
+    const j1 = Math.min(ny, Math.ceil((b.y1 - f.y0) / PAS))
+    for (let j = j0; j < j1; j++) for (let i = i0; i < i1; i++) (libre[j] as boolean[])[i] = false
+  }
+  const carre = COMPOSITION.videCarre * H
+  const long = COMPOSITION.bandeLongueur * W
+  const epais = COMPOSITION.bandeEpaisseur * H
+  const refuses: (Rect & { regle: string })[] = []
+  // Rectangles vides maximaux par la méthode de l'histogramme : chaque vide assez grand en contient un
+  const haut = new Array<number>(nx).fill(0)
+  for (let j = 0; j < ny; j++) {
+    for (let i = 0; i < nx; i++) haut[i] = libre[j]?.[i] ? (haut[i] ?? 0) + 1 : 0
+    const pile: number[] = []
+    for (let i = 0; i <= nx; i++) {
+      const hi = i < nx ? (haut[i] ?? 0) : 0
+      while (pile.length && (haut[pile[pile.length - 1] ?? 0] ?? 0) >= hi) {
+        const top = pile.pop() as number
+        const h = (haut[top] ?? 0) * PAS
+        const gauche = pile.length ? (pile[pile.length - 1] ?? 0) + 1 : 0
+        const w = (i - gauche) * PAS
+        if (h <= 0 || w <= 0) continue
+        const court = Math.min(w, h)
+        const regle = court > carre ? `un carré de ${px(court)} px y tient (au plus ${px(carre)} px : ${px(COMPOSITION.videCarre)} × la hauteur de la face)` : Math.max(w, h) > long && court > epais ? `bande vide de ${px(Math.max(w, h))} px de long et ${px(court)} px d'épaisseur (au plus ${px(long)} px de long, ${px(COMPOSITION.bandeLongueur)} × la largeur de la face, ou ${px(epais)} px d'épaisseur, ${px(COMPOSITION.bandeEpaisseur)} × sa hauteur)` : null
+        if (regle === null) continue
+        const x0 = f.x0 + gauche * PAS
+        const y0 = f.y0 + (j + 1) * PAS - h
+        refuses.push({ x0, y0, x1: Math.min(f.x1, x0 + w), y1: Math.min(f.y1, y0 + h), regle })
+      }
+      pile.push(i)
+    }
+  }
+  refuses.sort((a, b) => surface(b) - surface(a))
+  const gardes: (Rect & { regle: string })[] = []
+  for (const v of refuses) {
+    const doublon = gardes.some((g) => {
+      const r = recouvrement(g, v)
+      return r !== null && surface(r) > 0.5 * Math.min(surface(g), surface(v))
+    })
+    if (!doublon) gardes.push(v)
+  }
+  return gardes
+}
+
+/**
+ * Contrôles de la composition finale, au chargement (docs/gabarits.md § 6) :
+ * tous les défauts sont réunis dans une seule GabaritError, chacun avec ce
+ * qu'il faut faire. Seuils : COMPOSITION, face et débord de la signature
+ * active (PAGE).
+ *
+ *   1. textes dans la face ; mises en évidence (leur cadre) dans la face ;
+ *      illustrations et traits dans la face ou son débord ; habillage hors
+ *      de la face ;
+ *   2. aucun texte posé sur un trait (tracé, frise, années) ;
+ *   3. aucun chevauchement : deux textes ; un texte de la face et une
+ *      illustration ; un texte « carte » hors de l'illustration qui le porte,
+ *      ou sur une autre ; deux illustrations, sauf si l'une contient l'autre
+ *      (élément posé dans une carte ou une feuille) ; un trait qui traverse
+ *      une illustration sans y commencer ni y finir ;
+ *   4. remplissage : aucun vide où tient un carré de videCarre × la hauteur de
+ *      la face, aucune bande vide de bandeLongueur × sa largeur sur
+ *      bandeEpaisseur × sa hauteur.
+ */
+export function controlerComposition(plan: Plan): void {
+  const f = ZONE
+  const debord = PAGE.debord
+  const els = elementsFinaux(plan)
+  const defauts: string[] = []
+  const faceTxt = `la face ${cadre(f)}`
+
+  // 1. Dans la face
+  for (const e of els) {
+    if (e.sorte === "texte") {
+      const d = depassements(e, f)
+      if (d.length) defauts.push(`${e.qui} sort de ${faceTxt} ${d.join(", ")}. À faire : le déplacer, ou réduire sa largeur (« largeur », retour à la ligne), pour qu'il tienne dans la face`)
+    } else if (!dansFaceOuDebord(e, f, debord)) {
+      const d = depassements(e, f)
+      defauts.push(`${e.qui} sort de ${faceTxt}${debord ? ` et de son débord ${cadre(debord)}` : ""} ${d.join(", ")}. À faire : le déplacer ou le réduire (largeur libre, hauteur tirée du viewBox), puis replacer ce qui le touche`)
+    }
+  }
+  for (const e of plan.evidences) {
+    const r = e.d.forme === "circle"
+      ? (() => {
+          const cx = e.d.x + e.d.largeur / 2
+          const cy = e.d.y + e.d.hauteur / 2
+          const rayon = Math.hypot(e.d.largeur, e.d.hauteur) / 2
+          return { x0: cx - rayon, y0: cy - rayon, x1: cx + rayon, y1: cy + rayon }
+        })()
+      : { x0: e.d.x, y0: e.d.y, x1: e.d.x + e.d.largeur, y1: e.d.y + e.d.hauteur }
+    const d = depassements(r, f)
+    if (d.length) defauts.push(`${e.d.chemin} : le cadre de la mise en évidence${e.d.forme === "circle" ? " (cercle de rayon demi-diagonale)" : ""} sort de ${faceTxt} ${d.join(", ")}. À faire : resserrer le cadre sur l'élément ou le déplacer, et si l'élément touche le bord, rentrer l'élément dans la face`)
+  }
+  plan.habillage.forEach((h, i) => {
+    const r = { x0: h.boite.left, y0: h.boite.top, x1: h.boite.left + h.boite.width, y1: h.boite.top + h.boite.height }
+    if (recouvrement(r, f)) defauts.push(`habillage[${i}] (« ${h.ill.name} ») empiète sur ${faceTxt}. À faire : le placer dans la marge${PAGE.marge ? ` (${cadre(PAGE.marge)})` : ""}, ou le déclarer dans « illustrations » s'il fait partie de la composition`)
+  })
+
+  // 2. Aucun texte sur un trait
+  const textes = els.filter((e) => e.sorte === "texte")
+  const traits = els.filter((e) => e.sorte === "trait")
+  const illus = els.filter((e) => e.sorte === "illustration")
+  for (const t of textes) {
+    for (const tr of traits) {
+      if (traitTouche(tr, t)) defauts.push(`${t.qui} (${cadre(t)}) est posé sur le trait ${tr.qui}. À faire : écarter le texte du trait (aucun texte sur un trait), ou déplacer le trait`)
+    }
+  }
+
+  // 3. Chevauchements
+  for (let i = 0; i < textes.length; i++) {
+    for (let k = i + 1; k < textes.length; k++) {
+      const a = textes[i] as Element
+      const b = textes[k] as Element
+      const r = recouvrement(a, b)
+      if (r) defauts.push(`${a.qui} et ${b.qui} se chevauchent (${cadre(r)}). À faire : les écarter, ou réduire la largeur de l'un`)
+    }
+  }
+  const parQui = new Map(illus.map((e) => [e.qui, e]))
+  /** Illustrations qui contiennent `c` (c comprise) : la carte qui porte un texte et ce qui la porte. */
+  const porteurs = (c: Element): Set<string> => new Set([c.qui, ...illus.filter((o) => o !== c && contient(o, c)).map((o) => o.qui)])
+  for (const t of textes) {
+    const p = t.texte
+    if (!p) continue
+    let permis = new Set<string>()
+    if (p.d.place === "carte" || p.d.dans !== null) {
+      const porteur = p.d.dans !== null ? parQui.get(`illustrations.${p.d.dans}`) : illus.filter((o) => contient(o, t)).sort((a, b) => surface(a) - surface(b))[0]
+      if (!porteur) {
+        defauts.push(`${t.qui} (${cadre(t)}) est posé « carte » mais aucune illustration ne le contient. À faire : le placer dans la carte ou la feuille qui le porte, ou écrire « place »: « face »`)
+        continue
+      }
+      if (!contient(porteur, t)) {
+        defauts.push(`${t.qui} (${cadre(t)}) sort de ${porteur.qui} (${cadre(porteur)}) qui le porte ${depassements(t, porteur).join(", ")}. À faire : le rentrer dans son illustration, ou réduire sa largeur`)
+        continue
+      }
+      permis = porteurs(porteur)
+    }
+    for (const o of illus) {
+      if (permis.has(o.qui)) continue
+      const r = recouvrement(t, o)
+      if (r) defauts.push(`${t.qui} chevauche ${o.qui} (${cadre(r)}). À faire : ${p.d.place === "face" ? "l'écarter de l'illustration ; s'il est écrit dans une carte ou une feuille, écrire « place »: « carte »" : "l'écarter de cette illustration"}`)
+    }
+  }
+  for (let i = 0; i < illus.length; i++) {
+    for (let k = i + 1; k < illus.length; k++) {
+      const a = illus[i] as Element
+      const b = illus[k] as Element
+      const r = recouvrement(a, b)
+      if (r && !contient(a, b) && !contient(b, a)) defauts.push(`${a.qui} et ${b.qui} se chevauchent (${cadre(r)}) sans que l'une contienne l'autre. À faire : les écarter, ou poser entièrement l'une dans l'autre (élément posé dans une carte ou une feuille)`)
+    }
+  }
+  for (const tr of traits) {
+    for (const o of illus) {
+      if (!traitTouche(tr, o)) continue
+      const demi = Math.max(0, ...tr.segments.map((s) => s.demi))
+      if (tr.bouts.some((p) => dedans(p, o, TOL + demi))) continue
+      defauts.push(`${tr.qui} traverse ${o.qui} (${cadre(o)}) sans y commencer ni y finir. À faire : faire partir ou arriver le trait sur l'illustration, ou le faire passer à côté`)
+    }
+  }
+
+  // 4. Remplissage
+  for (const v of videsRefuses(els, f).slice(0, 3)) {
+    const bordent = els.filter((b) => b.x1 >= v.x0 - 30 && b.x0 <= v.x1 + 30 && b.y1 >= v.y0 - 30 && b.y0 <= v.y1 + 30)
+    const voisines = bordent.filter((b) => b.sorte === "illustration").map((b) => b.qui)
+    defauts.push(
+      `la face n'est pas remplie : vide de ${cadre(v)} (${px(v.x1 - v.x0)} × ${px(v.y1 - v.y0)} px) : ${v.regle} ; éléments qui le bordent : ${bordent.map((b) => b.qui).join(", ") || "aucun"}. À faire : agrandir ou déplacer vers ce vide ${voisines.length ? voisines.join(", ") : "les illustrations les plus proches"} (largeur libre, hauteur tirée du viewBox), puis replacer les textes, tracés et mises en évidence sur les nouvelles boîtes ; garder les mêmes éléments, gestes et locutions`,
+    )
+  }
+
+  if (defauts.length) {
+    const MAX = 15
+    const liste = defauts.slice(0, MAX).map((d, i) => `  ${i + 1}. ${d}`)
+    if (defauts.length > MAX) liste.push(`  … et ${defauts.length - MAX} autre(s)`)
+    throw new GabaritError(`${plan.d.fichier}, champ « (composition finale) » : ${defauts.length} défaut(s) de composition (docs/gabarits.md § 6), à corriger dans les places et les tailles des données, sans changer le sens :\n${liste.join("\n")}`)
+  }
 }

@@ -9,16 +9,20 @@ npm install
 npm run dev        # serveur de développement, rechargement à chaud
 ```
 
-Le contenu vit dans `content/` (storyboard, thème, illustrations, voix) ; les scènes dans `src/lesson/scenes/`. Après chaque changement de `content/`, `npm run sync` régénère `src/generated/` (les commandes ci-dessous le font d'elles-mêmes).
+Le contenu vit dans `content/` (storyboard, thème, illustrations, données des scènes à gabarit, voix) ; les scènes dans `src/lesson/scenes/`. Une scène de forme connue (frise, fiche à rubriques) tient en trois lignes et un fichier de données `content/design/scenes/Sxx.json` : `docs/gabarits.md`. Après chaque changement de `content/`, `npm run sync` régénère `src/generated/` (les commandes ci-dessous le font d'elles-mêmes).
 
 ## Signature graphique
 
-Le contenu s'affiche par défaut dans la signature « CAD 2D » de BIMaccess (fond blanc à grille de points, Azeret Mono et IBM Plex Sans embarquées, couleurs ACI, poignées). Dans `studio.config.json` : `"signature": "neutral"` pour la signature neutre, `"program": "CER001"` pour la couleur et le code du programme. Détails : `docs/player-contract.md` § 9.
+Le contenu s'affiche par défaut dans la signature « CAD 2D » de BIMaccess (fond blanc à grille de points, Azeret Mono et IBM Plex Sans embarquées, couleurs ACI, poignées). Dans `studio.config.json` : `"signature": "carte"` pour la signature « carte topographique » (feuille imprimée, Source Serif 4 et Barlow Condensed embarquées ; palette neutre par défaut, celle du programme dans `content/design/theme.json`), `"signature": "neutral"` pour la signature neutre, `"program": "CER001"` pour la couleur et le code du programme (`"programColor"` pour un autre programme). Détails : `docs/player-contract.md` § 9.
+
+## Voix
+
+Sans voix, le contenu se joue avec un minutage estimé et des sous-titres. La voix (ElevenLabs, recette V4 du cours dans `content/voice/voice.config.yaml`) est payante : `npm run voice -- status` donne le devis en caractères, et `npm run voice -- generate` refuse tant que `--approuve <caractères>` ne le couvre pas. Mode d'emploi : `docs/voice.md`.
 
 ## Construire et ouvrir
 
 ```bash
-npm run check      # chargement des scènes (locutions, ordre, textes) et contrôle des types
+npm run check      # chargement des scènes (locutions, ordre, textes, composition des scènes à gabarit) et contrôle des types
 npm run build      # produit dist/index.html (+ dist/audio/ si le contenu a une voix)
 ```
 
@@ -28,6 +32,7 @@ Vérification complète dans un navigateur (Playwright installé hors du projet,
 
 ```bash
 npm run test:play
+npm run test:gabarits   # auto-test des gabarits de scène dans la signature du projet
 ```
 
 ## Licence Remotion

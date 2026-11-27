@@ -10,7 +10,9 @@
  * croissantes sans Retry-After, réponse tronquée, délai dépassé, clé mal
  * formée, renumérotation de scènes, liste des voix (pages /v2/voices, repli
  * /v1/voices, filtre de langue), essai de prononciation et essai d'une autre
- * voix (try --voice), contrôle du
+ * voix (try --voice), dépense refusée sans --approuve (generate et try :
+ * coût annoncé, code 3, aucune requête), recette V4 (eleven_v4, langue
+ * imposée, continuité entre clips), sous-titres au texte écrit, contrôle du
  * storyboard (lint-storyboard) sur des pièges connus. Vérifie enfin que la
  * clé n'apparaît dans aucune sortie ni aucun fichier.
  * Aucune requête ne sort de la machine, aucun caractère n'est consommé.
@@ -107,7 +109,9 @@ export async function runSelfTest({ scriptsDir, keep = false, tmpRoot } = {}) {
     if (withKey) env.ELEVENLABS_API_KEY = typeof withKey === "string" ? withKey : key
     return env
   }
-  const voice = (args, { withKey = true } = {}) => exec("voice.mjs", [...args, "--config", join(root, "studio.config.json")], childEnv(withKey))
+  // generate et try sont payants : l'auto-test les approuve d'office (faux serveur), sauf { approve: false }
+  const voice = (args, { withKey = true, approve = true } = {}) =>
+    exec("voice.mjs", [...args, ...(approve && ["generate", "try"].includes(args[0]) && !args.includes("--approuve") ? ["--approuve", "1000000"] : []), "--config", join(root, "studio.config.json")], childEnv(withKey))
   const hasSync = existsSync(join(scriptsDir, "sync.mjs"))
   const sync = () => exec("sync.mjs", ["--config", join(root, "studio.config.json")], childEnv(false))
   const generatedClips = () => JSON.parse(/CLIPS[^=]*=\s*([\s\S]*)\n?$/.exec(read("src/generated/narration.ts"))[1])
@@ -119,7 +123,8 @@ export async function runSelfTest({ scriptsDir, keep = false, tmpRoot } = {}) {
       JSON.stringify({ id: "essai-voix", title: "Essai voix", lang: "fr", storyboard: "content/storyboard.md", manifest: "content/voice/voice-manifest.yaml", beats: "content/beats.json" }, null, 2),
     )
     write("content/storyboard.md", STORYBOARD)
-    write("content/voice/voice.config.yaml", "voice_id: voix-essai\nvoice_name: Voix d'essai\nmodel_id: eleven_multilingual_v2\nlanguage_code: fr\noutput_format: mp3_44100_128\ndictionary: content/voice/pronunciations.yaml\nretry_delay_s: 0.2\n")
+    // Recette V4 du rôle Voix du cours : eleven_v4, langue imposée, continuité entre clips
+    write("content/voice/voice.config.yaml", "voice_id: voix-essai\nvoice_name: Voix d'essai\nmodel_id: eleven_v4\nlanguage_code: fr\noutput_format: mp3_44100_128\nvoice_settings: {stability: 0.5, similarity_boost: 0.9}\ncontext_between_clips: true\ndictionary: content/voice/pronunciations.yaml\nretry_delay_s: 0.2\n")
     write("content/voice/pronunciations.yaml", 'rules:\n  - grapheme: "TVA"\n    alias: "T. V. A."\n')
     write("content/voice/forbidden.yaml", "voice_id: voix-essai\ndictionary: content/voice/pronunciations.yaml\nlint:\n  forbidden_terms: { thermostat: régulateur }\n")
 
@@ -157,6 +162,16 @@ export async function runSelfTest({ scriptsDir, keep = false, tmpRoot } = {}) {
       check(same, "découpage en clips identique à celui de sync.mjs (identifiants, déclencheurs, textes)")
     }
 
+    // Dépense : sans accord, generate annonce le coût et n'envoie rien (code 3)
+    const ttsAvant = tts().length
+    r = await voice(["generate"], { approve: false })
+    check(r.code === 3 && /coût annoncé : \d+ caractères à synthétiser/.test(r.out) && /crédits en eleven_v4/.test(r.out) && /--approuve \d+/.test(r.out) && tts().length === ttsAvant, "generate sans --approuve : coût annoncé (caractères, crédits), code 3, aucune synthèse", r.out)
+    const asked = Number(/--approuve (\d+)/.exec(r.out)?.[1] ?? 0)
+    r = await voice(["generate", "--approuve", String(asked - 1)], { approve: false })
+    check(r.code === 3 && /ne couvre pas/.test(r.out) && tts().length === ttsAvant, "generate --approuve insuffisant : refusé, aucune synthèse", r.out)
+    r = await voice(["status"])
+    check(r.code === 0 && new RegExp(`devis : ${asked} caractères`).test(r.out) && new RegExp(`generate --approuve ${asked}`).test(r.out), "status : devis et commande à lancer après l'accord", r.out)
+
     // Génération, avec une panne passagère (429) sur la première requête
     let first = true
     srv.setPlan((req) => {
@@ -166,14 +181,15 @@ export async function runSelfTest({ scriptsDir, keep = false, tmpRoot } = {}) {
       }
       return null
     })
-    r = await voice(["generate"])
+    r = await voice(["generate", "--approuve", String(asked)], { approve: false })
     srv.setPlan(null)
-    check(r.code === 0 && /nouvel essai/.test(r.out) && /terminé : 4 clip\(s\)/.test(r.out), "generate : 4 clips, panne 429 surmontée", r.out)
+    check(r.code === 0 && /dépense approuvée/.test(r.out) && /nouvel essai/.test(r.out) && /terminé : 4 clip\(s\)/.test(r.out), "generate --approuve <caractères> : 4 clips, panne 429 surmontée", r.out)
     const m1 = manifest()
     check(m1.clips.every((c) => c.audio && c.alignment && c.duration_s > 0 && c.synth_hash && c.text_hash), "manifeste complété : audio, alignment, duration_s, empreintes")
     check(m1.clips.every((c) => existsSync(join(root, "content/voice", c.audio)) && existsSync(join(root, "content/voice", c.alignment))), "fichiers Sxx/Sxx-yy.mp3 et .alignment.json écrits")
     const calls = tts()
-    check(calls.length === 5 && calls.every((c) => c.keyOk && c.query.output_format === "mp3_44100_128" && c.body.model_id === "eleven_multilingual_v2" && c.body.language_code === "fr"), "requêtes conformes : clé, output_format en paramètre, model_id, language_code", JSON.stringify(calls.map((c) => c.query)))
+    check(calls.length === 5 && calls.every((c) => c.keyOk && c.query.output_format === "mp3_44100_128" && c.body.model_id === "eleven_v4" && c.body.language_code === "fr" && c.body.voice_settings?.similarity_boost === 0.9), "requêtes conformes : clé, output_format en paramètre, model_id eleven_v4, language_code, réglages V4", JSON.stringify(calls.map((c) => c.query)))
+    check(calls.filter((c) => c.body.text.includes("Le prix affiché")).every((c) => typeof c.body.previous_text === "string" && typeof c.body.next_text === "string"), "continuité entre clips : narration voisine envoyée (previous_text, next_text)")
     const s02 = calls.find((c) => c.body.text.includes("Le prix affiché"))
     check(s02 && s02.body.text.includes("T. V. A.") && !/\bTVA\b/.test(s02.body.text) && row("S02-01").dictionary_rules_applied?.[0] === "TVA", "dictionnaire appliqué au texte envoyé (TVA → T. V. A.), texte du manifeste inchangé")
     const beats = row("S01-01").suggested_beats ?? {}
@@ -187,6 +203,8 @@ export async function runSelfTest({ scriptsDir, keep = false, tmpRoot } = {}) {
       const al = JSON.parse(read("content/voice/S01/S01-01.alignment.json"))
       check(gen["S01-01"].src === "audio/S01-01.mp3" && existsSync(join(root, "public/audio/S01-01.mp3")), "sync : audio copié dans public/audio/")
       check(JSON.stringify(gen["S01-01"].words) === JSON.stringify(wordsFromAlignment(al)) && gen["S01-01"].duration === row("S01-01").duration_s, "sync : mots datés issus de l'alignement, durée du manifeste")
+      const motsS02 = gen["S02-01"].words.map((w) => w.text)
+      check(motsS02.includes("TVA.") && !motsS02.some((w) => /^T\.$/.test(w)) && gen["S02-01"].words.every((w, i, a) => w.end >= w.start && (i === 0 || w.start >= a[i - 1].start)), "sync : mots dits ramenés au texte écrit (sous-titres « TVA », pas « T. V. A. »), instants croissants", JSON.stringify(motsS02))
     }
     r = await voice(["status"])
     check(r.code === 0 && /0 clip\(s\) à générer/.test(r.out), "status : tout est à jour", r.out)
@@ -346,6 +364,9 @@ export async function runSelfTest({ scriptsDir, keep = false, tmpRoot } = {}) {
     // Quota et essai de prononciation
     r = await voice(["quota"])
     check(r.code === 0 && /restants \d+/.test(r.out), "quota : caractères restants", r.out)
+    const ttsAvantTry = tts().length
+    r = await voice(["try", "Le sigle {} se lit ainsi.", "--variants", "T. V. A.|tévéa"], { approve: false })
+    check(r.code === 3 && /coût annoncé : \d+ caractères/.test(r.out) && tts().length === ttsAvantTry, "try sans --approuve : coût annoncé, code 3, aucune synthèse", r.out)
     r = await voice(["try", "Le sigle {} se lit ainsi.", "--variants", "T. V. A.|tévéa"])
     const tryDir = join(root, ".studio/tmp/voice-try")
     check(r.code === 0 && existsSync(join(tryDir, "A.mp3")) && existsSync(join(tryDir, "B.mp3")) && /tévéa/.test(readFileSync(join(tryDir, "README.txt"), "utf8")), "try : deux essais hors du contenu", r.out)

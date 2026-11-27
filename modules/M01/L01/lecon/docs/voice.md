@@ -5,7 +5,9 @@ Deux outils en ligne de commande, lancés depuis la racine du projet (Node 20 ou
 - `npm run lint:story` (`scripts/lint-storyboard.mjs`) : contrôle le storyboard avant la voix, le dessin et le code ;
 - `npm run voice -- <commande>` (`scripts/voice.mjs`) : produit la narration avec ElevenLabs et tient le manifeste que `npm run sync` relit.
 
-**Le contenu marche sans voix.** Sans manifeste ou sans clé, le lecteur estime le minutage sur le texte et active les sous-titres. La voix s'ajoute quand on veut, sans rien changer au reste.
+**Le contenu marche sans voix.** Sans manifeste ou sans clé, le lecteur estime le minutage sur le texte et active les sous-titres : c'est la voix provisoire muette, sur laquelle se fait toute la revue. La voix finale se paie une fois, après la porte du sens, sur devis (nombre de caractères annoncé, montant approuvé par Ilyas), puis les locutions se recalent sur la vraie voix (`npm run sync` imprime chaque repère).
+
+**Dépenses : aucun appel payant sans l'accord d'Ilyas, et le coût s'annonce avant.** `generate` et `try` comptent les caractères à envoyer (après le dictionnaire) et refusent, code 3, sans rien envoyer, tant que `--approuve <caractères>` ne les couvre pas ; `status` donne le devis et la commande à lancer. Un agent délégué prépare la commande et rend la main : l'agent principal annonce le coût. `status`, `extract`, `lint`, `verify`, `quota` et `voices` ne dépensent rien.
 
 ## 1. Contrôler le storyboard
 
@@ -37,6 +39,19 @@ Un storyboard accepté par `lint:story` passe `npm run sync` tant que le manifes
 
 `content/voice/voice.config.yaml` : `voice_id` (obligatoire), `model_id` (un seul modèle pour tout le contenu), `language_code`, `output_format` (toujours `mp3_…`), `voice_settings`, `seed`, `context_between_clips`, `dictionary`, `max_chars_per_clip`, `request_timeout_s` (300), `retry_delay_s` (5), et `lint.forbidden_terms` / `lint.staging_patterns`. Changer la voix, le modèle ou les réglages rend tous les clips « à générer ».
 
+Le template livre la **recette V4** du rôle Voix du cours (dépôt du cours : `agents/voix/CONTEXT.md` § 2 et skill `agents/voix/skills/voice-production/` § 4), que `scripts/new-project.mjs` garde avec la langue du projet :
+
+| Clé | Valeur | Pourquoi |
+|---|---|---|
+| `model_id` | `eleven_v4` | modèle de toute nouvelle génération du cours (décision d'Ilyas du 2026-11-24) |
+| `voice_id`, `voice_name` | `IPgYtHTNLjC7Bq7IPHrm`, Alexandre Boutin - Professional | voix du cours, choisie à l'écoute ; voix du compte ElevenLabs de BIMaccess (avec un autre compte : `voices`, puis `try --voice`) |
+| `language_code` | `fr` (ou `en`, langue du projet) | langue imposée : sans elle, eleven_v4 devine la langue de chaque mot |
+| `voice_settings` | `stability` 0,5, `similarity_boost` 0,9 | réglages du cours (`style`, `use_speaker_boost`, `speed` sont ignorés par eleven_v4) |
+| `context_between_clips` | `true` | continuité de ton entre clips (`previous_text`, `next_text`), acceptée par eleven_v4 |
+| dictionnaire | aucune balise d'accent | en eleven_v4, une balise d'accent change la voix et coupe le rythme : un terme anglais s'écrit tel quel ; seuls restent les alias utiles (sigle épelé, nombre en toutes lettres) |
+
+Écrire pour l'oreille avant la synthèse (liaisons seulement aux tournants, phrases courtes et variées, un même mot au plus une fois par leçon) : référence `references/ecriture-oreille.md` du skill du cours. Les respirations de fin d'idée (environ 0,9 s) et le silence de fin de clip (0,4 s) que le cours pose après la synthèse (`finition_clips.py`) ne sont pas faits par `voice.mjs`.
+
 La clé vient **seulement** de la variable d'environnement `ELEVENLABS_API_KEY`, définie dans le terminal :
 
 ```
@@ -50,18 +65,18 @@ Jamais dans un fichier du projet, jamais en argument. Les scripts ne l'affichent
 
 ```
 npm run voice -- lint        # pièges de synthèse, avant de dépenser des caractères
-npm run voice -- status      # quels clips sont à générer, et pourquoi (sans réseau)
+npm run voice -- status      # quels clips sont à générer, et pourquoi ; devis en caractères (sans réseau)
 npm run voice -- quota       # caractères restants sur le compte
-npm run voice -- generate    # génère les clips nouveaux ou modifiés
+npm run voice -- generate --approuve <caractères>   # après l'accord d'Ilyas : génère les clips nouveaux ou modifiés
 npm run voice -- verify      # manifeste ↔ storyboard, fichiers, durées, repères
 npm run sync                 # le lecteur reprend audio et minutage
 ```
 
 - **Un clip par section « Narration… »** d'une scène, numérotés comme dans le lecteur : `S03-01` (narration d'entrée), `S03-02` (narration déclenchée ; le manifeste garde le titre de sa section dans `trigger_label`).
 - `extract` écrit `content/voice/voice-manifest.yaml` sans réseau : l'audio d'un clip au texte inchangé est gardé, celui d'un clip modifié est invalidé ; un clip dont seul le numéro change (scène insérée ou déplacée) est renommé sans nouvelle requête. `extract --prune` supprime les fichiers que plus aucun clip n'utilise. `generate` fait d'abord la même chose.
-- `generate` ne demande que les clips nouveaux ou modifiés (texte, prononciation, réglages), un par un (0,4 s entre deux requêtes), et écrit le manifeste après chaque clip : après une panne, relancer la même commande reprend là où elle s'est arrêtée. `--only S02-01` (ou `--only S02`) restreint, `--force` refait même un clip à jour, `--no-quota-check` saute le contrôle du quota.
+- `generate` ne demande que les clips nouveaux ou modifiés (texte, prononciation, réglages), un par un (0,4 s entre deux requêtes), et écrit le manifeste après chaque clip : après une panne, relancer la même commande reprend là où elle s'est arrêtée. `--only S02-01` (ou `--only S02`) restreint, `--force` refait même un clip à jour, `--no-quota-check` saute le contrôle du quota. Sans `--approuve` couvrant les caractères à synthétiser : `coût annoncé : N caractères à synthétiser (environ M crédits en eleven_v4, 0,44 crédit par caractère, tarif constaté par le rôle Voix du cours)`, code 3, aucune requête ; un `--approuve` trop petit est refusé de même.
 - **Chaque réponse est contrôlée avant d'être écrite.** Refusée (le clip garde ses anciens fichiers, le manifeste reste intact, le clip reste « à générer », arrêt code 1) : alignement vide, instant absent, non numérique ou négatif, instants qui reculent, alignement qui finit plus de 0,5 s après la fin du MP3, alignement plus court que le texte envoyé, MP3 illisible. La requête refusée a été facturée : le message le dit. Un alignement qui ne reprend pas mot pour mot le texte (normalisation de l'API) est seulement signalé.
-- Sorties : `content/voice/Sxx/Sxx-yy.mp3`, `Sxx-yy.alignment.json` (instants de chaque caractère), et dans le manifeste `audio`, `alignment`, `duration_s` (durée mesurée dans le MP3, portée à la fin de l'alignement si celle-ci la dépasse de moins de 0,5 s, pour que la voix ne soit jamais coupée), `text_hash`, `synth_hash`, `tts_text` (texte réellement envoyé ; `npm run sync` y compare l'alignement).
+- Sorties : `content/voice/Sxx/Sxx-yy.mp3`, `Sxx-yy.alignment.json` (instants de chaque caractère), et dans le manifeste `audio`, `alignment`, `duration_s` (durée mesurée dans le MP3, portée à la fin de l'alignement si celle-ci la dépasse de moins de 0,5 s, pour que la voix ne soit jamais coupée), `text_hash`, `synth_hash`, `tts_text` (texte réellement envoyé). `npm run sync` compare l'alignement au texte du storyboard : s'il diffère (dictionnaire de prononciation), les mots dits sont ramenés aux mots écrits, et les sous-titres montrent le storyboard (« TVA », pas « T. V. A. »).
 - `verify` refait les mêmes contrôles sur les fichiers : un alignement incohérent est une erreur.
 - **Repères proposés** (`suggested_beats`) : chaque texte de l'écran de la scène que la voix dit mot pour mot une seule fois devient un repère (`mesurer_temperature: "Mesurer la température"`). Le rôle code les complète ou les remplace dans `content/beats.json`. Un repère qui n'est plus dit après une modification est retiré et signalé. `--no-beats` n'en propose pas.
 
@@ -76,8 +91,10 @@ npm run voice -- voices --lang fr
 Puis la même phrase de la narration avec chaque voix candidate, sans toucher `voice.config.yaml` (fichiers dans `.studio/tmp/voice-try/<voice_id>/` : un essai n'écrase pas celui d'une autre voix ; `voice.config.yaml` peut ne pas exister encore, les réglages par défaut servent) :
 
 ```
-npm run voice -- try "Une phrase de la narration." --voice <voice_id>
+npm run voice -- try "Une phrase de la narration." --voice <voice_id> --approuve <caractères>
 ```
+
+Un essai est payant comme une génération : sans `--approuve`, `try` annonce le nombre de caractères et s'arrête (code 3).
 
 L'humain écoute et choisit ; la voix retenue (`voice_id`, `voice_name`) va dans `voice.config.yaml`. Catégories : `premade` (voix fournies avec le compte) ; `cloned`, `generated`, `professional` (voix du compte) ; une voix de bibliothèque peut exiger un forfait payant (402).
 
@@ -88,7 +105,7 @@ L'humain écoute et choisit ; la voix retenue (`voice_id`, `voice_name`) va dans
 Essai d'une prononciation douteuse, hors du contenu (fichiers dans `.studio/tmp/voice-try/`, à écouter par un humain) :
 
 ```
-npm run voice -- try "Le sigle {} se dit ainsi." --variants "T. V. A.|tévéa"
+npm run voice -- try "Le sigle {} se dit ainsi." --variants "T. V. A.|tévéa" --approuve <caractères>
 ```
 
 `npm run voice -- lint` refuse (erreur) le balisage qui serait dit (commentaire ou balise HTML, lien, italique `*…*` ou `_…_`) et signale ce que la voix risque de mal lire et que le dictionnaire ne couvre pas encore : sigles, codes mêlant lettres et chiffres, nombres (grands, décimaux, signés, fractions, intervalles, heures), symboles (`%`, `°`, `€`, `/`…), ponctuation (tiret, points de suspension, parenthèses, crochets), abréviations, adresses, paragraphe sans ponctuation finale, phrase longue, clip trop long pour le modèle, mise en scène dans la voix, terme proscrit (`lint.forbidden_terms`, erreur). Un contrôle automatique ne remplace pas l'écoute.
@@ -102,13 +119,13 @@ Sans `ELEVENLABS_API_KEY`, `generate`, `quota`, `voices` et `try` s'arrêtent (c
 ```
 ELEVENLABS_API_KEY=… node scripts/lib/fake-elevenlabs.mjs --port 8787
 ELEVENLABS_BASE_URL=http://127.0.0.1:8787 ELEVENLABS_API_KEY=… npm run voice -- voices --lang fr
-ELEVENLABS_BASE_URL=http://127.0.0.1:8787 ELEVENLABS_API_KEY=… npm run voice -- try "Une phrase." --voice fakeFrAlice01
-ELEVENLABS_BASE_URL=http://127.0.0.1:8787 ELEVENLABS_API_KEY=… npm run voice -- generate
+ELEVENLABS_BASE_URL=http://127.0.0.1:8787 ELEVENLABS_API_KEY=… npm run voice -- try "Une phrase." --voice fakeFrAlice01 --approuve 100
+ELEVENLABS_BASE_URL=http://127.0.0.1:8787 ELEVENLABS_API_KEY=… npm run voice -- generate --approuve 100000
 ```
 
 `…` : une valeur quelconque, la même pour le serveur et pour la commande, jamais votre vraie clé. Il imite `GET /v2/voices` (par pages) et `GET /v1/voices` avec quatre voix fictives (`fakeFrAlice01`, `fakeFrBruno02`, `fakeEnClara03`, `fakeMultiDan04` : français, anglais, catégories variées), `GET /v1/user/subscription`, et la synthèse (MP3 muet, alignement fictif) : de quoi essayer toute la chaîne, choix de la voix compris, sans réseau ni quota.
 
-`npm run voice -- test` joue toute la chaîne hors ligne contre ce faux serveur, sur un projet jetable (dossier temporaire du système, ou `--tmp <dossier>` ; `--keep` le conserve) : sans clé, extract, lint, generate avec pannes et reprise, réponses incohérentes refusées, attentes croissantes sans Retry-After, réponse tronquée, délai dépassé, clé mal formée, verify, sync, narration modifiée, scène insérée, liste des voix (pages, repli `/v1/voices`, filtre de langue) et essai d'une autre voix (`try --voice`), pièges du storyboard (`lint:story`), clé absente de toute sortie et de tout fichier. Code 0 si tout passe.
+`npm run voice -- test` joue toute la chaîne hors ligne contre ce faux serveur, sur un projet jetable (dossier temporaire du système, ou `--tmp <dossier>` ; `--keep` le conserve), avec la recette V4 (eleven_v4, langue imposée, réglages, narration voisine envoyée) : sans clé, dépense refusée sans `--approuve` (generate, try : coût annoncé, code 3, aucune requête) et devis de `status`, extract, lint, generate avec pannes et reprise, réponses incohérentes refusées, attentes croissantes sans Retry-After, réponse tronquée, délai dépassé, clé mal formée, verify, sync, narration modifiée, scène insérée, liste des voix (pages, repli `/v1/voices`, filtre de langue) et essai d'une autre voix (`try --voice`), sous-titres au texte écrit après un alias de prononciation, pièges du storyboard (`lint:story`), clé absente de toute sortie et de tout fichier. Code 0 si tout passe.
 
 ### Codes HTTP fréquents
 
