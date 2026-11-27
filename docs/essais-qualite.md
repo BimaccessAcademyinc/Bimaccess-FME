@@ -20,7 +20,7 @@ Projet `modules/M01/L01/lecon-essai/`. Graphiste (skill graphisme) qui compose e
 | Contrôle | Résultat |
 |---|---|
 | Agent principal | Assemblage réglé : première image composée (fondateurs, contrat, frise), aucun texte sur un trait, aucun chevauchement, aucun trou, une seule mise en évidence, `test:play` conforme, illustrations au pixel de la spécification. Faiblesses : la composition n'occupe que les deux tiers gauches de la feuille (S02, S04), les illustrations sont petites et plates comparées aux planches 4K, le contour de S04 est un rectangle au lieu de l'empreinte du bâtiment, les hachures et l'emprise sur le globe sortent en gris bruité, la carte de S04 est chargée. Défauts de fichiers relevés par le codeur : fond sombre aux coins du globe, trait parasite au-dessus du contrat, aplats des SVG proches mais pas égaux au jeton `papier`. |
-| Ilyas | à venir |
+| Ilyas (2026-11-27) | Qualité des images et de l'animation au niveau attendu (« la qualité des images est bien là »), semblable à la version de la chaîne. D'accord sur le défaut de composition : S02 surtout, sa deuxième moitié à moitié vide ; la composition doit occuper toute la feuille. |
 
 ## Essais suivants proposés
 
