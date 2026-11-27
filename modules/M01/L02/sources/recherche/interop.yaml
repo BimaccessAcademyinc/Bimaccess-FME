@@ -1,0 +1,210 @@
+axe: interop
+affirmations:
+  - id: A-interop-01
+    question: Q1
+    enonce: "La directive européenne INSPIRE définit l'interopérabilité comme la possibilité de combiner des jeux de données spatiales et de faire interagir des services sans intervention manuelle répétée, le résultat restant cohérent et la valeur des données et services accrue."
+    usage: narration
+    sources:
+      - url: https://www.legislation.gov.uk/eudr/2007/2/article/3
+        titre: "Directive 2007/2/EC, article 3 (legislation.gov.uk)"
+        editeur: The National Archives (legislation.gov.uk)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "‘interoperability’ means the possibility for spatial data sets to be combined, and for services to interact, without repetitive manual intervention"
+      - url: https://eur-lex.europa.eu/eli/dir/2007/2/2024-11-26
+        titre: "Directive 2007/2/EC (EUR-Lex)"
+        editeur: Union européenne (EUR-Lex)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "‘interoperability’ means the possibility for spatial data sets to be combined, and for services to interact, without repetitive manual intervention"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-interop-02
+    question: Q1
+    enonce: "Un rapport de l'OGC (Testbed-12) définit l'interopérabilité, en citant ISO 19119, comme la capacité de communiquer, d'exécuter des programmes ou de transférer des données entre unités fonctionnelles sans que l'utilisateur ait à connaître leurs particularités."
+    usage: expert
+    sources:
+      - url: https://docs.ogc.org/per/16-059.html
+        titre: "OGC Testbed-12 Semantic Portrayal, Registry and Mediation Engineering Report"
+        editeur: Open Geospatial Consortium
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "capability to communicate, execute programs, or transfer data among various functional units in a manner that requires the user to have little or no knowledge of the unique"
+    contradictions:
+      - version: "Le wiki marinespecies.org attribue la même phrase à ISO 19118, non à ISO 19119."
+        source: https://www.marinespecies.org/traits/wiki/Interoperability
+    verifie: null
+    note_verification: ""
+  - id: A-interop-03
+    question: Q1
+    enonce: "Selon un wiki scientifique qui cite l'OGC (2004), l'interopérabilité est la capacité d'un système ou d'un produit à fonctionner avec d'autres systèmes ou produits sans effort particulier de la part du client."
+    usage: expert
+    sources:
+      - url: https://www.marinespecies.org/traits/wiki/Interoperability
+        titre: "Interoperability (marinespecies.org, traits wiki)"
+        editeur: marinespecies.org (wiki)
+        niveau: C
+        consulte: 2026-11-27
+        extrait: "the ability of a system or a product to work with other systems or products without special effort on the part of the customer"
+    contradictions: []
+    verifie: null
+    note_verification: "Citation de seconde main de l'OGC (2004) : texte de l'OGC non retrouvé."
+  - id: A-interop-04
+    question: Q2
+    enonce: "Le modèle de référence ISO 19101-1 se donne pour but de définir et décrire l'interopérabilité de l'information géographique selon les niveaux système, syntaxique, structurel et sémantique."
+    usage: expert
+    sources:
+      - url: https://cdn.standards.iteh.ai/samples/59164/0ccf5036e7cb46c196c18432af34f6b4/ISO-19101-1-2014.pdf
+        titre: "ISO 19101-1:2014 Geographic information, Reference model, Part 1 (extrait public)"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "One of the primary goals of this reference model is to define and describe interoperability of geographic information, addressing system, syntactic, structural, and semantic levels."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-interop-05
+    question: Q2
+    enonce: "Selon un article académique d'ISPRS, l'hétérogénéité entre données géospatiales se classe en syntaxique, structurelle et sémantique ; l'hétérogénéité syntaxique apparaît quand des bases de données géospatiales utilisent des formats différents."
+    usage: expert
+    sources:
+      - url: https://isprs-annals.copernicus.org/articles/I-2/217/2012/isprsannals-I-2-217-2012.pdf
+        titre: "ISPRS Annals I-2 (2012), p. 217"
+        editeur: ISPRS
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Syntactic heterogeneity occurs when different geospatial"
+      - url: https://isprs-annals.copernicus.org/articles/I-2/217/2012/isprsannals-I-2-217-2012.pdf
+        titre: "ISPRS Annals I-2 (2012), p. 217"
+        editeur: ISPRS
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "databases use different formats."
+    contradictions: []
+    verifie: null
+    note_verification: "Texte sur deux colonnes : la phrase d'origine est coupée par la colonne voisine."
+  - id: A-interop-06
+    question: Q2
+    enonce: "Le même article ISPRS écrit que l'hétérogénéité structurelle apparaît quand les données sont structurées différemment."
+    usage: expert
+    sources:
+      - url: https://isprs-annals.copernicus.org/articles/I-2/217/2012/isprsannals-I-2-217-2012.pdf
+        titre: "ISPRS Annals I-2 (2012), p. 217"
+        editeur: ISPRS
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Structural heterogeneity occurs when data"
+      - url: https://isprs-annals.copernicus.org/articles/I-2/217/2012/isprsannals-I-2-217-2012.pdf
+        titre: "ISPRS Annals I-2 (2012), p. 217"
+        editeur: ISPRS
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "is structured differently."
+    contradictions: []
+    verifie: null
+    note_verification: "Texte sur deux colonnes : la phrase d'origine est coupée par la colonne voisine."
+  - id: A-interop-07
+    question: Q2
+    enonce: "Bishr et al. (ISPRS) soutiennent que le développement technologique se concentre sur les problèmes syntaxiques, avec peu d'attention aux différences schématiques et sémantiques."
+    usage: contexte
+    sources:
+      - url: https://www.isprs.org/proceedings/XXXII/part4/bishr49.pdf
+        titre: "A context sensitive model for sharing distributed geospatial information (Bishr, Molenaar, Radwan)"
+        editeur: ISPRS
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "We argue that the current technological development is focused on resolving the syntactical problems, with little to know attention to the schematic and semantic"
+    contradictions: []
+    verifie: null
+    note_verification: "L'année de publication n'est pas lue dans le texte de la page."
+  - id: A-interop-08
+    question: Q2
+    enonce: "Selon un wiki scientifique, deux systèmes qui peuvent communiquer et échanger des données présentent une interopérabilité syntaxique, et l'interopérabilité sémantique est la capacité d'interpréter automatiquement et avec justesse l'information échangée."
+    usage: contexte
+    sources:
+      - url: https://www.marinespecies.org/traits/wiki/Interoperability
+        titre: "Interoperability (marinespecies.org, traits wiki)"
+        editeur: marinespecies.org (wiki)
+        niveau: C
+        consulte: 2026-11-27
+        extrait: "when two or more systems are capable of communicating and exchanging data, they are exhibiting syntactic interoperability."
+      - url: https://www.marinespecies.org/traits/wiki/Interoperability
+        titre: "Interoperability (marinespecies.org, traits wiki)"
+        editeur: marinespecies.org (wiki)
+        niveau: C
+        consulte: 2026-11-27
+        extrait: "the ability to automatically interpret the information exchanged meaningfully and accurately"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-interop-09
+    question: Q2
+    enonce: "Un rapport de l'OGC (Testbed-12) définit l'interopérabilité syntaxique comme l'aspect qui assure une connexion technique, c'est-à-dire que les données peuvent être transférées entre systèmes."
+    usage: expert
+    sources:
+      - url: https://docs.ogc.org/per/16-059.html
+        titre: "OGC Testbed-12 Semantic Portrayal, Registry and Mediation Engineering Report"
+        editeur: Open Geospatial Consortium
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "the aspect of interoperability that assures that there is a technical connection, i.e. that the data can be transferred between systems"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-interop-10
+    question: Q3
+    enonce: "Une étude commandée par le NIST a estimé à 15,8 milliards de dollars par an le coût d'une interopérabilité insuffisante dans l'industrie américaine des installations (bâtiments commerciaux, institutionnels et industriels), pour l'année 2002 ; ce n'est pas une étude du domaine géographique."
+    usage: narration
+    sources:
+      - url: https://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf
+        titre: "NIST GCR 04-867, Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry"
+        editeur: NIST
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Based on interviews and survey responses, $15.8 billion in annual interoperability costs were quantified for the capital facilities industry in 2002."
+      - url: https://www.enr.com/articles/30495-study-of-data-roadblocks-costs-tags-capital-facilities-industry-with-15-8-billion-loss-8-9-2004
+        titre: "Study of Data Roadblocks Costs Tags Capital Facilities Industry With $15.8 Billion Loss (ENR, 2004-08-09)"
+        editeur: Engineering News-Record
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "has come up with a number: $15.8 billion in 2002."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-interop-11
+    question: Q3
+    enonce: "Le rapport du NIST écrit que le chiffre de 15,8 milliards est probablement prudent, car il n'inclut pas des catégories de coûts comme les coûts d'opportunité et de mise hors service."
+    usage: contexte
+    sources:
+      - url: https://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf
+        titre: "NIST GCR 04-867, Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry"
+        editeur: NIST
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "It seems $15.8 billion is likely to be a conservative estimate because it does not include such cost categories as opportunity costs and decommissioning costs."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-interop-12
+    question: Q1
+    enonce: "L'évaluation de la directive INSPIRE par la Commission européenne note que les règles d'interopérabilité d'INSPIRE sont souvent jugées sur-spécifiées et mal adaptées aux usages nationaux par les fournisseurs de données, ce qui a mené à des infrastructures nationales parallèles."
+    usage: contexte
+    sources:
+      - url: https://data.consilium.europa.eu/doc/document/ST-11462-2022-ADD-1/en/pdf
+        titre: "Document du Conseil ST 11462/2022 ADD 1 (évaluation d'INSPIRE)"
+        editeur: Conseil de l'Union européenne
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "current INSPIRE interoperability rules are often considered over-specified and unfit for national use cases by data providers"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q1
+    manque: "Le texte officiel d'ISO 19101-1 pour la définition d'interopérabilité (clause 4) n'a pas été lu : iso.org refuse (403) et l'extrait public ne l'a pas rendu. La définition de l'OGC (2004) n'a pas été retrouvée sur ogc.org ; seule une citation de seconde main existe (A-interop-03). À vérifier à la main."
+  - question: Q2
+    manque: "Le texte de l'annexe B d'ISO 19101-1 (couches d'interopérabilité) n'est pas dans l'extrait public ; la définition normative de chaque niveau (système, syntaxique, structurel, sémantique) n'a pas été lue. La notice de l'Encyclopedia of GIS (Springer) a répondu 429 : à vérifier à la main. Les définitions de niveaux trouvées viennent d'articles ISPRS et d'un wiki."
+  - question: Q3
+    manque: "Aucun chiffre de coût propre à l'interopérabilité des données géographiques n'a été trouvé dans une source primaire (recherches sur INSPIRE, JRC, SDI espagnole : analyses de coûts-bénéfices sans chiffre isolable lu). Un article arXiv attribue des chiffres à l'évaluation INSPIRE de 2022 ; ils n'ont pas été retrouvés dans les documents de la Commission et ne sont pas repris. À sourcer."
+visuels: []

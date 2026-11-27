@@ -1,0 +1,326 @@
+axe: formats
+affirmations:
+  - id: A-formats-01
+    question: Q4
+    enonce: "Le shapefile stocke la géométrie et les attributs des entités sans topologie (selon la description technique d'Esri)."
+    usage: narration
+    sources:
+      - url: https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf
+        titre: "ESRI Shapefile Technical Description"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A shapefile stores nontopological geometry and attribute information for the spatial features in a data set."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-02
+    question: Q4
+    enonce: "La description technique du shapefile publiée par Esri est un livre blanc daté de juillet 1998."
+    usage: expert
+    sources:
+      - url: https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf
+        titre: "ESRI Shapefile Technical Description"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "An ESRI White Paper—July 1998"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-03
+    question: Q4
+    enonce: "GeoPackage est un format ouvert, fondé sur des normes, présenté comme un format compact pour transférer de l'information géospatiale ; l'OGC le décrit comme des règles de stockage dans une base SQLite."
+    usage: narration
+    sources:
+      - url: https://www.geopackage.org/
+        titre: "GeoPackage"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "GeoPackage is an open, standards-based, platform-independent, portable, self-describing, compact format for transferring geospatial information."
+      - url: https://www.ogc.org/standards/geopackage/
+        titre: "GeoPackage Standard – Open SQLite Format for Geospatial Data"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The GeoPackage standard describes a set of conventions for storing the following within a SQLite database:"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-04
+    question: Q4
+    enonce: "GML est une grammaire XML de l'OGC pour exprimer des entités géographiques, et aussi une norme ISO (ISO 19136:2007)."
+    usage: expert
+    sources:
+      - url: https://www.ogc.org/standards/gml/
+        titre: "GML Standard"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The Geography Markup Language (GML) is an XML grammar for expressing geographical features."
+      - url: https://www.ogc.org/standards/gml/
+        titre: "GML Standard"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "GML is also an ISO standard ( ISO 19136:2007 )."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-05
+    question: Q4
+    enonce: "GeoJSON est un format d'échange de données géospatiales fondé sur JSON, décrit dans une RFC de l'IETF."
+    usage: narration
+    sources:
+      - url: https://datatracker.ietf.org/doc/html/rfc7946
+        titre: "RFC 7946, The GeoJSON Format"
+        editeur: IETF
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-06
+    question: Q5
+    enonce: "Dans GeoJSON (RFC 7946), le système de référence de coordonnées est géographique, fondé sur le WGS 84."
+    usage: expert
+    sources:
+      - url: https://datatracker.ietf.org/doc/html/rfc7946
+        titre: "RFC 7946, The GeoJSON Format"
+        editeur: IETF
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The coordinate reference system for all GeoJSON coordinates is a geographic coordinate reference system, using the World Geodetic System 1984 (WGS 84)"
+    contradictions: []
+    verifie: null
+    note_verification: "Axe croisé avec coordonnees."
+  - id: A-formats-07
+    question: Q4
+    enonce: "DWG est un format propriétaire développé et maintenu par Autodesk, qui n'en a publié aucune spécification."
+    usage: expert
+    sources:
+      - url: https://loc.gov/preservation/digital/formats//fdd/fdd000445.shtml
+        titre: "DWG, AutoCAD Drawing (Sustainability of Digital Formats, Library of Congress)"
+        editeur: Library of Congress
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "No specification has been published by Autodesk."
+      - url: https://loc.gov/preservation/digital/formats//fdd/fdd000445.shtml
+        titre: "DWG, AutoCAD Drawing (Sustainability of Digital Formats, Library of Congress)"
+        editeur: Library of Congress
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The DWG format is a proprietary format developed and maintained by Autodesk."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-08
+    question: Q4
+    enonce: "Le catalogue des pilotes vectoriels de GDAL liste un pilote pour les fichiers DGN de MicroStation."
+    usage: contexte
+    sources:
+      - url: https://gdal.org/en/stable/drivers/vector/index.html
+        titre: "Vector drivers, GDAL documentation"
+        editeur: OSGeo
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Microstation DGN"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-09
+    question: Q4
+    enonce: "Selon l'OGC, KML encode ce qu'il faut montrer dans un navigateur terrestre et comment le montrer."
+    usage: narration
+    sources:
+      - url: https://www.ogc.org/standards/kml/
+        titre: "KML, Open Geospatial Consortium"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Put simply, KML encodes what to show in an earth browser, and how to show it."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-10
+    question: Q5
+    enonce: "Un shapefile n'admet pas de nom de champ de plus de 10 caractères."
+    usage: narration
+    sources:
+      - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+        titre: "Geoprocessing considerations for shapefile output"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Field names cannot be longer than 10 characters."
+      - url: https://gdal.org/en/stable/drivers/vector/shapefile.html
+        titre: "ESRI Shapefile / DBF, GDAL documentation"
+        editeur: OSGeo
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Attribute names can only be up to 10 characters long."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-11
+    question: Q5
+    enonce: "Chaque fichier composant un shapefile est limité à 2 Go, ce qui représente environ 70 millions d'entités ponctuelles selon Esri ; GDAL signale aussi cette limite de 2 Go."
+    usage: narration
+    sources:
+      - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+        titre: "Geoprocessing considerations for shapefile output"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "There is a 2 GB size limit for any shapefile component file, which translates to a maximum of roughly 70 million point features."
+      - url: https://gdal.org/en/stable/drivers/vector/shapefile.html
+        titre: "ESRI Shapefile / DBF, GDAL documentation"
+        editeur: OSGeo
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "SHAPE_2GB_LIMIT=YES: can be set to YES to strictly enforce the 2 GB file size limit when updating a shapefile."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-12
+    question: Q5
+    enonce: "Dans un shapefile, toutes les formes non nulles doivent être du même type de forme."
+    usage: narration
+    sources:
+      - url: https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf
+        titre: "ESRI Shapefile Technical Description"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "All the non-Null shapes in a shapefile are required to be of the same shape type."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-13
+    question: Q5
+    enonce: "Les courbes paramétriques (arcs de cercle) ne sont pas prises en charge dans un shapefile ; à l'export, elles deviennent des lignes simples à sommets rapprochés."
+    usage: narration
+    sources:
+      - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+        titre: "Geoprocessing considerations for shapefile output"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Parametrically defined curves (also known as circular arc curves) are not supported on shapefiles."
+      - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+        titre: "Geoprocessing considerations for shapefile output"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "the curved features are transformed to simple line features with closely spaced vertices to capture the curved shape."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-14
+    question: Q5
+    enonce: "Selon Esri, un shapefile ne peut pas stocker de valeurs nulles, arrondit les nombres et gère mal l'Unicode."
+    usage: narration
+    sources:
+      - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+        titre: "Geoprocessing considerations for shapefile output"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "shapefiles cannot store null values, they round up numbers, they have poor support for Unicode character strings"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-15
+    question: Q5
+    enonce: "Safe Software écrit que traduire entre modèles de données est considérablement plus intéressant et difficile que traduire entre formats."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Translating between data models is considerably more interesting and difficult than translating between formats."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-16
+    question: Q4
+    enonce: "Safe Software décrit le besoin de transformer des données entre formats par l'intégration de données gérées par des systèmes SIG, DAO, en trois dimensions ou de bases de données différents."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "There are many reasons you might need to transform data between formats, including integrating data managed by different GIS, CAD, 3D, or database systems"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-17
+    question: Q6
+    enonce: "GDAL est une bibliothèque de traduction de formats de données géospatiales raster et vecteur, qui présente un modèle abstrait unique pour le raster et un pour le vecteur, quel que soit le format pris en charge."
+    usage: narration
+    sources:
+      - url: https://gdal.org/en/stable/
+        titre: "GDAL documentation"
+        editeur: OSGeo
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "As a library, it presents a single raster abstract data model and single vector abstract data model to the calling application for all supported formats."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-formats-18
+    question: Q6
+    enonce: "La page de démarrage de FME affiche « 800+ supported formats » (plus de 800 formats pris en charge)."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/get-started/
+        titre: "Get started with FME"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "800+ supported formats and powerful spatial data capabilities"
+    contradictions:
+      - version: "Une fiche de Safe Software chez Esri affiche « support for 300+ spatial and non-spatial formats » (non datée)."
+        source: https://www.esri.com/partners/a2T70000000TNdREAW
+    verifie: null
+    note_verification: ""
+  - id: A-formats-19
+    question: Q6
+    enonce: "La documentation de FME explique que FME contient un grand nombre de formats parce que tant de domaines différents utilisent des données spatiales."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/reading-writing-data.htm
+        titre: "Reading and Writing Data, FME Form documentation"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME contains a large number of formats because there are so many different fields that use spatial data."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q6
+    manque: "Nombre de formats de GDAL/OGR : le catalogue des pilotes (gdal.org, drivers/vector) est un tableau sans total énoncé ; aucun chiffre sourcé."
+  - question: Q6
+    manque: "Source indépendante de l'éditeur pour le nombre de formats de FME : aucune trouvée ; la page Esri affiche 300+ (non datée), la page FME 800+. À vérifier à la main (page des formats de l'éditeur : 404 à l'adresse essayée)."
+  - question: Q6
+    manque: "Nombre de formats de données géographiques en circulation, toutes sources confondues : à sourcer."
+  - question: Q4
+    manque: "Source primaire d'Autodesk sur DWG, et statut ou spécification de DGN (Bentley) : non lus ; à sourcer."
+  - question: Q4
+    manque: "Date du shapefile confirmée par une source indépendante d'Esri : à sourcer."
+  - question: Q5
+    manque: "Perte de styles en changeant de format, et limite de longueur des champs texte du dBASE : à sourcer."
+visuels:
+  - id: VIS-01
+    url: https://gdal.org/en/stable/drivers/vector/index.html
+    editeur: OSGeo
+    description: "Tableau des pilotes vectoriels de GDAL (nom court, nom long, création, géoréférencement)."
+    utilite: "Montrer la diversité des formats réellement pris en charge par une bibliothèque ouverte."
+    usage: REFERENCE_ONLY
