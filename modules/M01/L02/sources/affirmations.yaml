@@ -2,7 +2,7 @@
 # La confiance n'est pas écrite ici : check_pack.py la calcule depuis les sources.
 # 114 affirmations dans les axes, 107 après fusion, 121 avec les ajouts du consolidateur.
 # fusionne_depuis : identifiants abandonnés lors de la fusion d'énoncés identiques.
-# decoupe_de : affirmation nouvelle, plus étroite, découpée d'une affirmation refusée par le vérificateur (2026-11-27) ; l'ancienne reste telle quelle, hors narration. 7 découpes, 128 affirmations.
+# decoupe_de : affirmation nouvelle, plus étroite, découpée d'une affirmation refusée par le vérificateur (2026-11-27) ; l'ancienne reste telle quelle, hors narration. 9 découpes, 130 affirmations.
 lecon: FME001-M01-L02
 axes:
 - interop
@@ -2329,9 +2329,15 @@ affirmations:
   note_decoupe: 'Découpée le 2026-11-27 après vérification : la fin « ce qui met à l''épreuve l''interopérabilité » est retirée, avec son extrait (il porte sur les informations et bases de données géographiques en général, au conditionnel, pas sur la forêt).'
 - id: A-semantique-32
   question: Q15
-  enonce: 'Safe Software écrit que les données sont stockées un peu partout : dans des applications, des bases de données et des formats différents, et avec des modèles de données et des systèmes de coordonnées différents.'
+  enonce: 'Safe Software écrit qu''un défi courant pour tirer de la valeur des données est qu''elles sont stockées un peu partout : dans des applications, des bases de données et des formats différents, et avec des modèles de données et des systèmes de coordonnées différents.'
   usage: narration
   sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: A common challenge in getting value from data is that it’s stored all over the place
   - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
     titre: Challenges in Spatial Database Interoperability
     editeur: Safe Software
@@ -2341,12 +2347,24 @@ affirmations:
   contradictions: []
   decoupe_de: A-semantique-17
   verifie: null
-  note_decoupe: 'Découpée le 2026-11-27 après vérification : « le problème de départ » est retiré ; « A common challenge » n''est pas dit non plus, car ce début de phrase n''est dans aucun extrait (aucun extrait ajouté hors A-interop-10). À relire par le vérificateur : « it''s stored » de l''extrait renvoie à « data », dans le même début de phrase, hors extrait.'
+  note_decoupe: 'Découpée le 2026-11-27 après vérification : « le problème de départ » est remplacé par les mots de la page, « A common challenge », porté par un extrait ajouté (même page, cache, accord du coordinateur), qui porte aussi le sujet « data ».'
 - id: A-semantique-33
   question: Q15
-  enonce: La documentation de FME Form présente FME comme un outil conçu pour être une application d'ETL spatial, centrée sur la traduction de données géographiques.
+  enonce: La documentation de FME Form écrit que, traditionnellement, les logiciels qui traduisaient des données vers un autre format avaient des capacités limitées, la plupart des données étant forcées à travers un modèle de données limité, d'où une grande part du sens perdue à la traduction ; elle présente FME comme un outil conçu pour être une application d'ETL spatial, centrée sur la traduction de données géographiques.
   usage: narration
   sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+    titre: What is FME (documentation de FME Form)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Traditionally the software used to translate data to a different format had limited capabilities.
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+    titre: What is FME (documentation de FME Form)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Most of the data would be forced through a limited data model causing much of the meaning to be lost in translation.
   - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
     titre: What is FME (documentation de FME Form)
     editeur: Safe Software
@@ -2356,7 +2374,7 @@ affirmations:
   contradictions: []
   decoupe_de: A-semantique-19
   verifie: null
-  note_decoupe: 'Découpée le 2026-11-27 après vérification : seul le second extrait est repris, sans « le premier » (revendication de l''éditeur). La première moitié (données forcées par un modèle limité) n''est pas reprise : son cadre « Traditionally » n''est dans aucun extrait, et sans lui l''énoncé perd sa modalité.'
+  note_decoupe: 'Découpée le 2026-11-27 après vérification : la modalité de la page, « Traditionally », est gardée (« traditionnellement », pas « antérieurs »), portée par un extrait ajouté (même page, cache, accord du coordinateur) ; « le premier » (revendication de l''éditeur) n''est pas repris.'
 - id: A-semantique-34
   question: Q13
   enonce: Le cadre IGIF des Nations Unies écrit que, lorsque la terminologie utilisée dans les modèles de données est différente, elle peut être source de confusion et rendre difficile la mise en correspondance des données.
@@ -2372,6 +2390,60 @@ affirmations:
   decoupe_de: A-semantique-29
   verifie: null
   note_decoupe: 'Découpée le 2026-11-27 après vérification : la modalité de la source (« peut ») est gardée, et seule la moitié portée par l''IGIF est reprise ; la moitié de Chojka (sémantique, « may be even impossible », cas d''un schéma intermédiaire) n''a qu''une source elle aussi. Une source B : confiance faible, à la porte.'
+- id: A-modeles-33
+  question: Q8
+  enonce: Safe Software donne comme exemple de transformation entre différentes représentations spatiales celle entre des coordonnées (x,y) stockées dans des colonnes numériques et une géométrie de point stockée dans une colonne de géométrie.
+  usage: narration
+  sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Following are a few examples of transformations between different spatial representations:'
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: (x,y) coordinates stored in numeric columns
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: point geometry stored in a geometry column
+  contradictions: []
+  decoupe_de: A-modeles-17
+  verifie: null
+  note_decoupe: 'Découpée le 2026-11-27 après vérification : extrait de cadre ajouté (même page, lu dans le cache par lire_page.py, accord du coordinateur) ; l''énoncé dit « entre », comme la page (« between »), pas « de... à » : le sens de passage ne se lit pas dans le texte brut.'
+- id: A-modeles-34
+  question: Q8
+  enonce: Safe Software donne comme autre exemple de transformation entre différentes représentations spatiales celle entre des attributs de surfaces associés à un point intérieur et des attributs associés directement aux entités surfaciques.
+  usage: narration
+  sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Following are a few examples of transformations between different spatial representations:'
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: area feature attributes associated with an inside point
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: attributes associated with area features directly
+  contradictions: []
+  decoupe_de: A-modeles-18
+  verifie: null
+  note_decoupe: 'Découpée le 2026-11-27 après vérification : même cas qu''A-modeles-33 : extrait de cadre ajouté (même page, cache), « entre » et non « de... à ».'
 lacunes:
 - axe: interop
   question: Q1
