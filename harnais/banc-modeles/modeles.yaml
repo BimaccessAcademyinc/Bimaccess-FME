@@ -38,16 +38,27 @@ modeles:
     role: recherche et contrôles bon marché
     prix: {entree: null, sortie: null}
   # Images (banc des illustrations), par appel.py --image
+  # Prix par image 1K relevés le 2026-11-27 sur la page de prix (lecture par résumé, à revérifier)
   gemini-image:
     fournisseur: gemini
-    id: gemini-2.5-flash-image
-    role: illustrations (Nano Banana)
-    prix: {entree: null, sortie: null}
+    id: gemini-3.1-flash-image
+    role: illustrations par défaut (décision d'Ilyas, 2026-11-27, banc 2026-11-27-flash)
+    prix_image: {1K: 0.067, 2K: 0.101, 4K: 0.151}
   gemini-image-pro:
     fournisseur: gemini
-    id: nano-banana-pro-preview
-    role: illustrations, rendu soigné
-    prix: {entree: null, sortie: null}
+    id: gemini-3-pro-image
+    role: dessin complexe seulement, sur accord d'Ilyas
+    prix_image: {1K: 0.134, 2K: 0.134, 4K: 0.24}
+  gemini-image-lite:
+    fournisseur: gemini
+    id: gemini-3.1-flash-lite-image
+    role: essai (plus petit, moins de détails)
+    prix_image: {1K: 0.034}
+  gemini-image-2-5:
+    fournisseur: gemini
+    id: gemini-2.5-flash-image
+    role: écarté (dessin petit, arrêt du service en mars 2027)
+    prix_image: {1K: 0.039}
   # Modèles ouverts : par appel.py, via OpenRouter
   ouvert-moyen:
     fournisseur: openrouter

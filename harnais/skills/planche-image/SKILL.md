@@ -21,6 +21,10 @@ Mesures sur FME001-M01-L01 (7 scènes) : dessin et repérage 59 s d'appels, envi
 
 Lire `bibliotheque.yaml` et `gabarits.md` avant le premier plan d'une leçon.
 
+## 0 ter. Modèle d'image
+
+Par défaut : Flash 3.1 (`gemini-3.1-flash-image`), décision d'Ilyas du 2026-11-27 après le banc `harnais/banc-modeles/essais/2026-11-27-flash/` (presque la qualité du Pro, moitié prix, plus rapide). Le Pro seulement pour un dessin complexe, sur accord d'Ilyas (`PLANCHE_MODELE_IMAGE=gemini-3-pro-image`). Le cache tient compte du modèle : un dessin fait par le Pro n'est pas repris par Flash.
+
 ## 0 bis. Dépenses
 
 Aucun dessin ni repérage sans l'accord d'Ilyas, coût annoncé avant (règle du 2026-11-27). Sans `--approuve <montant en $>`, `planche_image.py` et `illustrations.py` affichent « Coût estimé : … » (dessins hors cache × prix du modèle, repérages) et n'appellent rien. Un agent délégué (graphiste) écrit ses commandes et rend la main ; l'agent principal annonce le coût, Ilyas approuve, puis la commande se relance avec `--approuve`. Prix des modèles d'image : `PRIX_IMAGE` dans `planche_image.py`, à revérifier sur la page de prix.

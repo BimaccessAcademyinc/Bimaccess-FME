@@ -41,7 +41,11 @@ from pathlib import Path
 ICI = Path(__file__).resolve().parent
 JOURNAL = ICI.parents[2] / "mesures" / "appels.csv"
 API = "https://generativelanguage.googleapis.com/v1beta/models/{}:generateContent"
-IMAGE = os.environ.get("PLANCHE_MODELE_IMAGE", "gemini-3-pro-image")
+# Modèle d'image par défaut : Flash 3.1, décision d'Ilyas du 2026-11-27 après le banc
+# (harnais/banc-modeles/essais/2026-11-27-flash/) : presque la qualité du Pro, moitié prix, plus rapide.
+# Le Pro (gemini-3-pro-image) seulement pour un dessin complexe, sur accord d'Ilyas :
+# PLANCHE_MODELE_IMAGE=gemini-3-pro-image.
+IMAGE = os.environ.get("PLANCHE_MODELE_IMAGE", "gemini-3.1-flash-image")
 VISION = os.environ.get("PLANCHE_MODELE_VISION", "gemini-3.5-flash")
 W, H = 1920, 1080
 # Résolution du dessin : « 4K » (5504 × 3072, gardé à 3840 × 2160, net sur un écran haute définition).
