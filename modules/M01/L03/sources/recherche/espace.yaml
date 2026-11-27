@@ -1,0 +1,374 @@
+axe: espace
+affirmations:
+  - id: A-espace-01
+    question: Q1
+    enonce: "Un espace de travail (workspace) est un fichier créé dans FME Workbench qui définit tous les paramètres de la traduction de données."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/workspaces_about.htm
+        titre: "About Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Workspace s are files you create in FME Workbench that define all of the parameters of your data translation."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-02
+    question: Q1
+    enonce: "Un espace de travail réunit dans un seul fichier tous les composants d'une traduction, dont les lecteurs, les writers et les transformers, ainsi que toutes les connexions entre ces composants."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/fmw/fmw.htm
+        titre: "FME Workspace Reader"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "creates files that define all of the components of a translation including Readers, Writers, and Transformers, in a single file called a workspace."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/fmw/fmw.htm
+        titre: "FME Workspace Reader"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This workspace contains all the information needed to run a translation and also contains all of the connections between these components."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-03
+    question: Q1
+    enonce: "Par défaut, les espaces de travail s'enregistrent en fichiers .fmw, dans un dossier Workspaces des Documents du disque local."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/workspaces_about.htm
+        titre: "About Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "By default, workspace s are saved as .fmw files in the */Documents/Workspaces folder of your local drive."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-04
+    question: Q1
+    enonce: "Selon la documentation, les lecteurs indiquent à FME le format de départ, l'emplacement du jeu de données et les paramètres de lecture ; les writers précisent le format voulu en sortie et les paramètres d'écriture."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/workspaces_about.htm
+        titre: "About Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Readers tell FME what data format you are starting out with, where to find the dataset, and any special parameters for how to read it."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/workspaces_about.htm
+        titre: "About Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Writers specify the format of the data you want to end up with, and the parameters for how to write the new dataset."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-05
+    question: Q1
+    enonce: "Selon la documentation, les transformers sont des objets qui agissent sur les données après leur lecture et avant leur écriture, en réorganisant leur structure ou en changeant leur contenu."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/workspaces_about.htm
+        titre: "About Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "These are objects that act on the data after it is read and before it is written by reorganizing its structure or changing its content."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-06
+    question: Q1
+    enonce: "Quand on crée ou modifie un espace de travail, la structure (le schéma) des données source et destination est représentée graphiquement dans FME Workbench."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/workspaces_about.htm
+        titre: "About Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "of both the source and destination data is graphically portrayed in FME Workbench."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-07
+    question: Q1
+    enonce: "Si le paramètre « Prompt for Parameters » d'un espace de travail vaut Yes, l'espace de travail suspend la traduction pour demander des valeurs de paramètres utilisateur."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/workspace_parameters.htm
+        titre: "Workspace Parameters"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "If Yes , the workspace pauses translations to display a dialog that prompt for user parameter values."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-08
+    question: Q2
+    enonce: "Pour exécuter un espace de travail, on utilise l'outil Run ou un raccourci clavier ; FME commence alors la traduction et affiche des informations de traitement dans le volet du journal."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/running-debugging-workspaces.htm
+        titre: "Running and Debugging Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "To run a workspace , click F5 or click the Run tool."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/running-debugging-workspaces.htm
+        titre: "Running and Debugging Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME will begin the translation, and you’ll see processing information in the log pane."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-09
+    question: Q2
+    enonce: "À la fin d'une traduction, le journal affiche « Translation was SUCCESSFUL » ; on peut le parcourir en arrière pour consulter des statistiques précises."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/running-debugging-workspaces.htm
+        titre: "Running and Debugging Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "upon completion, the log will display Translation was SUCCESSFUL. You can scroll back through the log to check specific statistics."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-10
+    question: Q2
+    enonce: "Les messages STATS du journal donnent le nombre d'entités lues dans les jeux de données source et écrites dans les jeux de données destination."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Viewing_the_Log.htm
+        titre: "Viewing the Log"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Statistics messages (displayed as STATS) provide information on the number of features read from the source and written to the destination datasets."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-11
+    question: Q2
+    enonce: "Un avertissement du journal (WARN) signale un problème de traitement assez léger pour ne pas arrêter FME, mais après lequel il faut vérifier que la sortie n'est pas affectée ; le message final peut indiquer « Translation was SUCCESSFUL with X warning(s) »."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Viewing_the_Log.htm
+        titre: "Viewing the Log"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The problem was not sufficient to cause FME to terminate the process, but you’ll want to check that the problem has not adversely affected your output."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Interpreting_the_Log.htm
+        titre: "Interpreting the Log"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Translation was SUCCESSFUL with X warning(s)"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-12
+    question: Q2
+    enonce: "Si le journal affiche « Translation Failed », la documentation dit qu'il est souvent la meilleure source pour trouver ce qui a mal tourné."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/running-debugging-workspaces.htm
+        titre: "Running and Debugging Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "If you see a message that says Translation Failed, the FME log will often be the best source to find out what went wrong."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-13
+    question: Q2
+    enonce: "FME traite les données entité par entité plutôt que transformer par transformer, si bien que le journal ne montre pas chaque transformer en séquence."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Interpreting_the_Log.htm
+        titre: "Interpreting the Log"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Because FME processes data feature-by-feature instead of transformer-by-transformer, the log file does not show each transformer in sequence."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-14
+    question: Q2
+    enonce: "Selon un guide de formation de 1Spatial, le journal de traduction indique si la traduction a réussi ou échoué, combien d'entités ont été lues dans la source et écrites vers la destination, et combien de temps elle a pris."
+    usage: narration
+    sources:
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/running-a-workspace
+        titre: "Running a Workspace"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "whether the translation succeeded or failed, how many features were read from the source and written to the destination, and how long it took to perform the translation."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Viewing_the_Log.htm
+        titre: "Viewing the Log"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Statistics messages (displayed as STATS) provide information on the number of features read from the source and written to the destination datasets."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-15
+    question: Q2
+    enonce: "Dans l'exemple du guide de 1Spatial, le journal indique que 350 entités ont été lues depuis une géodatabase Esri et écrites vers du GML."
+    usage: expert
+    sources:
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/running-a-workspace
+        titre: "Running a Workspace"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "the log file reveals that 350 features were read (from a spatial data format called Esri Geodatabase) and written out (to a spatial form of XML, called GML)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-16
+    question: Q3
+    enonce: "Selon des guides de formation et de documentation tiers, le canevas de Workbench se lit par défaut de gauche à droite, des sources vers les destinations."
+    usage: narration
+    sources:
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/fme-workbench-introduction
+        titre: "FME Workbench Introduction"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "By default the workspace reads from left to right; data source on the left, transformation tools in the centre, and data output on the right."
+      - url: https://doc.esri.com/fr/arcgis-pro/latest/help/data/data-interoperability/fme-workbench-essentials.html
+        titre: "FME Workbench essentials"
+        editeur: Esri
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "you work from left to right beginning with the source data objects, directing dataflow using connectors to link outputs to inputs, and terminating the flow at the destination features."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-17
+    question: Q3
+    enonce: "Selon le guide de 1Spatial, le canevas est la fenêtre principale de Workbench, où l'on définit la traduction ; les connexions entre les éléments représentent le flux des données et peuvent se ramifier, fusionner, ou les deux."
+    usage: contexte
+    sources:
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/fme-workbench-introduction
+        titre: "FME Workbench Introduction"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The FME Workbench canvas is where you define the translation. It is the primary window within Workbench:"
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/fme-workbench-introduction
+        titre: "FME Workbench Introduction"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Connections between each item represent the flow of data and may branch in different directions, merge together, or both."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-18
+    question: Q3
+    enonce: "Selon le guide de 1Spatial, la disposition par défaut de Workbench comprend, entre autres fenêtres, le canevas, le Navigator, le Transformer Gallery, le Translation Log et le Parameter Editor."
+    usage: contexte
+    sources:
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/fme-workbench-introduction
+        titre: "FME Workbench Introduction"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The default layout for the FME Workbench user interface has multiple components:"
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/fme-workbench-introduction
+        titre: "FME Workbench Introduction"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The Transformer Gallery is a tool for the location and selection of FME transformation tools."
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/fme-workbench-introduction
+        titre: "FME Workbench Introduction"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The Navigator window is a structured list of parameters that represent and control all of the components of a translation:"
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/fme-workbench-introduction
+        titre: "FME Workbench Introduction"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The Parameter Editor window is for editing parameters for objects on the canvas window:"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-19
+    question: Q3
+    enonce: "Le Navigator de Workbench est une fenêtre de type explorateur qui affiche l'espace de travail sous forme d'arborescence, avec l'état visuel de ses lecteurs, writers, transformers et paramètres."
+    usage: narration
+    sources:
+      - url: https://doc.esri.com/fr/arcgis-pro/latest/help/data/data-interoperability/fme-workbench-essentials.html
+        titre: "FME Workbench essentials"
+        editeur: Esri
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Navigator is an explorer window that displays your workspace in a tree view. It provides a visual status of your readers, writers, transformers, parameters"
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/fme-workbench-introduction
+        titre: "FME Workbench Introduction"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The Navigator window is a structured list of parameters that represent and control all of the components of a translation:"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-espace-20
+    question: Q3
+    enonce: "Le volet du journal de traduction affiche notamment la version de FME, le lecteur utilisé, le writer utilisé et les messages d'avertissement."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Viewing_the_Log.htm
+        titre: "Viewing the Log"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The translation log pane displays statistics and processing information that includes the following: FME version Reader being used Writer being used Logging information Warning messages"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q1
+    manque: "Le contenu interne d'un fichier .fmw (texte, XML ou autre) n'est pas dans les pages lues : à sourcer. Le paramètre d'un espace de travail vu sur la page « Workspace Parameters » est décrit, mais la page « About Workspaces » ne cite pas les paramètres comme composant primaire (seulement lecteurs, writers, transformers)."
+  - question: Q3
+    manque: "La page Safe « Workbench Interface » (docs.safe.com, FME Form) est rendue par script et illisible par lire_page.py : la présentation officielle de l'interface pour un débutant est à vérifier à la main. La description de l'interface repose sur 1Spatial et Esri (niveau B)."
+  - question: Q2
+    manque: "Ce que FME fait en interne pendant la traduction (étapes, ordre) : seul le déroulé « feature-by-feature » est sourcé ; le détail des phases est à sourcer."
+visuels:
+  - id: VIS-01
+    url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Interpreting_the_Log.htm
+    editeur: Safe Software
+    description: "Exemple d'un espace de travail en échec, dont les connexions portent des compteurs d'entités (la page en tire deux lectures possibles, StatisticsCalculator ou Joiner). L'image elle-même n'a pas été vue, seul le texte qui la décrit."
+    utilite: "Référence pour redessiner un flux avec compteurs d'entités sur les liaisons."
+    usage: REDRAW
+  - id: VIS-02
+    url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/running-a-workspace
+    editeur: 1Spatial
+    description: "Journal de traduction d'un exemple : résumé des entités lues par type d'entité puis écrites, total de 350, message « Translation was SUCCESSFUL with 0 warning(s) »."
+    utilite: "Référence pour redessiner un journal de fin de traduction."
+    usage: REFERENCE_ONLY
+  - id: VIS-03
+    url: https://doc.esri.com/fr/arcgis-pro/latest/help/data/data-interoperability/fme-workbench-essentials.html
+    editeur: Esri
+    description: "Page d'Esri sur l'espace de travail et le canevas de Workbench ; marques et captures d'Esri non reprises."
+    utilite: "Référence de disposition du canevas, de gauche à droite."
+    usage: REFERENCE_ONLY
