@@ -40,3 +40,7 @@ FME001-M01-L01 voix et planches image,97d54436-af59-5ae1-b5e1-362640cf04f2,sessi
 FME001-M01-L01 planches 4K et relecture des symboles,97d54436-af59-5ae1-b5e1-362640cf04f2,session,claude-opus-5-5,31,70,60306,13426189,27732,0,0,30.4,
 "FME001-M01-L01 essai S02 S04, graphiste et illustrations",97d54436-af59-5ae1-b5e1-362640cf04f2,Graphiste essai S02 S04,claude-opus-5-5,62,128,660832,18150912,182743,0,0,31.0,
 "FME001-M01-L01 essai S02 S04, codeur avec Remotion",97d54436-af59-5ae1-b5e1-362640cf04f2,Code essai S02 S04 Remotion,claude-opus-5-5,87,194,417150,26353952,105207,0,0,26.7,
+"FME001-M01-L01 essai 2 phase A, gabarits Frise et FicheRubriques",b87ee2b8-fc96-5fa1-bde6-9abfeb758e3b,Gabarits phase A,claude-opus-5-5,39,84,325426,9339592,92998,0,0,15.3,
+"FME001-M01-L01 essai 2 phase B, S02 comme données",b87ee2b8-fc96-5fa1-bde6-9abfeb758e3b,Gabarits S02 donnees,claude-sonnet-5-5,18,44,194260,2748516,40400,0,0,8.1,
+"FME001-M01-L01 essai 2 phase B, S04 comme données",b87ee2b8-fc96-5fa1-bde6-9abfeb758e3b,Gabarits S04 donnees,claude-sonnet-5-5,18,42,181909,2485067,26847,0,0,6.3,
+"FME001-M01-L01 essai 2, agent principal (orchestration et contrôles)",b87ee2b8-fc96-5fa1-bde6-9abfeb758e3b,session,claude-opus-5-5,81,175,250788,16902750,42743,0,0,31.8,

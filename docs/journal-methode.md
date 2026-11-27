@@ -94,3 +94,11 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 - Voix regénérée selon la recette V4 retenue par Ilyas pour CER001 : eleven_v4, Alexandre Boutin, stabilité 0,5, français imposé, termes anglais sans balise d'accent, continuité entre clips. Contrôle d'écriture pour l'oreille du cours (`controle_oreille.py`) : rien à signaler, aucun mot changé. 3 547 caractères, 1 560 crédits (0,44 par caractère). Reste de la recette, non fait : respirations de 0,9 s entre les idées, 0,4 s de silence en fin de clip.
 - Lecteur : bouton pour revoir la scène et vitesse ×0,5 à ×2 (hauteur de la voix gardée).
 - Constat d'Ilyas sur la version planches image : « c'est l'assemblage, un travail de cochon ». Cause : l'étape du graphiste (spécification par scène, place de chaque texte, états sur les mots) et le skill des scènes ont été remplacés par un assemblage automatique (textes posés par règle autour des boîtes de la vision, décor posé d'un coup à l'image 0, trous dans les traits sous les éléments à venir). Les images ne sont pas en cause.
+
+## 2026-11-27 · Essai 2 : scènes par gabarits
+
+- Deux gabarits écrits une fois dans le moteur de `lecon-gabarits` (`Frise`, `FicheRubriques`), une scène devient un fichier de données contrôlé au chargement. S02 et S04 refaites ainsi par deux agents en parallèle, sur le modèle intermédiaire : 8,1 et 6,3 min, environ 1,2 $ chacune, contre 29 min par scène à l'essai 1 (13,5 pour le seul codeur). Phase A : 15,3 min, environ 6 $, une fois. Détail : `docs/essais-qualite.md`, essai 2.
+- Contrôle d'Ilyas sur l'essai 1 (feuille à remplir) traduit en contrôle de chargement : plus grand vide de la composition finale au plus un cinquième de la largeur et un quart de la hauteur de la face. Il a attrapé le vide de S02 sous la frise.
+- Erreur de l'agent principal, corrigée : zone utile élargie à la marge de la charte, ce qui a fait sortir le bâtiment de S04 de la face et perdre la projection européenne. Règle : la zone utile d'un gabarit se tire de la charte (face de carte x 104 à 1424), pas d'une lecture de la consigne.
+- À reporter si l'essai est retenu : les gabarits dans le moteur source du harnais ; un champ d'échelle pour une fiche entière ; une mise en évidence calée sur la boîte d'un texte ; le dossier `content/design/scenes/` dans le modèle de projet.
+

@@ -1,0 +1,570 @@
+{
+  "gabarit": "frise",
+  "scene": "S02",
+  "ecran": 11,
+  "titre": 0,
+  "source": 10,
+  "habillage": [
+    {
+      "fichier": "echelle-graphique",
+      "x": 1480,
+      "y": 84,
+      "largeur": 300
+    },
+    {
+      "fichier": "rose-des-vents",
+      "x": 1712,
+      "y": 700,
+      "largeur": 116
+    }
+  ],
+  "styles": {
+    "libelle": {
+      "police": "serif",
+      "taille": 36,
+      "interligne": 1.15,
+      "couleur": "encre"
+    },
+    "rubrique": {
+      "police": "serif",
+      "taille": 28,
+      "interligne": 1.25,
+      "couleur": "encre"
+    },
+    "fondateurs": {
+      "police": "capitales",
+      "graisse": 600,
+      "taille": 24,
+      "interlettrage": 0.16,
+      "capitales": true,
+      "couleur": "encre"
+    },
+    "contrat": {
+      "police": "serif",
+      "graisse": 600,
+      "taille": 24,
+      "interligne": 1.15,
+      "couleur": "encre"
+    },
+    "saif": {
+      "police": "capitales",
+      "graisse": 600,
+      "taille": 36,
+      "interlettrage": 0.3,
+      "capitales": true,
+      "couleur": "terme"
+    },
+    "traduction": {
+      "police": "capitales",
+      "graisse": 600,
+      "taille": 26,
+      "interlettrage": 0.24,
+      "capitales": true,
+      "couleur": "encre"
+    },
+    "origine": {
+      "police": "serif",
+      "taille": 30,
+      "interligne": 1.15,
+      "italique": true,
+      "couleur": "encre"
+    },
+    "siege": {
+      "police": "serif",
+      "taille": 34,
+      "interligne": 1.2,
+      "italique": true,
+      "couleur": "encre"
+    }
+  },
+  "illustrations": {
+    "fondateurs": {
+      "fichier": "s02-ill-fondateurs",
+      "x": 104,
+      "y": 186,
+      "largeur": 332
+    },
+    "contrat": {
+      "fichier": "s02-ill-contrat",
+      "x": 104,
+      "y": 410,
+      "largeur": 332
+    },
+    "sceau": {
+      "fichier": "s02-ill-sceau",
+      "x": 262,
+      "y": 670,
+      "largeur": 160
+    },
+    "saif": {
+      "fichier": "s02-ill-saif",
+      "x": 812,
+      "y": 184,
+      "largeur": 236
+    },
+    "logiciels": {
+      "fichier": "s02-ill-logiciels",
+      "x": 476,
+      "y": 218.5,
+      "largeur": 124,
+      "aplat": "fond"
+    },
+    "logo": {
+      "fichier": "fme-logo",
+      "x": 882,
+      "y": 670,
+      "largeur": 280
+    },
+    "lieu": {
+      "fichier": "s02-ill-lieu",
+      "x": 1082,
+      "y": 186,
+      "largeur": 342
+    }
+  },
+  "frise": {
+    "de": [
+      436,
+      580
+    ],
+    "a": [
+      1406,
+      580
+    ],
+    "epaisseur": 3,
+    "pointe": [
+      [
+        1406,
+        571
+      ],
+      [
+        1424,
+        580
+      ],
+      [
+        1406,
+        589
+      ]
+    ]
+  },
+  "annees": {
+    "cases": {
+      "de": [
+        462,
+        580
+      ],
+      "a": [
+        866,
+        580
+      ],
+      "epaisseur": 14,
+      "claire": {
+        "de": [
+          596.7,
+          580
+        ],
+        "a": [
+          731.3,
+          580
+        ],
+        "epaisseur": 10
+      }
+    }
+  },
+  "traces": {
+    "jalon-1993": {
+      "points": [
+        [
+          462,
+          560
+        ],
+        [
+          462,
+          600
+        ]
+      ],
+      "epaisseur": 2.5
+    },
+    "jalon-1996": {
+      "points": [
+        [
+          866,
+          560
+        ],
+        [
+          866,
+          600
+        ]
+      ],
+      "epaisseur": 2.5
+    },
+    "route-1": {
+      "points": [
+        [
+          599.4,
+          267.0
+        ],
+        [
+          796,
+          267.0
+        ]
+      ],
+      "couches": [
+        {
+          "couleur": "encre",
+          "epaisseur": 11
+        },
+        {
+          "couleur": "chaussee",
+          "epaisseur": 8
+        },
+        {
+          "couleur": "ecriture",
+          "epaisseur": 4
+        }
+      ]
+    },
+    "route-2": {
+      "points": [
+        [
+          599.4,
+          379.7
+        ],
+        [
+          796,
+          379.7
+        ]
+      ],
+      "couches": [
+        {
+          "couleur": "encre",
+          "epaisseur": 11
+        },
+        {
+          "couleur": "chaussee",
+          "epaisseur": 8
+        },
+        {
+          "couleur": "ecriture",
+          "epaisseur": 4
+        }
+      ]
+    },
+    "route-3": {
+      "points": [
+        [
+          599.4,
+          491.3
+        ],
+        [
+          796,
+          491.3
+        ]
+      ],
+      "couches": [
+        {
+          "couleur": "encre",
+          "epaisseur": 11
+        },
+        {
+          "couleur": "chaussee",
+          "epaisseur": 8
+        },
+        {
+          "couleur": "ecriture",
+          "epaisseur": 4
+        }
+      ]
+    },
+    "pointe-1": {
+      "d": "M796 255.0 L812 267.0 L796 279.0 Z",
+      "epaisseur": 2,
+      "remplissage": "ecriture"
+    },
+    "pointe-2": {
+      "d": "M796 367.7 L812 379.7 L796 391.7 Z",
+      "epaisseur": 2,
+      "remplissage": "ecriture"
+    },
+    "pointe-3": {
+      "d": "M796 479.3 L812 491.3 L796 503.3 Z",
+      "epaisseur": 2,
+      "remplissage": "ecriture"
+    }
+  },
+  "textes": {
+    "fondateurs-nom": {
+      "ecran": 2,
+      "style": "fondateurs",
+      "cx": 270,
+      "y": 194,
+      "place": "carte",
+      "reserve": "aucune",
+      "largeurMesuree": 295
+    },
+    "contrat-titre": {
+      "ecran": 1,
+      "style": "contrat",
+      "cx": 270,
+      "y": 430,
+      "place": "carte",
+      "reserve": "aucune",
+      "largeurMesuree": 298
+    },
+    "rubrique": {
+      "ecran": 3,
+      "style": "rubrique",
+      "x": 124,
+      "y": 496,
+      "largeur": 292,
+      "lignes": 2,
+      "place": "carte",
+      "reserve": "aucune"
+    },
+    "jalon-1993-libelle": {
+      "ecran": 4,
+      "style": "libelle",
+      "x": 478,
+      "y": 616,
+      "largeur": 380,
+      "lignes": 2
+    },
+    "saif-nom": {
+      "ecran": 5,
+      "style": "saif",
+      "cx": 930.0,
+      "y": 195,
+      "place": "carte",
+      "dans": "saif",
+      "reserve": "aucune",
+      "largeurMesuree": 103
+    },
+    "traduction": {
+      "ecran": 6,
+      "style": "traduction",
+      "cx": 706,
+      "y": 210,
+      "largeurMesuree": 178
+    },
+    "jalon-1996-libelle": {
+      "ecran": 7,
+      "style": "libelle",
+      "x": 882,
+      "y": 612,
+      "largeurMesuree": 530
+    },
+    "nom-origine": {
+      "ecran": 8,
+      "style": "origine",
+      "x": 882,
+      "y": 820,
+      "langue": "en",
+      "largeurMesuree": 411
+    },
+    "siege": {
+      "ecran": 9,
+      "style": "siege",
+      "x": 1202,
+      "y": 273.9,
+      "place": "carte",
+      "reserve": "aucune",
+      "largeurMesuree": 198
+    }
+  },
+  "etapes": [
+    {
+      "debut": true,
+      "etat": "S02-1",
+      "gestes": [
+        {
+          "poser": "fondateurs"
+        },
+        {
+          "poser": "contrat"
+        },
+        {
+          "poser": "fondateurs-nom"
+        },
+        {
+          "poser": "contrat-titre"
+        }
+      ]
+    },
+    {
+      "locution": "Le gouvernement lance",
+      "etat": "S02-2",
+      "gestes": [
+        {
+          "frappe": "rubrique"
+        },
+        {
+          "balayage": "sceau",
+          "sens": "bas",
+          "duree": 0.3
+        }
+      ]
+    },
+    {
+      "locution": "De ce contrat naît",
+      "etat": "S02-3",
+      "gestes": [
+        {
+          "trace": "jalon-1993",
+          "duree": 0.25
+        },
+        {
+          "frappe": "jalon-1993-libelle"
+        }
+      ]
+    },
+    {
+      "locution": "Le gouvernement a son format",
+      "etat": "S02-4",
+      "gestes": [
+        {
+          "balayage": "saif",
+          "sens": "droite",
+          "duree": 0.4
+        }
+      ]
+    },
+    {
+      "locution": "Pour échanger avec lui",
+      "etat": "S02-5",
+      "gestes": [
+        {
+          "balayage": "logiciels",
+          "sens": "bas",
+          "duree": 0.4
+        },
+        {
+          "trace": "route-1",
+          "duree": 0.4
+        },
+        {
+          "trace": "route-2",
+          "avec": true
+        },
+        {
+          "trace": "route-3",
+          "avec": true
+        },
+        {
+          "trace": "pointe-1",
+          "duree": 0.1
+        },
+        {
+          "trace": "pointe-2",
+          "avec": true
+        },
+        {
+          "trace": "pointe-3",
+          "avec": true
+        },
+        {
+          "balayage": "traduction",
+          "sens": "droite",
+          "duree": 0.3
+        }
+      ]
+    },
+    {
+      "locution": "Murray et Lutz commencent par ce travail",
+      "etat": "S02-6",
+      "gestes": [
+        {
+          "frappe": "titre"
+        }
+      ]
+    },
+    {
+      "locution": "une technologie de traduction pour SAIF",
+      "etat": "S02-7"
+    },
+    {
+      "locution": "Trois ans après la fondation",
+      "etat": "S02-8",
+      "gestes": [
+        {
+          "trace": "jalon-1996",
+          "duree": 0.25
+        },
+        {
+          "trace": "cases",
+          "duree": 0.45
+        },
+        {
+          "frappe": "jalon-1996-libelle"
+        },
+        {
+          "balayage": "logo",
+          "sens": "droite",
+          "duree": 0.3
+        },
+        {
+          "frappe": "nom-origine"
+        }
+      ]
+    },
+    {
+      "locution": "la première version de son logiciel",
+      "etat": "S02-9"
+    },
+    {
+      "locution": "à l'origine Feature Manipulation Engine",
+      "etat": "S02-10"
+    },
+    {
+      "locution": "FME fait passer",
+      "etat": "S02-11"
+    },
+    {
+      "locution": "Son siège est à Surrey",
+      "etat": "S02-FIN",
+      "gestes": [
+        {
+          "balayage": "lieu",
+          "sens": "droite",
+          "duree": 0.4
+        },
+        {
+          "frappe": "siege"
+        }
+      ]
+    }
+  ],
+  "evidences": {
+    "traduction": {
+      "x": 607.0,
+      "y": 200,
+      "largeur": 198,
+      "hauteur": 51,
+      "de": "une technologie de traduction pour SAIF",
+      "a": "Trois ans après la fondation"
+    },
+    "jalon-1996": {
+      "x": 872,
+      "y": 602,
+      "largeur": 550,
+      "hauteur": 61,
+      "de": "la première version de son logiciel",
+      "a": "à l'origine Feature Manipulation Engine"
+    },
+    "nom": {
+      "x": 872,
+      "y": 810,
+      "largeur": 431,
+      "hauteur": 55,
+      "de": "à l'origine Feature Manipulation Engine",
+      "a": "FME fait passer"
+    },
+    "logo": {
+      "x": 872,
+      "y": 660,
+      "largeur": 300,
+      "hauteur": 154,
+      "de": "FME fait passer",
+      "a": "Son siège est à Surrey"
+    }
+  }
+}

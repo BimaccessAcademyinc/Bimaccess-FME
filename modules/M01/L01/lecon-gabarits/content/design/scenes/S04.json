@@ -141,7 +141,7 @@
       "cx": 1094.0,
       "y": 241.9,
       "place": "carte",
-      "reserve": "papier"
+      "reserve": "aucune"
     },
     "geometrie": {
       "ecran": 2,
@@ -149,7 +149,7 @@
       "x": 817.0,
       "y": 308.2,
       "place": "carte",
-      "reserve": "papier"
+      "reserve": "aucune"
     },
     "attributs": {
       "ecran": 3,
@@ -157,7 +157,7 @@
       "x": 817.0,
       "y": 520.4,
       "place": "carte",
-      "reserve": "papier"
+      "reserve": "aucune"
     },
     "usage": {
       "ecran": 4,
@@ -165,7 +165,7 @@
       "x": 817.0,
       "y": 560.2,
       "place": "carte",
-      "reserve": "papier"
+      "reserve": "aucune"
     },
     "systeme": {
       "ecran": 5,
@@ -173,7 +173,7 @@
       "x": 817.0,
       "y": 650.0,
       "place": "carte",
-      "reserve": "papier"
+      "reserve": "aucune"
     }
   },
   "etapes": [
