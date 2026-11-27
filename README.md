@@ -26,3 +26,23 @@ python3 harnais/banc-modeles/appel.py --lister
 ```
 
 Le harnais de base (plugin Studio, chaîne de production) vient de `BimaccessAcademyinc/bimaccess-studio`, exporté du dépôt `BIMaccess-Learning-Platform`. Ce dépôt n'en garde que ce qui change pendant le pilote.
+
+## Lecteur de relecture (Railway)
+
+| | |
+|---|---|
+| Projet Railway | `bimaccess-authoring`, environnement `development` |
+| Service | `fme-reader-review`, branché sur ce dépôt, branche de travail ; redéployé à chaque push |
+| Adresse | https://fme-reader-review-development.up.railway.app |
+| Accès | même identifiant et mot de passe que le lecteur de relecture de CER001 (`ACCESS_PASSWORD`, `ACCESS_USER`, repris du service `reader-review` par référence Railway) |
+| Construction | `Dockerfile` : `node reader/build.mjs` construit chaque leçon studio (`modules/*/L*/lecon`) et la page d'accueil ; `reader/server.mjs` les sert ; sonde `/api/health` |
+
+Essai local :
+
+```bash
+node reader/build.mjs --no-install
+```
+
+```bash
+ACCESS_PASSWORD=essai node reader/server.mjs
+```
