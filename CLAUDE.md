@@ -17,6 +17,14 @@ Ilyas est l'autorité finale sur l'exactitude technique, le sens pédagogique, l
 
 Une leçon sans pack fourni passe d'abord par le skill `harnais/skills/pack-recherche/`. Après la porte de l'expert, `sources/source-pack.md` et `sources/affirmations.yaml` sont la seule matière de la leçon : ce qui n'y est pas ne se dit pas, aucun chiffre, cas ni exemple inventé. Les logos de FME et de Safe Software peuvent paraître, décision d'Ilyas du 2026-11-27 (`design/marques/`) ; les captures d'écran de l'éditeur et les marques d'Esri ne se reprennent pas sans son accord : elles se redessinent ou servent de référence.
 
+## La chaîne d'abord
+
+Constat du 2026-11-27 (`docs/journal-methode.md`, et `bimaccess-studio/docs/pilote-fme/ecarts-de-methode.md`) : la variante « planches image » a contourné le graphiste et le skill des scènes, et son assemblage a été refusé. Règles :
+
+- Un nouvel outil (modèle d'image, vision, vectoriseur) entre dans la chaîne comme outil d'un rôle existant, jamais à sa place. L'agent principal orchestre et délègue ; chaque rôle lit son `CONTEXT.md` et ses skills avant d'agir.
+- Un essai reste un essai : une scène, comparée à la méthode en place, montrée comme essai.
+- Avant la voix, lire les décisions les plus récentes du rôle Voix du cours (état, notes d'essai), pas seulement sa configuration.
+
 ## Disposition
 
 | Dossier | Contenu |
