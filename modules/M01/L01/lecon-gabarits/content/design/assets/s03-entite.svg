@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="796 196 628 654" role="img" aria-label="Entité géographique : bandeau et trois rubriques">
+<g id="s03-entite-feuille">
+<rect x="796" y="196" width="628" height="654" fill="#F1F3EC"/>
+<rect x="796.4" y="196.4" width="627.2" height="653.2" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<rect x="800" y="200" width="620" height="646" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<path d="M800 256 H1420" fill="none" stroke="#23281F" stroke-width="1.2"/>
+</g>
+<g id="s03-entite-geometrie">
+<path d="M800 490 H1420" fill="none" stroke="#23281F" stroke-width="1"/>
+</g>
+<g id="s03-entite-signes">
+<circle cx="1151.6" cy="390.4" r="8.4" fill="#23281F"/>
+<path d="M1187.6 409.6 L1223.6 376 L1254.8 400" fill="none" stroke="#23281F" stroke-width="3" stroke-linejoin="miter"/>
+<path d="M1288.4 377.8 L1297.4 368.8 M1288.4 386.8 L1306.4 368.8 M1288.4 395.8 L1315.4 368.8 M1288.4 404.8 L1324.4 368.8 M1290.2 412 L1333.4 368.8 M1299.2 412 L1342.4 368.8 M1308.2 412 L1351.4 368.8 M1317.2 412 L1355.6 373.6 M1326.2 412 L1355.6 382.6 M1335.2 412 L1355.6 391.6 M1344.2 412 L1355.6 400.6 M1353.2 412 L1355.6 409.6" fill="none" stroke="#23281F" stroke-width="1.2"/>
+<rect x="1288.4" y="368.8" width="67.2" height="43.2" fill="none" stroke="#23281F" stroke-width="3"/>
+</g>
+<g id="s03-entite-attributs">
+<path d="M800 620 H1420" fill="none" stroke="#23281F" stroke-width="1"/>
+</g>
+<g id="s03-entite-usage">
+<path d="M824 600 H1396" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+</g>
+<g id="s03-entite-systeme">
+<circle cx="904" cy="760" r="66" fill="#FBFCF8" stroke="#23281F" stroke-width="2.2"/>
+<ellipse cx="904" cy="760" rx="29.7" ry="66" fill="none" stroke="#23281F" stroke-width="1.6"/>
+<path d="M904 694 V826 M838 760 H970 M846.5 727 H961.5 M846.5 793 H961.5" fill="none" stroke="#23281F" stroke-width="1.6"/>
+</g>
+<g id="s03-entite-globe-contour">
+<rect x="912" y="732.2" width="27.8" height="19.8" fill="#FBFCF8" stroke="#23281F" stroke-width="2.5"/>
+</g>
+</svg>
