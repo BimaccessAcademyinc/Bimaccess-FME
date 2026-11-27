@@ -1,0 +1,464 @@
+axe: lecteurs
+affirmations:
+  - id: A-lecteurs-01
+    question: Q4
+    enonce: "Les lecteurs (readers) indiquent à FME le format des données de départ, l'emplacement du jeu de données et les paramètres particuliers de lecture."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/workspaces_about.htm
+        titre: "About Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Readers tell FME what data format you are starting out with, where to find the dataset, and any special parameters for how to read it."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-02
+    question: Q5
+    enonce: "Les writers précisent le format des données qu'on veut obtenir et les paramètres d'écriture du nouveau jeu de données."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/workspaces_about.htm
+        titre: "About Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Writers specify the format of the data you want to end up with, and the parameters for how to write the new dataset."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-03
+    question: Q4
+    enonce: "Chaque format identifie les entités par un schéma de classification, que FME appelle un type d'entité (feature type)."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FeatureTypeProperties/feature_types_attributes.htm
+        titre: "Understanding Feature Types and Attributes"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Every format used by FME identifies features through a classification scheme. This classification is known in FME as a feature type."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-04
+    question: Q4
+    enonce: "Les types d'entités servent à distinguer différentes sortes d'entités, par exemple des routes, des rivières, des bâtiments ou des courbes de niveau."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FeatureTypeProperties/feature_types_attributes.htm
+        titre: "Understanding Feature Types and Attributes"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Feature types are used to differentiate between different types of features (for example roads, rivers, buildings, contours)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-05
+    question: Q4
+    enonce: "Pour un classeur Excel dans FME Workbench, le fichier est le jeu de données, les feuilles sont des types d'entités, les lignes sont des entités et les colonnes sont des attributs."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FeatureTypeProperties/feature_types_attributes.htm
+        titre: "Understanding Feature Types and Attributes"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "1 – The XLSX file (Book 1) is the dataset."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FeatureTypeProperties/feature_types_attributes.htm
+        titre: "Understanding Feature Types and Attributes"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "2 – The sheets (Sheet1, Sheet2) are feature types."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FeatureTypeProperties/feature_types_attributes.htm
+        titre: "Understanding Feature Types and Attributes"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The rows are features"
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FeatureTypeProperties/feature_types_attributes.htm
+        titre: "Understanding Feature Types and Attributes"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "and the columns are attributes"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-06
+    question: Q4
+    enonce: "Pour le format CSV, chaque type d'entité représente un fichier CSV différent, et non une division à l'intérieur d'un fichier unique."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FeatureTypeProperties/feature_types_attributes.htm
+        titre: "Understanding Feature Types and Attributes"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Therefore each feature type in FME represents a different CSV file, instead of different divisions in a single file."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-07
+    question: Q4
+    enonce: "Quand on crée un espace de travail à partir d'un jeu de données, les types d'entités présents dans ce jeu s'affichent du côté gauche du canevas."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FeatureTypeProperties/feature_types_attributes.htm
+        titre: "Understanding Feature Types and Attributes"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "When you create a workspace using a dataset, the Feature Types present in that dataset are shown on the left-hand side of the workspace canvas:"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-08
+    question: Q4
+    enonce: "Un schéma est la structure d'un jeu de données ; chaque jeu de données a sa propre structure, qui comprend des types d'entités, des géométries permises, des attributs définis par l'utilisateur et d'autres règles."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A schema (sometimes known as \"data model\") can be described as the structure of a dataset, or, more accurately, a formal definition of a dataset’s structure."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Each dataset has its own unique structure (schema) which includes feature types, permitted geometries, user-defined attributes and other rules that define or restrict its content."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-09
+    question: Q4
+    enonce: "Quand on crée un nouvel espace de travail, FME lit le jeu de données d'entrée et crée une définition de son schéma dans l'espace de travail."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME reads the input dataset and creates a workspace definition of the schema."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-10
+    question: Q5
+    enonce: "En général, FME crée aussi un schéma de writer, c'est-à-dire une définition de la structure du writer."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME reads the input dataset and creates a workspace definition of the schema."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Generally it will also create a writer schema, that is, a definition of the structure of the writer."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-11
+    question: Q5
+    enonce: "Les schémas de writer peuvent être appelés schémas « logiques », parce qu'ils n'existent pas encore physiquement à ce moment."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Writer schemas could be called \"logical\" schemas since they don’t physically exist at that point."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-12
+    question: Q5
+    enonce: "Un type d'entité de writer est une simple définition de ce qui doit être créé ; dans la plupart des cas, il n'existe pas encore."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FeatureTypeProperties/writer_feature_type_props_editing.htm
+        titre: "Editing Writer Feature Types"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "a writer feature type is simply a definition of what is to be created (in most cases, it does not yet exist)"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-13
+    question: Q6
+    enonce: "Dans FME Workbench, un côté de l'espace de travail montre le schéma source (ce qu'on a) et l'autre côté le schéma de destination (ce qu'on veut)."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "one side of the workspace shows the source schema (what we have) and the other side shows the destination schema (what we want)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-14
+    question: Q6
+    enonce: "Un nouvel espace de travail a habituellement des schémas source et destination identiques, mais ce n'est pas toujours possible, en particulier quand les formats source et destination sont différents."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A new workspace will usually have identical source and destination schemas; but this is not always possible – particularly when the source and destination formats are different."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-15
+    question: Q6
+    enonce: "Dans ces circonstances, FME tentera de compenser les différences entre le schéma source et le schéma de destination."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "In these circumstances, FME will attempt to compensate for any differences between source and destination schema."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-16
+    question: Q6
+    enonce: "L'édition de schéma est le processus qui consiste à modifier le schéma de destination pour personnaliser la structure des données de sortie."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Schema editing is the process of altering the destination schema to customize the structure of the output data."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-17
+    question: Q6
+    enonce: "Le schéma de destination peut être modifié selon les besoins ; par exemple, on peut ajouter, supprimer ou renommer des attributs."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "can then be edited and the destination schema changed as required; for example attributes can be added, removed or renamed."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-18
+    question: Q5
+    enonce: "La mise en correspondance des entités (feature mapping) consiste à relier les types d'entités source aux types d'entités de destination."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Feature mapping is the process of connecting source feature types to destination feature types."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-19
+    question: Q5
+    enonce: "Dans Workbench, la mise en correspondance des entités se fait en cliquant sur le port de sortie d'un type d'entité source, puis en faisant glisser la flèche jusqu'au port d'entrée d'un type d'entité de destination."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Feature Mapping is carried out by clicking on the output port of a source feature type, dragging the arrowhead across to the input port of a destination feature type"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-20
+    question: Q6
+    enonce: "La mise en correspondance des attributs (attribute mapping) consiste à relier les attributs source aux attributs de destination."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Attribute Mapping is the process of connecting source attributes to destination attributes."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-21
+    question: Q6
+    enonce: "Dans Workbench, la couleur d'un port d'attribut indique son état : le vert signale un attribut connecté, le jaune un attribut source non connecté à une destination, le rouge un attribut de destination non connecté à une source."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+        titre: "Understanding Schema"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Green indicates a connected attribute. Yellow indicates a source attribute unconnected to a destination, and red indicates a destination attribute that is not connected to a source."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-22
+    question: Q6
+    enonce: "Selon l'exercice de formation de l'éditeur, un attribut du type d'entité du reader qui n'est relié à aucun type d'entité du writer ne figurera pas dans la sortie."
+    usage: narration
+    sources:
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Intro-2019/2.translations/2.09.ex2.4.html
+        titre: "Exercise 2.4 Schema Editing and Mapping"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "this reader feature type attribute is not mapped to any writer feature type; therefore, this attribute will not be in the output."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-23
+    question: Q6
+    enonce: "Selon l'exercice de formation de l'éditeur, un attribut du type d'entité du writer qui n'est pas connecté existe dans le schéma mais ne recevra aucune donnée et n'aura donc aucune valeur dans les données écrites."
+    usage: narration
+    sources:
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Intro-2019/2.translations/2.09.ex2.4.html
+        titre: "Exercise 2.4 Schema Editing and Mapping"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "this writer feature type attribute is not connected; while it exists in the schema,"
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Intro-2019/2.translations/2.09.ex2.4.html
+        titre: "Exercise 2.4 Schema Editing and Mapping"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "it will not receive any data and therefore will not have any values in the written data."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-24
+    question: Q6
+    enonce: "Dans l'exercice de formation de l'éditeur, le schéma du type d'entité du writer correspond d'abord à celui du reader ; on peut renommer ses attributs et en ajouter un nouveau."
+    usage: contexte
+    sources:
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Intro-2019/2.translations/2.09.ex2.4.html
+        titre: "Exercise 2.4 Schema Editing and Mapping"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Currently, the writer feature type schema matches the reader feature type schema."
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Intro-2019/2.translations/2.09.ex2.4.html
+        titre: "Exercise 2.4 Schema Editing and Mapping"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "You can rename attributes by clicking in the Name cell and making your edit."
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Intro-2019/2.translations/2.09.ex2.4.html
+        titre: "Exercise 2.4 Schema Editing and Mapping"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "You can add an attribute by clicking in the blank Name cell at the bottom of the table and entering a new attribute name."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-25
+    question: Q4
+    enonce: "Après l'ajout d'un reader, les types d'entités apparaissent dans la zone des readers de l'espace de travail."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/readers_adding.htm
+        titre: "Adding Readers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "After you press OK, the log window will display processing information, and the feature types will appear in the reader area of your workspace."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-26
+    question: Q4
+    enonce: "On ajoute un reader par le menu Build > Readers > Add Reader."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/readers_adding.htm
+        titre: "Adding Readers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Select Build > Readers > Add Reader."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-27
+    question: Q5
+    enonce: "Dans un guide d'Ordnance Survey, on relie chaque reader à son writer en faisant glisser le triangle gris du reader vers le triangle rouge du writer."
+    usage: contexte
+    sources:
+      - url: https://docs.os.uk/os-downloads/products/land-and-terrain-portfolio/os-mastermap-sites-layer/os-mastermap-sites-layer-getting-started-guide/fme-desktop
+        titre: "FME Desktop (OS MasterMap Sites Layer getting started guide)"
+        editeur: Ordnance Survey
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Connect each reader to its matching writer by dragging the grey triangle on the reader to the red triangle on the writer."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-lecteurs-28
+    question: Q5
+    enonce: "Le fanout de type d'entité signifie que de nombreux types d'entités sont créés à partir d'un seul type d'entité modèle."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Setting_Feature_Type_Fanout_Properties.htm
+        titre: "Setting Feature Type Fanout Properties"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Feature type fanout means that many feature types are created from one template feature type."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q4
+    manque: "Le schéma d'un type d'entité de reader (attributs, géométrie) est décrit par la page « Understanding Schema » ; la page « Understanding Feature Types and Attributes » ne donne pas de définition d'un reader au-delà de « About Workspaces ». Aucune source indépendante de Safe Software n'a été lue sur la définition d'un reader ou d'un type d'entité : le guide d'Ordnance Survey n'emploie les termes que dans des étapes. À sourcer."
+  - question: Q5
+    manque: "Comment une entité atteint un type d'entité de sortie : la page lue décrit la liaison de type d'entité à type d'entité (feature mapping) et le fanout, mais pas, en une phrase lue, le sort d'une entité arrivant à un writer. À sourcer."
+  - question: Q6
+    manque: "Le comportement d'un attribut absent du schéma de sortie est lu seulement dans un exercice de formation de l'éditeur (reader vers writer, ports jaune et rouge). Les modes Automatique, Manuel et Dynamique du schéma d'un type d'entité de writer (page « Editing Writer Feature Types ») n'ont pas été reportés en affirmations faute d'extrait clair sur l'attribut non défini. À vérifier à la main."
+  - question: Q4
+    manque: "Pages refusées ou illisibles, non utilisées : support.safe.com (HTTP 403), e-education.psu.edu (HTTP 404 sur les adresses trouvées), toolkit.data.wa.gov.au (HTTP 403), 3d.bk.tudelft.nl (connexion coupée), community.esri.com (page rendue par script). À vérifier à la main."
+visuels:
+  - id: VIS-01
+    url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Understanding_Schema.htm
+    editeur: Safe Software
+    description: "Un schéma de reader et un schéma de writer tels qu'ils apparaissent dans FME Workbench, avec les ports d'attributs verts, jaunes et rouges."
+    utilite: "Montrer la source à gauche, la destination à droite et l'état des liaisons d'attributs."
+    usage: REDRAW
+  - id: VIS-02
+    url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FeatureTypeProperties/feature_types_attributes.htm
+    editeur: Safe Software
+    description: "Un classeur Excel : fichier = jeu de données, feuilles = types d'entités, lignes = entités, colonnes = attributs, avec leur représentation dans Workbench."
+    utilite: "Relier un fichier connu du public aux notions de jeu de données, type d'entité, entité et attribut."
+    usage: REDRAW
