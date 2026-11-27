@@ -1,0 +1,26 @@
+{
+  "id": "FME001-M01-L01-essai",
+  "title": "FME : partager les données géographiques entre logiciels (essai chaîne et illustrations)",
+  "lang": "fr",
+  "signature": "carte",
+  "program": "FME001",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "voiceStart": 0.4,
+  "tail": 0.8,
+  "storyboard": "content/storyboard.md",
+  "manifest": "content/voice/voice-manifest.yaml",
+  "beats": "content/beats.json",
+  "theme": "content/design/theme.json",
+  "assets": "content/design/assets",
+  "speechRate": {
+    "charsPerSecond": 14.5,
+    "comma": 0.25,
+    "stop": 0.45,
+    "paragraph": 0.8
+  },
+  "intro": 3,
+  "acknowledgeRemotionLicense": false,
+  "programColor": "#00A64F"
+}

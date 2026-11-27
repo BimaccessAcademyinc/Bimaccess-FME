@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 34" width="300" height="34" role="img" aria-label="Échelle graphique, sans chiffres">
+<rect x="2" y="12" width="290" height="12" fill="#FBFCF8" stroke="#23281F" stroke-width="1.5"/>
+<path d="M2 12 H60 V24 H2 Z M118 12 H176 V24 H118 Z M234 12 H292 V24 H234 Z" fill="#23281F"/>
+<path d="M2 4 V32 M60 6 V30 M118 6 V30 M176 6 V30 M234 6 V30 M292 4 V32" fill="none" stroke="#23281F" stroke-width="1.5"/>
+</svg>

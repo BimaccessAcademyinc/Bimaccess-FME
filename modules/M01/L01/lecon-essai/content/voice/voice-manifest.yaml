@@ -1,0 +1,260 @@
+# Manifeste voix : écrit par scripts/voice.mjs (extract, generate), relu par npm run sync.
+# Ne pas éditer à la main audio, alignment, duration_s, text_hash, synth_hash ; les repères
+# suggested_beats peuvent se corriger (locution dite mot pour mot, unique dans le clip).
+storyboard: content/storyboard.md
+provider: elevenlabs
+endpoint: POST /v1/text-to-speech/{voice_id}/with-timestamps
+voice_id: IPgYtHTNLjC7Bq7IPHrm
+voice_name: Alexandre Boutin - Professional
+model_id: eleven_v4
+language_code: fr
+output_format: mp3_44100_128
+voice_settings:
+  stability: 0.5
+  similarity_boost: 0.9
+  style: 0
+  use_speaker_boost: true
+  speed: 1
+dictionary: content/voice/pronunciations.yaml
+clip_count: 7
+voiced_count: 7
+total_duration_s: 218.426
+total_characters: 3547
+clips:
+  - clip_id: S01-01
+    scene: S01
+    trigger: linear
+    text: |-
+      Au début des années 1990, Don Murray et Dale Lutz travaillent en Colombie-Britannique sur un projet forestier.
+
+      Les entreprises forestières doivent y partager leurs données géographiques avec le gouvernement de la Colombie-Britannique.
+
+      Or les entreprises utilisent des logiciels différents, et le gouvernement ne veut pas leur imposer un même éditeur.
+
+      Chaque entreprise garde donc son logiciel, et l'échange doit pourtant se faire.
+
+      Murray et Lutz voient de près ce problème à résoudre.
+
+      Comment faire passer les mêmes données géographiques d'un logiciel à l'autre ?
+    tts_text: |-
+      Au début des années mille neuf cent quatre-vingt-dix, Don Murray et Dale Lutz travaillent en Colombie-Britannique sur un projet forestier.
+
+      Les entreprises forestières doivent y partager leurs données géographiques avec le gouvernement de la Colombie-Britannique.
+
+      Or les entreprises utilisent des logiciels différents, et le gouvernement ne veut pas leur imposer un même éditeur.
+
+      Chaque entreprise garde donc son logiciel, et l'échange doit pourtant se faire.
+
+      Murray et Lutz voient de près ce problème à résoudre.
+
+      Comment faire passer les mêmes données géographiques d'un logiciel à l'autre ?
+    dictionary_rules_applied:
+      - "1990"
+    characters: 596
+    text_hash: 28d55643c43069d4
+    synth_hash: 1bb8c5467587be95
+    audio: S01/S01-01.mp3
+    alignment: S01/S01-01.alignment.json
+    duration_s: 33.6
+    suggested_beats:
+      entreprises_forestieres: Entreprises forestières
+      gouvernement_colombie_britannique: Gouvernement de la Colombie-Britannique
+  - clip_id: S02-01
+    scene: S02
+    trigger: linear
+    text: |-
+      Le gouvernement lance un appel d'offres, et Murray et Lutz remportent le contrat.
+
+      De ce contrat naît leur entreprise, Safe Software, fondée en 1993.
+
+      Le gouvernement a son format, SAIF, une norme canadienne d'échange de données géographiques.
+
+      Pour échanger avec lui, les données de chaque logiciel doivent être traduites vers ce format.
+
+      Murray et Lutz commencent par ce travail : leur entreprise développe une technologie de traduction pour SAIF. Son nom, Safe, vient d'ailleurs de ce format.
+
+      Trois ans après la fondation, en 1996, leur entreprise sort la première version de son logiciel, FME, à l'origine Feature Manipulation Engine.
+
+      FME fait passer les données géographiques d'un logiciel à l'autre.
+
+      Aujourd'hui, l'éditeur dit simplement FME. Son siège est à Surrey, en Colombie-Britannique.
+    tts_text: |-
+      Le gouvernement lance un appel d'offres, et Murray et Lutz remportent le contrat.
+
+      De ce contrat naît leur entreprise, Safe Software, fondée en mille neuf cent quatre-vingt-treize.
+
+      Le gouvernement a son format, safe, une norme canadienne d'échange de données géographiques.
+
+      Pour échanger avec lui, les données de chaque logiciel doivent être traduites vers ce format.
+
+      Murray et Lutz commencent par ce travail : leur entreprise développe une technologie de traduction pour safe. Son nom, Safe, vient d'ailleurs de ce format.
+
+      Trois ans après la fondation, en mille neuf cent quatre-vingt-seize, leur entreprise sort la première version de son logiciel, F. M. E., à l'origine Feature Manipulation Engine.
+
+      F. M. E. fait passer les données géographiques d'un logiciel à l'autre.
+
+      Aujourd'hui, l'éditeur dit simplement F. M. E.. Son siège est à Surrey, en Colombie-Britannique.
+    dictionary_rules_applied:
+      - SAIF
+      - "1993"
+      - "1996"
+      - FME
+    characters: 876
+    text_hash: 72a450bf8ae6ef66
+    synth_hash: d4f324e8f34206c3
+    audio: S02/S02-01.mp3
+    alignment: S02/S02-01.alignment.json
+    duration_s: 55.6
+    suggested_beats:
+      traduction: Traduction
+      feature_manipulation_engine: Feature Manipulation Engine
+  - clip_id: S03-01
+    scene: S03
+    trigger: linear
+    text: |-
+      SAIF et FME ne désignent pas le même genre de chose.
+
+      SAIF est un format, celui du gouvernement de la Colombie-Britannique. C'est aussi une norme canadienne d'échange de données géographiques.
+
+      FME n'est ni un format ni une norme. C'est un logiciel : un ensemble d'applications qui traitent des données spatiales, le produit phare de Safe Software.
+
+      Il lit des données dans un format et les écrit dans un autre.
+
+      L'éditeur le présente comme une plateforme d'intégration de données. Elle comprend FME Form, pour construire les traitements, et FME Flow, pour les automatiser.
+    tts_text: |-
+      safe et F. M. E. ne désignent pas le même genre de chose.
+
+      safe est un format, celui du gouvernement de la Colombie-Britannique. C'est aussi une norme canadienne d'échange de données géographiques.
+
+      F. M. E. n'est ni un format ni une norme. C'est un logiciel : un ensemble d'applications qui traitent des données spatiales, le produit phare de Safe Software.
+
+      Il lit des données dans un format et les écrit dans un autre.
+
+      L'éditeur le présente comme une plateforme d'intégration de données. Elle comprend F. M. E. Form, pour construire les traitements, et F. M. E. Flow, pour les automatiser.
+    dictionary_rules_applied:
+      - SAIF
+      - FME
+    characters: 593
+    text_hash: 189111e5e7619975
+    synth_hash: afc278237aa4391d
+    audio: S03/S03-01.mp3
+    alignment: S03/S03-01.alignment.json
+    duration_s: 36.64
+  - clip_id: S04-01
+    scene: S04
+    trigger: linear
+    text: |-
+      Traduire une donnée d'un logiciel à l'autre suppose de savoir ce qu'elle contient.
+
+      Sur une carte, un bâtiment apparaît comme un contour dessiné. La donnée, elle, représente le bâtiment réel : on l'appelle une entité géographique.
+
+      C'est sur elle que FME travaille.
+
+      Sa géométrie porte l'information de position, en points, lignes ou surfaces. Ici, le contour forme une surface.
+
+      Ses attributs la décrivent : ici, l'usage, des bureaux. Son système de coordonnées lui donne sa position sur la Terre.
+    tts_text: |-
+      Traduire une donnée d'un logiciel à l'autre suppose de savoir ce qu'elle contient.
+
+      Sur une carte, un bâtiment apparaît comme un contour dessiné. La donnée, elle, représente le bâtiment réel : on l'appelle une entité géographique.
+
+      C'est sur elle que F. M. E. travaille.
+
+      Sa géométrie porte l'information de position, en points, lignes ou surfaces. Ici, le contour forme une surface.
+
+      Ses attributs la décrivent : ici, l'usage, des bureaux. Son système de coordonnées lui donne sa position sur la Terre.
+    dictionary_rules_applied:
+      - FME
+    characters: 503
+    text_hash: 0f5eaf826ad866a4
+    synth_hash: 367c6dd82090e0d2
+    audio: S04/S04-01.mp3
+    alignment: S04/S04-01.alignment.json
+    duration_s: 34
+    suggested_beats:
+      entite_geographique: Entité géographique
+      attributs: Attributs
+      systeme_coordonnees: Système de coordonnées
+  - clip_id: S05-01
+    scene: S05
+    trigger: linear
+    text: |-
+      Une entité quitte son logiciel dans un format de départ, et l'équipe qui la reçoit en attend un autre.
+
+      FME commence par lire les données source.
+
+      Ses outils de transformation manipulent la géométrie et les attributs des données.
+
+      FME peut alors écrire les données de destination dans le format attendu, celui que le logiciel de l'équipe sait ouvrir.
+    tts_text: |-
+      Une entité quitte son logiciel dans un format de départ, et l'équipe qui la reçoit en attend un autre.
+
+      F. M. E. commence par lire les données source.
+
+      Ses outils de transformation manipulent la géométrie et les attributs des données.
+
+      F. M. E. peut alors écrire les données de destination dans le format attendu, celui que le logiciel de l'équipe sait ouvrir.
+    dictionary_rules_applied:
+      - FME
+    characters: 360
+    text_hash: 625471a530c2c56f
+    synth_hash: c49c2ed015dc584a
+    audio: S05/S05-01.mp3
+    alignment: S05/S05-01.alignment.json
+    duration_s: 21.786
+    suggested_beats:
+      format_depart: Format de départ
+      format_attendu: Format attendu
+      lire: Lire
+      outils_transformation: Outils de transformation
+      ecrire: Écrire
+  - clip_id: S06-01
+    scene: S06
+    trigger: linear
+    text: |-
+      Autour de FME, les formats pris en charge forment un large éventail.
+
+      Safe Software décrit FME comme un moteur central au milieu de ces formats.
+
+      Les données se lisent depuis n'importe lequel d'entre eux, et s'écrivent vers n'importe quel autre.
+
+      Pour le problème que Murray et Lutz avaient vu de près, c'est la réponse : un logiciel différent n'empêche pas l'échange.
+
+      C'est aussi la situation de toute équipe qui reçoit des données géographiques d'un autre bureau, sur un autre logiciel.
+    tts_text: |-
+      Autour de F. M. E., les formats pris en charge forment un large éventail.
+
+      Safe Software décrit F. M. E. comme un moteur central au milieu de ces formats.
+
+      Les données se lisent depuis n'importe lequel d'entre eux, et s'écrivent vers n'importe quel autre.
+
+      Pour le problème que Murray et Lutz avaient vu de près, c'est la réponse : un logiciel différent n'empêche pas l'échange.
+
+      C'est aussi la situation de toute équipe qui reçoit des données géographiques d'un autre bureau, sur un autre logiciel.
+    dictionary_rules_applied:
+      - FME
+    characters: 499
+    text_hash: 35fa78d4999653c8
+    synth_hash: 676f0fd1531f172b
+    audio: S06/S06-01.mp3
+    alignment: S06/S06-01.alignment.json
+    duration_s: 29.44
+    suggested_beats:
+      formats_pris_charge: Formats pris en charge
+      moteur: Moteur
+  - clip_id: S07-01
+    scene: S07
+    trigger: linear
+    text: "Reste à savoir où vit une entité géographique : dans quel format est-elle stockée, et dans quel système de coordonnées ?"
+    tts_text: "Reste à savoir où vit une entité géographique : dans quel format est-elle stockée, et dans quel système de coordonnées ?"
+    dictionary_rules_applied: []
+    characters: 120
+    text_hash: 25b538f9ccf68677
+    synth_hash: 7dd05b36e59f82a8
+    audio: S07/S07-01.mp3
+    alignment: S07/S07-01.alignment.json
+    duration_s: 7.36
+    suggested_beats:
+      entite_geographique: Entité géographique
+      format: Format
+      systeme_coordonnees: Système de coordonnées
