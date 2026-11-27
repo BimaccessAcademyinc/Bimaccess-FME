@@ -1,6 +1,6 @@
 {
  "scene": "S01",
- "dessin": "A territory map. A large irregular region outline drawn as a dash-dot ink boundary line, spanning from 4% to 96% of the width and from 22% to 79% of the height; inside, a winding blue river (#BFD5E6 fill, ink edge) and a few faint brown contour lines.\nNear the top center (x 40-56%, y 24-36%): a small pale card containing two small standing human silhouettes side by side.\nOn the left (x 8-26%, y 40-54%): a pale card with one standing silhouette and three small conifer tree symbols (forestry companies).\nOn the right (x 72-90%, y 40-54%): a pale card with one standing silhouette and a small official building pictogram with columns and a pediment (government).\nFrom the right edge of the left card, a thick blue horizontal line goes to the right and stops at about 48% of the width, ending on a small gold square marker with pale yellow fill.\nBelow the left card (x 6-32%, y 59-77%): three small software windows side by side, each a rectangle with a title bar and three tiny buttons, each with a different interior drawing: a map polygon, a table grid, a line chart.",
+ "dessin": "A territory map. A large irregular region outline drawn as a dash-dot ink boundary line, spanning from 4% to 96% of the width and from 22% to 79% of the height; inside, a winding blue river (#BFD5E6 fill, ink edge) and a few faint brown contour lines.\nNear the top center (x 40-56%, y 24-36%): a small pale card containing two small standing MALE silhouettes side by side (two men, both in trousers, no dress, no skirt).\nOn the left (x 8-26%, y 40-54%): a pale card with one standing silhouette and three small conifer tree symbols (forestry companies).\nOn the right (x 72-90%, y 40-54%): a pale card with one standing silhouette and a small official building pictogram with columns and a pediment (government).\nFrom the right edge of the left card, a thick blue horizontal line goes to the right and stops at about 48% of the width, ending on a small gold square marker with pale yellow fill.\nBelow the left card (x 6-32%, y 59-77%): three small software windows side by side, each a rectangle with a title bar and three tiny buttons, each with a different interior drawing: a map polygon, a table grid, a line chart.",
  "elements": {
   "territoire": "the dash-dot boundary outline of the territory with its river and contour lines",
   "fondateurs": "the small card at the top with two human silhouettes",
@@ -96,5 +96,18 @@
    "el": "fondateurs",
    "at": "Murray et Lutz voient"
   }
- ]
+ ],
+ "biblio": {
+  "fondateurs": {
+   "biblio": "fondateurs-murray-lutz"
+  }
+ },
+ "zones": {
+  "fondateurs": [
+   840,
+   250,
+   240,
+   138
+  ]
+ }
 }

@@ -107,16 +107,16 @@
  "logos": [
   {
    "nom": "fme-logo",
-   "x": 1335,
-   "y": 688,
+   "x": 1286,
+   "y": 700,
    "w": 200,
    "at": "FME n'est ni un format"
   }
  ],
  "zones": {
   "logo": [
-   1335,
-   688,
+   1286,
+   700,
    200,
    96
   ],
@@ -180,11 +180,6 @@
  "source": {
   "x": 1448,
   "bas": 178
- },
- "biblio": {
-  "saif": {
-   "biblio": "feuille-saif"
-  }
  },
  "couleurs": {
   "route-lire": "#2F6DA8",

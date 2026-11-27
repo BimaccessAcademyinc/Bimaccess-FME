@@ -1,6 +1,6 @@
 {
  "scene": "S02",
- "dessin": "A horizontal timeline across the sheet at 57% of the height, from 4% to 76% of the width: a thick ink line ending on the right with an open solid arrowhead. Small year cells (short vertical ticks every 4% of width) only between 34% and 62% of the width.\nTwo milestones on the timeline: a tall vertical ink tick with a round dot at 34% of the width, and another at 62% of the width.\nAt the start of the timeline, top left (x 4-17%, y 24-50%): a pale document sheet with an official round seal pictogram in it (a government contract).\nNext to it (x 19-29%, y 28-46%): a small pale card with two standing human silhouettes.\nAbove the timeline between the milestones (x 44-55%, y 24-46%): a pale format sheet with a simple map pattern inside (parcels and a road).\nLeft of it (x 33-39%, y 24-48%): three tiny software windows stacked vertically, each with a title bar.\nFrom each tiny window, a thin red route (#C4472B, round caps) goes right into the format sheet (three converging red routes).\nOn the far right, away from the timeline (x 82-94%, y 26-44%): a small pale card with a little house pictogram and a location pin (headquarters).\nKeep empty: the area below the timeline (y 60-80%) everywhere.",
+ "dessin": "A horizontal timeline across the lower middle of the sheet: a thick ink line that starts near the left edge and ends, about three quarters of the way across, on an open solid arrowhead. Short year ticks only on the stretch between the two milestones.\nTwo milestones on the timeline, drawn as tall vertical ink ticks with a round dot on top: the first one third of the way across, the second a little past the middle.\nTop left, at the start of the timeline: a pale document sheet with a plain round seal in it: a double ring with a small plain star inside, no eagle, no animal, no national emblem (a government contract). Next to it: a small pale card with two standing male silhouettes (two men).\nAbove the timeline, between the two milestones: a pale format sheet with a simple map pattern inside (parcels and a road). Just left of it: three tiny software windows stacked vertically, each with a title bar. From each tiny window, a thin red route with round caps goes right into the format sheet.\nFar right, well away from the timeline: a small pale card with a little house pictogram and a location pin.\nKeep the area below the timeline completely empty. Absolutely no numbers, no percentages, no labels, no letters anywhere.",
  "elements": {
   "frise": "the horizontal timeline line with its arrowhead (without the milestones)",
   "contrat": "the document sheet with the round seal at the top left",
@@ -80,8 +80,9 @@
    "ecran": 2,
    "role": "etiquette",
    "el": "fondateurs",
-   "pos": "dessus",
-   "at": 0
+   "pos": "droite",
+   "at": 0,
+   "w": 260
   },
   {
    "ecran": 3,
@@ -124,9 +125,9 @@
   {
    "ecran": 8,
    "role": "rubrique",
-   "el": "jalon1996",
+   "el": "logo-fme",
    "pos": "dessous",
-   "dy": 150,
+   "dy": 8,
    "at": "à l'origine Feature Manipulation Engine",
    "w": 420
   },
@@ -145,10 +146,9 @@
  "logos": [
   {
    "nom": "fme-logo",
-   "el": "jalon1996",
-   "pos": "dessous",
-   "dy": 62,
-   "w": 180,
+   "x": 1300,
+   "y": 450,
+   "w": 200,
    "at": "la première version de son logiciel"
   }
  ],
@@ -167,7 +167,7 @@
   }
  ],
  "source": {
-  "x": 110,
+  "x": 1500,
   "bas": 830
  },
  "biblio": {
@@ -177,5 +177,13 @@
  },
  "couleurs": {
   "routes": "#C4472B"
+ },
+ "zones": {
+  "logo-fme": [
+   1300,
+   450,
+   200,
+   96
+  ]
  }
 }

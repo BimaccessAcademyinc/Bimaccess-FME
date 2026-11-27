@@ -82,3 +82,9 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 - Méthode pour la rentabilité (proposition d'Ilyas) : signature d'image du programme dans `design/style-image.md` et image de référence `design/references/style-carte.png` ; bibliothèque `design/bibliotheque/` (fondateurs réutilisés en S02 et S06, feuille SAIF de S02 en S03) ; cache des dessins par empreinte de l'invite ; gabarits de composition `harnais/skills/planche-image/gabarits.md`.
 - Mesures : 22,4 min de session (outillage compris), un seul appel externe (repérage de S04, environ 0,005 $) ; tracés de la leçon environ 1,3 Mo.
 - Reste : route bleue de S03 écrasée par le vectoriseur (tracer les routes par le code à terme) ; feuilles de S06 sans passage du tireté au plein.
+
+## 2026-11-27 · Planches en 4K, relecture des symboles
+
+- Constat d'Ilyas : images extrêmement pixelisées. Cause : sans réglage, le modèle d'image renvoie environ 1376 × 768, agrandi à 1920 px puis affiché à 2× sur un écran haute définition. Correction : `imageSize` « 4K » (5504 × 3072, gardé à 3840 × 2160), vectorisation faite sur la 4K puis ramenée à la composition ; nette sur écran haute définition.
+- Relecture à l'agrandissement : le modèle avait dessiné un homme et une femme pour les deux fondateurs, un sceau à l'aigle pour le contrat du gouvernement de la Colombie-Britannique, et des pourcentages sous la frise (repris de l'invite). Corrigé dans les plans ; règle ajoutée au skill (relecture des symboles en premier, positions en mots sur une échelle).
+- Mesures : 12 images 4K (essai compris, trois regénérations), environ 3,80 $ ; 11 repérages, environ 0,05 $ ; 30 min de session.

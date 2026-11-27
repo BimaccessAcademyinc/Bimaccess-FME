@@ -44,6 +44,10 @@ API = "https://generativelanguage.googleapis.com/v1beta/models/{}:generateConten
 IMAGE = os.environ.get("PLANCHE_MODELE_IMAGE", "gemini-3-pro-image")
 VISION = os.environ.get("PLANCHE_MODELE_VISION", "gemini-3.5-flash")
 W, H = 1920, 1080
+# Résolution du dessin : « 4K » (5504 × 3072, gardé à 3840 × 2160, net sur un écran haute définition).
+# Sans réglage, le modèle renvoie environ 1376 × 768 : agrandi à 1920 px, l'image est floue et pixelisée.
+TAILLE = os.environ.get("PLANCHE_TAILLE", "4K")
+SOURCE_W, SOURCE_H = 3840, 2160
 
 STYLE = """Flat vector illustration in the style of a printed topographic map sheet (Swiss or IGN cartography), seen from above or as simple flat pictograms.
 Background: ONE flat uniform color #F1F3EC everywhere, edge to edge. No paper texture, no border, no frame, no grid, no graticule, no margin decoration, no compass, no scale bar, no shadow, no gradient, no 3D.
@@ -107,7 +111,7 @@ def style_du_programme(style: Path | None) -> str:
 
 def cle_dessin(texte: str, ref: Path | None) -> str:
     import hashlib
-    h = hashlib.sha256((IMAGE + "\n" + texte).encode())
+    h = hashlib.sha256((IMAGE + "\n" + TAILLE + "\n" + texte).encode())
     if ref and ref.exists():
         h.update(ref.read_bytes())
     return h.hexdigest()[:16]
@@ -127,7 +131,7 @@ def dessiner(plan: dict, dossier: Path, ref: Path | None, etape: str, style: Pat
     fcle = dossier / f"{sid}.cle"
     if not forcer and (dossier / f"{sid}.png").exists() and fcle.exists() and fcle.read_text().strip() == cle:
         return dossier / f"{sid}.png"
-    corps = {"contents": [{"parts": parts}], "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "16:9"}}}
+    corps = {"contents": [{"parts": parts}], "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "16:9", "imageSize": TAILLE}}}
     d = appel(IMAGE, corps, f"{etape} dessin {sid}")
     for c in d.get("candidates", []):
         for p in c.get("content", {}).get("parts", []):
@@ -135,7 +139,7 @@ def dessiner(plan: dict, dossier: Path, ref: Path | None, etape: str, style: Pat
             if data:
                 out = dossier / f"{sid}.png"
                 from PIL import Image
-                img = Image.open(io.BytesIO(base64.b64decode(data))).convert("RGB").resize((W, H), Image.LANCZOS)
+                img = Image.open(io.BytesIO(base64.b64decode(data))).convert("RGB").resize((SOURCE_W, SOURCE_H), Image.LANCZOS)
                 img.save(out)
                 fcle.write_text(cle + "\n")
                 return out
@@ -151,7 +155,12 @@ def reperer(plan: dict, dossier: Path, etape: str) -> Path:
         '{"id": "<id>", "box_2d": [ymin, xmin, ymax, xmax]} normalized to 0-1000, tight around the drawn pixels of that element '
         "(include its whole outline, nothing of its neighbours). If an element is absent, return box_2d null.\n" + liste
     )
-    corps = {"contents": [{"parts": [b64(png), {"text": invite}]}], "generationConfig": {"responseMimeType": "application/json", "temperature": 0}}
+    # La vision n'a pas besoin de la 4K : une copie JPEG à la taille de composition, plus légère à envoyer
+    from PIL import Image
+    tampon = io.BytesIO()
+    Image.open(png).convert("RGB").resize((W, H), Image.LANCZOS).save(tampon, "JPEG", quality=90)
+    vue = {"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(tampon.getvalue()).decode()}}
+    corps = {"contents": [{"parts": [vue, {"text": invite}]}], "generationConfig": {"responseMimeType": "application/json", "temperature": 0}}
     d = appel(VISION, corps, f"{etape} reperage {sid}")
     texte = "".join(p.get("text", "") for c in d.get("candidates", []) for p in c.get("content", {}).get("parts", []))
     boites = {}
@@ -186,7 +195,8 @@ def detourer(sid: str, dossier: Path) -> Path:
         cible = np.array([int(hexa[i:i + 2], 16) for i in (1, 3, 5)], dtype=np.float32)
         proche = np.sqrt(((img - cible) ** 2).sum(axis=2)) < 75
         dans = np.zeros(proche.shape, bool)
-        x, y, w, h = boites.get(el, [0, 0, W, H])
+        k = img.shape[1] / W
+        x, y, w, h = [int(v * k) for v in boites.get(el, [0, 0, W, H])]
         dans[max(0, y - 8):y + h + 8, max(0, x - 8):x + w + 8] = True
         m = proche & dans
         # dilatation de 2 px : les bords adoucis du trait suivent la couleur
@@ -198,7 +208,7 @@ def detourer(sid: str, dossier: Path) -> Path:
         alpha = np.where(m, 0, alpha)
     rgba = np.dstack([img, alpha * 255]).astype(np.uint8)
     out = dossier / f"{sid}.webp"
-    Image.fromarray(rgba, "RGBA").save(out, "WEBP", quality=88, method=6)
+    Image.fromarray(rgba, "RGBA").save(out, "WEBP", quality=82, method=6)
     return out
 
 
@@ -214,8 +224,10 @@ def _bbox(d: str, tx: float, ty: float) -> tuple[float, float, float, float]:
 
 
 def tracés(png: Path) -> list[tuple[str, str, float, float]]:
-    """Image → tracés vectoriels (d, couleur, tx, ty), dans l'ordre d'empilement."""
+    """Image → tracés vectoriels (d, couleur, tx, ty) en px de composition, dans l'ordre d'empilement."""
     import re
+    from PIL import Image
+    width = Image.open(png).size[0]
     import tempfile
     import vtracer
     with tempfile.NamedTemporaryFile(suffix=".svg") as tmp:
@@ -223,7 +235,9 @@ def tracés(png: Path) -> list[tuple[str, str, float, float]]:
                                         filter_speckle=6, color_precision=6, layer_difference=24, corner_threshold=60,
                                         length_threshold=4.0, splice_threshold=45, path_precision=1)
         svg = Path(tmp.name).read_text()
-    return [(d.strip(), f, float(x), float(y)) for d, f, x, y in re.findall(r'<path d="([^"]+)" fill="([^"]+)" transform="translate\(([-\d.]+),([-\d.]+)\)"/>', svg)]
+    k = W / width
+    echelle = (lambda d: re.sub(r"-?\d+\.?\d*", lambda m: f"{float(m.group()) * k:.1f}", d)) if k != 1 else (lambda d: d)
+    return [(echelle(d.strip()), f, float(x) * k, float(y) * k) for d, f, x, y in re.findall(r'<path d="([^"]+)" fill="([^"]+)" transform="translate\(([-\d.]+),([-\d.]+)\)"/>', svg)]
 
 
 def vectoriser(sid: str, dossier: Path) -> Path:
@@ -237,6 +251,7 @@ def vectoriser(sid: str, dossier: Path) -> Path:
     plan = json.loads((dossier / f"{sid}.json").read_text(encoding="utf-8"))
     boites = json.loads((dossier / f"{sid}.boites.json").read_text(encoding="utf-8"))["boites"]
     img = np.asarray(Image.open(dossier / f"{sid}.png").convert("RGB")).astype(np.float32)
+    k = img.shape[1] / W
     bord = np.concatenate([img[:12].reshape(-1, 3), img[-12:].reshape(-1, 3)])
     fond = np.median(bord, axis=0)
     # Seuls les éléments que le plan anime reçoivent des tracés (révélés, déplacés, de bibliothèque)
@@ -303,7 +318,7 @@ def vectoriser(sid: str, dossier: Path) -> Path:
             px, py, pw, ph = boites[parent]
             if bx >= px and by >= py and bx + bw <= px + pw and by + bh <= py + ph:
                 y0, y1, x0, x1 = max(0, by - 14), min(H, by + bh + 14), max(0, bx - 14), min(W, bx + bw + 14)
-                zone = img[y0:y1, x0:x1].reshape(-1, 3)
+                zone = img[int(y0 * k):int(y1 * k), int(x0 * k):int(x1 * k)].reshape(-1, 3)
                 c = np.median(zone, axis=0).astype(int)
                 fonds[e] = "#%02x%02x%02x" % tuple(c)
     out = dossier / f"{sid}.traces.json"
@@ -322,7 +337,9 @@ def extraire(sid: str, dossier: Path, el: str, ident: str, biblio: Path, descrip
         raise RuntimeError(f"{sid} : aucun tracé pour « {el} » (élément en trame ?)")
     biblio.mkdir(parents=True, exist_ok=True)
     (biblio / f"{ident}.json").write_text(json.dumps({"id": ident, "w": bw, "h": bh, "traces": paths}, separators=(",", ":")), encoding="utf-8")
-    Image.open(dossier / f"{sid}.png").crop((bx, by, bx + bw, by + bh)).save(biblio / f"{ident}.png")
+    src = Image.open(dossier / f"{sid}.png")
+    k = src.size[0] / W
+    src.crop((int(bx * k), int(by * k), int((bx + bw) * k), int((by + bh) * k))).save(biblio / f"{ident}.png")
     fiche = biblio / "bibliotheque.yaml"
     idx = (yaml.safe_load(fiche.read_text(encoding="utf-8")) if fiche.exists() else None) or {"elements": {}}
     plan = json.loads((dossier / f"{sid}.json").read_text(encoding="utf-8"))

@@ -66,12 +66,15 @@ python3 $S scenes --planches $P --vers <projet>/src/lesson/scenes --biblio desig
 
 ## 3. Relecture (ce qui se regarde, dans cet ordre)
 
+0. Les symboles, à l'agrandissement : personnes (nombre, genre : deux fondateurs hommes ne sont pas un couple), emblèmes et sceaux (jamais un emblème national qui n'est pas celui du sujet), aucun chiffre ni lettre dessiné. Le modèle d'image complète ce qu'on ne lui dit pas : préciser dans `dessin` ce qui porte un sens.
 1. Les boîtes sur l'image (`Sxx.boites.json`) : un élément absent ou mal encadré se corrige dans `elements` (description plus précise), puis `reperer` seul (quelques centimes).
 2. Les captures en cours de tracé : un élément qui paraît trop tôt est un tracé rangé dans le mauvais élément (une boîte trop large, une route : `couleurs`).
 3. L'image finale : textes, source, rien sous les sous-titres ni dans la zone d'action.
 
 ## 4. Limites connues
 
+- Résolution : dessin en « 4K » (`PLANCHE_TAILLE`, défaut), gardé à 3840 × 2160 ; sans ce réglage le modèle renvoie environ 1376 × 768, flou et pixelisé une fois agrandi. Coût environ 0,31 $ l'image au lieu de 0,13 $.
+- Une position en % dans `dessin` peut être dessinée comme texte : écrire les positions en mots (« un tiers de la largeur ») pour les objets placés sur une échelle (frise, axe).
 - Une trame dense (plus de 400 tracés) reste en image et se découvre par balayage, sans tracé.
 - Un trait relié à un autre (jalon sur la frise) forme un seul tracé : il paraît avec lui ; le décrire comme objet séparé dans `dessin` (« a tick above the line, not touching it »).
 - Les routes très fines peuvent sortir écrasées du vectoriseur : à terme, les tracer par le code (`Trace`) sur les points donnés par la vision.
