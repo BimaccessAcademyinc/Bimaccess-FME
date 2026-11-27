@@ -1,296 +1,321 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1112" width="1400" height="1112" role="img" aria-label="La chaîne du pilote FME001 en essai">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1292" width="1400" height="1292" role="img" aria-label="La chaîne du pilote FME001 en essai">
 <title>La chaîne du pilote FME001 en essai</title>
 <style>
 .titre{font:600 26px 'Source Serif 4', Georgia, 'Times New Roman', serif} .soustitre{font:italic 14px 'Source Serif 4', Georgia, 'Times New Roman', serif} .orch{font:600 12px 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;letter-spacing:.12em}
 .piste{font:600 12px 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;letter-spacing:.18em} .role{font:600 10.5px 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;letter-spacing:.13em}
 .num{font:600 12px 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif} .main{font:600 15px 'Source Serif 4', Georgia, 'Times New Roman', serif} .outil{font:10px ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'DejaVu Sans Mono', monospace} .fichier{font:italic 11.5px 'Source Serif 4', Georgia, 'Times New Roman', serif}
-.lien{font:italic 11.5px 'Source Serif 4', Georgia, 'Times New Roman', serif} .leg{font:600 11px 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;letter-spacing:.1em} .note{font:12px 'Source Serif 4', Georgia, 'Times New Roman', serif} .mini{font:600 10px 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;letter-spacing:.1em}
+.lien{font:italic 11.5px 'Source Serif 4', Georgia, 'Times New Roman', serif} .modele{font:600 10.5px ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'DejaVu Sans Mono', monospace} .skill{font:italic 11px 'Source Serif 4', Georgia, 'Times New Roman', serif} .leg{font:600 11px 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;letter-spacing:.1em} .note{font:12px 'Source Serif 4', Georgia, 'Times New Roman', serif} .mini{font:600 10px 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;letter-spacing:.1em}
 </style>
 <defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#23281F"/></marker><marker id="pointe-retour" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C4472B"/></marker><marker id="pointe-cycle" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1E6E3C"/></marker></defs>
-<rect width="1400" height="1112" fill="#F1F3EC"/>
-<rect x="8" y="8" width="1384" height="1096" fill="none" stroke="#23281F" stroke-width="2"/>
+<rect width="1400" height="1292" fill="#F1F3EC"/>
+<rect x="8" y="8" width="1384" height="1276" fill="none" stroke="#23281F" stroke-width="2"/>
 <text x="44" y="46" class="titre" fill="#23281F">La chaîne du pilote FME001, telle qu'elle est en essai</text>
 <text x="44" y="68" class="soustitre" fill="#545B4C">Pas une ligne : trois pistes en parallèle, des retours à chaque porte et à chaque contrôle, un cycle d'une leçon à la suivante · 2026-11-27</text>
-<text x="1356" y="46" class="orch" fill="#545B4C" text-anchor="end">AGENT PRINCIPAL : ORCHESTRE, DÉLÈGUE, MESURE</text>
-<text x="314" y="292" class="piste" fill="#545B4C">PISTE VOIX</text>
-<text x="584" y="432" class="piste" fill="#545B4C">PISTE PLANCHES</text>
-<text x="564" y="680" class="piste" fill="#545B4C">PISTE GABARITS</text>
-<text x="314" y="774" class="piste" fill="#545B4C">CONTRÔLE ET LIVRAISON</text>
-<rect x="44" y="128" width="230" height="118" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<text x="1356" y="46" class="orch" fill="#545B4C" text-anchor="end">AGENT PRINCIPAL (OPUS 5.5) : ORCHESTRE, DÉLÈGUE, MESURE</text>
+<text x="314" y="314" class="piste" fill="#545B4C">PISTE VOIX</text>
+<text x="584" y="484" class="piste" fill="#545B4C">PISTE PLANCHES</text>
+<text x="564" y="778" class="piste" fill="#545B4C">PISTE GABARITS</text>
+<text x="314" y="870" class="piste" fill="#545B4C">CONTRÔLE ET LIVRAISON</text>
+<rect x="44" y="128" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="44" y1="152" x2="274" y2="152" stroke="#23281F" stroke-width="0.8"/>
 <text x="54" y="144" class="num" fill="#23281F">1</text>
 <text x="74" y="144" class="role" fill="#545B4C">CHERCHEURS · VÉRIFICATEUR</text>
 <text x="54" y="172" class="main" fill="#23281F">Pack de recherche</text>
-<text x="54" y="190" class="outil" fill="#545B4C">skill pack-recherche</text>
-<text x="54" y="203" class="outil" fill="#545B4C">WebSearch, lire_page.py</text>
-<text x="54" y="216" class="outil" fill="#545B4C">check_pack.py</text>
-<line x1="54" y1="222" x2="264" y2="222" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="54" y="237" class="fichier" fill="#1E6E3C">affirmations.yaml</text>
-<rect x="314" y="128" width="230" height="118" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
+<text x="54" y="190" class="modele" fill="#2F6DA8">Sonnet·medium ×3 · Opus·high</text>
+<text x="54" y="204" class="skill" fill="#1E6E3C">skill pack-recherche</text>
+<text x="54" y="218" class="outil" fill="#545B4C">WebSearch, lire_page.py</text>
+<text x="54" y="231" class="outil" fill="#545B4C">check_pack.py</text>
+<line x1="54" y1="244" x2="264" y2="244" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="54" y="259" class="fichier" fill="#1E6E3C">affirmations.yaml</text>
+<rect x="314" y="128" width="230" height="140" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
 <line x1="314" y1="152" x2="544" y2="152" stroke="#2F6DA8" stroke-width="0.8"/>
 <text x="324" y="144" class="num" fill="#23281F">2</text>
 <text x="344" y="144" class="role" fill="#2F6DA8">ILYAS</text>
 <text x="324" y="172" class="main" fill="#23281F">Porte de l&#x27;expert</text>
 <text x="324" y="190" class="outil" fill="#545B4C">ce que les sources</text>
 <text x="324" y="203" class="outil" fill="#545B4C">ne tranchent pas</text>
-<line x1="324" y1="222" x2="534" y2="222" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="324" y="237" class="fichier" fill="#1E6E3C">porte-expert.md</text>
-<rect x="584" y="128" width="230" height="118" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<line x1="324" y1="244" x2="534" y2="244" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="324" y="259" class="fichier" fill="#1E6E3C">porte-expert.md</text>
+<rect x="584" y="128" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="584" y1="152" x2="814" y2="152" stroke="#23281F" stroke-width="0.8"/>
 <text x="594" y="144" class="num" fill="#23281F">3</text>
 <text x="614" y="144" class="role" fill="#545B4C">SCÉNARISTE · 3 RELECTEURS</text>
 <text x="594" y="172" class="main" fill="#23281F">Storyboard</text>
-<text x="594" y="190" class="outil" fill="#545B4C">skill scenario (Studio)</text>
-<text x="594" y="203" class="outil" fill="#545B4C">relecture en aveugle</text>
-<text x="594" y="216" class="outil" fill="#545B4C">lint-storyboard.mjs</text>
-<line x1="594" y1="222" x2="804" y2="222" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="594" y="237" class="fichier" fill="#1E6E3C">storyboard.md</text>
-<rect x="854" y="128" width="230" height="118" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
+<text x="594" y="190" class="modele" fill="#2F6DA8">Opus · high (×4)</text>
+<text x="594" y="204" class="skill" fill="#1E6E3C">skills scenario, porte-du-ton</text>
+<text x="594" y="218" class="outil" fill="#545B4C">relecture en aveugle</text>
+<text x="594" y="231" class="outil" fill="#545B4C">lint-storyboard.mjs</text>
+<line x1="594" y1="244" x2="804" y2="244" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="594" y="259" class="fichier" fill="#1E6E3C">storyboard.md</text>
+<rect x="854" y="128" width="230" height="140" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
 <line x1="854" y1="152" x2="1084" y2="152" stroke="#2F6DA8" stroke-width="0.8"/>
 <text x="864" y="144" class="num" fill="#23281F">4</text>
 <text x="884" y="144" class="role" fill="#2F6DA8">ILYAS</text>
 <text x="864" y="172" class="main" fill="#23281F">Porte du ton</text>
 <text x="864" y="190" class="outil" fill="#545B4C">récit, partir du problème,</text>
 <text x="864" y="203" class="outil" fill="#545B4C">dire ce qu&#x27;est l&#x27;objet</text>
-<line x1="864" y1="222" x2="1074" y2="222" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="864" y="237" class="fichier" fill="#1E6E3C">storyboard retenu</text>
-<rect x="1124" y="128" width="230" height="118" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<line x1="864" y1="244" x2="1074" y2="244" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="864" y="259" class="fichier" fill="#1E6E3C">storyboard retenu</text>
+<rect x="1124" y="128" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="1124" y1="152" x2="1354" y2="152" stroke="#23281F" stroke-width="0.8"/>
 <text x="1134" y="144" class="num" fill="#23281F">5</text>
 <text x="1154" y="144" class="role" fill="#545B4C">DIRECTION ARTISTIQUE</text>
 <text x="1134" y="172" class="main" fill="#23281F">Thème et charte</text>
-<text x="1134" y="190" class="outil" fill="#545B4C">seulement sans thème</text>
-<text x="1134" y="203" class="outil" fill="#545B4C">canevas de design</text>
-<text x="1134" y="216" class="outil" fill="#545B4C">4 thèmes, choix d&#x27;Ilyas</text>
-<line x1="1134" y1="222" x2="1344" y2="222" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="1134" y="237" class="fichier" fill="#1E6E3C">CHARTE-FME001.md</text>
-<rect x="44" y="300" width="230" height="118" fill="#FBFCF8" stroke="#C99700" stroke-width="2.2"/>
-<line x1="44" y1="324" x2="274" y2="324" stroke="#C99700" stroke-width="0.8"/>
-<text x="54" y="316" class="num" fill="#23281F">6</text>
-<text x="74" y="316" class="role" fill="#545B4C">VOIX</text>
-<text x="54" y="344" class="main" fill="#23281F">Narration</text>
-<text x="54" y="362" class="outil" fill="#545B4C">ElevenLabs V4</text>
-<text x="54" y="375" class="outil" fill="#545B4C">voice.mjs, controle_oreille</text>
-<text x="54" y="388" class="outil" fill="#545B4C">--approuve caractères</text>
-<line x1="54" y1="394" x2="264" y2="394" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="54" y="409" class="fichier" fill="#1E6E3C">mp3 + alignement</text>
-<rect x="216" y="305" width="50" height="15" fill="#FBF1C8" stroke="#C99700" stroke-width="1"/>
-<text x="241" y="316" class="role" fill="#23281F" text-anchor="middle">PAYANT</text>
-<rect x="314" y="300" width="230" height="118" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
-<line x1="314" y1="324" x2="544" y2="324" stroke="#2F6DA8" stroke-width="0.8"/>
-<text x="324" y="316" class="num" fill="#23281F">7</text>
-<text x="344" y="316" class="role" fill="#2F6DA8">ILYAS</text>
-<text x="324" y="344" class="main" fill="#23281F">Écoute</text>
-<text x="324" y="362" class="outil" fill="#545B4C">prononciation, rythme</text>
-<line x1="324" y1="394" x2="534" y2="394" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="324" y="409" class="fichier" fill="#1E6E3C">voix retenue</text>
-<rect x="44" y="440" width="230" height="118" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
-<line x1="44" y1="464" x2="274" y2="464" stroke="#23281F" stroke-width="0.8"/>
-<text x="54" y="456" class="num" fill="#23281F">8</text>
-<text x="74" y="456" class="role" fill="#545B4C">GRAPHISTE</text>
-<text x="54" y="484" class="main" fill="#23281F">Planche sur le canevas</text>
-<text x="54" y="502" class="outil" fill="#545B4C">skill graphisme (Studio)</text>
-<text x="54" y="515" class="outil" fill="#545B4C">canevas de design (essai 3)</text>
-<text x="54" y="528" class="outil" fill="#545B4C">zones de la charte verrouillées</text>
-<line x1="54" y1="534" x2="264" y2="534" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="54" y="549" class="fichier" fill="#1E6E3C">planche de la scène</text>
-<rect x="322" y="432" width="230" height="118" fill="#FBFCF8" stroke="#C99700" stroke-width="1"/>
-<rect x="318" y="436" width="230" height="118" fill="#FBFCF8" stroke="#C99700" stroke-width="1"/>
-<rect x="314" y="440" width="230" height="118" fill="#FBFCF8" stroke="#C99700" stroke-width="2.2"/>
-<line x1="314" y1="464" x2="544" y2="464" stroke="#C99700" stroke-width="0.8"/>
-<text x="324" y="456" class="num" fill="#23281F">9</text>
-<text x="344" y="456" class="role" fill="#545B4C">GRAPHISTE (OUTIL)</text>
-<text x="324" y="484" class="main" fill="#23281F">Illustrations</text>
-<text x="324" y="502" class="outil" fill="#545B4C">illustrations.py</text>
-<text x="324" y="515" class="outil" fill="#545B4C">Gemini 3.1 Flash Image</text>
-<text x="324" y="528" class="outil" fill="#545B4C">vtracer · --approuve $</text>
-<line x1="324" y1="534" x2="534" y2="534" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="324" y="549" class="fichier" fill="#1E6E3C">assets/*.svg</text>
-<rect x="486" y="445" width="50" height="15" fill="#FBF1C8" stroke="#C99700" stroke-width="1"/>
-<text x="511" y="456" class="role" fill="#23281F" text-anchor="middle">PAYANT</text>
-<rect x="584" y="440" width="230" height="118" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
-<line x1="584" y1="464" x2="814" y2="464" stroke="#2F6DA8" stroke-width="0.8"/>
-<text x="594" y="456" class="num" fill="#23281F">10</text>
-<text x="614" y="456" class="role" fill="#2F6DA8">ILYAS</text>
-<text x="594" y="484" class="main" fill="#23281F">Porte de composition</text>
-<text x="594" y="502" class="outil" fill="#545B4C">valide ou corrige</text>
-<text x="594" y="515" class="outil" fill="#545B4C">à la main sur le canevas</text>
-<line x1="594" y1="534" x2="804" y2="534" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="594" y="549" class="fichier" fill="#1E6E3C">planche validée</text>
-<rect x="854" y="440" width="230" height="118" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
-<line x1="854" y1="464" x2="1084" y2="464" stroke="#23281F" stroke-width="0.8"/>
-<text x="864" y="456" class="num" fill="#23281F">11</text>
-<text x="884" y="456" class="role" fill="#545B4C">SCRIPT</text>
-<text x="864" y="484" class="main" fill="#23281F">Export en données</text>
-<text x="864" y="502" class="outil" fill="#545B4C">planche_vers_donnees</text>
-<text x="864" y="515" class="outil" fill="#545B4C">refuse une planche</text>
-<text x="864" y="528" class="outil" fill="#545B4C">incomplète</text>
-<line x1="864" y1="534" x2="1074" y2="534" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="864" y="549" class="fichier" fill="#1E6E3C">scenes/Sxx.json</text>
-<rect x="44" y="600" width="500" height="118" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
-<line x1="44" y1="624" x2="544" y2="624" stroke="#23281F" stroke-width="0.8"/>
-<text x="54" y="616" class="num" fill="#23281F">12</text>
-<text x="74" y="616" class="role" fill="#545B4C">MEILLEUR MODÈLE · UNE FOIS PAR FORME</text>
-<text x="54" y="644" class="main" fill="#23281F">Gabarits Remotion</text>
-<text x="54" y="662" class="outil" fill="#545B4C">Frise, FicheRubriques ; puis Légende,</text>
-<text x="54" y="675" class="outil" fill="#545B4C">Chaîne, Étoile, Territoire</text>
-<text x="54" y="688" class="outil" fill="#545B4C">skills Remotion 4.0.533 · src/engine/gabarits/</text>
-<line x1="54" y1="694" x2="534" y2="694" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="54" y="709" class="fichier" fill="#1E6E3C">réutilisés par tout le programme</text>
-<rect x="1124" y="300" width="230" height="418" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
-<line x1="1124" y1="324" x2="1354" y2="324" stroke="#23281F" stroke-width="0.8"/>
-<text x="1134" y="316" class="num" fill="#23281F">13</text>
-<text x="1154" y="316" class="role" fill="#545B4C">UN AGENT PAR SCÈNE</text>
-<text x="1134" y="344" class="main" fill="#23281F">Scènes par gabarits</text>
-<text x="1134" y="362" class="outil" fill="#545B4C">modèle intermédiaire</text>
-<text x="1134" y="375" class="outil" fill="#545B4C">données seulement</text>
-<text x="1134" y="388" class="outil" fill="#545B4C">feuille remplie vérifiée</text>
-<rect x="1138" y="412" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
-<text x="1148" y="429" class="mini" fill="#23281F">S01 · AGENT</text>
-<text x="1330" y="429" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
-<rect x="1138" y="446" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
-<text x="1148" y="463" class="mini" fill="#23281F">S02 · AGENT</text>
-<text x="1330" y="463" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
-<rect x="1138" y="480" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
-<text x="1148" y="497" class="mini" fill="#23281F">S03 · AGENT</text>
-<text x="1330" y="497" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
-<rect x="1138" y="514" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
-<text x="1148" y="531" class="mini" fill="#23281F">S04 · AGENT</text>
-<text x="1330" y="531" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
-<rect x="1138" y="548" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
-<text x="1148" y="565" class="mini" fill="#23281F">S05 · AGENT</text>
-<text x="1330" y="565" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
-<rect x="1138" y="582" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
-<text x="1148" y="599" class="mini" fill="#23281F">S06 · AGENT</text>
-<text x="1330" y="599" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
-<rect x="1138" y="616" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
-<text x="1148" y="633" class="mini" fill="#23281F">S07 · AGENT</text>
-<text x="1330" y="633" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
-<line x1="1134" y1="694" x2="1344" y2="694" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="1134" y="709" class="fichier" fill="#1E6E3C">S01 à S07 en parallèle</text>
-<rect x="44" y="782" width="230" height="118" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
-<line x1="44" y1="806" x2="274" y2="806" stroke="#23281F" stroke-width="0.8"/>
-<text x="54" y="798" class="num" fill="#23281F">14</text>
-<text x="74" y="798" class="role" fill="#545B4C">MOTEUR</text>
-<text x="54" y="826" class="main" fill="#23281F">Lecteur de la leçon</text>
-<text x="54" y="844" class="outil" fill="#545B4C">Remotion 4.0.533</text>
-<text x="54" y="857" class="outil" fill="#545B4C">Player, paths, shapes…</text>
-<text x="54" y="870" class="outil" fill="#545B4C">React · Vite</text>
-<line x1="54" y1="876" x2="264" y2="876" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="54" y="891" class="fichier" fill="#1E6E3C">dist/index.html</text>
-<rect x="314" y="782" width="230" height="118" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
-<line x1="314" y1="806" x2="544" y2="806" stroke="#23281F" stroke-width="0.8"/>
-<text x="324" y="798" class="num" fill="#23281F">15</text>
-<text x="344" y="798" class="role" fill="#545B4C">CONTRÔLES AUTOMATIQUES</text>
-<text x="324" y="826" class="main" fill="#23281F">Tests</text>
-<text x="324" y="844" class="outil" fill="#545B4C">npm run check, build</text>
-<text x="324" y="857" class="outil" fill="#545B4C">check-literals.mjs</text>
-<text x="324" y="870" class="outil" fill="#545B4C">test:play (Playwright)</text>
-<line x1="324" y1="876" x2="534" y2="876" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="324" y="891" class="fichier" fill="#1E6E3C">« tout est conforme »</text>
-<rect x="584" y="782" width="230" height="118" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
-<line x1="584" y1="806" x2="814" y2="806" stroke="#23281F" stroke-width="0.8"/>
-<text x="594" y="798" class="num" fill="#23281F">16</text>
-<text x="614" y="798" class="role" fill="#545B4C">AGENT PRINCIPAL</text>
-<text x="594" y="826" class="main" fill="#23281F">Contrôle de l&#x27;agent</text>
-<text x="594" y="844" class="outil" fill="#545B4C">planche par phrase</text>
-<text x="594" y="857" class="outil" fill="#545B4C">symboles, règles</text>
-<text x="594" y="870" class="outil" fill="#545B4C">essais-qualite.md</text>
-<line x1="594" y1="876" x2="804" y2="876" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="594" y="891" class="fichier" fill="#1E6E3C">verdict et corrections</text>
-<rect x="854" y="782" width="230" height="118" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
-<line x1="854" y1="806" x2="1084" y2="806" stroke="#23281F" stroke-width="0.8"/>
-<text x="864" y="798" class="num" fill="#23281F">17</text>
-<text x="884" y="798" class="role" fill="#545B4C">RAILWAY</text>
-<text x="864" y="826" class="main" fill="#23281F">Lecteur de relecture</text>
-<text x="864" y="844" class="outil" fill="#545B4C">fme-reader-review</text>
-<text x="864" y="857" class="outil" fill="#545B4C">à part de CER001</text>
-<line x1="864" y1="876" x2="1074" y2="876" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="864" y="891" class="fichier" fill="#1E6E3C">…/FME001-M01-L01-*</text>
-<rect x="1124" y="782" width="230" height="118" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
-<line x1="1124" y1="806" x2="1354" y2="806" stroke="#2F6DA8" stroke-width="0.8"/>
-<text x="1134" y="798" class="num" fill="#23281F">18</text>
-<text x="1154" y="798" class="role" fill="#2F6DA8">ILYAS</text>
-<text x="1134" y="826" class="main" fill="#23281F">Contrôle final</text>
-<text x="1134" y="844" class="outil" fill="#545B4C">porte du sens</text>
-<text x="1134" y="857" class="outil" fill="#545B4C">sur le lecteur</text>
-<line x1="1134" y1="876" x2="1344" y2="876" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="1134" y="891" class="fichier" fill="#1E6E3C">ce qui est retenu</text>
-<rect x="1124" y="944" width="230" height="118" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
-<line x1="1124" y1="968" x2="1354" y2="968" stroke="#23281F" stroke-width="0.8"/>
-<text x="1134" y="960" class="num" fill="#23281F">19</text>
-<text x="1154" y="960" class="role" fill="#545B4C">AGENT PRINCIPAL</text>
-<text x="1134" y="988" class="main" fill="#23281F">Report dans le harnais</text>
-<text x="1134" y="1006" class="outil" fill="#545B4C">dépôt du cours, plugin Studio</text>
-<text x="1134" y="1019" class="outil" fill="#545B4C">export_studio.py</text>
-<text x="1134" y="1032" class="outil" fill="#545B4C">→ bimaccess-studio</text>
-<line x1="1134" y1="1038" x2="1344" y2="1038" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="1134" y="1053" class="fichier" fill="#1E6E3C">harnais mis à jour</text>
-<path d="M274 187 L314 187" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M544 187 L584 187" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M814 187 L854 187" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M1084 187 L1124 187" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<text x="1134" y="190" class="modele" fill="#2F6DA8">Fable·high (Opus au pilote)</text>
+<text x="1134" y="204" class="skill" fill="#1E6E3C">skill themes-planches</text>
+<text x="1134" y="218" class="outil" fill="#545B4C">canevas de design</text>
+<text x="1134" y="231" class="outil" fill="#545B4C">seulement sans thème</text>
+<line x1="1134" y1="244" x2="1344" y2="244" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="1134" y="259" class="fichier" fill="#1E6E3C">CHARTE-FME001.md</text>
+<rect x="44" y="322" width="230" height="140" fill="#FBFCF8" stroke="#C99700" stroke-width="2.2"/>
+<line x1="44" y1="346" x2="274" y2="346" stroke="#C99700" stroke-width="0.8"/>
+<text x="54" y="338" class="num" fill="#23281F">6</text>
+<text x="74" y="338" class="role" fill="#545B4C">VOIX</text>
+<text x="54" y="366" class="main" fill="#23281F">Narration</text>
+<text x="54" y="384" class="modele" fill="#2F6DA8">Haiku·low + eleven_v4</text>
+<text x="54" y="398" class="skill" fill="#1E6E3C">skills voix, voice-production</text>
+<text x="54" y="412" class="outil" fill="#545B4C">ElevenLabs, voice.mjs</text>
+<text x="54" y="425" class="outil" fill="#545B4C">--approuve caractères</text>
+<line x1="54" y1="438" x2="264" y2="438" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="54" y="453" class="fichier" fill="#1E6E3C">mp3 + alignement</text>
+<rect x="216" y="327" width="50" height="15" fill="#FBF1C8" stroke="#C99700" stroke-width="1"/>
+<text x="241" y="338" class="role" fill="#23281F" text-anchor="middle">PAYANT</text>
+<rect x="314" y="322" width="230" height="140" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
+<line x1="314" y1="346" x2="544" y2="346" stroke="#2F6DA8" stroke-width="0.8"/>
+<text x="324" y="338" class="num" fill="#23281F">7</text>
+<text x="344" y="338" class="role" fill="#2F6DA8">ILYAS</text>
+<text x="324" y="366" class="main" fill="#23281F">Écoute</text>
+<text x="324" y="384" class="outil" fill="#545B4C">prononciation, rythme</text>
+<line x1="324" y1="438" x2="534" y2="438" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="324" y="453" class="fichier" fill="#1E6E3C">voix retenue</text>
+<rect x="44" y="492" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<line x1="44" y1="516" x2="274" y2="516" stroke="#23281F" stroke-width="0.8"/>
+<text x="54" y="508" class="num" fill="#23281F">8</text>
+<text x="74" y="508" class="role" fill="#545B4C">GRAPHISTE</text>
+<text x="54" y="536" class="main" fill="#23281F">Planche sur le canevas</text>
+<text x="54" y="554" class="modele" fill="#2F6DA8">Opus · high</text>
+<text x="54" y="568" class="skill" fill="#1E6E3C">skill graphisme (Studio)</text>
+<text x="54" y="582" class="outil" fill="#545B4C">canevas de design (essai 3)</text>
+<text x="54" y="595" class="outil" fill="#545B4C">zones de la charte verrouillées</text>
+<line x1="54" y1="608" x2="264" y2="608" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="54" y="623" class="fichier" fill="#1E6E3C">planche de la scène</text>
+<rect x="322" y="484" width="230" height="140" fill="#FBFCF8" stroke="#C99700" stroke-width="1"/>
+<rect x="318" y="488" width="230" height="140" fill="#FBFCF8" stroke="#C99700" stroke-width="1"/>
+<rect x="314" y="492" width="230" height="140" fill="#FBFCF8" stroke="#C99700" stroke-width="2.2"/>
+<line x1="314" y1="516" x2="544" y2="516" stroke="#C99700" stroke-width="0.8"/>
+<text x="324" y="508" class="num" fill="#23281F">9</text>
+<text x="344" y="508" class="role" fill="#545B4C">GRAPHISTE (OUTIL)</text>
+<text x="324" y="536" class="main" fill="#23281F">Illustrations</text>
+<text x="324" y="554" class="modele" fill="#2F6DA8">Gemini 3.1 Flash Image 1K</text>
+<text x="324" y="568" class="skill" fill="#1E6E3C">skill planche-image</text>
+<text x="324" y="582" class="outil" fill="#545B4C">illustrations.py · vtracer</text>
+<text x="324" y="595" class="outil" fill="#545B4C">--approuve $</text>
+<line x1="324" y1="608" x2="534" y2="608" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="324" y="623" class="fichier" fill="#1E6E3C">assets/*.svg</text>
+<rect x="486" y="497" width="50" height="15" fill="#FBF1C8" stroke="#C99700" stroke-width="1"/>
+<text x="511" y="508" class="role" fill="#23281F" text-anchor="middle">PAYANT</text>
+<rect x="584" y="492" width="230" height="140" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
+<line x1="584" y1="516" x2="814" y2="516" stroke="#2F6DA8" stroke-width="0.8"/>
+<text x="594" y="508" class="num" fill="#23281F">10</text>
+<text x="614" y="508" class="role" fill="#2F6DA8">ILYAS</text>
+<text x="594" y="536" class="main" fill="#23281F">Porte de composition</text>
+<text x="594" y="554" class="outil" fill="#545B4C">valide ou corrige</text>
+<text x="594" y="567" class="outil" fill="#545B4C">à la main sur le canevas</text>
+<line x1="594" y1="608" x2="804" y2="608" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="594" y="623" class="fichier" fill="#1E6E3C">planche validée</text>
+<rect x="854" y="492" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<line x1="854" y1="516" x2="1084" y2="516" stroke="#23281F" stroke-width="0.8"/>
+<text x="864" y="508" class="num" fill="#23281F">11</text>
+<text x="884" y="508" class="role" fill="#545B4C">SCRIPT</text>
+<text x="864" y="536" class="main" fill="#23281F">Export en données</text>
+<text x="864" y="554" class="modele" fill="#2F6DA8">aucun modèle</text>
+<text x="864" y="568" class="skill" fill="#1E6E3C">skill scenes-gabarits</text>
+<text x="864" y="582" class="outil" fill="#545B4C">planche_vers_donnees</text>
+<text x="864" y="595" class="outil" fill="#545B4C">refuse une planche incomplète</text>
+<line x1="864" y1="608" x2="1074" y2="608" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="864" y="623" class="fichier" fill="#1E6E3C">scenes/Sxx.json</text>
+<rect x="44" y="678" width="500" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<line x1="44" y1="702" x2="544" y2="702" stroke="#23281F" stroke-width="0.8"/>
+<text x="54" y="694" class="num" fill="#23281F">12</text>
+<text x="74" y="694" class="role" fill="#545B4C">UNE FOIS PAR FORME</text>
+<text x="54" y="722" class="main" fill="#23281F">Gabarits Remotion</text>
+<text x="54" y="740" class="modele" fill="#2F6DA8">Opus · high (meilleur modèle)</text>
+<text x="54" y="754" class="skill" fill="#1E6E3C">skills scenes (Studio), remotion-markup (4.0.533)</text>
+<text x="54" y="768" class="outil" fill="#545B4C">Frise, FicheRubriques ; puis Légende, Chaîne,</text>
+<text x="54" y="781" class="outil" fill="#545B4C">Étoile, Territoire · src/engine/gabarits/</text>
+<line x1="54" y1="794" x2="534" y2="794" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="54" y="809" class="fichier" fill="#1E6E3C">réutilisés par tout le programme</text>
+<rect x="1124" y="322" width="230" height="496" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<line x1="1124" y1="346" x2="1354" y2="346" stroke="#23281F" stroke-width="0.8"/>
+<text x="1134" y="338" class="num" fill="#23281F">13</text>
+<text x="1154" y="338" class="role" fill="#545B4C">UN AGENT PAR SCÈNE</text>
+<text x="1134" y="366" class="main" fill="#23281F">Scènes par gabarits</text>
+<text x="1134" y="384" class="modele" fill="#2F6DA8">Sonnet (intermédiaire)</text>
+<text x="1134" y="398" class="skill" fill="#1E6E3C">skill scenes-gabarits</text>
+<text x="1134" y="412" class="outil" fill="#545B4C">données seulement</text>
+<text x="1134" y="425" class="outil" fill="#545B4C">feuille remplie vérifiée</text>
+<rect x="1138" y="462" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
+<text x="1148" y="479" class="mini" fill="#23281F">S01 · AGENT</text>
+<text x="1330" y="479" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
+<rect x="1138" y="496" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
+<text x="1148" y="513" class="mini" fill="#23281F">S02 · AGENT</text>
+<text x="1330" y="513" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
+<rect x="1138" y="530" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
+<text x="1148" y="547" class="mini" fill="#23281F">S03 · AGENT</text>
+<text x="1330" y="547" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
+<rect x="1138" y="564" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
+<text x="1148" y="581" class="mini" fill="#23281F">S04 · AGENT</text>
+<text x="1330" y="581" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
+<rect x="1138" y="598" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
+<text x="1148" y="615" class="mini" fill="#23281F">S05 · AGENT</text>
+<text x="1330" y="615" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
+<rect x="1138" y="632" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
+<text x="1148" y="649" class="mini" fill="#23281F">S06 · AGENT</text>
+<text x="1330" y="649" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
+<rect x="1138" y="666" width="202" height="26" fill="#F1F3EC" stroke="#545B4C" stroke-width="1"/>
+<text x="1148" y="683" class="mini" fill="#23281F">S07 · AGENT</text>
+<text x="1330" y="683" class="mini" fill="#1E6E3C" text-anchor="end">Sxx.json</text>
+<line x1="1134" y1="794" x2="1344" y2="794" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="1134" y="809" class="fichier" fill="#1E6E3C">S01 à S07 en parallèle</text>
+<rect x="44" y="878" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<line x1="44" y1="902" x2="274" y2="902" stroke="#23281F" stroke-width="0.8"/>
+<text x="54" y="894" class="num" fill="#23281F">14</text>
+<text x="74" y="894" class="role" fill="#545B4C">MOTEUR</text>
+<text x="54" y="922" class="main" fill="#23281F">Lecteur de la leçon</text>
+<text x="54" y="940" class="modele" fill="#2F6DA8">aucun modèle</text>
+<text x="54" y="954" class="outil" fill="#545B4C">Remotion 4.0.533 : Player,</text>
+<text x="54" y="967" class="outil" fill="#545B4C">paths, shapes… · React · Vite</text>
+<line x1="54" y1="994" x2="264" y2="994" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="54" y="1009" class="fichier" fill="#1E6E3C">dist/index.html</text>
+<rect x="314" y="878" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<line x1="314" y1="902" x2="544" y2="902" stroke="#23281F" stroke-width="0.8"/>
+<text x="324" y="894" class="num" fill="#23281F">15</text>
+<text x="344" y="894" class="role" fill="#545B4C">CONTRÔLES AUTOMATIQUES</text>
+<text x="324" y="922" class="main" fill="#23281F">Tests</text>
+<text x="324" y="940" class="modele" fill="#2F6DA8">aucun modèle</text>
+<text x="324" y="954" class="outil" fill="#545B4C">npm run check, build</text>
+<text x="324" y="967" class="outil" fill="#545B4C">check-literals · test:play</text>
+<line x1="324" y1="994" x2="534" y2="994" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="324" y="1009" class="fichier" fill="#1E6E3C">« tout est conforme »</text>
+<rect x="584" y="878" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<line x1="584" y1="902" x2="814" y2="902" stroke="#23281F" stroke-width="0.8"/>
+<text x="594" y="894" class="num" fill="#23281F">16</text>
+<text x="614" y="894" class="role" fill="#545B4C">AGENT PRINCIPAL</text>
+<text x="594" y="922" class="main" fill="#23281F">Contrôle de l&#x27;agent</text>
+<text x="594" y="940" class="modele" fill="#2F6DA8">Opus · agent qa Sonnet·medium</text>
+<text x="594" y="954" class="skill" fill="#1E6E3C">skills qa, planche-par-phrase</text>
+<text x="594" y="968" class="outil" fill="#545B4C">symboles, règles</text>
+<text x="594" y="981" class="outil" fill="#545B4C">essais-qualite.md</text>
+<line x1="594" y1="994" x2="804" y2="994" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="594" y="1009" class="fichier" fill="#1E6E3C">verdict et corrections</text>
+<rect x="854" y="878" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<line x1="854" y1="902" x2="1084" y2="902" stroke="#23281F" stroke-width="0.8"/>
+<text x="864" y="894" class="num" fill="#23281F">17</text>
+<text x="884" y="894" class="role" fill="#545B4C">RAILWAY</text>
+<text x="864" y="922" class="main" fill="#23281F">Lecteur de relecture</text>
+<text x="864" y="940" class="modele" fill="#2F6DA8">aucun modèle</text>
+<text x="864" y="954" class="outil" fill="#545B4C">fme-reader-review</text>
+<text x="864" y="967" class="outil" fill="#545B4C">à part de CER001</text>
+<line x1="864" y1="994" x2="1074" y2="994" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="864" y="1009" class="fichier" fill="#1E6E3C">…/FME001-M01-L01-*</text>
+<rect x="1124" y="878" width="230" height="140" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
+<line x1="1124" y1="902" x2="1354" y2="902" stroke="#2F6DA8" stroke-width="0.8"/>
+<text x="1134" y="894" class="num" fill="#23281F">18</text>
+<text x="1154" y="894" class="role" fill="#2F6DA8">ILYAS</text>
+<text x="1134" y="922" class="main" fill="#23281F">Contrôle final</text>
+<text x="1134" y="940" class="outil" fill="#545B4C">porte du sens</text>
+<text x="1134" y="953" class="outil" fill="#545B4C">sur le lecteur</text>
+<line x1="1134" y1="994" x2="1344" y2="994" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="1134" y="1009" class="fichier" fill="#1E6E3C">ce qui est retenu</text>
+<rect x="1124" y="1062" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<line x1="1124" y1="1086" x2="1354" y2="1086" stroke="#23281F" stroke-width="0.8"/>
+<text x="1134" y="1078" class="num" fill="#23281F">19</text>
+<text x="1154" y="1078" class="role" fill="#545B4C">AGENT PRINCIPAL</text>
+<text x="1134" y="1106" class="main" fill="#23281F">Report dans le harnais</text>
+<text x="1134" y="1124" class="modele" fill="#2F6DA8">Opus (session)</text>
+<text x="1134" y="1138" class="skill" fill="#1E6E3C">export_studio.py (cours)</text>
+<text x="1134" y="1152" class="outil" fill="#545B4C">dépôt du cours, plugin Studio</text>
+<text x="1134" y="1165" class="outil" fill="#545B4C">→ bimaccess-studio</text>
+<line x1="1134" y1="1178" x2="1344" y2="1178" stroke="#A3AA9B" stroke-width="0.7"/>
+<text x="1134" y="1193" class="fichier" fill="#1E6E3C">harnais mis à jour</text>
+<path d="M274 198 L314 198" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M544 198 L584 198" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M814 198 L854 198" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M1084 198 L1124 198" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
 <path d="M344 128 L344 114 L244 114 L244 128" fill="none" stroke="#C4472B" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#pointe-retour)"/>
 <text x="294" y="109" class="lien" fill="#C4472B">questions, nouvelles sources</text>
 <path d="M884 128 L884 114 L784 114 L784 128" fill="none" stroke="#C4472B" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#pointe-retour)"/>
 <text x="842" y="109" class="lien" fill="#C4472B">réécriture</text>
-<path d="M1239.0 246 L1239.0 268 L24 268 L24 659 L44 659" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M159.0 268 L159.0 300" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M24 499 L44 499" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M274 359 L314 359" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M544 359 L1124 359" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M344 418 L344 427 L244 427 L244 418" fill="none" stroke="#C4472B" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#pointe-retour)"/>
-<text x="194" y="436" class="lien" fill="#C4472B">reprise</text>
-<path d="M274 499 L314 499" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M544 499 L584 499" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M814 499 L854 499" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M1084 499 L1124 499" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M614 558 L614 567 L159.0 567 L159.0 558" fill="none" stroke="#C4472B" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#pointe-retour)"/>
-<text x="171.0" y="585" class="lien" fill="#C4472B">corrections de la planche</text>
-<path d="M544 659 L1124 659" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<text x="564" y="652" class="lien" fill="#23281F">une fois écrits, servent à chaque scène</text>
-<path d="M1239.0 718 L1239.0 746 L159.0 746 L159.0 782" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M274 841 L314 841" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M544 841 L584 841" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M814 841 L854 841" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M1084 841 L1124 841" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M699.0 782 L699.0 762 L1184 762 L1184 718" fill="none" stroke="#C4472B" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#pointe-retour)"/>
-<text x="709.0" y="776" class="lien" fill="#C4472B">corrections</text>
-<path d="M1354 841 L1374 841 L1374 470 L1354 470" fill="none" stroke="#C4472B" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#pointe-retour)"/>
-<text x="1262" y="770" class="lien" fill="#C4472B">corrections</text>
-<path d="M1239.0 900 L1239.0 944" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
-<path d="M1354 1003 L1384 1003 L1384 98 L699.0 98 L699.0 114" fill="none" stroke="#1E6E3C" stroke-width="1.6" stroke-dasharray="2 4" marker-end="url(#pointe-cycle)"/>
+<path d="M1239.0 268 L1239.0 290 L24 290 L24 748 L44 748" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M159.0 290 L159.0 322" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M24 562 L44 562" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M274 392 L314 392" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M544 392 L1124 392" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M344 462 L344 472 L244 472 L244 462" fill="none" stroke="#C4472B" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#pointe-retour)"/>
+<text x="194" y="486" class="lien" fill="#C4472B">reprise</text>
+<path d="M274 562 L314 562" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M544 562 L584 562" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M814 562 L854 562" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M1084 562 L1124 562" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M614 632 L614 642 L159.0 642 L159.0 632" fill="none" stroke="#C4472B" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#pointe-retour)"/>
+<text x="171.0" y="662" class="lien" fill="#C4472B">corrections de la planche</text>
+<path d="M544 748 L1124 748" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<text x="564" y="741" class="lien" fill="#23281F">une fois écrits, servent à chaque scène</text>
+<path d="M1239.0 818 L1239.0 840 L159.0 840 L159.0 878" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M274 948 L314 948" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M544 948 L584 948" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M814 948 L854 948" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M1084 948 L1124 948" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M699.0 878 L699.0 856 L1184 856 L1184 818" fill="none" stroke="#C4472B" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#pointe-retour)"/>
+<text x="709.0" y="870" class="lien" fill="#C4472B">corrections</text>
+<path d="M1354 948 L1374 948 L1374 532 L1354 532" fill="none" stroke="#C4472B" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#pointe-retour)"/>
+<text x="1262" y="866" class="lien" fill="#C4472B">corrections</text>
+<path d="M1239.0 1018 L1239.0 1062" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M1354 1132 L1384 1132 L1384 98 L699.0 98 L699.0 114" fill="none" stroke="#1E6E3C" stroke-width="1.6" stroke-dasharray="2 4" marker-end="url(#pointe-cycle)"/>
 <text x="711.0" y="93" class="lien" fill="#1E6E3C">leçon suivante (L02 à L05) : même chaîne, harnais à jour</text>
-<rect x="584" y="944" width="500" height="118" fill="#FBFCF8" stroke="#1E6E3C" stroke-width="1.6"/>
-<text x="596" y="963" class="piste" fill="#1E6E3C">RÉUTILISATION</text>
-<rect x="598" y="976" width="7" height="7" fill="#1E6E3C"/>
-<text x="614" y="983" class="note" fill="#23281F">Bibliothèque d&#x27;éléments · signature d&#x27;image · cache</text>
-<rect x="598" y="997" width="7" height="7" fill="#1E6E3C"/>
-<text x="614" y="1004" class="note" fill="#23281F">Gabarits de scène et de composition</text>
-<rect x="598" y="1018" width="7" height="7" fill="#1E6E3C"/>
-<text x="614" y="1025" class="note" fill="#23281F">Composants de planche du canevas (essai 3)</text>
-<rect x="598" y="1039" width="7" height="7" fill="#1E6E3C"/>
-<text x="614" y="1046" class="note" fill="#23281F">Skills Remotion figés à la version des leçons</text>
-<rect x="44" y="944" width="500" height="118" fill="#FBFCF8" stroke="#C99700" stroke-width="1.6"/>
-<text x="56" y="963" class="piste" fill="#C99700">DÉPENSES ET MESURES</text>
-<rect x="58" y="976" width="7" height="7" fill="#C99700"/>
-<text x="74" y="983" class="note" fill="#23281F">Coût annoncé avant tout appel payant (or)</text>
-<rect x="58" y="997" width="7" height="7" fill="#C99700"/>
-<text x="74" y="1004" class="note" fill="#23281F">Accord d&#x27;Ilyas : --approuve, scripts gardés</text>
-<rect x="58" y="1018" width="7" height="7" fill="#C99700"/>
-<text x="74" y="1025" class="note" fill="#23281F">tokens.py → registre.csv · appels.csv</text>
-<rect x="58" y="1039" width="7" height="7" fill="#C99700"/>
-<text x="74" y="1046" class="note" fill="#23281F">Registre des essais : essais-qualite.md</text>
-<rect x="44" y="1072" width="22" height="12" fill="#FBFCF8" stroke="#23281F" stroke-width="1.5"/>
-<text x="74" y="1082" class="leg" fill="#545B4C">étape</text>
-<rect x="143" y="1072" width="22" height="12" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.5"/>
-<text x="173" y="1082" class="leg" fill="#545B4C">porte d&#x27;Ilyas</text>
-<rect x="298" y="1072" width="22" height="12" fill="#FBFCF8" stroke="#C99700" stroke-width="1.5"/>
-<text x="328" y="1082" class="leg" fill="#545B4C">appel payant</text>
-<line x1="446" y1="1078" x2="468" y2="1078" stroke="#23281F" stroke-width="1.8"/>
-<text x="476" y="1082" class="leg" fill="#545B4C">flux</text>
-<line x1="538" y1="1078" x2="560" y2="1078" stroke="#C4472B" stroke-width="1.8" stroke-dasharray="6 4"/>
-<text x="568" y="1082" class="leg" fill="#545B4C">retour</text>
-<line x1="644" y1="1078" x2="666" y2="1078" stroke="#1E6E3C" stroke-width="1.8" stroke-dasharray="2 4"/>
-<text x="674" y="1082" class="leg" fill="#545B4C">cycle</text>
+<rect x="44" y="1062" width="333" height="140" fill="#FBFCF8" stroke="#C99700" stroke-width="1.6"/>
+<text x="56" y="1081" class="piste" fill="#C99700">DÉPENSES ET MESURES</text>
+<rect x="58" y="1094" width="7" height="7" fill="#C99700"/>
+<text x="74" y="1101" class="note" fill="#23281F">Coût annoncé avant tout appel payant</text>
+<rect x="58" y="1115" width="7" height="7" fill="#C99700"/>
+<text x="74" y="1122" class="note" fill="#23281F">Accord d&#x27;Ilyas : --approuve (scripts)</text>
+<rect x="58" y="1136" width="7" height="7" fill="#C99700"/>
+<text x="74" y="1143" class="note" fill="#23281F">tokens.py → registre.csv, appels.csv</text>
+<rect x="58" y="1157" width="7" height="7" fill="#C99700"/>
+<text x="74" y="1164" class="note" fill="#23281F">Registre : essais-qualite.md</text>
+<rect x="397" y="1062" width="333" height="140" fill="#FBFCF8" stroke="#1E6E3C" stroke-width="1.6"/>
+<text x="409" y="1081" class="piste" fill="#1E6E3C">RÉUTILISATION</text>
+<rect x="411" y="1094" width="7" height="7" fill="#1E6E3C"/>
+<text x="427" y="1101" class="note" fill="#23281F">Bibliothèque, signature d&#x27;image, cache</text>
+<rect x="411" y="1115" width="7" height="7" fill="#1E6E3C"/>
+<text x="427" y="1122" class="note" fill="#23281F">Gabarits de scène et de composition</text>
+<rect x="411" y="1136" width="7" height="7" fill="#1E6E3C"/>
+<text x="427" y="1143" class="note" fill="#23281F">Composants de planche (essai 3)</text>
+<rect x="411" y="1157" width="7" height="7" fill="#1E6E3C"/>
+<text x="427" y="1164" class="note" fill="#23281F">Skills Remotion figés en 4.0.533</text>
+<rect x="750" y="1062" width="334" height="140" fill="#FBFCF8" stroke="#2F6DA8" stroke-width="1.6"/>
+<text x="762" y="1081" class="piste" fill="#2F6DA8">HOOKS ET GARDES</text>
+<rect x="764" y="1094" width="7" height="7" fill="#2F6DA8"/>
+<text x="780" y="1101" class="note" fill="#23281F">Session : Stop → commit et push</text>
+<rect x="764" y="1115" width="7" height="7" fill="#2F6DA8"/>
+<text x="780" y="1122" class="note" fill="#23281F">Dépôt FME : aucun hook de dépôt ;</text>
+<rect x="764" y="1136" width="7" height="7" fill="#2F6DA8"/>
+<text x="780" y="1143" class="note" fill="#23281F">gardes dans sync, gabarits, --approuve</text>
+<rect x="764" y="1157" width="7" height="7" fill="#2F6DA8"/>
+<text x="780" y="1164" class="note" fill="#23281F">Cours : garde_bash, gate.sh, commit-msg</text>
+<text x="44" y="1242" class="note" fill="#545B4C">Modèle · effort : définitions d'agents du plugin Studio et de .claude/agents (modèle intermédiaire, Sonnet, pour les données de scène : règle d'Ilyas du 2026-11-27). Au pilote, Fable remplacé par Opus jusqu'au 30 novembre (limite d'usage).</text>
+<text x="44" y="1268" class="modele" fill="#2F6DA8">modèle · effort</text>
+<text x="179" y="1268" class="skill" fill="#1E6E3C">skill</text>
+<rect x="244" y="1258" width="22" height="12" fill="#FBFCF8" stroke="#23281F" stroke-width="1.5"/>
+<text x="274" y="1268" class="leg" fill="#545B4C">étape</text>
+<rect x="343" y="1258" width="22" height="12" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.5"/>
+<text x="373" y="1268" class="leg" fill="#545B4C">porte d&#x27;Ilyas</text>
+<rect x="498" y="1258" width="22" height="12" fill="#FBFCF8" stroke="#C99700" stroke-width="1.5"/>
+<text x="528" y="1268" class="leg" fill="#545B4C">appel payant</text>
+<line x1="646" y1="1264" x2="668" y2="1264" stroke="#23281F" stroke-width="1.8"/>
+<text x="676" y="1268" class="leg" fill="#545B4C">flux</text>
+<line x1="738" y1="1264" x2="760" y2="1264" stroke="#C4472B" stroke-width="1.8" stroke-dasharray="6 4"/>
+<text x="768" y="1268" class="leg" fill="#545B4C">retour</text>
+<line x1="844" y1="1264" x2="866" y2="1264" stroke="#1E6E3C" stroke-width="1.8" stroke-dasharray="2 4"/>
+<text x="874" y="1268" class="leg" fill="#545B4C">cycle</text>
 </svg>
