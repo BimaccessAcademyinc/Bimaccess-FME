@@ -111,15 +111,15 @@
     },
     "logo": {
       "fichier": "fme-logo",
-      "x": 882,
-      "y": 670,
-      "largeur": 280
+      "x": 746,
+      "y": 666,
+      "largeur": 360
     },
     "lieu": {
       "fichier": "s02-ill-lieu",
-      "x": 1082,
-      "y": 186,
-      "largeur": 342
+      "x": 1052,
+      "y": 220,
+      "largeur": 372
     }
   },
   "frise": {
@@ -154,17 +154,17 @@
         580
       ],
       "a": [
-        866,
+        730,
         580
       ],
       "epaisseur": 14,
       "claire": {
         "de": [
-          596.7,
+          551.3,
           580
         ],
         "a": [
-          731.3,
+          640.7,
           580
         ],
         "epaisseur": 10
@@ -188,11 +188,11 @@
     "jalon-1996": {
       "points": [
         [
-          866,
+          730,
           560
         ],
         [
-          866,
+          730,
           600
         ]
       ],
@@ -326,8 +326,8 @@
       "style": "libelle",
       "x": 478,
       "y": 616,
-      "largeur": 380,
-      "lignes": 2
+      "largeur": 240,
+      "lignes": 3
     },
     "saif-nom": {
       "ecran": 5,
@@ -349,23 +349,24 @@
     "jalon-1996-libelle": {
       "ecran": 7,
       "style": "libelle",
-      "x": 882,
+      "x": 746,
       "y": 612,
       "largeurMesuree": 530
     },
     "nom-origine": {
       "ecran": 8,
       "style": "origine",
-      "x": 882,
-      "y": 820,
+      "x": 1126,
+      "y": 700,
       "langue": "en",
-      "largeurMesuree": 411
+      "largeur": 200,
+      "lignes": 3
     },
     "siege": {
       "ecran": 9,
       "style": "siege",
-      "x": 1202,
-      "y": 273.9,
+      "x": 1180,
+      "y": 317.6,
       "place": "carte",
       "reserve": "aucune",
       "largeurMesuree": 198
@@ -543,7 +544,7 @@
       "a": "Trois ans après la fondation"
     },
     "jalon-1996": {
-      "x": 872,
+      "x": 736,
       "y": 602,
       "largeur": 550,
       "hauteur": 61,
@@ -551,18 +552,18 @@
       "a": "à l'origine Feature Manipulation Engine"
     },
     "nom": {
-      "x": 872,
-      "y": 810,
-      "largeur": 431,
-      "hauteur": 55,
+      "x": 1116,
+      "y": 690,
+      "largeur": 220,
+      "hauteur": 124,
       "de": "à l'origine Feature Manipulation Engine",
       "a": "FME fait passer"
     },
     "logo": {
-      "x": 872,
-      "y": 660,
-      "largeur": 300,
-      "hauteur": 154,
+      "x": 736,
+      "y": 656,
+      "largeur": 380,
+      "hauteur": 193,
       "de": "FME fait passer",
       "a": "Son siège est à Surrey"
     }
