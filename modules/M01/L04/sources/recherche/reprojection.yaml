@@ -1,0 +1,424 @@
+axe: reprojection
+affirmations:
+  - id: A-reprojection-01
+    question: Q3
+    enonce: "Le Reprojector reçoit des entités avec géométrie et transforme leurs coordonnées x et y d'un système de coordonnées à un autre, généralement avec la bibliothèque FME (CS-Map)."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/reprojector.htm
+        titre: "Reprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The Reprojector receives features with geometry and reprojects their x and y coordinates from one coordinate system to another, generally using the FME (CS-Map) library."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-02
+    question: Q3
+    enonce: "Dans le Reprojector, le système source peut être lu sur l'entité d'entrée ou précisé explicitement, tandis que le système de destination doit être précisé."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/reprojector.htm
+        titre: "Reprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The Source Coordinate System may be either read from the input feature or specified explicitly, and the Destination Coordinate System must be specified."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-03
+    question: Q3
+    enonce: "Le CoordinateSystemSetter reçoit une entité quelconque et lui attribue un système de coordonnées choisi par l'utilisateur, sans modifier la géométrie ni les coordonnées."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/coordinatesystemsetter.htm
+        titre: "CoordinateSystemSetter (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The CoordinateSystemSetter receives any feature and assigns a user-specified coordinate system to it."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/coordinatesystemsetter.htm
+        titre: "CoordinateSystemSetter (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Assigns a user-specified coordinate system to features, without modifying geometry or coordinates."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-04
+    question: Q3
+    enonce: "Le CoordinateSystemSetter ne peut pas servir à déterminer un système de coordonnées inconnu, et FME ne vérifie pas que le système choisi convient aux données."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/coordinatesystemsetter.htm
+        titre: "CoordinateSystemSetter (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "If the coordinate system is not known, this transformer cannot be used to determine it."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/coordinatesystemsetter.htm
+        titre: "CoordinateSystemSetter (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Similarly, FME won’t carry out checks to ensure that any coordinate system selected is appropriate to the current data."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-05
+    question: Q3
+    enonce: "Si une entité a déjà un système de coordonnées, le CoordinateSystemSetter l'écrase."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/coordinatesystemsetter.htm
+        titre: "CoordinateSystemSetter (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "If a feature already has a coordinate system assigned, it will be overwritten."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-06
+    question: Q3
+    enonce: "Dans l'exemple de la documentation, un fichier DWG sans information de système de coordonnées reçoit le système UTM83-10 par le CoordinateSystemSetter, sans que la géométrie change."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/coordinatesystemsetter.htm
+        titre: "CoordinateSystemSetter (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Though DWG files can come with coordinate system information attached, this one does not have it."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/coordinatesystemsetter.htm
+        titre: "CoordinateSystemSetter (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The output features now know their coordinate system, and the coordinates themselves have not been modified."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-07
+    question: Q3
+    enonce: "Le CsmapReprojector reçoit des entités vectorielles, raster ou nuages de points et transforme leurs coordonnées d'un système à un autre avec la bibliothèque CS-Map."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/csmapreprojector.htm
+        titre: "CsmapReprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The CsmapReprojector receives vector, raster, or point cloud features and reprojects their coordinates from one coordinate system to another, using the CS-Map library."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-08
+    question: Q3
+    enonce: "Selon la documentation, la bibliothèque du CsmapReprojector peut être la même que celle du Reprojector par défaut, mais le CsmapReprojector calcule aussi les coordonnées verticales, ce que le Reprojector ne fait pas."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/csmapreprojector.htm
+        titre: "CsmapReprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "the library may be identical, but the CSMapReprojector handles vertical coordinate calculations whereas the Reprojector does not."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/reprojector.htm
+        titre: "Reprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "For handling elevation or vertical coordinate systems, consider using a CsmapReprojector."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-09
+    question: Q3
+    enonce: "Le Reprojector ne permet pas de préciser un datum et est considéré comme une conversion « implicite » ; pour une sélection de transformation géographique, la documentation renvoie au CsmapReprojector ou à l'EsriReprojector."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/CoordSys/Reprojecting_Data.htm
+        titre: "Reprojecting Data (FME Form)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The Reprojector transformer does not provide the option of specifying a datum, and is considered an \"implicit\" conversion."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/reprojector.htm
+        titre: "Reprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "For finer control, including Geographic Transformation selections, consider using a CsmapReprojector or EsriReprojector."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-10
+    question: Q3
+    enonce: "Le PROJReprojector reprojette des entités raster, vectorielles ou en nuage de points avec des définitions de systèmes et une bibliothèque de reprojection PROJ."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/projreprojector.htm
+        titre: "PROJReprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The PROJReprojector receives raster, vector, or point cloud features and reprojects their coordinates from one coordinate system to another, using PROJ coordinate system definitions and PROJ reprojection library."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-11
+    question: Q3
+    enonce: "Avec une conversion explicite par transformer, on contrôle davantage le moteur de reprojection (CS-MAP, Esri et d'autres) et le datum ; avec une conversion implicite, le datum choisi par défaut peut changer d'une version du produit à l'autre."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/CoordSys/Reprojecting_Data.htm
+        titre: "Reprojecting Data (FME Form)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "When using a transformer, you perform an explicit conversion, which gives you more control over which reprojection engine to use (CS-MAP, Esri, and others), which datum to use"
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/CoordSys/Reprojecting_Data.htm
+        titre: "Reprojecting Data (FME Form)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "When using implicit reprojection, the datum transformation that is selected by default may change between product releases."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-12
+    question: Q3
+    enonce: "Avec la conversion implicite, la reprojection n'a lieu que juste avant l'écriture des entités ; un transformer est nécessaire quand des jeux de données de systèmes différents doivent interagir géographiquement avant l'écriture."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/CoordSys/Reprojecting_Data.htm
+        titre: "Reprojecting Data (FME Form)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This is because in implicit conversion, reprojection does not occur until just before features are written out."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/CoordSys/Reprojecting_Data.htm
+        titre: "Reprojecting Data (FME Form)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Using a transformer to reproject data is necessary when working with multiple datasets that have different coordinate systems"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-13
+    question: Q4
+    enonce: "Le PROJReprojector accepte une définition de système sous forme de numéro EPSG, de chaîne WKT2 ou de chaîne PROJ (hors pipelines) ; la documentation préfère les représentations EPSG et WKT, qui décrivent un système plus complètement qu'une chaîne PROJ."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/projreprojector.htm
+        titre: "PROJReprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Acceptable forms include EPSG number, WKT2 string, or PROJ string (excluding pipelines)."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/projreprojector.htm
+        titre: "PROJReprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Note that EPSG and WKT representations can more fully describe a coordinate system than PROJ strings, and so are the preferred definition types."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-14
+    question: Q4
+    enonce: "La documentation du PROJReprojector donne EPSG:4326 comme exemple de définition par numéro EPSG."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/projreprojector.htm
+        titre: "PROJReprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "EPSG Number"
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/projreprojector.htm
+        titre: "PROJReprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "EPSG:4326"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-15
+    question: Q4
+    enonce: "Les noms de systèmes de coordonnées affichés dans FME correspondent généralement à un système défini de CS-MAP, avec des exceptions dont les noms Esri Shape et Geodatabase (préfixés d'un tiret bas)."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/How_FME_Identifies_Coordinate_Systems.htm
+        titre: "How FME Identifies Coordinate Systems"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Generally, the displayed coordinate system’s name matches a defined CS-MAP coordinate system, with the following exceptions:"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-16
+    question: Q4
+    enonce: "Chaque paramètre de système de coordonnées dans FME est lié à la galerie des systèmes de coordonnées (Coordinate System Gallery)."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/How_FME_Identifies_Coordinate_Systems.htm
+        titre: "How FME Identifies Coordinate Systems"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Each Coordinate System parameter is linked to FME's Coordinate System Gallery."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-17
+    question: Q4
+    enonce: "Exemple de la documentation du Reprojector : des entités surfaciques en UTM83-10 sont reprojetées vers LL84, la source étant laissée à sa valeur par défaut, lue sur la géométrie."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/reprojector.htm
+        titre: "Reprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Example: Reprojecting area features from UTM83-10 to LL84"
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/reprojector.htm
+        titre: "Reprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "In the parameters dialog, we leave Source Coordinate System as its default, Read from geometry."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-18
+    question: Q5
+    enonce: "Les transformations géographiques contrôlent comment les coordonnées sont converties entre datums ; si un transformer est réglé sur la valeur par défaut <Auto>, FME cherche une transformation appropriée entre les datums, quand il en faut une."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/csmapreprojector.htm
+        titre: "CsmapReprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Geographic Transformations control how coordinates are converted between different datums."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/csmapreprojector.htm
+        titre: "CsmapReprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "which will look for an appropriate transformation between datums, if one is needed."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-19
+    question: Q5
+    enonce: "Cas documenté par Safe Software : des lignes de transport en commun d'un shapefile, en UTM83-10 (NAD83), sont reprojetées vers l'ancien datum NAD27, et le décalage de datum s'appuie sur le fichier de grille canadien NTv2."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/csmapreprojector.htm
+        titre: "CsmapReprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "We want to reproject them into an older datum - NAD27."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/csmapreprojector.htm
+        titre: "CsmapReprojector (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "we can see the results of the datum shift, based on the Canadian NTv2 grid shift file."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-20
+    question: Q5
+    enonce: "Selon le gouvernement de la Nouvelle-Écosse, un fichier de grille sert souvent à définir une transformation sur une grande zone quand la distorsion d'un des systèmes de coordonnées empêche l'usage d'un jeu exact de paramètres de transformation."
+    usage: expert
+    sources:
+      - url: https://geonova.novascotia.ca/sites/default/files/resource-library/NSCRS%20Technical%20Support%200009%20Grid%20Shift%20Files%203Feb2016.pdf
+        titre: "Technical Support: Grid Shift Files"
+        editeur: Gouvernement de la Nouvelle-Écosse (GeoNOVA)
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "A grid shift file is often used for defining a transformation over a large area when the distortion in one of the coordinate systems inhibits the use"
+      - url: https://geonova.novascotia.ca/sites/default/files/resource-library/NSCRS%20Technical%20Support%200009%20Grid%20Shift%20Files%203Feb2016.pdf
+        titre: "Technical Support: Grid Shift Files"
+        editeur: Gouvernement de la Nouvelle-Écosse (GeoNOVA)
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "inhibits the use of an exact set of"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-21
+    question: Q5
+    enonce: "Au Canada, NTv2 est un fichier de grille binaire (format .GSB) qui permet de transformer des coordonnées entre NAD27 et NAD83, et inversement ; il est publié par Ressources naturelles Canada."
+    usage: expert
+    sources:
+      - url: https://open.canada.ca/data/en/dataset/b3534942-31ea-59cf-bcc3-f8dc4875081a
+        titre: "NTv2 (National Transformation v2.0) - binary Grid Shift File"
+        editeur: Ressources naturelles Canada
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Binary Grid Shift File (.GSB format) to transform coordinates between the NAD27 and NAD83 reference systems and vice-versa."
+      - url: https://geonova.novascotia.ca/sites/default/files/resource-library/NSCRS%20Technical%20Support%200009%20Grid%20Shift%20Files%203Feb2016.pdf
+        titre: "Technical Support: Grid Shift Files"
+        editeur: Gouvernement de la Nouvelle-Écosse (GeoNOVA)
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "One of the first grid shift files used in Canada is the National Transformation version 2 (NTv2)"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-reprojection-22
+    question: Q5
+    enonce: "Aux États-Unis, NADCON transforme latitude et longitude entre NAD 27 et NAD 83 ; la documentation du NGS (version 2.10) en fait la norme fédérale pour cette transformation de datum."
+    usage: expert
+    sources:
+      - url: https://www.ngs.noaa.gov/PC_PROD/NADCON/Readme.htm
+        titre: "NADCON Version 2.10"
+        editeur: NOAA National Geodetic Survey
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "NADCON transforms latitude and longitude coordinate values between the North American Datum of 1927 (NAD 27) and the North American Datum of 1983 (NAD 83)."
+      - url: https://www.ngs.noaa.gov/PC_PROD/NADCON/Readme.htm
+        titre: "NADCON Version 2.10"
+        editeur: NOAA National Geodetic Survey
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "NADCON is the Federal standard for NAD 27 to NAD 83 datum transformations"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q4
+    manque: "Exemple documenté de désignation d'un système en France (RGF93, Lambert-93, EPSG:2154) dans la documentation de FME : non trouvé dans les pages de référence lues ; seul un fil de la communauté Safe (niveau C) l'évoque, non lu. À sourcer ou à vérifier à la main."
+  - question: Q4
+    manque: "Exemple documenté au Canada désignant le système par code EPSG (et non par nom CS-MAP) : les exemples lus emploient les noms UTM83-10 et LL84. Le lien entre ces noms et les codes EPSG (par exemple la correspondance LL84 et EPSG:4326) n'est pas dans une page lue ; à sourcer."
+  - question: Q5
+    manque: "NADCON dans FME : aucune page lue ne dit que FME l'emploie (l'exemple du CsmapReprojector cite VERTCON pour les hauteurs NGVD29 vers NAVD88, pas NADCON). À vérifier à la main avant de relier NADCON à FME."
+  - question: Q5
+    manque: "NADCON 5.0 et statut actuel de la norme américaine : le Readme lu est de la version 2.10 (ancien) ; la page actuelle du NGS n'a pas été lue. À sourcer."
+  - question: Q3
+    manque: "Différence précise entre le CoordinateSystemSetter et la déclaration du système source dans un reprojecteur : couverte par les pages lues ; la page de l'EsriReprojector et du moteur Esri n'a pas été lue. À sourcer si la leçon le dit."
+visuels:
+  - id: VIS-01
+    url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/reprojector.htm
+    editeur: Safe Software
+    description: "Captures de la boîte de paramètres du Reprojector et de la vue des entités avant et après dans le Data Inspector (exemple UTM83-10 vers LL84), selon le texte de la page ; images non vues."
+    utilite: "Référence pour redessiner un schéma source, destination, entités."
+    usage: REFERENCE_ONLY
+  - id: VIS-02
+    url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/csmapreprojector.htm
+    editeur: Safe Software
+    description: "Entités d'entrée (rouge) et de sortie (bleu) superposées dans le Data Inspector pour le décalage de datum avec la grille NTv2, selon le texte de la page ; image non vue."
+    utilite: "Référence pour redessiner un décalage de datum."
+    usage: REFERENCE_ONLY
