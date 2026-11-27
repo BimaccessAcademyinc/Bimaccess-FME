@@ -48,3 +48,5 @@ export {
 } from "./timeline"
 export type { AnyScene, Clip, ClipTrigger, LessonDef, SceneDef, SceneKind, SceneModel, SceneStatus, SceneViewProps, StatusInput, Voice, Word } from "./types"
 export * from "./outils"
+// Gabarits de scène pilotés par des données (content/design/scenes/Sxx.json ; docs/gabarits.md)
+export { cssDe, FicheRubriques, Frise, GabaritError, poser, type SceneDeGabarit, Source, sourceHref, Texte, VIDE_MAX, ZONE } from "./gabarits"
