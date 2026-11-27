@@ -1,0 +1,12 @@
+1 | S02-1 | début
+2 | S02-2 | Le gouvernement lance
+3 | S02-3 | De ce contrat naît
+4 | S02-4 | Le gouvernement a son format
+5 | S02-5 | Pour échanger avec lui
+6 | S02-6 | Murray et Lutz commencent par ce travail
+7 | S02-7 | une technologie de traduction pour SAIF
+8 | S02-8 | Trois ans après la fondation
+9 | S02-9 | la première version de son logiciel
+10 | S02-10 | à l'origine Feature Manipulation Engine
+11 | S02-11 | FME fait passer
+12 | S02-FIN | Son siège est à Surrey

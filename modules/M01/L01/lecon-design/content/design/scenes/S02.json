@@ -19,9 +19,18 @@
     }
   ],
   "styles": {
-    "libelle": {
+    "noms": {
+      "police": "capitales",
+      "taille": 24,
+      "graisse": 600,
+      "interlettrage": 0.16,
+      "capitales": true,
+      "couleur": "encre"
+    },
+    "titre-feuille": {
       "police": "serif",
-      "taille": 36,
+      "taille": 24,
+      "graisse": 600,
       "interligne": 1.15,
       "couleur": "encre"
     },
@@ -31,48 +40,38 @@
       "interligne": 1.25,
       "couleur": "encre"
     },
-    "fondateurs": {
-      "police": "capitales",
-      "graisse": 600,
-      "taille": 24,
-      "interlettrage": 0.16,
-      "capitales": true,
-      "couleur": "encre"
-    },
-    "contrat": {
+    "libelle": {
       "police": "serif",
-      "graisse": 600,
-      "taille": 24,
+      "taille": 36,
       "interligne": 1.15,
       "couleur": "encre"
     },
-    "saif": {
+    "terme": {
       "police": "capitales",
+      "taille": 34,
       "graisse": 600,
-      "taille": 36,
       "interlettrage": 0.3,
       "capitales": true,
       "couleur": "terme"
     },
-    "traduction": {
+    "nom-petit": {
       "police": "capitales",
-      "graisse": 600,
       "taille": 26,
+      "graisse": 600,
       "interlettrage": 0.24,
       "capitales": true,
       "couleur": "encre"
     },
-    "origine": {
+    "nom-origine": {
       "police": "serif",
-      "taille": 30,
+      "taille": 28,
       "interligne": 1.15,
       "italique": true,
       "couleur": "encre"
     },
-    "siege": {
+    "toponyme": {
       "police": "serif",
-      "taille": 34,
-      "interligne": 1.2,
+      "taille": 30,
       "italique": true,
       "couleur": "encre"
     }
@@ -81,68 +80,67 @@
     "fondateurs": {
       "fichier": "s02-ill-fondateurs",
       "x": 104,
-      "y": 186,
-      "largeur": 332
+      "y": 192,
+      "largeur": 328
     },
     "contrat": {
       "fichier": "s02-ill-contrat",
       "x": 104,
-      "y": 410,
-      "largeur": 332
+      "y": 414,
+      "largeur": 328
     },
     "sceau": {
       "fichier": "s02-ill-sceau",
-      "x": 262,
-      "y": 670,
-      "largeur": 160
+      "x": 240,
+      "y": 648,
+      "largeur": 176
     },
     "saif": {
       "fichier": "s02-ill-saif",
-      "x": 812,
-      "y": 184,
-      "largeur": 236
+      "x": 816,
+      "y": 250,
+      "largeur": 214
     },
     "logiciels": {
       "fichier": "s02-ill-logiciels",
       "x": 476,
-      "y": 218.5,
-      "largeur": 124,
-      "aplat": "fond"
+      "y": 228,
+      "largeur": 128
     },
     "logo": {
       "fichier": "fme-logo",
-      "x": 882,
-      "y": 670,
-      "largeur": 280
+      "x": 1060,
+      "y": 706,
+      "largeur": 190
     },
     "lieu": {
       "fichier": "s02-ill-lieu",
-      "x": 1082,
-      "y": 186,
-      "largeur": 342
+      "x": 1064,
+      "y": 236,
+      "largeur": 360
     }
   },
   "frise": {
     "de": [
-      436,
+      432,
       580
     ],
     "a": [
-      1406,
+      1482,
       580
     ],
     "epaisseur": 3,
     "pointe": [
       [
-        1406,
+        1482,
         571
       ],
       [
-        1424,
+        1500,
         580
       ],
       [
-        1406,
+        1482,
         589
       ]
     ]
@@ -154,17 +152,17 @@
         580
       ],
       "a": [
-        866,
+        1045,
         580
       ],
       "epaisseur": 14,
       "claire": {
         "de": [
-          596.7,
+          656.3,
           580
         ],
         "a": [
-          731.3,
+          850.6,
           580
         ],
         "epaisseur": 10
@@ -185,28 +183,15 @@
       ],
       "epaisseur": 2.5
     },
-    "jalon-1996": {
-      "points": [
-        [
-          866,
-          560
-        ],
-        [
-          866,
-          600
-        ]
-      ],
-      "epaisseur": 2.5
-    },
     "route-1": {
       "points": [
         [
-          599.4,
-          267.0
+          603,
+          283
         ],
         [
-          796,
-          267.0
+          800,
+          283
         ]
       ],
       "couches": [
@@ -227,12 +212,12 @@
     "route-2": {
       "points": [
         [
-          599.4,
-          379.7
+          603,
+          400
         ],
         [
-          796,
-          379.7
+          800,
+          400
         ]
       ],
       "couches": [
@@ -253,12 +238,12 @@
     "route-3": {
       "points": [
         [
-          599.4,
-          491.3
+          603,
+          515
         ],
         [
-          796,
-          491.3
+          800,
+          515
         ]
       ],
       "couches": [
@@ -277,98 +262,107 @@
       ]
     },
     "pointe-1": {
-      "d": "M796 255.0 L812 267.0 L796 279.0 Z",
+      "d": "M800 271 L816 283 L800 295 Z",
       "epaisseur": 2,
       "remplissage": "ecriture"
     },
     "pointe-2": {
-      "d": "M796 367.7 L812 379.7 L796 391.7 Z",
+      "d": "M800 388 L816 400 L800 412 Z",
       "epaisseur": 2,
       "remplissage": "ecriture"
     },
     "pointe-3": {
-      "d": "M796 479.3 L812 491.3 L796 503.3 Z",
+      "d": "M800 503 L816 515 L800 527 Z",
       "epaisseur": 2,
       "remplissage": "ecriture"
+    },
+    "jalon-1996": {
+      "points": [
+        [
+          1045,
+          560
+        ],
+        [
+          1045,
+          600
+        ]
+      ],
+      "epaisseur": 2.5
     }
   },
   "textes": {
-    "fondateurs-nom": {
+    "fondateurs-noms": {
       "ecran": 2,
-      "style": "fondateurs",
-      "cx": 270,
-      "y": 194,
+      "style": "noms",
+      "cx": 266.1,
+      "y": 199,
       "place": "carte",
-      "reserve": "aucune",
-      "largeurMesuree": 295
+      "largeurMesuree": 295.2
     },
     "contrat-titre": {
       "ecran": 1,
-      "style": "contrat",
-      "cx": 270,
-      "y": 430,
+      "style": "titre-feuille",
+      "cx": 268,
+      "y": 447,
       "place": "carte",
-      "reserve": "aucune",
-      "largeurMesuree": 298
+      "largeurMesuree": 297.6
     },
-    "rubrique": {
+    "appel-offres": {
       "ecran": 3,
       "style": "rubrique",
       "x": 124,
-      "y": 496,
-      "largeur": 292,
+      "y": 498,
+      "largeur": 290,
       "lignes": 2,
-      "place": "carte",
-      "reserve": "aucune"
+      "place": "carte"
     },
     "jalon-1993-libelle": {
       "ecran": 4,
       "style": "libelle",
       "x": 478,
-      "y": 616,
-      "largeur": 380,
+      "y": 610,
+      "largeur": 370,
       "lignes": 2
     },
     "saif-nom": {
       "ecran": 5,
-      "style": "saif",
-      "cx": 930.0,
-      "y": 195,
+      "style": "terme",
+      "cx": 917.9,
+      "y": 259,
       "place": "carte",
       "dans": "saif",
-      "reserve": "aucune",
-      "largeurMesuree": 103
+      "largeurMesuree": 92.8
     },
     "traduction": {
       "ecran": 6,
-      "style": "traduction",
-      "cx": 706,
-      "y": 210,
-      "largeurMesuree": 178
+      "style": "nom-petit",
+      "cx": 707.9,
+      "y": 238,
+      "largeurMesuree": 177.6
     },
     "jalon-1996-libelle": {
       "ecran": 7,
       "style": "libelle",
-      "x": 882,
-      "y": 612,
-      "largeurMesuree": 530
+      "x": 1060,
+      "y": 610,
+      "largeur": 290,
+      "lignes": 2
     },
     "nom-origine": {
       "ecran": 8,
-      "style": "origine",
-      "x": 882,
-      "y": 820,
+      "style": "nom-origine",
+      "x": 1060,
+      "y": 812,
       "langue": "en",
-      "largeurMesuree": 411
+      "largeurMesuree": 363.6
     },
     "siege": {
       "ecran": 9,
-      "style": "siege",
-      "x": 1202,
-      "y": 273.9,
+      "style": "toponyme",
+      "x": 1194,
+      "y": 332,
       "place": "carte",
-      "reserve": "aucune",
-      "largeurMesuree": 198
+      "largeurMesuree": 174.5
     }
   },
   "etapes": [
@@ -380,10 +374,10 @@
           "poser": "fondateurs"
         },
         {
-          "poser": "contrat"
+          "poser": "fondateurs-noms"
         },
         {
-          "poser": "fondateurs-nom"
+          "poser": "contrat"
         },
         {
           "poser": "contrat-titre"
@@ -395,7 +389,7 @@
       "etat": "S02-2",
       "gestes": [
         {
-          "frappe": "rubrique"
+          "frappe": "appel-offres"
         },
         {
           "balayage": "sceau",
@@ -535,34 +529,34 @@
   ],
   "evidences": {
     "traduction": {
-      "x": 607.0,
-      "y": 200,
+      "x": 612,
+      "y": 228,
       "largeur": 198,
-      "hauteur": 51,
+      "hauteur": 50,
       "de": "une technologie de traduction pour SAIF",
       "a": "Trois ans après la fondation"
     },
     "jalon-1996": {
-      "x": 872,
-      "y": 602,
-      "largeur": 550,
-      "hauteur": 61,
+      "x": 1050,
+      "y": 600,
+      "largeur": 282,
+      "hauteur": 103,
       "de": "la première version de son logiciel",
       "a": "à l'origine Feature Manipulation Engine"
     },
-    "nom": {
-      "x": 872,
-      "y": 810,
-      "largeur": 431,
-      "hauteur": 55,
+    "nom-origine": {
+      "x": 1050,
+      "y": 802,
+      "largeur": 384,
+      "hauteur": 52,
       "de": "à l'origine Feature Manipulation Engine",
       "a": "FME fait passer"
     },
     "logo": {
-      "x": 872,
-      "y": 660,
-      "largeur": 300,
-      "hauteur": 154,
+      "x": 1050,
+      "y": 696,
+      "largeur": 210,
+      "hauteur": 111,
       "de": "FME fait passer",
       "a": "Son siège est à Surrey"
     }
