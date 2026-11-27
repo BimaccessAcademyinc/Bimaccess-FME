@@ -11,13 +11,14 @@ import { META } from "../generated/meta"
 import { L } from "../i18n"
 import { LessonComposition, type StageInput } from "./composition"
 
-const PlayerBox = memo(function PlayerBox({ ref, input, duration }: { readonly ref: Ref<PlayerRef>; readonly input: StageInput; readonly duration: number }) {
+const PlayerBox = memo(function PlayerBox({ ref, input, duration, rate }: { readonly ref: Ref<PlayerRef>; readonly input: StageInput; readonly duration: number; readonly rate: number }) {
   return (
     <Player
       ref={ref}
       component={LessonComposition}
       inputProps={input}
       durationInFrames={duration}
+      playbackRate={rate}
       fps={META.fps}
       compositionWidth={META.width}
       compositionHeight={META.height}
@@ -51,6 +52,7 @@ export function Stage({
   nextAllowed,
   completed,
   narrationEnd,
+  rate = 1,
 }: {
   readonly ref: Ref<PlayerRef>
   readonly input: StageInput
@@ -63,6 +65,8 @@ export function Stage({
   readonly completed: boolean
   /** Image de fin de la narration d'entrée (Suivant jamais libre avant). */
   readonly narrationEnd: number
+  /** Vitesse de lecture (1 = normale), voix comprise. */
+  readonly rate?: number
 }) {
   // Prête quand la scène courante est montée dans le lecteur
   const [ready, setReady] = useState<string | null>(null)
@@ -83,8 +87,9 @@ export function Stage({
       data-next={nextAllowed ? "open" : "locked"}
       data-completed={completed ? "true" : "false"}
       data-revisit={input.revisit ? "true" : "false"}
+      data-rate={rate}
     >
-      <PlayerBox ref={ref} input={input} duration={duration} />
+      <PlayerBox ref={ref} input={input} duration={duration} rate={rate} />
     </div>
   )
 }

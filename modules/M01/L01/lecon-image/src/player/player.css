@@ -285,6 +285,16 @@ body {
   .studio-narration {
     grid-column: 1 / -1;
     grid-row: 1;
+    flex-wrap: wrap;
+  }
+  /* Écran étroit : le curseur passe sur sa propre ligne, sous revoir, lecture, vitesse et sous-titres */
+  .studio-narration .studio-scrub {
+    order: 5;
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  .studio-rate {
+    min-width: 0;
   }
   .studio-prev {
     justify-self: start;
@@ -352,4 +362,10 @@ body {
 
 .studio[data-fullscreen="true"] .studio-main {
   padding: 4px 16px;
+}
+
+/* Vitesse de lecture : même cartouche que les autres boutons, flèche de liste à droite */
+.studio-rate {
+  min-width: 5.2em;
+  cursor: pointer;
 }

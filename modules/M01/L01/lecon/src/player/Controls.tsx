@@ -18,6 +18,9 @@ const Icon = ({ d }: { readonly d: string }) => (
 
 const PLAY = "M7 4.5v15l13-7.5z"
 const PAUSE = "M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"
+const REPLAY = "M12 5V2L7 6.5 12 11V8a5 5 0 1 1-5 5H5a7 7 0 1 0 7-8z"
+/** Vitesses offertes, de la moitié au double (comme le lecteur du cours). */
+export const RATES = [0.5, 0.75, 1, 1.25, 1.5, 2] as const
 const LOCK = "M7 10V7.5a5 5 0 0 1 10 0V10h1.5v11h-13V10zm2.2 0h5.6V7.5a2.8 2.8 0 0 0-5.6 0z"
 
 /** Cadenas au trait (design-system/components/action-button.html). */
@@ -42,6 +45,9 @@ export function Controls({
   onToggle,
   onSeek,
   onCaptions,
+  rate,
+  onRate,
+  onReplay,
 }: {
   readonly frame: number
   readonly duration: number
@@ -56,6 +62,9 @@ export function Controls({
   readonly onToggle: () => void
   readonly onSeek: (frame: number) => void
   readonly onCaptions: () => void
+  readonly rate: number
+  readonly onRate: (rate: number) => void
+  readonly onReplay: () => void
 }) {
   const max = Math.max(0, duration - 1)
   const scrubStyle = BIM || CARTE ? ({ "--p": `${max > 0 ? (100 * Math.min(frame, max)) / max : 0}%` } as CSSProperties) : undefined
@@ -65,6 +74,9 @@ export function Controls({
         <span aria-hidden="true">‹</span> {L.previous}
       </button>
       <div className="studio-narration">
+        <button type="button" className="studio-icon-btn" data-testid="narration-replay" aria-label={L.replay} title={L.replay} disabled={disabled} onClick={onReplay}>
+          <Icon d={REPLAY} />
+        </button>
         <button type="button" className="studio-icon-btn" data-testid="narration-toggle" aria-label={playing ? L.pause : L.play} aria-pressed={playing} disabled={disabled} onClick={onToggle}>
           <Icon d={playing ? PAUSE : PLAY} />
         </button>
@@ -81,6 +93,19 @@ export function Controls({
           style={scrubStyle}
           onChange={(e) => onSeek(Number(e.currentTarget.value))}
         />
+        <select
+          className="studio-btn studio-rate"
+          data-testid="narration-rate"
+          aria-label={L.rate}
+          title={L.rate}
+          value={rate}
+          disabled={disabled}
+          onChange={(e) => onRate(Number(e.currentTarget.value))}
+        >
+          {RATES.map((r) => (
+            <option key={r} value={r}>{`×${String(r).replace(".", ",")}`}</option>
+          ))}
+        </select>
         <button type="button" className="studio-btn studio-captions" data-testid="captions-toggle" aria-pressed={captions} disabled={disabled} onClick={onCaptions}>
           {L.captions}
         </button>

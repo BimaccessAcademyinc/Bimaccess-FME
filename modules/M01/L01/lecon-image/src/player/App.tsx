@@ -71,6 +71,27 @@ export function App() {
   const [ended, setEnded] = useState(false)
   const [position, setPosition] = useState<Position>({ key: -1, frame: 0, reached: 0 })
   const [playing, setPlaying] = useState(false)
+  // Vitesse de lecture : préférence de la personne, gardée par le navigateur quand il le permet
+  const rateKey = `studio-rate-${META.id}`
+  const [rate, setRate] = useState<number>(() => {
+    try {
+      const v = Number(globalThis.localStorage?.getItem(rateKey))
+      return v >= 0.5 && v <= 2 ? v : 1
+    } catch {
+      return 1
+    }
+  })
+  const changeRate = useCallback(
+    (r: number) => {
+      setRate(r)
+      try {
+        globalThis.localStorage?.setItem(rateKey, String(r))
+      } catch {
+        /* stockage refusé (file://, navigation privée) : la vitesse vaut pour la visite */
+      }
+    },
+    [rateKey],
+  )
   const playerRef = useRef<PlayerRef>(null)
   const shellRef = useRef<HTMLDivElement>(null)
   const [fullscreen, setFullscreen] = useState(false)
@@ -208,6 +229,14 @@ export function App() {
   const goPrevious = useCallback(() => {
     if (visit.index > 0) enter(visit.index - 1)
   }, [visit.index, enter])
+
+  /** Revoir la scène : retour à la première image, lecture relancée. */
+  const replay = useCallback(() => {
+    const player = playerRef.current
+    if (!player) return
+    player.seekTo(0)
+    player.play()
+  }, [])
 
   const toggle = useCallback(() => {
     const player = playerRef.current
@@ -362,6 +391,7 @@ export function App() {
             nextAllowed={nextAllowed}
             completed={record.completed || status.completed}
             narrationEnd={Math.floor(linearEnd(scene) * FPS)}
+            rate={rate}
           />
           {!started ? (
             <div className="studio-overlay" data-testid="start-screen">
@@ -409,6 +439,9 @@ export function App() {
           onToggle={toggle}
           onSeek={(f) => playerRef.current?.seekTo(f)}
           onCaptions={() => setProgress((p) => ({ ...p, captions: !captions }))}
+          rate={rate}
+          onRate={changeRate}
+          onReplay={replay}
         />
       </div>
     </RuntimeContext.Provider>
