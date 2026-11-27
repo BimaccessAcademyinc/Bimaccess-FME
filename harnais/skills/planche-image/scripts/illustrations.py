@@ -17,7 +17,9 @@ Usage (depuis le projet Studio) :
   python3 illustrations.py --style <programme>/design/style-image.md --ref <programme>/design/references/style-carte.png
                            [--noms s02-contrat s02-saif] [--forcer] [--etape "<leçon> illustrations"]
 
-Cache : même invite, même référence, même modèle → aucun appel. Une ligne par
+Dépenses : sans `--approuve <montant en $>` donné par Ilyas, le script annonce
+le coût et n'appelle rien (code 3). Cache : même invite, même référence, même
+modèle → aucun appel. Une ligne par
 appel dans harnais/mesures/appels.csv. Clé injectée par le proxy.
 """
 from __future__ import annotations
@@ -52,15 +54,25 @@ def style_element(style: Path | None) -> str:
             "ABSOLUTELY NO TEXT: no letters, no numbers, no labels, no logos.")
 
 
-def dessiner(cmd: dict, dossier: Path, style: Path | None, ref: Path | None, forcer: bool, etape: str) -> Path:
-    nom = cmd["nom"]
+def cle_element(cmd: dict, style: Path | None, ref: Path | None) -> tuple[str, str]:
     texte = style_element(style) + "\n\nElement:\n" + cmd["dessin"]
     h = hashlib.sha256((P.IMAGE + TAILLE + cmd.get("format", "1:1") + texte).encode())
     if ref and ref.exists():
         h.update(ref.read_bytes())
-    cle = h.hexdigest()[:16]
+    return texte, h.hexdigest()[:16]
+
+
+def en_cache(cmd: dict, dossier: Path, style: Path | None, ref: Path | None) -> bool:
+    _, cle = cle_element(cmd, style, ref)
+    png, fcle = dossier / f"{cmd['nom']}.png", dossier / f"{cmd['nom']}.cle"
+    return png.exists() and fcle.exists() and fcle.read_text().strip() == cle
+
+
+def dessiner(cmd: dict, dossier: Path, style: Path | None, ref: Path | None, forcer: bool, etape: str) -> Path:
+    nom = cmd["nom"]
+    texte, cle = cle_element(cmd, style, ref)
     png, fcle = dossier / f"{nom}.png", dossier / f"{nom}.cle"
-    if not forcer and png.exists() and fcle.exists() and fcle.read_text().strip() == cle:
+    if not forcer and en_cache(cmd, dossier, style, ref):
         return png
     parts = ([P.b64(ref), {"text": P.REF.replace("Draw a NEW composition as described", "Draw only the single element described")}] if ref and ref.exists() else []) + [{"text": texte}]
     corps = {"contents": [{"parts": parts}], "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": cmd.get("format", "1:1"), "imageSize": TAILLE}}}
@@ -134,6 +146,7 @@ def main() -> int:
     ap.add_argument("--noms", nargs="*")
     ap.add_argument("--forcer", action="store_true")
     ap.add_argument("--etape", default="illustrations")
+    ap.add_argument("--approuve", type=float, help="montant en $ approuvé par Ilyas (sans lui : coût annoncé, aucun appel)")
     a = ap.parse_args()
     dossier = a.projet / "content" / "design" / "illustrations"
     assets = a.projet / "content" / "design" / "assets"
@@ -143,6 +156,9 @@ def main() -> int:
     if not cmds:
         print(f"aucune commande dans {dossier}")
         return 2
+    n = sum(1 for c in cmds if a.forcer or not en_cache(json.loads(c.read_text(encoding="utf-8")), dossier, a.style, a.ref))
+    if not P.garde_depense(n * P.prix_image(P.IMAGE, TAILLE), a.approuve, f"{n} dessin(s) {P.IMAGE} {TAILLE} sur {len(cmds)} commande(s), le reste en cache"):
+        return 3
     ok = True
     with ThreadPoolExecutor(max_workers=8) as ex:
         futs = {ex.submit(une, c, assets, a.style, a.ref, a.forcer, a.etape): c.stem for c in cmds}

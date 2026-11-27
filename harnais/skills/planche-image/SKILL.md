@@ -21,6 +21,10 @@ Mesures sur FME001-M01-L01 (7 scènes) : dessin et repérage 59 s d'appels, envi
 
 Lire `bibliotheque.yaml` et `gabarits.md` avant le premier plan d'une leçon.
 
+## 0 bis. Dépenses
+
+Aucun dessin ni repérage sans l'accord d'Ilyas, coût annoncé avant (règle du 2026-11-27). Sans `--approuve <montant en $>`, `planche_image.py` et `illustrations.py` affichent « Coût estimé : … » (dessins hors cache × prix du modèle, repérages) et n'appellent rien. Un agent délégué (graphiste) écrit ses commandes et rend la main ; l'agent principal annonce le coût, Ilyas approuve, puis la commande se relance avec `--approuve`. Prix des modèles d'image : `PRIX_IMAGE` dans `planche_image.py`, à revérifier sur la page de prix.
+
 ## 1. Le plan d'une scène (`content/design/planches/Sxx.json`)
 
 ```json

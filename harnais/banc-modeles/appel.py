@@ -128,6 +128,7 @@ def main() -> int:
     ap.add_argument("--sortie", type=Path)
     ap.add_argument("--max", type=int, default=8000)
     ap.add_argument("--etape", default="")
+    ap.add_argument("--approuve", type=float, help="montant en $ approuvé par Ilyas (sans lui : rien n'est appelé)")
     ap.add_argument("--lister", action="store_true")
     ap.add_argument("--test", action="store_true")
     a = ap.parse_args()
@@ -145,6 +146,10 @@ def main() -> int:
         print(f"alias inconnu : {a.modele} (voir --lister)")
         return 2
     m = modeles[a.modele]
+    # Dépenses (règle d'Ilyas, 2026-11-27) : coût annoncé avant, aucun appel payant sans son accord
+    if a.approuve is None:
+        print(f"REFUSÉ : appel payant ({a.modele}, au plus {a.max} tokens de sortie). Annoncer le coût estimé à Ilyas, obtenir son accord, puis relancer avec --approuve <montant en $>")
+        return 3
     systeme = a.systeme.read_text(encoding="utf-8") if a.systeme else ""
     url, entetes, corps = requete(m["fournisseur"], m["id"], systeme, a.invite.read_text(encoding="utf-8"), a.max)
     t0 = time.time()

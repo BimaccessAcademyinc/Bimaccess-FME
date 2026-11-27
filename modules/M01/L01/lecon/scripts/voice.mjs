@@ -18,7 +18,9 @@
  *                          ponctuation, longueur, mise en scène, termes
  *                          proscrits) et dictionnaire de prononciation
  *   quota                  caractères utilisés et restants sur le compte
- *   generate [--only S02-01|S02 …] [--force] [--no-beats] [--no-quota-check]
+ *   generate --approuve <caractères> [--only S02-01|S02 …] [--force] [--no-beats] [--no-quota-check]
+ *                          sans --approuve couvrant les caractères à synthétiser (accord
+ *                          d'Ilyas), annonce le coût et ne génère rien
  *                          génère les clips nouveaux ou modifiés, un par un ;
  *                          manifeste écrit après chaque clip (relancer reprend)
  *   verify                 manifeste ↔ storyboard, fichiers, alignements,
@@ -75,7 +77,7 @@ process.on("unhandledRejection", (e) => die(e?.message ?? String(e)))
 
 /* ── Arguments ──────────────────────────────────────────────────────────── */
 
-const VALUED = new Set(["--config", "--voice-config", "--only", "--variants", "--out", "--tmp", "--voice", "--lang", "--search", "--page-size"])
+const VALUED = new Set(["--approuve", "--config", "--voice-config", "--only", "--variants", "--out", "--tmp", "--voice", "--lang", "--search", "--page-size"])
 const argv = process.argv.slice(2)
 const positional = []
 const opt = { only: [] }
@@ -722,6 +724,10 @@ async function cmdGenerate() {
   if (tooLong.length) die(`clip(s) au-delà de ${maxChars} caractères : ${tooLong.map((x) => `${x.row.clip_id} (${x.tts.text.length})`).join(", ")} ; couper la narration`)
   const chars = plan.reduce((s, x) => s + x.tts.text.length, 0)
   say(`à générer : ${todo.length} clip(s), ${chars} caractères ; ${kept} clip(s) gardé(s)`)
+  // Dépenses (règle d'Ilyas, 2026-11-27) : coût annoncé avant, aucune synthèse sans son accord
+  if (!(Number(opt.approuve) >= chars)) {
+    die(`coût annoncé : ${chars} caractères à synthétiser (environ ${Math.ceil(chars * 0.44)} crédits au tarif V4 constaté, 0,44 par caractère). Aucune dépense sans l'accord d'Ilyas : annoncer ce coût, obtenir son accord, puis relancer avec --approuve ${chars}`)
+  }
 
   if (!opt["no-quota-check"]) {
     try {

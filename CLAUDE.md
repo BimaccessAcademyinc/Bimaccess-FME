@@ -46,4 +46,5 @@ Identifiants : programme `FME001`, leçon `FME001-M01-L01`, scène `FME001-M01-L
 - Chaque étape produit des fichiers ; les fichiers font foi, pas la conversation.
 - Chaque étape mesurée : `python3 harnais/mesures/tokens.py --csv harnais/mesures/registre.csv --etape "<leçon> <étape>"` à la fin de l'étape.
 - Clés d'API : seulement par le formulaire sécurisé de l'environnement, jamais dans un fichier ni dans la conversation.
+- **Dépenses (règle d'Ilyas, 2026-11-27) : aucun appel payant sans son accord, et le coût s'annonce avant.** Modèles d'image et de vision, voix, modèles hors Claude : on annonce le nombre d'appels et le coût estimé, Ilyas approuve un montant, puis on lance. Les scripts le font respecter : `planche_image.py` et `illustrations.py` (`--approuve <$>`), `appel.py` (`--approuve <$>`), `npm run voice -- generate` (`--approuve <caractères>`) annoncent le coût et refusent sans accord. Un agent délégué ne dépense rien : il prépare ses commandes et rend la main ; l'agent principal annonce le coût à Ilyas.
 - Branche de travail de la session ; jamais de pull request sans demande d'Ilyas. Si un push est refusé, s'arrêter et le dire.

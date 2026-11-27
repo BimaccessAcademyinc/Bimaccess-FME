@@ -47,6 +47,32 @@ W, H = 1920, 1080
 # Résolution du dessin : « 4K » (5504 × 3072, gardé à 3840 × 2160, net sur un écran haute définition).
 # Sans réglage, le modèle renvoie environ 1376 × 768 : agrandi à 1920 px, l'image est floue et pixelisée.
 TAILLE = os.environ.get("PLANCHE_TAILLE", "4K")
+
+# Dépenses (règle d'Ilyas, 2026-11-27) : aucun appel payant sans son accord ; le coût s'annonce avant.
+# Prix publics par image, page de prix de l'API (2026-11-27, à revérifier) ; repérage : environ 0,005 $ l'appel.
+PRIX_IMAGE = {
+    "gemini-3-pro-image": {"1K": 0.134, "2K": 0.134, "4K": 0.24},
+    "gemini-3.1-flash-image": {"0.5K": 0.045, "1K": 0.067, "2K": 0.101, "4K": 0.151},
+    "gemini-3.1-flash-lite-image": {"1K": 0.034},
+    "gemini-2.5-flash-image": {"1K": 0.039},
+}
+PRIX_REPERAGE = 0.005
+
+
+def prix_image(modele: str, taille: str) -> float:
+    """Prix d'une image ; un modèle ou une taille inconnus comptent au plus cher connu (prudence)."""
+    return PRIX_IMAGE.get(modele, {}).get(taille) or max(v for t in PRIX_IMAGE.values() for v in t.values())
+
+
+def garde_depense(estime: float, approuve: float | None, detail: str) -> bool:
+    """Annonce le coût ; refuse tout appel payant sans montant approuvé par Ilyas (--approuve) qui le couvre."""
+    print(f"Coût estimé : {estime:.2f} $ ({detail})", flush=True)
+    if estime <= 0:
+        return True
+    if approuve is None or estime > approuve + 1e-9:
+        print(f"REFUSÉ : aucune dépense sans l'accord d'Ilyas. Annoncer ce coût, obtenir son accord, puis relancer avec --approuve {estime:.2f}", flush=True)
+        return False
+    return True
 SOURCE_W, SOURCE_H = 3840, 2160
 
 STYLE = """Flat vector illustration in the style of a printed topographic map sheet (Swiss or IGN cartography), seen from above or as simple flat pictograms.
@@ -117,6 +143,15 @@ def cle_dessin(texte: str, ref: Path | None) -> str:
     return h.hexdigest()[:16]
 
 
+def en_cache(plan: dict, dossier: Path, ref: Path | None, style: Path | None) -> bool:
+    """Le dessin de ce plan existe déjà pour la même invite, la même référence et le même modèle."""
+    sid = plan["scene"]
+    r = ref if ref and ref.exists() and ref.name != f"{sid}.png" else None
+    cle = cle_dessin(style_du_programme(style) + "\n\nComposition:\n" + plan["dessin"], r)
+    fcle = dossier / f"{sid}.cle"
+    return (dossier / f"{sid}.png").exists() and fcle.exists() and fcle.read_text().strip() == cle
+
+
 def dessiner(plan: dict, dossier: Path, ref: Path | None, etape: str, style: Path | None = None, forcer: bool = False) -> Path:
     sid = plan["scene"]
     parts: list[dict] = []
@@ -129,7 +164,7 @@ def dessiner(plan: dict, dossier: Path, ref: Path | None, etape: str, style: Pat
     # Cache : même modèle, même invite, même référence → image gardée, aucun appel
     cle = cle_dessin(texte, ref)
     fcle = dossier / f"{sid}.cle"
-    if not forcer and (dossier / f"{sid}.png").exists() and fcle.exists() and fcle.read_text().strip() == cle:
+    if not forcer and en_cache(plan, dossier, ref, style):
         return dossier / f"{sid}.png"
     corps = {"contents": [{"parts": parts}], "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "16:9", "imageSize": TAILLE}}}
     d = appel(IMAGE, corps, f"{etape} dessin {sid}")
@@ -413,6 +448,7 @@ def main() -> int:
     ap.add_argument("--scenes", nargs="*")
     ap.add_argument("--ref", type=Path)
     ap.add_argument("--etape", default="planches image")
+    ap.add_argument("--approuve", type=float, help="montant en $ approuvé par Ilyas pour cette commande (sans lui : coût annoncé, aucun appel)")
     a = ap.parse_args()
     plans = sorted(p for p in a.planches.glob("S[0-9][0-9].json"))
     if a.scenes:
@@ -424,6 +460,13 @@ def main() -> int:
         print("scènes écrites : " + ", ".join(ecrire_scenes(a.planches, a.vers, a.biblio)))
         return 0
     etapes = ["dessiner", "reperer", "detourer", "vectoriser"] if a.commande == "tout" else [a.commande]
+    n_dessins = 0
+    if "dessiner" in etapes:
+        n_dessins = sum(1 for p in plans if a.forcer or not en_cache(json.loads(p.read_text(encoding="utf-8")), p.parent, a.ref, a.style))
+    n_reperages = len(plans) if "reperer" in etapes else 0
+    estime = n_dessins * prix_image(IMAGE, TAILLE) + n_reperages * PRIX_REPERAGE
+    if not garde_depense(estime, a.approuve, f"{n_dessins} dessin(s) {IMAGE} {TAILLE}, {n_reperages} repérage(s)"):
+        return 3
     t0 = time.time()
     with ThreadPoolExecutor(max_workers=8) as ex:
         futs = {ex.submit(une_scene, p, a.ref, a.etape, etapes, a.style, a.forcer): p.stem for p in plans}
