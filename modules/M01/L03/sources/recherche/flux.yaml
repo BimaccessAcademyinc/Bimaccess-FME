@@ -1,0 +1,344 @@
+axe: flux
+affirmations:
+  - id: A-flux-01
+    question: Q10
+    enonce: "Selon le lexique de FME, un transformer peut traiter soit une entité à la fois, soit tout un ensemble d'entités en une fois."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Terminology/Confluence-Topics/group_based_processing.htm
+        titre: "group based processing"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME transformers can carry out transformations on either one feature at a time, or on a whole set of features at once."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-02
+    question: Q10
+    enonce: "Par défaut, le groupe d'un transformer à traitement par groupe est l'ensemble des entités qui y entrent ; le paramètre Group By permet de définir plusieurs groupes selon la valeur d'un attribut."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Terminology/Confluence-Topics/group_based_processing.htm
+        titre: "group based processing"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "By default, the group is ALL features entering the transformer."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Terminology/Confluence-Topics/group_based_processing.htm
+        titre: "group based processing"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "However, the \"Group By\" parameter in a transformer can define several groups based on the value of an attribute."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-03
+    question: Q10
+    enonce: "La documentation des transformers définit un transformer à traitement par groupe comme un transformer qui traite plusieurs entités simultanément, en conjonction avec les autres entités du groupe."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Group_Based_Transformers.htm
+        titre: "About Group-Based Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A Group-Based Transformer is one that processes a number of features simultaneously in conjunction with other features in the group."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-04
+    question: Q10
+    enonce: "La documentation donne StatisticsCalculator comme exemple de traitement par groupe : il calcule la moyenne, le maximum et le minimum d'un attribut pour tout un groupe d'entités."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Group_Based_Transformers.htm
+        titre: "About Group-Based Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "the StatisticsCalculator transformer calculates the mean, maximum and minimum values of an attribute for a whole group of features."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-05
+    question: Q10
+    enonce: "Selon la documentation, un Intersector dont le paramètre Group By est réglé sur « road_type » n'intersecte que les entités dont la valeur de l'attribut road_type est la même."
+    usage: contexte
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Group_Based_Transformers.htm
+        titre: "About Group-Based Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "an Intersector with the Group By parameter set to \"road_type\" will only intersect features whose value for the attribute \"road_type\" is a match."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-06
+    question: Q10
+    enonce: "Selon la documentation, les transformers dits « Feature Holding » ou « Blocker » interrompent temporairement le flux des entités jusqu'à ce qu'ils aient terminé leur traitement."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Group_Based_Transformers.htm
+        titre: "About Group-Based Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "These “Feature Holding” (or “Blocker”) transformers cause the flow of features to be temporarily halted until they have completed their processing."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-07
+    question: Q10
+    enonce: "La documentation prend le Sorter comme exemple de transformer bloquant : il doit rassembler toutes les entités d'entrée avant de les ordonner puis de les sortir."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Group_Based_Transformers.htm
+        titre: "About Group-Based Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This transformer requires all the input data to gather up inside it before it can do the work of ordering the features and then outputting them."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-08
+    question: Q10
+    enonce: "Le cours de l'éditeur décrit deux façons de traiter les groupes : retenir toutes les entités jusqu'à ce qu'elles soient toutes passées (le mode « Process at End (Blocking) »), ou, si les données sont déjà triées, les pousser après chaque groupe (« Process When Group Changes »)."
+    usage: contexte
+    sources:
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Basic-2020/DesktopBasic2Transformation/2.10.GroupByProcessing.html
+        titre: "Group-By Processing"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The first way is to hold all of the features until all of the features have come through the transformer, this is referred to as blocking."
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Basic-2020/DesktopBasic2Transformation/2.10.GroupByProcessing.html
+        titre: "Group-By Processing"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This mode will push the features through the transformer after each group which will help speed up performance."
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Basic-2020/DesktopBasic2Transformation/2.10.GroupByProcessing.html
+        titre: "Group-By Processing"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Only use this option when your data is pre-sorted."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-09
+    question: Q10
+    enonce: "Selon la documentation, les transformers à traitement par groupe consomment généralement plus de ressources que les transformers à traitement par entité."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Group_Based_Transformers.htm
+        titre: "About Group-Based Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "For that reason, Group-Based Transformers generally consume larger amounts of resources than Feature-Based Transformers."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-10
+    question: Q11
+    enonce: "Lorsque la mise en cache est activée, les ports de sortie enregistrent les données des entités dans des caches temporaires, que l'on peut consulter après une traduction complète ou partielle, ou même en cours de traduction."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Data-Caching.htm
+        titre: "Data Caching"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "When enabled, output ports record feature data in temporary caches, which you can view and inspect after completing a full or partial translation, or even mid-translation."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-11
+    question: Q11
+    enonce: "Pour voir les entités en cache, on clique sur l'icône de cache d'un port de sortie."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Data-Caching.htm
+        titre: "Data Caching"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "To view cached features, click a cache icon on an output port."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-12
+    question: Q11
+    enonce: "Le cours de l'éditeur appelle « feature counts » les nombres affichés le long des liaisons après une exécution, et dit qu'ils indiquent le nombre d'entités qui ont traversé cette liaison."
+    usage: narration
+    sources:
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Intro-2020/2.translations/2.06.feature-caching.html
+        titre: "Feature Caching"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "They are called feature counts."
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Intro-2020/2.translations/2.06.feature-caching.html
+        titre: "Feature Caching"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "They show the number of features that passed through that connection."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-13
+    question: Q11
+    enonce: "Selon la documentation, la mise en cache s'intègre à Data Preview ou à FME Data Inspector pour consulter les données mises en cache."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Data-Caching.htm
+        titre: "Data Caching"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Data caching seamlessly integrates the workspace with Data Preview or the FME Data Inspector."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-14
+    question: Q11
+    enonce: "Selon la documentation, la mise en cache affecte les ressources du système et, comme toutes les entités sont enregistrées, l'espace disque."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/Data-Caching.htm
+        titre: "Data Caching"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Data caching affects system resources, and because all features are recorded and stored, it can also affect disk space."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-15
+    question: Q11
+    enonce: "Le cours de l'éditeur (édition 2020) définit une exécution partielle comme l'exécution d'une seule section d'un espace de travail, utile pour éviter de relire les données depuis leur source."
+    usage: contexte
+    sources:
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Intro-2020/2.translations/2.06.feature-caching.html
+        titre: "Feature Caching"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A partial run is when only one section of a workspace executes."
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Intro-2020/2.translations/2.06.feature-caching.html
+        titre: "Feature Caching"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A partial run is particularly useful in avoiding re-reading data from its source; especially when the data comes from a slow, remote location such as a web service."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-16
+    question: Q11
+    enonce: "Le nom de la fonction varie selon la source de l'éditeur : le cours de 2020 parle de « Enable Feature Caching », le menu de la documentation consultée de « Enable Data Caching »."
+    usage: contexte
+    sources:
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Intro-2020/2.translations/2.06.feature-caching.html
+        titre: "Feature Caching"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Enable Feature Caching"
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/menu_commands.htm
+        titre: "Workbench menu commands"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Enable Data Caching"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-17
+    question: Q12
+    enonce: "Dans un exercice du cours de base de l'éditeur (édition 2017), un espace de travail lit les parcs d'une ville (MapInfo TAB), garde avec un Tester seulement les parcs de Stanley Park, et écrit en KML et en GPX."
+    usage: expert
+    sources:
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Basic-2017/DesktopBasic4Components/4.Exercise1.html
+        titre: "Exercise: Fundraising Walk - Creating a Workspace"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Add a Tester transformer and use it to filter out any park features that are not part of Stanley Park:"
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Basic-2017/DesktopBasic4Components/4.Exercise1.html
+        titre: "Exercise: Fundraising Walk - Creating a Workspace"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The outputs required are Google KML and GPX."
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Basic-2017/DesktopBasic4Components/4.Exercise1.html
+        titre: "Exercise: Fundraising Walk - Creating a Workspace"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "City Parks (MapInfo TAB)"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-18
+    question: Q12
+    enonce: "Dans cet exercice, le résultat attendu de l'exécution est qu'une seule entité passe le test du Tester."
+    usage: expert
+    sources:
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Basic-2017/DesktopBasic4Components/4.Exercise1.html
+        titre: "Exercise: Fundraising Walk - Creating a Workspace"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Run the workspace (as you can see from above, only 1 feature passes the test) and view the output in either the FME Data Inspector or Google Earth."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-19
+    question: Q13
+    enonce: "La documentation d'Esri sur l'extension Data Interoperability dit que le canevas de l'application Workbench affiche les sources de données, les connexions, les transformers et les entités de destination qui définissent l'outil ETL spatial."
+    usage: contexte
+    sources:
+      - url: https://doc.esri.com/en/arcgis-pro/latest/help/data/data-interoperability/introduction-to-the-workbench-application.html
+        titre: "Introduction to the Workbench application"
+        editeur: Esri
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The canvas displays the data sources, connections, transformers, and destination features that define your spatial ETL tool."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-flux-20
+    question: Q13
+    enonce: "Selon Esri, on peut personnaliser le flux de données d'un outil ETL spatial en ajoutant ou en retirant des lecteurs, des writers, des transformers et des connexions, et en configurant des paramètres."
+    usage: contexte
+    sources:
+      - url: https://doc.esri.com/en/arcgis-pro/latest/help/data/data-interoperability/spatial-etl-tools.html
+        titre: "Introduction to Spatial ETL tools"
+        editeur: Esri
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "You can customize the dataflow by adding or removing readers, writers, transformers, and connections and by configuring parameters."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q10
+    manque: "Définition propre des transformers « feature-based » (une entité à la fois) : seule la phrase du lexique (A-flux-01) a été lue ; la page des transformers n'en donne pas de définition lue. À sourcer si la leçon en a besoin."
+  - question: Q10
+    manque: "Source indépendante de l'éditeur sur le traitement par groupe et le blocage : aucune trouvée. Les articles du centre d'aide support.safe.com refusent la lecture (HTTP 403) ; à vérifier à la main."
+  - question: Q11
+    manque: "Les renommages Feature Caching vers Data Caching et Visual Preview vers Data Preview selon la version de FME ne sont pas lus sur une page ; seules les deux appellations (A-flux-16) le sont. La page « About Feature Inspection » n'a rendu aucun texte lisible. À sourcer."
+  - question: Q11
+    manque: "Compteurs d'entités sur les liaisons : la phrase de la documentation courante (menu Workbench) dit « All links and ports display feature counts » sans contexte lisible ; seul le cours 2020 les définit. À vérifier à la main."
+  - question: Q12
+    manque: "Exemple de flux avec données et résultat attendu : un seul exercice lu (2017). Le résultat d'un compteur détaillé par liaison (entités lues, Passed, Failed, écrites) n'est pas donné dans les pages lues. La fiche TU Delft « FME Form for beginners » n'a pas pu être lue (connexion réinitialisée, deux essais)."
+  - question: Q13
+    manque: "Source indépendante décrivant un flux complet (publication académique, cours universitaire, agence publique) : non trouvée ; seule la documentation d'Esri (A-flux-19, A-flux-20) décrit l'outil, sans flux d'exemple lu. Page Esri « FME Workbench essentials » rendue par script, illisible."
+visuels: []

@@ -1,0 +1,342 @@
+axe: transformers
+affirmations:
+  - id: A-transformers-01
+    question: Q7
+    enonce: "Dans la documentation des transformers de FME, un transformer est un objet de FME Workbench qui effectue la restructuration des entités."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Welcome/Welcome.htm
+        titre: "FME Transformers : Welcome"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A transformer is an FME Workbench object that carries out the restructuring of features."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-02
+    question: Q7
+    enonce: "La documentation de FME Form présente les transformers comme des objets qui agissent sur les données après leur lecture et avant leur écriture, en réorganisant leur structure ou en changeant leur contenu."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/workspaces_about.htm
+        titre: "About Workspaces"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "These are objects that act on the data after it is read and before it is written by reorganizing its structure or changing its content."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-03
+    question: Q7
+    enonce: "L'aide de FME Transformers indique que la page d'un transformer peut donner, en plus d'un aperçu de sa fonction, le nom de ses ports d'entrée et de sortie et la description de ses paramètres."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Welcome/About_Help.htm
+        titre: "About This Help File"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "In addition to an overview and a description of parameters, each transformer may also contain the following information."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Welcome/About_Help.htm
+        titre: "About This Help File"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The name of the port(s) and/or the expected input."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Welcome/About_Help.htm
+        titre: "About This Help File"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The name of the port(s) and/or the expected output."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-04
+    question: Q7
+    enonce: "Dans la fenêtre de configuration d'un transformer personnalisé (Transformer Designer), le volet de gauche liste le nom du transformer et ses ports d'entrée (Input) et de sortie (Output)."
+    usage: contexte
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/TransformerDesigner/TD-Configuring.htm
+        titre: "Configuring a Transformer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The left pane of the configuration window lists the transformer name and the Input and Output ports of the transformer."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-05
+    question: Q8
+    enonce: "Dans FME Workbench, les transformers sont regroupés en catégories selon leur fonction, et la galerie de transformers (Transformer Gallery) permet de les explorer par catégorie."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/transformers_locating.htm
+        titre: "Locating Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Transformers are grouped in categories applicable to their associated functionality."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/transformers_locating.htm
+        titre: "Locating Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Transformer categories are a good starting point from which to explore the Transformer Gallery."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-06
+    question: Q8
+    enonce: "La galerie de transformers permet de chercher à la fois dans les noms et dans les descriptions des transformers."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/transformers_locating.htm
+        titre: "Locating Transformers"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "You can search the gallery for both transformer names and descriptions."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-07
+    question: Q8
+    enonce: "La documentation de l'extension ArcGIS Data Interoperability décrit la galerie de transformers comme une fenêtre d'exploration où l'on cherche des transformers par catégorie ou par mots-clés décrivant un nom ou une fonction, et où l'on en ajoute un au canevas par double-clic ou par glisser."
+    usage: contexte
+    sources:
+      - url: https://pro.arcgis.com/en/pro-app/3.6/help/data/data-interoperability/fme-workbench-essentials.htm
+        titre: "FME Workbench essentials"
+        editeur: Esri
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "is an explorer window that enables you to browse for transformers by category or search for them by entering one or more keywords that describe a name or function."
+      - url: https://pro.arcgis.com/en/pro-app/3.6/help/data/data-interoperability/fme-workbench-essentials.htm
+        titre: "FME Workbench essentials"
+        editeur: Esri
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "To add a transformer to your workspace, double-click or drag the transformer onto the canvas."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-08
+    question: Q8
+    enonce: "La page d'accueil de FME Transformers dit qu'il existe des centaines de transformers différents, qui effectuent différents types de restructuration."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Welcome/Welcome.htm
+        titre: "FME Transformers : Welcome"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "There are hundreds of different transformers that perform different types of restructuring."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-09
+    question: Q8
+    enonce: "Un cours de formation de Safe Software (édition Desktop Intro 2020, non daté dans la page) écrit « With over 500 transformers » pour désigner le nombre de transformers de FME."
+    usage: expert
+    sources:
+      - url: https://s3.amazonaws.com/gitbook/Desktop-Intro-2020/3.transformations/3.04.locating-transformers.html
+        titre: "Locating Transformers (Introduction to FME Desktop)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "With over 500 transformers, FME possesses a lot of functionality"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-10
+    question: Q9
+    enonce: "Le transformer Tester accepte n'importe quelle entité, l'évalue contre un ou plusieurs tests définis par l'utilisateur, et la sort par le port Passed si elle remplit les conditions, ou par le port Failed sinon."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/tester.htm
+        titre: "Tester"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The Tester accepts any feature. It evaluates each feature against one or more user-defined tests"
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/tester.htm
+        titre: "Tester"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "outputs the feature via the Passed port if it meets the defined conditions, or via the Failed port if it fails the defined conditions."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-11
+    question: Q9
+    enonce: "Selon la page du Tester, les entités qui échouent au test sortent par le port Failed et peuvent être envoyées vers un autre traitement ailleurs dans l'espace de travail."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/tester.htm
+        titre: "Tester"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Features that fail the test are output via the Failed port, and can be sent for further processing elsewhere."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-12
+    question: Q9
+    enonce: "AttributeManager modifie un ou plusieurs attributs en les ajoutant, les renommant, les copiant, les supprimant ou les réordonnant."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/attributemanager.htm
+        titre: "AttributeManager"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Alters one or more attributes by adding, renaming, copying, deleting or re-ordering."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-13
+    question: Q9
+    enonce: "AttributeManager accepte n'importe quelle entité et a un seul port de sortie, Output, par lequel sortent les entités dont les attributs ont été modifiés selon les paramètres choisis."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/attributemanager.htm
+        titre: "AttributeManager"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This transformer accepts any feature."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/attributemanager.htm
+        titre: "AttributeManager"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Features with attributes modified according to parameter selections."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-14
+    question: Q9
+    enonce: "Counter ajoute un attribut numérique à une entité et lui donne une valeur ; chaque entité suivante qui traverse le transformer reçoit une valeur incrémentée, ce qui compte les entités."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/counter.htm
+        titre: "Counter"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Adds a numeric attribute to a feature and assigns a value. Each subsequent feature passing through the transformer receives an incremented value, counting the features."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-15
+    question: Q9
+    enonce: "Counter accepte n'importe quelle entité et sort, par son port Output, les entités avec l'attribut de compte ajouté selon les paramètres."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/counter.htm
+        titre: "Counter"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This transformer accepts any feature."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/counter.htm
+        titre: "Counter"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Features with an added Count attribute as specified in parameters."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-16
+    question: Q9
+    enonce: "AreaCalculator calcule l'aire plane ou inclinée des géométries de polygones et ajoute les résultats comme attributs."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/areacalculator.htm
+        titre: "AreaCalculator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Calculates the planar or sloped area of polygon geometries and adds the results as attributes."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-17
+    question: Q9
+    enonce: "Les aires calculées par AreaCalculator sont en unités carrées du sol selon le système de coordonnées de l'entité ; un multiplicateur peut convertir dans une autre unité de mesure."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/areacalculator.htm
+        titre: "AreaCalculator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Units are square ground units according to the feature's coordinate system."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/areacalculator.htm
+        titre: "AreaCalculator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A multiplier may be applied to scale the values and convert to different units of measure."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-18
+    question: Q9
+    enonce: "La page d'AreaCalculator donne un exemple où un ensemble de polygones de parcs passe dans un AreaCalculator, dont le multiplicateur convertit les mètres carrés en acres ; les entités de sortie ont un attribut _area_acres qui contient les aires."
+    usage: contexte
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/areacalculator.htm
+        titre: "AreaCalculator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "we have a set of park polygons and want to extract the area of each feature in acres."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/areacalculator.htm
+        titre: "AreaCalculator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The output features have a new _area_acres attribute, containing the area values."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-transformers-19
+    question: Q9
+    enonce: "Dans la documentation, un port dynamique Rejected apparaît sur Counter et sur AreaCalculator quand un paramètre est réglé sur une valeur non littérale qui pourrait rendre le traitement impossible."
+    usage: contexte
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/counter.htm
+        titre: "Counter"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The dynamic <Rejected> port appears when a parameter is set to a non-literal value that might make processing impossible."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/areacalculator.htm
+        titre: "AreaCalculator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The dynamic <Rejected> port appears when a parameter is set to a non-literal value that might make processing impossible."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q8
+    manque: "Nombre de transformers : la documentation actuelle dit « hundreds » sans chiffre ; « over 500 » vient d'un cours de formation de Safe Software non daté dans la page. Aucune source indépendante ni date trouvée. À vérifier à la main."
+  - question: Q7
+    manque: "Définition des ports et des paramètres d'un transformer dans Workbench (ce que montre le canevas à un débutant) : les pages lues ne la donnent que pour le Transformer Designer ; à sourcer."
+  - question: Q9
+    manque: "Source indépendante de l'éditeur pour le rôle de Tester, AttributeManager, Counter et AreaCalculator : non trouvée (Esri ne décrit pas ces transformers dans les pages lues). À sourcer."
+visuels:
+  - id: VIS-01
+    url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/areacalculator.htm
+    editeur: Safe Software
+    description: "Schémas d'exemple de la page AreaCalculator (parcs, aires en acres)."
+    utilite: "Référence pour redessiner un flux Creator/Reader vers AreaCalculator vers writer."
+    usage: REFERENCE_ONLY
