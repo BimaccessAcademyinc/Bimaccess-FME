@@ -89,4 +89,5 @@ export const STYLE_REPERES = `
 [data-g="trait"] > [data-repere], [data-g="pointe"] > [data-repere] { background: #5B2A86 }
 [data-g="evidence"] > [data-repere] { background: #2F6DA8; left: auto; right: 0 }
 [data-g="arrivee"] > [data-repere] { background: #6B6B6B }
+[data-decoupe="cercle"] > img { clip-path: circle(50%) }
 `.trim()

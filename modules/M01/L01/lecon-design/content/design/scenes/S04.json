@@ -19,27 +19,24 @@
     }
   ],
   "styles": {
-    "rubrique": {
+    "entete": {
       "police": "capitales",
-      "graisse": 600,
-      "taille": 24,
-      "interligne": 1.2,
-      "interlettrage": 0.16,
-      "capitales": true,
-      "couleur": "encre"
-    },
-    "entite": {
-      "police": "capitales",
-      "graisse": 600,
       "taille": 26,
-      "interligne": 1.15,
+      "graisse": 600,
       "interlettrage": 0.32,
       "capitales": true,
       "couleur": "terme"
     },
+    "rubrique": {
+      "police": "capitales",
+      "taille": 24,
+      "graisse": 600,
+      "interlettrage": 0.16,
+      "capitales": true,
+      "couleur": "encre"
+    },
     "ligne": {
       "police": "serif",
-      "graisse": 400,
       "taille": 28,
       "interligne": 1.25,
       "couleur": "encre"
@@ -49,72 +46,71 @@
     "carte": {
       "fichier": "s04-ill-carte",
       "x": 104,
-      "y": 540,
-      "largeur": 636
+      "y": 556,
+      "largeur": 610
     },
     "feuille": {
       "fichier": "s04-ill-feuille",
-      "x": 764,
-      "y": 195,
-      "largeur": 660
+      "x": 748,
+      "y": 182,
+      "largeur": 676
     },
     "batiment": {
       "fichier": "s04-ill-batiment",
-      "x": 177,
-      "y": 200,
-      "largeur": 490,
-      "aplat": "fond"
+      "x": 134,
+      "y": 182,
+      "largeur": 550
     },
     "contour": {
       "fichier": "s04-ill-contour",
-      "x": 340.4,
-      "y": 639.4,
-      "largeur": 163.2
+      "x": 334,
+      "y": 653.4,
+      "largeur": 150
     },
     "hachure": {
       "fichier": "s04-ill-hachure",
-      "x": 825.7,
-      "y": 361.3,
-      "largeur": 145.9
+      "x": 809,
+      "y": 370.3,
+      "largeur": 134
     },
     "signes": {
       "fichier": "s04-ill-signes",
-      "x": 1113.9,
-      "y": 383.2,
-      "largeur": 255.0
+      "x": 1005,
+      "y": 378.5,
+      "largeur": 360
     },
     "globe": {
       "fichier": "s04-ill-globe",
-      "x": 817.0,
-      "y": 684.6,
-      "largeur": 106.1,
+      "x": 801,
+      "y": 683,
+      "largeur": 116,
       "decoupe": "cercle"
     },
     "repere": {
       "fichier": "s04-ill-repere",
-      "x": 841.0,
-      "y": 711.2,
-      "largeur": 32.6
+      "x": 827.2,
+      "y": 712,
+      "largeur": 35.7
     }
   },
   "feuille": {
     "illustration": "feuille",
     "bandes": [
-      294.5,
-      507.0,
-      636.3
+      283.9,
+      501.5,
+      633.9
     ]
   },
   "traces": {
-    "trait": {
+    "represente": {
       "points": [
         [
-          632.1,
-          257.2
+          644.8,
+          245.9
         ],
         [
-          766.6,
-          257.2
+          751.1,
+          245.9
         ]
       ],
       "epaisseur": 2
@@ -122,12 +118,12 @@
     "filet": {
       "points": [
         [
-          817.0,
-          604.1
+          801,
+          601
         ],
         [
-          1371.0,
-          604.1
+          1371,
+          601
         ]
       ],
       "couleur": "carroyage",
@@ -137,43 +133,43 @@
   "textes": {
     "entite": {
       "ecran": 1,
-      "style": "entite",
-      "cx": 1094.0,
-      "y": 241.9,
+      "style": "entete",
+      "cx": 1081.8,
+      "y": 230.3,
       "place": "carte",
-      "reserve": "aucune"
+      "largeurMesuree": 365.4
     },
     "geometrie": {
       "ecran": 2,
       "style": "rubrique",
-      "x": 817.0,
-      "y": 308.2,
+      "x": 801,
+      "y": 297,
       "place": "carte",
-      "reserve": "aucune"
+      "largeurMesuree": 471.5
     },
     "attributs": {
       "ecran": 3,
       "style": "rubrique",
-      "x": 817.0,
-      "y": 520.4,
+      "x": 801,
+      "y": 514,
       "place": "carte",
-      "reserve": "aucune"
+      "largeurMesuree": 126.1
     },
     "usage": {
       "ecran": 4,
       "style": "ligne",
-      "x": 817.0,
-      "y": 560.2,
+      "x": 801,
+      "y": 556,
       "place": "carte",
-      "reserve": "aucune"
+      "largeurMesuree": 210.5
     },
     "systeme": {
       "ecran": 5,
       "style": "rubrique",
-      "x": 817.0,
-      "y": 650.0,
+      "x": 801,
+      "y": 647,
       "place": "carte",
-      "reserve": "aucune"
+      "largeurMesuree": 313.5
     }
   },
   "etapes": [
@@ -215,7 +211,7 @@
           "duree": 0.5
         },
         {
-          "trace": "trait",
+          "trace": "represente",
           "duree": 0.4
         },
         {
@@ -241,8 +237,8 @@
         {
           "deplacement": "contour",
           "vers": [
-            817.0,
-            350.1
+            801,
+            360
           ],
           "duree": 0.3,
           "avec": true
@@ -311,42 +307,42 @@
   ],
   "evidences": {
     "contour": {
-      "x": 333.4,
-      "y": 632.4,
-      "largeur": 177.2,
-      "hauteur": 128.1,
+      "x": 324,
+      "y": 643.4,
+      "largeur": 170,
+      "hauteur": 124.8,
       "de": "Sur une carte, un bâtiment",
       "a": "La donnée, elle"
     },
     "entite": {
-      "x": 897.6,
-      "y": 231.7,
-      "largeur": 392.7,
-      "hauteur": 51.0,
+      "x": 893.5,
+      "y": 219,
+      "largeur": 385,
+      "hauteur": 53.7,
       "de": "on l'appelle une entité géographique",
       "a": "Sa géométrie porte"
     },
     "geometrie": {
-      "x": 802.5,
-      "y": 303.8,
-      "largeur": 583.1,
-      "hauteur": 191.5,
+      "x": 786.9,
+      "y": 293,
+      "largeur": 598.1,
+      "hauteur": 197,
       "de": "Sa géométrie porte",
       "a": "Ses attributs la décrivent"
     },
     "attributs": {
-      "x": 802.5,
-      "y": 516.4,
-      "largeur": 583.1,
-      "hauteur": 108.1,
+      "x": 786.9,
+      "y": 510.8,
+      "largeur": 598.1,
+      "hauteur": 111.7,
       "de": "Ses attributs la décrivent",
       "a": "Son système de coordonnées"
     },
     "systeme": {
-      "x": 802.5,
-      "y": 645.7,
-      "largeur": 583.1,
-      "hauteur": 153.2,
+      "x": 786.9,
+      "y": 643.2,
+      "largeur": 598.1,
+      "hauteur": 157.8,
       "de": "Son système de coordonnées"
     }
   }

@@ -214,7 +214,7 @@ for (const o of lu) {
     ids.add(cle)
   }
   const b = o.box
-  const gestes = lireRepere(o)
+  const gestes = o.g === "arrivee" ? [] : lireRepere(o)
   for (const g of gestes) gestesTous.push({ ...g, cible: o.g === "titre" ? "titre" : id, o })
 
   switch (o.g) {
