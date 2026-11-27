@@ -1,0 +1,522 @@
+axe: coordonnees
+affirmations:
+  - id: A-coordonnees-01
+    question: Q10
+    enonce: "Selon la norme internationale de référencement par coordonnées, reprise par l'OGC, un système de référence de coordonnées est un système de coordonnées relié à un objet par un référentiel (datum)."
+    usage: narration
+    sources:
+      - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+        titre: "OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum"
+        editeur: Open Geospatial Consortium
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "coordinate system that is related to an object by a datum"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-02
+    question: Q10
+    enonce: "Un système de coordonnées est défini comme un ensemble de règles mathématiques qui disent comment attribuer des coordonnées à des points."
+    usage: narration
+    sources:
+      - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+        titre: "OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum"
+        editeur: Open Geospatial Consortium
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "set of mathematical rules for specifying how coordinates are to be assigned to points"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-03
+    question: Q10
+    enonce: "Le référentiel (datum) est l'ensemble des paramètres qui fixent la position de l'origine, l'échelle et l'orientation d'un système de coordonnées."
+    usage: narration
+    sources:
+      - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+        titre: "OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum"
+        editeur: Open Geospatial Consortium
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "parameter or set of parameters that realize the position of the origin, the scale, and the orientation of a coordinate system"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-04
+    question: Q10
+    enonce: "L'ellipsoïde est une surface géométrique de référence, formée par une ellipse qu'on fait tourner autour d'un axe principal."
+    usage: contexte
+    sources:
+      - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+        titre: "OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum"
+        editeur: Open Geospatial Consortium
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "geometric reference surface embedded in 3D Euclidean space formed by an ellipse that is rotated about a main axis"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-05
+    question: Q10
+    enonce: "Une projection cartographique est une conversion de coordonnées d'un système ellipsoïdal vers un plan."
+    usage: narration
+    sources:
+      - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+        titre: "OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum"
+        editeur: Open Geospatial Consortium
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "coordinate conversion from an ellipsoidal coordinate system to a plane"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-06
+    question: Q10
+    enonce: "Un système de référence de coordonnées projeté est dérivé d'un système géographique par l'application d'une projection cartographique."
+    usage: narration
+    sources:
+      - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+        titre: "OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum"
+        editeur: Open Geospatial Consortium
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "coordinate reference system derived from a geographic coordinate reference system by applying a map projection"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-07
+    question: Q10
+    enonce: "Dans un système de référence de coordonnées spatial, les nombres de coordonnées sont qualifiés par des unités."
+    usage: narration
+    sources:
+      - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+        titre: "OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum"
+        editeur: Open Geospatial Consortium
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "In a spatial coordinate reference system, the coordinate numbers are qualified by units."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-08
+    question: Q10
+    enonce: "Une transformation de coordonnées opère entre deux systèmes de référence de coordonnées, non entre deux référentiels ; elle change les valeurs des coordonnées sans changer la définition du référentiel."
+    usage: narration
+    sources:
+      - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+        titre: "OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum"
+        editeur: Open Geospatial Consortium
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A coordinate transformation changes coordinate values. It does not change the definition of the datum."
+      - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+        titre: "OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum"
+        editeur: Open Geospatial Consortium
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A coordinate transformation operates between two coordinate reference systems, not between two datums."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-09
+    question: Q11
+    enonce: "Le jeu de données EPSG de l'IOGP contient de nombreuses définitions de systèmes de référence de coordonnées et de transformations de coordonnées, de portée mondiale, régionale, nationale ou locale."
+    usage: narration
+    sources:
+      - url: https://epsg.org/home.html
+        titre: "EPSG Geodetic Parameter Dataset"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "IOGP's EPSG Geodetic Parameter Dataset contains many definitions of coordinate reference systems (CRSs) and coordinate transformations (CTs) which can be global, regional, national, or local in application."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-10
+    question: Q11
+    enonce: "L'IOGP présente le jeu de données EPSG comme la norme de fait de l'industrie géospatiale, lancé en 1985 et rendu public en 1993."
+    usage: expert
+    sources:
+      - url: https://epsg.org/home.html
+        titre: "EPSG Geodetic Parameter Dataset"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The EPSG Dataset is the de facto standard in the geospatial industry, initiated in 1985 and first made public in 1993."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-11
+    question: Q11
+    enonce: "Le modèle de données du jeu EPSG suit la norme internationale ISO 19111:2019 de référencement par coordonnées."
+    usage: contexte
+    sources:
+      - url: https://epsg.org/home.html
+        titre: "EPSG Geodetic Parameter Dataset"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Its data model follows the ISO 19111:2019 international standard for referencing by coordinates"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-12
+    question: Q11
+    enonce: "Dans le registre EPSG, le code 4326 désigne WGS 84, un système géographique 2D dont les axes sont la latitude et la longitude, en degrés."
+    usage: expert
+    sources:
+      - url: https://epsg.org/crs_4326/WGS-84.html
+        titre: "EPSG:4326 WGS 84"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Name: WGS 84 Code: 4326 CRS Type: Geographic 2D"
+      - url: https://epsg.org/crs_4326/WGS-84.html
+        titre: "EPSG:4326 WGS 84"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-13
+    question: Q11
+    enonce: "Dans le registre EPSG, le code 4617 désigne NAD83(CSRS), un système géographique 2D dont l'étendue est le Canada."
+    usage: expert
+    sources:
+      - url: https://epsg.org/crs_4617/NAD83-CSRS.html
+        titre: "EPSG:4617 NAD83(CSRS)"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Name: NAD83(CSRS) Code: 4617 CRS Type: Geographic 2D"
+      - url: https://epsg.org/crs_4617/NAD83-CSRS.html
+        titre: "EPSG:4617 NAD83(CSRS)"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Extent: Canada"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-14
+    question: Q11
+    enonce: "Le NAD83(CSRS) du registre EPSG a pour référentiel le NAD83 Canadian Spatial Reference System."
+    usage: contexte
+    sources:
+      - url: https://epsg.org/crs_4617/NAD83-CSRS.html
+        titre: "EPSG:4617 NAD83(CSRS)"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Datum: NAD83 Canadian Spatial Reference System"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-15
+    question: Q11
+    enonce: "Dans le registre EPSG, le code 26917 désigne NAD83 / UTM zone 17N, un système projeté fondé sur NAD83 dont les coordonnées Est et Nord sont en mètres."
+    usage: expert
+    sources:
+      - url: https://epsg.org/crs_26917/NAD83-UTM-zone-17N.html
+        titre: "EPSG:26917 NAD83 / UTM zone 17N"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Name: NAD83 / UTM zone 17N Code: 26917 CRS Type: Projected"
+      - url: https://epsg.org/crs_26917/NAD83-UTM-zone-17N.html
+        titre: "EPSG:26917 NAD83 / UTM zone 17N"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Cartesian 2D CS. Axes: easting, northing (E,N). Orientations: east, north. UoM: m."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-16
+    question: Q11
+    enonce: "Dans le registre EPSG, le code 32183 désigne NAD83 / MTM zone 3, un système projeté fondé sur NAD83, dont l'étendue est le Québec et Terre-Neuve-et-Labrador."
+    usage: expert
+    sources:
+      - url: https://epsg.org/crs_32183/NAD83-MTM-zone-3.html
+        titre: "EPSG:32183 NAD83 / MTM zone 3"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Name: NAD83 / MTM zone 3 Code: 32183 CRS Type: Projected"
+      - url: https://epsg.org/crs_32183/NAD83-MTM-zone-3.html
+        titre: "EPSG:32183 NAD83 / MTM zone 3"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Extent: Canada - Quebec, Newfoundland and Labrador - MTM zone 3"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-17
+    question: Q11
+    enonce: "Dans le registre EPSG, le code 2154 désigne le système projeté Lambert-93 fondé sur RGF93 v1, dont l'étendue est la France et dont les coordonnées sont en mètres."
+    usage: expert
+    sources:
+      - url: https://epsg.org/crs_2154/RGF93-v1-Lambert-93.html
+        titre: "EPSG:2154 ETRS89-FRA [RGF93 v1] / Lambert-93"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Name: ETRS89-FRA [RGF93 v1] / Lambert-93 Code: 2154 CRS Type: Projected"
+      - url: https://epsg.org/crs_2154/RGF93-v1-Lambert-93.html
+        titre: "EPSG:2154 ETRS89-FRA [RGF93 v1] / Lambert-93"
+        editeur: IOGP
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Cartesian 2D CS. Axes: easting, northing (X,Y). Orientations: east, north. UoM: m."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-18
+    question: Q11
+    enonce: "En France, le système national de référence est le RGF93 (Réseau Géodésique Français 1993), établi par l'IGN, avec l'ellipsoïde IAG GRS80."
+    usage: expert
+    sources:
+      - url: https://bofip.impots.gouv.fr/doctrine/pgp/5101-PGP
+        titre: "CAD - Travaux topographiques du cadastre - Les canevas"
+        editeur: Direction générale des Finances publiques
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Le système national de référence est le RGF93 (Réseau Géodésique Français 1993). Il a été établi par l'IGN"
+      - url: https://bofip.impots.gouv.fr/doctrine/pgp/5101-PGP
+        titre: "CAD - Travaux topographiques du cadastre - Les canevas"
+        editeur: Direction générale des Finances publiques
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "ellipsoïde : IAG GRS80 ;"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-19
+    question: Q11
+    enonce: "En France métropolitaine, la partie planimétrique du système de référence est composée du RGF93 et de deux systèmes de projection associés, le Lambert 93 et les CC 9 zones."
+    usage: narration
+    sources:
+      - url: https://bofip.impots.gouv.fr/doctrine/pgp/5101-PGP
+        titre: "CAD - Travaux topographiques du cadastre - Les canevas"
+        editeur: Direction générale des Finances publiques
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "d'un système géodésique, le RGF93 et de deux systèmes de projection associés, le Lambert 93 et les CC 9 zones"
+      - url: https://crs.bkg.bund.de/crs/eu-countrysel.php?country=FR
+        titre: "Coordinate Reference Systems of France - FR"
+        editeur: Bundesamt für Kartographie und Geodäsie
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Datum RGF93 in Lambert Projection - Lambert93 - with special French parameters"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-20
+    question: Q11
+    enonce: "Le gouvernement du Canada a adopté NAD83 comme datum national officiel en 1990 ; le NAD83 est le datum officiel de toute la cartographie et des systèmes d'information fondés sur la position du gouvernement fédéral."
+    usage: expert
+    sources:
+      - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+        titre: "Impact of NAD83 adoption (fiche technique)"
+        editeur: Gouvernement de l'Alberta
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The NAD83 datum was adopted as the official national datum by the U.S. government in 1989, and the Canadian government in 1990."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-21
+    question: Q11
+    enonce: "L'Ontario définit NAD83-CSRS, version du NAD83 fondée sur le Système canadien de référence spatial, comme datum géodésique horizontal officiel pour toutes ses activités de référencement géospatial."
+    usage: contexte
+    sources:
+      - url: https://www.ontario.ca/page/go-its-541tes-nad83-csrs-official-horizontal-geodetic-datum
+        titre: "GO-ITS 541TES NAD83-CSRS official horizontal geodetic datum for Ontario"
+        editeur: Gouvernement de l'Ontario
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "as the official horizontal geodetic datum to be used for all geo-spatial referencing activities."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-22
+    question: Q11
+    enonce: "Le système UTM divise la Terre en 60 zones de 6 degrés ; les zones 7 à 22 couvrent le Canada."
+    usage: expert
+    sources:
+      - url: https://geonova.novascotia.ca/sites/default/files/resource-library/NSCRS%20Technical%20Support%200004%20Projections%2029Feb2016.pdf
+        titre: "Technical Support: Projections in Nova Scotia"
+        editeur: Gouvernement de la Nouvelle-Écosse
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The UTM projection divides the Earth into 60 zones of 6 degrees (6° * 60 = 360°) Zones 7-22 cover Canada."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-23
+    question: Q11
+    enonce: "Une zone MTM est la bande comprise entre deux méridiens séparés de 3 degrés ; des zones plus petites réduisent les facteurs d'échelle et l'écart entre distances sur le terrain et distances sur la grille."
+    usage: expert
+    sources:
+      - url: https://geonova.novascotia.ca/sites/default/files/resource-library/NSCRS%20Technical%20Support%200004%20Projections%2029Feb2016.pdf
+        titre: "Technical Support: Projections in Nova Scotia"
+        editeur: Gouvernement de la Nouvelle-Écosse
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "A MTM zone refers to the area between two lines"
+      - url: https://geonova.novascotia.ca/sites/default/files/resource-library/NSCRS%20Technical%20Support%200004%20Projections%2029Feb2016.pdf
+        titre: "Technical Support: Projections in Nova Scotia"
+        editeur: Gouvernement de la Nouvelle-Écosse
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "of longitude that are separated by 3 degrees."
+      - url: https://geonova.novascotia.ca/sites/default/files/resource-library/NSCRS%20Technical%20Support%200004%20Projections%2029Feb2016.pdf
+        titre: "Technical Support: Projections in Nova Scotia"
+        editeur: Gouvernement de la Nouvelle-Écosse
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The use of smaller zones reduces scale factors and the differences between ground and grid distances."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-24
+    question: Q12
+    enonce: "Les ellipsoïdes associés à NAD27 et NAD83 diffèrent : Clarke 1866 pour NAD27, GRS 1980 pour NAD83."
+    usage: expert
+    sources:
+      - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+        titre: "Impact of NAD83 adoption (fiche technique)"
+        editeur: Gouvernement de l'Alberta
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The ellipsoid associated with NAD27 is Clarke's 1866 ellipsoid."
+      - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+        titre: "Impact of NAD83 adoption (fiche technique)"
+        editeur: Gouvernement de l'Alberta
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "ellipsoid associated with NAD83 is the Geodetic Reference System"
+      - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+        titre: "Impact of NAD83 adoption (fiche technique)"
+        editeur: Gouvernement de l'Alberta
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "1980. The dimensions of these two ellipsoids are summarized in Table"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-25
+    question: Q12
+    enonce: "En Alberta, les coordonnées NAD83 des repères de contrôle diffèrent en moyenne des valeurs NAD27 d'environ 6 à 7 m vers le nord en latitude et d'environ 20 m vers l'ouest en longitude."
+    usage: expert
+    sources:
+      - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+        titre: "Impact of NAD83 adoption (fiche technique)"
+        editeur: Gouvernement de l'Alberta
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "values by approximately 0.2 arc‐seconds (or 6 to 7 m) northerly in latitude"
+      - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+        titre: "Impact of NAD83 adoption (fiche technique)"
+        editeur: Gouvernement de l'Alberta
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "seconds (or 20 m) westerly in longitude."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-26
+    question: Q12
+    enonce: "En Alberta, du fait du changement de dimensions de l'ellipsoïde, les coordonnées planes Mercator transverse changent d'environ 225 m vers le nord et 70 m vers l'ouest ; ce sont des moyennes."
+    usage: expert
+    sources:
+      - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+        titre: "Impact of NAD83 adoption (fiche technique)"
+        editeur: Gouvernement de l'Alberta
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "transverse Mercator plane coordinates change approximately 225 m northerly and 70 m westerly."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-27
+    question: Q12
+    enonce: "Dans les 48 États contigus des États-Unis, le décalage NAD 27 vers NAD 83 du graticule latitude/longitude est de l'ordre de 10 à 100 mètres au sol ; les valeurs UTM changent davantage, environ 200 mètres."
+    usage: expert
+    sources:
+      - url: https://www.usgs.gov/faqs/how-large-north-american-datum-1927-nad-27-nad-83-shift
+        titre: "How large is the North American Datum of 1927 (NAD 27) to NAD 83 shift?"
+        editeur: U.S. Geological Survey
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "is in the range of 10-100 ground meters."
+      - url: https://www.usgs.gov/faqs/how-large-north-american-datum-1927-nad-27-nad-83-shift
+        titre: "How large is the North American Datum of 1927 (NAD 27) to NAD 83 shift?"
+        editeur: U.S. Geological Survey
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Changes to UTM values are generally larger, around 200 meters, and changes for other coordinate systems are different."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-28
+    question: Q12
+    enonce: "PROJ décrit une transformation « ballpark » qui ne tente aucun changement de datum et dont l'erreur peut atteindre quelques centaines de mètres dans certains cas."
+    usage: contexte
+    sources:
+      - url: https://proj.org/en/stable/glossary.html
+        titre: "Glossary — PROJ documentation"
+        editeur: PROJ (OSGeo)
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "lead in some cases to errors of a few hundreds of metres."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-29
+    question: Q12
+    enonce: "Les paramètres qui définissent NAD83 sont compatibles avec WGS 84, système de coordonnées associé au GPS."
+    usage: contexte
+    sources:
+      - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+        titre: "Impact of NAD83 adoption (fiche technique)"
+        editeur: Gouvernement de l'Alberta
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The parameters that define NAD83 are also compatible with the World Geodetic System 1984, the coordinate system associated with the Global Positioning System (GPS)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-coordonnees-30
+    question: Q11
+    enonce: "Le format GeoJSON impose un système géographique fondé sur le datum WGS 84, en degrés décimaux de longitude et latitude."
+    usage: contexte
+    sources:
+      - url: https://datatracker.ietf.org/doc/html/rfc7946
+        titre: "RFC 7946 The GeoJSON Format"
+        editeur: IETF
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The coordinate reference system for all GeoJSON coordinates is a geographic coordinate reference system, using the World Geodetic System 1984"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q10
+    manque: "Texte officiel ISO 19111 : iso.org refuse (403) ; le texte OGC Topic 2 (docs.ogc.org) est lu à la place. Les mots du texte OGC sont à vérifier à la main contre l'édition ISO 19111:2019 si l'expert veut citer l'ISO."
+  - question: Q10
+    manque: "Définition sourcée d'une « projection » en parties (unités, ellipsoïde dans le datum) autre que la définition de la norme ; la liste « datum, ellipsoïde, projection, unités » comme parties d'un CRS est reconstruite depuis des définitions séparées et la structure des fiches EPSG, pas énoncée telle quelle par une source. À sourcer."
+  - question: Q11
+    manque: "Pages NRCan sur NAD83(CSRS), UTM et MTM illisibles par le script (texte vide, page rendue par script) : à vérifier à la main sur natural-resources.canada.ca ; aucune source fédérale lue sur UTM, MTM ni NAD83(CSRS)."
+  - question: Q11
+    manque: "Paramètres de Lambert-93 (parallèles de référence 44 et 49 degrés N) et année de définition légale : non lus dans une page source (page IGN générique, décret non lu). À sourcer."
+  - question: Q11
+    manque: "Lien exact entre WGS 84 (EPSG:4326) et NAD83 / RGF93 (différences de référentiel de l'ordre du mètre) : non trouvé. À sourcer."
+  - question: Q12
+    manque: "Écart documenté pour deux données dans deux systèmes NON reprojetées au Canada (autre que le cas NAD27 vers NAD83) ou pour un datum mal déclaré en France (NTF vers RGF93) : non trouvé. Statistique Canada (403) et NRCan (illisible) non lus."
+  - question: Q12
+    manque: "Les chiffres NAD27 contre NAD83 mesurent l'écart de datum entre deux systèmes ; ils ne décrivent pas directement l'écart visuel de deux couches superposées sans reprojection. Mise en garde pour le scénariste : ne pas reformuler en « décalage de X mètres à l'écran »."
+visuels: []

@@ -56,3 +56,8 @@ FME001-M01-L01 production composition,3775b3a9-c78a-55d8-8c92-67f4ed7aadae,Compo
 FME001-M01-L01 production composition,3775b3a9-c78a-55d8-8c92-67f4ed7aadae,Composition S06,claude-opus-5-5,32,64,403247,5590128,74628,0,0,13.3,
 FME001-M01-L01 production composition,3775b3a9-c78a-55d8-8c92-67f4ed7aadae,Composition S07,claude-opus-5-5,19,38,225843,2906508,38486,0,0,6.8,
 "FME001-M01-L01 production contrôles bloquants (S02, S04)",3775b3a9-c78a-55d8-8c92-67f4ed7aadae,Contrôles bloquants plan.ts,claude-opus-5-5,53,110,289727,11001922,78142,0,0,18.4,
+FME001-M01-L02 pack recherche par axes,3775b3a9-c78a-55d8-8c92-67f4ed7aadae,Chercheur L02 coordonnees,claude-sonnet-5-5,26,52,87706,1258338,28531,6,0,4.2,
+FME001-M01-L02 pack recherche par axes,3775b3a9-c78a-55d8-8c92-67f4ed7aadae,Chercheur L02 formats,claude-sonnet-5-5,18,36,63221,653362,23207,3,0,2.6,
+FME001-M01-L02 pack recherche par axes,3775b3a9-c78a-55d8-8c92-67f4ed7aadae,Chercheur L02 interop,claude-sonnet-5-5,20,40,61411,803276,16139,10,0,2.4,
+FME001-M01-L02 pack recherche par axes,3775b3a9-c78a-55d8-8c92-67f4ed7aadae,Chercheur L02 modeles,claude-sonnet-5-5,24,48,79208,1134707,28527,4,0,3.5,
+FME001-M01-L02 pack recherche par axes,3775b3a9-c78a-55d8-8c92-67f4ed7aadae,Chercheur L02 semantique,claude-sonnet-5-5,20,40,65552,773712,20968,6,0,3.2,
