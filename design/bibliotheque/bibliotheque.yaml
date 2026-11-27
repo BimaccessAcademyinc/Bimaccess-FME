@@ -1,0 +1,22 @@
+# Bibliothèque d'éléments dessinés du programme : un élément dessiné une fois, réutilisé par « biblio » dans un plan.
+elements:
+  feuille-saif:
+    date: '2026-11-27'
+    description: Feuille de format SAIF (parcelles, route, relief)
+    modele: gemini-3-pro-image
+    source: L01/lecon-image/S02#saif
+    taille:
+    - 332
+    - 247
+    traces: 85
+    vision: the format sheet with the map pattern above the timeline
+  fondateurs-murray-lutz:
+    date: '2026-11-27'
+    description: Carte des deux fondateurs, Don Murray et Dale Lutz (deux silhouettes)
+    modele: gemini-3-pro-image
+    source: L01/lecon-image/S01#fondateurs
+    taille:
+    - 257
+    - 152
+    traces: 17
+    vision: the small card at the top with two human silhouettes

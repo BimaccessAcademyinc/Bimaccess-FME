@@ -74,3 +74,11 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 - Méthode B (`modules/M01/L01/lecon-image/`, skill `harnais/skills/planche-image/`) : un plan court par scène écrit par le modèle de langage ; dessin sans texte par le modèle d'image (S01 d'abord, puis S01 en référence de style pour les six autres, en parallèle) ; boîtes par la vision ; papier rendu transparent ; scène générique `src/engine/planche.tsx` (révélation par masque sur locution, textes exacts posés par le code, mise en évidence, logo, source).
 - Mesures : appels d'image et de vision 59 s pour 7 scènes ; 21,6 min de session du « go » au push, outillage compris (correctif de sync, script, scène générique, lecteur des variantes) ; coût estimé dans le registre et l'appels.csv.
 - Limites : pas de tracé au trait (balayage de boîte), pas de mouvement géométrique (S04, S05 : apparitions successives), feuilles de S06 sans passage du tireté au plein, lignes de repère de S03 absentes.
+
+## 2026-11-27 · Planches tracées, bibliothèque, signature d'image
+
+- Constat d'Ilyas : les images du modèle d'image sont d'un niveau très supérieur aux SVG des agents ; l'animation par boîtes découvertes fait bricolage.
+- Décision : vectoriser la planche (vtracer, local, 6 s pour 7 scènes), ranger les tracés par élément (couverture de la boîte, couleur réservée pour les routes), et animer au trait : tracé à vitesse constante, aplat posé quand le trait se ferme, déplacement géométrique d'un élément ou de sa copie (S04, S05). Les trames denses restent en image.
+- Méthode pour la rentabilité (proposition d'Ilyas) : signature d'image du programme dans `design/style-image.md` et image de référence `design/references/style-carte.png` ; bibliothèque `design/bibliotheque/` (fondateurs réutilisés en S02 et S06, feuille SAIF de S02 en S03) ; cache des dessins par empreinte de l'invite ; gabarits de composition `harnais/skills/planche-image/gabarits.md`.
+- Mesures : 22,4 min de session (outillage compris), un seul appel externe (repérage de S04, environ 0,005 $) ; tracés de la leçon environ 1,3 Mo.
+- Reste : route bleue de S03 écrasée par le vectoriseur (tracer les routes par le code à terme) ; feuilles de S06 sans passage du tireté au plein.

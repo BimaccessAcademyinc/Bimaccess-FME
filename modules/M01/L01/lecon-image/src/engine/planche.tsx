@@ -47,6 +47,8 @@ export interface PlanchePlan {
   readonly manques?: readonly { readonly el: string; readonly jusqua: At }[]
   readonly zones?: Readonly<Record<string, readonly number[]>>
   readonly calques?: Readonly<Record<string, string>>
+  readonly biblio?: Readonly<Record<string, { readonly biblio: string }>>
+  readonly deplace?: readonly { readonly el: string; readonly vers: string; readonly at: At; readonly dur?: number; readonly copie?: boolean }[]
   readonly source?: { readonly x: number; readonly bas: number; readonly largeur?: number }
 }
 export interface PlancheBoites {
@@ -127,12 +129,36 @@ function Source({ href, children, x, bas, largeur = 250, testId }: { readonly hr
   )
 }
 
+type Trace = readonly (string | number)[]
+export interface PlancheTraces {
+  readonly traces: readonly Trace[]
+  readonly images: readonly string[]
+  readonly fonds?: Readonly<Record<string, string>>
+}
+export interface PlancheBiblio {
+  readonly w: number
+  readonly h: number
+  readonly traces: readonly Trace[]
+}
+
+/** Avancement 0 → 1 d'un tracé, selon son rang dans l'élément (la moitié de la durée pour échelonner, l'autre pour tracer). */
+const traceLocal = (t: number, at: number, dur: number, rang: number): number => (dur <= 0 ? (t >= at ? 1 : 0) : Math.max(0, Math.min(1, (t - at - rang * dur * 0.5) / (dur * 0.5))))
+
+function Chemin({ d, fill: couleur, tx, ty, p, transform }: { readonly d: string; readonly fill: string; readonly tx: number; readonly ty: number; readonly p: number; readonly transform?: string }) {
+  if (p <= 0) return null
+  const tr = `${transform ?? ""} translate(${tx},${ty})`
+  const fill = couleur === "fond" ? C.fond : couleur
+  // Le trait se dessine à vitesse constante, puis l'aplat se pose quand il est fermé (jamais de fondu)
+  return p < 1 ? <path d={d} transform={tr} pathLength={1} fill="none" stroke={fill} strokeWidth={2.5} strokeDasharray="1" strokeDashoffset={1 - p} /> : <path d={d} transform={tr} fill={fill} />
+}
+
 /**
- * Scène narrée tirée d'une planche image. `images` : `base` (image détourée)
- * et un calque par entrée de `plan.calques`. `sources` : adresses des mentions
- * de source, par scène (`content/sources.json`).
+ * Scène narrée tirée d'une planche image tracée. `images.base` : image
+ * détourée (éléments en trame) ; `traces` : tracés vectoriels rangés par
+ * élément ; `biblio` : éléments de la bibliothèque du programme nommés par le
+ * plan ; `sources` : adresses des mentions de source (`content/sources.json`).
  */
-export function planche(plan: PlanchePlan, boites: PlancheBoites, images: Readonly<Record<string, string>>, sources: Readonly<Record<string, string | undefined>>) {
+export function planche(plan: PlanchePlan, boites: PlancheBoites, images: Readonly<Record<string, string>>, sources: Readonly<Record<string, string | undefined>>, traces: PlancheTraces, biblio: Readonly<Record<string, PlancheBiblio>> = {}) {
   const ID = plan.scene
   const X = sceneTexts(ID, { screen: plan.textes.length })
   const V = voice(`${ID}-01`)
@@ -143,15 +169,53 @@ export function planche(plan: PlanchePlan, boites: PlancheBoites, images: Readon
     return [b[0] ?? 0, b[1] ?? 0, b[2] ?? 0, b[3] ?? 0]
   }
   const pad = (b: Box): Box => [b[0] - PAD, b[1] - PAD, b[2] + 2 * PAD, b[3] + 2 * PAD]
-  const calques = plan.calques ?? {}
-  for (const el of Object.keys(calques)) if (!images[el]) throw new Error(`${ID} : calque « ${el} » sans image`)
 
-  // Régions du masque (hors calques), de la plus grande à la plus petite
-  const regions = plan.revele
-    .filter((r) => !(r.el in calques))
-    .map((r) => ({ el: r.el, b: pad(box(r.el)), at: at(r.at), dur: r.dur ?? (r.at === 0 ? 0 : 0.6), dir: (r.dir ?? "right") as WipeDir }))
-    .sort((a, b) => b.b[2] * b.b[3] - a.b[2] * a.b[3])
-  const couches = plan.revele.filter((r) => r.el in calques).map((r) => ({ el: r.el, b: pad(box(r.el)), at: at(r.at), dur: r.dur ?? 0.8, dir: (r.dir ?? "right") as WipeDir }))
+  // Tracés par élément ; un élément de bibliothèque remplace ceux de la planche
+  const parEl = new Map<string, { d: string; fill: string; tx: number; ty: number; rang: number; i: number }[]>()
+  traces.traces.forEach((tr, i) => {
+    const [el, d, fill, tx, ty, rang] = tr as [string, string, string, number, number, number]
+    if (plan.biblio?.[el]) return
+    parEl.set(el, [...(parEl.get(el) ?? []), { d, fill, tx, ty, rang, i }])
+  })
+  const libs = new Map<string, { transform: string; w: number; h: number; paths: { d: string; fill: string; tx: number; ty: number; rang: number; i: number }[] }>()
+  for (const [el, ref] of Object.entries(plan.biblio ?? {})) {
+    const lib = biblio[ref.biblio]
+    if (!lib) throw new Error(`${ID} : élément de bibliothèque « ${ref.biblio} » absent`)
+    const [bx, by, bw, bh] = box(el)
+    const k = Math.min(bw / lib.w, bh / lib.h)
+    libs.set(el, {
+      transform: `translate(${bx + (bw - lib.w * k) / 2},${by + (bh - lib.h * k) / 2}) scale(${k})`,
+      w: lib.w,
+      h: lib.h,
+      paths: lib.traces.map((tr, i) => {
+        const [d, fill, tx, ty, rang] = tr as [string, string, number, number, number]
+        return { d, fill, tx, ty, rang, i }
+      }),
+    })
+  }
+
+  const deplace = (plan.deplace ?? []).map((m) => {
+    const t0 = at(m.at)
+    return { el: m.el, vers: m.vers, at: t0, end: t0 + (m.dur ?? 0.9), copie: m.copie ?? false }
+  })
+  const elements = plan.revele.map((r) => {
+    const t0 = at(r.at)
+    const b = box(r.el)
+    const traced = (parEl.get(r.el)?.length ?? 0) > 0 || libs.has(r.el)
+    const mode = traces.images.includes(r.el) || !traced ? "image" : "trace"
+    return { el: r.el, b, pb: pad(b), at: t0, dur: r.dur ?? (t0 === 0 ? 0 : mode === "trace" ? 1.2 : 0.6), dir: (r.dir ?? "right") as WipeDir, mode }
+  })
+  // Cible d'un déplacement : paraît, entière, à l'arrivée
+  for (const m of deplace) {
+    if (!elements.some((e) => e.el === m.vers)) {
+      const b = box(m.vers)
+      elements.push({ el: m.vers, b, pb: pad(b), at: m.end, dur: 0, dir: "right", mode: (parEl.get(m.vers)?.length ?? 0) > 0 ? "trace" : "image" })
+    }
+  }
+  const parAire = [...elements].sort((a, b) => b.pb[2] * b.pb[3] - a.pb[2] * a.pb[3])
+  const etat = new Map(elements.map((e) => [e.el, e]))
+  const vecteurs = [...parEl.entries()].flatMap(([el, ps]) => ps.map((p) => ({ el, ...p }))).sort((a, b) => a.i - b.i)
+
   const textes = plan.textes.map((tx) => ({ ...tx, t: at(tx.at), text: X.screen(tx.ecran) }))
   const logos = (plan.logos ?? []).map((l) => {
     const p = l.el ? place(box(l.el), l.pos ?? "dessous", 0, l.dy ?? 0) : { left: l.x ?? 0, top: l.y ?? 0, transform: "none", align: "left" as const }
@@ -160,44 +224,97 @@ export function planche(plan: PlanchePlan, boites: PlancheBoites, images: Readon
   })
   const focus = (plan.focus ?? []).map((f) => ({ at: at(f.at), on: f.el ?? "__aucun" }))
   const manques = (plan.manques ?? []).map((m) => ({ b: box(m.el), jusqua: at(m.jusqua) }))
-  const instants = [...new Set([...regions, ...couches, ...textes.map((x) => ({ at: x.t })), ...logos.map((l) => ({ at: l.t }))].map((r) => r.at).filter((x) => x > 0))].sort((a, b) => a - b)
+  const instants = [...new Set([...elements.map((e) => e.at), ...deplace.map((m) => m.end), ...textes.map((x) => x.t), ...logos.map((l) => l.t)].filter((x) => x > 0))].sort((a, b) => a - b)
   const href = sources[ID]
   const mask = `planche-${ID}`
+
+  /** Transformation d'un élément qui part de sa boîte vers celle de `vers` (centre et échelle interpolés). */
+  const trajet = (el: string, vers: string, k: number): string => {
+    const [ax, ay, aw, ah] = box(el)
+    const [bx, by, bw, bh] = box(vers)
+    const s = Math.min(bw / aw, bh / ah)
+    const cx = ax + aw / 2 + (bx + bw / 2 - ax - aw / 2) * k
+    const cy = ay + ah / 2 + (by + bh / 2 - ay - ah / 2) * k
+    return `translate(${cx},${cy}) scale(${1 + (s - 1) * k}) translate(${-(ax + aw / 2)},${-(ay + ah / 2)})`
+  }
 
   function View() {
     const t = useT()
     const passes = instants.filter((x) => t >= x).length
     const board = passes >= instants.length ? `${ID}-FIN` : `${ID}-${passes + 1}`
     const on = focusAt(focus, t)
+    const parti = (el: string) => deplace.some((m) => m.el === el && !m.copie && t >= m.at)
+    const enRoute = deplace.filter((m) => t >= m.at && t < m.end)
+    const progres = (el: string, rang: number) => {
+      const e = etat.get(el)
+      if (!e || t < e.at || parti(el)) return 0
+      return traceLocal(t, e.at, e.dur, rang)
+    }
     return (
       <SceneRoot id={ID} board={board}>
         <svg viewBox="0 0 1920 1080" width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0 }} aria-hidden="true">
           <defs>
+            {/* Trame : seuls les éléments en image se découvrent par balayage ; les éléments tracés restent masqués */}
             <mask id={mask} maskUnits="userSpaceOnUse" x={0} y={0} width={1920} height={1080}>
               <rect x={0} y={0} width={1920} height={1080} fill="#000" />
-              {regions.map((r) => {
-                const p = r.dur <= 0 ? (t >= r.at ? 1 : 0) : t < r.at ? 0 : wipeProgress(t, r.at, r.dur)
-                const [x, y, w, h] = revealed(r.b, p, r.dir)
+              {parAire.map((r) => {
+                const p = r.mode === "trace" || parti(r.el) ? 0 : r.dur <= 0 ? (t >= r.at ? 1 : 0) : t < r.at ? 0 : wipeProgress(t, r.at, r.dur)
+                const [x, y, w, h] = revealed(r.pb, p, r.dir)
                 return (
                   <g key={r.el}>
-                    <rect x={r.b[0]} y={r.b[1]} width={r.b[2]} height={r.b[3]} fill="#000" />
+                    <rect x={r.pb[0]} y={r.pb[1]} width={r.pb[2]} height={r.pb[3]} fill="#000" />
                     {p > 0 ? <rect x={x} y={y} width={w} height={h} fill="#fff" /> : null}
                   </g>
                 )
               })}
             </mask>
-            {couches.map((c) => {
-              const p = t < c.at ? 0 : wipeProgress(t, c.at, c.dur)
-              const [x, y, w, h] = revealed(c.b, p, c.dir)
-              return (
-                <clipPath key={c.el} id={`${mask}-${c.el}`}>
-                  <rect x={x} y={y} width={w} height={h} />
-                </clipPath>
-              )
-            })}
+            {/* Élément de bibliothèque : rien ne déborde de sa boîte d'origine */}
+            {[...libs.entries()].map(([el, lib]) => (
+              <clipPath key={el} id={`${mask}-lib-${el}`} clipPathUnits="userSpaceOnUse">
+                <rect x={0} y={0} width={lib.w} height={lib.h} />
+              </clipPath>
+            ))}
+            {/* Tracés : un élément pas encore dit cache ce qu'un plus grand dessine sur sa boîte */}
+            <mask id={`${mask}-v`} maskUnits="userSpaceOnUse" x={0} y={0} width={1920} height={1080}>
+              <rect x={0} y={0} width={1920} height={1080} fill="#fff" />
+              {parAire.map((r) => (
+                <rect key={r.el} x={r.pb[0]} y={r.pb[1]} width={r.pb[2]} height={r.pb[3]} fill={t >= r.at ? "#fff" : "#000"} />
+              ))}
+            </mask>
           </defs>
           <image href={images.base} x={0} y={0} width={1920} height={1080} preserveAspectRatio="none" mask={`url(#${mask})`} />
-          {couches.map((c) => (t >= c.at ? <image key={c.el} href={images[c.el]} x={0} y={0} width={1920} height={1080} preserveAspectRatio="none" clipPath={`url(#${mask}-${c.el})`} data-testid={tid(ID, c.el)} /> : null))}
+          {Object.entries(traces.fonds ?? {}).map(([el, couleur]) => {
+            const e = etat.get(el)
+            const parent = parAire.find((r) => r.mode === "image" && r.el !== el && e && r.b[0] <= e.b[0] && r.b[1] <= e.b[1] && r.b[0] + r.b[2] >= e.b[0] + e.b[2] && r.b[1] + r.b[3] >= e.b[1] + e.b[3])
+            const visible = parent && t >= parent.at && (!e || t < e.at || parti(el))
+            return visible && e ? <rect key={`fond-${el}`} x={e.pb[0]} y={e.pb[1]} width={e.pb[2]} height={e.pb[3]} fill={couleur} /> : null
+          })}
+          <g mask={`url(#${mask}-v)`}>
+            {vecteurs.map((v) => (
+              <Chemin key={v.i} d={v.d} fill={v.fill} tx={v.tx} ty={v.ty} p={progres(v.el, v.rang)} />
+            ))}
+            {[...libs.entries()].map(([el, lib]) => (
+              <g key={el} transform={lib.transform} clipPath={`url(#${mask}-lib-${el})`} data-testid={tid(ID, `biblio-${el}`)}>
+                {lib.paths.map((v) => (
+                  <Chemin key={v.i} d={v.d} fill={v.fill} tx={v.tx} ty={v.ty} p={progres(el, v.rang)} />
+                ))}
+              </g>
+            ))}
+          </g>
+          {/* Déplacements : l'élément (ou sa copie) voyage d'une boîte à l'autre, au-dessus de tout */}
+          {enRoute.map((m) => {
+            const k = wipeProgress(t, m.at, m.end - m.at)
+            const tr = trajet(m.el, m.vers, k)
+            const lib = libs.get(m.el)
+            const ps = lib ? lib.paths : (parEl.get(m.el) ?? [])
+            return (
+              <g key={`${m.el}-${m.vers}`} data-testid={tid(ID, `trajet-${m.el}`)}>
+                {ps.map((v) => (
+                  <Chemin key={v.i} d={v.d} fill={v.fill} tx={v.tx} ty={v.ty} p={1} transform={lib ? `${tr} ${lib.transform}` : tr} />
+                ))}
+              </g>
+            )
+          })}
         </svg>
 
         {manques.map((m, i) =>

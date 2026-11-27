@@ -180,5 +180,14 @@
  "source": {
   "x": 1448,
   "bas": 178
+ },
+ "biblio": {
+  "saif": {
+   "biblio": "feuille-saif"
+  }
+ },
+ "couleurs": {
+  "route-lire": "#2F6DA8",
+  "route-ecrire": "#C4472B"
  }
 }

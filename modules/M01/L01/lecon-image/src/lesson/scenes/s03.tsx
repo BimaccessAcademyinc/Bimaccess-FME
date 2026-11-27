@@ -1,8 +1,10 @@
-/** S03 : planche image (dessin, repérage, plan : content/design/planches/S03.*). */
+/** S03 : planche image tracée (dessin, repérage, tracés, plan : content/design/planches/S03.*). */
 import BOITES from "../../../content/design/planches/S03.boites.json"
 import PLAN from "../../../content/design/planches/S03.json"
+import TRACES from "../../../content/design/planches/S03.traces.json"
 import IMAGE from "../../../content/design/planches/S03.webp"
+import B_FEUILLE_SAIF from "../../../content/design/planches/biblio-feuille-saif.json"
 import SOURCES from "../../../content/sources.json"
 import { planche } from "../../engine/planche"
 
-export const s03 = planche(PLAN, BOITES, { base: IMAGE }, SOURCES.sources)
+export const s03 = planche(PLAN, BOITES, { base: IMAGE }, SOURCES.sources, TRACES, { "feuille-saif": B_FEUILLE_SAIF })

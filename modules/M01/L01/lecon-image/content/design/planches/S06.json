@@ -100,7 +100,12 @@
    "at": "Les données se lisent depuis"
   }
  ],
- "calques": {
+ "biblio": {
+  "fondateurs": {
+   "biblio": "fondateurs-murray-lutz"
+  }
+ },
+ "couleurs": {
   "lire": "#2F6DA8",
   "ecrire": "#C4472B"
  }

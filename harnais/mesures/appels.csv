@@ -16,3 +16,4 @@ date,etape,alias,fournisseur,modele,entree,sortie,secondes,cout_estime,statut
 2026-11-27T04:30:45,FME001-M01-L01 planches image reperage S03,gemini-3.5-flash,gemini,gemini-3.5-flash,1322,292,6.4,,ok
 2026-11-27T04:30:48,FME001-M01-L01 planches image reperage S06,gemini-3.5-flash,gemini,gemini-3.5-flash,1276,176,9.9,,ok
 2026-11-27T04:30:49,FME001-M01-L01 planches image reperage S02,gemini-3.5-flash,gemini,gemini-3.5-flash,1346,357,10.2,,ok
+2026-11-27T04:57:17,FME001-M01-L01 planches tracées reperage S04,gemini-3.5-flash,gemini,gemini-3.5-flash,1364,355,7.1,,ok

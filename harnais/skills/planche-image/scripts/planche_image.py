@@ -96,12 +96,37 @@ def b64(p: Path) -> dict:
     return {"inline_data": {"mime_type": "image/png", "data": base64.b64encode(p.read_bytes()).decode()}}
 
 
-def dessiner(plan: dict, dossier: Path, ref: Path | None, etape: str) -> Path:
+def style_du_programme(style: Path | None) -> str:
+    """Signature d'image du programme (design/style-image.md : bloc ```style```), sinon le style intégré."""
+    if style and style.exists():
+        t = style.read_text(encoding="utf-8")
+        if "```style" in t:
+            return t.split("```style", 1)[1].split("```", 1)[0].strip()
+    return STYLE
+
+
+def cle_dessin(texte: str, ref: Path | None) -> str:
+    import hashlib
+    h = hashlib.sha256((IMAGE + "\n" + texte).encode())
+    if ref and ref.exists():
+        h.update(ref.read_bytes())
+    return h.hexdigest()[:16]
+
+
+def dessiner(plan: dict, dossier: Path, ref: Path | None, etape: str, style: Path | None = None, forcer: bool = False) -> Path:
     sid = plan["scene"]
     parts: list[dict] = []
     if ref and ref.exists() and ref.name != f"{sid}.png":
         parts += [b64(ref), {"text": REF}]
-    parts.append({"text": STYLE + "\n\nComposition:\n" + plan["dessin"]})
+    else:
+        ref = None
+    texte = style_du_programme(style) + "\n\nComposition:\n" + plan["dessin"]
+    parts.append({"text": texte})
+    # Cache : même modèle, même invite, même référence → image gardée, aucun appel
+    cle = cle_dessin(texte, ref)
+    fcle = dossier / f"{sid}.cle"
+    if not forcer and (dossier / f"{sid}.png").exists() and fcle.exists() and fcle.read_text().strip() == cle:
+        return dossier / f"{sid}.png"
     corps = {"contents": [{"parts": parts}], "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "16:9"}}}
     d = appel(IMAGE, corps, f"{etape} dessin {sid}")
     for c in d.get("candidates", []):
@@ -112,6 +137,7 @@ def dessiner(plan: dict, dossier: Path, ref: Path | None, etape: str) -> Path:
                 from PIL import Image
                 img = Image.open(io.BytesIO(base64.b64decode(data))).convert("RGB").resize((W, H), Image.LANCZOS)
                 img.save(out)
+                fcle.write_text(cle + "\n")
                 return out
     raise RuntimeError(f"{sid} : pas d'image dans la réponse ({json.dumps(d)[:300]})")
 
@@ -176,26 +202,196 @@ def detourer(sid: str, dossier: Path) -> Path:
     return out
 
 
-def une_scene(plan_path: Path, ref: Path | None, etape: str, etapes: list[str]) -> str:
+FOND_MAX = 12          # distance au papier sous laquelle un tracé est du fond
+TEXTURE_MAX = 400      # au-delà, l'élément reste en image (trame dense)
+
+
+def _bbox(d: str, tx: float, ty: float) -> tuple[float, float, float, float]:
+    import re
+    n = [float(x) for x in re.findall(r"-?\d+\.?\d*", d)]
+    xs, ys = n[0::2], n[1::2]
+    return min(xs) + tx, min(ys) + ty, max(xs) + tx, max(ys) + ty
+
+
+def tracés(png: Path) -> list[tuple[str, str, float, float]]:
+    """Image → tracés vectoriels (d, couleur, tx, ty), dans l'ordre d'empilement."""
+    import re
+    import tempfile
+    import vtracer
+    with tempfile.NamedTemporaryFile(suffix=".svg") as tmp:
+        vtracer.convert_image_to_svg_py(str(png), tmp.name, colormode="color", hierarchical="stacked", mode="spline",
+                                        filter_speckle=6, color_precision=6, layer_difference=24, corner_threshold=60,
+                                        length_threshold=4.0, splice_threshold=45, path_precision=1)
+        svg = Path(tmp.name).read_text()
+    return [(d.strip(), f, float(x), float(y)) for d, f, x, y in re.findall(r'<path d="([^"]+)" fill="([^"]+)" transform="translate\(([-\d.]+),([-\d.]+)\)"/>', svg)]
+
+
+def vectoriser(sid: str, dossier: Path) -> Path:
+    """Tracés rangés par élément (la plus petite boîte qui les contient), ordre d'empilement gardé.
+
+    Sortie Sxx.traces.json : { "traces": [[élément, d, couleur, tx, ty, rang]], "images": [éléments en trame] }.
+    `rang` (0 → 1) : moment du tracé dans l'élément, de gauche à droite, les grandes formes d'abord.
+    """
+    import numpy as np
+    from PIL import Image
+    plan = json.loads((dossier / f"{sid}.json").read_text(encoding="utf-8"))
+    boites = json.loads((dossier / f"{sid}.boites.json").read_text(encoding="utf-8"))["boites"]
+    img = np.asarray(Image.open(dossier / f"{sid}.png").convert("RGB")).astype(np.float32)
+    bord = np.concatenate([img[:12].reshape(-1, 3), img[-12:].reshape(-1, 3)])
+    fond = np.median(bord, axis=0)
+    # Seuls les éléments que le plan anime reçoivent des tracés (révélés, déplacés, de bibliothèque)
+    animes = {r["el"] for r in plan.get("revele", [])} | {m["el"] for m in plan.get("deplace", [])} | {m["vers"] for m in plan.get("deplace", [])}
+    els = [e for e in plan["elements"] if e in boites and e in animes]
+    par_el: dict[str, list] = {e: [] for e in els}
+    for i, (d, f, tx, ty) in enumerate(tracés(dossier / f"{sid}.png")):
+        rgb = np.array([int(f[k:k + 2], 16) for k in (1, 3, 5)], dtype=np.float32)
+        x0, y0, x1, y1 = _bbox(d, tx, ty)
+        if x1 - x0 > 0.9 * W:
+            continue
+        # Couleur du papier : gardée (elle recouvre ce qui est dessous dans l'empilement), rendue au jeton « fond »
+        if np.sqrt(((rgb - fond) ** 2).sum()) < FOND_MAX:
+            f = "fond"
+        best = None
+        # 1. Couleur réservée (plan « couleurs » : routes de lecture, d'écriture…) près de la boîte de l'élément
+        cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+        for e, hexa in (plan.get("couleurs") or {}).items():
+            if e not in boites:
+                continue
+            cible = np.array([int(hexa[k:k + 2], 16) for k in (1, 3, 5)], dtype=np.float32)
+            bx, by, bw, bh = boites[e]
+            if np.sqrt(((rgb - cible) ** 2).sum()) < 70 and bx - 30 <= cx <= bx + bw + 30 and by - 30 <= cy <= by + bh + 30:
+                best = e
+        # 2. Sinon la plus petite boîte qui recouvre au moins 80 % du tracé (les boîtes de la vision sont approchées) ;
+        #    à défaut, celle qui en recouvre le plus, au-delà de 30 %
+        if best is None:
+            aire = max(1.0, (x1 - x0) * (y1 - y0))
+            couv = {}
+            for e in els:
+                bx, by, bw, bh = boites[e]
+                ix = max(0.0, min(x1, bx + bw + 10) - max(x0, bx - 10))
+                iy = max(0.0, min(y1, by + bh + 10) - max(y0, by - 10))
+                couv[e] = ix * iy / aire
+            dedans = [e for e, c in couv.items() if c >= 0.8]
+            if dedans:
+                best = min(dedans, key=lambda e: boites[e][2] * boites[e][3])
+            elif f != "fond" and couv and max(couv.values()) > 0.3:
+                best = max(couv, key=couv.get)
+        # Un aplat de papier plus grand que sa boîte n'appartient pas à l'élément : il recouvrirait ses voisins
+        if best and f == "fond":
+            bx, by, bw, bh = boites[best]
+            if (x1 - x0) * (y1 - y0) > 1.2 * bw * bh:
+                best = None
+        if best:
+            par_el[best].append((i, d, f, tx, ty, (x1 - x0) * (y1 - y0), x0))
+    images = [e for e, l in par_el.items() if len(l) > TEXTURE_MAX]
+    sortie = []
+    for e, l in par_el.items():
+        if e in images or not l:
+            continue
+        bx, by, bw, bh = boites[e]
+        ordre = sorted(l, key=lambda p: (0 if p[5] > 0.4 * bw * bh else 1, p[6]))
+        rang = {p[0]: k / max(1, len(ordre) - 1) for k, p in enumerate(ordre)}
+        sortie += [(p[0], [e, p[1], p[2], round(p[3], 1), round(p[4], 1), round(rang[p[0]], 3)]) for p in l]
+    sortie.sort(key=lambda x: x[0])
+    # Élément tracé posé dans un élément en trame : la teinte moyenne autour de lui bouche son trou tant qu'il n'est pas dit
+    fonds = {}
+    for e in els:
+        if e in images:
+            continue
+        bx, by, bw, bh = boites[e]
+        for parent in images:
+            px, py, pw, ph = boites[parent]
+            if bx >= px and by >= py and bx + bw <= px + pw and by + bh <= py + ph:
+                y0, y1, x0, x1 = max(0, by - 14), min(H, by + bh + 14), max(0, bx - 14), min(W, bx + bw + 14)
+                zone = img[y0:y1, x0:x1].reshape(-1, 3)
+                c = np.median(zone, axis=0).astype(int)
+                fonds[e] = "#%02x%02x%02x" % tuple(c)
+    out = dossier / f"{sid}.traces.json"
+    out.write_text(json.dumps({"scene": sid, "traces": [t for _, t in sortie], "images": images, "fonds": fonds}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    return out
+
+
+def extraire(sid: str, dossier: Path, el: str, ident: str, biblio: Path, description: str) -> Path:
+    """Élément d'une planche → bibliothèque du programme (tracés relatifs à sa boîte, aperçu, fiche)."""
+    import yaml
+    from PIL import Image
+    tr = json.loads((dossier / f"{sid}.traces.json").read_text(encoding="utf-8"))
+    bx, by, bw, bh = json.loads((dossier / f"{sid}.boites.json").read_text(encoding="utf-8"))["boites"][el]
+    paths = [[d, f, round(tx - bx, 1), round(ty - by, 1), r] for e, d, f, tx, ty, r in tr["traces"] if e == el]
+    if not paths:
+        raise RuntimeError(f"{sid} : aucun tracé pour « {el} » (élément en trame ?)")
+    biblio.mkdir(parents=True, exist_ok=True)
+    (biblio / f"{ident}.json").write_text(json.dumps({"id": ident, "w": bw, "h": bh, "traces": paths}, separators=(",", ":")), encoding="utf-8")
+    Image.open(dossier / f"{sid}.png").crop((bx, by, bx + bw, by + bh)).save(biblio / f"{ident}.png")
+    fiche = biblio / "bibliotheque.yaml"
+    idx = (yaml.safe_load(fiche.read_text(encoding="utf-8")) if fiche.exists() else None) or {"elements": {}}
+    plan = json.loads((dossier / f"{sid}.json").read_text(encoding="utf-8"))
+    idx["elements"][ident] = {"description": description, "source": f"{dossier.resolve().parents[3].name}/{dossier.resolve().parents[2].name}/{sid}#{el}",
+                              "vision": plan["elements"].get(el, ""), "taille": [bw, bh], "traces": len(paths),
+                              "modele": IMAGE, "date": datetime.now().date().isoformat()}
+    fiche.write_text("# Bibliothèque d'éléments dessinés du programme : un élément dessiné une fois, réutilisé par « biblio » dans un plan.\n"
+                     + yaml.safe_dump(idx, allow_unicode=True, sort_keys=True), encoding="utf-8")
+    return biblio / f"{ident}.json"
+
+
+def ecrire_scenes(dossier: Path, scenes_dir: Path, biblio: Path | None) -> list[str]:
+    """Un fichier de scène par plan (importe plan, boîtes, image, tracés, éléments de bibliothèque)."""
+    import shutil
+    faits = []
+    for plan_path in sorted(dossier.glob("S[0-9][0-9].json")):
+        sid = plan_path.stem
+        plan = json.loads(plan_path.read_text(encoding="utf-8"))
+        n = sid[1:].lstrip("0") or "0"
+        bibs = sorted({v["biblio"] for v in (plan.get("biblio") or {}).values()} if isinstance(plan.get("biblio"), dict) else set())
+        imports = ""
+        noms = []
+        for b in bibs:
+            if biblio:
+                shutil.copy(biblio / f"{b}.json", dossier / f"biblio-{b}.json")
+            var = "B_" + b.upper().replace("-", "_")
+            imports += f'import {var} from "../../../content/design/planches/biblio-{b}.json"\n'
+            noms.append(f'"{b}": {var}')
+        (scenes_dir / f"s{sid[1:]}.tsx").write_text(f"""/** {sid} : planche image tracée (dessin, repérage, tracés, plan : content/design/planches/{sid}.*). */
+import BOITES from "../../../content/design/planches/{sid}.boites.json"
+import PLAN from "../../../content/design/planches/{sid}.json"
+import TRACES from "../../../content/design/planches/{sid}.traces.json"
+import IMAGE from "../../../content/design/planches/{sid}.webp"
+{imports}import SOURCES from "../../../content/sources.json"
+import {{ planche }} from "../../engine/planche"
+
+export const s{sid[1:]} = planche(PLAN, BOITES, {{ base: IMAGE }}, SOURCES.sources, TRACES, {{ {", ".join(noms)} }})
+""", encoding="utf-8")
+        faits.append(sid)
+    return faits
+
+
+def une_scene(plan_path: Path, ref: Path | None, etape: str, etapes: list[str], style: Path | None = None, forcer: bool = False) -> str:
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
     sid = plan["scene"]
     dossier = plan_path.parent
     t0 = time.time()
     if "dessiner" in etapes:
-        dessiner(plan, dossier, ref, etape)
+        dessiner(plan, dossier, ref, etape, style, forcer)
     t1 = time.time()
     if "reperer" in etapes:
         reperer(plan, dossier, etape)
     t2 = time.time()
     if "detourer" in etapes:
         detourer(sid, dossier)
+    if "vectoriser" in etapes:
+        vectoriser(sid, dossier)
     absents = json.loads((dossier / f"{sid}.boites.json").read_text())["absents"] if (dossier / f"{sid}.boites.json").exists() else []
     return f"{sid} : dessin {t1 - t0:.1f} s, repérage {t2 - t1:.1f} s, détourage {time.time() - t2:.1f} s" + (f" ; absents : {', '.join(absents)}" if absents else "")
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("commande", choices=["tout", "dessiner", "reperer", "detourer"])
+    ap.add_argument("commande", choices=["tout", "dessiner", "reperer", "detourer", "vectoriser", "extraire", "scenes"])
+    ap.add_argument("--style", type=Path, help="signature d'image du programme (design/style-image.md)")
+    ap.add_argument("--forcer", action="store_true", help="regénérer même si l'invite n'a pas changé")
+    ap.add_argument("--biblio", type=Path, help="dossier de la bibliothèque du programme (design/bibliotheque)")
+    ap.add_argument("--element"), ap.add_argument("--id"), ap.add_argument("--description", default="")
+    ap.add_argument("--vers", type=Path, help="scenes : dossier src/lesson/scenes du projet")
     ap.add_argument("--planches", type=Path, required=True)
     ap.add_argument("--scenes", nargs="*")
     ap.add_argument("--ref", type=Path)
@@ -204,10 +400,16 @@ def main() -> int:
     plans = sorted(p for p in a.planches.glob("S[0-9][0-9].json"))
     if a.scenes:
         plans = [p for p in plans if p.stem in a.scenes]
-    etapes = ["dessiner", "reperer", "detourer"] if a.commande == "tout" else [a.commande]
+    if a.commande == "extraire":
+        print(extraire(a.scenes[0], a.planches, a.element, a.id, a.biblio, a.description))
+        return 0
+    if a.commande == "scenes":
+        print("scènes écrites : " + ", ".join(ecrire_scenes(a.planches, a.vers, a.biblio)))
+        return 0
+    etapes = ["dessiner", "reperer", "detourer", "vectoriser"] if a.commande == "tout" else [a.commande]
     t0 = time.time()
     with ThreadPoolExecutor(max_workers=8) as ex:
-        futs = {ex.submit(une_scene, p, a.ref, a.etape, etapes): p.stem for p in plans}
+        futs = {ex.submit(une_scene, p, a.ref, a.etape, etapes, a.style, a.forcer): p.stem for p in plans}
         ok = True
         for f, sid in futs.items():
             try:

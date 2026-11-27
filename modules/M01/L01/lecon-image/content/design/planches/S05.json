@@ -39,20 +39,10 @@
    "dur": 0.7
   },
   {
-   "el": "carte-bloc",
-   "at": "Ses outils de transformation manipulent",
-   "dir": "right"
-  },
-  {
    "el": "ecrire",
    "at": "FME peut alors écrire",
    "dir": "right",
    "dur": 0.8
-  },
-  {
-   "el": "carte-attendu",
-   "at": "dans le format attendu",
-   "dir": "right"
   }
  ],
  "textes": [
@@ -118,5 +108,22 @@
  "source": {
   "x": 110,
   "bas": 830
+ },
+ "deplace": [
+  {
+   "el": "carte-depart",
+   "vers": "carte-bloc",
+   "at": "Ses outils de transformation manipulent",
+   "copie": true
+  },
+  {
+   "el": "carte-bloc",
+   "vers": "carte-attendu",
+   "at": "FME peut alors écrire"
+  }
+ ],
+ "couleurs": {
+  "lire": "#2F6DA8",
+  "ecrire": "#C4472B"
  }
 }

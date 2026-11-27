@@ -9,11 +9,17 @@
   "geometrie": "section 1 of the sheet: hatched footprint and the three tiny signs",
   "signes": "the three tiny signs (dot, line, polygon) in section 1",
   "attributs": "section 2 of the sheet: the small attribute table",
-  "coordonnees": "section 3 of the sheet: the globe with the footprint"
+  "coordonnees": "section 3 of the sheet: the globe with the footprint",
+  "contour-plan": "the bold L-shaped building footprint outline inside the city block map (top left), only that outline",
+  "empreinte": "the hatched L-shaped footprint surface in section 1 of the large sheet, only that hatched shape"
  },
  "revele": [
   {
    "el": "plan",
+   "at": 0
+  },
+  {
+   "el": "contour-plan",
    "at": 0
   },
   {
@@ -122,5 +128,13 @@
   "x": 1676,
   "bas": 820,
   "largeur": 178
- }
+ },
+ "deplace": [
+  {
+   "el": "contour-plan",
+   "vers": "empreinte",
+   "at": "Sa géométrie porte",
+   "copie": true
+  }
+ ]
 }
