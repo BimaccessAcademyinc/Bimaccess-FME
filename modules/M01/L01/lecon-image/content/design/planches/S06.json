@@ -1,0 +1,107 @@
+{
+ "scene": "S06",
+ "dessin": "A star diagram. At the center (x 40-52%, y 40-60%): a geodesic point symbol (a small triangle with a dot in its center) surrounded by three concentric brown contour rings.\nAround it, a ring of seven small pale format sheets with ink outlines, each with a different map pattern inside, at these centers: (14%, 50%) blue water; (24%, 30%) cadastre parcels; (46%, 25%) building footprints; (68%, 30%) brown contour lines; (76%, 50%) roads; (64%, 72%) green vegetation; (28%, 72%) aerial image raster (green-grey pixel mosaic). Each sheet about 11% wide and 13% high.\nBlue routes (#2F6DA8, round caps) go from the three left sheets (water, parcels, raster) to the center; red routes (#C4472B, round caps) go from the center to the four other sheets.\nTop left corner of the drawing area (x 3-12%, y 22-34%): a small pale card with two standing human silhouettes.",
+ "elements": {
+  "centre": "the geodesic point triangle with its concentric brown rings at the center",
+  "feuilles": "all seven small format sheets around the center (one box enclosing the whole ring of sheets)",
+  "lire": "the blue routes going into the center (one box enclosing them)",
+  "ecrire": "the red routes going out of the center (one box enclosing them)",
+  "fondateurs": "the small card with two silhouettes at the top left"
+ },
+ "revele": [
+  {
+   "el": "feuilles",
+   "at": 0
+  },
+  {
+   "el": "centre",
+   "at": "un moteur central",
+   "dir": "down",
+   "dur": 0.6
+  },
+  {
+   "el": "lire",
+   "at": "Les données se lisent depuis",
+   "dir": "right",
+   "dur": 0.9
+  },
+  {
+   "el": "ecrire",
+   "at": "et s'écrivent vers",
+   "dir": "right",
+   "dur": 0.9
+  },
+  {
+   "el": "fondateurs",
+   "at": "Pour le problème que Murray et Lutz",
+   "dir": "down"
+  }
+ ],
+ "textes": [
+  {
+   "ecran": 0,
+   "role": "titre",
+   "at": "Safe Software décrit FME"
+  },
+  {
+   "ecran": 1,
+   "role": "etiquette",
+   "el": "feuilles",
+   "pos": "dessous",
+   "at": "Autour de FME"
+  },
+  {
+   "ecran": 2,
+   "role": "lieu",
+   "el": "centre",
+   "pos": "dessous",
+   "at": "un moteur central"
+  },
+  {
+   "ecran": 3,
+   "role": "etiquette",
+   "el": "fondateurs",
+   "pos": "dessous",
+   "at": "Pour le problème que Murray et Lutz",
+   "w": 260
+  },
+  {
+   "ecran": 4,
+   "role": "source"
+  },
+  {
+   "ecran": 5,
+   "role": "etiquette",
+   "el": "lire",
+   "pos": "dedans-bas-gauche",
+   "at": "Les données se lisent depuis"
+  },
+  {
+   "ecran": 6,
+   "role": "etiquette",
+   "el": "ecrire",
+   "pos": "dedans-haut-droite",
+   "at": "et s'écrivent vers"
+  }
+ ],
+ "manques": [
+  {
+   "el": "centre",
+   "jusqua": "un moteur central"
+  }
+ ],
+ "focus": [
+  {
+   "el": "centre",
+   "at": "un moteur central"
+  },
+  {
+   "el": null,
+   "at": "Les données se lisent depuis"
+  }
+ ],
+ "calques": {
+  "lire": "#2F6DA8",
+  "ecrire": "#C4472B"
+ }
+}

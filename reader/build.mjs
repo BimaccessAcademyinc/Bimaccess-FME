@@ -16,10 +16,13 @@ const install = !process.argv.includes("--no-install")
 const lecons = []
 for (const mod of readdirSync(join(RACINE, "modules")).filter((d) => /^M\d+$/.test(d)).sort()) {
   for (const lec of readdirSync(join(RACINE, "modules", mod)).filter((d) => /^L\d+$/.test(d)).sort()) {
-    const dossier = join(RACINE, "modules", mod, lec, "lecon")
-    if (!existsSync(join(dossier, "studio.config.json"))) continue
-    const cfg = JSON.parse(readFileSync(join(dossier, "studio.config.json"), "utf8"))
-    lecons.push({ module: mod, lecon: lec, dossier, id: cfg.id, titre: cfg.title ?? cfg.id })
+    // « lecon » et ses variantes « lecon-<méthode> » (comparaisons de méthode)
+    for (const v of readdirSync(join(RACINE, "modules", mod, lec)).filter((d) => /^lecon(-[a-z0-9-]+)?$/.test(d)).sort()) {
+      const dossier = join(RACINE, "modules", mod, lec, v)
+      if (!existsSync(join(dossier, "studio.config.json"))) continue
+      const cfg = JSON.parse(readFileSync(join(dossier, "studio.config.json"), "utf8"))
+      lecons.push({ module: mod, lecon: lec, dossier, id: cfg.id, titre: cfg.title ?? cfg.id })
+    }
   }
 }
 if (!lecons.length) {

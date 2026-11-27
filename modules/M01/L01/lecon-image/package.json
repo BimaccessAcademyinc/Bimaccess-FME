@@ -1,0 +1,38 @@
+{
+  "name": "fme001-m01-l01",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Lecteur de contenus narrés et interactifs : scènes React animées sur la voix, construit en page HTML autonome.",
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "dev": "node scripts/sync.mjs && vite",
+    "build": "node scripts/sync.mjs --scenes && vite build",
+    "preview": "vite preview --port 4173",
+    "check": "node scripts/sync.mjs --scenes && tsc --noEmit",
+    "check:scenes": "node scripts/sync.mjs --scenes",
+    "test:play": "node scripts/play-check.mjs",
+    "lint:story": "node scripts/lint-storyboard.mjs",
+    "voice": "node scripts/voice.mjs"
+  },
+  "dependencies": {
+    "@fontsource/azeret-mono": "^5.3.0",
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "@fontsource/fraunces": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "@fontsource/source-serif-4": "^5.3.1",
+    "@remotion/player": "^4.0.533",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "remotion": "^4.0.533"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "typescript": "^5.9.0",
+    "vite": "^8.0.0",
+    "vite-plugin-singlefile": "^2.3.3",
+    "yaml": "^2.8.0"
+  }
+}

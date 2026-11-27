@@ -1,0 +1,184 @@
+{
+ "scene": "S03",
+ "dessin": "On the left (x 5-46%, y 22-80%): a tall pale legend cartouche (map legend box) with a thin double rule near its top, leaving an empty header band. Inside, along its left edge (x 8-14%), three small symbol boxes stacked vertically, each a small square frame: at y 33% a tiny format sheet with a map pattern; at y 46% a round seal with a double ring (a standard); at y 59% a tiny software window with a title bar. To the right of each symbol, an empty line. Below the third symbol, two more empty lines (y 66% and 73%).\nOn the right: a pale format sheet with a simple map pattern (parcels and a road) at x 56-68%, y 24-44%.\nA small pale unnamed format sheet with a different pattern (green vegetation hatching) at x 84-94%, y 30-46%.\nA blue route (#2F6DA8, round caps) goes from the bottom of the first sheet down to an empty spot at x 62%, y 56%, and a red route (#C4472B, round caps) goes from that empty spot up to the small green sheet. Keep a free empty space of 260 by 120 px centered at x 62%, y 58% (a logo will be placed there by code).",
+ "elements": {
+  "legende": "the tall legend cartouche on the left with its symbols",
+  "symbole-format": "the first small symbol box (tiny format sheet) in the legend",
+  "symbole-norme": "the second small symbol box (round seal) in the legend",
+  "symbole-logiciel": "the third small symbol box (tiny software window) in the legend",
+  "saif": "the format sheet with parcels and a road on the right",
+  "route-lire": "the blue route going down from the format sheet",
+  "route-ecrire": "the red route going up to the small green sheet",
+  "feuille-autre": "the small sheet with green vegetation hatching"
+ },
+ "revele": [
+  {
+   "el": "legende",
+   "at": 0
+  },
+  {
+   "el": "saif",
+   "at": 0
+  },
+  {
+   "el": "route-lire",
+   "at": "Il lit des données dans un format",
+   "dir": "down",
+   "dur": 0.8
+  },
+  {
+   "el": "feuille-autre",
+   "at": "les écrit dans un autre",
+   "dir": "down"
+  },
+  {
+   "el": "route-ecrire",
+   "at": "les écrit dans un autre",
+   "dir": "right",
+   "dur": 0.8
+  }
+ ],
+ "textes": [
+  {
+   "ecran": 0,
+   "role": "titre",
+   "at": "SAIF et FME ne désignent pas"
+  },
+  {
+   "ecran": 1,
+   "role": "etiquette",
+   "el": "legende",
+   "pos": "dedans-haut",
+   "at": 0
+  },
+  {
+   "ecran": 2,
+   "role": "etiquette",
+   "el": "saif",
+   "pos": "dessus",
+   "at": 0
+  },
+  {
+   "ecran": 3,
+   "role": "rubrique",
+   "el": "symbole-format",
+   "pos": "droite",
+   "at": "SAIF est un format"
+  },
+  {
+   "ecran": 4,
+   "role": "rubrique",
+   "el": "symbole-norme",
+   "pos": "droite",
+   "at": "C'est aussi une norme"
+  },
+  {
+   "ecran": 5,
+   "role": "rubrique",
+   "el": "symbole-logiciel",
+   "pos": "droite",
+   "at": "C'est un logiciel"
+  },
+  {
+   "ecran": 6,
+   "role": "rubrique",
+   "el": "symbole-logiciel",
+   "pos": "droite",
+   "dy": 78,
+   "dx": 24,
+   "at": "comprend FME Form",
+   "size": 26
+  },
+  {
+   "ecran": 7,
+   "role": "rubrique",
+   "el": "symbole-logiciel",
+   "pos": "droite",
+   "dy": 138,
+   "dx": 24,
+   "at": "et FME Flow",
+   "size": 26
+  },
+  {
+   "ecran": 8,
+   "role": "source"
+  }
+ ],
+ "logos": [
+  {
+   "nom": "fme-logo",
+   "x": 1335,
+   "y": 688,
+   "w": 200,
+   "at": "FME n'est ni un format"
+  }
+ ],
+ "zones": {
+  "logo": [
+   1335,
+   688,
+   200,
+   96
+  ],
+  "ligne-format": [
+   270,
+   330,
+   560,
+   60
+  ],
+  "ligne-norme": [
+   270,
+   470,
+   560,
+   60
+  ],
+  "ligne-logiciel": [
+   270,
+   610,
+   560,
+   60
+  ],
+  "ligne-form": [
+   290,
+   690,
+   560,
+   50
+  ],
+  "ligne-flow": [
+   290,
+   750,
+   560,
+   50
+  ]
+ },
+ "focus": [
+  {
+   "el": "ligne-format",
+   "at": "SAIF est un format"
+  },
+  {
+   "el": "ligne-norme",
+   "at": "C'est aussi une norme"
+  },
+  {
+   "el": "ligne-logiciel",
+   "at": "C'est un logiciel"
+  },
+  {
+   "el": "logo",
+   "at": "L'éditeur le présente"
+  },
+  {
+   "el": "ligne-form",
+   "at": "comprend FME Form"
+  },
+  {
+   "el": "ligne-flow",
+   "at": "et FME Flow"
+  }
+ ],
+ "source": {
+  "x": 1448,
+  "bas": 178
+ }
+}

@@ -1,0 +1,126 @@
+{
+ "scene": "S04",
+ "dessin": "On the left, top (x 5-30%, y 22-50%): a small city block map seen from above: white streets with ink edges around a block, and one building footprint drawn as a bold ink outline (an L-shaped polygon) in the block.\nOn the left, bottom (x 6-28%, y 54-80%): the same building drawn as a simple front elevation (flat facade with windows and a flat roof), ink lines.\nA thin ink line goes from the right side of the elevation to the right, to a large sheet.\nOn the right (x 40-72%, y 22-80%): a large pale sheet with a thin double rule at its top (empty header band), divided into three stacked sections separated by thin rules, each with an empty header line at its top:\nsection 1 (y 30-48%): the L-shaped building footprint as a hatched surface, and beside it three tiny signs in a row: a dot, a short line, a small polygon;\nsection 2 (y 51-63%): a small attribute table of two rows (empty cells);\nsection 3 (y 66-79%): a small globe drawn with meridians and parallels, with the L-shaped footprint placed on it.",
+ "elements": {
+  "plan": "the city block map with the building footprint, top left",
+  "elevation": "the building front elevation, bottom left",
+  "trait": "the thin line from the elevation to the large sheet",
+  "feuille": "the large sheet on the right (whole sheet)",
+  "geometrie": "section 1 of the sheet: hatched footprint and the three tiny signs",
+  "signes": "the three tiny signs (dot, line, polygon) in section 1",
+  "attributs": "section 2 of the sheet: the small attribute table",
+  "coordonnees": "section 3 of the sheet: the globe with the footprint"
+ },
+ "revele": [
+  {
+   "el": "plan",
+   "at": 0
+  },
+  {
+   "el": "elevation",
+   "at": "représente le bâtiment réel",
+   "dir": "up"
+  },
+  {
+   "el": "trait",
+   "at": "représente le bâtiment réel",
+   "dir": "right"
+  },
+  {
+   "el": "feuille",
+   "at": "on l'appelle une entité géographique",
+   "dir": "down",
+   "dur": 0.7
+  },
+  {
+   "el": "geometrie",
+   "at": "Sa géométrie porte",
+   "dir": "right"
+  },
+  {
+   "el": "signes",
+   "at": "en points, lignes ou surfaces",
+   "dir": "right"
+  },
+  {
+   "el": "attributs",
+   "at": "Ses attributs la décrivent",
+   "dir": "down"
+  },
+  {
+   "el": "coordonnees",
+   "at": "Son système de coordonnées",
+   "dir": "down"
+  }
+ ],
+ "textes": [
+  {
+   "ecran": 0,
+   "role": "titre",
+   "at": "Traduire une donnée"
+  },
+  {
+   "ecran": 1,
+   "role": "terme",
+   "el": "feuille",
+   "pos": "dedans-haut",
+   "at": "on l'appelle une entité géographique"
+  },
+  {
+   "ecran": 2,
+   "role": "rubrique",
+   "el": "geometrie",
+   "pos": "dedans-haut",
+   "at": "Sa géométrie porte",
+   "size": 26
+  },
+  {
+   "ecran": 3,
+   "role": "rubrique",
+   "el": "attributs",
+   "pos": "dedans-haut",
+   "at": "Ses attributs la décrivent",
+   "size": 26
+  },
+  {
+   "ecran": 4,
+   "role": "rubrique",
+   "el": "attributs",
+   "pos": "dedans",
+   "at": "l'usage, des bureaux",
+   "size": 26,
+   "dy": 6
+  },
+  {
+   "ecran": 5,
+   "role": "rubrique",
+   "el": "coordonnees",
+   "pos": "dedans-haut",
+   "at": "Son système de coordonnées",
+   "size": 26
+  },
+  {
+   "ecran": 6,
+   "role": "source"
+  }
+ ],
+ "focus": [
+  {
+   "el": "geometrie",
+   "at": "Sa géométrie porte"
+  },
+  {
+   "el": "attributs",
+   "at": "Ses attributs la décrivent"
+  },
+  {
+   "el": "coordonnees",
+   "at": "Son système de coordonnées"
+  }
+ ],
+ "source": {
+  "x": 1676,
+  "bas": 820,
+  "largeur": 178
+ }
+}

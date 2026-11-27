@@ -1,0 +1,122 @@
+{
+ "scene": "S05",
+ "dessin": "A left-to-right chain at mid height (all elements between y 28% and 58%).\nLeft (x 4-21%, y 28-58%): a pale format sheet filled with a light blue water pattern; inside it a small entity card: a white rectangle with an ink polygon outline and one short ink line under it.\nA blue route (#2F6DA8, thick, round caps, arrowhead) from the left sheet to the right, x 22-35%, at y 43%.\nCenter (x 37-57%, y 28-58%): a pale block with a double outline, containing three small tool pictograms (a compass, a ruler, a pair of scissors) at its top and the same small entity card at its bottom.\nA red route (#C4472B, thick, round caps, arrowhead) x 59-71%, at y 43%.\nRight (x 73-93%, y 28-58%): a pale format sheet filled with a light green vegetation hatching; inside it the same small entity card, its polygon now filled with the green hatching.",
+ "elements": {
+  "depart": "the left format sheet with the blue water pattern (whole sheet)",
+  "carte-depart": "the small entity card inside the left sheet",
+  "lire": "the blue route between the left sheet and the center block",
+  "bloc": "the center block with the tool pictograms (whole block)",
+  "carte-bloc": "the small entity card inside the center block",
+  "contour-bloc": "the polygon outline of the entity card inside the center block",
+  "attribut-bloc": "the short line under the polygon, in the entity card inside the center block",
+  "ecrire": "the red route between the center block and the right sheet",
+  "attendu": "the right format sheet with the green hatching (whole sheet)",
+  "carte-attendu": "the small entity card inside the right sheet"
+ },
+ "revele": [
+  {
+   "el": "depart",
+   "at": 0
+  },
+  {
+   "el": "carte-depart",
+   "at": 0
+  },
+  {
+   "el": "attendu",
+   "at": 0
+  },
+  {
+   "el": "lire",
+   "at": "FME commence par lire",
+   "dir": "right",
+   "dur": 0.8
+  },
+  {
+   "el": "bloc",
+   "at": "Ses outils de transformation manipulent",
+   "dir": "down",
+   "dur": 0.7
+  },
+  {
+   "el": "carte-bloc",
+   "at": "Ses outils de transformation manipulent",
+   "dir": "right"
+  },
+  {
+   "el": "ecrire",
+   "at": "FME peut alors écrire",
+   "dir": "right",
+   "dur": 0.8
+  },
+  {
+   "el": "carte-attendu",
+   "at": "dans le format attendu",
+   "dir": "right"
+  }
+ ],
+ "textes": [
+  {
+   "ecran": 0,
+   "role": "titre",
+   "at": "Une entité quitte son logiciel"
+  },
+  {
+   "ecran": 1,
+   "role": "etiquette",
+   "el": "depart",
+   "pos": "dessus",
+   "at": 0
+  },
+  {
+   "ecran": 2,
+   "role": "etiquette",
+   "el": "attendu",
+   "pos": "dessus",
+   "at": 0
+  },
+  {
+   "ecran": 3,
+   "role": "etiquette",
+   "el": "lire",
+   "pos": "dessus",
+   "at": "FME commence par lire"
+  },
+  {
+   "ecran": 4,
+   "role": "etiquette",
+   "el": "bloc",
+   "pos": "dessus",
+   "at": "Ses outils de transformation manipulent"
+  },
+  {
+   "ecran": 5,
+   "role": "etiquette",
+   "el": "ecrire",
+   "pos": "dessus",
+   "at": "FME peut alors écrire"
+  },
+  {
+   "ecran": 6,
+   "role": "source"
+  }
+ ],
+ "focus": [
+  {
+   "el": "contour-bloc",
+   "at": "manipulent la géométrie"
+  },
+  {
+   "el": "attribut-bloc",
+   "at": "et les attributs"
+  },
+  {
+   "el": null,
+   "at": "FME peut alors écrire"
+  }
+ ],
+ "source": {
+  "x": 110,
+  "bas": 830
+ }
+}

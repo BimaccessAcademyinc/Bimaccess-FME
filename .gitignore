@@ -1,6 +1,6 @@
 modules/*/L*/sources/pages/
 .studio/tmp/
-node_modules/
+node_modules
 dist/
 __pycache__/
 modules/*/L*/banc/storyboard-*/

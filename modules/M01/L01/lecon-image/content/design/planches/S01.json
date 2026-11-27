@@ -1,0 +1,100 @@
+{
+ "scene": "S01",
+ "dessin": "A territory map. A large irregular region outline drawn as a dash-dot ink boundary line, spanning from 4% to 96% of the width and from 22% to 79% of the height; inside, a winding blue river (#BFD5E6 fill, ink edge) and a few faint brown contour lines.\nNear the top center (x 40-56%, y 24-36%): a small pale card containing two small standing human silhouettes side by side.\nOn the left (x 8-26%, y 40-54%): a pale card with one standing silhouette and three small conifer tree symbols (forestry companies).\nOn the right (x 72-90%, y 40-54%): a pale card with one standing silhouette and a small official building pictogram with columns and a pediment (government).\nFrom the right edge of the left card, a thick blue horizontal line goes to the right and stops at about 48% of the width, ending on a small gold square marker with pale yellow fill.\nBelow the left card (x 6-32%, y 59-77%): three small software windows side by side, each a rectangle with a title bar and three tiny buttons, each with a different interior drawing: a map polygon, a table grid, a line chart.",
+ "elements": {
+  "territoire": "the dash-dot boundary outline of the territory with its river and contour lines",
+  "fondateurs": "the small card at the top with two human silhouettes",
+  "entreprises": "the card on the left with one silhouette and conifer trees",
+  "gouvernement": "the card on the right with one silhouette and the building with columns",
+  "liaison": "the thick blue horizontal line going right from the left card",
+  "manque": "the small gold square marker at the end of the blue line",
+  "fenetres": "the group of three small software windows below the left card"
+ },
+ "revele": [
+  {
+   "el": "territoire",
+   "at": 0
+  },
+  {
+   "el": "fondateurs",
+   "at": 0
+  },
+  {
+   "el": "entreprises",
+   "at": "Les entreprises forestières doivent",
+   "dir": "down"
+  },
+  {
+   "el": "gouvernement",
+   "at": "Les entreprises forestières doivent",
+   "dir": "down"
+  },
+  {
+   "el": "liaison",
+   "at": "partager leurs données géographiques",
+   "dir": "right",
+   "dur": 0.9
+  },
+  {
+   "el": "manque",
+   "at": "avec le gouvernement de la",
+   "dir": "right"
+  },
+  {
+   "el": "fenetres",
+   "at": "Or les entreprises utilisent",
+   "dir": "right",
+   "dur": 0.8
+  }
+ ],
+ "textes": [
+  {
+   "ecran": 0,
+   "role": "titre",
+   "at": "Chaque entreprise garde donc"
+  },
+  {
+   "ecran": 1,
+   "role": "lieu",
+   "el": "territoire",
+   "pos": "dedans-bas-gauche",
+   "at": 0
+  },
+  {
+   "ecran": 2,
+   "role": "etiquette",
+   "el": "fondateurs",
+   "pos": "dessus",
+   "at": 0
+  },
+  {
+   "ecran": 3,
+   "role": "etiquette",
+   "el": "entreprises",
+   "pos": "dessus",
+   "at": "Les entreprises forestières doivent"
+  },
+  {
+   "ecran": 4,
+   "role": "etiquette",
+   "el": "gouvernement",
+   "pos": "dessus",
+   "at": "Les entreprises forestières doivent",
+   "w": 380
+  },
+  {
+   "ecran": 5,
+   "role": "source"
+  }
+ ],
+ "focus": [
+  {
+   "el": "fenetres",
+   "at": "Chaque entreprise garde donc"
+  },
+  {
+   "el": "fondateurs",
+   "at": "Murray et Lutz voient"
+  }
+ ]
+}

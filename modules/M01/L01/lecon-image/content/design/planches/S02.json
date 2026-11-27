@@ -1,0 +1,173 @@
+{
+ "scene": "S02",
+ "dessin": "A horizontal timeline across the sheet at 57% of the height, from 4% to 76% of the width: a thick ink line ending on the right with an open solid arrowhead. Small year cells (short vertical ticks every 4% of width) only between 34% and 62% of the width.\nTwo milestones on the timeline: a tall vertical ink tick with a round dot at 34% of the width, and another at 62% of the width.\nAt the start of the timeline, top left (x 4-17%, y 24-50%): a pale document sheet with an official round seal pictogram in it (a government contract).\nNext to it (x 19-29%, y 28-46%): a small pale card with two standing human silhouettes.\nAbove the timeline between the milestones (x 44-55%, y 24-46%): a pale format sheet with a simple map pattern inside (parcels and a road).\nLeft of it (x 33-39%, y 24-48%): three tiny software windows stacked vertically, each with a title bar.\nFrom each tiny window, a thin red route (#C4472B, round caps) goes right into the format sheet (three converging red routes).\nOn the far right, away from the timeline (x 82-94%, y 26-44%): a small pale card with a little house pictogram and a location pin (headquarters).\nKeep empty: the area below the timeline (y 60-80%) everywhere.",
+ "elements": {
+  "frise": "the horizontal timeline line with its arrowhead (without the milestones)",
+  "contrat": "the document sheet with the round seal at the top left",
+  "fondateurs": "the small card with two human silhouettes",
+  "jalon1993": "the left milestone tick with its dot on the timeline",
+  "cases": "the small year cell ticks between the two milestones",
+  "saif": "the format sheet with the map pattern above the timeline",
+  "fenetres": "the three tiny stacked software windows left of the format sheet",
+  "routes": "the red routes from the tiny windows into the format sheet",
+  "jalon1996": "the right milestone tick with its dot on the timeline",
+  "siege": "the small card with the house and location pin on the far right"
+ },
+ "revele": [
+  {
+   "el": "frise",
+   "at": 0
+  },
+  {
+   "el": "contrat",
+   "at": 0
+  },
+  {
+   "el": "fondateurs",
+   "at": 0
+  },
+  {
+   "el": "fenetres",
+   "at": 0
+  },
+  {
+   "el": "jalon1993",
+   "at": "De ce contrat naît",
+   "dir": "down"
+  },
+  {
+   "el": "cases",
+   "at": "De ce contrat naît",
+   "dir": "right",
+   "dur": 0.9
+  },
+  {
+   "el": "saif",
+   "at": "Le gouvernement a son format",
+   "dir": "down"
+  },
+  {
+   "el": "routes",
+   "at": "Pour échanger avec lui",
+   "dir": "right",
+   "dur": 0.9
+  },
+  {
+   "el": "jalon1996",
+   "at": "Trois ans après la fondation",
+   "dir": "down"
+  },
+  {
+   "el": "siege",
+   "at": "Son siège est à Surrey",
+   "dir": "down"
+  }
+ ],
+ "textes": [
+  {
+   "ecran": 0,
+   "role": "titre",
+   "at": "Murray et Lutz commencent par ce travail"
+  },
+  {
+   "ecran": 1,
+   "role": "etiquette",
+   "el": "contrat",
+   "pos": "dessus",
+   "at": 0
+  },
+  {
+   "ecran": 2,
+   "role": "etiquette",
+   "el": "fondateurs",
+   "pos": "dessus",
+   "at": 0
+  },
+  {
+   "ecran": 3,
+   "role": "rubrique",
+   "el": "contrat",
+   "pos": "dessous",
+   "at": "Le gouvernement lance",
+   "w": 330
+  },
+  {
+   "ecran": 4,
+   "role": "jalon",
+   "el": "jalon1993",
+   "pos": "dessous",
+   "at": "De ce contrat naît",
+   "w": 300
+  },
+  {
+   "ecran": 5,
+   "role": "etiquette",
+   "el": "saif",
+   "pos": "dessus",
+   "at": "Le gouvernement a son format"
+  },
+  {
+   "ecran": 6,
+   "role": "etiquette",
+   "el": "routes",
+   "pos": "dessous",
+   "at": "Murray et Lutz commencent par ce travail"
+  },
+  {
+   "ecran": 7,
+   "role": "jalon",
+   "el": "jalon1996",
+   "pos": "dessous",
+   "at": "Trois ans après la fondation",
+   "w": 300
+  },
+  {
+   "ecran": 8,
+   "role": "rubrique",
+   "el": "jalon1996",
+   "pos": "dessous",
+   "dy": 150,
+   "at": "à l'origine Feature Manipulation Engine",
+   "w": 420
+  },
+  {
+   "ecran": 9,
+   "role": "etiquette",
+   "el": "siege",
+   "pos": "dessous",
+   "at": "Son siège est à Surrey"
+  },
+  {
+   "ecran": 10,
+   "role": "source"
+  }
+ ],
+ "logos": [
+  {
+   "nom": "fme-logo",
+   "el": "jalon1996",
+   "pos": "dessous",
+   "dy": 62,
+   "w": 180,
+   "at": "la première version de son logiciel"
+  }
+ ],
+ "focus": [
+  {
+   "el": "routes",
+   "at": "Murray et Lutz commencent par ce travail"
+  },
+  {
+   "el": "jalon1996",
+   "at": "FME fait passer"
+  },
+  {
+   "el": null,
+   "at": "Son siège est à Surrey"
+  }
+ ],
+ "source": {
+  "x": 110,
+  "bas": 830
+ }
+}

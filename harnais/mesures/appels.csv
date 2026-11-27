@@ -2,3 +2,17 @@ date,etape,alias,fournisseur,modele,entree,sortie,secondes,cout_estime,statut
 2026-11-27T03:56:53,essai de connexion,gemini-flash,gemini,gemini-3.5-flash,0,0,0.1,,http 401
 2026-11-27T03:57:06,essai de connexion,gemini-flash,gemini,gemini-3.5-flash,0,0,0.2,,http 403
 2026-11-27T04:01:02,essai de connexion après facturation,gemini-flash,gemini,gemini-3.5-flash,7,3,1.5,,ok
+2026-11-27T04:29:53,FME001-M01-L01 planches image dessin S01,gemini-3-pro-image,gemini,gemini-3-pro-image,647,2040,16.8,,ok
+2026-11-27T04:29:59,FME001-M01-L01 planches image reperage S01,gemini-3.5-flash,gemini,gemini-3.5-flash,1302,249,5.6,,ok
+2026-11-27T04:30:36,FME001-M01-L01 planches image dessin S04,gemini-3-pro-image,gemini,gemini-3-pro-image,941,1654,13.7,,ok
+2026-11-27T04:30:37,FME001-M01-L01 planches image dessin S07,gemini-3-pro-image,gemini,gemini-3-pro-image,785,1490,13.9,,ok
+2026-11-27T04:30:37,FME001-M01-L01 planches image dessin S06,gemini-3-pro-image,gemini,gemini-3-pro-image,913,1593,14.4,,ok
+2026-11-27T04:30:38,FME001-M01-L01 planches image dessin S03,gemini-3-pro-image,gemini,gemini-3-pro-image,975,1860,15.0,,ok
+2026-11-27T04:30:38,FME001-M01-L01 planches image dessin S05,gemini-3-pro-image,gemini,gemini-3-pro-image,908,1808,15.1,,ok
+2026-11-27T04:30:38,FME001-M01-L01 planches image dessin S02,gemini-3-pro-image,gemini,gemini-3-pro-image,1008,1848,15.1,,ok
+2026-11-27T04:30:42,FME001-M01-L01 planches image reperage S07,gemini-3.5-flash,gemini,gemini-3.5-flash,1224,110,4.7,,ok
+2026-11-27T04:30:43,FME001-M01-L01 planches image reperage S04,gemini-3.5-flash,gemini,gemini-3.5-flash,1313,284,6.3,,ok
+2026-11-27T04:30:44,FME001-M01-L01 planches image reperage S05,gemini-3.5-flash,gemini,gemini-3.5-flash,1349,356,5.8,,ok
+2026-11-27T04:30:45,FME001-M01-L01 planches image reperage S03,gemini-3.5-flash,gemini,gemini-3.5-flash,1322,292,6.4,,ok
+2026-11-27T04:30:48,FME001-M01-L01 planches image reperage S06,gemini-3.5-flash,gemini,gemini-3.5-flash,1276,176,9.9,,ok
+2026-11-27T04:30:49,FME001-M01-L01 planches image reperage S02,gemini-3.5-flash,gemini,gemini-3.5-flash,1346,357,10.2,,ok

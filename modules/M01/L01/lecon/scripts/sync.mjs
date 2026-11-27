@@ -303,6 +303,44 @@ function estimateWords(text) {
 }
 
 /** Mots datés d'un alignement ElevenLabs (caractères et instants). */
+/**
+ * Ramène les mots dits (alignement de la voix, après le dictionnaire de
+ * prononciation) aux mots écrits du storyboard : plus longue sous-suite commune
+ * sur les mots normalisés, puis chaque mot écrit sans correspondant prend une
+ * part égale du temps des mots dits entre ses deux voisins retrouvés.
+ */
+function toWritten(saidWords, text) {
+  const norm = (t) => t.toLowerCase().normalize("NFC").replace(/[^\p{L}\p{N}]+/gu, "")
+  const W = text.split(/\s+/).filter(Boolean)
+  const S = saidWords
+  const a = W.map(norm)
+  const b = S.map((w) => norm(w.text))
+  const n = a.length
+  const m = b.length
+  const L = Array.from({ length: n + 1 }, () => new Int32Array(m + 1))
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) L[i][j] = a[i] && a[i] === b[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1])
+  const pairs = []
+  for (let i = 0, j = 0; i < n && j < m; ) {
+    if (a[i] && a[i] === b[j]) pairs.push([i++, j++])
+    else if (L[i + 1][j] >= L[i][j + 1]) i++
+    else j++
+  }
+  const out = new Array(n)
+  const anchors = [[-1, -1], ...pairs, [n, m]]
+  for (let k = 0; k + 1 < anchors.length; k++) {
+    const [wi, si] = anchors[k]
+    const [wj, sj] = anchors[k + 1]
+    if (wi >= 0) out[wi] = { text: W[wi], start: S[si].start, end: S[si].end }
+    const gap = wj - wi - 1
+    if (gap <= 0) continue
+    const from = sj - si > 1 ? S[si + 1].start : si >= 0 ? S[si].end : (S[0]?.start ?? 0)
+    const to = sj - si > 1 ? S[sj - 1].end : sj < m ? S[sj].start : (S[m - 1]?.end ?? from)
+    const step = (to - from) / gap
+    for (let g = 0; g < gap; g++) out[wi + 1 + g] = { text: W[wi + 1 + g], start: round(from + g * step), end: round(from + (g + 1) * step) }
+  }
+  return out
+}
+
 function wordsFromAlignment(al) {
   const a = al.alignment ?? al.normalized_alignment ?? al
   const ch = a.characters
@@ -426,10 +464,15 @@ for (const sc of STORY_CLIPS) {
         if (words.length === 0) fail(`${sc.id} : alignement vide (${m.alignment})`)
         duration = round(Number(m.duration_s) || words.at(-1)?.end || 0)
         if (words.at(-1) && words.at(-1).end > duration + 0.05) fail(`${sc.id} : duration_s (${duration} s) plus court que l'alignement (${words.at(-1).end} s)`)
-        // Le dictionnaire de prononciation peut changer des mots (« P-01 » dit « P zéro un ») : avertir seulement
+        // Le dictionnaire de prononciation change des mots (« FME » dit « F. M. E. »,
+        // balises d'accent) : les mots dits sont ramenés au texte écrit, pour que
+        // les sous-titres montrent le storyboard et que les locutions s'y cherchent
         const said = tokens(words.map((w) => w.text).join(" ")).join(" ")
-        const written = tokens(m.tts_text ?? m.text ?? "").join(" ")
-        if (said !== written) warn(`${sc.id} : l'alignement ne reprend pas mot pour mot le texte (prononciation adaptée ?) ; les locutions se cherchent dans ce qui est dit`)
+        const written = tokens(sc.text).join(" ")
+        if (said !== written) {
+          words = toWritten(words, sc.text)
+          log(`${sc.id} : prononciation adaptée, mots dits ramenés au texte écrit (${words.length} mots)`)
+        }
         mkdirSync(audioOut, { recursive: true })
         copyFileSync(audioPath, join(audioOut, `${sc.id}.mp3`))
         src = `audio/${sc.id}.mp3`

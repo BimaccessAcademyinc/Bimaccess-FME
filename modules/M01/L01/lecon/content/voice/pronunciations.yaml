@@ -9,3 +9,6 @@ rules:
   - { grapheme: "SAIF", alias: "safe" }
   - { grapheme: "FME", alias: "F. M. E." }
   - { grapheme: "SIG", alias: "S. I. G." }
+  - { grapheme: "1990", alias: "mille neuf cent quatre-vingt-dix" }
+  - { grapheme: "1993", alias: "mille neuf cent quatre-vingt-treize" }
+  - { grapheme: "1996", alias: "mille neuf cent quatre-vingt-seize" }

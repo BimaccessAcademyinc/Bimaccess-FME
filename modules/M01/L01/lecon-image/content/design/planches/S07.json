@@ -1,0 +1,51 @@
+{
+ "scene": "S07",
+ "dessin": "At the center left (x 28-48%, y 32-66%): a pale sheet with a thin double rule at its top (empty header band), containing a new shape: a small lake drawn as an ink outline with light blue fill and a short stream.\nFrom the right side of the sheet, two horizontal ink lines go right: the first at y 43% from x 48% to x 60%, ending on a small gold square marker with pale yellow fill; the second at y 56% from x 48% to x 60%, ending on another small gold square marker.",
+ "elements": {
+  "feuille": "the sheet with the lake",
+  "manque1": "the upper horizontal line with its gold square marker",
+  "manque2": "the lower horizontal line with its gold square marker"
+ },
+ "revele": [
+  {
+   "el": "feuille",
+   "at": 0
+  },
+  {
+   "el": "manque1",
+   "at": 0
+  },
+  {
+   "el": "manque2",
+   "at": 0
+  }
+ ],
+ "textes": [
+  {
+   "ecran": 0,
+   "role": "titre",
+   "at": "Reste à savoir"
+  },
+  {
+   "ecran": 1,
+   "role": "etiquette",
+   "el": "feuille",
+   "pos": "dedans-haut",
+   "at": 0
+  },
+  {
+   "ecran": 2,
+   "role": "lieu",
+   "el": "manque1",
+   "pos": "droite",
+   "at": "dans quel format"
+  },
+  {
+   "ecran": 3,
+   "role": "lieu",
+   "el": "manque2",
+   "pos": "droite",
+   "at": "et dans quel"
+  }
+ ]
+}

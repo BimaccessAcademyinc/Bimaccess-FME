@@ -1,0 +1,42 @@
+[
+  {
+    "id": "S02",
+    "phrases": [
+      "Le gouvernement lance un appel d'offres, et Murray et Lutz remportent le contrat.",
+      "De ce contrat naît leur entreprise, Safe Software, fondée en 1993.",
+      "Le gouvernement a son format, SAIF, une norme canadienne d'échange de données géographiques.",
+      "Pour échanger avec lui, les données de chaque logiciel doivent être traduites vers ce format.",
+      "Murray et Lutz commencent par ce travail : leur entreprise développe une technologie de traduction pour SAIF.",
+      "Son nom, Safe, vient d'ailleurs de ce format.",
+      "Trois ans après la fondation, en 1996, leur entreprise sort la première version de son logiciel, FME, à l'origine Feature Manipulation Engine.",
+      "FME fait passer les données géographiques d'un logiciel à l'autre.",
+      "Aujourd'hui, l'éditeur dit simplement FME.",
+      "Son siège est à Surrey, en Colombie-Britannique.",
+      "État final de la scène."
+    ]
+  },
+  {
+    "id": "S04",
+    "phrases": [
+      "Traduire une donnée d'un logiciel à l'autre suppose de savoir ce qu'elle contient.",
+      "Sur une carte, un bâtiment apparaît comme un contour dessiné.",
+      "La donnée, elle, représente le bâtiment réel : on l'appelle une entité géographique.",
+      "C'est sur elle que FME travaille.",
+      "Sa géométrie porte l'information de position, en points, lignes ou surfaces.",
+      "Ici, le contour forme une surface.",
+      "Ses attributs la décrivent : ici, l'usage, des bureaux.",
+      "Son système de coordonnées lui donne sa position sur la Terre.",
+      "État final de la scène."
+    ]
+  },
+  {
+    "id": "S05",
+    "phrases": [
+      "Une entité quitte son logiciel dans un format de départ, et l'équipe qui la reçoit en attend un autre.",
+      "FME commence par lire les données source.",
+      "Ses outils de transformation manipulent la géométrie et les attributs des données.",
+      "FME peut alors écrire les données de destination dans le format attendu, celui que le logiciel de l'équipe sait ouvrir.",
+      "État final de la scène."
+    ]
+  }
+]
