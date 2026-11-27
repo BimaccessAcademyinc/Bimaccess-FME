@@ -1,0 +1,2197 @@
+# FME001-M01-L02 · Registre des affirmations de la leçon (consolidation des cinq axes).
+# La confiance n'est pas écrite ici : check_pack.py la calcule depuis les sources.
+# 114 affirmations dans les axes, 107 après fusion, 121 avec les ajouts du consolidateur.
+# fusionne_depuis : identifiants abandonnés lors de la fusion d'énoncés identiques.
+lecon: FME001-M01-L02
+axes:
+- interop
+- formats
+- modeles
+- coordonnees
+- semantique
+affirmations:
+- id: A-interop-01
+  question: Q1
+  enonce: La directive européenne INSPIRE définit l'interopérabilité comme la possibilité de combiner des jeux de données spatiales et de faire interagir des services sans intervention manuelle répétée, le résultat restant cohérent et la valeur des données et services accrue.
+  usage: narration
+  sources:
+  - url: https://www.legislation.gov.uk/eudr/2007/2/article/3
+    titre: Directive 2007/2/EC, article 3 (legislation.gov.uk)
+    editeur: The National Archives (legislation.gov.uk)
+    niveau: A
+    consulte: 2026-11-27
+    extrait: ‘interoperability’ means the possibility for spatial data sets to be combined, and for services to interact, without repetitive manual intervention
+  - url: https://eur-lex.europa.eu/eli/dir/2007/2/2024-11-26
+    titre: Directive 2007/2/EC (EUR-Lex)
+    editeur: Union européenne (EUR-Lex)
+    niveau: A
+    consulte: 2026-11-27
+    extrait: ‘interoperability’ means the possibility for spatial data sets to be combined, and for services to interact, without repetitive manual intervention
+  - url: https://yadda.icm.edu.pl/baztech/element/bwmeta1.element.baztech-d37f25f7-6762-47cb-8279-2772045d2157/c/geom.2020.14.3.5.pdf
+    titre: Semantic and Syntactic Interoperability Issues in the Context of SDI (A. Chojka, Geomatics and Environmental Engineering 14(3), 2020)
+    editeur: Geomatics and Environmental Engineering (AGH, Cracovie)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: In line with the INSPIRE Directive [3] interoperability means the possibility for spatial data sets to be combined, and for services to interact
+  contradictions: []
+  ajouts_consolidateur: 1 source(s) ajoutée(s) par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+- id: A-interop-02
+  question: Q1
+  enonce: Un rapport de l'OGC (Testbed-12) définit l'interopérabilité, en citant ISO 19119, comme la capacité de communiquer, d'exécuter des programmes ou de transférer des données entre unités fonctionnelles sans que l'utilisateur ait à connaître leurs particularités.
+  usage: expert
+  sources:
+  - url: https://docs.ogc.org/per/16-059.html
+    titre: OGC Testbed-12 Semantic Portrayal, Registry and Mediation Engineering Report
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: 2026-11-27
+    extrait: capability to communicate, execute programs, or transfer data among various functional units in a manner that requires the user to have little or no knowledge of the unique
+  contradictions:
+  - version: Le wiki marinespecies.org attribue la même phrase à ISO 19118, non à ISO 19119.
+    source: https://www.marinespecies.org/traits/wiki/Interoperability
+  verifie: null
+  note_verification: ''
+- id: A-interop-03
+  question: Q1
+  enonce: Selon un wiki scientifique qui cite l'OGC (2004), l'interopérabilité est la capacité d'un système ou d'un produit à fonctionner avec d'autres systèmes ou produits sans effort particulier de la part du client.
+  usage: expert
+  sources:
+  - url: https://www.marinespecies.org/traits/wiki/Interoperability
+    titre: Interoperability (marinespecies.org, traits wiki)
+    editeur: marinespecies.org (wiki)
+    niveau: C
+    consulte: 2026-11-27
+    extrait: the ability of a system or a product to work with other systems or products without special effort on the part of the customer
+  contradictions: []
+  verifie: null
+  note_verification: 'Citation de seconde main de l''OGC (2004) : texte de l''OGC non retrouvé.'
+- id: A-interop-04
+  question: Q2
+  enonce: Le modèle de référence ISO 19101-1 se donne pour but de définir et décrire l'interopérabilité de l'information géographique selon les niveaux système, syntaxique, structurel et sémantique.
+  usage: expert
+  sources:
+  - url: https://cdn.standards.iteh.ai/samples/59164/0ccf5036e7cb46c196c18432af34f6b4/ISO-19101-1-2014.pdf
+    titre: ISO 19101-1:2014 Geographic information, Reference model, Part 1 (extrait public)
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: One of the primary goals of this reference model is to define and describe interoperability of geographic information, addressing system, syntactic, structural, and semantic levels.
+  - url: https://yadda.icm.edu.pl/baztech/element/bwmeta1.element.baztech-d37f25f7-6762-47cb-8279-2772045d2157/c/geom.2020.14.3.5.pdf
+    titre: Semantic and Syntactic Interoperability Issues in the Context of SDI (A. Chojka, Geomatics and Environmental Engineering 14(3), 2020)
+    editeur: Geomatics and Environmental Engineering (AGH, Cracovie)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: The reference model worked out in the ISO 19101 [10] defines and describes
+  - url: https://yadda.icm.edu.pl/baztech/element/bwmeta1.element.baztech-d37f25f7-6762-47cb-8279-2772045d2157/c/geom.2020.14.3.5.pdf
+    titre: Semantic and Syntactic Interoperability Issues in the Context of SDI (A. Chojka, Geomatics and Environmental Engineering 14(3), 2020)
+    editeur: Geomatics and Environmental Engineering (AGH, Cracovie)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: of geographic information in relation to system, syntactic, structural, and semantic levels.
+  contradictions:
+  - version: 'Un article des annales ISPRS (2012) classe l''hétérogénéité des données géospatiales en trois catégories : syntaxique, structurelle et sémantique (sans niveau système), voir A-interop-05 et A-interop-06.'
+    source: https://isprs-annals.copernicus.org/articles/I-2/217/2012/isprsannals-I-2-217-2012.pdf
+  - version: La même publication de Chojka (2020) écrit aussi que, selon la référence qu'elle cite, l'interopérabilité de l'information géographique se décompose en six couches (protocoles réseau, systèmes de fichiers, appels de procédure à distance, bases de données, SIG, interopérabilité sémantique).
+    source: https://yadda.icm.edu.pl/baztech/element/bwmeta1.element.baztech-d37f25f7-6762-47cb-8279-2772045d2157/c/geom.2020.14.3.5.pdf
+  ajouts_consolidateur: 2 source(s) ajoutée(s) par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+- id: A-interop-05
+  question: Q2
+  enonce: Selon un article académique d'ISPRS, l'hétérogénéité entre données géospatiales se classe en syntaxique, structurelle et sémantique ; l'hétérogénéité syntaxique apparaît quand des bases de données géospatiales utilisent des formats différents.
+  usage: expert
+  sources:
+  - url: https://isprs-annals.copernicus.org/articles/I-2/217/2012/isprsannals-I-2-217-2012.pdf
+    titre: ISPRS Annals I-2 (2012), p. 217
+    editeur: ISPRS
+    niveau: B
+    consulte: 2026-11-27
+    extrait: Syntactic heterogeneity occurs when different geospatial
+  - url: https://isprs-annals.copernicus.org/articles/I-2/217/2012/isprsannals-I-2-217-2012.pdf
+    titre: ISPRS Annals I-2 (2012), p. 217
+    editeur: ISPRS
+    niveau: B
+    consulte: 2026-11-27
+    extrait: databases use different formats.
+  contradictions:
+  - version: 'ISO 19101-1 (extrait public) parle de quatre niveaux : système, syntaxique, structurel et sémantique (A-interop-04).'
+    source: https://cdn.standards.iteh.ai/samples/59164/0ccf5036e7cb46c196c18432af34f6b4/ISO-19101-1-2014.pdf
+  verifie: null
+  note_verification: 'Texte sur deux colonnes : la phrase d''origine est coupée par la colonne voisine.'
+- id: A-interop-06
+  question: Q2
+  enonce: Le même article ISPRS écrit que l'hétérogénéité structurelle apparaît quand les données sont structurées différemment.
+  usage: expert
+  sources:
+  - url: https://isprs-annals.copernicus.org/articles/I-2/217/2012/isprsannals-I-2-217-2012.pdf
+    titre: ISPRS Annals I-2 (2012), p. 217
+    editeur: ISPRS
+    niveau: B
+    consulte: 2026-11-27
+    extrait: Structural heterogeneity occurs when data
+  - url: https://isprs-annals.copernicus.org/articles/I-2/217/2012/isprsannals-I-2-217-2012.pdf
+    titre: ISPRS Annals I-2 (2012), p. 217
+    editeur: ISPRS
+    niveau: B
+    consulte: 2026-11-27
+    extrait: is structured differently.
+  contradictions: []
+  verifie: null
+  note_verification: 'Texte sur deux colonnes : la phrase d''origine est coupée par la colonne voisine.'
+- id: A-interop-07
+  question: Q2
+  enonce: Bishr et al. (ISPRS) soutiennent que le développement technologique se concentre sur les problèmes syntaxiques, avec peu d'attention aux différences schématiques et sémantiques.
+  usage: contexte
+  sources:
+  - url: https://www.isprs.org/proceedings/XXXII/part4/bishr49.pdf
+    titre: A context sensitive model for sharing distributed geospatial information (Bishr, Molenaar, Radwan)
+    editeur: ISPRS
+    niveau: B
+    consulte: 2026-11-27
+    extrait: We argue that the current technological development is focused on resolving the syntactical problems, with little to know attention to the schematic and semantic
+  contradictions: []
+  verifie: null
+  note_verification: L'année de publication n'est pas lue dans le texte de la page.
+- id: A-interop-08
+  question: Q2
+  enonce: Selon un wiki scientifique, deux systèmes qui peuvent communiquer et échanger des données présentent une interopérabilité syntaxique, et l'interopérabilité sémantique est la capacité d'interpréter automatiquement et avec justesse l'information échangée.
+  usage: contexte
+  sources:
+  - url: https://www.marinespecies.org/traits/wiki/Interoperability
+    titre: Interoperability (marinespecies.org, traits wiki)
+    editeur: marinespecies.org (wiki)
+    niveau: C
+    consulte: 2026-11-27
+    extrait: when two or more systems are capable of communicating and exchanging data, they are exhibiting syntactic interoperability.
+  - url: https://www.marinespecies.org/traits/wiki/Interoperability
+    titre: Interoperability (marinespecies.org, traits wiki)
+    editeur: marinespecies.org (wiki)
+    niveau: C
+    consulte: 2026-11-27
+    extrait: the ability to automatically interpret the information exchanged meaningfully and accurately
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-interop-09
+  question: Q2
+  enonce: Un rapport de l'OGC (Testbed-12) définit l'interopérabilité syntaxique comme l'aspect qui assure une connexion technique, c'est-à-dire que les données peuvent être transférées entre systèmes.
+  usage: expert
+  sources:
+  - url: https://docs.ogc.org/per/16-059.html
+    titre: OGC Testbed-12 Semantic Portrayal, Registry and Mediation Engineering Report
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: 2026-11-27
+    extrait: the aspect of interoperability that assures that there is a technical connection, i.e. that the data can be transferred between systems
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-interop-10
+  question: Q3
+  enonce: Une étude commandée par le NIST a estimé à 15,8 milliards de dollars par an le coût d'une interopérabilité insuffisante dans l'industrie américaine des installations (bâtiments commerciaux, institutionnels et industriels), pour l'année 2002 ; ce n'est pas une étude du domaine géographique.
+  usage: narration
+  sources:
+  - url: https://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf
+    titre: NIST GCR 04-867, Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry
+    editeur: NIST
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Based on interviews and survey responses, $15.8 billion in annual interoperability costs were quantified for the capital facilities industry in 2002.
+  - url: https://www.enr.com/articles/30495-study-of-data-roadblocks-costs-tags-capital-facilities-industry-with-15-8-billion-loss-8-9-2004
+    titre: Study of Data Roadblocks Costs Tags Capital Facilities Industry With $15.8 Billion Loss (ENR, 2004-08-09)
+    editeur: Engineering News-Record
+    niveau: B
+    consulte: 2026-11-27
+    extrait: 'has come up with a number: $15.8 billion in 2002.'
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-interop-11
+  question: Q3
+  enonce: Le rapport du NIST écrit que le chiffre de 15,8 milliards est probablement prudent, car il n'inclut pas des catégories de coûts comme les coûts d'opportunité et de mise hors service.
+  usage: contexte
+  sources:
+  - url: https://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf
+    titre: NIST GCR 04-867, Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry
+    editeur: NIST
+    niveau: A
+    consulte: 2026-11-27
+    extrait: It seems $15.8 billion is likely to be a conservative estimate because it does not include such cost categories as opportunity costs and decommissioning costs.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-interop-12
+  question: Q1
+  enonce: L'évaluation de la directive INSPIRE par la Commission européenne note que les règles d'interopérabilité d'INSPIRE sont souvent jugées sur-spécifiées et mal adaptées aux usages nationaux par les fournisseurs de données, ce qui a mené à des infrastructures nationales parallèles.
+  usage: contexte
+  sources:
+  - url: https://data.consilium.europa.eu/doc/document/ST-11462-2022-ADD-1/en/pdf
+    titre: Document du Conseil ST 11462/2022 ADD 1 (évaluation d'INSPIRE)
+    editeur: Conseil de l'Union européenne
+    niveau: A
+    consulte: 2026-11-27
+    extrait: current INSPIRE interoperability rules are often considered over-specified and unfit for national use cases by data providers
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-interop-13
+  question: Q2
+  enonce: 'L''interopérabilité syntaxique est atteinte quand des systèmes peuvent échanger des données : l''OGC la décrit comme la connexion technique qui permet de transférer les données entre systèmes, une publication académique comme la capacité de communiquer et d''échanger des données.'
+  usage: narration
+  sources:
+  - url: https://docs.ogc.org/per/16-059.html
+    titre: OGC Testbed-12 Semantic Portrayal, Registry and Mediation Engineering Report
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: the aspect of interoperability that assures that there is a technical connection, i.e. that the data can be transferred between systems
+  - url: https://yadda.icm.edu.pl/baztech/element/bwmeta1.element.baztech-d37f25f7-6762-47cb-8279-2772045d2157/c/geom.2020.14.3.5.pdf
+    titre: Semantic and Syntactic Interoperability Issues in the Context of SDI (A. Chojka, Geomatics and Environmental Engineering 14(3), 2020)
+    editeur: Geomatics and Environmental Engineering (AGH, Cracovie)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: two or more computers systems exhibit syntactic interoperability, if they are capable of communicating and exchanging data.
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+- id: A-interop-14
+  question: Q2
+  enonce: 'L''interopérabilité sémantique porte sur le sens : l''OGC la décrit comme l''aspect qui assure que le contenu est compris de la même façon dans les deux systèmes ; une publication académique, citant ISO 19101, comme l''échange, l''interprétation, la compréhension et l''usage justes de l''information géographique entre systèmes.'
+  usage: narration
+  sources:
+  - url: https://docs.ogc.org/per/16-059.html
+    titre: OGC Testbed-12 Semantic Portrayal, Registry and Mediation Engineering Report
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: the aspect of interoperability that assures that the content is understood in the same way in both systems
+  - url: https://yadda.icm.edu.pl/baztech/element/bwmeta1.element.baztech-d37f25f7-6762-47cb-8279-2772045d2157/c/geom.2020.14.3.5.pdf
+    titre: Semantic and Syntactic Interoperability Issues in the Context of SDI (A. Chojka, Geomatics and Environmental Engineering 14(3), 2020)
+    editeur: Geomatics and Environmental Engineering (AGH, Cracovie)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: The highest level of interoperability in geographic information is semantic
+  - url: https://yadda.icm.edu.pl/baztech/element/bwmeta1.element.baztech-d37f25f7-6762-47cb-8279-2772045d2157/c/geom.2020.14.3.5.pdf
+    titre: Semantic and Syntactic Interoperability Issues in the Context of SDI (A. Chojka, Geomatics and Environmental Engineering 14(3), 2020)
+    editeur: Geomatics and Environmental Engineering (AGH, Cracovie)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: that concerns the proper exchange, interpretation, understanding and use of geographic information between systems [10].
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+- id: A-formats-01
+  question: Q4
+  enonce: Le shapefile stocke la géométrie et les attributs des entités sans topologie (selon la description technique d'Esri).
+  usage: narration
+  sources:
+  - url: https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf
+    titre: ESRI Shapefile Technical Description
+    editeur: Esri
+    niveau: A
+    consulte: 2026-11-27
+    extrait: A shapefile stores nontopological geometry and attribute information for the spatial features in a data set.
+  contradictions: []
+  fusionne_depuis:
+  - A-modeles-07
+  verifie: null
+  note_verification: ''
+- id: A-formats-02
+  question: Q4
+  enonce: La description technique du shapefile publiée par Esri est un livre blanc daté de juillet 1998.
+  usage: expert
+  sources:
+  - url: https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf
+    titre: ESRI Shapefile Technical Description
+    editeur: Esri
+    niveau: A
+    consulte: 2026-11-27
+    extrait: An ESRI White Paper—July 1998
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-formats-03
+  question: Q4
+  enonce: GeoPackage est un format ouvert, fondé sur des normes, présenté comme un format compact pour transférer de l'information géospatiale ; l'OGC le décrit comme des règles de stockage dans une base SQLite.
+  usage: narration
+  sources:
+  - url: https://www.geopackage.org/
+    titre: GeoPackage
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: GeoPackage is an open, standards-based, platform-independent, portable, self-describing, compact format for transferring geospatial information.
+  - url: https://www.ogc.org/standards/geopackage/
+    titre: GeoPackage Standard – Open SQLite Format for Geospatial Data
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'The GeoPackage standard describes a set of conventions for storing the following within a SQLite database:'
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-formats-04
+  question: Q4
+  enonce: GML est une grammaire XML de l'OGC pour exprimer des entités géographiques, et aussi une norme ISO (ISO 19136:2007).
+  usage: narration
+  sources:
+  - url: https://www.ogc.org/standards/gml/
+    titre: GML Standard
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: The Geography Markup Language (GML) is an XML grammar for expressing geographical features.
+  - url: https://www.ogc.org/standards/gml/
+    titre: GML Standard
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: GML is also an ISO standard ( ISO 19136:2007 ).
+  - url: https://cnig.gouv.fr/IMG/documents_wordpress/2015/01/JRC_INSPIRE-TransformService_TG_v2-0.pdf
+    titre: Technical Guidance for the INSPIRE Schema Transformation Network Service, glossaire
+    editeur: Rob Walker Consultancy pour le JRC
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: GML Geography Markup Language, the XML grammar defined by the OGC to express geographical features
+  - url: https://ggim.un.org/ggim_20171012/docs/meetings/3rd%20UNCE/E_C.20_2013_8_ISO-OGC-IHO%20Standards%20background%20paper.pdf
+    titre: A Guide to the Role of Standards in Geospatial Information Management, document de référence pour l'UN-GGIM (2013)
+    editeur: ISO/TC 211, OGC et OHI (rapport commun à l'UN-GGIM)
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: ISO 19136:2007 is a joint ISO/TC 211 and OGC document.
+  contradictions: []
+  ajouts_consolidateur: 2 source(s) ajoutée(s) par le consolidateur le 2026-11-27 ; usage passé de « expert » à « narration » sur cette nouvelle source.
+  verifie: null
+  note_verification: ''
+- id: A-formats-05
+  question: Q4
+  enonce: GeoJSON est un format d'échange de données géospatiales fondé sur JSON, décrit dans une RFC de l'IETF.
+  usage: narration
+  sources:
+  - url: https://datatracker.ietf.org/doc/html/rfc7946
+    titre: RFC 7946, The GeoJSON Format
+    editeur: IETF
+    niveau: A
+    consulte: 2026-11-27
+    extrait: GeoJSON is a geospatial data interchange format based on JavaScript Object Notation (JSON).
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-formats-06
+  question: Q5
+  enonce: Dans GeoJSON (RFC 7946), le système de référence de coordonnées est géographique, fondé sur le WGS 84.
+  usage: narration
+  sources:
+  - url: https://datatracker.ietf.org/doc/html/rfc7946
+    titre: RFC 7946, The GeoJSON Format
+    editeur: IETF
+    niveau: A
+    consulte: 2026-11-27
+    extrait: The coordinate reference system for all GeoJSON coordinates is a geographic coordinate reference system, using the World Geodetic System 1984 (WGS 84)
+  - url: https://datatracker.ietf.org/doc/html/rfc7946
+    titre: RFC 7946 The GeoJSON Format
+    editeur: IETF
+    niveau: A
+    consulte: 2026-11-27
+    extrait: The coordinate reference system for all GeoJSON coordinates is a geographic coordinate reference system, using the World Geodetic System 1984
+  - url: https://gdal.org/en/stable/drivers/vector/geojson.html
+    titre: GeoJSON driver, GDAL documentation
+    editeur: OSGeo
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: Coordinates must be geographic over the WGS 84 ellipsoid,
+  contradictions: []
+  fusionne_depuis:
+  - A-coordonnees-30
+  ajouts_consolidateur: 1 source(s) ajoutée(s) par le consolidateur le 2026-11-27 ; usage passé de « contexte » à « narration » sur cette nouvelle source.
+  verifie: null
+  note_verification: Axe croisé avec coordonnees.
+- id: A-formats-07
+  question: Q4
+  enonce: DWG est un format propriétaire développé et maintenu par Autodesk, qui n'en a publié aucune spécification.
+  usage: expert
+  sources:
+  - url: https://loc.gov/preservation/digital/formats//fdd/fdd000445.shtml
+    titre: DWG, AutoCAD Drawing (Sustainability of Digital Formats, Library of Congress)
+    editeur: Library of Congress
+    niveau: B
+    consulte: 2026-11-27
+    extrait: No specification has been published by Autodesk.
+  - url: https://loc.gov/preservation/digital/formats//fdd/fdd000445.shtml
+    titre: DWG, AutoCAD Drawing (Sustainability of Digital Formats, Library of Congress)
+    editeur: Library of Congress
+    niveau: B
+    consulte: 2026-11-27
+    extrait: The DWG format is a proprietary format developed and maintained by Autodesk.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-formats-08
+  question: Q4
+  enonce: Le catalogue des pilotes vectoriels de GDAL liste un pilote pour les fichiers DGN de MicroStation.
+  usage: contexte
+  sources:
+  - url: https://gdal.org/en/stable/drivers/vector/index.html
+    titre: Vector drivers, GDAL documentation
+    editeur: OSGeo
+    niveau: B
+    consulte: 2026-11-27
+    extrait: Microstation DGN
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-formats-09
+  question: Q4
+  enonce: Selon l'OGC, KML encode ce qu'il faut montrer dans un navigateur terrestre et comment le montrer.
+  usage: narration
+  sources:
+  - url: https://www.ogc.org/standards/kml/
+    titre: KML, Open Geospatial Consortium
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Put simply, KML encodes what to show in an earth browser, and how to show it.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-formats-10
+  question: Q5
+  enonce: Un shapefile n'admet pas de nom de champ de plus de 10 caractères.
+  usage: narration
+  sources:
+  - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+    titre: Geoprocessing considerations for shapefile output
+    editeur: Esri
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Field names cannot be longer than 10 characters.
+  - url: https://gdal.org/en/stable/drivers/vector/shapefile.html
+    titre: ESRI Shapefile / DBF, GDAL documentation
+    editeur: OSGeo
+    niveau: B
+    consulte: 2026-11-27
+    extrait: Attribute names can only be up to 10 characters long.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-formats-11
+  question: Q5
+  enonce: Chaque fichier composant un shapefile est limité à 2 Go, ce qui représente environ 70 millions d'entités ponctuelles selon Esri ; GDAL signale aussi cette limite de 2 Go.
+  usage: narration
+  sources:
+  - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+    titre: Geoprocessing considerations for shapefile output
+    editeur: Esri
+    niveau: A
+    consulte: 2026-11-27
+    extrait: There is a 2 GB size limit for any shapefile component file, which translates to a maximum of roughly 70 million point features.
+  - url: https://gdal.org/en/stable/drivers/vector/shapefile.html
+    titre: ESRI Shapefile / DBF, GDAL documentation
+    editeur: OSGeo
+    niveau: B
+    consulte: 2026-11-27
+    extrait: 'SHAPE_2GB_LIMIT=YES: can be set to YES to strictly enforce the 2 GB file size limit when updating a shapefile.'
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-formats-12
+  question: Q5
+  enonce: Dans un shapefile, toutes les formes non nulles doivent être du même type de forme.
+  usage: narration
+  sources:
+  - url: https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf
+    titre: ESRI Shapefile Technical Description
+    editeur: Esri
+    niveau: A
+    consulte: 2026-11-27
+    extrait: All the non-Null shapes in a shapefile are required to be of the same shape type.
+  contradictions: []
+  fusionne_depuis:
+  - A-modeles-08
+  verifie: null
+  note_verification: ''
+- id: A-formats-13
+  question: Q5
+  enonce: Les courbes paramétriques (arcs de cercle) ne sont pas prises en charge dans un shapefile ; à l'export, elles deviennent des lignes simples à sommets rapprochés.
+  usage: narration
+  sources:
+  - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+    titre: Geoprocessing considerations for shapefile output
+    editeur: Esri
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Parametrically defined curves (also known as circular arc curves) are not supported on shapefiles.
+  - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+    titre: Geoprocessing considerations for shapefile output
+    editeur: Esri
+    niveau: A
+    consulte: 2026-11-27
+    extrait: the curved features are transformed to simple line features with closely spaced vertices to capture the curved shape.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-formats-14
+  question: Q5
+  enonce: Selon Esri, un shapefile ne peut pas stocker de valeurs nulles, arrondit les nombres et gère mal l'Unicode.
+  usage: narration
+  sources:
+  - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+    titre: Geoprocessing considerations for shapefile output
+    editeur: Esri
+    niveau: A
+    consulte: 2026-11-27
+    extrait: shapefiles cannot store null values, they round up numbers, they have poor support for Unicode character strings
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-formats-16
+  question: Q4
+  enonce: Safe Software décrit le besoin de transformer des données entre formats par l'intégration de données gérées par des systèmes SIG, DAO, en trois dimensions ou de bases de données différents.
+  usage: narration
+  sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: There are many reasons you might need to transform data between formats, including integrating data managed by different GIS, CAD, 3D, or database systems
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-formats-17
+  question: Q6
+  enonce: GDAL est une bibliothèque de traduction de formats de données géospatiales raster et vecteur, qui présente un modèle abstrait unique pour le raster et un pour le vecteur, quel que soit le format pris en charge.
+  usage: narration
+  sources:
+  - url: https://gdal.org/en/stable/
+    titre: GDAL documentation
+    editeur: OSGeo
+    niveau: A
+    consulte: 2026-11-27
+    extrait: As a library, it presents a single raster abstract data model and single vector abstract data model to the calling application for all supported formats.
+  contradictions: []
+  fusionne_depuis:
+  - A-modeles-11
+  verifie: null
+  note_verification: ''
+- id: A-formats-18
+  question: Q6
+  enonce: La page de démarrage de FME affiche « 800+ supported formats » (plus de 800 formats pris en charge).
+  usage: expert
+  sources:
+  - url: https://fme.safe.com/get-started/
+    titre: Get started with FME
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 800+ supported formats and powerful spatial data capabilities
+  contradictions:
+  - version: Une fiche de Safe Software chez Esri affiche « support for 300+ spatial and non-spatial formats » (non datée).
+    source: https://www.esri.com/partners/a2T70000000TNdREAW
+  verifie: null
+  note_verification: ''
+- id: A-formats-19
+  question: Q6
+  enonce: La documentation de FME explique que FME contient un grand nombre de formats parce que tant de domaines différents utilisent des données spatiales.
+  usage: narration
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/reading-writing-data.htm
+    titre: Reading and Writing Data, FME Form documentation
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: FME contains a large number of formats because there are so many different fields that use spatial data.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-01
+  question: Q7
+  enonce: Un schéma d'application est un schéma conceptuel des données requises par une ou plusieurs applications (ISO 19109).
+  usage: expert
+  sources:
+  - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+    titre: ISO 19109:2005 Geographic information, Rules for application schema (extrait)
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: An application schema is a conceptual schema for data required by one or more applications.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-02
+  question: Q7
+  enonce: Dans ISO 19109, une entité (feature) est une abstraction de phénomènes du monde réel.
+  usage: expert
+  sources:
+  - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+    titre: ISO 19109:2005 Geographic information, Rules for application schema (extrait)
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: abstraction of real-world phenomena
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-03
+  question: Q7
+  enonce: Dans ISO 19109, un attribut d'entité est une caractéristique d'une entité.
+  usage: expert
+  sources:
+  - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+    titre: ISO 19109:2005 Geographic information, Rules for application schema (extrait)
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: characteristic of a feature
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-04
+  question: Q7
+  enonce: ISO 19109 distingue, pour définir des entités, leur regroupement en types, les attributs de chaque type, les relations entre les types et le comportement des entités.
+  usage: expert
+  sources:
+  - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+    titre: ISO 19109:2005 Geographic information, Rules for application schema (extrait)
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'This International Standard distinguishes four aspects of defining features:'
+  - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+    titre: ISO 19109:2005 Geographic information, Rules for application schema (extrait)
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: the attributes associated with each type, the relationships among the types and the behaviour of the features.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-05
+  question: Q7
+  enonce: Dans GDAL, la classe OGRFeatureDefn représente le schéma, c'est-à-dire l'ensemble des définitions de champs, d'un groupe d'entités liées, normalement une couche entière.
+  usage: contexte
+  sources:
+  - url: https://gdal.org/en/stable/user/vector_data_model.html
+    titre: Vector Data Model, GDAL documentation
+    editeur: GDAL / OSGeo
+    niveau: A
+    consulte: 2026-11-27
+    extrait: The OGRFeatureDefn class captures the schema (set of field definitions) for a group of related features (normally a whole layer).
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-06
+  question: Q8
+  enonce: ISO 19107 traite la géométrie vectorielle et la topologie, jusqu'à trois dimensions.
+  usage: expert
+  sources:
+  - url: https://standards.iteh.ai/catalog/standards/iso/acd5af2e-2319-4a2d-b94b-d75be70b7b36/iso-19107-2003
+    titre: ISO 19107:2003 Geographic information, Spatial schema
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: It treats vector geometry and topology up to three dimensions.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-09
+  question: Q8
+  enonce: Dans le modèle vectoriel de GDAL, chaque champ de géométrie a son propre indicateur de type de géométrie autorisé ; plusieurs champs de géométrie peuvent être associés à une même définition d'entité.
+  usage: contexte
+  sources:
+  - url: https://gdal.org/en/stable/user/vector_data_model.html
+    titre: Vector Data Model, GDAL documentation
+    editeur: GDAL / OSGeo
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Each geometry field has its own indicator of geometry type allowed
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-10
+  question: Q8
+  enonce: Les géodatabases d'Esri prennent en charge des capacités que les shapefiles n'ont pas, comme les domaines d'attributs et les sous-types.
+  usage: narration
+  sources:
+  - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+    titre: Geoprocessing considerations for shapefile output, ArcGIS Pro
+    editeur: Esri
+    niveau: A
+    consulte: 2026-11-27
+    extrait: In addition, they do not support capabilities found in geodatabases, such as domains and subtypes.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-12
+  question: Q8
+  enonce: ISO 19101-1 définit une couverture (coverage) comme une entité qui renvoie des valeurs pour toute position directe de son domaine ; une image raster en est un exemple.
+  usage: expert
+  sources:
+  - url: https://cdn.standards.iteh.ai/samples/59164/0ccf5036e7cb46c196c18432af34f6b4/ISO-19101-1-2014.pdf
+    titre: ISO 19101-1:2014 Geographic information, Reference model (extrait)
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: feature (4.1.11) that acts as a function to return values from its range for any direct position within its
+  - url: https://cdn.standards.iteh.ai/samples/59164/0ccf5036e7cb46c196c18432af34f6b4/ISO-19101-1-2014.pdf
+    titre: ISO 19101-1:2014 Geographic information, Reference model (extrait)
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: EXAMPLE 1 Raster (4.1.30) image.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-13
+  question: Q8
+  enonce: Le pilote GML de GDAL détecte des attributs placés dans des éléments GML imbriqués (hiérarchie d'attributs non plate), présents dans certains profils GML comme celui d'Ordnance Survey MasterMap.
+  usage: narration
+  sources:
+  - url: https://gdal.org/en/stable/drivers/vector/gml.html
+    titre: GML, Geography Markup Language, GDAL documentation
+    editeur: GDAL / OSGeo
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Feature attributes in nested GML elements (non-flat attribute hierarchy) that can be found in some GML profiles, such as UK Ordnance Survey MasterMap, are detected.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-14
+  question: Q8
+  enonce: Le modèle des Simple Features de l'OGC part d'une classe Geometry de base, avec des sous-classes Point, Curve, Surface et GeometryCollection.
+  usage: narration
+  sources:
+  - url: https://www.ogc.org/standards/sfa
+    titre: 'Simple Feature Access, Part 1: Common Architecture, OGC'
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: The base Geometry class has subclasses for Point, Curve, Surface and GeometryCollection.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-15
+  question: Q8
+  enonce: Dans les Simple Features de l'OGC, chaque objet géométrique est associé à un système de référence spatial qui décrit l'espace de coordonnées où il est défini.
+  usage: narration
+  sources:
+  - url: https://www.ogc.org/standards/sfa
+    titre: 'Simple Feature Access, Part 1: Common Architecture, OGC'
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Each geometric object is associated with a Spatial Reference System, which describes the coordinate space in which the geometric object is defined.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-16
+  question: Q9
+  enonce: Safe Software écrit que traduire entre modèles de données est considérablement plus difficile que traduire entre formats, et que cela touche les composantes spatiales et non spatiales des données.
+  usage: narration
+  sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Translating between data models is considerably more interesting and difficult than translating between formats.
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: This affects both the spatial and non-spatial components of the data.
+  contradictions: []
+  fusionne_depuis:
+  - A-formats-15
+  - A-semantique-18
+  verifie: null
+  note_verification: ''
+- id: A-modeles-17
+  question: Q8
+  enonce: Safe Software cite comme exemple de transformation de représentation spatiale le passage de coordonnées (x,y) stockées dans des colonnes numériques à une géométrie de point stockée dans une colonne de géométrie.
+  usage: narration
+  sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: (x,y) coordinates stored in numeric columns
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: point geometry stored in a geometry column
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-18
+  question: Q8
+  enonce: Safe Software cite comme autre exemple le passage d'attributs de surfaces associés à un point intérieur à des attributs associés directement aux entités surfaciques.
+  usage: narration
+  sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: area feature attributes associated with an inside point
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: attributes associated with area features directly
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-19
+  question: Q8
+  enonce: Safe Software note que certains formats sont fortement normalisés, répartissant les données en des centaines de tables ou de couches, et d'autres non.
+  usage: narration
+  sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability, blogue de Safe Software
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: some formats are highly normalized, breaking data into hundreds of tables or layers, and others are not
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-20
+  question: Q9
+  enonce: Selon ISO 19109, le passage d'un schéma d'application à un autre peut être difficile, voire impossible, si les deux schémas sont trop divergents.
+  usage: expert
+  sources:
+  - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+    titre: ISO 19109:2005 Geographic information, Rules for application schema (extrait)
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: The mapping from one application schema to another application schema may be difficult and even impossible if the two schemas are too divergent.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-21
+  question: Q9
+  enonce: Selon ISO 19109, une interopérabilité complète n'est possible que si le fournisseur et l'utilisateur ont des schémas d'application identiques.
+  usage: expert
+  sources:
+  - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+    titre: ISO 19109:2005 Geographic information, Rules for application schema (extrait)
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Complete interoperability can only occur when user and supplier have identical application schemas.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-22
+  question: Q9
+  enonce: Dans le modèle de transfert décrit par ISO 19109, une première mise en correspondance va du schéma d'application du fournisseur au schéma des données échangées, puis une seconde va de ce schéma à celui de l'utilisateur.
+  usage: expert
+  sources:
+  - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+    titre: ISO 19109:2005 Geographic information, Rules for application schema (extrait)
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: a second mapping will be made from this application schema to the application schema of the user.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-23
+  question: Q9
+  enonce: Dans la directive INSPIRE, l'harmonisation transforme les données sources, décrites par un schéma source, vers le modèle de données de la directive, le schéma cible.
+  usage: narration
+  sources:
+  - url: https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299218824/HALE_COS__Ingles_Patricio.pdf
+    titre: Land Cover spatial datasets harmonization in Portugal using HALE, présentation de la DGT
+    editeur: DGT (Portugal)
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Harmonization involves the transformation of the source data (source schema) in the data model described by the Directive (target schema)
+  - url: https://journal.fi/njs/article/view/4306/5275
+    titre: Implementation of INSPIRE Schema Transformation Service, Nordic Journal of Surveying and Real Estate Research 8:1
+    editeur: Nordic Journal of Surveying and Real Estate Research
+    niveau: B
+    consulte: 2026-11-27
+    extrait: the required data interoperability will be achieved through data transformations that are executed between the member states’ national data forms and the common INSPIRE data forms
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-24
+  question: Q9
+  enonce: Une publication académique décrit que les États membres de l'UE stockent leurs jeux de données dans leurs propres structures de bases de données et systèmes de coordonnées, généralement incompatibles entre eux.
+  usage: expert
+  sources:
+  - url: https://journal.fi/njs/article/view/4306/5275
+    titre: Implementation of INSPIRE Schema Transformation Service, Nordic Journal of Surveying and Real Estate Research 8:1
+    editeur: Nordic Journal of Surveying and Real Estate Research
+    niveau: B
+    consulte: 2026-11-27
+    extrait: Currently the EU member states are storing their spatial data sets in their own database structures and coordinate systems that are usually not compatible with each other.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-25
+  question: Q9
+  enonce: Au niveau schématique, d'après cette publication, les transformations changent la structure des données et le vocabulaire du schéma.
+  usage: contexte
+  sources:
+  - url: https://journal.fi/njs/article/view/4306/5275
+    titre: Implementation of INSPIRE Schema Transformation Service, Nordic Journal of Surveying and Real Estate Research 8:1
+    editeur: Nordic Journal of Surveying and Real Estate Research
+    niveau: B
+    consulte: 2026-11-27
+    extrait: At schematic level, the transformations are focused on changing data’s structure and schema vocabulary.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-26
+  question: Q9
+  enonce: 'Le guide technique du JRC pour le service de transformation de schémas INSPIRE classe les services de transformation en réseau par domaine : formats de données, systèmes de coordonnées de référence et schémas logiques.'
+  usage: contexte
+  sources:
+  - url: https://cnig.gouv.fr/IMG/documents_wordpress/2015/01/JRC_INSPIRE-TransformService_TG_v2-0.pdf
+    titre: Technical Guidance for the INSPIRE Schema Transformation Network Service
+    editeur: Rob Walker Consultancy pour le JRC
+    niveau: B
+    consulte: 2026-11-27
+    extrait: 'Transformation Network Services can be categorised into different areas of functionality: for example, transforming data formats, coordinate reference systems (CRS) and logical schemas.'
+  contradictions: []
+  fusionne_depuis:
+  - A-semantique-20
+  fusion_note: 'Les deux axes citaient la même page sous deux éditeurs (JRC, niveau A ; Rob Walker Consultancy pour le JRC, niveau B). Le document dit que les vues exprimées n''engagent que leurs auteurs : un seul éditeur gardé, Rob Walker Consultancy pour le JRC, niveau B, et l''extrait le plus long, qui contient l''autre. Usage le plus bas des deux gardé (contexte).'
+  verifie: null
+  note_verification: 'Le document porte la mention Status: Draft (version 2.0). [A-semantique-20] Le document porte la mention « Status: Draft », version 2.0 du 11 juin 2010.'
+- id: A-modeles-27
+  question: Q9
+  enonce: Dans le cas d'une carte d'occupation du sol portugaise, une table de correspondance fait coïncider les attributs du modèle source avec la structure du modèle cible, et décrit classes, attributs, énumérations, listes de codes et associations des deux modèles.
+  usage: expert
+  sources:
+  - url: https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299218824/HALE_COS__Ingles_Patricio.pdf
+    titre: Land Cover spatial datasets harmonization in Portugal using HALE, présentation de la DGT
+    editeur: DGT (Portugal)
+    niveau: A
+    consulte: 2026-11-27
+    extrait: The matching table identifies and describes the classes, attributes, enumerations, code lists and associations between classes of both models.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-28
+  question: Q9
+  enonce: La DGT portugaise a décidé d'harmoniser sa carte d'occupation du sol COS selon les spécifications de la directive INSPIRE.
+  usage: expert
+  sources:
+  - url: https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299218824/HALE_COS__Ingles_Patricio.pdf
+    titre: Land Cover spatial datasets harmonization in Portugal using HALE, présentation de la DGT
+    editeur: DGT (Portugal)
+    niveau: A
+    consulte: 2026-11-27
+    extrait: it was decided to proceed with the harmonization of COS according to the specifications of INSPIRE Directive.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-29
+  question: Q9
+  enonce: La carte COS 2010 présente une structure hiérarchique de cinq niveaux, avec 225 classes au niveau le plus détaillé.
+  usage: expert
+  sources:
+  - url: https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299218824/HALE_COS__Ingles_Patricio.pdf
+    titre: Land Cover spatial datasets harmonization in Portugal using HALE, présentation de la DGT
+    editeur: DGT (Portugal)
+    niveau: A
+    consulte: 2026-11-27
+    extrait: COS2010 presents an hierarchical structure with five levels, corresponding to 225 classes at the most detailed level (N5).
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-30
+  question: Q9
+  enonce: HALE (HUMBOLDT Alignment Editor) est un outil libre qui permet d'établir des relations entre un schéma source et un schéma cible et de transformer les données automatiquement.
+  usage: contexte
+  sources:
+  - url: https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299218824/HALE_COS__Ingles_Patricio.pdf
+    titre: Land Cover spatial datasets harmonization in Portugal using HALE, présentation de la DGT
+    editeur: DGT (Portugal)
+    niveau: A
+    consulte: 2026-11-27
+    extrait: It allows the user to establish relationships between schemas (source and target) and transform SDS automatically
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-31
+  question: Q9
+  enonce: Le comité ISO/TC 211 liste une norme ISO 19166, « BIM to GIS conceptual mapping (B2GM) ».
+  usage: contexte
+  sources:
+  - url: https://committee.iso.org/sites/tc211/home/projects/projects---complete-list/iso-19107.html
+    titre: ISO/TC 211, liste complète des projets
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: ISO 19166 Geographic information — BIM to GIS conceptual mapping (B2GM)
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-modeles-32
+  question: Q9
+  enonce: Dans INSPIRE, l'interopérabilité visée passe par des transformations de données entre les formes de données nationales et les formes communes d'INSPIRE ; une publication note que la structure des jeux INSPIRE est orientée vers l'échange, d'où une transformation nécessaire.
+  usage: narration
+  sources:
+  - url: https://journal.fi/njs/article/view/4306/5275
+    titre: Implementation of INSPIRE Schema Transformation Service, Nordic Journal of Surveying and Real Estate Research 8:1
+    editeur: Nordic Journal of Surveying and Real Estate Research
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: the required data interoperability will be achieved through data transformations that are executed between the member states’ national data forms and the common INSPIRE data forms
+  - url: https://re.public.polimi.it/bitstream/11311/822136/4/2013inspire.pdf
+    titre: Application of the GeoUML tools for the production and validation of INSPIRE datasets (Belussi, Marca, Negri, Pelagatti)
+    editeur: Politecnico di Milano
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: The structure of INSPIRE datasets is oriented to the exchange of data, not to its storage and manipulation in a database. Therefore data transformation is required.
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-01
+  question: Q10
+  enonce: Selon la norme internationale de référencement par coordonnées, reprise par l'OGC, un système de référence de coordonnées est un système de coordonnées relié à un objet par un référentiel (datum).
+  usage: narration
+  sources:
+  - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+    titre: 'OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum'
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: 2026-11-27
+    extrait: coordinate system that is related to an object by a datum
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-02
+  question: Q10
+  enonce: Un système de coordonnées est défini comme un ensemble de règles mathématiques qui disent comment attribuer des coordonnées à des points.
+  usage: narration
+  sources:
+  - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+    titre: 'OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum'
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: 2026-11-27
+    extrait: set of mathematical rules for specifying how coordinates are to be assigned to points
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-03
+  question: Q10
+  enonce: Le référentiel (datum) est l'ensemble des paramètres qui fixent la position de l'origine, l'échelle et l'orientation d'un système de coordonnées.
+  usage: narration
+  sources:
+  - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+    titre: 'OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum'
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: 2026-11-27
+    extrait: parameter or set of parameters that realize the position of the origin, the scale, and the orientation of a coordinate system
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-04
+  question: Q10
+  enonce: L'ellipsoïde est une surface géométrique de référence, formée par une ellipse qu'on fait tourner autour d'un axe principal.
+  usage: contexte
+  sources:
+  - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+    titre: 'OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum'
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: 2026-11-27
+    extrait: geometric reference surface embedded in 3D Euclidean space formed by an ellipse that is rotated about a main axis
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-05
+  question: Q10
+  enonce: Une projection cartographique est une conversion de coordonnées d'un système ellipsoïdal vers un plan.
+  usage: narration
+  sources:
+  - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+    titre: 'OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum'
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: 2026-11-27
+    extrait: coordinate conversion from an ellipsoidal coordinate system to a plane
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-06
+  question: Q10
+  enonce: Un système de référence de coordonnées projeté est dérivé d'un système géographique par l'application d'une projection cartographique.
+  usage: narration
+  sources:
+  - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+    titre: 'OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum'
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: 2026-11-27
+    extrait: coordinate reference system derived from a geographic coordinate reference system by applying a map projection
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-07
+  question: Q10
+  enonce: Dans un système de référence de coordonnées spatial, les nombres de coordonnées sont qualifiés par des unités.
+  usage: narration
+  sources:
+  - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+    titre: 'OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum'
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: 2026-11-27
+    extrait: In a spatial coordinate reference system, the coordinate numbers are qualified by units.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-08
+  question: Q10
+  enonce: Une transformation de coordonnées opère entre deux systèmes de référence de coordonnées, non entre deux référentiels ; elle change les valeurs des coordonnées sans changer la définition du référentiel.
+  usage: narration
+  sources:
+  - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+    titre: 'OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum'
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: 2026-11-27
+    extrait: A coordinate transformation changes coordinate values. It does not change the definition of the datum.
+  - url: https://docs.ogc.org/as/18-005r5/18-005r5.html
+    titre: 'OGC Abstract Specification Topic 2: Referencing by coordinates Corrigendum'
+    editeur: Open Geospatial Consortium
+    niveau: A
+    consulte: 2026-11-27
+    extrait: A coordinate transformation operates between two coordinate reference systems, not between two datums.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-09
+  question: Q11
+  enonce: Le jeu de données EPSG de l'IOGP contient de nombreuses définitions de systèmes de référence de coordonnées et de transformations de coordonnées, de portée mondiale, régionale, nationale ou locale.
+  usage: narration
+  sources:
+  - url: https://epsg.org/home.html
+    titre: EPSG Geodetic Parameter Dataset
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: IOGP's EPSG Geodetic Parameter Dataset contains many definitions of coordinate reference systems (CRSs) and coordinate transformations (CTs) which can be global, regional, national, or local in application.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-10
+  question: Q11
+  enonce: L'IOGP présente le jeu de données EPSG comme la norme de fait de l'industrie géospatiale, lancé en 1985 et rendu public en 1993.
+  usage: expert
+  sources:
+  - url: https://epsg.org/home.html
+    titre: EPSG Geodetic Parameter Dataset
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: The EPSG Dataset is the de facto standard in the geospatial industry, initiated in 1985 and first made public in 1993.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-11
+  question: Q11
+  enonce: Le modèle de données du jeu EPSG suit la norme internationale ISO 19111:2019 de référencement par coordonnées.
+  usage: contexte
+  sources:
+  - url: https://epsg.org/home.html
+    titre: EPSG Geodetic Parameter Dataset
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Its data model follows the ISO 19111:2019 international standard for referencing by coordinates
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-12
+  question: Q11
+  enonce: Dans le registre EPSG, le code 4326 désigne WGS 84, un système géographique 2D dont les axes sont la latitude et la longitude, en degrés.
+  usage: expert
+  sources:
+  - url: https://epsg.org/crs_4326/WGS-84.html
+    titre: EPSG:4326 WGS 84
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Name: WGS 84 Code: 4326 CRS Type: Geographic 2D'
+  - url: https://epsg.org/crs_4326/WGS-84.html
+    titre: EPSG:4326 WGS 84
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Ellipsoidal 2D CS. Axes: latitude, longitude. Orientations: north, east. UoM: degree'
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-13
+  question: Q11
+  enonce: Dans le registre EPSG, le code 4617 désigne NAD83(CSRS), un système géographique 2D dont l'étendue est le Canada.
+  usage: expert
+  sources:
+  - url: https://epsg.org/crs_4617/NAD83-CSRS.html
+    titre: EPSG:4617 NAD83(CSRS)
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Name: NAD83(CSRS) Code: 4617 CRS Type: Geographic 2D'
+  - url: https://epsg.org/crs_4617/NAD83-CSRS.html
+    titre: EPSG:4617 NAD83(CSRS)
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Extent: Canada'
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-14
+  question: Q11
+  enonce: Le NAD83(CSRS) du registre EPSG a pour référentiel le NAD83 Canadian Spatial Reference System.
+  usage: contexte
+  sources:
+  - url: https://epsg.org/crs_4617/NAD83-CSRS.html
+    titre: EPSG:4617 NAD83(CSRS)
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Datum: NAD83 Canadian Spatial Reference System'
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-15
+  question: Q11
+  enonce: Dans le registre EPSG, le code 26917 désigne NAD83 / UTM zone 17N, un système projeté fondé sur NAD83 dont les coordonnées Est et Nord sont en mètres.
+  usage: expert
+  sources:
+  - url: https://epsg.org/crs_26917/NAD83-UTM-zone-17N.html
+    titre: EPSG:26917 NAD83 / UTM zone 17N
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Name: NAD83 / UTM zone 17N Code: 26917 CRS Type: Projected'
+  - url: https://epsg.org/crs_26917/NAD83-UTM-zone-17N.html
+    titre: EPSG:26917 NAD83 / UTM zone 17N
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Cartesian 2D CS. Axes: easting, northing (E,N). Orientations: east, north. UoM: m.'
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-16
+  question: Q11
+  enonce: Dans le registre EPSG, le code 32183 désigne NAD83 / MTM zone 3, un système projeté fondé sur NAD83, dont l'étendue est le Québec et Terre-Neuve-et-Labrador.
+  usage: expert
+  sources:
+  - url: https://epsg.org/crs_32183/NAD83-MTM-zone-3.html
+    titre: EPSG:32183 NAD83 / MTM zone 3
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Name: NAD83 / MTM zone 3 Code: 32183 CRS Type: Projected'
+  - url: https://epsg.org/crs_32183/NAD83-MTM-zone-3.html
+    titre: EPSG:32183 NAD83 / MTM zone 3
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Extent: Canada - Quebec, Newfoundland and Labrador - MTM zone 3'
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-17
+  question: Q11
+  enonce: Dans le registre EPSG, le code 2154 désigne le système projeté Lambert-93 fondé sur RGF93 v1, dont l'étendue est la France et dont les coordonnées sont en mètres.
+  usage: expert
+  sources:
+  - url: https://epsg.org/crs_2154/RGF93-v1-Lambert-93.html
+    titre: EPSG:2154 ETRS89-FRA [RGF93 v1] / Lambert-93
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Name: ETRS89-FRA [RGF93 v1] / Lambert-93 Code: 2154 CRS Type: Projected'
+  - url: https://epsg.org/crs_2154/RGF93-v1-Lambert-93.html
+    titre: EPSG:2154 ETRS89-FRA [RGF93 v1] / Lambert-93
+    editeur: IOGP
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'Cartesian 2D CS. Axes: easting, northing (X,Y). Orientations: east, north. UoM: m.'
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-18
+  question: Q11
+  enonce: En France, le système national de référence est le RGF93 (Réseau Géodésique Français 1993), établi par l'IGN, avec l'ellipsoïde IAG GRS80.
+  usage: expert
+  sources:
+  - url: https://bofip.impots.gouv.fr/doctrine/pgp/5101-PGP
+    titre: CAD - Travaux topographiques du cadastre - Les canevas
+    editeur: Direction générale des Finances publiques
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Le système national de référence est le RGF93 (Réseau Géodésique Français 1993). Il a été établi par l'IGN
+  - url: https://bofip.impots.gouv.fr/doctrine/pgp/5101-PGP
+    titre: CAD - Travaux topographiques du cadastre - Les canevas
+    editeur: Direction générale des Finances publiques
+    niveau: A
+    consulte: 2026-11-27
+    extrait: 'ellipsoïde : IAG GRS80 ;'
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-19
+  question: Q11
+  enonce: En France métropolitaine, la partie planimétrique du système de référence est composée du RGF93 et de deux systèmes de projection associés, le Lambert 93 et les CC 9 zones.
+  usage: narration
+  sources:
+  - url: https://bofip.impots.gouv.fr/doctrine/pgp/5101-PGP
+    titre: CAD - Travaux topographiques du cadastre - Les canevas
+    editeur: Direction générale des Finances publiques
+    niveau: A
+    consulte: 2026-11-27
+    extrait: d'un système géodésique, le RGF93 et de deux systèmes de projection associés, le Lambert 93 et les CC 9 zones
+  - url: https://crs.bkg.bund.de/crs/eu-countrysel.php?country=FR
+    titre: Coordinate Reference Systems of France - FR
+    editeur: Bundesamt für Kartographie und Geodäsie
+    niveau: B
+    consulte: 2026-11-27
+    extrait: Datum RGF93 in Lambert Projection - Lambert93 - with special French parameters
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-20
+  question: Q11
+  enonce: Le gouvernement du Canada a adopté NAD83 comme datum national officiel en 1990 ; le NAD83 est le datum officiel de toute la cartographie et des systèmes d'information fondés sur la position du gouvernement fédéral.
+  usage: expert
+  sources:
+  - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+    titre: Impact of NAD83 adoption (fiche technique)
+    editeur: Gouvernement de l'Alberta
+    niveau: B
+    consulte: 2026-11-27
+    extrait: The NAD83 datum was adopted as the official national datum by the U.S. government in 1989, and the Canadian government in 1990.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-21
+  question: Q11
+  enonce: L'Ontario définit NAD83-CSRS, version du NAD83 fondée sur le Système canadien de référence spatial, comme datum géodésique horizontal officiel pour toutes ses activités de référencement géospatial.
+  usage: contexte
+  sources:
+  - url: https://www.ontario.ca/page/go-its-541tes-nad83-csrs-official-horizontal-geodetic-datum
+    titre: GO-ITS 541TES NAD83-CSRS official horizontal geodetic datum for Ontario
+    editeur: Gouvernement de l'Ontario
+    niveau: B
+    consulte: 2026-11-27
+    extrait: as the official horizontal geodetic datum to be used for all geo-spatial referencing activities.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-22
+  question: Q11
+  enonce: Le système UTM divise la Terre en 60 zones de 6 degrés ; les zones 7 à 22 couvrent le Canada.
+  usage: expert
+  sources:
+  - url: https://geonova.novascotia.ca/sites/default/files/resource-library/NSCRS%20Technical%20Support%200004%20Projections%2029Feb2016.pdf
+    titre: 'Technical Support: Projections in Nova Scotia'
+    editeur: Gouvernement de la Nouvelle-Écosse
+    niveau: B
+    consulte: 2026-11-27
+    extrait: The UTM projection divides the Earth into 60 zones of 6 degrees (6° * 60 = 360°) Zones 7-22 cover Canada.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-23
+  question: Q11
+  enonce: Une zone MTM est la bande comprise entre deux méridiens séparés de 3 degrés ; des zones plus petites réduisent les facteurs d'échelle et l'écart entre distances sur le terrain et distances sur la grille.
+  usage: expert
+  sources:
+  - url: https://geonova.novascotia.ca/sites/default/files/resource-library/NSCRS%20Technical%20Support%200004%20Projections%2029Feb2016.pdf
+    titre: 'Technical Support: Projections in Nova Scotia'
+    editeur: Gouvernement de la Nouvelle-Écosse
+    niveau: B
+    consulte: 2026-11-27
+    extrait: A MTM zone refers to the area between two lines
+  - url: https://geonova.novascotia.ca/sites/default/files/resource-library/NSCRS%20Technical%20Support%200004%20Projections%2029Feb2016.pdf
+    titre: 'Technical Support: Projections in Nova Scotia'
+    editeur: Gouvernement de la Nouvelle-Écosse
+    niveau: B
+    consulte: 2026-11-27
+    extrait: of longitude that are separated by 3 degrees.
+  - url: https://geonova.novascotia.ca/sites/default/files/resource-library/NSCRS%20Technical%20Support%200004%20Projections%2029Feb2016.pdf
+    titre: 'Technical Support: Projections in Nova Scotia'
+    editeur: Gouvernement de la Nouvelle-Écosse
+    niveau: B
+    consulte: 2026-11-27
+    extrait: The use of smaller zones reduces scale factors and the differences between ground and grid distances.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-24
+  question: Q12
+  enonce: 'Les ellipsoïdes associés à NAD27 et NAD83 diffèrent : Clarke 1866 pour NAD27, GRS 1980 pour NAD83.'
+  usage: expert
+  sources:
+  - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+    titre: Impact of NAD83 adoption (fiche technique)
+    editeur: Gouvernement de l'Alberta
+    niveau: B
+    consulte: 2026-11-27
+    extrait: The ellipsoid associated with NAD27 is Clarke's 1866 ellipsoid.
+  - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+    titre: Impact of NAD83 adoption (fiche technique)
+    editeur: Gouvernement de l'Alberta
+    niveau: B
+    consulte: 2026-11-27
+    extrait: ellipsoid associated with NAD83 is the Geodetic Reference System
+  - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+    titre: Impact of NAD83 adoption (fiche technique)
+    editeur: Gouvernement de l'Alberta
+    niveau: B
+    consulte: 2026-11-27
+    extrait: 1980. The dimensions of these two ellipsoids are summarized in Table
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-25
+  question: Q12
+  enonce: En Alberta, les coordonnées NAD83 des repères de contrôle diffèrent en moyenne des valeurs NAD27 d'environ 6 à 7 m vers le nord en latitude et d'environ 20 m vers l'ouest en longitude.
+  usage: expert
+  sources:
+  - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+    titre: Impact of NAD83 adoption (fiche technique)
+    editeur: Gouvernement de l'Alberta
+    niveau: B
+    consulte: 2026-11-27
+    extrait: values by approximately 0.2 arc‐seconds (or 6 to 7 m) northerly in latitude
+  - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+    titre: Impact of NAD83 adoption (fiche technique)
+    editeur: Gouvernement de l'Alberta
+    niveau: B
+    consulte: 2026-11-27
+    extrait: seconds (or 20 m) westerly in longitude.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-26
+  question: Q12
+  enonce: En Alberta, du fait du changement de dimensions de l'ellipsoïde, les coordonnées planes Mercator transverse changent d'environ 225 m vers le nord et 70 m vers l'ouest ; ce sont des moyennes.
+  usage: expert
+  sources:
+  - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+    titre: Impact of NAD83 adoption (fiche technique)
+    editeur: Gouvernement de l'Alberta
+    niveau: B
+    consulte: 2026-11-27
+    extrait: transverse Mercator plane coordinates change approximately 225 m northerly and 70 m westerly.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-27
+  question: Q12
+  enonce: Dans les 48 États contigus des États-Unis, le décalage NAD 27 vers NAD 83 du graticule latitude/longitude est de l'ordre de 10 à 100 mètres au sol ; les valeurs UTM changent davantage, environ 200 mètres.
+  usage: expert
+  sources:
+  - url: https://www.usgs.gov/faqs/how-large-north-american-datum-1927-nad-27-nad-83-shift
+    titre: How large is the North American Datum of 1927 (NAD 27) to NAD 83 shift?
+    editeur: U.S. Geological Survey
+    niveau: B
+    consulte: 2026-11-27
+    extrait: is in the range of 10-100 ground meters.
+  - url: https://www.usgs.gov/faqs/how-large-north-american-datum-1927-nad-27-nad-83-shift
+    titre: How large is the North American Datum of 1927 (NAD 27) to NAD 83 shift?
+    editeur: U.S. Geological Survey
+    niveau: B
+    consulte: 2026-11-27
+    extrait: Changes to UTM values are generally larger, around 200 meters, and changes for other coordinate systems are different.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-28
+  question: Q12
+  enonce: PROJ décrit une transformation « ballpark » qui ne tente aucun changement de datum et dont l'erreur peut atteindre quelques centaines de mètres dans certains cas.
+  usage: contexte
+  sources:
+  - url: https://proj.org/en/stable/glossary.html
+    titre: Glossary — PROJ documentation
+    editeur: PROJ (OSGeo)
+    niveau: B
+    consulte: 2026-11-27
+    extrait: lead in some cases to errors of a few hundreds of metres.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-29
+  question: Q12
+  enonce: Les paramètres qui définissent NAD83 sont compatibles avec WGS 84, système de coordonnées associé au GPS.
+  usage: contexte
+  sources:
+  - url: https://open.alberta.ca/dataset/126ab60f-9f71-4052-bca0-a463fb0e392d/resource/0cb1bbc7-054a-4eee-b933-34aa365982c0/download/factsheet02-impactnad83adoption-feb2010.pdf
+    titre: Impact of NAD83 adoption (fiche technique)
+    editeur: Gouvernement de l'Alberta
+    niveau: B
+    consulte: 2026-11-27
+    extrait: The parameters that define NAD83 are also compatible with the World Geodetic System 1984, the coordinate system associated with the Global Positioning System (GPS).
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-31
+  question: Q12
+  enonce: Dans les États-Unis contigus, le passage de NAD 27 à NAD 83 déplace la position des points (graticule latitude et longitude) de 10 à 100 mètres selon le lieu.
+  usage: narration
+  sources:
+  - url: https://nweb.ngs.noaa.gov/TOOLS/Professional_Surveyor_Articles/NADCON.pdf
+    titre: 'NGS Toolkit, Part 8: The National Geodetic Survey NADCON Tool (D. M. Mulcare)'
+    editeur: NOAA National Geodetic Survey
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: positions of points can change between 10-100 meters in the conterminous United States
+  - url: https://www.usgs.gov/faqs/how-large-north-american-datum-1927-nad-27-nad-83-shift
+    titre: How large is the North American Datum of 1927 (NAD 27) to NAD 83 shift?
+    editeur: U.S. Geological Survey
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: shift of the latitude/longitude graticule (lines showing parallels of latitude and meridians of longitude for the earth) is in the range of 10-100 ground meters.
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-32
+  question: Q11
+  enonce: Un code EPSG identifie un système de référence de coordonnées (ou une transformation) du registre EPSG ; les logiciels comme PROJ s'en servent pour désigner un système de référence de coordonnées.
+  usage: narration
+  sources:
+  - url: https://epsg.org/about.html
+    titre: About the EPSG Dataset
+    editeur: IOGP
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: Coordinate Reference Systems and Coordinate Transformations with their EPSG codes
+  - url: https://proj.org/en/stable/faq.html
+    titre: FAQ, PROJ documentation
+    editeur: PROJ (OSGeo)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: 'A coordinate reference system (CRS) can in PROJ be described in several ways: As PROJ strings, Well-Known Text (WKT) and as spatial reference ID''s (such as EPSG codes).'
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+- id: A-coordonnees-33
+  question: Q10
+  enonce: La directive INSPIRE définit les systèmes de référence de coordonnées comme des systèmes qui repèrent de façon unique l'information spatiale par des coordonnées (X, Y, Z) ou par la latitude, la longitude et la hauteur, sur la base d'un référentiel géodésique horizontal et vertical.
+  usage: narration
+  sources:
+  - url: https://eur-lex.europa.eu/eli/dir/2007/2/2024-11-26
+    titre: Directive 2007/2/EC, annexe I (EUR-Lex)
+    editeur: Union européenne (INSPIRE)
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: Systems for uniquely referencing spatial information in space as a set of coordinates (x, y, z) and/or latitude and longitude and height, based on a geodetic horizontal and vertical datum.
+  - url: https://inspire-mif.github.io/technical-guidelines/data/rs/dataspecification_rs.html
+    titre: D2.8.I.1 INSPIRE Data Specification on Coordinate Reference Systems, Technical Guidelines
+    editeur: Union européenne (INSPIRE)
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: Systems for uniquely referencing spatial information in space as a set of coordinates (X, Y, Z) and/or latitude, longitude and height, based on a geodetic horizontal and vertical datum.
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: 'Les deux sources sont deux textes de l''Union européenne (la directive et sa spécification de données) : un seul éditeur, confiance moyenne.'
+- id: A-semantique-01
+  question: Q13
+  enonce: 'Safe Software donne comme exemple de différence entre jeux de données que le mot « pond » (étang) peut désigner des choses différentes d''un jeu de données à l''autre : ce sont des domaines d''attributs qui diffèrent.'
+  usage: narration
+  sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: differences in attribute domains (e.g., a “pond” might mean different things in different datasets).
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-02
+  question: Q13
+  enonce: L'Agence européenne pour l'environnement note que les États membres appliquent des définitions différentes de la superficie forestière et du couvert arboré, et que des notions comme terres cultivées, prairies et zones humides se recoupent souvent d'une politique à l'autre.
+  usage: narration
+  sources:
+  - url: https://www.eea.europa.eu/en/ghg-knowledge-hub/lulucf/guidance/interoperability
+    titre: Interoperability (guide UTCATF, base de connaissances GES)
+    editeur: Agence européenne pour l'environnement
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Member States apply different definitions for forest area and canopy cover, and concepts such as cropland, grassland and wetlands often overlap across policies.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-03
+  question: Q13
+  enonce: Pour l'Agence européenne pour l'environnement, l'alignement sémantique est la couche d'interopérabilité la plus critique pour les données d'utilisation des terres du secteur UTCATF.
+  usage: narration
+  sources:
+  - url: https://www.eea.europa.eu/en/ghg-knowledge-hub/lulucf/guidance/interoperability
+    titre: Interoperability (guide UTCATF, base de connaissances GES)
+    editeur: Agence européenne pour l'environnement
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Among all interoperability layers, semantic alignment is the most critical for LULUCF.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-04
+  question: Q13
+  enonce: Un article des actes de l'ISPRS écrit que l'hétérogénéité sous-jacente des données géospatiales, en syntaxe et en sémantique, est le principal goulot d'étranglement vers l'interopérabilité.
+  usage: expert
+  sources:
+  - url: https://www.isprs.org/proceedings/XXXVI/part4/WG-IV-2-5.pdf
+    titre: A GML schema mapping approach to overcome semantic heterogeneity in GIS
+    editeur: ISPRS
+    niveau: B
+    consulte: 2026-11-27
+    extrait: But the underlying heterogeneity in geospatial data syntax and semantics are the major bottleneck towards this direction.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-05
+  question: Q13
+  enonce: L'ISO a publié en 2012 la spécification technique ISO/TS 19150-1, qui définit le cadre de l'interopérabilité sémantique de l'information géographique.
+  usage: expert
+  sources:
+  - url: https://knowledge.bsigroup.com/products/geographic-information-ontology-framework
+    titre: PD ISO/TS 19150-1:2012 Geographic information. Ontology. Framework
+    editeur: BSI
+    niveau: A
+    consulte: 2026-11-27
+    extrait: This Technical Specification defines the framework for semantic interoperability of geographic information.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-06
+  question: Q13
+  enonce: Le projet européen Cross-Forest a intégré des cartes d'occupation du sol et des inventaires forestiers nationaux de l'Espagne et du Portugal, avec des technologies du Web sémantique.
+  usage: contexte
+  sources:
+  - url: https://www.frontiersin.org/articles/10.3389/ffgc.2024.1329812/full
+    titre: Cross-Forest project (Frontiers in Forests and Global Change)
+    editeur: Frontiers
+    niveau: B
+    consulte: 2026-11-27
+    extrait: In this study, we address the problem of integrating land cover maps and forest inventories from Spain and Portugal, as part of the Cross-Forest project.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-07
+  question: Q13
+  enonce: L'article du JRC sur INSPIRE écrit que la directive régit l'interopérabilité et l'harmonisation des jeux et services de données spatiales pour 34 thèmes, dont l'occupation du sol et l'utilisation des terres.
+  usage: expert
+  sources:
+  - url: https://publications.jrc.ec.europa.eu/repository/handle/JRC63951
+    titre: Infrastructure for Spatial Information in Europe (INSPIRE) - towards interoperability of land-cover, land-use, and agricultural data sets
+    editeur: Centre commun de recherche (JRC)
+    niveau: B
+    consulte: 2026-11-27
+    extrait: One of the aspects that INSPIRE regulates is the interoperability and harmonization of spatial data sets and services for 34 so-called data themes
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-08
+  question: Q14
+  enonce: L'OGC présente ses normes (plus de 150) comme issues d'un consensus de l'industrie.
+  usage: expert
+  sources:
+  - url: https://www.ogc.org/about-ogc/
+    titre: About the Open Geospatial Consortium
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Our 150+ standards represent industry consensus and have driven the evolution of geospatial technology since the early days of the field.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-09
+  question: Q14
+  enonce: La page de l'OGC consacrée à sa mission la date de 1994 (« Founded 1994 »).
+  usage: expert
+  sources:
+  - url: https://www.ogc.org/about-ogc/
+    titre: About the Open Geospatial Consortium
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: OGC | About the Open Geospatial Consortium — Founded 1994
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-10
+  question: Q14
+  enonce: Le comité ISO/TC 211 est le comité ISO de la normalisation dans le domaine de l'information géographique numérique.
+  usage: narration
+  sources:
+  - url: https://committee.iso.org/home/tc211
+    titre: ISO/TC 211 Geographic information/Geomatics
+    editeur: ISO
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Standardization in the field of digital geographic information.
+  - url: https://ggim.un.org/UN-IGIF/documents/FR_SP6-%20Normes_final20240909.pdf
+    titre: 'Cadre intégré de l''information géospatiale (IGIF), Voie stratégique 6 : Normes'
+    editeur: Nations Unies, UN-GGIM (IGIF)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: Le Comité technique de l’Organisation internationale de normalisation (ISO/TC 211) Information géographique/Géomatique a été fondé en 1994 pour la normalisation dans le domaine de l’information géographique numérique.
+  contradictions: []
+  ajouts_consolidateur: 1 source(s) ajoutée(s) par le consolidateur le 2026-11-27 ; usage passé de « expert » à « narration » sur cette nouvelle source.
+  verifie: null
+  note_verification: ''
+- id: A-semantique-11
+  question: Q14
+  enonce: Simple Features Access, aussi appelée ISO 19125, décrit l'architecture commune de la géométrie des entités simples (point, courbe, surface, collection de géométries).
+  usage: expert
+  sources:
+  - url: https://www.ogc.org/standards/sfa
+    titre: 'OGC Simple Feature Access – Part 1: Common Architecture Standard'
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: This part of Simple Features Access (SFA), also called ISO 19125, describes the common architecture for simple feature geometry.
+  - url: https://www.ogc.org/standards/sfa
+    titre: 'OGC Simple Feature Access – Part 1: Common Architecture Standard'
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: The base Geometry class has subclasses for Point, Curve, Surface and GeometryCollection.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-12
+  question: Q14
+  enonce: La norme GML définit un encodage XML pour le transport et le stockage de l'information géographique, conforme à l'ISO 19118.
+  usage: expert
+  sources:
+  - url: https://www.ogc.org/standards/gml
+    titre: GML Standard – Geography Markup Language for Geospatial Data
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: This standard defines a XML encoding in compliance with ISO 19118, for the transport and storage of geographic information
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-13
+  question: Q14
+  enonce: GeoPackage est une norme d'encodage de l'OGC qui décrit comment stocker dans une base SQLite des entités vectorielles, des jeux de tuiles d'imagerie ou de cartes raster et des données tabulaires non spatiales.
+  usage: narration
+  sources:
+  - url: https://www.ogc.org/standards/geopackage
+    titre: GeoPackage Standard – Open SQLite Format for Geospatial Data
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: This encoding standard describes a set of rules and conventions for storing vector features, imagery tile matrix sets, raster map tile matrix sets and non-spatial tabular data in a SQLite
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-14
+  question: Q14
+  enonce: La norme WFS de l'OGC définit un accès direct, au niveau de l'entité et de ses propriétés, à l'information géographique, par des opérations de découverte, de requête, de verrouillage et de transaction.
+  usage: narration
+  sources:
+  - url: https://www.ogc.org/standards/wfs
+    titre: OGC WFS Standard | Web Feature Service Specification
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: This standard defines direct fine-grained access to geographic information at the feature and feature property level by specifying discovery, query, locking and transaction operations
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-15
+  question: Q14
+  enonce: L'OGC indique que les capacités de WFS sont maintenant offertes par une API web plus moderne, OGC API - Features, et encourage les implémenteurs à utiliser la nouvelle norme.
+  usage: contexte
+  sources:
+  - url: https://www.ogc.org/standards/wfs
+    titre: OGC WFS Standard | Web Feature Service Specification
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: However, the functional capabilities are now available in a more modern web API, OGC API – Features, and implementers are encouraged to use the newer Standard.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-16
+  question: Q14
+  enonce: CityGML 3.0 décrit un modèle d'information sémantique commun pour la représentation d'objets urbains en 3D.
+  usage: expert
+  sources:
+  - url: https://www.ogc.org/standards/citygml
+    titre: CityGML (OGC)
+    editeur: OGC
+    niveau: A
+    consulte: 2026-11-27
+    extrait: The CityGML 3.0 Conceptual Model Standard describes a common semantic information model for the representation of 3D urban objects.
+  contradictions: []
+  verifie: null
+  note_verification: ''
+- id: A-semantique-17
+  question: Q15
+  enonce: 'Safe Software décrit le problème de départ : les données sont stockées dans différentes applications, bases de données et formats, avec des modèles de données et des systèmes de coordonnées différents.'
+  usage: narration
+  sources:
+  - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+    titre: Challenges in Spatial Database Interoperability
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: it’s stored all over the place – in different applications, databases, and formats, and with different data models and coordinate systems.
+  contradictions: []
+  verifie: null
+  note_verification: Le billet date de 2009 d'après son adresse ; la date n'est pas lue dans le texte de la page.
+- id: A-semantique-19
+  question: Q15
+  enonce: La documentation de FME Form dit que les outils de traduction antérieurs faisaient passer la plupart des données par un modèle de données limité, d'où une grande part du sens perdue à la traduction ; elle présente FME comme le premier outil conçu comme ETL spatial.
+  usage: narration
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+    titre: What is FME (documentation de FME Form)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: Most of the data would be forced through a limited data model causing much of the meaning to be lost in translation.
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+    titre: What is FME (documentation de FME Form)
+    editeur: Safe Software
+    niveau: A
+    consulte: 2026-11-27
+    extrait: FME was the first tool designed to be a spatial ETL application, focusing on translation of geographic data.
+  contradictions: []
+  verifie: null
+  note_verification: « le premier » est une revendication de l'éditeur ; le contexte immédiat de la première phrase (outils antérieurs) est à relire par le vérificateur.
+- id: A-semantique-21
+  question: Q15
+  enonce: Le glossaire de ce même guide technique décrit FME comme une solution ETL spatiale très utilisée, qui permet aux professionnels du SIG de traduire, transformer, intégrer et distribuer des données spatiales.
+  usage: expert
+  sources:
+  - url: https://cnig.gouv.fr/IMG/documents_wordpress/2015/01/JRC_INSPIRE-TransformService_TG_v2-0.pdf
+    titre: Technical Guidance for the INSPIRE Schema Transformation Network Service
+    editeur: Rob Walker Consultancy pour le JRC
+    niveau: B
+    consulte: 2026-11-27
+    extrait: FME A widely-used spatial ETL solution that enables GIS Professionals to translate, transform, integrate and distribute spatial data.
+  contradictions: []
+  verifie: null
+  note_verification: Le document date de 2010 ; « très utilisée » est le jugement des auteurs du guide.
+- id: A-semantique-22
+  question: Q15
+  enonce: La documentation d'Esri décrit les outils d'ETL spatial comme des outils de géotraitement créés par l'utilisateur, capables de transformer des données entre différents modèles de données et différents formats de fichier.
+  usage: contexte
+  sources:
+  - url: https://resources.arcgis.com/en/help/main/10.2/004m/004m0000000m000000.htm
+    titre: Spatial ETL tools (ArcGIS Help 10.2)
+    editeur: Esri
+    niveau: B
+    consulte: 2026-11-27
+    extrait: Spatial ETL tools are user-created geoprocessing tools that can transform data between different data models and different file formats.
+  contradictions: []
+  verifie: null
+  note_verification: Esri est partenaire de Safe Software ; la page décrit l'extension Data Interoperability d'Esri, dont le lien avec FME n'a pas été lu sur cette page. Indépendance à juger par l'expert.
+- id: A-semantique-23
+  question: Q13
+  enonce: 'Le mot « forêt » ne reçoit pas la même définition partout : les États membres de l''UE appliquent des définitions différentes de la superficie forestière (Agence européenne pour l''environnement), et la littérature rapporte de façon répétée des sens différents donnés au terme, ce qui met à l''épreuve l''interopérabilité.'
+  usage: narration
+  sources:
+  - url: https://www.eea.europa.eu/en/ghg-knowledge-hub/lulucf/guidance/interoperability
+    titre: Interoperability (guide UTCATF, base de connaissances GES)
+    editeur: Agence européenne pour l'environnement
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: Member States apply different definitions for forest area and canopy cover
+  - url: https://eprints.whiterose.ac.uk/122977/7/WINKS_paper_3.pdf
+    titre: 'Talking about Forests: an Example of Sharing Information Expressed with Vague Terms (Gómez Álvarez, Bennett, Richard-Bollans)'
+    editeur: University of Leeds (White Rose eprints)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: We illustrate this with the example of ‘forest’, for which the problematic arising of the assignation of different meanings is repeatedly reported in the literature.
+  - url: https://eprints.whiterose.ac.uk/122977/7/WINKS_paper_3.pdf
+    titre: 'Talking about Forests: an Example of Sharing Information Expressed with Vague Terms (Gómez Álvarez, Bennett, Richard-Bollans)'
+    editeur: University of Leeds (White Rose eprints)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: may present a substantial semantic variation, which challenges interoperability and knowledge exchange.
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+- id: A-semantique-24
+  question: Q13
+  enonce: Un article de l'Université de Leeds écrit que plus de 600 définitions de la forêt ont été recensées, selon une publication qu'il cite (Lund).
+  usage: contexte
+  sources:
+  - url: https://eprints.whiterose.ac.uk/122977/7/WINKS_paper_3.pdf
+    titre: 'Talking about Forests: an Example of Sharing Information Expressed with Vague Terms (Gómez Álvarez, Bennett, Richard-Bollans)'
+    editeur: University of Leeds (White Rose eprints)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: (more than 600 were reported in [12]) have been specified for different purposes.
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: 'Chiffre de seconde main : la publication de Lund n''a pas été lue.'
+- id: A-semantique-25
+  question: Q13
+  enonce: Selon l'Institut géographique national d'Espagne, de nombreux pays européens ont produit leurs propres bases d'occupation du sol, d'où des inventaires régionaux et nationaux aux échelles, nomenclatures et unités minimales de cartographie très différentes.
+  usage: expert
+  sources:
+  - url: https://WWW.ISPRS.org/proceedings/XXXVII/congress/8_pdf/11_WG-VIII-11/28.pdf
+    titre: SIOSE, a successful test bench towards harmonization and integration of land cover/use information (ISPRS Archives XXXVII-B8, 2008)
+    editeur: Instituto Geográfico Nacional (Espagne), actes ISPRS
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: consequence several regional and national LC inventories with
+  - url: https://WWW.ISPRS.org/proceedings/XXXVII/congress/8_pdf/11_WG-VIII-11/28.pdf
+    titre: SIOSE, a successful test bench towards harmonization and integration of land cover/use information (ISPRS Archives XXXVII-B8, 2008)
+    editeur: Instituto Geográfico Nacional (Espagne), actes ISPRS
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: very different scales, nomenclatures and Minimum Mapping
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: 'Texte sur deux colonnes : la phrase est coupée par la colonne voisine. Une seule source (B).'
+- id: A-semantique-26
+  question: Q14
+  enonce: L'OGC (Open Geospatial Consortium) est une organisation internationale à but non lucratif qui élabore des normes pour l'information et les services géospatiaux.
+  usage: narration
+  sources:
+  - url: https://www.ogc.org/about-ogc/
+    titre: About the Open Geospatial Consortium
+    editeur: OGC
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: As a U.S.-registered non-profit with offices in Belgium and the UK
+  - url: https://cnig.gouv.fr/IMG/documents_wordpress/2015/01/JRC_INSPIRE-TransformService_TG_v2-0.pdf
+    titre: Technical Guidance for the INSPIRE Schema Transformation Network Service, glossaire
+    editeur: Rob Walker Consultancy pour le JRC
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: OGC Open Geospatial Consortium, an international, non-profit organization engaged in development of standards for geospatial and location based services.
+  - url: https://ggim.un.org/UN-IGIF/documents/FR_SP6-%20Normes_final20240909.pdf
+    titre: 'Cadre intégré de l''information géospatiale (IGIF), Voie stratégique 6 : Normes'
+    editeur: Nations Unies, UN-GGIM (IGIF)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: Le Open Geospatial Consortium (OGC) est une organisation internationale de normalisation à but non lucratif
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+- id: A-semantique-27
+  question: Q14
+  enonce: L'OGC élabore et met à disposition des normes ouvertes destinées à l'interopérabilité des données et des services géospatiaux.
+  usage: narration
+  sources:
+  - url: https://www.ogc.org/about-ogc/
+    titre: About the Open Geospatial Consortium
+    editeur: OGC
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: OGC has been at the forefront of developing open standards that enable data interoperability.
+  - url: https://ggim.un.org/UN-IGIF/documents/FR_SP6-%20Normes_final20240909.pdf
+    titre: 'Cadre intégré de l''information géospatiale (IGIF), Voie stratégique 6 : Normes'
+    editeur: Nations Unies, UN-GGIM (IGIF)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: L’OGC détermine les obstacles à l’interopérabilité et définit, documente, teste, valide et met gratuitement à disposition des normes ouvertes
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+- id: A-semantique-28
+  question: Q14
+  enonce: Les normes de l'OGC s'appuient sur les normes abstraites définies par l'ISO/TC 211.
+  usage: narration
+  sources:
+  - url: https://ggim.un.org/ggim_20171012/docs/meetings/3rd%20UNCE/E_C.20_2013_8_ISO-OGC-IHO%20Standards%20background%20paper.pdf
+    titre: A Guide to the Role of Standards in Geospatial Information Management, document de référence pour l'UN-GGIM (2013)
+    editeur: ISO/TC 211, OGC et OHI (rapport commun à l'UN-GGIM)
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: OGC standards leverage the abstract standards defined by ISO/TC 211.
+  - url: https://ggim.un.org/UN-IGIF/documents/FR_SP6-%20Normes_final20240909.pdf
+    titre: 'Cadre intégré de l''information géospatiale (IGIF), Voie stratégique 6 : Normes'
+    editeur: Nations Unies, UN-GGIM (IGIF)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: les normes de l’OGC et de l’OHI s’appuient sur les normes abstraites définies par ISO/TC 211.
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+- id: A-semantique-29
+  question: Q13
+  enonce: Quand la terminologie ou la sémantique des modèles de données diffère, la mise en correspondance des données devient difficile, voire impossible.
+  usage: narration
+  sources:
+  - url: https://ggim.un.org/UN-IGIF/documents/FR_SP6-%20Normes_final20240909.pdf
+    titre: 'Cadre intégré de l''information géospatiale (IGIF), Voie stratégique 6 : Normes'
+    editeur: Nations Unies, UN-GGIM (IGIF)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: Lorsque la terminologie utilisée dans les modèles de données est différente, elle peut être source de confusion et rendre difficile la mise en correspondance des données
+  - url: https://yadda.icm.edu.pl/baztech/element/bwmeta1.element.baztech-d37f25f7-6762-47cb-8279-2772045d2157/c/geom.2020.14.3.5.pdf
+    titre: Semantic and Syntactic Interoperability Issues in the Context of SDI (A. Chojka, Geomatics and Environmental Engineering 14(3), 2020)
+    editeur: Geomatics and Environmental Engineering (AGH, Cracovie)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: if the semantics of system A or B are different from that of I, such mappings may be even impossible to achieve [22].
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+- id: A-semantique-30
+  question: Q14
+  enonce: Le cadre de l'ONU pour l'information géospatiale écrit que les normes ouvertes facilitent l'interopérabilité et le partage de données entre différents produits ou services.
+  usage: contexte
+  sources:
+  - url: https://ggim.un.org/UN-IGIF/documents/FR_SP6-%20Normes_final20240909.pdf
+    titre: 'Cadre intégré de l''information géospatiale (IGIF), Voie stratégique 6 : Normes'
+    editeur: Nations Unies, UN-GGIM (IGIF)
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: Les normes ouvertes facilitent l’interopérabilité et le partage de données entre différents produits ou services destinés à être adoptés à grande échelle
+  contradictions: []
+  ajouts_consolidateur: Affirmation ajoutée par le consolidateur le 2026-11-27.
+  verifie: null
+  note_verification: ''
+lacunes:
+- axe: interop
+  question: Q1
+  manque: 'Le texte officiel d''ISO 19101-1 pour la définition d''interopérabilité (clause 4) n''a pas été lu : iso.org refuse (403) et l''extrait public ne l''a pas rendu. La définition de l''OGC (2004) n''a pas été retrouvée sur ogc.org ; seule une citation de seconde main existe (A-interop-03). À vérifier à la main.'
+  apres_consolidation: 'Consolidation : la définition d''INSPIRE est reprise mot pour mot par une publication académique indépendante (Chojka, 2020), A-interop-01 passe en confiance forte. Le texte ISO 19101-1 et la définition OGC (2004) restent non lus.'
+- axe: interop
+  question: Q2
+  manque: 'Le texte de l''annexe B d''ISO 19101-1 (couches d''interopérabilité) n''est pas dans l''extrait public ; la définition normative de chaque niveau (système, syntaxique, structurel, sémantique) n''a pas été lue. La notice de l''Encyclopedia of GIS (Springer) a répondu 429 : à vérifier à la main. Les définitions de niveaux trouvées viennent d''articles ISPRS et d''un wiki.'
+  apres_consolidation: 'Consolidation : le rapport OGC Testbed-12 définit aussi l''interopérabilité sémantique (lu dans la page déjà en cache) ; avec Chojka (2020), les niveaux syntaxique et sémantique ont chacun une définition en confiance forte (A-interop-13, A-interop-14), et les quatre niveaux d''ISO 19101-1 sont confirmés par Chojka (A-interop-04, forte). Le niveau structurel n''a toujours que l''article ISPRS (A-interop-06, faible).'
+- axe: interop
+  question: Q3
+  manque: 'Aucun chiffre de coût propre à l''interopérabilité des données géographiques n''a été trouvé dans une source primaire (recherches sur INSPIRE, JRC, SDI espagnole : analyses de coûts-bénéfices sans chiffre isolable lu). Un article arXiv attribue des chiffres à l''évaluation INSPIRE de 2022 ; ils n''ont pas été retrouvés dans les documents de la Commission et ne sont pas repris. À sourcer.'
+- axe: formats
+  question: Q6
+  manque: 'Nombre de formats de GDAL/OGR : le catalogue des pilotes (gdal.org, drivers/vector) est un tableau sans total énoncé ; aucun chiffre sourcé.'
+- axe: formats
+  question: Q6
+  manque: 'Source indépendante de l''éditeur pour le nombre de formats de FME : aucune trouvée ; la page Esri affiche 300+ (non datée), la page FME 800+. À vérifier à la main (page des formats de l''éditeur : 404 à l''adresse essayée).'
+- axe: formats
+  question: Q6
+  manque: 'Nombre de formats de données géographiques en circulation, toutes sources confondues : à sourcer.'
+- axe: formats
+  question: Q4
+  manque: 'Source primaire d''Autodesk sur DWG, et statut ou spécification de DGN (Bentley) : non lus ; à sourcer.'
+- axe: formats
+  question: Q4
+  manque: 'Date du shapefile confirmée par une source indépendante d''Esri : à sourcer.'
+- axe: formats
+  question: Q5
+  manque: 'Perte de styles en changeant de format, et limite de longueur des champs texte du dBASE : à sourcer.'
+- axe: modeles
+  question: Q7
+  manque: 'Le texte intégral d''ISO 19109 (classes d''entités, associations, règles en UML) n''a été lu que sur l''extrait public de 2005 : iso.org refuse (403) ; l''édition 2015/2025 n''a pas été lue. À sourcer.'
+- axe: modeles
+  question: Q8
+  manque: Aucune source lue ne décrit en toutes lettres 'attributs à plat contre structures imbriquées' pour le shapefile ou la comparaison simple/topologique d'OGC Simple Features ; la page Bentley sur l'écart avec Simple Feature Access n'a pas pu être lue (URL avec espace refusée par le script). À sourcer.
+- axe: modeles
+  question: Q8
+  manque: 'Détail de la topologie arcs-nœuds (ISO 19107, TP_Complex) : seuls les titres de chapitres et la portée sont lus. À sourcer.'
+- axe: modeles
+  question: Q9
+  manque: 'Aucune définition de ''schema mapping'' par l''OGC ni guide INSPIRE actuel lu : seul le guide technique JRC v2.0 (mention Draft) et deux travaux de projet (DGT, Nordic Journal) ; core.ac.uk (403) et ijsdir (404) non lus. À sourcer.'
+- axe: coordonnees
+  question: Q10
+  manque: 'Texte officiel ISO 19111 : iso.org refuse (403) ; le texte OGC Topic 2 (docs.ogc.org) est lu à la place. Les mots du texte OGC sont à vérifier à la main contre l''édition ISO 19111:2019 si l''expert veut citer l''ISO.'
+- axe: coordonnees
+  question: Q10
+  manque: Définition sourcée d'une « projection » en parties (unités, ellipsoïde dans le datum) autre que la définition de la norme ; la liste « datum, ellipsoïde, projection, unités » comme parties d'un CRS est reconstruite depuis des définitions séparées et la structure des fiches EPSG, pas énoncée telle quelle par une source. À sourcer.
+- axe: coordonnees
+  question: Q11
+  manque: 'Pages NRCan sur NAD83(CSRS), UTM et MTM illisibles par le script (texte vide, page rendue par script) : à vérifier à la main sur natural-resources.canada.ca ; aucune source fédérale lue sur UTM, MTM ni NAD83(CSRS).'
+- axe: coordonnees
+  question: Q11
+  manque: 'Paramètres de Lambert-93 (parallèles de référence 44 et 49 degrés N) et année de définition légale : non lus dans une page source (page IGN générique, décret non lu). À sourcer.'
+- axe: coordonnees
+  question: Q11
+  manque: 'Lien exact entre WGS 84 (EPSG:4326) et NAD83 / RGF93 (différences de référentiel de l''ordre du mètre) : non trouvé. À sourcer.'
+- axe: coordonnees
+  question: Q12
+  manque: 'Écart documenté pour deux données dans deux systèmes NON reprojetées au Canada (autre que le cas NAD27 vers NAD83) ou pour un datum mal déclaré en France (NTF vers RGF93) : non trouvé. Statistique Canada (403) et NRCan (illisible) non lus.'
+  apres_consolidation: 'Consolidation : l''écart NAD 27 vers NAD 83 de 10 à 100 m aux États-Unis est confirmé par le NGS (NOAA), source primaire (A-coordonnees-31, forte). Le cas canadien (Alberta) reste sur une seule source B.'
+- axe: coordonnees
+  question: Q12
+  manque: 'Les chiffres NAD27 contre NAD83 mesurent l''écart de datum entre deux systèmes ; ils ne décrivent pas directement l''écart visuel de deux couches superposées sans reprojection. Mise en garde pour le scénariste : ne pas reformuler en « décalage de X mètres à l''écran ».'
+- axe: semantique
+  question: Q13
+  manque: 'Exemples réels d''incompatibilité de nomenclatures (classes de routes, occupation du sol) : les pages MDPI et Taylor & Francis qui les décrivent refusent la lecture automatique (403) ; à vérifier à la main. Les définitions « mêmes mots pour deux choses / deux mots pour une chose » (homonymes, synonymes) n''ont pas été lues dans une phrase propre ; à sourcer.'
+- axe: semantique
+  question: Q13
+  manque: 'Le cas concret du mot « forêt » défini différemment selon les pays (seuils de couvert, hauteur) : non trouvé dans une page lisible ; la recherche a signalé des définitions juridique, d''occupation du sol et d''usage, non lues ; à sourcer.'
+  apres_consolidation: 'Consolidation : le cas « forêt » est sourcé par l''Agence européenne pour l''environnement et un article de l''Université de Leeds (A-semantique-23, forte) ; le détail des seuils (couvert, hauteur) par pays reste à sourcer.'
+- axe: semantique
+  question: Q14
+  manque: 'Ce que les normes OGC et ISO ne résolvent pas : le seul énoncé lu est celui de l''article ISPRS (A-semantique-04) ; l''idée que des schémas d''application GML différents définissent les mêmes concepts de façons différentes n''a été vue que dans un résumé de recherche, pas dans le texte de la page ; à sourcer.'
+- axe: semantique
+  question: Q14
+  manque: 'Une seconde source indépendante pour l''année de fondation de l''OGC (1994) et le nombre de normes : à sourcer.'
+  apres_consolidation: 'Consolidation : le cadre IGIF de l''ONU (voie stratégique 6, texte daté de janvier 2022) écrit aussi que l''OGC a été fondé en 1994 ; A-semantique-09 porte sur la page de l''OGC elle-même et reste en expert. Le nombre de normes (150+) n''a toujours qu''une source.'
+- axe: semantique
+  question: Q15
+  manque: 'Une source indépendante qui décrive le rôle de FME dans l''interopérabilité hors documentation de l''éditeur, de l''extension Esri et d''un guide JRC de 2010 : aucune étude ou comparaison indépendante trouvée ; à sourcer.'
+- axe: consolidation
+  question: Q9
+  manque: 'Cas réel de différence de modèle avec une source indépendante : la carte COS portugaise vers INSPIRE (A-modeles-27 à 29) n''a que des documents de la DGT elle-même (la présentation hébergée par l''IDEE espagnole est aussi de la DGT). Confiance moyenne : à la porte.'
+- axe: consolidation
+  question: Q11
+  manque: 'Définition normative d''un code EPSG : le guide IOGP 373-07-01 (Guidance Note 7-1) n''a pas été lu ; A-coordonnees-32 s''appuie sur la page « About » d''epsg.org et la FAQ de PROJ.'
+- axe: consolidation
+  question: Q14
+  manque: 'Page de Lantmäteriet (agence cartographique suédoise) sur le comité ISO/TC 211 : 404. L''indépendance du cadre IGIF de l''ONU vis-à-vis de l''OGC et de l''ISO/TC 211 est à juger par le vérificateur (l''ONU travaille avec ces organismes ; le rapport UN-GGIM de 2013 est, lui, préparé par l''ISO/TC 211 avec l''OGC et l''OHI et compte comme leur source).'
+- axe: consolidation
+  question: Q10
+  manque: 'Une seconde source indépendante de l''OGC pour la définition du système de référence de coordonnées (A-coordonnees-01 à 08, confiance moyenne) : non trouvée (glossaire PROJ et pages IGN sans définition lisible). La définition d''INSPIRE (A-coordonnees-33) est une autre définition, pas une confirmation.'
+visuels:
+- id: VIS-formats-01
+  url: https://gdal.org/en/stable/drivers/vector/index.html
+  editeur: OSGeo
+  description: Tableau des pilotes vectoriels de GDAL (nom court, nom long, création, géoréférencement).
+  utilite: Montrer la diversité des formats réellement pris en charge par une bibliothèque ouverte.
+  usage: REFERENCE_ONLY
+- id: VIS-modeles-01
+  url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+  editeur: ISO
+  description: 'Figures 1 et 2 d''ISO 19109 : échange de données par transfert (schéma d''application du fournisseur, de l''utilisateur) et par transactions.'
+  utilite: Montre où se placent les deux mises en correspondance de schémas entre fournisseur et utilisateur.
+  usage: REDRAW
+- id: VIS-modeles-02
+  url: https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299218824/HALE_COS__Ingles_Patricio.pdf
+  editeur: DGT (Portugal)
+  description: 'Diagramme du processus d''harmonisation : analyse des données, mise en correspondance, transformation, validation, publication.'
+  utilite: Cas réel de passage d'un schéma source à un schéma cible, utile comme référence d'un déroulé.
+  usage: REFERENCE_ONLY
