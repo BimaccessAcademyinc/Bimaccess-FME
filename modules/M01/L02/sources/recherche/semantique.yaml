@@ -1,0 +1,334 @@
+axe: semantique
+affirmations:
+  - id: A-semantique-01
+    question: Q13
+    enonce: "Safe Software donne comme exemple de différence entre jeux de données que le mot « pond » (étang) peut désigner des choses différentes d'un jeu de données à l'autre : ce sont des domaines d'attributs qui diffèrent."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "differences in attribute domains (e.g., a “pond” might mean different things in different datasets)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-02
+    question: Q13
+    enonce: "L'Agence européenne pour l'environnement note que les États membres appliquent des définitions différentes de la superficie forestière et du couvert arboré, et que des notions comme terres cultivées, prairies et zones humides se recoupent souvent d'une politique à l'autre."
+    usage: narration
+    sources:
+      - url: https://www.eea.europa.eu/en/ghg-knowledge-hub/lulucf/guidance/interoperability
+        titre: "Interoperability (guide UTCATF, base de connaissances GES)"
+        editeur: Agence européenne pour l'environnement
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Member States apply different definitions for forest area and canopy cover, and concepts such as cropland, grassland and wetlands often overlap across policies."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-03
+    question: Q13
+    enonce: "Pour l'Agence européenne pour l'environnement, l'alignement sémantique est la couche d'interopérabilité la plus critique pour les données d'utilisation des terres du secteur UTCATF."
+    usage: narration
+    sources:
+      - url: https://www.eea.europa.eu/en/ghg-knowledge-hub/lulucf/guidance/interoperability
+        titre: "Interoperability (guide UTCATF, base de connaissances GES)"
+        editeur: Agence européenne pour l'environnement
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Among all interoperability layers, semantic alignment is the most critical for LULUCF."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-04
+    question: Q13
+    enonce: "Un article des actes de l'ISPRS écrit que l'hétérogénéité sous-jacente des données géospatiales, en syntaxe et en sémantique, est le principal goulot d'étranglement vers l'interopérabilité."
+    usage: expert
+    sources:
+      - url: https://www.isprs.org/proceedings/XXXVI/part4/WG-IV-2-5.pdf
+        titre: "A GML schema mapping approach to overcome semantic heterogeneity in GIS"
+        editeur: ISPRS
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "But the underlying heterogeneity in geospatial data syntax and semantics are the major bottleneck towards this direction."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-05
+    question: Q13
+    enonce: "L'ISO a publié en 2012 la spécification technique ISO/TS 19150-1, qui définit le cadre de l'interopérabilité sémantique de l'information géographique."
+    usage: expert
+    sources:
+      - url: https://knowledge.bsigroup.com/products/geographic-information-ontology-framework
+        titre: "PD ISO/TS 19150-1:2012 Geographic information. Ontology. Framework"
+        editeur: BSI
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This Technical Specification defines the framework for semantic interoperability of geographic information."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-06
+    question: Q13
+    enonce: "Le projet européen Cross-Forest a intégré des cartes d'occupation du sol et des inventaires forestiers nationaux de l'Espagne et du Portugal, avec des technologies du Web sémantique."
+    usage: contexte
+    sources:
+      - url: https://www.frontiersin.org/articles/10.3389/ffgc.2024.1329812/full
+        titre: "Cross-Forest project (Frontiers in Forests and Global Change)"
+        editeur: Frontiers
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "In this study, we address the problem of integrating land cover maps and forest inventories from Spain and Portugal, as part of the Cross-Forest project."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-07
+    question: Q13
+    enonce: "L'article du JRC sur INSPIRE écrit que la directive régit l'interopérabilité et l'harmonisation des jeux et services de données spatiales pour 34 thèmes, dont l'occupation du sol et l'utilisation des terres."
+    usage: expert
+    sources:
+      - url: https://publications.jrc.ec.europa.eu/repository/handle/JRC63951
+        titre: "Infrastructure for Spatial Information in Europe (INSPIRE) - towards interoperability of land-cover, land-use, and agricultural data sets"
+        editeur: Centre commun de recherche (JRC)
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "One of the aspects that INSPIRE regulates is the interoperability and harmonization of spatial data sets and services for 34 so-called data themes"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-08
+    question: Q14
+    enonce: "L'OGC présente ses normes (plus de 150) comme issues d'un consensus de l'industrie."
+    usage: expert
+    sources:
+      - url: https://www.ogc.org/about-ogc/
+        titre: "About the Open Geospatial Consortium"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Our 150+ standards represent industry consensus and have driven the evolution of geospatial technology since the early days of the field."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-09
+    question: Q14
+    enonce: "La page de l'OGC consacrée à sa mission la date de 1994 (« Founded 1994 »)."
+    usage: expert
+    sources:
+      - url: https://www.ogc.org/about-ogc/
+        titre: "About the Open Geospatial Consortium"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "OGC | About the Open Geospatial Consortium — Founded 1994"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-10
+    question: Q14
+    enonce: "Le comité ISO/TC 211 est le comité ISO de la normalisation dans le domaine de l'information géographique numérique."
+    usage: expert
+    sources:
+      - url: https://committee.iso.org/home/tc211
+        titre: "ISO/TC 211 Geographic information/Geomatics"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Standardization in the field of digital geographic information."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-11
+    question: Q14
+    enonce: "Simple Features Access, aussi appelée ISO 19125, décrit l'architecture commune de la géométrie des entités simples (point, courbe, surface, collection de géométries)."
+    usage: expert
+    sources:
+      - url: https://www.ogc.org/standards/sfa
+        titre: "OGC Simple Feature Access – Part 1: Common Architecture Standard"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This part of Simple Features Access (SFA), also called ISO 19125, describes the common architecture for simple feature geometry."
+      - url: https://www.ogc.org/standards/sfa
+        titre: "OGC Simple Feature Access – Part 1: Common Architecture Standard"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The base Geometry class has subclasses for Point, Curve, Surface and GeometryCollection."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-12
+    question: Q14
+    enonce: "La norme GML définit un encodage XML pour le transport et le stockage de l'information géographique, conforme à l'ISO 19118."
+    usage: expert
+    sources:
+      - url: https://www.ogc.org/standards/gml
+        titre: "GML Standard – Geography Markup Language for Geospatial Data"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This standard defines a XML encoding in compliance with ISO 19118, for the transport and storage of geographic information"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-13
+    question: Q14
+    enonce: "GeoPackage est une norme d'encodage de l'OGC qui décrit comment stocker dans une base SQLite des entités vectorielles, des jeux de tuiles d'imagerie ou de cartes raster et des données tabulaires non spatiales."
+    usage: narration
+    sources:
+      - url: https://www.ogc.org/standards/geopackage
+        titre: "GeoPackage Standard – Open SQLite Format for Geospatial Data"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This encoding standard describes a set of rules and conventions for storing vector features, imagery tile matrix sets, raster map tile matrix sets and non-spatial tabular data in a SQLite"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-14
+    question: Q14
+    enonce: "La norme WFS de l'OGC définit un accès direct, au niveau de l'entité et de ses propriétés, à l'information géographique, par des opérations de découverte, de requête, de verrouillage et de transaction."
+    usage: narration
+    sources:
+      - url: https://www.ogc.org/standards/wfs
+        titre: "OGC WFS Standard | Web Feature Service Specification"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This standard defines direct fine-grained access to geographic information at the feature and feature property level by specifying discovery, query, locking and transaction operations"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-15
+    question: Q14
+    enonce: "L'OGC indique que les capacités de WFS sont maintenant offertes par une API web plus moderne, OGC API - Features, et encourage les implémenteurs à utiliser la nouvelle norme."
+    usage: contexte
+    sources:
+      - url: https://www.ogc.org/standards/wfs
+        titre: "OGC WFS Standard | Web Feature Service Specification"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "However, the functional capabilities are now available in a more modern web API, OGC API – Features, and implementers are encouraged to use the newer Standard."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-16
+    question: Q14
+    enonce: "CityGML 3.0 décrit un modèle d'information sémantique commun pour la représentation d'objets urbains en 3D."
+    usage: expert
+    sources:
+      - url: https://www.ogc.org/standards/citygml
+        titre: "CityGML (OGC)"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The CityGML 3.0 Conceptual Model Standard describes a common semantic information model for the representation of 3D urban objects."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-17
+    question: Q15
+    enonce: "Safe Software décrit le problème de départ : les données sont stockées dans différentes applications, bases de données et formats, avec des modèles de données et des systèmes de coordonnées différents."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "it’s stored all over the place – in different applications, databases, and formats, and with different data models and coordinate systems."
+    contradictions: []
+    verifie: null
+    note_verification: "Le billet date de 2009 d'après son adresse ; la date n'est pas lue dans le texte de la page."
+  - id: A-semantique-18
+    question: Q15
+    enonce: "Selon Safe Software, traduire entre modèles de données est considérablement plus difficile que traduire entre formats."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Translating between data models is considerably more interesting and difficult than translating between formats."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-semantique-19
+    question: Q15
+    enonce: "La documentation de FME Form dit que les outils de traduction antérieurs faisaient passer la plupart des données par un modèle de données limité, d'où une grande part du sens perdue à la traduction ; elle présente FME comme le premier outil conçu comme ETL spatial."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+        titre: "What is FME (documentation de FME Form)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Most of the data would be forced through a limited data model causing much of the meaning to be lost in translation."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+        titre: "What is FME (documentation de FME Form)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME was the first tool designed to be a spatial ETL application, focusing on translation of geographic data."
+    contradictions: []
+    verifie: null
+    note_verification: "« le premier » est une revendication de l'éditeur ; le contexte immédiat de la première phrase (outils antérieurs) est à relire par le vérificateur."
+  - id: A-semantique-20
+    question: Q15
+    enonce: "Un guide technique rédigé pour le JRC de la Commission européenne sur le service de transformation de schémas INSPIRE classe les services de transformation en domaines, dont la transformation des formats de données, des systèmes de référence de coordonnées et des schémas logiques."
+    usage: expert
+    sources:
+      - url: https://cnig.gouv.fr/IMG/documents_wordpress/2015/01/JRC_INSPIRE-TransformService_TG_v2-0.pdf
+        titre: "Technical Guidance for the INSPIRE Schema Transformation Network Service"
+        editeur: Rob Walker Consultancy pour le JRC
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Transformation Network Services can be categorised into different areas of functionality: for example, transforming data formats, coordinate reference systems (CRS) and logical schemas."
+    contradictions: []
+    verifie: null
+    note_verification: "Le document porte la mention « Status: Draft », version 2.0 du 11 juin 2010."
+  - id: A-semantique-21
+    question: Q15
+    enonce: "Le glossaire de ce même guide technique décrit FME comme une solution ETL spatiale très utilisée, qui permet aux professionnels du SIG de traduire, transformer, intégrer et distribuer des données spatiales."
+    usage: expert
+    sources:
+      - url: https://cnig.gouv.fr/IMG/documents_wordpress/2015/01/JRC_INSPIRE-TransformService_TG_v2-0.pdf
+        titre: "Technical Guidance for the INSPIRE Schema Transformation Network Service"
+        editeur: Rob Walker Consultancy pour le JRC
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "FME A widely-used spatial ETL solution that enables GIS Professionals to translate, transform, integrate and distribute spatial data."
+    contradictions: []
+    verifie: null
+    note_verification: "Le document date de 2010 ; « très utilisée » est le jugement des auteurs du guide."
+  - id: A-semantique-22
+    question: Q15
+    enonce: "La documentation d'Esri décrit les outils d'ETL spatial comme des outils de géotraitement créés par l'utilisateur, capables de transformer des données entre différents modèles de données et différents formats de fichier."
+    usage: contexte
+    sources:
+      - url: https://resources.arcgis.com/en/help/main/10.2/004m/004m0000000m000000.htm
+        titre: "Spatial ETL tools (ArcGIS Help 10.2)"
+        editeur: Esri
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Spatial ETL tools are user-created geoprocessing tools that can transform data between different data models and different file formats."
+    contradictions: []
+    verifie: null
+    note_verification: "Esri est partenaire de Safe Software ; la page décrit l'extension Data Interoperability d'Esri, dont le lien avec FME n'a pas été lu sur cette page. Indépendance à juger par l'expert."
+lacunes:
+  - question: Q13
+    manque: "Exemples réels d'incompatibilité de nomenclatures (classes de routes, occupation du sol) : les pages MDPI et Taylor & Francis qui les décrivent refusent la lecture automatique (403) ; à vérifier à la main. Les définitions « mêmes mots pour deux choses / deux mots pour une chose » (homonymes, synonymes) n'ont pas été lues dans une phrase propre ; à sourcer."
+  - question: Q13
+    manque: "Le cas concret du mot « forêt » défini différemment selon les pays (seuils de couvert, hauteur) : non trouvé dans une page lisible ; la recherche a signalé des définitions juridique, d'occupation du sol et d'usage, non lues ; à sourcer."
+  - question: Q14
+    manque: "Ce que les normes OGC et ISO ne résolvent pas : le seul énoncé lu est celui de l'article ISPRS (A-semantique-04) ; l'idée que des schémas d'application GML différents définissent les mêmes concepts de façons différentes n'a été vue que dans un résumé de recherche, pas dans le texte de la page ; à sourcer."
+  - question: Q14
+    manque: "Une seconde source indépendante pour l'année de fondation de l'OGC (1994) et le nombre de normes : à sourcer."
+  - question: Q15
+    manque: "Une source indépendante qui décrive le rôle de FME dans l'interopérabilité hors documentation de l'éditeur, de l'extension Esri et d'un guide JRC de 2010 : aucune étude ou comparaison indépendante trouvée ; à sourcer."
+visuels: []
