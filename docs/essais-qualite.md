@@ -41,7 +41,30 @@ Les deux scènes de la phase B ont tourné en même temps : 8 min de bout en bou
 
 Le modèle intermédiaire a suffi en phase B : données justes du premier coup sur les gestes et les locutions, composition à reprendre une fois sur S04 (cause : consigne de l'agent principal), réserves mises à la lettre de la spécification plutôt qu'au défaut du gabarit.
 
+## Essai 3 · S02 et S04 composées sur le canevas de design, exportées en données de gabarit
+
+Projet `modules/M01/L01/lecon-design/`, canevas https://claude.ai/artifact/XS6m3KLLs7CAJ9nLqmKyiE (consignes : `docs/essai-3-design.md`). Une seule chose change par rapport à l'essai 2 : la composition. Le graphiste (skill graphisme, meilleur modèle) compose la planche de l'état final dans la notation du canevas (`harnais/skills/scenes-gabarits/canevas/notation.md`), la regarde rendue avec les polices de la leçon avant de rendre la main, l'agent principal la publie, Ilyas la valide ou la corrige à la main sur le canevas, puis `planche_vers_donnees.mjs` la relit et écrit `Sxx.json`. Mêmes illustrations, mêmes gabarits, mêmes gestes et locutions que l'essai 2 ; aucun appel payant.
+
+Mise en place (une fois) : planche vierge à la charte (cadre, carroyage, échelle, rose) avec zones interdites verrouillées et visibles ; notation lisible par Ilyas et par un script (un repère violet par élément, « 3.2 frappe », « 2.2 balayage bas 0,3 », « évidence 7 → 8 », et une partition par scène : étape, état, locution) ; `planche_canevas.mjs` (écrit les artboards) et `planche_vers_donnees.mjs` (rend la planche dans Chromium, mesure positions, largeurs de texte et lignes, refuse une planche incomplète). Vérifiée par un aller-retour sur les données de l'essai 2 : mêmes données au dixième de pixel, largeurs de texte mesurées au lieu d'estimées, chargées sans erreur par le gabarit.
+
+| Mesure (Opus) | Mise en place, une fois | Composition S02 | Composition S04 | Corrections d'Ilyas | Orchestration et publication | Export et contrôles | Essai 1, graphiste |
+|---|---|---|---|---|---|---|---|
+| Temps d'agent | 11,6 min (lecture comprise) | 4,9 min | 4,0 min | aucune (validée telle quelle, « pour moi ça a l'air bon ») | 5,5 min | 3,3 min | 31 min pour deux scènes |
+| Tokens | 0,26 M écrits, 10,3 M lus, 0,06 M en sortie | 0,20 M écrits, 3,7 M lus, 0,03 M en sortie | 0,20 M écrits, 3,1 M lus, 0,02 M en sortie | | 0,02 M écrits, 5,8 M lus, 0,005 M en sortie | 0,05 M écrits, 5,9 M lus, 0,004 M en sortie | 0,66 M écrits, 18,2 M lus, 0,18 M en sortie |
+| Coût des tokens (même barème que les essais 1 et 2) | environ 5 à 5,6 $ | environ 2,3 à 2,7 $ | environ 2,0 à 2,4 $ | 0 | environ 1,9 $ | environ 2 $ | environ 11 à 13 $ |
+
+Les deux compositions ont tourné en parallèle (règle 3) : 5,2 min de bout en bout pour les deux planches, contre 31 min au graphiste de l'essai 1, et environ 4,5 $ contre 11 à 13 $. De la première lecture des consignes au lecteur redéployé : 25 min. Les données sortent de la planche sans recopie : l'export final (planche relue sur le canevas après la validation) a rendu exactement les fichiers vus par Ilyas.
+
+| Contrôle | Résultat |
+|---|---|
+| Agent principal | Export accepté sans refus, `check` code 0 (« scènes chargées : 7 »), 0 texte en dur, `build` conforme, `test:play` « tout est conforme ». Planche par phrase (`.studio/qa/essai3/`) : chaque élément sur sa phrase, une mise en évidence à la fois, aucun texte sur un trait, image finale identique à la planche du canevas. S02 : la frise traverse la face jusqu'au débord permis (x 1500), logiciels, routes et SAIF entre les jalons, libellés de jalon à 36 px sous la frise, carte de lieu en haut à droite ; reste un vide modéré en bas au centre, accepté par le contrôle. S04 : bâtiment et carte en projection européenne à gauche, feuille d'entité sur toute la hauteur à droite ; la droite des rubriques Attributs et Système de coordonnées reste vide. |
+| Ilyas (2026-11-27) | Planches validées sur le canevas sans correction. Contrôle final sur le lecteur : https://fme-reader-review-development.up.railway.app/FME001-M01-L01-design/#/2 et `#/4`. |
+
+Mieux : composition vue avant le code (le graphiste regarde l'image rendue, Ilyas aussi) ; plus de spécification écrite ni de recopie des positions ; largeurs de texte mesurées ; temps et coût de la composition divisés par six ; une correction d'Ilyas se ferait à la main sans repasser par un agent. Pareil : images, gestes, locutions, gabarits et contrôles de l'essai 2 ; la qualité de la composition reste celle du graphiste. Moins bien : une mise en place de plus (environ 12 min, 5 $, une fois) ; deux outils à tenir (notation, export) ; la planche finale montre toutes les mises en évidence à la fois, empilées sur S02.
+
+Ce que le canevas ne sait pas faire, contourné : les locutions, les gestes et les étapes (repères écrits sur les éléments, partition à côté) ; le temps (la planche ne montre que l'état final : l'enchaînement se juge sur la planche par phrase) ; la découpe en cercle (ajoutée en CSS sur la planche) ; les bandes de la feuille (fractions de la hauteur, à calculer) ; l'ordre de pose (ordre du fichier : hachure, signes et globe restent frères de la feuille avec `data-sur`, pas ses enfants) ; les mises en évidence et le remplissage ne sont pas contrôlés par l'export (une mise en évidence de S02 dépasse x 1424 d'environ 10 px ; le vide se juge à l'œil, le gabarit le contrôle ensuite). Défaut de l'outil relevé par le graphiste et corrigé : le repère d'une arrivée était refusé.
+
 ## Essais suivants proposés
 
 - Modèle d'image rapide contre modèle Pro sur trois éléments de l'essai 1 (environ 0,12 $) : qualité côte à côte, puis choix du modèle par défaut des éléments.
-- Planche préparée par le graphiste dans le canevas de design, validée par Ilyas avant le code ; animation par les skills de Remotion et le skill des scènes.
+- Contrôles de l'export à ajouter si l'essai 3 est retenu : mise en évidence dans la face, remplissage calculé à l'export, une vue par mise en évidence sur la planche.

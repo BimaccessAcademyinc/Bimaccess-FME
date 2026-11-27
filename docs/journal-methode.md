@@ -107,3 +107,11 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 
 - Résultat (détail : `docs/essais-qualite.md`) : données d'une scène en environ 7 min et 1,2 $ (modèle intermédiaire) contre 13,5 min et 5 $ de code sur mesure ; deux scènes en 8 min en parallèle ; gabarits Frise et FicheRubriques écrits une fois en 15 min ; feuille remplie corrigée (défaut relevé par Ilyas sur l'essai 1) ; qualité des images et des gestes inchangée.
 - Décision d'Ilyas : les cinq changements approuvés, portés dans `harnais/skills/scenes-gabarits/SKILL.md`, `CLAUDE.md` et le schéma de la chaîne. Goulot suivant : le graphiste (environ 15 min par scène), prochain essai : composition posée dans le canevas de design et écrite directement en données de gabarit.
+
+## 2026-11-27 · Essai 3 : planches sur le canevas de design
+
+- Canevas https://claude.ai/artifact/XS6m3KLLs7CAJ9nLqmKyiE : planche de l'état final et partition par scène, zones interdites verrouillées, repères lisibles (« 3.2 frappe ») ; export `planche_vers_donnees.mjs` qui mesure la planche rendue et refuse une planche incomplète. Mise en place 11,6 min, environ 5 $, une fois ; vérifiée par aller-retour sur les données de l'essai 2.
+- Le canevas est entré comme outil du graphiste : deux graphistes (skill graphisme) ont composé S02 et S04 en parallèle, 4,9 et 4,0 min, environ 4,5 $ pour les deux, contre 31 min et 11 à 13 $ à l'essai 1. Ils ont regardé leur planche rendue avant de rendre la main : un seul refus de l'export (défaut de l'outil, corrigé), aucun du gabarit.
+- Ilyas a validé les deux planches sur le canevas sans correction ; export, `check`, `build`, planche par phrase et `test:play` conformes du premier coup. Détail et limites du canevas : `docs/essais-qualite.md`, essai 3.
+- À trancher par Ilyas : retenir la méthode (alors : reporter notation et export dans le harnais source, contrôle des mises en évidence à l'export) ou la garder comme essai.
+
