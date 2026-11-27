@@ -62,3 +62,12 @@ date,etape,alias,fournisseur,modele,entree,sortie,secondes,cout_estime,statut
 2026-11-27T14:58:57,FME001-M01-L01 essai illustrations s04-ill-hachure,gemini-3-pro-image,gemini,gemini-3-pro-image,660,1282,15.4,,ok
 2026-11-27T15:02:00,FME001-M01-L01 essai illustrations s02-ill-contrat,gemini-3-pro-image,gemini,gemini-3-pro-image,0,0,0.5,,http 402
 2026-11-27T15:02:04,FME001-M01-L01 essai illustrations s02-ill-contrat,gemini-3-pro-image,gemini,gemini-3-pro-image,0,0,0.2,,http 402
+2026-11-27T15:22:42,FME001-M01-L01 banc flash s02-ill-fondateurs,gemini-2.5-flash-image,gemini,gemini-2.5-flash-image,730,1290,11.0,,ok
+2026-11-27T15:22:42,FME001-M01-L01 banc flash s04-ill-batiment,gemini-2.5-flash-image,gemini,gemini-2.5-flash-image,701,1290,11.5,,ok
+2026-11-27T15:22:43,FME001-M01-L01 banc flash s02-ill-sceau,gemini-2.5-flash-image,gemini,gemini-2.5-flash-image,691,1290,12.7,,ok
+2026-11-27T15:22:53,FME001-M01-L01 banc flash s04-ill-batiment,gemini-3.1-flash-image,gemini,gemini-3.1-flash-image,701,1402,9.5,,ok
+2026-11-27T15:22:54,FME001-M01-L01 banc flash s02-ill-fondateurs,gemini-3.1-flash-image,gemini,gemini-3.1-flash-image,730,1435,9.7,,ok
+2026-11-27T15:22:54,FME001-M01-L01 banc flash s02-ill-sceau,gemini-3.1-flash-image,gemini,gemini-3.1-flash-image,691,1456,10.3,,ok
+2026-11-27T15:23:51,FME001-M01-L01 banc flash s02-ill-fondateurs,gemini-3.1-flash-lite-image,gemini,gemini-3.1-flash-lite-image,1592,1434,5.0,,ok
+2026-11-27T15:23:51,FME001-M01-L01 banc flash s02-ill-sceau,gemini-3.1-flash-lite-image,gemini,gemini-3.1-flash-lite-image,1553,1537,5.1,,ok
+2026-11-27T15:23:52,FME001-M01-L01 banc flash s04-ill-batiment,gemini-3.1-flash-lite-image,gemini,gemini-3.1-flash-lite-image,1563,1415,6.2,,ok
