@@ -55,13 +55,13 @@ def requete(fournisseur: str, modele: str, systeme: str, invite: str, maxi: int)
                 {"x-api-key": cle("ANTHROPIC_API_KEY"), "anthropic-version": "2023-06-01",
                  "content-type": "application/json"}, json.dumps(corps).encode())
     if fournisseur == "gemini":
-        corps = {"contents": [{"role": "user", "parts": [{"text": invite}]}],
-                 "generationConfig": {"maxOutputTokens": maxi}}
-        if systeme:
-            corps["systemInstruction"] = {"parts": [{"text": systeme}]}
-        return (f"https://generativelanguage.googleapis.com/v1beta/models/{modele}:generateContent",
-                {"x-goog-api-key": cle("GEMINI_API_KEY"), "content-type": "application/json"},
-                json.dumps(corps).encode())
+        # Point d'accès compatible OpenAI : il lit la clé en Authorization: Bearer, forme
+        # que le proxy de l'environnement injecte (secret réseau) ; l'API native, elle,
+        # n'accepte en Bearer qu'un jeton OAuth.
+        msgs = ([{"role": "system", "content": systeme}] if systeme else []) + [{"role": "user", "content": invite}]
+        return ("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+                {"authorization": f"Bearer {cle('GEMINI_API_KEY')}", "content-type": "application/json"},
+                json.dumps({"model": modele, "max_tokens": maxi, "messages": msgs}).encode())
     if fournisseur == "openrouter":
         msgs = ([{"role": "system", "content": systeme}] if systeme else []) + [{"role": "user", "content": invite}]
         return ("https://openrouter.ai/api/v1/chat/completions",
@@ -75,11 +75,6 @@ def lire_reponse(fournisseur: str, d: dict) -> tuple[str, int, int]:
         texte = "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
         u = d.get("usage", {})
         return texte, u.get("input_tokens", 0) + u.get("cache_read_input_tokens", 0), u.get("output_tokens", 0)
-    if fournisseur == "gemini":
-        parts = (d.get("candidates") or [{}])[0].get("content", {}).get("parts", [])
-        texte = "".join(p.get("text", "") for p in parts if not p.get("thought"))
-        u = d.get("usageMetadata", {})
-        return texte, u.get("promptTokenCount", 0), u.get("candidatesTokenCount", 0) + u.get("thoughtsTokenCount", 0)
     texte = ((d.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
     u = d.get("usage", {})
     return texte, u.get("prompt_tokens", 0), u.get("completion_tokens", 0)
@@ -114,7 +109,7 @@ def autotest() -> int:
             print(f"échec requête {f}")
     exemples = {
         "anthropic": {"content": [{"type": "text", "text": "ok"}], "usage": {"input_tokens": 3, "output_tokens": 1}},
-        "gemini": {"candidates": [{"content": {"parts": [{"text": "ok"}]}}], "usageMetadata": {"promptTokenCount": 3, "candidatesTokenCount": 1}},
+        "gemini": {"choices": [{"message": {"content": "ok"}}], "usage": {"prompt_tokens": 3, "completion_tokens": 1}},
         "openrouter": {"choices": [{"message": {"content": "ok"}}], "usage": {"prompt_tokens": 3, "completion_tokens": 1}},
     }
     for f, d in exemples.items():

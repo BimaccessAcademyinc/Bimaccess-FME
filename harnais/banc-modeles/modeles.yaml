@@ -3,6 +3,7 @@
 # depuis le catalogue du fournisseur, jamais de mémoire. Prix : par million de tokens,
 # relevés sur la page de tarifs du fournisseur, avec la date du relevé.
 releve_des_prix: null
+# Catalogue Gemini relevé le 2026-11-27 par GET /v1beta/openai/models (65 modèles).
 modeles:
   # Claude : en sous-agent dans Claude Code (champ model: de l'agent), ou par appel.py
   claude-fable:
@@ -28,13 +29,24 @@ modeles:
   # Gemini : par appel.py seulement
   gemini-pro:
     fournisseur: gemini
-    id: A_RENSEIGNER
+    id: gemini-3.1-pro-preview
     role: relecteur d'une autre famille, lecture longue
     prix: {entree: null, sortie: null}
   gemini-flash:
     fournisseur: gemini
-    id: A_RENSEIGNER
+    id: gemini-3.5-flash
     role: recherche et contrôles bon marché
+    prix: {entree: null, sortie: null}
+  # Images (banc des illustrations), par appel.py --image
+  gemini-image:
+    fournisseur: gemini
+    id: gemini-2.5-flash-image
+    role: illustrations (Nano Banana)
+    prix: {entree: null, sortie: null}
+  gemini-image-pro:
+    fournisseur: gemini
+    id: nano-banana-pro-preview
+    role: illustrations, rendu soigné
     prix: {entree: null, sortie: null}
   # Modèles ouverts : par appel.py, via OpenRouter
   ouvert-moyen:
