@@ -6,10 +6,14 @@ Projet : /home/user/Bimaccess-FME/modules/M01/L01/lecon-gabarits. Toutes les com
 
 Refaire S04 comme données seulement, avec le gabarit `FicheRubriques` du moteur (écrit en phase A) :
 
-- `content/design/scenes/S04.json` : toute la scène, d'après la section S04 de `content/design/spec.md` (mêmes positions, mêmes illustrations, mêmes locutions, mêmes états, mêmes mises en évidence). Aucun dessin à commander, aucune illustration nouvelle.
+- `content/design/scenes/S04.json` : toute la scène, d'après la section S04 de `content/design/spec.md` (mêmes illustrations, mêmes gestes, mêmes locutions, mêmes états, mêmes mises en évidence). Aucun dessin à commander, aucune illustration nouvelle.
 - `src/lesson/scenes/s04.tsx` : réduit à l'appel du gabarit, comme le montre `docs/gabarits.md`. Il garde son export (`s04`), déclaré dans `src/lesson/lesson.ts`.
 
 Tu n'écris que ces deux fichiers. Le moteur, les gabarits, les autres scènes (S02 est faite en même temps par un autre agent), `content/` hors `S04.json`, ne se touchent pas. Si le gabarit ne sait pas faire une chose que la spécification demande, fais au plus près avec ce qu'il offre et note le manque dans ton rapport ; ne modifie pas le gabarit.
+
+## La feuille remplie (contrôle d'Ilyas sur l'essai 1)
+
+Ilyas a jugé les images et l'animation de l'essai 1 au niveau attendu, à garder telles quelles. Le défaut à corriger : la composition n'occupe pas toute la feuille (S02 surtout : sa deuxième moitié est à moitié vide). Les positions de la spécification sont donc ton point de départ, pas ta cible : repositionne et redimensionne les éléments (illustrations posées par leur largeur, jamais étirées) pour que la composition finale remplisse la zone utile que décrit `docs/gabarits.md` (entre le titre et les sous-titres, de x 104 à la marge, hors zone d'action), sans aucun texte sur un trait ni chevauchement, en gardant l'ordre de lecture et le sens de la spécification. Note dans ton rapport chaque position changée, en bloc (par exemple « frise étendue jusqu'à x 1410, logo et nom d'origine agrandis »), et ce qui a changé sur la planche.
 
 ## À lire, et rien d'autre
 
@@ -21,7 +25,7 @@ Tu n'écris que ces deux fichiers. Le moteur, les gabarits, les autres scènes (
 ## Contrôles avant de rendre
 
 - `flock /tmp/fme001-sync.lock npm run check` : code 0, « scènes chargées : 7 »
-- `flock /tmp/fme001-sync.lock npm run build`, puis `node /home/user/Bimaccess-FME/harnais/skills/planche-par-phrase-studio/planche.mjs --scenes S04 --out .studio/qa/b-s04` ; regarde la planche (outil Read) et compare-la à la spécification : rien sur un trait, aucun chevauchement, rien d'éparpillé à la première image, une seule mise en évidence. Corrige les données, puis recommence. Le build se fait sous le verrou : l'autre agent peut l'avoir lancé en même temps, c'est normal d'attendre.
+- `flock /tmp/fme001-sync.lock npm run build`, puis `node /home/user/Bimaccess-FME/harnais/skills/planche-par-phrase-studio/planche.mjs --scenes S04 --out .studio/qa/b-s04` ; regarde la planche (outil Read) et compare-la à la spécification : rien sur un trait, aucun chevauchement, rien d'éparpillé à la première image, une seule mise en évidence, et la feuille remplie à la dernière image. Corrige les données, puis recommence. Le build se fait sous le verrou : l'autre agent peut l'avoir lancé en même temps, c'est normal d'attendre.
 - si `check` ou `build` échoue sur l'autre scène (que l'autre agent est en train d'écrire), ce n'est pas ton erreur : attends une minute et relance, sans toucher à son fichier
 - pas de `test:play` (l'agent principal le lance à la fin)
 

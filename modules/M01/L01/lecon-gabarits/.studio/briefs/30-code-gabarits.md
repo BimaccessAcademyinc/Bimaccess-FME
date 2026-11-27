@@ -52,3 +52,7 @@ Garde ce que l'essai 1 a appris (rapport `.studio/reports/21-code-essai.md`, § 
 ## Rapport
 
 `.studio/reports/30-code-gabarits.md`, format de la section 3 de /home/user/bimaccess-studio/plugins/studio/skills/produce/references/briefs.md : fichiers, contrôles, le format choisi en dix lignes, ce que les gabarits ne savent pas encore faire, ce que la phase B doit savoir. Français, sans tiret cadratin, aucun libellé de statut.
+
+## Complément (envoyé à l'agent en cours de phase, après le contrôle d'Ilyas sur l'essai 1)
+
+Images et gestes de l'essai 1 à garder tels quels ; défaut à corriger : la composition n'occupe pas toute la feuille (S02 surtout). Les gabarits déclarent la zone utile (bas du titre vers y 180 à haut des sous-titres y 860, x 104 à la marge vers x 1424, hors zone d'action), contrôlent au chargement que la composition finale l'occupe sans grand vide, donnent aux données le moyen de la remplir, et `docs/gabarits.md` le documente pour la phase B.
