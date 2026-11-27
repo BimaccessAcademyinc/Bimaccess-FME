@@ -15,7 +15,7 @@ Le module FME001 de BIMaccess Academy : ce qu'est FME (Feature Manipulation Engi
 
 ![La chaîne du pilote FME001 en essai](docs/chaine-en-essai.svg)
 
-La chaîne n'est pas une ligne : trois pistes en parallèle (voix, planches, gabarits), des retours à chaque porte et à chaque contrôle (rouge), un cycle d'une leçon à la suivante (vert). Rôles, outils et fichiers de chaque étape, portes d'Ilyas (bleu), appels payants gardés par son accord (or). Le schéma se génère : changer les listes de `docs/_src/schema_chaine.py`, puis `python3 docs/_src/schema_chaine.py`. Bilan des essais : `docs/essais-qualite.md`.
+La chaîne n'est pas une ligne : voix provisoire muette au départ (minutage estimé, sous-titres, aucun coût) et voix finale payée seulement après la porte du sens ; pistes en parallèle (voix provisoire, planches, gabarits), des retours à chaque porte et à chaque contrôle (rouge), un cycle d'une leçon à la suivante (vert). Rôles, outils et fichiers de chaque étape, portes d'Ilyas (bleu), appels payants gardés par son accord (or). Le schéma se génère : changer les listes de `docs/_src/schema_chaine.py`, puis `python3 docs/_src/schema_chaine.py`. Bilan des essais : `docs/essais-qualite.md`.
 
 ## Commandes
 

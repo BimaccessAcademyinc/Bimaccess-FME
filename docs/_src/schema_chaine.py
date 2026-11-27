@@ -22,9 +22,10 @@ STYLE = f"""<style>
 .lien{{font:italic 11.5px {SERIF}}} .modele{{font:600 10.5px {MONO}}} .skill{{font:italic 11px {SERIF}}} .leg{{font:600 11px {CAPS};letter-spacing:.1em}} .note{{font:12px {SERIF}}} .mini{{font:600 10px {CAPS};letter-spacing:.1em}}
 </style>"""
 
-W, H, BW, BH = 1400, 1292, 230, 140
+W, H, BW, BH = 1400, 1460, 230, 140
 X = [44, 314, 584, 854, 1124]
 Y1, YA, YB, YC, Y3, Y4 = 128, 322, 492, 678, 878, 1062
+Y5 = Y4 + BH + 40
 
 # id : (x, y, largeur, hauteur, numéro, rôle, titre, outils, fichier, genre) ; genre : "" étape, "porte" Ilyas, "paye" appel payant gardé
 N = {
@@ -33,8 +34,7 @@ N = {
  "story": (X[2], Y1, BW, BH, "3", "SCÉNARISTE · 3 RELECTEURS", "Storyboard", "Opus · high (×4)", "skills scenario, porte-du-ton", ["relecture en aveugle", "lint-storyboard.mjs"], "storyboard.md", ""),
  "porte2": (X[3], Y1, BW, BH, "4", "ILYAS", "Porte du ton", "", "", ["récit, partir du problème,", "dire ce qu'est l'objet"], "storyboard retenu", "porte"),
  "theme": (X[4], Y1, BW, BH, "5", "DIRECTION ARTISTIQUE", "Thème et charte", "Fable·high (Opus au pilote)", "skill themes-planches", ["canevas de design", "seulement sans thème"], "CHARTE-FME001.md", ""),
- "voix": (X[0], YA, BW, BH, "6", "VOIX", "Narration", "Haiku·low + eleven_v4", "skills voix, voice-production", ["ElevenLabs, voice.mjs", "--approuve caractères"], "mp3 + alignement", "paye"),
- "ecoute": (X[1], YA, BW, BH, "7", "ILYAS", "Écoute", "", "", ["prononciation, rythme"], "voix retenue", "porte"),
+ "voix": (X[0], YA, BW, BH, "6", "VOIX", "Voix provisoire muette", "Haiku · low · aucun coût", "skill voix (Studio)", ["minutage estimé, sous-titres", "écriture pour l'oreille contrôlée"], "voice.config, dictionnaire", ""),
  "compo": (X[0], YB, BW, BH, "8", "GRAPHISTE", "Planche sur le canevas", "Opus · high", "skill graphisme (Studio)", ["canevas de design (essai 3)", "zones de la charte verrouillées"], "planche de la scène", ""),
  "illus": (X[1], YB, BW, BH, "9", "GRAPHISTE (OUTIL)", "Illustrations", "Gemini 3.1 Flash Image 1K", "skill planche-image", ["illustrations.py · vtracer", "--approuve $"], "assets/*.svg", "paye"),
  "porte3": (X[2], YB, BW, BH, "10", "ILYAS", "Porte de composition", "", "", ["valide ou corrige", "à la main sur le canevas"], "planche validée", "porte"),
@@ -46,7 +46,11 @@ N = {
  "controle": (X[2], Y3, BW, BH, "16", "AGENT PRINCIPAL", "Contrôle de l'agent", "Opus · agent qa Sonnet·medium", "skills qa, planche-par-phrase", ["symboles, règles", "essais-qualite.md"], "verdict et corrections", ""),
  "railway": (X[3], Y3, BW, BH, "17", "RAILWAY", "Lecteur de relecture", "aucun modèle", "", ["fme-reader-review", "à part de CER001"], "…/FME001-M01-L01-*", ""),
  "final": (X[4], Y3, BW, BH, "18", "ILYAS", "Contrôle final", "", "", ["porte du sens", "sur le lecteur"], "ce qui est retenu", "porte"),
- "report": (X[4], Y4, BW, BH, "19", "AGENT PRINCIPAL", "Report dans le harnais", "Opus (session)", "export_studio.py (cours)", ["dépôt du cours, plugin Studio", "→ bimaccess-studio"], "harnais mis à jour", ""),
+ "voixfin": (X[4], Y4, BW, BH, "19", "VOIX", "Voix finale", "Haiku·low + eleven_v4", "skill voice-production (V4)", ["coût annoncé à Ilyas", "--approuve caractères"], "mp3 + alignement", "paye"),
+ "ecoute": (X[3], Y4, BW, BH, "20", "ILYAS", "Écoute", "", "", ["prononciation, rythme", "respirations entre les idées"], "voix retenue", "porte"),
+ "recalage": (X[2], Y4, BW, BH, "21", "CODE · QA", "Recalage sur la vraie voix", "Sonnet · agent qa Sonnet·medium", "skills scenes-gabarits, qa", ["locutions recalées par sync", "test:play une seule fois"], "leçon prête", ""),
+ "report": (X[1], Y4, BW, BH, "22", "AGENT PRINCIPAL", "Report dans le harnais", "Opus (session)", "export_studio.py (cours)", ["dépôt du cours, plugin Studio", "→ bimaccess-studio"], "harnais mis à jour", ""),
+ "suivante": (X[0], Y4, BW, BH, "", "CYCLE", "Leçon suivante", "", "", ["L02 à L05 : même chaîne,", "harnais à jour, sans étape de thème"], "", "cycle"),
 }
 
 # (points, genre, étiquette, position de l'étiquette) ; genre : "flux", "retour" (une porte ou un contrôle renvoie), "cycle"
@@ -61,10 +65,8 @@ L = [
  ([(X[4]+BW/2, Y1+BH), (X[4]+BW/2, 290), (24, 290), (24, YC+70), (X[0], YC+70)], "flux", None, None),
  ([(X[0]+BW/2, 290), (X[0]+BW/2, YA)], "flux", None, None),
  ([(24, YB+70), (X[0], YB+70)], "flux", None, None),
- # piste voix
- ([(X[0]+BW, YA+70), (X[1], YA+70)], "flux", None, None),
- ([(X[1]+BW, YA+70), (X[4], YA+70)], "flux", None, None),
- ([(X[1]+30, YA+BH), (X[1]+30, YA+BH+10), (X[0]+BW-30, YA+BH+10), (X[0]+BW-30, YA+BH)], "retour", "reprise", (X[0]+150, YA+BH+24)),
+ # piste voix provisoire : minutage estimé, sans coût
+ ([(X[0]+BW, YA+70), (X[4], YA+70)], "flux", "minutage estimé sur le texte : les scènes se calent dessus, sans dépense", (X[0]+BW+20, YA+63)),
  # piste planches
  ([(X[0]+BW, YB+70), (X[1], YB+70)], "flux", None, None),
  ([(X[1]+BW, YB+70), (X[2], YB+70)], "flux", None, None),
@@ -73,7 +75,7 @@ L = [
  ([(X[2]+30, YB+BH), (X[2]+30, YB+BH+10), (X[0]+BW/2, YB+BH+10), (X[0]+BW/2, YB+BH)], "retour", "corrections de la planche", (X[0]+BW/2+12, YB+BH+30)),
  # piste gabarits
  ([(X[0]+500, YC+70), (X[4], YC+70)], "flux", "une fois écrits, servent à chaque scène", (X[0]+520, YC+63)),
- # vers la livraison
+ # contrôle sur la voix muette
  ([(X[4]+BW/2, YC+BH), (X[4]+BW/2, 840), (X[0]+BW/2, 840), (X[0]+BW/2, Y3)], "flux", None, None),
  ([(X[0]+BW, Y3+70), (X[1], Y3+70)], "flux", None, None),
  ([(X[1]+BW, Y3+70), (X[2], Y3+70)], "flux", None, None),
@@ -81,15 +83,22 @@ L = [
  ([(X[3]+BW, Y3+70), (X[4], Y3+70)], "flux", None, None),
  ([(X[2]+BW/2, Y3), (X[2]+BW/2, 856), (X[4]+60, 856), (X[4]+60, YC+BH)], "retour", "corrections", (X[2]+BW/2+10, 870)),
  ([(X[4]+BW, Y3+70), (1374, Y3+70), (1374, YB+40), (X[4]+BW, YB+40)], "retour", "corrections", (1262, 866)),
- ([(X[4]+BW/2, Y3+BH), (X[4]+BW/2, Y4)], "flux", None, None),
+ # voix finale seulement après la porte du sens, puis recalage
+ ([(X[4]+BW/2, Y3+BH), (X[4]+BW/2, Y4)], "flux", "porte du sens passée", (X[4]+BW/2+8, Y3+BH+24)),
+ ([(X[4], Y4+70), (X[3]+BW, Y4+70)], "flux", None, None),
+ ([(X[3]+30, Y4+BH), (X[3]+30, Y4+BH+10), (X[4]+BW-30, Y4+BH+10), (X[4]+BW-30, Y4+BH)], "retour", "reprise d'un clip", (X[3]+44, Y4+BH+26)),
+ ([(X[3], Y4+70), (X[2]+BW, Y4+70)], "flux", None, None),
+ ([(X[2], Y4+70), (X[1]+BW, Y4+70)], "flux", None, None),
+ ([(X[1], Y4+70), (X[0]+BW, Y4+70)], "flux", None, None),
  # cycle : la leçon suivante repart du harnais mis à jour
- ([(X[4]+BW, Y4+70), (1384, Y4+70), (1384, 98), (X[2]+BW/2, 98), (X[2]+BW/2, Y1-14)], "cycle", "leçon suivante (L02 à L05) : même chaîne, harnais à jour", (X[2]+BW/2+12, 93)),
+ ([(X[0], Y4+70), (14, Y4+70), (14, 98), (X[2]+BW/2, 98), (X[2]+BW/2, Y1-14)], "cycle", "leçon suivante : même chaîne, harnais à jour", (X[2]+BW/2+12, 93)),
 ]
 
+
 ENCADRES = [
- ("DÉPENSES ET MESURES", MANQUE, X[0], Y4, 333, ["Coût annoncé avant tout appel payant", "Accord d'Ilyas : --approuve (scripts)", "tokens.py → registre.csv, appels.csv", "Registre : essais-qualite.md"]),
- ("RÉUTILISATION", TERME, X[0]+353, Y4, 333, ["Bibliothèque, signature d'image, cache", "Gabarits de scène et de composition", "Composants de planche (essai 3)", "Skills Remotion figés en 4.0.533"]),
- ("HOOKS ET GARDES", LECTURE, X[0]+706, Y4, 334, ["Session : Stop → commit et push", "Dépôt FME : aucun hook de dépôt ;", "gardes dans sync, gabarits, --approuve", "Cours : garde_bash, gate.sh, commit-msg"]),
+ ("DÉPENSES ET MESURES", MANQUE, X[0], Y5, 333, ["Voix payée seulement après la porte du sens", "Accord d'Ilyas : --approuve (scripts)", "tokens.py → registre.csv, appels.csv", "Registre : essais-qualite.md"]),
+ ("RÉUTILISATION", TERME, X[0]+353, Y5, 333, ["Bibliothèque, signature d'image, cache", "Gabarits de scène et de composition", "Composants de planche (essai 3)", "Skills Remotion figés en 4.0.533"]),
+ ("HOOKS ET GARDES", LECTURE, X[0]+706, Y5, 334, ["Session : Stop → commit et push", "Dépôt FME : aucun hook de dépôt ;", "gardes dans sync, gabarits, --approuve", "Cours : garde_bash, gate.sh, commit-msg"]),
 ]
 
 
@@ -99,6 +108,8 @@ def boite(x, y, w, h, n, role, main, modele, skill, outils, fichier, genre):
         fill, stroke, sw = LECTURE_FOND, LECTURE, 1.8
     elif genre == "paye":
         stroke, sw = MANQUE, 2.2
+    elif genre == "cycle":
+        fill, stroke, sw = FOND, TERME, 1.6
     s = []
     if n == "9":  # illustrations commandées en parallèle : feuilles empilées
         for d in (8, 4):
@@ -148,12 +159,12 @@ def main():
     s = [f'<rect width="{W}" height="{H}" fill="{FOND}"/>',
          f'<rect x="8" y="8" width="{W-16}" height="{H-16}" fill="none" stroke="{ENCRE}" stroke-width="2"/>',
          f'<text x="44" y="46" class="titre" fill="{ENCRE}">La chaîne du pilote FME001, telle qu\'elle est en essai</text>',
-         f'<text x="44" y="68" class="soustitre" fill="{ENCRE2}">Pas une ligne : trois pistes en parallèle, des retours à chaque porte et à chaque contrôle, un cycle d\'une leçon à la suivante · 2026-11-27</text>',
+         f'<text x="44" y="68" class="soustitre" fill="{ENCRE2}">Pas une ligne : voix provisoire muette au départ, voix finale payée après la porte du sens ; pistes en parallèle, retours, cycle d\'une leçon à la suivante · 2026-11-27</text>',
          f'<text x="{W-44}" y="46" class="orch" fill="{ENCRE2}" text-anchor="end">AGENT PRINCIPAL (OPUS 5.5) : ORCHESTRE, DÉLÈGUE, MESURE</text>',
-         f'<text x="{X[0]+BW+40}" y="{YA-8}" class="piste" fill="{ENCRE2}">PISTE VOIX</text>',
+         f'<text x="{X[0]+BW+40}" y="{YA-8}" class="piste" fill="{ENCRE2}">PISTE VOIX PROVISOIRE (MUETTE)</text>',
          f'<text x="{X[2]}" y="{YB-8}" class="piste" fill="{ENCRE2}">PISTE PLANCHES</text>',
          f'<text x="{X[0]+520}" y="{YC+100}" class="piste" fill="{ENCRE2}">PISTE GABARITS</text>',
-         f'<text x="{X[1]}" y="{Y3-8}" class="piste" fill="{ENCRE2}">CONTRÔLE ET LIVRAISON</text>']
+         f'<text x="{X[1]}" y="{Y3-8}" class="piste" fill="{ENCRE2}">CONTRÔLE SUR LA VOIX MUETTE, SOUS-TITRES</text>', f'<text x="{X[1]}" y="{Y4-8}" class="piste" fill="{ENCRE2}">VOIX FINALE ET LIVRAISON</text>']
     for v in N.values():
         s += boite(*v)
     for v in L:
