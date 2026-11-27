@@ -1,0 +1,166 @@
+axe: bimsig
+affirmations:
+  - id: A-bimsig-01
+    question: Q9
+    enonce: "Une étude de correspondance de schémas entre le modèle routier IFC et le modèle de transport CityGML conclut que des détails sémantiques importants, comme la géométrie d'axe, les couches de chaussée et le mobilier routier, restent sans correspondance."
+    usage: contexte
+    sources:
+      - url: https://isprs-archives.copernicus.org/articles/XLVIII-4-W15-2025/63/2025/
+        titre: "ISPRS Archives, vol. XLVIII-4/W15-2025, résumé de l'article"
+        editeur: ISPRS
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "significant semantic details such as alignment geometry, layered road structures, and road furniture remain unmapped."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-bimsig-02
+    question: Q9
+    enonce: "Selon les auteurs d'un article de 2018, CityGML et l'IFC présentent de grandes différences de schémas, ce qui rend l'interopérabilité difficile, en particulier pour la structure interne d'un bâtiment (niveau de détail 4 de CityGML)."
+    usage: expert
+    sources:
+      - url: https://isprs-archives.copernicus.org/articles/XLII-4-W10/33/2018/
+        titre: "Investigating interoperability capabilities between IFC and CityGML LoD 4, retaining semantic information"
+        editeur: ISPRS
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "CityGML and IFC present major differences in their schemas, rendering interoperability a challenging task, particularly when details of a building’s internal structure are considered (Level of Detail 4 in CityGML)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-bimsig-03
+    question: Q9
+    enonce: "Les conversions d'IFC vers CityGML sont décrites comme un moyen possible d'obtenir des modèles de ville en 3D qui portent aussi des informations géométriques et sémantiques détaillées sur leurs éléments."
+    usage: contexte
+    sources:
+      - url: https://isprs-archives.copernicus.org/articles/XLII-4-W10/33/2018/
+        titre: "Investigating interoperability capabilities between IFC and CityGML LoD 4, retaining semantic information"
+        editeur: ISPRS
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The ability to convert data from IFC to CityGML in a consistent manner could generate 3D City Models able to represent an entire city"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-bimsig-04
+    question: Q10
+    enonce: "Le banc d'essai GeoBIM 2019, financé par l'ISPRS et EuroSDR, a réuni des observations sur la gestion de CityGML et de l'IFC dans les logiciels existants."
+    usage: expert
+    sources:
+      - url: https://research.tudelft.nl/en/publications/the-isprs-eurosdr-geobim-benchmark-2019/
+        titre: "The ISPRS-EuroSDR GeoBIM benchmark 2019 (TU Delft Research Portal)"
+        editeur: TU Delft
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "a scientific initiative funded by ISPRS and EuroSDR to collect insights into the most relevant issues encountered in the management of CityGML and IFC within existing software."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-bimsig-05
+    question: Q10
+    enonce: "Les auteurs du banc d'essai GeoBIM 2019 concluent qu'il est impossible de trouver des tendances claires dans le comportement des outils, ce qui signifie qu'il n'y a pas de cohérence dans l'implémentation des normes."
+    usage: expert
+    sources:
+      - url: https://research.tudelft.nl/en/publications/the-isprs-eurosdr-geobim-benchmark-2019/
+        titre: "The ISPRS-EuroSDR GeoBIM benchmark 2019 (TU Delft Research Portal)"
+        editeur: TU Delft
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "a key outcome is the impossibility to find clear patterns in the behaviour of tools, which consequently means there is no consistency in the implementation of standards."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-bimsig-06
+    question: Q10
+    enonce: "Au début d'un projet d'intégration de données à la centrale nucléaire de Forsmark, en Suède, Safe Software écrit que FME et des normes ouvertes comme l'IFC sont derrière ce projet."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/blog/2015/05/nuclear-bim-forsmark-integrates-cad-gis-bim-non-spatial/
+        titre: "Nuclear BIM: Forsmark Integrates CAD, GIS, BIM, and Non-Spatial"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME and open standards like IFC are behind a data integration project at the Forsmark nuclear power plant in Sweden."
+    contradictions: []
+    verifie: null
+    note_verification: "Source de l'éditeur seule : cas décrit par Safe Software, sans étude indépendante trouvée."
+  - id: A-bimsig-07
+    question: Q10
+    enonce: "Dans le cas de Forsmark, la première lecture d'un jeu de données IFC a produit 26 types d'entités dans l'espace de travail, et l'équipe n'en a gardé que quatre, qui apportaient la géométrie et les attributs internes nécessaires."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/blog/2015/05/nuclear-bim-forsmark-integrates-cad-gis-bim-non-spatial/
+        titre: "Nuclear BIM: Forsmark Integrates CAD, GIS, BIM, and Non-Spatial"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The first read of an IFC dataset produced 26 feature types in the workspace, and they had to quickly learn the ins and outs of the format"
+      - url: https://fme.safe.com/blog/2015/05/nuclear-bim-forsmark-integrates-cad-gis-bim-non-spatial/
+        titre: "Nuclear BIM: Forsmark Integrates CAD, GIS, BIM, and Non-Spatial"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "they ended up keeping four feature types that brought over both the geometry and required internal attribution"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-bimsig-08
+    question: Q10
+    enonce: "Le blogue de Safe Software date le texte sur Forsmark du 6 mai 2015 et dit que la donnée IFC est très complexe, comme les données BIM en général."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/blog/2015/05/nuclear-bim-forsmark-integrates-cad-gis-bim-non-spatial/
+        titre: "Nuclear BIM: Forsmark Integrates CAD, GIS, BIM, and Non-Spatial"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "May 6, 2015"
+      - url: https://fme.safe.com/blog/2015/05/nuclear-bim-forsmark-integrates-cad-gis-bim-non-spatial/
+        titre: "Nuclear BIM: Forsmark Integrates CAD, GIS, BIM, and Non-Spatial"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "One early challenge for the team was the nature of IFC data (and BIM data in general) – it’s very, very complex."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-bimsig-09
+    question: Q10
+    enonce: "Une étude de cas académique, le palais Trotti à Vimercate (patrimoine bâti), a réalisé la conversion d'IFC vers des shapefiles par FME."
+    usage: expert
+    sources:
+      - url: https://isprs-annals.copernicus.org/articles/VIII-4-W2-2021/167/2021/
+        titre: "HBIM-GIS integration with an IFC-to-shapefile approach: the Palazzo Trotti Vimercate pilot case study"
+        editeur: ISPRS
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The research performed the IFC-to-shapefile data conversion through FME (Feature Manipulation Engine)"
+    contradictions: []
+    verifie: null
+    note_verification: "Une seule source de niveau B : confiance faible."
+  - id: A-bimsig-10
+    question: Q10
+    enonce: "Ordnance Survey présente un moteur de transformation IFC2CityGML, à règles, qui convertit des modèles IFC en modèles CityGML de bâtiments, géométrie et sémantique comprises, y compris les structures intérieures ; ce cas ne mentionne pas FME dans la page lue."
+    usage: expert
+    sources:
+      - url: https://www.ordnancesurvey.co.uk/customers/case-studies/improving-integration-bim-gis
+        titre: "GovTech supports 3D city modelling by integrating BIM and GIS data (étude de cas)"
+        editeur: Ordnance Survey
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This project successfully developed a conversion engine and rule set that is able to convert BIM IFC models into CityGML format, not only geometrically but also semantically, including interior structures."
+    contradictions: []
+    verifie: null
+    note_verification: "Un cas BIM vers SIG, mais sans FME d'après la page : à ne pas présenter comme un cas FME."
+lacunes:
+  - question: Q9
+    manque: "Une publication lisible qui compare ce que se garde et se perd vers une géodatabase ou un GeoPackage : non trouvée. Les résultats de l'ISPRS 2025 sur « solides IFC vers surfaces SIG » ont une extraction en deux colonnes illisible : à relire à la main. L'article de revue de MDPI Buildings 2023 (CityGML en intégration BIM et SIG : correspondance des niveaux de détail, solide vers surface, correspondance sémantique) a refusé la lecture (HTTP 403) : à vérifier à la main."
+  - question: Q9
+    manque: "Des mesures chiffrées de la perte (part d'attributs ou de géométrie perdue) : non trouvées. À sourcer."
+  - question: Q10
+    manque: "Cas réel documenté d'un aéroport, d'une ville ou d'un réseau en BIM vers SIG avec FME chez l'éditeur : seul Forsmark (2015) a été lu ; le cas Mount Vernon (blogue de Safe Software) n'a pas été lu. Un cas indépendant de l'éditeur avec FME : seulement l'étude du palais Trotti (une source B)."
+  - question: Q10
+    manque: "Résultats par logiciel du banc d'essai GeoBIM (tâches 1 et 3) et recommandations sur FME : non lus ; le site du projet (3d.bk.tudelft.nl) a coupé la connexion. À vérifier à la main."
+  - question: Q10
+    manque: "Date et auteurs de l'étude de cas Ordnance Survey : non lus dans la page."
+visuels: []

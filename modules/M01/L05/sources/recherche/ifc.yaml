@@ -1,0 +1,282 @@
+axe: ifc
+affirmations:
+  - id: A-ifc-01
+    question: Q5
+    enonce: "L'IFC (Industry Foundation Classes) est une norme internationale ouverte pour les données BIM échangées et partagées entre les logiciels utilisés par les acteurs de la construction."
+    usage: narration
+    sources:
+      - url: https://online.standard.no/en/iso-16739-1-2018
+        titre: "ISO 16739-1:2018 (notice de la norme)"
+        editeur: ISO (notice reprise par Standard Norge)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The Industry Foundation Classes, IFC, are an open international standard for Building Information Model (BIM) data that are exchanged and shared among software applications"
+      - url: https://help.autodesk.com/cloudhelp/2023/ENU/Civil3D-IFC/files/GUID-CD22FE6E-0AF9-45EF-B2FB-2B6F3C7DF25F.htm
+        titre: "About the Industry Foundation Classes (IFC) File Format"
+        editeur: Autodesk
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "It is an open, international standard (ISO 16739-1:2018) that facilitates interoperability in the architecture, engineering, and construction industry."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-ifc-02
+    question: Q5
+    enonce: "L'IFC permet à différents logiciels d'échanger de l'information sur un projet de bâtiment ou d'infrastructure tout au long de son cycle de vie."
+    usage: narration
+    sources:
+      - url: https://help.autodesk.com/cloudhelp/2023/ENU/Civil3D-IFC/files/GUID-CD22FE6E-0AF9-45EF-B2FB-2B6F3C7DF25F.htm
+        titre: "About the Industry Foundation Classes (IFC) File Format"
+        editeur: Autodesk
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "IFC allows different software applications to exchange information about a building or infrastructure project throughout its lifecycle."
+      - url: https://online.standard.no/en/iso-16739-1-2018
+        titre: "ISO 16739-1:2018 (notice de la norme)"
+        editeur: ISO (notice reprise par Standard Norge)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The standard includes definitions that cover data required for buildings over their life cycle."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-ifc-03
+    question: Q5
+    enonce: "L'IFC définit un schéma de données et une structure de fichier d'échange ; le schéma est décrit en langage EXPRESS et en XML Schema."
+    usage: narration
+    sources:
+      - url: https://online.standard.no/en/iso-16739-1-2018
+        titre: "ISO 16739-1:2018 (notice de la norme)"
+        editeur: ISO (notice reprise par Standard Norge)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The Industry Foundation Classes specify a data schema and an exchange file format structure."
+      - url: https://online.standard.no/en/iso-16739-1-2018
+        titre: "ISO 16739-1:2018 (notice de la norme)"
+        editeur: ISO (notice reprise par Standard Norge)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "EXPRESS data specification language, defined in ISO 10303-11,"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-ifc-04
+    question: Q5
+    enonce: "La partie 1 de la norme ISO 16739 porte le schéma de données de l'IFC ; son titre est « Industry Foundation Classes (IFC) for data sharing in the construction and facility management industries, Part 1: Data schema »."
+    usage: expert
+    sources:
+      - url: https://online.standard.no/en/iso-16739-1-2018
+        titre: "ISO 16739-1:2018 (notice de la norme)"
+        editeur: ISO (notice reprise par Standard Norge)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Industry Foundation Classes (IFC) for data sharing in the construction and facility management industries — Part 1: Data schema"
+    contradictions: []
+    verifie: null
+    note_verification: "Numéro de norme et titre : à la porte de l'expert."
+  - id: A-ifc-05
+    question: Q5
+    enonce: "L'édition ISO 16739-1:2024 a ajouté la couverture de l'information requise pour les infrastructures, dont les ponts, les routes, les voies ferrées, les voies navigables et les installations portuaires."
+    usage: expert
+    sources:
+      - url: https://bsmd.moic.gov.bh:443/store/standards/iso:pub:std:IS:84123/ISO%2016739-1:2024?lang=en
+        titre: "ISO 16739-1:2024 (boutique de normes, Bahreïn)"
+        editeur: Ministère de l'Industrie et du Commerce du Bahreïn
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "This edition of the document added coverage of information required for infrastructure facilities including bridges, roads, railways, waterways and port facilities."
+    contradictions: []
+    verifie: null
+    note_verification: "Page de boutique qui relaie le texte de l'ISO ; l'ISO a refusé la lecture (403)."
+  - id: A-ifc-06
+    question: Q5
+    enonce: "STEP Tools indique que IFC 4x3 ADD2 est publiée comme ISO 16739-1:2024."
+    usage: expert
+    sources:
+      - url: https://downloads.steptools.com/docs/ifcbim/notes_schema.html
+        titre: "IFCBIM, notes sur le schéma"
+        editeur: STEP Tools
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "published as ISO 16739-1:2024, with automatic handling of differences"
+    contradictions:
+      - version: "Un article de presse de 2022 disait que l'IFC 4.3 devait encore terminer son approbation ISO 16739 ; un texte universitaire attendait le remplacement de l'ISO 16739-1 par IFC4x3 en 2023. Les deux sont antérieurs à la publication de 2024."
+        source: https://aecmag.com/collaboration/ifc-for-infrastructure/
+    verifie: null
+    note_verification: "Lien entre IFC 4.3 et l'édition 2024 : source unique, à la porte."
+  - id: A-ifc-07
+    question: Q5
+    enonce: "Une publication académique (benchmark GeoBIM) écrit que la version IFC2x3, sortie en 2005, était de loin la plus implémentée et utilisée au moment de sa rédaction."
+    usage: expert
+    sources:
+      - url: https://arxiv.org/pdf/2007.10951
+        titre: "Reference study of IFC software support: the GeoBIM benchmark 2019, Part I"
+        editeur: arXiv (auteurs du benchmark GeoBIM)
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The IFC current versions are: IFC2x3, which was released in 2005 (with the latest corrigendum in 2007)"
+      - url: https://arxiv.org/pdf/2007.10951
+        titre: "Reference study of IFC software support: the GeoBIM benchmark 2019, Part I"
+        editeur: arXiv (auteurs du benchmark GeoBIM)
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "At the time of writing, the most implemented and used version is still (by far) IFC2x3."
+    contradictions: []
+    verifie: null
+    note_verification: "Constat daté de la rédaction du benchmark (2019-2020) ; ne dit rien de la situation actuelle."
+  - id: A-ifc-08
+    question: Q5
+    enonce: "Les formats d'échange habituels de l'IFC reposent sur le fichier physique STEP (ISO 10303-21) et sur un codage XML (ISO 10303-28)."
+    usage: expert
+    sources:
+      - url: https://arxiv.org/pdf/2007.10951
+        titre: "Reference study of IFC software support: the GeoBIM benchmark 2019, Part I"
+        editeur: arXiv (auteurs du benchmark GeoBIM)
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "the typical exchange formats are based on STEP Physical File (SPF, ISO 10303–21) and an XML encoding (ISO 10303–28)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-ifc-09
+    question: Q6
+    enonce: "Le lecteur IFC_API de FME produit des entités FME à partir des éléments IFC, et leur type d'entité dépend de la catégorie de l'élément IFC."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api.htm
+        titre: "Industry Foundation Classes (IFC) Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The IFC_API reader produces FME features from IFC elements, with feature types based on the IFC element category."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-ifc-10
+    question: Q6
+    enonce: "La géométrie tridimensionnelle des éléments IFC est représentée par des surfaces en trois dimensions et des solides sur les entités FME."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api.htm
+        titre: "Industry Foundation Classes (IFC) Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "IFC 3D element geometry will be represented as 3D surfaces and solids on features."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-ifc-11
+    question: Q6
+    enonce: "Le lecteur IFC_API de FME lit les fichiers IFC de ces schémas : IFC2x_FINAL, IFC2x2_FINAL, IFC2x3, IFC4, IFC4x1, IFC4x2, IFC4x3, IFC4x3_RC1 et IFC4x4."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api.htm
+        titre: "Industry Foundation Classes (IFC) Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The reader can read IFC files with the following set of schemas: IFC2x_FINALcs IFC2x2_FINAL IFC2x3 IFC4 IFC4x1 IFC4x2 IFC4x3 IFC4x3_RC1 IFC4x4"
+    contradictions: []
+    verifie: null
+    note_verification: "Liste de noms de versions de la page « dernière version » de la documentation ; la page imprime « IFC2x_FINALcs » pour le premier nom."
+  - id: A-ifc-12
+    question: Q6
+    enonce: "Le lecteur IFC de FME détecte automatiquement la version du fichier IFC en analysant son en-tête."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api.htm
+        titre: "Industry Foundation Classes (IFC) Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The IFC reader will automatically detect the version of the IFC file it is reading, by analyzing the file header."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-ifc-13
+    question: Q6
+    enonce: "Dans le lecteur IFC_API, les jeux de propriétés et de quantités se lisent comme des entités dont l'attribut ifc_element_type vaut PropertySet et ElementQuantity respectivement ; l'option de lecture des définitions de ces jeux doit être cochée."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/2026.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api_reader.htm
+        titre: "Industry Foundation Classes (IFC) Reader Parameters"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Read Property and Quantity Set Definitions – Check this option to enable reading PropertySetDefinition features."
+      - url: https://docs.safe.com/fme/2026.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api_reader.htm
+        titre: "Industry Foundation Classes (IFC) Reader Parameters"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Property and quantity sets will have an ifc_element_type of PropertySet and ElementQuantity respectively."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-ifc-14
+    question: Q6
+    enonce: "Par défaut, le lecteur IFC_API sépare les noms imbriqués par un point : un attribut de jeu de propriétés apparaît par exemple sous la forme Pset_WallCommon.Reference."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/2026.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api_reader.htm
+        titre: "Industry Foundation Classes (IFC) Reader Parameters"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This setting controls how nested attribute names are separated when reading IFC data, including property sets, quantity sets, and other nested structures."
+      - url: https://docs.safe.com/fme/2026.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api_reader.htm
+        titre: "Industry Foundation Classes (IFC) Reader Parameters"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "By default, the delimiter is \".\", so attributes appear as Pset_WallCommon.Reference."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-ifc-15
+    question: Q6
+    enonce: "Par défaut, le lecteur IFC_API lit les ouvertures et retire de la géométrie le vide qu'elles forment."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/2026.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api_reader.htm
+        titre: "Industry Foundation Classes (IFC) Reader Parameters"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "When checked (default), openings will be read and a void will be calculated and removed from the geometry."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-ifc-16
+    question: Q6
+    enonce: "Le lecteur IFC_API de FME permet de choisir de lire les coordonnées géoréférencées ou locales sur les entités ; en mode géoréférencé, une transformation est appliquée d'après les informations de géoréférencement du fichier."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/2026.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api_reader.htm
+        titre: "Industry Foundation Classes (IFC) Reader Parameters"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Use this parameter to select whether the IFC_API reader reads Georeferenced or Local coordinates on features."
+      - url: https://docs.safe.com/fme/2026.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api_reader.htm
+        titre: "Industry Foundation Classes (IFC) Reader Parameters"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Georeferenced coordinates will have the transformation specified by the"
+    contradictions: []
+    verifie: null
+    note_verification: "Détail des entités IFC (IfcMapConversion, IfcRigidOperation, IfcProjectedCRS, IfcGeographicCRS) lu mais non extrait mot pour mot ; chevauche l'axe georeferencement (Q7, Q8)."
+lacunes:
+  - question: Q5
+    manque: "Pages de buildingSMART (buildingsmart.org, standards.buildingsmart.org, ifc43-docs.standards.buildingsmart.org, technical.buildingsmart.org) : refus 403, à vérifier à la main. Donc non sourcés de première main : la description de l'IFC par buildingSMART, la version 4.3.2.0, la correspondance IFC4 / IFC4 ADD2 TC1 / ISO 16739-1:2018, la licence."
+  - question: Q5
+    manque: "Pages de l'ISO (iso.org/standard/70303.html, 84123) et webstore.ansi.org : refus 403, à vérifier à la main (édition en vigueur, date de publication de l'édition 2024). La notice de Standard Norge donne l'édition 2018 comme retirée ; la date exacte n'est pas recopiée dans un extrait."
+  - question: Q5
+    manque: "Lien entre IFC 4.3 et ISO 16739-1:2024, usage d'IFC4.3 : source unique (STEP Tools), à sourcer. Rôle d'IFC4.3 dans l'ouverture vers le SIG : à sourcer."
+  - question: Q6
+    manque: "Maillages (triangulés, tessellation) : la documentation lue ne parle que de surfaces 3D et de solides ; aucun passage sur les maillages, à sourcer."
+  - question: Q6
+    manque: "Liste de ce qui se perd ou se simplifie à la lecture (matériaux, relations, hiérarchie spatiale) : non lue dans les pages consultées, à sourcer. Un mode « relationnel » et un mode « hiérarchique » existent dans l'ancien lecteur d'après un résultat de recherche, non lu : à vérifier à la main."
+visuels: []
