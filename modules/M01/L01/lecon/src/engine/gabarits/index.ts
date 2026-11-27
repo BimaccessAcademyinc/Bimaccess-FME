@@ -23,7 +23,7 @@ import { vueDe } from "./vue"
 
 export { GabaritError } from "./donnees"
 export { cssDe, poser, Source, sourceHref, Texte } from "./pieces"
-export { VIDE_MAX, VIDE_MAX_LARGEUR, ZONE } from "./plan"
+export { DEBORD_FRISE, mesurer, VIDE_MIN_HAUTEUR, VIDE_MIN_LARGEUR, ZONE } from "./controles"
 
 /** Ce que `defineScene` attend d'une scène narrée. */
 export type SceneDeGabarit = { readonly id: string; readonly clip: Voice; readonly View: () => ReturnType<ReturnType<typeof vueDe>> }

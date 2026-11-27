@@ -26,6 +26,8 @@ export type Sens = keyof typeof SENS
 
 export type StyleD = {
   readonly police: string
+  /** Clé de la police dans THEME.fonts (« serif », « capitales ») : métriques des contrôles de composition. */
+  readonly famille: string
   readonly graisse: number
   readonly taille: number
   readonly interligne: number
@@ -34,7 +36,7 @@ export type StyleD = {
   readonly capitales: boolean
   readonly italique: boolean
 }
-export type IllustrationD = { readonly id: string; readonly fichier: string; readonly x: number; readonly y: number; readonly largeur: number; readonly aplat: string | null; readonly decoupe: "cercle" | null }
+export type IllustrationD = { readonly id: string; readonly fichier: string; readonly x: number; readonly y: number; readonly largeur: number; readonly aplat: string | null; readonly decoupe: "cercle" | null; readonly sur: string | null }
 export type TexteD = {
   readonly id: string
   readonly ecran: number
@@ -43,13 +45,15 @@ export type TexteD = {
   readonly cx: number | null
   readonly y: number
   readonly largeur: number | null
-  /** Largeur mesurée par la spécification (contrôle de remplissage seulement ; aucun effet sur le rendu). */
+  /** Ancienne largeur mesurée de la spécification : acceptée, sans effet (les contrôles mesurent le texte, controles.ts). */
   readonly largeurMesuree: number | null
-  /** Nombre de lignes d'un texte à « largeur » (contrôle de remplissage seulement ; défaut 1). */
+  /** Ancien nombre de lignes : accepté, sans effet (les contrôles calculent le retour à la ligne, controles.ts). */
   readonly lignes: number | null
   /** Couleur de la réserve (jeton résolu), null : aucune. */
   readonly reserve: string | null
   readonly dans: string | null
+  /** Support (illustration) sur lequel le texte est posé : seul chevauchement permis (contrôle 4). */
+  readonly sur: string | null
   readonly langue: string | null
 }
 export type CoucheD = { readonly couleur: string; readonly epaisseur: number }
@@ -217,6 +221,7 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
     const o = L.objet(v, c, ["police", "graisse", "taille", "interligne", "couleur", "interlettrage", "capitales", "italique"])
     styles.set(id, {
       police: L.police(o, "police", c),
+      famille: o.police as string,
       graisse: L.nombre(o, "graisse", c, true) ?? 400,
       taille: L.nombre(o, "taille", c),
       interligne: L.nombre(o, "interligne", c, true) ?? 1.2,
@@ -239,7 +244,7 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
   for (const [id, v] of L.table(racine.illustrations, "illustrations")) {
     const c = `illustrations.${id}`
     declarer(id, c)
-    const o = L.objet(v, c, ["fichier", "x", "y", "largeur", "aplat", "decoupe"])
+    const o = L.objet(v, c, ["fichier", "x", "y", "largeur", "aplat", "decoupe", "sur"])
     illustrations.set(id, {
       id,
       fichier: L.texte(o, "fichier", c),
@@ -248,6 +253,7 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
       largeur: L.nombre(o, "largeur", c),
       aplat: o.aplat === undefined ? null : L.couleur(o, "aplat", c),
       decoupe: o.decoupe === undefined ? null : L.choix(o, "decoupe", c, ["cercle"] as const),
+      sur: L.texte(o, "sur", c, true),
     })
   }
 
@@ -255,7 +261,7 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
   for (const [id, v] of L.table(racine.textes, "textes")) {
     const c = `textes.${id}`
     declarer(id, c)
-    const o = L.objet(v, c, ["ecran", "style", "x", "cx", "y", "largeur", "largeurMesuree", "lignes", "place", "reserve", "dans", "langue"])
+    const o = L.objet(v, c, ["ecran", "style", "x", "cx", "y", "largeur", "largeurMesuree", "lignes", "place", "reserve", "dans", "sur", "langue"])
     const style = L.texte(o, "style", c)
     if (!styles.has(style)) L.faute(`${c}.style`, `style « ${style} » absent de « styles »`, `le déclarer dans « styles » (styles connus : ${[...styles.keys()].join(", ") || "aucun"})`)
     const x = L.nombre(o, "x", c, true)
@@ -275,6 +281,7 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
       lignes: L.entier(o, "lignes", c, true),
       reserve: reserve === "aucune" ? null : (COULEURS[reserve] ?? null),
       dans: L.texte(o, "dans", c, true),
+      sur: L.texte(o, "sur", c, true),
       langue: L.texte(o, "langue", c, true),
     })
   }

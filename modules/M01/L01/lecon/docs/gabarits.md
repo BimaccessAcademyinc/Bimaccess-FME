@@ -14,7 +14,7 @@ export const s02 = defineScene(Frise.scene(data))
 | `Frise` | S02 : ligne et pointe posées à l'image 0, jalons et tracés, cases des années (deux couches, même vitesse), éléments au-dessus et au-dessous de la ligne | `Frise.scene(data)` | `"frise"` |
 | `FicheRubriques` | S04 : feuille révélée bande par bande, bandeau et rubriques, objet qui voyage d'une boîte à l'autre, traits et filets | `FicheRubriques.scene(data)` | `"fiche-rubriques"` |
 
-Tout se vérifie au chargement (`npm run check:scenes`, `check`, `build`) : une donnée fausse arrête la construction avec une `GabaritError` qui dit le fichier, le champ et quoi faire (§ 5). Aucun instant n'est écrit : chaque instant vient d'une locution de la voix, plus les durées de la spécification. Aucun texte n'est écrit : les textes viennent de `## Écran` par leur indice.
+Tout se vérifie au chargement (`npm run check:scenes`, `check`, `build`) : une donnée fausse arrête la construction avec une `GabaritError` qui dit le fichier, le champ et quoi faire (§ 7) ; la composition finale passe en plus quatre contrôles bloquants (§ 9). Aucun instant n'est écrit : chaque instant vient d'une locution de la voix, plus les durées de la spécification. Aucun texte n'est écrit : les textes viennent de `## Écran` par leur indice.
 
 Toutes les coordonnées sont en px de scène 1920 × 1080, recopiées de `content/design/spec.md`. Un champ qui commence par `_` est un commentaire (ignoré) ; tout autre champ inconnu est une erreur.
 
@@ -59,6 +59,7 @@ Les identifiants (clés de `illustrations`, `textes`, `traces`, `annees`) sont u
 | `x`, `y`, `largeur` | coin haut gauche et largeur ; la hauteur est tirée du `viewBox` (jamais étirée) |
 | `aplat` | facultatif : jeton posé sous l'illustration (`"fond"` pour une illustration sans aplat, qui laisserait voir les amorces du carroyage) |
 | `decoupe` | facultatif : `"cercle"` (l'illustration est vue à travers son cercle inscrit : globe) |
+| `sur` | facultatif : identifiant de l'illustration sur laquelle elle est posée dans l'état final (objet sur la feuille, sceau sur le contrat) ; seul chevauchement permis, et elle doit tenir en entier dans son support (§ 9, contrôle 4) |
 
 ### Style
 
@@ -84,9 +85,10 @@ Les identifiants (clés de `illustrations`, `textes`, `traces`, `annees`) sont u
 | `largeur` | facultatif : largeur de retour à la ligne ; sans elle, une seule ligne |
 | `place` | `"face"` (défaut) ou `"carte"` (dans une carte ou une feuille) |
 | `reserve` | `"fond"`, `"papier"` ou `"aucune"` ; défaut : `fond` sur la face, `aucune` dans une carte (recommandation du rapport 21 tant que les aplats des illustrations ne sont pas au jeton `papier` ; décision d'Ilyas ouverte : `"papier"` suit la spécification à la lettre) |
-| `dans` | facultatif : identifiant d'une illustration ; le texte se découvre dans son balayage (même boîte, même instant, même sens) et ne prend pas de geste |
+| `dans` | facultatif : identifiant d'une illustration ; le texte se découvre dans son balayage (même boîte, même instant, même sens) et ne prend pas de geste ; l'illustration est aussi son support (contrôle 4) |
+| `sur` | facultatif : identifiant de l'illustration sur laquelle le texte est posé (texte dans une carte ou une feuille) ; seul chevauchement permis, le texte doit y tenir en entier (§ 9, contrôle 4) |
 | `langue` | facultatif : `"en"` pour un nom anglais |
-| `largeurMesuree`, `lignes` | facultatifs, sans effet sur l'image : pour le contrôle de remplissage (§ 6) |
+| `largeurMesuree`, `lignes` | facultatifs, acceptés et sans effet : les contrôles mesurent eux-mêmes chaque texte avec ses polices (§ 9) ; inutile de les écrire |
 
 Réserve : 2 px en haut et en bas, 6 px à gauche et à droite ; balayée avec le texte, ou posée au début de la frappe.
 
@@ -197,10 +199,10 @@ Le rectangle est celui du tireté ; `de` et `a` sont des locutions ; `a` absent 
   "styles": { "rubrique": { "police": "capitales", "graisse": 600, "taille": 24, "interlettrage": 0.16, "capitales": true, "couleur": "encre" } },
   "illustrations": {
     "feuille": { "fichier": "s04-ill-feuille", "x": 777, "y": 192, "largeur": 647 },
-    "contour": { "fichier": "s04-ill-contour", "x": 349, "y": 544, "largeur": 160 }
+    "contour": { "fichier": "s04-ill-contour", "x": 349, "y": 544, "largeur": 160, "sur": "feuille" }
   },
   "feuille": { "illustration": "feuille", "bandes": [289.5] },
-  "textes": { "geometrie": { "ecran": 2, "style": "rubrique", "x": 829, "y": 303, "place": "carte" } },
+  "textes": { "geometrie": { "ecran": 2, "style": "rubrique", "x": 829, "y": 303, "place": "carte", "sur": "feuille" } },
   "etapes": [
     { "debut": true, "etat": "S04-1", "gestes": [{ "poser": "contour" }] },
     { "locution": "La donnée, elle", "etat": "S04-2", "gestes": [{ "bande": 1, "duree": 0.25 }] },
@@ -214,23 +216,15 @@ Le rectangle est celui du tireté ; `de` et `a` sont des locutions ; `a` absent 
 
 ## 6. Remplir la feuille
 
-Décision d'Ilyas après l'essai 1 : la composition finale doit occuper la **zone utile** de la feuille, la même pour les deux gabarits (`ZONE` du moteur) : la face de carte de la charte (`CHARTE-FME001.md` § 4) : x 104 à 1424, y 180 (bas du titre) à 860 (haut des sous-titres). La colonne x 1448 à 1830 est la marge (échelle, rose, source) : elle ne se remplit pas. La face peut y déborder jusqu'à x 1500 entre y 360 et y 690 seulement (charte), jamais sur un élément de marge.
+Décision d'Ilyas après l'essai 1 : la composition finale doit occuper la **face de carte** de la charte (`CHARTE-FME001.md` § 4), la même pour les deux gabarits (`ZONE` du moteur) : x 104 à 1424, y 180 (bas du titre) à 860 (haut des sous-titres). La colonne x 1448 à 1830 est la marge (échelle, rose, source) : elle ne se remplit pas ; la zone d'action (x 1454, y 834, 360 × 140) est hors de la face. Seule la ligne de la frise peut déborder jusqu'à x 1500, entre y 360 et y 690 (charte).
 
-Contrôle au chargement : les boîtes de la composition finale (illustrations à leur place d'arrivée, feuille, tracés avec leur épaisseur, frise, années, textes ; ni titre, ni marge, ni mises en évidence) sont posées sur une grille de 10 px ; le plus grand rectangle vide ne doit pas dépasser **à la fois** 20 % de la largeur (264 px, `VIDE_MAX_LARGEUR`) et 25 % de la hauteur (170 px, `VIDE_MAX`) de la zone. Sinon :
-
-```
-GabaritError : content/design/scenes/S02.json, champ « (composition finale) » : la feuille n'est pas remplie :
-vide de x 444 à 854, y 650 à 860 (410 × 210 px), … ; éléments qui le bordent : illustrations.contrat, …
-```
-
-C'est le vide qu'a la composition S02 de la spécification sous la frise. Pour remplir sans changer le sens :
+Le contrôle est le contrôle 1 du § 9 : aucun rectangle vide de 200 × 150 px ou plus dans la face. Pour remplir sans changer le sens :
 
 - garder les mêmes illustrations, les mêmes gestes, les mêmes locutions ; changer leurs places et leurs tailles (`largeur` libre, la hauteur suit toujours le `viewBox` : jamais étirée) ;
-- replacer ensuite, sur les nouvelles boîtes, les textes posés dans une illustration, les tracés qui la touchent (routes, trait, jalons) et les rectangles de mise en évidence ; aucun texte sur un trait ; vérifier à la planche ;
-- `Frise` : la frise peut aller de x 104 à 1424 (jusqu'à 1500 si elle est entre y 360 et y 690) ; jalons et cases se placent sur sa ligne ; un élément au-dessus ou au-dessous de la ligne peut descendre jusqu'à y 860 ;
-- un texte sans `largeur` compte pour une ligne de largeur nulle : donner `largeurMesuree` (largeur mesurée de la spécification, colonne « Place ») pour qu'il compte en entier ; `lignes` pour un texte à `largeur` sur plusieurs lignes.
+- replacer ensuite, sur les nouvelles boîtes, les textes posés dans une illustration (à la même place relative), les tracés qui la touchent (routes, trait, jalons) et les rectangles de mise en évidence ; aucun texte sur un trait ; vérifier à la planche ;
+- `Frise` : la frise peut aller de x 104 à 1424 ; jalons et cases se placent sur sa ligne ; un libellé trop long pour sa place prend une `largeur` (deux lignes) ; un élément au-dessus ou au-dessous de la ligne peut descendre jusqu'à y 860, mise en évidence comprise.
 
-Le contrôle voit les boîtes, pas les traits : une illustration au dessin clairsemé compte comme pleine. Il ne remplace pas la planche.
+Exemple (S02, rapport 41) : l'essai 3 laissait vides le bas du centre (x 436 à 882, y 700 à 860), le bas à droite et le dessous du lieu (x 1082 à 1424, y 403 à 570). Correction : le lieu passe en bas à droite sous la frise, la feuille SAIF au bout des routes en haut à droite, le jalon 1996 à x 780, les deux libellés sur deux lignes, le logo et le nom d'origine sous les libellés.
 
 ## 7. Erreurs de chargement
 
@@ -254,7 +248,12 @@ Forme : `GabaritError : <fichier>, champ « <chemin> » : <ce qui est faux>. À 
 | `… sens du balayage manquant`, `durée manquante`, `la frappe dure le temps de la cadence` | champ du geste | ajouter ou retirer le champ |
 | `… champ inconnu. À faire : champs permis ici : …` | faute de frappe dans un nom de champ | le message liste les champs permis |
 | `… jeton de couleur … inconnu du thème` | couleur écrite en valeur | nom de jeton |
-| `(composition finale) : la feuille n'est pas remplie : vide de …` | § 6 | § 6 |
+| `(composition finale)` : `la face n'est pas remplie : vide de …` | contrôle 1 (§ 9) | § 6 |
+| `… hors de la face de carte …` | contrôle 2 : un texte, une mise en évidence (tireté compris), une illustration ou un tracé dépasse la face | replacer ou réduire ; une mise en évidence entoure toujours son élément |
+| `texte posé sur le trait « … »` | contrôle 3 : un trait passe dans le texte ou sa réserve | déplacer le texte ou le trait ; agrandir le rectangle d'une mise en évidence qui touche son texte |
+| `chevauche … dans la composition finale` | contrôle 4 | séparer, ou déclarer `sur` si l'un est posé sur l'autre |
+| `posé sur « … » mais en déborde` | contrôle 4 : l'élément sort de son support | le replacer dans son support |
+| `police « … » sans métriques` | style d'une police absente de `metriques.json` | l'ajouter à `scripts/metriques-polices.mjs` et le relancer |
 
 ## 8. Vérifier une scène
 
@@ -268,4 +267,20 @@ flock /tmp/fme001-sync.lock npm run build
 node /home/user/Bimaccess-FME/harnais/skills/planche-par-phrase-studio/planche.mjs --scenes S02 --out .studio/qa/<dossier>
 ```
 
-Puis regarder la planche (une capture au milieu de chaque phrase, et l'état final) contre la spécification : chaque élément sur sa phrase, aucun texte sur un trait, une seule mise en évidence, la feuille remplie.
+Puis regarder la planche (une capture au milieu de chaque phrase, et l'état final) contre la spécification : chaque élément sur sa phrase, aucun texte sur un trait d'illustration (le contrôle 3 ne voit pas les traits dessinés dans les SVG), une seule mise en évidence, le sens de la composition.
+
+## 9. Contrôles de composition bloquants
+
+`src/engine/gabarits/controles.ts`, appelé à la fin de `planifier` (plan.ts) : au chargement, donc par `npm run check:scenes`, `check` et `build`. Ils portent sur l'état final de la scène (illustrations à leur place d'arrivée), sauf mention. Tous les défauts trouvés sont listés dans une seule `GabaritError` (`<fichier>, n défauts de composition : 1. champ « … » : … À faire : …`). Un contrôle ne s'affaiblit jamais pour faire passer une scène : on corrige les données.
+
+| N° | Refuse | Seuil, règle | Constante |
+|---|---|---|---|
+| 1 | un vide dans la face | aucun rectangle vide d'au moins **200 × 150 px** (largeur ET hauteur) dans la face x 104 à 1424, y 180 à 860 ; le vide d'environ 210 × 160 px en bas au centre de S02 à l'essai 3 est refusé (vérifié : le même vide, reproduit, donne « vide de x 580 à 790, y 700 à 860 (210 × 160 px) ») | `VIDE_MIN_LARGEUR`, `VIDE_MIN_HAUTEUR`, `ZONE` |
+| 2 | un débord hors de la face | tolérance 0,5 px (arrondi) ; vérifié pour chaque texte (encre mesurée), chaque mise en évidence (tireté de 2,5 px compris : 1,25 px de part et d'autre du bord ; cercle : rayon demi-diagonale), chaque illustration (place de départ et d'arrivée), chaque tracé (épaisseur comprise), la frise et les cases ; seule la ligne de la frise (et sa pointe) peut aller jusqu'à x 1500 si elle est tout entière entre y 360 et y 690 | `ZONE`, `DEBORD_FRISE` |
+| 3 | un texte sur un trait | aucun point d'un trait (épaisseur comprise) dans la boîte du texte agrandie de sa réserve (6 px à gauche et à droite, 2 px en haut et en bas) ; traits : tracés (`traces`, couches et pointes), ligne et pointe de la frise, cases des années, et contour de chaque mise en évidence allumée pendant que le texte est à l'écran (une mise en évidence ne doit pas toucher le texte qu'elle entoure) ; chemins échantillonnés tous les px | `GARDE_X`, `GARDE_Y` |
+| 4 | un chevauchement | dans l'état final, aucune intersection de plus de 0,5 px entre deux boîtes d'illustrations ou de textes, sauf entre un élément et son support (`sur`, ou `dans` pour un texte ; les supports s'enchaînent : repère sur globe sur feuille), et l'élément doit tenir en entier dans son support ; deux éléments posés sur le même support ne se chevauchent pas | |
+
+Hors contrôle (à la planche) : les traits dessinés à l'intérieur des illustrations SVG (un texte de carte sur un trait du dessin), le croisement d'un tracé et d'une illustration (les routes, jalons et traits relient des illustrations par nature), le sens.
+
+**Mesure des textes.** Les contrôles n'ont pas de navigateur : chaque texte est mesuré avec les polices de la leçon. `scripts/metriques-polices.mjs` lit les fichiers WOFF des paquets `@fontsource` embarqués (Source Serif 4 400, 600, italiques 400 et 600 ; Barlow Condensed 500 et 600 ; sous-ensembles latin et latin-ext) et écrit `src/engine/gabarits/metriques.json` : avance de chaque caractère en millièmes de corps (tables `cmap` et `hmtx`). À relancer si une police ou une graisse change (`node scripts/metriques-polices.mjs`). Largeur d'une ligne = somme des avances × corps, plus l'interlettrage entre les caractères (pas après le dernier) ; texte en capitales mis en majuscules d'abord ; graisse la plus proche disponible ; texte à `largeur` : retour à la ligne glouton sur les espaces, comme le navigateur ; `x` : bord gauche, `cx` : encre centrée ; hauteur = lignes × corps × interligne (la boîte de ligne du navigateur). Le crénage est ignoré : vérifié contre Chromium sur les 14 textes de S02 et S04 (`node scripts/metriques-verifier.mjs`, après `npm run build`), l'estimation s'écarte de la largeur réelle de -0,1 à +4,3 px (de -0,1 à +1,2 %, presque toujours par excès), le nombre de lignes est le même ; la boîte de contenu de la police déborde la boîte de ligne de 1 à 4 px en haut et en bas (jambages et accents), l'encre des lettres reste dedans.
+

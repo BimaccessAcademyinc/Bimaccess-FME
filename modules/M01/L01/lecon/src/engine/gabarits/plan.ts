@@ -9,31 +9,23 @@
  *     révélé une fois ;
  *   - états : premier à l'image 0, dernier `Sxx-FIN` ;
  *   - mises en évidence : une seule à la fois (intervalles disjoints) ;
- *   - remplissage : la composition finale occupe la zone utile de la feuille.
+ *   - composition finale (controles.ts) : face remplie, rien hors de la face,
+ *     aucun texte sur un trait, aucun chevauchement.
  *
  * Aucun instant n'est écrit : chacun vient d'une locution ou d'un repère,
  * plus les durées de la spécification.
  */
 import { META } from "../../generated/meta"
-import { getBoundingBox, getLength } from "@remotion/paths"
+import { getLength } from "@remotion/paths"
 import type { Point, WipeDir } from "../anim"
 import { type Illustration, illustration, type SceneTexts, sceneTexts } from "../texts"
 import { type Step, voice } from "../timeline"
 import type { Voice } from "../types"
 import { type AnneesD, type Donnees, type EtapeD, type EvidenceD, type FriseD, type GesteD, type IllustrationD, Lecteur, SENS, type StyleD, type TexteD, type TraceD } from "./donnees"
+import { controlerComposition } from "./controles"
 import { type Boite, poser, sourceHref } from "./pieces"
 
-/**
- * Zone utile de la feuille, la même pour les deux gabarits (px de scène) : la
- * face de carte de la charte (CHARTE-FME001 § 4), du bas du titre au haut des
- * sous-titres, x 104 à 1424. La colonne x 1448 à 1830 est la marge (échelle,
- * rose, source) : elle ne se remplit pas. La face peut y déborder jusqu'à
- * x 1500 entre y 360 et y 690 (charte), ce que le contrôle accepte.
- */
-export const ZONE = { x0: 104, y0: 180, x1: 1424, y1: 860 } as const
-/** Plus grand vide toléré dans la composition finale : un cinquième de la largeur (VIDE_MAX_LARGEUR) ET un quart de la hauteur (VIDE_MAX) de la zone. */
-export const VIDE_MAX = 0.25
-export const VIDE_MAX_LARGEUR = 0.2
+export { ZONE } from "./controles"
 
 export type Revelation = { readonly at: number; readonly dur: number; readonly type: GesteD["type"]; readonly dir: WipeDir; readonly chemin: string }
 
@@ -374,115 +366,6 @@ export function planifier(d: Donnees): Plan {
     focus,
     evidences,
   }
-  controlerRemplissage(plan, L)
+  controlerComposition(plan)
   return plan
-}
-
-/* ── Remplissage de la zone utile ─────────────────────────────────────────── */
-
-type Rect = { readonly x0: number; readonly y0: number; readonly x1: number; readonly y1: number; readonly qui: string }
-
-/**
- * Boîtes de la composition finale (illustrations à leur place d'arrivée,
- * feuille, tracés avec leur épaisseur, textes) ; ni le titre, ni la marge
- * (source, habillage), ni les mises en évidence. Un texte sans `largeur` ni
- * `largeurMesuree` compte pour sa hauteur de ligne seulement (aucune mesure
- * au chargement, polices absentes) : pour qu'il compte en entier, recopier
- * sa largeur mesurée de la spécification.
- */
-export function boitesFinales(plan: Plan): Rect[] {
-  const r: Rect[] = []
-  for (const [id, p] of plan.illustrations) {
-    const x = p.move ? p.move.vers[0] : p.boite.left
-    const y = p.move ? p.move.vers[1] : p.boite.top
-    r.push({ x0: x, y0: y, x1: x + p.boite.width, y1: y + p.boite.height, qui: `illustrations.${id}` })
-  }
-  const trait = (pts: readonly Point[], e: number, qui: string) => {
-    const xs = pts.map((p) => p[0])
-    const ys = pts.map((p) => p[1])
-    r.push({ x0: Math.min(...xs) - e / 2, y0: Math.min(...ys) - e / 2, x1: Math.max(...xs) + e / 2, y1: Math.max(...ys) + e / 2, qui })
-  }
-  for (const [id, t] of plan.traces) {
-    const e = Math.max(...t.d.couches.map((c) => c.epaisseur))
-    if (t.d.points) trait(t.d.points, e, `traces.${id}`)
-    else if (t.d.d) {
-      const b = getBoundingBox(t.d.d)
-      r.push({ x0: b.x1 - e / 2, y0: b.y1 - e / 2, x1: b.x2 + e / 2, y1: b.y2 + e / 2, qui: `traces.${id}` })
-    }
-  }
-  if (plan.frise) trait([plan.frise.de, plan.frise.a, ...plan.frise.pointe], plan.frise.epaisseur, "frise")
-  for (const [id, a] of plan.annees) trait([a.d.de, a.d.a], a.d.epaisseur, `annees.${id}`)
-  for (const [id, t] of plan.textes) {
-    const h = t.style.taille * t.style.interligne
-    const w = t.d.largeur ?? t.d.largeurMesuree ?? 0
-    const lignes = t.d.largeur !== null && t.d.lignes !== null ? t.d.lignes : 1
-    const x0 = t.d.cx !== null ? t.d.cx - w / 2 : (t.d.x ?? 0)
-    r.push({ x0, y0: t.d.y, x1: x0 + w, y1: t.d.y + h * lignes, qui: `textes.${id}` })
-  }
-  return r
-}
-
-/** Plus grand rectangle vide d'une grille (cellules libres) : méthode de l'histogramme. */
-function plusGrandVide(libre: boolean[][], nx: number, ny: number): { x: number; y: number; w: number; h: number } {
-  const haut = new Array<number>(nx).fill(0)
-  let best = { x: 0, y: 0, w: 0, h: 0 }
-  let bestScore = -1
-  for (let j = 0; j < ny; j++) {
-    for (let i = 0; i < nx; i++) haut[i] = libre[j]?.[i] ? (haut[i] ?? 0) + 1 : 0
-    const pile: number[] = []
-    for (let i = 0; i <= nx; i++) {
-      const hi = i < nx ? (haut[i] ?? 0) : 0
-      while (pile.length && (haut[pile[pile.length - 1] ?? 0] ?? 0) >= hi) {
-        const top = pile.pop() as number
-        const h = haut[top] ?? 0
-        const gauche = pile.length ? (pile[pile.length - 1] ?? 0) + 1 : 0
-        const w = i - gauche
-        // Score : le vide le plus gênant est celui dont le plus petit côté relatif est le plus grand
-        const score = Math.min(w / nx, h / ny)
-        if (score > bestScore) {
-          bestScore = score
-          best = { x: gauche, y: j - h + 1, w, h }
-        }
-      }
-      pile.push(i)
-    }
-  }
-  return best
-}
-
-const PAS = 10
-
-/**
- * La composition finale doit occuper la zone utile (ZONE) : aucun vide de plus
- * d'un quart de la largeur ET d'un quart de la hauteur de la zone. Erreur : la
- * place du vide, et les éléments qui le bordent.
- */
-export function controlerRemplissage(plan: Plan, L: Lecteur): void {
-  const W = ZONE.x1 - ZONE.x0
-  const H = ZONE.y1 - ZONE.y0
-  const nx = Math.ceil(W / PAS)
-  const ny = Math.ceil(H / PAS)
-  const libre: boolean[][] = Array.from({ length: ny }, () => new Array<boolean>(nx).fill(true))
-  const boites = boitesFinales(plan)
-  for (const b of boites) {
-    const i0 = Math.max(0, Math.floor((b.x0 - ZONE.x0) / PAS))
-    const i1 = Math.min(nx, Math.ceil((b.x1 - ZONE.x0) / PAS))
-    const j0 = Math.max(0, Math.floor((b.y0 - ZONE.y0) / PAS))
-    const j1 = Math.min(ny, Math.ceil((b.y1 - ZONE.y0) / PAS))
-    for (let j = j0; j < j1; j++) for (let i = i0; i < i1; i++) (libre[j] as boolean[])[i] = false
-  }
-  const v = plusGrandVide(libre, nx, ny)
-  if (v.w * PAS > VIDE_MAX_LARGEUR * W && v.h * PAS > VIDE_MAX * H) {
-    const x0 = ZONE.x0 + v.x * PAS
-    const y0 = ZONE.y0 + v.y * PAS
-    const x1 = Math.min(ZONE.x1, x0 + v.w * PAS)
-    const y1 = Math.min(ZONE.y1, y0 + v.h * PAS)
-    const bord = (b: Rect) => b.x1 >= x0 - 30 && b.x0 <= x1 + 30 && b.y1 >= y0 - 30 && b.y0 <= y1 + 30
-    const voisins = boites.filter(bord).map((b) => b.qui)
-    L.faute(
-      "(composition finale)",
-      `la feuille n'est pas remplie : vide de x ${x0} à ${x1}, y ${y0} à ${y1} (${x1 - x0} × ${y1 - y0} px), plus de ${Math.round(VIDE_MAX_LARGEUR * 100)} % de la largeur (${Math.round(VIDE_MAX_LARGEUR * W)} px) et de la hauteur (${Math.round(VIDE_MAX * H)} px) de la zone utile x ${ZONE.x0} à ${ZONE.x1}, y ${ZONE.y0} à ${ZONE.y1} ; éléments qui le bordent : ${voisins.join(", ") || "aucun"}`,
-      "agrandir ou déplacer des illustrations vers ce vide (largeur libre, hauteur tirée du viewBox), puis replacer textes, tracés et mises en évidence sur les nouvelles boîtes, sans texte sur un trait ; un texte sans « largeur » compte pour sa largeur mesurée « largeurMesuree » (à recopier de la spécification)",
-    )
-  }
 }
