@@ -262,6 +262,179 @@ Aucune à la fin : la carte de lieu est un sujet à part, une mise en évidence 
 | 6 | Mention de source calée par le bas à y 820 au lieu de y 772 | à reporter dans la charte (§ 4, marge) et à suivre par les deux autres groupes pour qu'elle reste à la même place d'une scène à l'autre |
 | 7 | Tailles de texte au-dessus de l'échelle de la charte (§ 3) en S01 et S02 : noms de rôle 26 px (24), `Colombie-Britannique` 38 px et `SAIF` 40 px (34), rubriques et libellés de jalon 30 px (28), titre du contrat 32 px, `Traduction` 28 px (26), toponyme 32 px (30) | conséquence de l'agrandissement demandé à la porte du sens ; à reporter dans la charte si la règle des 26 px au moins devient générale |
 
+## S03 · FME est un logiciel, SAIF un format et une norme
+
+Charte : `/home/user/Bimaccess-FME/design/CHARTE-FME001.md` (signature carte). Storyboard : `content/storyboard.md`, `# S03`. Reprise de l'ancienne composition (`.studio/reprise/specs/S03.md` : légende à gauche, feuille SAIF, logo et feuille sans nom en V à droite, lignes de repère, routes), recomposée sans aucun dessin neuf (règle de dépense de cette production) et pour le seuil de vide actuel (`docs/gabarits.md` § 6 : aucun carré vide de plus de 136 px). Coordonnées en px de scène 1920 × 1080 ; boîte = coin haut gauche, largeur × hauteur, ou x0 à x1, y0 à y1. Illustration posée par sa largeur, hauteur tirée du `viewBox` (jamais étirée).
+
+**Gabarit de composition** : « Légende » (`illustrations/gabarits.md`) : une grande cartouche de légende sur la moitié gauche de la face, bandeau de titre vide en haut, cases de symbole le long de son bord gauche, une ligne de texte à droite de chaque case ; la moitié droite montre la chose que la légende explique. La mise en scène le demande mot pour mot.
+
+**Gabarit d'animation** : `FicheRubriques` (`"gabarit": "fiche-rubriques"`) ; la scène passe par l'agent des données. La légende y est la feuille à bandes : la cartouche reprise (`s04-ill-feuille`) a justement un bandeau et trois rubriques, une par genre (format, norme, logiciel). Ses quatre bandes se révèlent toutes dans l'étape de début, de haut en bas, en 0,28 s, avant le premier mot : la légende est là dès la première seconde, vide, comme le veut l'accroche. Tout le reste est fait de pièces ordinaires du gabarit (illustrations posées ou balayées, textes tapés, tracés à couches, pointes, lignes de repère en tracés). Le gabarit `Legende` que demandait l'ancienne composition n'est plus nécessaire pour cette scène ; il reste utile si une légende doit un jour se remplir symbole par symbole (charte § 7, « Une légende qui se remplit »).
+
+D'où vient l'idée : la convention de la carte imprimée que la charte emprunte (la légende classe les signes de la face) et le verbe de la voix, « ne désignent pas le même genre de chose » : une légende range chaque nom sous son genre.
+
+Objet étudié : oui. « FME n'est ni un format ni une norme. C'est un logiciel » ; il se montre par le logo `fme-logo` (couleurs d'origine, jamais déformé ni recoloré, une seule fois à l'écran), jamais par une capture ni une fenêtre de produit. La fenêtre de la légende est le signe générique « logiciel » de la charte, sans nom ni logo.
+
+### Illustrations (aucune commande, aucun appel)
+
+Chaque fichier a été rendu en PNG et regardé avant d'être spécifié (`.studio/tmp/graphiste-S03/p1.png`, `p2.png`, maquette `maquette.png`).
+
+| Id (données) | Fichier `ASSETS[…]` | Source | Ce qu'elle montre (aperçu regardé) | x | y | largeur × hauteur | Arrivée |
+|---|---|---|---|---:|---:|---|---|
+| `legende` | `s04-ill-feuille` (`viewBox` 863 × 863) | reprise de S04 (déjà dans `assets/`) | cartouche à double cadre : bandeau vide, puis trois rubriques séparées par des filets, toutes vides ; une bande étroite en bas | 104 | 186 | 668 × 668 | feuille à bandes, étape de début |
+| `symbole-format` | `s02-ill-saif` (744 × 1046) | reprise de S02 | la feuille de format SAIF (bandeau vide, courbes de niveau, rivière), réduite en signe de légende | 154 | 358,4 | 50 × 70,3 | étape de début, posé |
+| `symbole-norme` | `s02-ill-sceau` (745 × 820) | reprise de S02 | cachet rond : bord festonné, double cercle, rosace au trait, deux rubans ; ni drapeau, ni lettre | 147 | 531,3 | 64 × 70,4 | étape de début, posé |
+| `symbole-logiciel` | `s03-logiciel` (220 × 150) | copie de `design/symboles/logiciel.svg` | fenêtre de logiciel : barre de titre à deux cases, trois boîtes liées, angles vifs, sans nom ni logo | 145 | 647,6 | 68 × 46,4 | étape de début, posé |
+| `saif` | `s02-ill-saif` (744 × 1046) | reprise de S02 | feuille de format à double cadre, bandeau vide fermé par un filet, courbes de niveau `relief` et rivière | 840 | 186 | 300 × 421,8 | étape de début, posée |
+| `logo` | `fme-logo` (216 × 103,7) | marque (`design/marques/`, déjà dans `assets/`) | logo « FME by Safe Software », couleurs d'origine ; aplat `fond` | 900 | 670 | 360 × 172,8 | « FME n'est ni un format » |
+| `autre` | `s03-feuille-vegetation` (158 × 106) | copie de `design/symboles/feuille-vegetation.svg` | petite feuille de format à double cadre, sans bandeau ni nom, deux massifs de végétation (`vegetation`, `vegetationFond`) : un autre contenu de feuille | 1160 | 306 | 260 × 174,4 | « les écrit dans un autre » |
+
+Copies de `design/symboles/` : seuls changements, `width` et `height` retirés de la racine (la taille vient de la scène) et, dans `s03-feuille-vegetation.svg`, les identifiants `face` et `contenu` préfixés (`s03-feuille-vegetation-face`, `s03-feuille-vegetation-contenu`) ; le dessin est inchangé. Le même fichier `s02-ill-saif` paraît deux fois (signe de légende et feuille), sous deux identifiants.
+
+Places mesurées dans les fichiers (px de scène) :
+
+- légende (échelle 0,7740) : cadre intérieur x 133,4 à 743,4 ; bandeau y 215,4 à 283,5 ; rubrique 1 (Format) y 286,6 à 500,3 ; rubrique 2 (Norme) y 501,8 à 631,1 ; rubrique 3 (Logiciel) y 632,6 à 807,6 ; bande basse y 808,3 à 825,4 ; bas du cadre y 854 ;
+- feuille SAIF (échelle 0,4032) : bandeau intérieur y 191,9 à 263,9 ; bas y 607,8 ; cadre x 840 à 1140 ;
+- logo (échelle 1,6667) : lettres « FME » x 900 à 1193, y 670 à 788 ; milieu du « F » x 942 ; pastilles x 1218 à 1260 ; « by Safe Software » y 805 à 842 ;
+- feuille sans nom : x 1160 à 1420, y 306 à 480,4.
+
+Bandes de la feuille à bandes (`feuille.bandes`), chacune coupée juste sous un filet, comme en S04 (mêmes coupes du fichier, à cette échelle) :
+
+| Bande | Contenu | y (px de scène) | Geste |
+|---|---|---|---|
+| B1 | haut du double cadre et bandeau | 186 à 286,7 | étape de début, 0,07 s |
+| B2 | rubrique Format | 286,7 à 502,8 | étape de début, 0,07 s |
+| B3 | rubrique Norme | 502,8 à 632,6 | étape de début, 0,07 s |
+| B4 | rubrique Logiciel, bande basse, bas du cadre | 632,6 à 854 | étape de début, 0,07 s |
+
+`"feuille": { "illustration": "legende", "bandes": [286.7, 502.8, 632.6] }`.
+
+### Tracés du code
+
+| Id | Géométrie (px de scène) | Style |
+|---|---|---|
+| `point-format` | disque de rayon 3 centré (835, 218) : `M832 218 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0 Z` | contour `encre` 1, remplissage `encre` |
+| `repere-format` | (835, 218), (790, 393,5), (480,7, 393,5) | `encre` 1,5 ; du point vers le texte |
+| `point-norme` | disque de rayon 3 centré (835, 238) : `M832 238 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0 Z` | idem |
+| `repere-norme` | (835, 238), (812, 566,5), (470,8, 566,5) | idem |
+| `point-logiciel` | disque de rayon 3 centré (893, 712), à gauche du « F » du logo : `M890 712 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0 Z` | idem |
+| `repere-logiciel` | (893, 712), (800, 670,8), (486,5, 670,8) | idem |
+| `lecture` | de (942, 607,8), bas de la feuille SAIF, à (942, 654) | trois couches, même chemin, même instant, même durée : `encre` 13, `chaussee` 10, `lecture` 5 |
+| `pointe-lecture` | `M930 654 L942 670 L954 654 Z` (la pointe touche le haut du « F ») | contour `encre` 2, remplissage `lecture` |
+| `ecriture` | (1260, 756), bord droit du logo (milieu de la pastille cyan), à (1340, 756), puis (1340, 496,4) | `encre` 11, `chaussee` 8, `ecriture` 4 |
+| `pointe-ecriture` | `M1330 496.4 L1340 480.4 L1350 496.4 Z` (touche le bas de la feuille sans nom) | contour `encre` 2, remplissage `ecriture` |
+
+Les lignes de repère relient un mot à un mot (charte § 5) : celles de « Format » et « Norme » partent du bandeau de la feuille SAIF, à hauteur du nom `SAIF` (points 2 px à gauche du cadre, pour ne pas passer sur la carte de la feuille) ; celle de « Logiciel » part des lettres « FME » du logo. Elles ne se croisent pas : à y 238, l'oblique de « Format » est à x 829,6, à gauche du point de « Norme » (835) ; à y 393,5, l'oblique de « Norme » est à x 808,1, à droite du coude de « Format » (790) ; l'oblique de « Logiciel » reste sous y 670. Les obliques de « Format » et « Norme » passent dans le couloir x 772 à 840 entre la légende et la feuille SAIF ; chaque palier entre dans la légende en croisant son cadre et finit 24 px à droite de son texte, à mi-hauteur de sa ligne.
+
+Routes : bouts nets (le gabarit n'a pas de bouts ronds en carte) ; lecture bleue de la feuille SAIF vers le logo (FME lit dans SAIF), écriture rouge du logo vers la feuille sans nom (il écrit dans un autre format) : charte § 1 et § 5.
+
+### Textes par indice d'Écran
+
+Styles (données) : `entete` capitales 600, 28 px, interligne 1,15, interlettrage 0,32 em, capitales, `encre` ; `nom` capitales 600, 36 px, interlettrage 0,3 em, capitales, `encre` ; `entree` serif 400 italique, 38 px, interligne 1,2, `encre` ; `rubrique` serif 400, 26 px, interligne 1,25, `encre`. Largeurs mesurées dans Chromium avec les polices de la page (Source Serif 4, Barlow Condensed, interlettrage compris).
+
+| Rang | Id | Texte | Style | Place (px de scène) | Largeur mesurée | Réserve |
+|---|---|---|---|---|---:|---|
+| 0 | `titre` | `FME est un logiciel.` | titre de scène (`Title`) | x 104, y 84, une ligne | 620 | `fond` |
+| 1 | `legende-titre` | `Légende` | `entete` | centré sur x 438,4, y 233, dans le bandeau de la légende (`place` carte) | 151 | aucune |
+| 2 | `saif-nom` | `SAIF` | `nom` (le terme a été nommé en S02 : il passe à `encre`, charte § 3) | centré sur x 990, y 206,4, dans le bandeau de la feuille SAIF (`dans`: `saif`) | 98 | aucune |
+| 3 | `format` | `Format : SAIF` | `entree` | x 224, y 370,7 (place carte) | 232,7 | aucune |
+| 4 | `norme` | `Norme : SAIF` | `entree` | x 224, y 543,7 (place carte) | 222,8 | aucune |
+| 5 | `logiciel` | `Logiciel : FME` | `entree` | x 224, y 648 (place carte) | 238,5 | aucune |
+| 6 | `form` | `FME Form : construire les traitements` | `rubrique`, en retrait de 24 px sous le rang 5 | x 248, y 712 (place carte) | 468,9 | aucune |
+| 7 | `flow` | `FME Flow : automatiser les traitements` | `rubrique`, même retrait | x 248, y 756 (place carte) | 484 | aucune |
+| 8 | `source` | `D'après Safe Software et la presse spécialisée` | mention de source (règle commune) | marge, x 1448, calée par le bas à y 820 ; adresse de S03 dans `content/sources.json` | 250 | `fond` |
+
+Entrées de légende en italique (charte § 3, les légendes en italique), à 38 px au lieu de 27 px : la légende est ici le dessin de la face, lue de loin. `FME Form`, `FME Flow` en romain, 26 px : lignes de rubrique de noms de produit ; 26 px est la plus grande taille où `FME Flow : automatiser les traitements` tient sur une ligne dans la rubrique avec le retrait (fin à x 732, cadre intérieur à x 743,4).
+
+Habillage de marge : `echelle-graphique` x 1480, y 84, 300 ; `rose-des-vents` x 1712, y 700, 116 ; à la première image. Pas de légende de marge : la légende est sur la face.
+
+Ordre de pose (dessous vers dessus) : légende, symbole-format, symbole-norme, symbole-logiciel, saif, autre, logo, lecture, pointe-lecture, ecriture, pointe-ecriture, repere-format, point-format, repere-norme, point-norme, repere-logiciel, point-logiciel ; puis, fixés par le gabarit, textes, mention de source, titre, mise en évidence.
+
+### États
+
+| État | Ce qui est visible |
+|---|---|
+| S03-1 | légende (cadre, bandeau, trois rubriques) et `Légende`, trois symboles aux lignes vides, feuille SAIF et son nom, source, échelle, rose ; zone du titre vide |
+| S03-2 | + titre tapé |
+| S03-3 | + ligne de repère « Format » et `Format : SAIF` ; mise en évidence sur cette ligne |
+| S03-4 | + ligne de repère « Norme » et `Norme : SAIF` ; la mise en évidence passe à cette ligne |
+| S03-5 | mise en évidence éteinte ; + logo sous la feuille SAIF |
+| S03-6 | + ligne de repère « Logiciel » et `Logiciel : FME` ; mise en évidence sur cette ligne |
+| S03-7 | + route de lecture et sa pointe, de la feuille SAIF dans le logo |
+| S03-8 | + feuille sans nom, route d'écriture et sa pointe, du logo vers elle |
+| S03-9 | la mise en évidence passe au logo |
+| S03-10 | + `FME Form : construire les traitements` ; la mise en évidence passe à cette ligne |
+| S03-FIN | + `FME Flow : automatiser les traitements` ; mise en évidence sur cette ligne jusqu'à la fin ; composition finale : la légende remplie, la feuille SAIF et ses deux lignes de repère, le logo, ses deux routes et sa ligne de repère, la feuille sans nom |
+
+### Apparitions
+
+Chaque élément arrive au début de la phrase qui le dit ; les gestes d'une étape s'enchaînent (`avec` : en même temps que le précédent). Locutions copiées de la narration S03-01, celles que nomme la mise en scène du storyboard.
+
+| Étape | Élément | Locution (mot pour mot, unique dans le clip S03-01) | Mouvement |
+|---|---|---|---|
+| 1 | `saif` (et `SAIF`, `dans`), bandes B1 à B4 de la légende, puis les trois symboles et `Légende` ; source, échelle, rose | (début de scène, image 0) | `saif` posée ; B1, B2, B3, B4 de haut en bas (0,07 s chacune, 0,28 s en tout, avant le premier mot à 0,4 s) ; symboles et `Légende` posés |
+| 2 | titre (rang 0) | « SAIF et FME ne désignent pas » | frappe |
+| 3 | `point-format`, `repere-format`, rang 3 | « SAIF est un format » | point posé ; trait tracé du point vers la ligne (0,4 s) ; `Format : SAIF` tapé en même temps (`avec`) |
+| 4 | `point-norme`, `repere-norme`, rang 4 | « C'est aussi une norme » | point posé ; trait (0,45 s) ; `Norme : SAIF` tapé en même temps |
+| 5 | `logo` | « FME n'est ni un format » | balayage gauche → droite (0,4 s) |
+| 6 | `point-logiciel`, `repere-logiciel`, rang 5 | « C'est un logiciel » | point posé ; trait du logo vers la ligne (0,45 s) ; `Logiciel : FME` tapé en même temps |
+| 7 | `lecture`, puis `pointe-lecture` | « Il lit des données dans un format » | trois couches tracées ensemble de la feuille vers le logo (0,4 s) ; pointe (0,1 s) |
+| 8 | `autre`, puis `ecriture`, puis `pointe-ecriture` | « les écrit dans un autre » | feuille balayée gauche → droite (0,3 s) ; route tracée du logo vers la feuille (0,4 s) ; pointe (0,1 s) |
+| 9 | (mise en évidence seule) | « L'éditeur le présente » | aucun |
+| 10 | rang 6 | « Elle comprend FME Form » | frappe |
+| 11 | rang 7 | « et FME Flow » | frappe |
+
+`data-board` : `S03-1` à l'étape 1, puis `S03-2` à `S03-10` et `S03-FIN` sur les étapes 2 à 11, dans cet ordre.
+
+### Mise en évidence
+
+Rectangle tireté `lecture` 2,5 px (10 6), angles vifs, sans poignée, à 10 px de l'élément, tracé en 0,25 s ; une seule à la fois.
+
+| Désigne | Rectangle (x, y, largeur × hauteur) | De | À |
+|---|---|---|---|
+| `Format : SAIF` | 214, 360,7, 252,7 × 65,6 | « SAIF est un format » | « C'est aussi une norme » |
+| `Norme : SAIF` | 214, 533,7, 242,8 × 65,6 | « C'est aussi une norme » | « FME n'est ni un format » |
+| `Logiciel : FME` | 214, 638, 258,5 × 65,6 | « C'est un logiciel » | « L'éditeur le présente » |
+| logo | 890, 660, 380 × 192,8 | « L'éditeur le présente » | « Elle comprend FME Form » |
+| `FME Form : construire les traitements` | 238, 702, 488,9 × 52,5 | « Elle comprend FME Form » | « et FME Flow » |
+| `FME Flow : automatiser les traitements` | 238, 746, 504 × 52,5 | « et FME Flow » | fin |
+
+Chaque rectangle d'entrée finit 14 px à gauche du palier de sa ligne de repère. Le rectangle du logo croise le bout des deux routes, qui touchent le logo : inévitable à 10 px, aucun texte n'est en jeu. Tous les rectangles sont dans la face (le plus bas finit à y 852,8, le plus à droite à x 1270).
+
+### Couleurs par fonction
+
+`encre` #23281F textes, cadres, lignes de repère et leurs points, bord des routes, contour des pointes ; `papier` #FBFCF8 dans la fenêtre et la feuille sans nom (les fichiers repris portent leurs propres aplats, proches de `papier`) ; `fond` #F1F3EC réserve du titre, aplat sous le logo ; `lecture` #2F6DA8 axe et pointe de la route de lecture, mise en évidence ; `ecriture` #C4472B axe et pointe de la route d'écriture ; `chaussee` #FFFFFF chaussée des routes ; `relief`, `eauFond` dans la feuille SAIF, `vegetation`, `vegetationFond` dans la feuille sans nom seulement ; `lien` #7A4A22 la mention de source ; le logo garde ses couleurs d'origine. Aucun `terme` (aucun terme nouveau à l'écran), aucun `manque` (la mise en scène l'exclut). Aucune réserve sous un texte posé dans la légende ou la feuille SAIF : leurs aplats ne sont pas aux couleurs exactes des jetons (règle 5 de `scenes-gabarits`).
+
+Carroyage (croix x 274 + 228 k, y 236 + 228 k) : couvert par la légende, la feuille SAIF et la feuille sans nom ; les croix (958, 692) et (1186, 692) tombent dans le logo, qui n'a pas d'aplat : aplat `fond` sous le logo. Restent visibles (1186, 236), (1414, 236) et (1414, 692), loin de tout tracé. Aucun tracé ne passe sur une croix.
+
+Écran étroit : textes de 26 px au moins ; routes de 11 et 13 px ; les symboles de légende (50 à 68 px) gardent leur forme réduits au quart ; rien n'a été simplifié.
+
+### Contrôle de composition (R1 à R8)
+
+Boîtes de l'état final (illustrations, textes, tracés avec leur épaisseur) passées au contrôle de remplissage de `docs/gabarits.md` § 6 (grille de 5 px, boîtes arrondies vers l'extérieur), par une copie du calcul (`.studio/tmp/graphiste-S03/compo.py`), et posées sur une maquette avec les vrais fichiers et les polices de la page (`.studio/tmp/graphiste-S03/maquette.png`).
+
+| # | Règle | Preuve | Résultat |
+|---|---|---|---|
+| R1 | gabarit de composition | « Légende » (`illustrations/gabarits.md`), légende x 104 à 772 (0 à 51 % de la face), toute la hauteur ; la chose expliquée à droite | conforme |
+| R2 | feuille remplie | bornes x 104 à 1420, y 186 à 854 ; plus grand carré vide 125 px (seuil 136), en haut à droite au-dessus de la feuille sans nom (x 1140 à 1424, y 180 à 306) ; autres vides : x 772 à 900, y 713 à 860 (128 de large), x 1140 à 1254, y 481 à 670 (114 de large), x 1260 à 1424, y 762 à 860 (98 de haut) ; aucune bande vide refusée (la plus longue, x 772 à 1254 sur y 608 à 670, a 62 px d'épaisseur, seuil 68) | conforme |
+| R3 | échelle plutôt que vide | légende carrée à sa plus grande taille (668 px, presque toute la hauteur), feuille SAIF agrandie à 300 px (236 en S02), logo à 360 px ; aucun élément ajouté | conforme |
+| R4 | rien sur un trait | chaque palier finit 24 px à droite de son texte ; aucune ligne de repère ni route ne passe sur un texte ; `SAIF` dans le bandeau, loin des routes | conforme |
+| R5 | évidences et textes dans la face | textes de x 224 à 1039, y 206 à 789 ; rectangles de x 214 à 1270, y 360 à 853 | conforme |
+| R6 | marge réservée | échelle, source, rose seulement ; aucun débord | conforme |
+| R7 | pas de chevauchement | symboles et textes de la légende dans la légende (place carte) ; `SAIF` dans la feuille (`dans`) ; illustrations disjointes (couloirs de 68 px et 20 px) ; les routes touchent les feuilles et le logo à leurs bouts seulement ; les paliers entrent dans la légende et y finissent | conforme |
+| R8 | le sens | chaque élément répond à un mot de la voix : la légende à « le même genre de chose », la feuille à « SAIF est un format », le cachet à « une norme », la fenêtre et le logo à « C'est un logiciel », les routes à « Il lit » et « les écrit », la feuille sans nom à « dans un autre », les deux lignes à « FME Form » et « FME Flow » | conforme |
+
+### Points ouverts (S03)
+
+| # | Point | Proposition |
+|---|---|---|
+| 1 | La cartouche de légende est le fichier de la fiche d'entité de S04 (`s04-ill-feuille`) : la même feuille paraît dans deux scènes de suite, en légende puis en fiche | sans coût ; à confirmer par Ilyas sur le lecteur. Sinon, un dessin neuf (une cartouche à bandeau et trois rubriques), sur devis |
+| 2 | Le cachet de norme est le sceau du contrat de S02 (`s02-ill-sceau`) | la mise en scène demande « un cachet de norme au double filet » : le sceau en a la forme (double cercle) et ne porte aucun emblème national ; à confirmer |
+| 3 | La mise en scène dit « une route rouge de traduction qui entre dans le logo », puis « la route de lecture se trace de la feuille SAIF vers le logo » | suivi de la charte : bleu, ce que FME lit (route d'entrée) ; rouge, ce qu'il écrit (route de sortie). Au scénariste de corriger « rouge » dans `## Mise en scène` |
+| 4 | La mise en scène ne dit pas quand se trace la ligne de repère de « Norme », ni quand s'éteint la mise en évidence de « Norme » | tracée avec `Norme : SAIF` sur « C'est aussi une norme » ; éteinte sur « FME n'est ni un format », quand le logo arrive |
+| 5 | `FME Form`, `FME Flow` en romain : noms de produit, pas des mots anglais à traduire (la charte met l'anglais en italique) | à confirmer |
+| 6 | La légende se remplit autrement que la charte (§ 7 : symbole tracé, puis libellé balayé) | le storyboard veut les symboles dessinés dès la première seconde et les lignes tapées sur la voix : le storyboard est suivi |
+| 7 | La route d'écriture part du bord droit du logo, au milieu de la pastille cyan | à confirmer sur le lecteur ; sinon la faire partir du bas du « E » (x 1180, y 788), au prix d'un coude de plus |
+
 ## S04 · Une entité géographique porte trois parties
 
 Version de l'essai « illustrations commandées » : composition refaite par le graphiste, chaque élément qui paraît à son propre moment est une illustration commandée au modèle d'image (`content/design/illustrations/s04-ill-*.json`, SVG dans `content/design/assets/`). Les textes, le trait du bâtiment vers la feuille, le filet de la ligne d'attribut et la mise en évidence sont au code. Elle remplace la composition « dessins SVG à la main » (`s03-carte.svg`, `s03-contour.svg`, `s03-batiment.svg`, `s03-entite.svg`, que cette version n'emploie plus).

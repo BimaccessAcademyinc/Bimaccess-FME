@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 106" role="img" aria-label="Feuille de format : vegetation">
+<rect x="4" y="4" width="150" height="98" fill="#FBFCF8"/>
+<rect x="5" y="5" width="148" height="96" fill="none" stroke="#23281F" stroke-width="2"/>
+<rect x="0.5" y="0.5" width="157" height="105" fill="none" stroke="#23281F" stroke-width="1"/>
+<clipPath id="s03-feuille-vegetation-face"><rect x="0" y="0" width="146" height="94"/></clipPath>
+<g id="s03-feuille-vegetation-contenu" transform="translate(6 6)" clip-path="url(#s03-feuille-vegetation-face)">
+<path d="M10 16 C30 4 60 10 66 28 C72 46 40 56 22 48 C8 42 0 28 10 16 Z M86 44 C104 34 136 40 138 60 C140 80 110 88 94 80 C80 72 74 54 86 44 Z" fill="#D3DFC3" stroke="#6E8B4E" stroke-width="1.2"/>
+<path d="M21.6 24 a2.4 2.4 0 1 0 4.8 0 a2.4 2.4 0 1 0 -4.8 0 Z M37.6 20 a2.4 2.4 0 1 0 4.8 0 a2.4 2.4 0 1 0 -4.8 0 Z M47.6 34 a2.4 2.4 0 1 0 4.8 0 a2.4 2.4 0 1 0 -4.8 0 Z M27.6 38 a2.4 2.4 0 1 0 4.8 0 a2.4 2.4 0 1 0 -4.8 0 Z M97.6 56 a2.4 2.4 0 1 0 4.8 0 a2.4 2.4 0 1 0 -4.8 0 Z M115.6 52 a2.4 2.4 0 1 0 4.8 0 a2.4 2.4 0 1 0 -4.8 0 Z M109.6 70 a2.4 2.4 0 1 0 4.8 0 a2.4 2.4 0 1 0 -4.8 0 Z M93.6 68 a2.4 2.4 0 1 0 4.8 0 a2.4 2.4 0 1 0 -4.8 0 Z M123.6 66 a2.4 2.4 0 1 0 4.8 0 a2.4 2.4 0 1 0 -4.8 0 Z" fill="#6E8B4E"/>
+</g>
+</svg>

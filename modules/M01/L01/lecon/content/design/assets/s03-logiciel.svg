@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 150" role="img" aria-label="Logiciel : fenêtre redessinée, sans capture ni logo">
+<rect x="4" y="4" width="212" height="142" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+<rect x="0.5" y="0.5" width="219" height="149" fill="none" stroke="#23281F" stroke-width="0.8"/>
+<path d="M4 30 H216" fill="none" stroke="#23281F" stroke-width="1.5"/>
+<path d="M14 17 H90" fill="none" stroke="#23281F" stroke-width="4"/>
+<path d="M172 12 h10 v10 h-10 Z M190 12 h10 v10 h-10 Z" fill="none" stroke="#23281F" stroke-width="1.4"/>
+<path d="M4 46 H216" fill="none" stroke="#7D8576" stroke-width="0.8"/>
+<path d="M58 96 H90 M130 96 H150" fill="none" stroke="#23281F" stroke-width="1.6"/>
+<path d="M22 82 h36 v28 h-36 Z M90 82 h40 v28 h-40 Z M150 82 h40 v28 h-40 Z" fill="#FBFCF8" stroke="#23281F" stroke-width="2"/>
+</svg>
