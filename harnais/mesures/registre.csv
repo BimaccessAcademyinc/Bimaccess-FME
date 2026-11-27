@@ -44,3 +44,8 @@ FME001-M01-L01 planches 4K et relecture des symboles,97d54436-af59-5ae1-b5e1-362
 "FME001-M01-L01 essai 2 phase B, S02 comme données",b87ee2b8-fc96-5fa1-bde6-9abfeb758e3b,Gabarits S02 donnees,claude-sonnet-5-5,18,44,194260,2748516,40400,0,0,8.1,
 "FME001-M01-L01 essai 2 phase B, S04 comme données",b87ee2b8-fc96-5fa1-bde6-9abfeb758e3b,Gabarits S04 donnees,claude-sonnet-5-5,18,42,181909,2485067,26847,0,0,6.3,
 "FME001-M01-L01 essai 2, agent principal (orchestration et contrôles)",b87ee2b8-fc96-5fa1-bde6-9abfeb758e3b,session,claude-opus-5-5,81,175,250788,16902750,42743,0,0,31.8,
+"FME001-M01-L01 essai 3 mise en place (canevas, notation, export)",f6e2aaa9-a0b8-51b6-9fad-ff962eec6cf9,session,claude-opus-5-5,47,95,262724,10299278,61430,0,0,11.6,
+FME001-M01-L01 essai 3 composition S02,f6e2aaa9-a0b8-51b6-9fad-ff962eec6cf9,Graphiste planche S02,claude-opus-5-5,24,48,198747,3697143,28419,0,0,4.9,
+FME001-M01-L01 essai 3 composition S04,f6e2aaa9-a0b8-51b6-9fad-ff962eec6cf9,Graphiste planche S04,claude-opus-5-5,21,42,197474,3086186,20458,0,0,4.0,
+FME001-M01-L01 essai 3 orchestration et publication sur le canevas,f6e2aaa9-a0b8-51b6-9fad-ff962eec6cf9,session,claude-opus-5-5,17,42,20036,5764428,5066,0,0,5.5,
+"FME001-M01-L01 essai 3 export et contrôles (S02, S04)",f6e2aaa9-a0b8-51b6-9fad-ff962eec6cf9,session,claude-opus-5-5,16,38,53633,6283237,4864,0,0,3.5,
