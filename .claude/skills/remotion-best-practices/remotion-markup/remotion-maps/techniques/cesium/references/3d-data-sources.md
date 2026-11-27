@@ -7,8 +7,7 @@ Use MapTiler for both layers:
 - `terrain-quantized-mesh-v2`: elevation encoded as Cesium quantized-mesh terrain.
 - `satellite-v2`: raster satellite imagery draped on that mesh.
 
-CesiumJS renders the layers. MapTiler supplies the data. Replace `YOUR_API_KEY` in
-both `api.maptiler.com` URLs in `../assets/CesiumFlythrough.tsx` with a MapTiler key.
+CesiumJS renders the layers; it does not supply the data. Set `REMOTION_MAPTILER_KEY`.
 
 Create a key:
 
@@ -22,9 +21,8 @@ Official documentation:
 ## City
 
 Use Google Photorealistic 3D Tiles. Google supplies one high-resolution 3D mesh already textured
-with imagery. Disable the Cesium globe and do not add MapTiler terrain or satellite beneath it.
-Replace `YOUR_API_KEY` in the `tile.googleapis.com` URL in
-`../assets/CesiumFlythrough.tsx` with a Google Map Tiles API key.
+with imagery. Disable the Cesium globe and do not add MapTiler terrain or satellite beneath it. Set
+`REMOTION_GOOGLE_MAPS_API_KEY`.
 
 Create and configure a key:
 

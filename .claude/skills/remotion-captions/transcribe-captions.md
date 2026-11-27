@@ -165,8 +165,6 @@ export const transcribeFile = async (file: File) => {
 };
 ```
 
-Transcribe each original source video or audio file individually.  
-Keep the resulting caption timestamps relative to the beginning of that source file, including portions currently trimmed out of the edit.  
-Do not add composition offsets or flatten multiple transcripts into composition-wide timestamps.
+Transcribe each clip individually.
 
 See [Displaying captions](display-captions.md) for how to display the captions in Remotion.

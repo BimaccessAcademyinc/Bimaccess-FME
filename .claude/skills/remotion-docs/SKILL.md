@@ -1,11 +1,11 @@
 ---
 name: remotion-docs
 description: Search Remotion documentation
-version: 4.0.547
+version: 4.0.533
 ---
 
 This skill teaches you how to discover and read current Remotion documentation.
-If this is not relevant, load Remotion Best Practices (`remotion-best-practices` skill) instead.
+If this is not relevant, load Remotion Best Practices instead.
 
 ## Searching the docs
 

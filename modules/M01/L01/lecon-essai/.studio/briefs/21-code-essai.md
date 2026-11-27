@@ -15,6 +15,14 @@ Règles :
 - N'écris que `s02.tsx`, `s04.tsx` (et, si besoin, `src/lesson/components/s02-*.tsx`, `s04-*.tsx`). Les composants communs existants (`src/lesson/components/s01-commun.tsx` : `Source`, `RESERVE`, `RoleName`…) se réutilisent tels quels.
 - Moteur, lecteur et scripts : ne les modifie pas ; un manque se note dans le rapport, avec ce que tu as fait à la place.
 
+## Remotion : les skills et les outils
+
+L'animation passe par Remotion et ses skills officiels (décision d'Ilyas) : skills installés dans le dépôt à la version exacte du Remotion des leçons (4.0.533), `/home/user/Bimaccess-FME/.claude/skills/`. Lis `remotion-markup/SKILL.md` (règles de contenu et d'animation), puis seulement ses références utiles à tes deux scènes : `timing.md`, `sequencing.md`, `measuring-text.md`, `text-highlights.md`, `measuring-dom-nodes.md`, `images.md`. Lis aussi les règles d'emploi de la chaîne : `/home/user/bimaccess-studio/chaine/agents/code/skills/narrated-lesson-build/references/remotion-outils.md`.
+
+Les outils de dessin de Remotion sont dans le moteur de cette leçon (`src/engine/outils.ts`, importés par `../../engine`, jamais par le nom du paquet) : `evolvePath`, `getLength` (tracé à vitesse constante, durée proportionnelle à la longueur), `getPointAtLength`, `getTangentAtLength` (objet qui voyage sur un chemin), `interpolatePath`, `makeArrow` et les autres formes exactes, `measureText`, `fitText` (mesurer un texte avant de le placer, pour qu'il ne tombe jamais sur un trait), `makeTransform`. Emploie-les là où ils rendent le geste exact : les routes et leur pointe, la frise, le contour de S04 qui voyage de la carte à la rubrique, la taille des textes dans leur place.
+
+Priorité : la grammaire du projet et la spécification passent avant les exemples de Remotion (jamais de fondu d'opacité, de ressort ni de rebond ; avancement linéaire ; une seule mise en évidence). Aucun rendu vidéo, aucun Remotion Studio, aucun appel payant (aucune illustration à commander : celles du graphiste suffisent).
+
 ## À lire, et rien d'autre
 
 - /home/user/bimaccess-studio/plugins/studio/skills/scenes/SKILL.md et ses références `animation-grammar.md`, `engine-api.md` (`${CLAUDE_SKILL_DIR}` = /home/user/bimaccess-studio/plugins/studio/skills/scenes)

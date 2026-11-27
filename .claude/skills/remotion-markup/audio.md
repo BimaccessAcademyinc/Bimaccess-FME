@@ -7,12 +7,6 @@ metadata:
 
 # Using audio in Remotion
 
-Use audio supplied by the user or generated with their chosen tools.
-Save local audio files in `public/` and reference them with `staticFile()`, or pass a remote URL to `<Audio>`.
-
-When scene timing follows the audio, measure each file with getAudioDuration (`get-audio-duration.md` in the `remotion-multimedia` skill) and use [calculateMetadata](calculate-metadata.md) to set the composition duration.
-Account for [transition overlaps](transitions.md#calculating-total-composition-duration) when calculating the total duration.
-
 ## Prerequisites
 
 First, the @remotion/media package needs to be installed.
@@ -97,7 +91,7 @@ Use `useCurrentFrame()` and `interpolate()` for keyframed volume:
 
 ```tsx
 import { Audio } from "@remotion/media";
-import { interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 
 const frame = useCurrentFrame();
 const { fps } = useVideoConfig();
@@ -114,6 +108,17 @@ return (
 ```
 
 With Studio interactivity enabled, these keyframes can be edited and are shown as a volume curve in the timeline.
+
+The `volume` prop also accepts a callback for procedural or media-relative volume. The callback frame starts at 0 when the audio begins to play, not at the composition frame:
+
+```tsx
+import { Audio } from "@remotion/media";
+
+<Audio
+  src={staticFile("audio.mp3")}
+  volume={(mediaFrame) => interpolate(mediaFrame, [0, 30], [0, 1])}
+/>
+```
 
 ## Muting
 
@@ -155,24 +160,24 @@ Use `loop` to loop the audio indefinitely:
 ```tsx
 import { Audio } from "@remotion/media";
 
-<Audio src={staticFile("audio.mp3")} loop />
+<Audio src={staticFile("audio.mp3")} loop premountFor={fps} />
 ```
 
-Put `name`, `from`, `loop`, and `volume` directly on `<Audio>`.
+Put `name`, `from`, `loop`, `volume`, and `premountFor` directly on `<Audio>`.
+
+Use `loopVolumeCurveBehavior` to control how the frame count behaves when looping:
+
+- `"repeat"`: Frame count resets to 0 each loop (default)
+- `"extend"`: Frame count continues incrementing
 
 ```tsx
 import { Audio } from "@remotion/media";
-import { interpolate, staticFile, useCurrentFrame } from "remotion";
-
-const frame = useCurrentFrame();
 
 <Audio
   src={staticFile("audio.mp3")}
   loop
-  volume={interpolate(frame, [0, 300], [1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  })}
+  loopVolumeCurveBehavior="extend"
+  volume={(f) => interpolate(f, [0, 300], [1, 0])} // Fade out over multiple loops
 />
 ```
 

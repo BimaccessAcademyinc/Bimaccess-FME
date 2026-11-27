@@ -47,3 +47,4 @@ export {
   voice,
 } from "./timeline"
 export type { AnyScene, Clip, ClipTrigger, LessonDef, SceneDef, SceneKind, SceneModel, SceneStatus, SceneViewProps, StatusInput, Voice, Word } from "./types"
+export * from "./outils"

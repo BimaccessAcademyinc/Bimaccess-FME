@@ -7,13 +7,32 @@ metadata:
 
 To make a video parametrizable, a Zod schema can be added to a composition.
 
-First, install `zod` in the version that matches Remotion:
+First, `zod` must be installed .
+
+Search the project for lockfiles and run the correct command depending on the package manager:
+
+If `package-lock.json` is found, use the following command:
 
 ```bash
-npx remotion add zod # If project uses npm
-bunx remotion add zod # If project uses bun
-yarn remotion add zod # If project uses yarn
-pnpm exec remotion add zod # If project uses pnpm
+npm i zod
+```
+
+If `bun.lockb` is found, use the following command:
+
+```bash
+bun i zod
+```
+
+If `yarn.lock` is found, use the following command:
+
+```bash
+yarn add zod
+```
+
+If `pnpm-lock.yaml` is found, use the following command:
+
+```bash
+pnpm i zod
 ```
 
 Then, a Zod schema can be defined alongside the component:
@@ -25,9 +44,7 @@ export const MyCompositionSchema = z.object({
   title: z.string(),
 });
 
-export const MyComponent: React.FC<z.infer<typeof MyCompositionSchema>> = (
-  props,
-) => {
+const MyComponent: React.FC<z.infer<typeof MyCompositionSchema>> = () => {
   return (
     <div>
       <h1>
@@ -42,7 +59,7 @@ In the root file, the schema can be passed to the composition:
 
 ```tsx title="src/Root.tsx"
 import { Composition } from "remotion";
-import { MyComponent, MyCompositionSchema } from "./MyComposition";
+import { MycComponent, MyCompositionSchema } from "./MyComposition";
 
 export const RemotionRoot = () => {
   return (
@@ -61,8 +78,6 @@ export const RemotionRoot = () => {
 ```
 
 Now, the user can edit the parameter visually in the sidebar.
-
-When rendering, Remotion validates the props against the schema. If they are invalid, Remotion 4 logs a warning that lists each invalid field and renders anyway. Remotion 5 fails the render. Remotion shallowly merges input props with `defaultProps`. A nested object in the input props replaces the whole default object.
 
 All schemas that are supported by Zod are supported by Remotion.
 
