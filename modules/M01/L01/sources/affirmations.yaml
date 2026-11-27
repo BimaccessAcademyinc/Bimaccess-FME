@@ -1162,6 +1162,63 @@ affirmations:
   verifie: null
   note_verification: 'Ajoutée par l''orchestrateur : lien du récit entre le projet, SAIF et FME, demandé par la relecture
     (le contrat ne fait pas naître FME).'
+- id: A-nom-19
+  question: Q4
+  enonce: 'FME est un logiciel : un ensemble d''applications qui traitent des données spatiales, le produit phare de Safe
+    Software.'
+  usage: narration
+  sources:
+  - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/FME_Components.htm
+    titre: FME Components
+    editeur: Safe Software
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: FME is actually a number of different software applications that comprise a number of spatial data handling components.
+  - url: https://techcouver.com/2023/04/13/data-integration-safe-software-refreshes-brand-target-growth/
+    titre: 'Data integration: Safe Software refreshes brand'
+    editeur: Techcouver
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: The thoroughly refreshed brand highlights the BC firm’s flagship product, the Feature Manipulation Engine
+  contradictions: []
+  verifie: null
+  note_verification: 'Ajoutée le 2026-11-27 : Ilyas relève que la leçon ne dit pas si FME est un format, une norme, une méthode
+    ou un logiciel.'
+- id: A-nom-20
+  question: Q4
+  enonce: Safe Software présente FME comme une plateforme d'intégration de données.
+  usage: narration
+  sources:
+  - url: https://cdn.safe.com/resources/brochures/SafeSoftware-FactSheet.pdf
+    titre: Safe Software Fact Sheet
+    editeur: Safe Software
+    niveau: A
+    consulte: '2026-11-27'
+    extrait: Safe Software’s data integration platform, FME (Feature Manipulation Engine)
+  - url: https://techcouver.com/2023/04/13/data-integration-safe-software-refreshes-brand-target-growth/
+    titre: 'Data integration: Safe Software refreshes brand'
+    editeur: Techcouver
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: the “only data integration platform with true support for spatial data.”
+  contradictions: []
+  verifie: null
+  note_verification: Ajoutée le 2026-11-27, même demande.
+- id: A-sig-09
+  question: Q12
+  enonce: La plateforme FME comprend FME Form, pour construire les traitements, et FME Flow, pour les automatiser.
+  usage: expert
+  sources:
+  - url: https://www.geoconnexion.com/in-depth/beyond-geospatial-safe-softwares-journey-to-a-global-ai-driven-integration-platform
+    titre: Beyond geospatial
+    editeur: GeoConnexion
+    niveau: B
+    consulte: '2026-11-27'
+    extrait: Safe is a platform that includes FME Form for authoring workflows, and FME Flow for enterprise automation.
+  contradictions: []
+  verifie: null
+  note_verification: 'Ajoutée le 2026-11-27 ; source unique (propos de Safe Software rapportés par GeoConnexion) : à confirmer
+    par Ilyas.'
 lacunes:
 - question: Q1
   manque: 'Texte intégral d''ISO 19101-1 non lu (iso.org répond 403) ; la définition vient d''une citation du W3C. Définition
