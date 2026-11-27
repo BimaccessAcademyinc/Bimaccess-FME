@@ -1,0 +1,472 @@
+axe: conversion
+affirmations:
+  - id: A-conversion-01
+    question: Q1
+    enonce: "Safe Software décrit le FME Quick Translator comme conçu pour la traduction rapide : il permet des conversions rapides et faciles entre des centaines de formats."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/QuickTranslator/Welcome_FME_QuickTranslator.htm
+        titre: "Welcome to FME Quick Translator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Designed for quick translation, the FME Quick Translator makes it easy for you to perform fast, easy conversions between hundreds of formats."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-02
+    question: Q1
+    enonce: "Pour une traduction simple sans personnalisation, la documentation indique le FME Quick Translator ; pour ajouter des personnalisations ou des transformations détaillées, elle indique FME Workbench."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/QuickTranslator/FME_Workbench_or_Quick_Translator_.htm
+        titre: "FME Workbench or FME Quick Translator?"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "For simple translations that do not involve any customization, you can get quick results by using the FME Quick Translator."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/QuickTranslator/FME_Workbench_or_Quick_Translator_.htm
+        titre: "FME Workbench or FME Quick Translator?"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "If you want to add customizations or detailed transformations, including those that require multiple input and output formats, FME Workbench is the best tool."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-03
+    question: Q1
+    enonce: "Dans le Quick Translator, une traduction rapide se fait ainsi : on dépose un fichier dans la fenêtre, on choisit le format de destination, on indique un dossier et un nom de fichier, puis on clique sur OK."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/QuickTranslator/Quick_Translation.htm
+        titre: "Quick Translation"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Select a file, then drag and drop it directly in the FME window. The Set Translation Parameters dialog opens, already populated with the Reader information."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/QuickTranslator/Quick_Translation.htm
+        titre: "Quick Translation"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Select the destination format. Browse to a destination folder and enter a filename. Click OK."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-04
+    question: Q1
+    enonce: "La documentation de FME Form recommande vivement FME Workbench pour les traductions et présente le Quick Translator comme une alternative légère."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/QuickTranslator/Welcome_FME_QuickTranslator.htm
+        titre: "Welcome to FME Quick Translator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Although we highly recommend using FME Workbench for translations, the FME Quick Translator (a lightweight alternative) allows you to perform fast and easy data conversions."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-05
+    question: Q1
+    enonce: "Un guide de formation de 1Spatial présente, dans Workbench, une option « Generate Workspace » : une seule fenêtre où l'on définit le format et l'emplacement de la source et de la sortie, pour une traduction simple de format à format."
+    usage: expert
+    sources:
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/creating-a-translation
+        titre: "Creating a Translation | Form Basics | FME Form Beginner"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The Generate Workspace option provides the options for reading in and writing out your data, all in one handy dialog."
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/creating-a-translation
+        titre: "Creating a Translation | Form Basics | FME Form Beginner"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Workbench’s intuitive interface makes it easy to set up and run a simple format-to-format ('quick') translation."
+    contradictions: []
+    verifie: null
+    note_verification: "Source B unique (1Spatial, formateur partenaire) : l'indépendance vis-à-vis de Safe n'est pas établie."
+  - id: A-conversion-06
+    question: Q1
+    enonce: "Selon la documentation de Safe, un logiciel de traduction traditionnel avait des capacités limitées : la plupart des données passaient par un modèle de données limité, ce qui faisait perdre beaucoup de sens à la traduction. Safe appelle cela une « thin-pipe translation »."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+        titre: "What is FME?"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Traditionally the software used to translate data to a different format had limited capabilities."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+        titre: "What is FME?"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Most of the data would be forced through a limited data model causing much of the meaning to be lost in translation."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+        titre: "What is FME?"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "We call this a “thin-pipe translation”."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-07
+    question: Q2
+    enonce: "Safe écrit que les seules limites de FME sont celles inhérentes au format de destination et que, lorsque c'est possible, FME compense automatiquement pour obtenir une traduction fluide."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/Workbench/What_is_FME.htm
+        titre: "What is FME?"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The only limitations are those inherent in the destination format, and, where possible, FME will automatically compensate to create a seamless translation process."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-08
+    question: Q2
+    enonce: "Un shapefile stocke la géométrie et les attributs des entités ; aucune information topologique n'y est stockée."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/shapefile/shapefile.htm
+        titre: "Esri Shapefile Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Esri Shapefiles store both geometry and attributes for features. No topological information is stored."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-09
+    question: Q2
+    enonce: "Un shapefile est un ensemble de fichiers physiques de même nom de base et d'extensions différentes, qui doivent se trouver dans le même dossier ; un fichier .shp ne peut contenir qu'un seul type de géométrie."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/shapefile/shapefile.htm
+        titre: "Esri Shapefile Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A shapefile is a logical construct that consists of a series of physical files with different extensions."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/shapefile/shapefile.htm
+        titre: "Esri Shapefile Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A single .shp file can contain only one type of geometry."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-10
+    question: Q2
+    enonce: "Esri indique que les shapefiles ne peuvent pas stocker de valeurs nulles, qu'ils arrondissent les nombres (« round up numbers ») et qu'ils gèrent mal les chaînes Unicode."
+    usage: narration
+    sources:
+      - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+        titre: "Geoprocessing considerations for shapefile output"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "For example, shapefiles cannot store null values, they round up numbers, they have poor support for Unicode character strings"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-11
+    question: Q2
+    enonce: "Les noms de champs d'un shapefile ne peuvent pas dépasser 10 caractères, selon Esri."
+    usage: expert
+    sources:
+      - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+        titre: "Geoprocessing considerations for shapefile output"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Field names cannot be longer than 10 characters."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-12
+    question: Q2
+    enonce: "Si un fichier .prj est présent, FME l'utilise pour géoréférencer la géométrie d'un shapefile ; il contient l'information de projection."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/shapefile/shapefile.htm
+        titre: "Esri Shapefile Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Projection information for spatial referencing geometry to location."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/shapefile/shapefile.htm
+        titre: "Esri Shapefile Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "If present, will be used by FME to georeference geometry."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-13
+    question: Q2
+    enonce: "Pour GeoPackage, FME traite chaque table comme un type d'entité, chaque ligne comme une entité et chaque colonne comme un attribut."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/ogcgeopackage/ogcgeopackage.htm
+        titre: "OGC GeoPackage Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME treats each table as a feature type, each row as a feature, and each column as an attribute."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-14
+    question: Q2
+    enonce: "Dans un GeoPackage, les noms d'attributs ne peuvent pas contenir de caractères non ASCII, mais les valeurs d'attributs prennent en charge l'UTF-8 complet."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/ogcgeopackage/user-attributes.htm
+        titre: "OGC GeoPackage User Attributes"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "GeoPackage attributes cannot have names that contain non-ASCII characters; however, the attribute values support full UTF-8."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-15
+    question: Q2
+    enonce: "Le lecteur CSV de FME peut être réglé pour créer des géométries de points à partir de valeurs de coordonnées prises dans des colonnes précisées ; l'utilisateur désigne les attributs qui deviennent x, y et, facultativement, z."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/csv2/csv2.htm
+        titre: "CSV (Comma-Separated Value) Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "For convenience, the CSV reader can be set to create point geometries by taking coordinate values from specified columns."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/csv2/csv2.htm
+        titre: "CSV (Comma-Separated Value) Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "users can specify the attributes to make into x, y, and optionally z coordinates."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-16
+    question: Q2
+    enonce: "La fenêtre des paramètres du lecteur CSV tente de deviner les noms d'attributs ; si elle détecte certaines combinaisons (par exemple lat et long), elle règle aussi le système de coordonnées, ici sur LL-WGS84."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/csv2/csv2.htm
+        titre: "CSV (Comma-Separated Value) Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The reader parameters window will attempt to guess attribute names"
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/csv2/csv2.htm
+        titre: "CSV (Comma-Separated Value) Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "if certain combinations are detected (for example, lat and long), the Coordinate System parameter will also be set (in this case, to LL-WGS84)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-17
+    question: Q2
+    enonce: "Le transformer VertexCreator reçoit des entités de toute géométrie et crée un sommet unique à des coordonnées précisées ; sa page de référence documente la création d'une géométrie de point à partir de données non spatiales dont les coordonnées sont des attributs."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/vertexcreator.htm
+        titre: "VertexCreator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The VertexCreator receives features with any geometry and creates a single vertex at specified coordinates, performing one of these actions:"
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/vertexcreator.htm
+        titre: "VertexCreator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Creating point geometry from non-spatial data with coordinates as attributes"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-18
+    question: Q2
+    enonce: "Un fichier de dessin AutoCAD se compose de paramètres de dessin et de configuration, et d'une série d'entités (éléments graphiques) organisées en calques ; les entités complexes comme les polylignes et les insertions sont extraites par FME comme des entités uniques."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/acad/acad.htm
+        titre: "Autodesk AutoCAD DWG/DXF Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "AutoCAD drawing files consist of drawing settings and configuration, as well as a series of entities, or graphic elements, organized into layers."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/acad/acad.htm
+        titre: "Autodesk AutoCAD DWG/DXF Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Complex entities such as polylines and inserts are extracted as single FME features."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-19
+    question: Q2
+    enonce: "Quand le lecteur AutoCAD rencontre un type d'entité qu'il ne sait pas traiter, il fixe simplement le type d'entité de l'entité et la renvoie ; elle est consignée par le sous-système de corrélation de FME et le lecteur passe à la suivante."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/acad/acad.htm
+        titre: "Autodesk AutoCAD DWG/DXF Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "When the AutoCAD reader encounters an entity type it does not know how to process, it simply sets the entity type of the feature and returns it."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-20
+    question: Q2
+    enonce: "Un fichier de conception MicroStation (IGDS) se compose d'un en-tête suivi d'une série d'éléments ; chaque élément porte des informations d'affichage standard comme la couleur, le niveau, la classe et le style."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/igds/igds.htm
+        titre: "Bentley MicroStation Design Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Design files consist of a header, followed by a series of elements."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/igds/igds.htm
+        titre: "Bentley MicroStation Design Reader/Writer"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Each element contains standard display information, such as its color, level, class, and style"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-21
+    question: Q2
+    enonce: "Safe écrit que, pour convertir du CAD en SIG, un flux de travail FME comprend un lecteur qui extrait les données CAD, des transformers qui les traitent et un writer qui les envoie vers le format SIG choisi."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2020/04/convert-cad-gis-preserving-rich-data-structures/
+        titre: "How to convert CAD to GIS while preserving rich data structures"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Your FME workflow will involve three parts"
+      - url: https://fme.safe.com/blog/2020/04/convert-cad-gis-preserving-rich-data-structures/
+        titre: "How to convert CAD to GIS while preserving rich data structures"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "a Reader to extract your CAD data, transformers to process the data, and a Writer to send the data to your GIS format of choice"
+    contradictions: []
+    verifie: null
+    note_verification: "Billet de blog daté du 23 avril 2020."
+  - id: A-conversion-22
+    question: Q2
+    enonce: "Safe écrit que certaines géométries CAD, comme les splines, ne sont pas prises en charge en SIG, et qu'il faut indiquer à FME comment les traiter."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2020/04/convert-cad-gis-preserving-rich-data-structures/
+        titre: "How to convert CAD to GIS while preserving rich data structures"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Some CAD geometries, like splines, are unsupported in GIS, so FME will need your input on how you want it to deal with these."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-23
+    question: Q2
+    enonce: "Dans la conversion de CAD en SIG, Safe écrit que les cellules et blocs seront convertis en points SIG."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2020/04/convert-cad-gis-preserving-rich-data-structures/
+        titre: "How to convert CAD to GIS while preserving rich data structures"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "For example, cells/blocks will be converted to GIS points."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-24
+    question: Q2
+    enonce: "Selon Safe, la clé de cette traduction est de conserver les étiquettes, textes, blocs, cotes, styles et symboles du CAD en en faisant des attributs du jeu de données SIG de sortie."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2020/04/convert-cad-gis-preserving-rich-data-structures/
+        titre: "How to convert CAD to GIS while preserving rich data structures"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The key in this translation is to preserve the CAD labels, text, blocks, dimensions, styles, and symbols by making them attributes in the output GIS dataset."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-25
+    question: Q2
+    enonce: "Safe écrit que le CAD n'est généralement pas géoréférencé, ce qui oblige à définir ou reprojeter le système de coordonnées pendant la conversion."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2020/04/convert-cad-gis-preserving-rich-data-structures/
+        titre: "How to convert CAD to GIS while preserving rich data structures"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "CAD is usually not georeferenced, which means you need to set or reproject the coordinate system during this conversion."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-conversion-26
+    question: Q1
+    enonce: "Dans FME, un type d'entité (feature type) désigne un sous-ensemble d'enregistrements ; les termes courants équivalents sont couche, table, feuille, classe d'entités et classe d'objets."
+    usage: contexte
+    sources:
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/creating-a-translation
+        titre: "Creating a Translation | Form Basics | FME Form Beginner"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Feature type is the FME term that describes a subset of records."
+      - url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/creating-a-translation
+        titre: "Creating a Translation | Form Basics | FME Form Beginner"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Common alternatives for this term are layer, table, sheet, feature class, and object class."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q1
+    manque: "Nom et version propres de l'outil de traduction rapide : la documentation de FME Form l'appelle « FME Quick Translator » sans numéro de version propre, et aucune page lue ne dit s'il est encore livré avec la version actuelle (le guide de 1Spatial montre l'option Generate Workspace de Workbench). À vérifier à la main dans l'application."
+  - question: Q2
+    manque: "Exemple documenté de shapefile vers GeoPackage : les tutoriels de support.safe.com (GeoPackage, CSV vers shapefile, DGN vers shapefile, DWG vers DGN) ont refusé la lecture (HTTP 403) ; à vérifier à la main. Aucune page de docs.safe.com lue ne décrit ce passage précis."
+  - question: Q2
+    manque: "Ce qui se perd ou se garde de DWG ou DGN vers un format SIG : aucune matrice officielle trouvée ; seul le billet de blog de Safe (2020) en parle, et aucune source indépendante de Safe n'a été lue (à sourcer). Le guide de CAO et SIG de Safe (PDF de 2014) n'a pas été lu."
+  - question: Q2
+    manque: "Limite de 10 caractères des noms de champs d'un shapefile dans la documentation de FME Form actuelle : non retrouvée dans les pages lues ; seule la source d'Esri la porte (à sourcer côté Safe)."
+visuels:
+  - id: VIS-01
+    url: https://1spatial.gitbook.io/fme-form-beginner/form-basics/fme-form/creating-a-translation
+    editeur: 1Spatial
+    description: "Page de formation qui décrit, par du texte, la boîte de dialogue Generate Workspace de Workbench (format et jeu de données en entrée et en sortie) et la boîte Select Feature Types ; les images de la page n'ont pas été examinées."
+    utilite: "Référence pour redessiner une traduction simple de format à format."
+    usage: REFERENCE_ONLY
+  - id: VIS-02
+    url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Form/QuickTranslator/Quick_Translation.htm
+    editeur: Safe Software
+    description: "Page de documentation qui décrit en quatre étapes la traduction rapide : dépôt du fichier, format de destination, dossier et nom, OK ; la boîte Set Translation Parameters y est nommée."
+    utilite: "Séquence à redessiner pour montrer une conversion sans transformer."
+    usage: REDRAW
