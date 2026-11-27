@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>S02 · partition</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&amp;family=Barlow+Condensed:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#7A4A22}a:hover{color:#4F2E12}
+[data-reperes="non"] [data-repere] { display: none }
+[data-repere] { position: absolute; left: 0; bottom: 100%; margin-bottom: 2px; z-index: 50; white-space: nowrap;
+  font: 600 15px/1.1 'Barlow Condensed', sans-serif; letter-spacing: 0.04em; color: #FFFFFF; background: #8A1C7C;
+  padding: 2px 5px; font-style: normal; text-transform: none; text-align: left; pointer-events: auto }
+[data-g="trait"] > [data-repere], [data-g="pointe"] > [data-repere] { background: #5B2A86 }
+[data-g="evidence"] > [data-repere] { background: #2F6DA8; left: auto; right: 0 }
+[data-g="arrivee"] > [data-repere] { background: #6B6B6B }
+[data-decoupe="cercle"] > img { clip-path: circle(50%) }
+</style>
+</helmet>
+<div data-partition data-scene="S02" style="width: 1920px; min-height: 1052px; box-sizing: border-box; padding: 64px 104px; background: #FBFCF8; font-family: 'Source Serif 4', serif; color: #23281F">
+  <h1 style="margin: 0 0 8px; font-size: 48px; font-weight: 600">S02 · partition</h1>
+  <p style="margin: 0 0 28px; font-size: 26px; font-style: italic; color: #545B4C">Une ligne par étape : numéro, état, locution dite mot pour mot. Sur la planche, chaque repère « 3.2 trace 0,25 » renvoie à l'étape 3, deuxième geste.</p>
+  <div style="display: flex; flex-direction: column">
+    <div data-etape="1" style="display: grid; grid-template-columns: 90px 170px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-bottom: 1px solid #7D8576; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px">1</span>
+      <span data-champ="etat" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 0.08em">S02-1</span>
+      <span data-champ="locution" style="font-size: 30px">début</span>
+    </div>
+    <div data-etape="2" style="display: grid; grid-template-columns: 90px 170px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-bottom: 1px solid #7D8576; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px">2</span>
+      <span data-champ="etat" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 0.08em">S02-2</span>
+      <span data-champ="locution" style="font-size: 30px">Le gouvernement lance</span>
+    </div>
+    <div data-etape="3" style="display: grid; grid-template-columns: 90px 170px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-bottom: 1px solid #7D8576; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px">3</span>
+      <span data-champ="etat" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 0.08em">S02-3</span>
+      <span data-champ="locution" style="font-size: 30px">De ce contrat naît</span>
+    </div>
+    <div data-etape="4" style="display: grid; grid-template-columns: 90px 170px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-bottom: 1px solid #7D8576; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px">4</span>
+      <span data-champ="etat" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 0.08em">S02-4</span>
+      <span data-champ="locution" style="font-size: 30px">Le gouvernement a son format</span>
+    </div>
+    <div data-etape="5" style="display: grid; grid-template-columns: 90px 170px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-bottom: 1px solid #7D8576; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px">5</span>
+      <span data-champ="etat" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 0.08em">S02-5</span>
+      <span data-champ="locution" style="font-size: 30px">Pour échanger avec lui</span>
+    </div>
+    <div data-etape="6" style="display: grid; grid-template-columns: 90px 170px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-bottom: 1px solid #7D8576; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px">6</span>
+      <span data-champ="etat" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 0.08em">S02-6</span>
+      <span data-champ="locution" style="font-size: 30px">Murray et Lutz commencent par ce travail</span>
+    </div>
+    <div data-etape="7" style="display: grid; grid-template-columns: 90px 170px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-bottom: 1px solid #7D8576; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px">7</span>
+      <span data-champ="etat" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 0.08em">S02-7</span>
+      <span data-champ="locution" style="font-size: 30px">une technologie de traduction pour SAIF</span>
+    </div>
+    <div data-etape="8" style="display: grid; grid-template-columns: 90px 170px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-bottom: 1px solid #7D8576; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px">8</span>
+      <span data-champ="etat" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 0.08em">S02-8</span>
+      <span data-champ="locution" style="font-size: 30px">Trois ans après la fondation</span>
+    </div>
+    <div data-etape="9" style="display: grid; grid-template-columns: 90px 170px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-bottom: 1px solid #7D8576; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px">9</span>
+      <span data-champ="etat" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 0.08em">S02-9</span>
+      <span data-champ="locution" style="font-size: 30px">la première version de son logiciel</span>
+    </div>
+    <div data-etape="10" style="display: grid; grid-template-columns: 90px 170px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-bottom: 1px solid #7D8576; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px">10</span>
+      <span data-champ="etat" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 0.08em">S02-10</span>
+      <span data-champ="locution" style="font-size: 30px">à l'origine Feature Manipulation Engine</span>
+    </div>
+    <div data-etape="11" style="display: grid; grid-template-columns: 90px 170px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-bottom: 1px solid #7D8576; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px">11</span>
+      <span data-champ="etat" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 0.08em">S02-11</span>
+      <span data-champ="locution" style="font-size: 30px">FME fait passer</span>
+    </div>
+    <div data-etape="12" style="display: grid; grid-template-columns: 90px 170px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-bottom: 1px solid #7D8576; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 30px">12</span>
+      <span data-champ="etat" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 26px; letter-spacing: 0.08em">S02-FIN</span>
+      <span data-champ="locution" style="font-size: 30px">Son siège est à Surrey</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1920,"height":1052}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { reperes: this.props.reperes === false ? 'non' : 'oui' };
+  }
+}
+</script>
+</body>
+</html>

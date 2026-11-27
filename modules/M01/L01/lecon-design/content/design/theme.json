@@ -1,0 +1,35 @@
+{
+  "signature": "carte",
+  "colors": {
+    "fond": "#F1F3EC",
+    "papier": "#FBFCF8",
+    "encre": "#23281F",
+    "encre2": "#545B4C",
+    "carroyage": "#7D8576",
+    "relief": "#B08A62",
+    "reliefMaitresse": "#8E6640",
+    "chaussee": "#FFFFFF",
+    "ecriture": "#C4472B",
+    "lecture": "#2F6DA8",
+    "lectureFond": "#E3ECF4",
+    "eauFond": "#BFD5E6",
+    "vegetation": "#6E8B4E",
+    "vegetationFond": "#D3DFC3",
+    "imageClair": "#9DAF8A",
+    "imageFonce": "#5F7550",
+    "terme": "#1E6E3C",
+    "manque": "#C99700",
+    "manqueFond": "#FBF1C8",
+    "lien": "#7A4A22",
+    "lienSurvol": "#4F2E12",
+    "survol": "#E5E9DD",
+    "verrouTrait": "#A3AA9B"
+  },
+  "fonts": {
+    "serif": "'Source Serif 4', Georgia, serif",
+    "capitales": "'Barlow Condensed', 'Arial Narrow', sans-serif"
+  },
+  "radius": 0,
+  "grid": 0,
+  "typingCps": 35
+}
