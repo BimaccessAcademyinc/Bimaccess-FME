@@ -1,0 +1,4 @@
+# Brief 306-qa-sens-S06 (rôle qa)
+
+Projet /home/user/Bimaccess-FME/modules/M01/L01/lecon, leçon FME001-M01-L01, signature carte, programme FME001.
+Contrôle du sens de la scène S06 (scène codée sur mesure, src/lesson/scenes/s06.tsx, écrivain : code) : planche par phrase planche-S06.png et captures qa/sens/S06/ ; pour chaque capture la phrase dite et ce que le public voit sans la voix ; image finale contre S06-FIN de spec.md ; composition (R1 à R8, face x 104 à 1424, y 180 à 860, marge x 1448 à 1830, rien dans la zone d'action x 1454, y 834, 360 x 140) ; symboles à l'agrandissement. Défauts attribués à code, donnees, graphiste, scenariste ou ilyas, avec preuve (capture et instant). Rien n'est modifié hors de .studio/qa/ (plus brief et rapport). Aucun appel payant, aucune opération git, un seul Chromium. Rapport : .studio/qa/sens/lecture-S06.md, recopié dans .studio/reports/306-qa-sens-S06.md.
