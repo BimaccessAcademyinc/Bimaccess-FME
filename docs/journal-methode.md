@@ -107,3 +107,7 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 
 - Résultat (détail : `docs/essais-qualite.md`) : données d'une scène en environ 7 min et 1,2 $ (modèle intermédiaire) contre 13,5 min et 5 $ de code sur mesure ; deux scènes en 8 min en parallèle ; gabarits Frise et FicheRubriques écrits une fois en 15 min ; feuille remplie corrigée (défaut relevé par Ilyas sur l'essai 1) ; qualité des images et des gestes inchangée.
 - Décision d'Ilyas : les cinq changements approuvés, portés dans `harnais/skills/scenes-gabarits/SKILL.md`, `CLAUDE.md` et le schéma de la chaîne. Goulot suivant : le graphiste (environ 15 min par scène), prochain essai : composition posée dans le canevas de design et écrite directement en données de gabarit.
+
+## 2026-11-27 · Pas de porte sur la composition
+
+L'essai 3 avait ajouté une porte d'Ilyas : valider ou corriger chaque planche sur le canevas avant l'export. Elle n'existait pas dans la chaîne, arrêtait la session en attendant sa réponse et allait contre la règle du cours (ne pas s'arrêter pour attendre une validation). Décision d'Ilyas : la porte est retirée, la composition est l'affaire du graphiste, qui contrôle sa planche (contrôles du gabarit et de l'export) ; Ilyas juge sur le lecteur et peut corriger sur le canevas. L'essai 3 se termine tel qu'il a été lancé. Schéma de la chaîne, `CLAUDE.md` et skill `scenes-gabarits` mis à jour.

@@ -22,4 +22,5 @@ Mesures (essai 2, `docs/essais-qualite.md`) : environ 7 min et 1,2 $ de tokens p
 1. Le graphiste compose (skill graphisme) et donne positions, illustrations, textes par indice d'Écran, locutions, gestes et mises en évidence (spécification, ou directement les données quand le gabarit existe).
 2. Un agent, sur le modèle intermédiaire, écrit `Sxx.json` et la scène d'une instruction ; `npm run check:scenes` sous verrou (une donnée fausse arrête la construction avec une `GabaritError` qui dit le fichier, le champ et quoi faire).
 3. Planche par phrase de la scène, comparée à la spécification ; corrections dans les données seulement.
-4. Après toutes les scènes : `npm run build`, `test:play`, contrôle de l'agent principal, push, contrôle final d'Ilyas.
+4. Aucune porte d'Ilyas sur la composition (décision du 2026-11-27) : le graphiste contrôle sa planche et la chaîne continue ; Ilyas juge sur le lecteur et peut corriger sur le canevas.
+5. Après toutes les scènes : `npm run build`, `test:play`, contrôle de l'agent principal, push, contrôle final d'Ilyas.

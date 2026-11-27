@@ -35,21 +35,21 @@ N = {
  "porte2": (X[3], Y1, BW, BH, "4", "ILYAS", "Porte du ton", "", "", ["récit, partir du problème,", "dire ce qu'est l'objet"], "storyboard retenu", "porte"),
  "theme": (X[4], Y1, BW, BH, "5", "DIRECTION ARTISTIQUE", "Thème et charte", "Fable·high (Opus au pilote)", "skill themes-planches", ["canevas de design", "seulement sans thème"], "CHARTE-FME001.md", ""),
  "voix": (X[0], YA, BW, BH, "6", "VOIX", "Voix provisoire muette", "Haiku · low · aucun coût", "skill voix (Studio)", ["minutage estimé, sous-titres", "écriture pour l'oreille contrôlée"], "voice.config, dictionnaire", ""),
- "compo": (X[0], YB, BW, BH, "8", "GRAPHISTE", "Planche sur le canevas", "Opus · high", "skill graphisme (Studio)", ["canevas de design (essai 3)", "zones de la charte verrouillées"], "planche de la scène", ""),
- "illus": (X[1], YB, BW, BH, "9", "GRAPHISTE (OUTIL)", "Illustrations", "Gemini 3.1 Flash Image 1K", "skill planche-image", ["devis annoncé à Ilyas, puis", "--approuve $ · vtracer"], "assets/*.svg", "paye"),
- "porte3": (X[2], YB, BW, BH, "10", "ILYAS", "Porte de composition", "", "", ["valide ou corrige", "à la main sur le canevas"], "planche validée", "porte"),
- "export": (X[3], YB, BW, BH, "11", "SCRIPT", "Export en données", "aucun modèle", "skill scenes-gabarits", ["planche_vers_donnees", "refuse une planche incomplète"], "scenes/Sxx.json", ""),
- "gabarits": (X[0], YC, 500, BH, "12", "UNE FOIS PAR FORME", "Gabarits Remotion", "Opus · high (meilleur modèle)", "skills scenes (Studio), remotion-markup (4.0.533)", ["Frise, FicheRubriques ; puis Légende, Chaîne,", "Étoile, Territoire · src/engine/gabarits/"], "réutilisés par tout le programme", ""),
- "scenes": (X[4], YA, BW, YC + BH - YA, "13", "UN AGENT PAR SCÈNE", "Scènes par gabarits", "Sonnet (intermédiaire)", "skill scenes-gabarits", ["données seulement", "feuille remplie vérifiée"], "S01 à S07 en parallèle", ""),
- "lecteur": (X[0], Y3, BW, BH, "14", "MOTEUR", "Lecteur de la leçon", "aucun modèle", "", ["Remotion 4.0.533 : Player,", "paths, shapes… · React · Vite"], "dist/index.html", ""),
- "tests": (X[1], Y3, BW, BH, "15", "CONTRÔLES AUTOMATIQUES", "Tests", "aucun modèle", "", ["npm run check, build", "check-literals · test:play"], "« tout est conforme »", ""),
- "controle": (X[2], Y3, BW, BH, "16", "AGENT PRINCIPAL", "Contrôle de l'agent", "Opus · agent qa Sonnet·medium", "skills qa, planche-par-phrase", ["symboles, règles", "essais-qualite.md"], "verdict et corrections", ""),
- "railway": (X[3], Y3, BW, BH, "17", "RAILWAY", "Lecteur de relecture", "aucun modèle", "", ["fme-reader-review", "à part de CER001"], "…/FME001-M01-L01-*", ""),
- "final": (X[4], Y3, BW, BH, "18", "ILYAS", "Contrôle final", "", "", ["porte du sens", "sur le lecteur"], "ce qui est retenu", "porte"),
- "voixfin": (X[4], Y4, BW, BH, "19", "VOIX", "Voix finale", "Haiku·low + eleven_v4", "skill voice-production (V4)", ["devis annoncé à Ilyas, puis", "--approuve caractères"], "mp3 + alignement", "paye"),
- "ecoute": (X[3], Y4, BW, BH, "20", "ILYAS", "Écoute", "", "", ["prononciation, rythme", "respirations entre les idées"], "voix retenue", "porte"),
- "recalage": (X[2], Y4, BW, BH, "21", "CODE · QA", "Recalage sur la vraie voix", "Sonnet · agent qa Sonnet·medium", "skills scenes-gabarits, qa", ["locutions recalées par sync", "test:play une seule fois"], "leçon prête", ""),
- "report": (X[1], Y4, BW, BH, "22", "AGENT PRINCIPAL", "Report dans le harnais", "Opus (session)", "export_studio.py (cours)", ["dépôt du cours, plugin Studio", "→ bimaccess-studio"], "harnais mis à jour", ""),
+ "compo": (X[0], YB, BW, BH, "7", "GRAPHISTE", "Planche sur le canevas", "Opus · high", "skill graphisme (Studio)", ["canevas de design (essai 3)", "zones de la charte verrouillées"], "planche de la scène", ""),
+ "illus": (X[1], YB, BW, BH, "8", "GRAPHISTE (OUTIL)", "Illustrations", "Gemini 3.1 Flash Image 1K", "skill planche-image", ["devis annoncé à Ilyas, puis", "--approuve $ · vtracer"], "assets/*.svg", "paye"),
+ "verif": (X[2], YB, BW, BH, "9", "GRAPHISTE", "Contrôle de la planche", "aucune porte d'Ilyas", "skills graphisme, scenes-gabarits", ["feuille remplie, rien sur un trait,", "hors face et chevauchement refusés"], "planche prête", ""),
+ "export": (X[3], YB, BW, BH, "10", "SCRIPT", "Export en données", "aucun modèle", "skill scenes-gabarits", ["planche_vers_donnees,", "aucune position recopiée"], "scenes/Sxx.json", ""),
+ "gabarits": (X[0], YC, 500, BH, "11", "UNE FOIS PAR FORME", "Gabarits Remotion", "Opus · high (meilleur modèle)", "skills scenes (Studio), remotion-markup (4.0.533)", ["Frise, FicheRubriques ; puis Légende, Chaîne,", "Étoile, Territoire · src/engine/gabarits/"], "réutilisés par tout le programme", ""),
+ "scenes": (X[4], YA, BW, YC + BH - YA, "12", "UN AGENT PAR SCÈNE", "Scènes par gabarits", "Sonnet (intermédiaire)", "skill scenes-gabarits", ["données seulement", "feuille remplie vérifiée"], "S01 à S07 en parallèle", ""),
+ "lecteur": (X[0], Y3, BW, BH, "13", "MOTEUR", "Lecteur de la leçon", "aucun modèle", "", ["Remotion 4.0.533 : Player,", "paths, shapes… · React · Vite"], "dist/index.html", ""),
+ "tests": (X[1], Y3, BW, BH, "14", "CONTRÔLES AUTOMATIQUES", "Tests", "aucun modèle", "", ["npm run check, build", "check-literals · test:play"], "« tout est conforme »", ""),
+ "controle": (X[2], Y3, BW, BH, "15", "AGENT PRINCIPAL", "Contrôle de l'agent", "Opus · agent qa Sonnet·medium", "skills qa, planche-par-phrase", ["symboles, règles", "essais-qualite.md"], "verdict et corrections", ""),
+ "railway": (X[3], Y3, BW, BH, "16", "RAILWAY", "Lecteur de relecture", "aucun modèle", "", ["fme-reader-review", "à part de CER001"], "…/FME001-M01-L01-*", ""),
+ "final": (X[4], Y3, BW, BH, "17", "ILYAS", "Contrôle final", "", "", ["porte du sens sur le lecteur ;", "corrige sur le canevas s'il veut"], "ce qui est retenu", "porte"),
+ "voixfin": (X[4], Y4, BW, BH, "18", "VOIX", "Voix finale", "Haiku·low + eleven_v4", "skill voice-production (V4)", ["devis annoncé à Ilyas, puis", "--approuve caractères"], "mp3 + alignement", "paye"),
+ "ecoute": (X[3], Y4, BW, BH, "19", "ILYAS", "Écoute", "", "", ["prononciation, rythme", "respirations entre les idées"], "voix retenue", "porte"),
+ "recalage": (X[2], Y4, BW, BH, "20", "CODE · QA", "Recalage sur la vraie voix", "Sonnet · agent qa Sonnet·medium", "skills scenes-gabarits, qa", ["locutions recalées par sync", "test:play une seule fois"], "leçon prête", ""),
+ "report": (X[1], Y4, BW, BH, "21", "AGENT PRINCIPAL", "Report dans le harnais", "Opus (session)", "export_studio.py (cours)", ["dépôt du cours, plugin Studio", "→ bimaccess-studio"], "harnais mis à jour", ""),
  "suivante": (X[0], Y4, BW, BH, "", "CYCLE", "Leçon suivante", "", "", ["L02 à L05 : même chaîne,", "harnais à jour, sans étape de thème"], "", "cycle"),
 }
 
@@ -72,7 +72,7 @@ L = [
  ([(X[1]+BW, YB+70), (X[2], YB+70)], "flux", None, None),
  ([(X[2]+BW, YB+70), (X[3], YB+70)], "flux", None, None),
  ([(X[3]+BW, YB+70), (X[4], YB+70)], "flux", None, None),
- ([(X[2]+30, YB+BH), (X[2]+30, YB+BH+10), (X[0]+BW/2, YB+BH+10), (X[0]+BW/2, YB+BH)], "retour", "corrections de la planche", (X[0]+BW/2+12, YB+BH+30)),
+ ([(X[2]+30, YB+BH), (X[2]+30, YB+BH+10), (X[0]+BW/2, YB+BH+10), (X[0]+BW/2, YB+BH)], "retour", "le graphiste reprend sa planche", (X[0]+BW/2+12, YB+BH+30)),
  # piste gabarits
  ([(X[0]+500, YC+70), (X[4], YC+70)], "flux", "une fois écrits, servent à chaque scène", (X[0]+520, YC+63)),
  # contrôle sur la voix muette
@@ -111,7 +111,7 @@ def boite(x, y, w, h, n, role, main, modele, skill, outils, fichier, genre):
     elif genre == "cycle":
         fill, stroke, sw = FOND, TERME, 1.6
     s = []
-    if n == "9":  # illustrations commandées en parallèle : feuilles empilées
+    if main == "Illustrations":  # illustrations commandées en parallèle : feuilles empilées
         for d in (8, 4):
             s.append(f'<rect x="{x+d}" y="{y-d}" width="{w}" height="{h}" fill="{PAPIER}" stroke="{stroke}" stroke-width="1"/>')
     s += [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>',
@@ -128,7 +128,7 @@ def boite(x, y, w, h, n, role, main, modele, skill, outils, fichier, genre):
         ligne += 14
     for i, o in enumerate(outils):
         s.append(f'<text x="{x+10}" y="{ligne+i*13}" class="outil" fill="{ENCRE2}">{esc(o)}</text>')
-    if n == "13":  # scènes en parallèle
+    if main == "Scènes par gabarits":  # scènes en parallèle
         for i in range(7):
             yy = y + 140 + i * 34
             s.append(f'<rect x="{x+14}" y="{yy}" width="{w-28}" height="26" fill="{FOND}" stroke="{ENCRE2}" stroke-width="1"/>')

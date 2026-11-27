@@ -81,7 +81,7 @@
 <text x="54" y="453" class="fichier" fill="#1E6E3C">voice.config, dictionnaire</text>
 <rect x="44" y="492" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="44" y1="516" x2="274" y2="516" stroke="#23281F" stroke-width="0.8"/>
-<text x="54" y="508" class="num" fill="#23281F">8</text>
+<text x="54" y="508" class="num" fill="#23281F">7</text>
 <text x="74" y="508" class="role" fill="#545B4C">GRAPHISTE</text>
 <text x="54" y="536" class="main" fill="#23281F">Planche sur le canevas</text>
 <text x="54" y="554" class="modele" fill="#2F6DA8">Opus · high</text>
@@ -94,7 +94,7 @@
 <rect x="318" y="488" width="230" height="140" fill="#FBFCF8" stroke="#C99700" stroke-width="1"/>
 <rect x="314" y="492" width="230" height="140" fill="#FBFCF8" stroke="#C99700" stroke-width="2.2"/>
 <line x1="314" y1="516" x2="544" y2="516" stroke="#C99700" stroke-width="0.8"/>
-<text x="324" y="508" class="num" fill="#23281F">9</text>
+<text x="324" y="508" class="num" fill="#23281F">8</text>
 <text x="344" y="508" class="role" fill="#545B4C">GRAPHISTE (OUTIL)</text>
 <text x="324" y="536" class="main" fill="#23281F">Illustrations</text>
 <text x="324" y="554" class="modele" fill="#2F6DA8">Gemini 3.1 Flash Image 1K</text>
@@ -105,29 +105,31 @@
 <text x="324" y="623" class="fichier" fill="#1E6E3C">assets/*.svg</text>
 <rect x="486" y="497" width="50" height="15" fill="#FBF1C8" stroke="#C99700" stroke-width="1"/>
 <text x="511" y="508" class="role" fill="#23281F" text-anchor="middle">PAYANT</text>
-<rect x="584" y="492" width="230" height="140" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
-<line x1="584" y1="516" x2="814" y2="516" stroke="#2F6DA8" stroke-width="0.8"/>
-<text x="594" y="508" class="num" fill="#23281F">10</text>
-<text x="614" y="508" class="role" fill="#2F6DA8">ILYAS</text>
-<text x="594" y="536" class="main" fill="#23281F">Porte de composition</text>
-<text x="594" y="554" class="outil" fill="#545B4C">valide ou corrige</text>
-<text x="594" y="567" class="outil" fill="#545B4C">à la main sur le canevas</text>
+<rect x="584" y="492" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
+<line x1="584" y1="516" x2="814" y2="516" stroke="#23281F" stroke-width="0.8"/>
+<text x="594" y="508" class="num" fill="#23281F">9</text>
+<text x="614" y="508" class="role" fill="#545B4C">GRAPHISTE</text>
+<text x="594" y="536" class="main" fill="#23281F">Contrôle de la planche</text>
+<text x="594" y="554" class="modele" fill="#2F6DA8">aucune porte d&#x27;Ilyas</text>
+<text x="594" y="568" class="skill" fill="#1E6E3C">skills graphisme, scenes-gabarits</text>
+<text x="594" y="582" class="outil" fill="#545B4C">feuille remplie, rien sur un trait,</text>
+<text x="594" y="595" class="outil" fill="#545B4C">hors face et chevauchement refusés</text>
 <line x1="594" y1="608" x2="804" y2="608" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="594" y="623" class="fichier" fill="#1E6E3C">planche validée</text>
+<text x="594" y="623" class="fichier" fill="#1E6E3C">planche prête</text>
 <rect x="854" y="492" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="854" y1="516" x2="1084" y2="516" stroke="#23281F" stroke-width="0.8"/>
-<text x="864" y="508" class="num" fill="#23281F">11</text>
+<text x="864" y="508" class="num" fill="#23281F">10</text>
 <text x="884" y="508" class="role" fill="#545B4C">SCRIPT</text>
 <text x="864" y="536" class="main" fill="#23281F">Export en données</text>
 <text x="864" y="554" class="modele" fill="#2F6DA8">aucun modèle</text>
 <text x="864" y="568" class="skill" fill="#1E6E3C">skill scenes-gabarits</text>
-<text x="864" y="582" class="outil" fill="#545B4C">planche_vers_donnees</text>
-<text x="864" y="595" class="outil" fill="#545B4C">refuse une planche incomplète</text>
+<text x="864" y="582" class="outil" fill="#545B4C">planche_vers_donnees,</text>
+<text x="864" y="595" class="outil" fill="#545B4C">aucune position recopiée</text>
 <line x1="864" y1="608" x2="1074" y2="608" stroke="#A3AA9B" stroke-width="0.7"/>
 <text x="864" y="623" class="fichier" fill="#1E6E3C">scenes/Sxx.json</text>
 <rect x="44" y="678" width="500" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="44" y1="702" x2="544" y2="702" stroke="#23281F" stroke-width="0.8"/>
-<text x="54" y="694" class="num" fill="#23281F">12</text>
+<text x="54" y="694" class="num" fill="#23281F">11</text>
 <text x="74" y="694" class="role" fill="#545B4C">UNE FOIS PAR FORME</text>
 <text x="54" y="722" class="main" fill="#23281F">Gabarits Remotion</text>
 <text x="54" y="740" class="modele" fill="#2F6DA8">Opus · high (meilleur modèle)</text>
@@ -138,7 +140,7 @@
 <text x="54" y="809" class="fichier" fill="#1E6E3C">réutilisés par tout le programme</text>
 <rect x="1124" y="322" width="230" height="496" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="1124" y1="346" x2="1354" y2="346" stroke="#23281F" stroke-width="0.8"/>
-<text x="1134" y="338" class="num" fill="#23281F">13</text>
+<text x="1134" y="338" class="num" fill="#23281F">12</text>
 <text x="1154" y="338" class="role" fill="#545B4C">UN AGENT PAR SCÈNE</text>
 <text x="1134" y="366" class="main" fill="#23281F">Scènes par gabarits</text>
 <text x="1134" y="384" class="modele" fill="#2F6DA8">Sonnet (intermédiaire)</text>
@@ -170,7 +172,7 @@
 <text x="1134" y="809" class="fichier" fill="#1E6E3C">S01 à S07 en parallèle</text>
 <rect x="44" y="878" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="44" y1="902" x2="274" y2="902" stroke="#23281F" stroke-width="0.8"/>
-<text x="54" y="894" class="num" fill="#23281F">14</text>
+<text x="54" y="894" class="num" fill="#23281F">13</text>
 <text x="74" y="894" class="role" fill="#545B4C">MOTEUR</text>
 <text x="54" y="922" class="main" fill="#23281F">Lecteur de la leçon</text>
 <text x="54" y="940" class="modele" fill="#2F6DA8">aucun modèle</text>
@@ -180,7 +182,7 @@
 <text x="54" y="1009" class="fichier" fill="#1E6E3C">dist/index.html</text>
 <rect x="314" y="878" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="314" y1="902" x2="544" y2="902" stroke="#23281F" stroke-width="0.8"/>
-<text x="324" y="894" class="num" fill="#23281F">15</text>
+<text x="324" y="894" class="num" fill="#23281F">14</text>
 <text x="344" y="894" class="role" fill="#545B4C">CONTRÔLES AUTOMATIQUES</text>
 <text x="324" y="922" class="main" fill="#23281F">Tests</text>
 <text x="324" y="940" class="modele" fill="#2F6DA8">aucun modèle</text>
@@ -190,7 +192,7 @@
 <text x="324" y="1009" class="fichier" fill="#1E6E3C">« tout est conforme »</text>
 <rect x="584" y="878" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="584" y1="902" x2="814" y2="902" stroke="#23281F" stroke-width="0.8"/>
-<text x="594" y="894" class="num" fill="#23281F">16</text>
+<text x="594" y="894" class="num" fill="#23281F">15</text>
 <text x="614" y="894" class="role" fill="#545B4C">AGENT PRINCIPAL</text>
 <text x="594" y="922" class="main" fill="#23281F">Contrôle de l&#x27;agent</text>
 <text x="594" y="940" class="modele" fill="#2F6DA8">Opus · agent qa Sonnet·medium</text>
@@ -201,7 +203,7 @@
 <text x="594" y="1009" class="fichier" fill="#1E6E3C">verdict et corrections</text>
 <rect x="854" y="878" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="854" y1="902" x2="1084" y2="902" stroke="#23281F" stroke-width="0.8"/>
-<text x="864" y="894" class="num" fill="#23281F">17</text>
+<text x="864" y="894" class="num" fill="#23281F">16</text>
 <text x="884" y="894" class="role" fill="#545B4C">RAILWAY</text>
 <text x="864" y="922" class="main" fill="#23281F">Lecteur de relecture</text>
 <text x="864" y="940" class="modele" fill="#2F6DA8">aucun modèle</text>
@@ -211,16 +213,16 @@
 <text x="864" y="1009" class="fichier" fill="#1E6E3C">…/FME001-M01-L01-*</text>
 <rect x="1124" y="878" width="230" height="140" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
 <line x1="1124" y1="902" x2="1354" y2="902" stroke="#2F6DA8" stroke-width="0.8"/>
-<text x="1134" y="894" class="num" fill="#23281F">18</text>
+<text x="1134" y="894" class="num" fill="#23281F">17</text>
 <text x="1154" y="894" class="role" fill="#2F6DA8">ILYAS</text>
 <text x="1134" y="922" class="main" fill="#23281F">Contrôle final</text>
-<text x="1134" y="940" class="outil" fill="#545B4C">porte du sens</text>
-<text x="1134" y="953" class="outil" fill="#545B4C">sur le lecteur</text>
+<text x="1134" y="940" class="outil" fill="#545B4C">porte du sens sur le lecteur ;</text>
+<text x="1134" y="953" class="outil" fill="#545B4C">corrige sur le canevas s&#x27;il veut</text>
 <line x1="1134" y1="994" x2="1344" y2="994" stroke="#A3AA9B" stroke-width="0.7"/>
 <text x="1134" y="1009" class="fichier" fill="#1E6E3C">ce qui est retenu</text>
 <rect x="1124" y="1062" width="230" height="140" fill="#FBFCF8" stroke="#C99700" stroke-width="2.2"/>
 <line x1="1124" y1="1086" x2="1354" y2="1086" stroke="#C99700" stroke-width="0.8"/>
-<text x="1134" y="1078" class="num" fill="#23281F">19</text>
+<text x="1134" y="1078" class="num" fill="#23281F">18</text>
 <text x="1154" y="1078" class="role" fill="#545B4C">VOIX</text>
 <text x="1134" y="1106" class="main" fill="#23281F">Voix finale</text>
 <text x="1134" y="1124" class="modele" fill="#2F6DA8">Haiku·low + eleven_v4</text>
@@ -233,7 +235,7 @@
 <text x="1321" y="1078" class="role" fill="#23281F" text-anchor="middle">PAYANT</text>
 <rect x="854" y="1062" width="230" height="140" fill="#E3ECF4" stroke="#2F6DA8" stroke-width="1.8"/>
 <line x1="854" y1="1086" x2="1084" y2="1086" stroke="#2F6DA8" stroke-width="0.8"/>
-<text x="864" y="1078" class="num" fill="#23281F">20</text>
+<text x="864" y="1078" class="num" fill="#23281F">19</text>
 <text x="884" y="1078" class="role" fill="#2F6DA8">ILYAS</text>
 <text x="864" y="1106" class="main" fill="#23281F">Écoute</text>
 <text x="864" y="1124" class="outil" fill="#545B4C">prononciation, rythme</text>
@@ -242,7 +244,7 @@
 <text x="864" y="1193" class="fichier" fill="#1E6E3C">voix retenue</text>
 <rect x="584" y="1062" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="584" y1="1086" x2="814" y2="1086" stroke="#23281F" stroke-width="0.8"/>
-<text x="594" y="1078" class="num" fill="#23281F">21</text>
+<text x="594" y="1078" class="num" fill="#23281F">20</text>
 <text x="614" y="1078" class="role" fill="#545B4C">CODE · QA</text>
 <text x="594" y="1106" class="main" fill="#23281F">Recalage sur la vraie voix</text>
 <text x="594" y="1124" class="modele" fill="#2F6DA8">Sonnet · agent qa Sonnet·medium</text>
@@ -253,7 +255,7 @@
 <text x="594" y="1193" class="fichier" fill="#1E6E3C">leçon prête</text>
 <rect x="314" y="1062" width="230" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="314" y1="1086" x2="544" y2="1086" stroke="#23281F" stroke-width="0.8"/>
-<text x="324" y="1078" class="num" fill="#23281F">22</text>
+<text x="324" y="1078" class="num" fill="#23281F">21</text>
 <text x="344" y="1078" class="role" fill="#545B4C">AGENT PRINCIPAL</text>
 <text x="324" y="1106" class="main" fill="#23281F">Report dans le harnais</text>
 <text x="324" y="1124" class="modele" fill="#2F6DA8">Opus (session)</text>
@@ -289,7 +291,7 @@
 <path d="M814 562 L854 562" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
 <path d="M1084 562 L1124 562" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
 <path d="M614 632 L614 642 L159.0 642 L159.0 632" fill="none" stroke="#C4472B" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#pointe-retour)"/>
-<text x="171.0" y="662" class="lien" fill="#C4472B">corrections de la planche</text>
+<text x="171.0" y="662" class="lien" fill="#C4472B">le graphiste reprend sa planche</text>
 <path d="M544 748 L1124 748" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
 <text x="564" y="741" class="lien" fill="#23281F">une fois écrits, servent à chaque scène</text>
 <path d="M1239.0 818 L1239.0 840 L159.0 840 L159.0 878" fill="none" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>

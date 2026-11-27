@@ -1,6 +1,6 @@
 # Planches sur le canevas de design : notation
 
-Essai 3 du pilote FME001 (`docs/essai-3-design.md`). Le graphiste compose la planche d'une scène sur le canevas de design (outil Artifact, type Design) ; Ilyas la voit et la corrige à la main ; `scripts/planche_vers_donnees.mjs` l'exporte en `content/design/scenes/Sxx.json` (format `docs/gabarits.md` du projet). Rien n'est recopié : positions, tailles, largeurs de texte et nombre de lignes sont mesurés sur la planche rendue avec les polices de la leçon.
+Essai 3 du pilote FME001 (`docs/essai-3-design.md`). Le graphiste compose la planche d'une scène sur le canevas de design (outil Artifact, type Design) ; le graphiste la contrôle, sans porte d'Ilyas (décision du 2026-11-27 ; Ilyas peut la corriger à la main après coup) ; `scripts/planche_vers_donnees.mjs` l'exporte en `content/design/scenes/Sxx.json` (format `docs/gabarits.md` du projet). Rien n'est recopié : positions, tailles, largeurs de texte et nombre de lignes sont mesurés sur la planche rendue avec les polices de la leçon.
 
 Une scène = deux artboards du canevas :
 
