@@ -1,0 +1,256 @@
+axe: produits
+affirmations:
+  - id: A-produits-01
+    question: Q1
+    enonce: "FME Form s'appelait auparavant FME Desktop."
+    usage: narration
+    sources:
+      - url: https://www.safe.com/?p=168549
+        titre: "New Safe Branding - Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME Form (formerly FME Desktop)"
+      - url: https://www.gim.be/en/about-us/news-events/a-new-branding-product-positioning-and-pricing-structure-for-the-fme-platfo
+        titre: "A new branding, product positioning and pricing structure for the FME platform"
+        editeur: GIM
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "FME Desktop becomes FME Form"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-produits-02
+    question: Q1
+    enonce: "FME Flow s'appelait auparavant FME Server."
+    usage: narration
+    sources:
+      - url: https://www.safe.com/?p=168549
+        titre: "New Safe Branding - Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME Flow (formerly FME Server)"
+      - url: https://www.gim.be/en/about-us/news-events/a-new-branding-product-positioning-and-pricing-structure-for-the-fme-platfo
+        titre: "A new branding, product positioning and pricing structure for the FME platform"
+        editeur: GIM
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "FME Server becomes FME Flow"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-produits-03
+    question: Q1
+    enonce: "FME Flow Hosted s'appelait auparavant FME Cloud."
+    usage: narration
+    sources:
+      - url: https://www.safe.com/?p=168549
+        titre: "New Safe Branding - Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME Flow Hosted (formerly FME Cloud)"
+      - url: https://www.gim.be/en/about-us/news-events/a-new-branding-product-positioning-and-pricing-structure-for-the-fme-platfo
+        titre: "A new branding, product positioning and pricing structure for the FME platform"
+        editeur: GIM
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "FME Cloud becomes FME Flow Hosted"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-produits-04
+    question: Q1
+    enonce: "Les nouveaux noms des produits s'appliquent à partir de FME 23.0 ; les versions antérieures gardent leurs noms d'origine."
+    usage: expert
+    sources:
+      - url: https://www.safe.com/?p=168549
+        titre: "New Safe Branding - Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME 23.0 and beyond will feature the new names."
+      - url: https://www.safe.com/?p=168549
+        titre: "New Safe Branding - Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "All previous releases of Desktop, Server, Cloud etc. will be referred to and supported using their original names."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-produits-05
+    question: Q1
+    enonce: "Le changement de noms des produits FME date de 2023 : un partenaire de Safe Software le situe en avril 2023, un autre publie son article le 12 juin 2023."
+    usage: expert
+    sources:
+      - url: https://www.globema.com/fme-safe-software-announces-rebranding/
+        titre: "FME: a subscription model, simplified licensing, and friendlier design. Safe Software announces rebranding"
+        editeur: Globema
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "April 2023 was a month of revolution for our Partner, Safe Software."
+      - url: https://www.gim.be/en/about-us/news-events/a-new-branding-product-positioning-and-pricing-structure-for-the-fme-platfo
+        titre: "A new branding, product positioning and pricing structure for the FME platform"
+        editeur: GIM
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "12 June 2023"
+      - url: https://www.gim.be/en/about-us/news-events/a-new-branding-product-positioning-and-pricing-structure-for-the-fme-platfo
+        titre: "A new branding, product positioning and pricing structure for the FME platform"
+        editeur: GIM
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The FME products were renamed:"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-produits-06
+    question: Q1
+    enonce: "La plateforme FME réunit FME Form, pour construire les traitements, et FME Flow, pour les automatiser."
+    usage: narration
+    sources:
+      - url: https://www.safe.com/?p=168549
+        titre: "New Safe Branding - Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The FME Platform is the core solution where all components work together to integrate data and automate workflows in any environment."
+      - url: https://www.geoconnexion.com/in-depth/beyond-geospatial-safe-softwares-journey-to-a-global-ai-driven-integration-platform
+        titre: "Beyond geospatial"
+        editeur: GeoConnexion
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Safe is a platform that includes FME Form for authoring workflows, and FME Flow for enterprise automation."
+    contradictions: []
+    verifie: null
+    note_verification: "Même fait que A-sig-09 du pack de L01 (confirmé par Ilyas, porte Q12) ; GeoConnexion y est la source B."
+  - id: A-produits-07
+    question: Q1
+    enonce: "FME Form est l'environnement de création où l'on construit des traitements de données par une interface visuelle, sans programmer."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Terminology/Confluence-Topics/FME_Form.htm
+        titre: "FME Form"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME Form is the authoring environment that enables you to create data integration workflows using a visual interface, no coding required."
+      - url: https://1spatial.com/products/fme/fme-form/
+        titre: "FME Form (formerly known as FME Desktop)"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "With a drag and drop interface, users can create visual data workflows"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-produits-08
+    question: Q1
+    enonce: "FME Form comprend trois applications : FME Workbench, FME Data Inspector et FME Quick Translator."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Terminology/Confluence-Topics/FME_Form.htm
+        titre: "FME Form"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME Form provides three applications: FME Workbench, FME Data Inspector, and FME Quick Translator."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-produits-09
+    question: Q1
+    enonce: "FME Flow est l'environnement d'automatisation qui exécute des traitements de données selon un calendrier ou en réponse à des événements."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Terminology/Common/PDF-Terminology.pdf
+        titre: "Terminology (FME Form Documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME Flow is the enterprise automation environment that enables you to run your data integration workflows on a schedule or in response to events or in real-time."
+      - url: https://1spatial.com/products/fme/fme-flow/
+        titre: "FME Flow (formerly known as FME Server)"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "When your needs move beyond FME Form, consider automating practically anything with FME Flow."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-produits-10
+    question: Q2
+    enonce: "Un traitement conçu dans FME Form peut être publié sur FME Flow."
+    usage: narration
+    sources:
+      - url: https://1spatial.com/products/fme/fme-flow/
+        titre: "FME Flow (formerly known as FME Server)"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Design the workflow you want to automate in FME Form’s drag-and-drop interface and then publish it to FME Flow at the push of a button."
+      - url: https://docs.safe.com/fme/2023.1/html/FME-Form-Documentation/FME-Form/Workbench/publishing-to-fme-flow.htm
+        titre: "Publishing to FME Flow"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Open the workspace you want to publish."
+      - url: https://docs.safe.com/fme/2023.1/html/FME-Form-Documentation/FME-Form/Workbench/publishing-to-fme-flow.htm
+        titre: "Publishing to FME Flow"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The Publish to FME Flow wizard opens."
+    contradictions: []
+    verifie: null
+    note_verification: "Le chemin de menu varie selon la version de la documentation (File > Publish to FME Flow en 2023.1) ; la leçon ne cite pas de menu."
+  - id: A-produits-11
+    question: Q2
+    enonce: "Pour publier sur FME Flow, il faut qu'une instance de FME Flow soit configurée et disponible."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/2023.1/html/FME-Form-Documentation/FME-Form/Workbench/publishing-to-fme-flow.htm
+        titre: "Publishing to FME Flow"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "you must have an FME Flow configured and available."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-produits-12
+    question: Q2
+    enonce: "FME Flow Hosted est FME Flow hébergé dans le nuage par Safe Software."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Terminology/Common/PDF-Terminology.pdf
+        titre: "Terminology (FME Form Documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME Flow Hosted is FME Flow hosted in the cloud by Safe Software"
+      - url: https://www.safe.com/?p=168549
+        titre: "New Safe Branding - Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME Flow (Hosted) provides the same capabilities as FME Flow, but entirely within the Cloud."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q1
+    manque: "Date exacte de l'annonce des nouveaux noms par Safe Software : la page de l'éditeur (safe.com/?p=168549) ne porte pas de date dans son texte. Les deux seules dates lues viennent de partenaires (Globema, avril 2023 ; GIM, 12 juin 2023). Source indépendante de l'éditeur sur la version 23.0 : non trouvée. À sourcer."
+  - question: Q2
+    manque: "Comment un espace de travail publié s'exécute sur FME Flow (soumission d'un travail, services) : relève de l'axe automatisation (Q3, Q4) ; non couvert ici. Une source indépendante de l'éditeur sur l'assistant de publication n'a pas été lue. À sourcer."
+  - question: Q2
+    manque: "Source indépendante (B) sur FME Flow Hosted : seule 1Spatial dit en être fournisseur, sans le définir ; non lu ailleurs. À sourcer."
+visuels:
+  - id: VIS-01
+    url: https://docs.safe.com/fme/2023.1/html/FME-Form-Documentation/FME-Form/Workbench/publishing-to-fme-flow.htm
+    editeur: Safe Software
+    description: "Page de documentation de l'assistant Publish to FME Flow de FME Form (panneaux : publier, connexions, paquets, services)."
+    utilite: "Référence pour redessiner le geste de publication de Form vers Flow."
+    usage: REFERENCE_ONLY

@@ -1,0 +1,256 @@
+axe: automatisation
+affirmations:
+  - id: A-automatisation-01
+    question: Q3
+    enonce: "D'après la documentation de FME Flow, les automatisations permettent de concevoir des flux de messagerie JSON qui prennent en charge un large éventail de protocoles de communication."
+    usage: contexte
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Automations-General/Automations.htm
+        titre: "Automations (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Automations allow you to design JSON messaging workflows that support a rich set of communication protocols."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-02
+    question: Q3
+    enonce: "Une automatisation FME Flow comprend trois composants principaux, dont les déclencheurs, qui écoutent et reçoivent des messages de clients externes ou de l'intérieur de FME Flow."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Automations-General/Automations.htm
+        titre: "Automations (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Automations are comprised of three primary components:"
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Automations-General/Automations.htm
+        titre: "Automations (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Listen for and receive messages from external clients or from within"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-03
+    question: Q3
+    enonce: "Dans une automatisation FME Flow, les actions traitent les messages entre les déclencheurs et les actions externes, soit dans un espace de travail FME, soit par un autre outil."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Automations-General/Automations.htm
+        titre: "Automations (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Process messages between triggers and external actions, either in an FME"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-04
+    question: Q3
+    enonce: "Le déclencheur de planification (Schedule) sert à accomplir des tâches d'un flux de travail à des moments précis dans le futur ; on peut l'associer à une action comme Run Workspace."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Automations-Triggers/Trigger-Schedule.htm
+        titre: "FME Flow Schedule (trigger)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Use the Schedule trigger to complete workflow tasks at specific times in the future."
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Automations-Triggers/Trigger-Schedule.htm
+        titre: "FME Flow Schedule (trigger)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "You can use a Schedule trigger in conjunction with an Action, such as"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-05
+    question: Q3
+    enonce: "Le déclencheur Webhook reçoit du JSON et d'autres données dans le corps d'une requête HTTP POST, PUT ou DELETE."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Automations-Triggers/Trigger-Webhook.htm
+        titre: "Webhook (trigger)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The Webhook trigger receives JSON and other data in the body of an HTTP POST, PUT, or DELETE request message."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-06
+    question: Q3
+    enonce: "Le déclencheur Resource or Network Directory surveille l'activité d'un dossier Resources de FME Flow ou d'un autre emplacement, y compris l'ajout, la modification ou la suppression de fichiers et de dossiers."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Automations-Triggers/Trigger-Resource-or-Network-Dir.htm
+        titre: "Resource or Network Directory (trigger)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "monitors activity on an FME Flow Resources folder or other location, and sends JSON messages about that activity, including when files and folders are added, changed, or deleted."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-07
+    question: Q3
+    enonce: "Le déclencheur manuel sert à tester un flux de travail avant d'en créer un qui reçoit de vrais messages entrants."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Automations-General/Automations.htm
+        titre: "Automations (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Manual triggers are useful when you want to test a workflow before you create one that receives real, incoming messages."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-08
+    question: Q3
+    enonce: "Un flux de travail d'automatisation n'écoute pas les messages entrants et ne s'exécute pas tant qu'on ne l'a pas démarré."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Automations-General/Automations.htm
+        titre: "Automations (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Workflows do not listen for incoming messages or run until you start them."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-09
+    question: Q3
+    enonce: "La documentation donne comme exemple un déclencheur qui reçoit un courriel, une action qui exécute un espace de travail, puis des actions externes qui envoient des courriels selon les résultats de l'espace de travail."
+    usage: contexte
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Automations-General/Automations.htm
+        titre: "Automations (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "a trigger that receives an email, an action to run a"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-10
+    question: Q4
+    enonce: "La page Jobs de FME Flow affiche les travaux lancés depuis FME Flow dans trois tableaux selon leur état : terminés (Completed), en attente (Queued) et en cours d'exécution (Running)."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Jobs.htm
+        titre: "Jobs (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The Jobs page displays information about jobs initiated from"
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Jobs.htm
+        titre: "Jobs (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Finished jobs appear in the"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-11
+    question: Q4
+    enonce: "Dans FME Flow, le contrôle des files d'attente (queue control) est un mécanisme qui sert à diriger des moteurs FME vers l'exécution de travaux précis."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Queue-Control.htm
+        titre: "Queue Control (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Queue control is a mechanism for targeting"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-12
+    question: Q4
+    enonce: "Parmi les raisons de recourir au contrôle des files d'attente, la documentation cite la réservation de moteurs FME pour les tâches planifiées et la réservation de certains moteurs aux travaux rapides, d'autres aux travaux à forte charge."
+    usage: contexte
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Queue-Control.htm
+        titre: "Queue Control (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Reserving FME Engines for scheduled tasks."
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Queue-Control.htm
+        titre: "Queue Control (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Reserving some FME Engines for quick jobs, and others for high-load jobs."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-13
+    question: Q4
+    enonce: "Les travaux qui ne sont acheminés vers aucune file définie par l'utilisateur vont dans la file Default."
+    usage: contexte
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Queue-Control.htm
+        titre: "Queue Control (FME Flow documentation)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Jobs that do not route to any user-defined queues route to the Default queue."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-automatisation-14
+    question: Q4
+    enonce: "Le conseil municipal de Nottingham a fait automatiser, avec FME Flow, un rapport trimestriel de données d'urbanisme qui s'exécute selon un calendrier géré par FME Flow."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/fme-in-action/customers/nottingham-city-council-2/
+        titre: "Nottingham City Council keeps up with planning reforms using FME"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The return runs on a quarterly schedule managed by"
+      - url: https://1spatial.com/news/an-automated-solution-for-data-maintenance-using-the-fme-platform-2022/
+        titre: "An automated solution for data maintenance using the FME Platform"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "The return runs on a quarterly schedule managed by FME Server."
+    contradictions: []
+    verifie: null
+    note_verification: "1Spatial est le partenaire intégrateur du projet : source indépendante de Safe par l'éditeur, non par le sujet. Nom propre : à la porte."
+  - id: A-automatisation-15
+    question: Q4
+    enonce: "Dans le cas de Nottingham, le résultat est envoyé par courriel à un responsable de l'urbanisme pour approbation avant d'être transmis au gouvernement central."
+    usage: contexte
+    sources:
+      - url: https://fme.safe.com/fme-in-action/customers/nottingham-city-council-2/
+        titre: "Nottingham City Council keeps up with planning reforms using FME"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The output is emailed to a senior planning officer for sign off before being reported to the central government."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q3
+    manque: "Liste complète des déclencheurs et des actions : la page Automations Triggers de docs.safe.com est illisible par le script (rendue par script). Surveillance d'une base de données comme déclencheur : à sourcer."
+  - question: Q4
+    manque: "Définition d'un travail (job) en une phrase : la page Jobs ne le définit pas ; la page de terminologie « job queue » est illisible par le script. À vérifier à la main."
+  - question: Q4
+    manque: "Cas documenté de publication de données géographiques avec une source indépendante de l'éditeur et du partenaire : non trouvé. Autres cas vus dans la recherche (Wellington, Qualicum Beach, Auckland) non lus : à sourcer."
+visuels:
+  - id: VIS-AUTO-01
+    url: https://docs.safe.com/fme/html/FME-Flow/WebUI/Automations-General/Automations.htm
+    editeur: Safe Software
+    description: "Schéma d'un flux d'automatisation : déclencheur de courriel, action Run Workspace, actions externes d'envoi de courriels."
+    utilite: "Montrer la structure déclencheur, action, action externe."
+    usage: REDRAW

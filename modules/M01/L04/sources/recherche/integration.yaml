@@ -1,0 +1,274 @@
+axe: integration
+affirmations:
+  - id: A-integration-01
+    question: Q8
+    enonce: "D'après sa page de référence, le FeatureMerger fusionne les attributs et/ou les géométries d'un jeu d'entités sur un autre, à partir de valeurs de clés d'attributs qui correspondent."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/featuremerger.htm
+        titre: "FeatureMerger (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Merges the attributes and/or geometries of one set of features onto another set of features, based on matching key attribute values and expressions."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-02
+    question: Q8
+    enonce: "Le FeatureMerger reçoit deux flux d'entités ; les fournisseurs (Suppliers) apportent des attributs et/ou des géométries à fusionner sur les demandeurs (Requestors)."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/featuremerger.htm
+        titre: "FeatureMerger (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The FeatureMerger receives two streams of features via its input ports."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/featuremerger.htm
+        titre: "FeatureMerger (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Many Suppliers can be merged onto a single Requestor."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-03
+    question: Q8
+    enonce: "La page du FeatureMerger précise qu'il n'accepte pas la géométrie comme clé."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/featuremerger.htm
+        titre: "FeatureMerger (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The FeatureMerger does not accept geometry as a key."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-04
+    question: Q8
+    enonce: "D'après sa page de référence, le FeatureJoiner joint des entités en combinant leurs attributs et/ou leur géométrie à partir de valeurs de clés communes, et effectue des jointures simples comme une jointure SQL, sans demander de savoir construire une requête SQL."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/featurejoiner.htm
+        titre: "FeatureJoiner (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Joins features by combining the attributes and/or geometry of features based on common key attribute values."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/featurejoiner.htm
+        titre: "FeatureJoiner (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The FeatureJoiner performs simple join operations, much like a SQL join, without requiring knowledge of SQL query construction."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-05
+    question: Q8
+    enonce: "Le DatabaseJoiner interroge une table externe pour récupérer les attributs associés à une entité ; les entités qui ne remplissent pas les conditions de correspondance sortent par le port Rejected."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/databasejoiner.htm
+        titre: "DatabaseJoiner (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The DatabaseJoiner queries an external table to retrieve attributes associated with a feature."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/databasejoiner.htm
+        titre: "DatabaseJoiner (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Features that do not fulfill the matching conditions are output via the <Rejected> port."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-06
+    question: Q8
+    enonce: "D'après sa page de référence, le SpatialRelator identifie les types de relations spatiales qui existent entre des entités ; un de ses usages est la jointure spatiale, qui transfère des attributs d'une entité à une autre selon leur relation spatiale."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/spatialrelator.htm
+        titre: "SpatialRelator (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Identifies what types of spatial relationships exist between features."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/spatialrelator.htm
+        titre: "SpatialRelator (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Performing a spatial join to transfer attributes from one feature to another based on their spatial relationship"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-07
+    question: Q8
+    enonce: "La page du SpatialRelator indique que, pour analyser correctement les relations spatiales, toutes les entités devraient être dans le même système de coordonnées."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/spatialrelator.htm
+        titre: "SpatialRelator (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "To correctly analyze spatial relationships, all features should be in the same coordinate system."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-08
+    question: Q8
+    enonce: "D'après sa page de référence, le PointOnAreaOverlayer compare des points et des polygones : chaque point peut recevoir les attributs des surfaces qui le contiennent, et chaque surface ceux des points qu'elle contient."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/pointonareaoverlayer.htm
+        titre: "PointOnAreaOverlayer (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The PointOnAreaOverlayer compares points and polygons."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/pointonareaoverlayer.htm
+        titre: "PointOnAreaOverlayer (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Each point may receive the attributes of the area(s) it is contained in, and each containing area may receive the attributes of each point it contains."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-09
+    question: Q8
+    enonce: "D'après sa page de référence, le Clipper divise des entités candidates à l'aide d'entités de découpe, de sorte que les parties à l'intérieur et à l'extérieur sortent séparément ; les candidates peuvent aussi recevoir des attributs des entités de découpe (jointure spatiale)."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/clipper.htm
+        titre: "Clipper (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Divides Candidate features using Clipper features, so that Candidates and parts of Candidates that are inside or outside of the Clipper features are output separately."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/clipper.htm
+        titre: "Clipper (FME Transformers)"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "They may also receive attributes from the Clippers (spatial join)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-10
+    question: Q9
+    enonce: "Selon la page client de Safe Software, la Ville de San Jose a intégré divers jeux de données avec FME et produit des cartes interactives, que FME met à jour automatiquement chaque nuit."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/fme-in-action/customers/city-of-san-jose/
+        titre: "City of San Jose uses FME to break down data silos"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The city integrated various datasets using FME and produced interactive maps containing all the information citizens and employees needed."
+      - url: https://fme.safe.com/fme-in-action/customers/city-of-san-jose/
+        titre: "City of San Jose uses FME to break down data silos"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "To ensure the maps were always current, they configured FME to update the maps every night automatically."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-11
+    question: Q9
+    enonce: "Selon la page client de Safe Software, les données de San Jose existaient déjà mais étaient cloisonnées entre les services, ce qui les rendait difficiles à trouver pour les administrateurs."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/fme-in-action/customers/city-of-san-jose/
+        titre: "City of San Jose uses FME to break down data silos"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Though all this data existed, it was siloed across departments, making it hard for administrators to find."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-12
+    question: Q9
+    enonce: "Selon la page client de Safe Software, l'outil Community Baseline de la Ville de Coquitlam intègre des données de nombreuses sources et offre au personnel une interface SIG vers des données d'actifs utiles aux décisions d'utilisation du sol et de services."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/fme-in-action/customers/the-city-of-coquitlam-creates-community-baseline-tool-to-support-land-use-decision-making/
+        titre: "City of Coquitlam's Community Baseline tool supports land use"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The Community Baseline tool integrates data from numerous sources, providing a GIS interface for staff to access and utilize asset data crucial for land use and servicing decision-making."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-13
+    question: Q9
+    enonce: "Selon la page client de Safe Software, Coquitlam a utilisé FME pour intégrer dans un seul tableau de bord les statistiques de deux fournisseurs de trottinettes électriques."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/fme-in-action/customers/the-city-of-coquitlam-creates-community-baseline-tool-to-support-land-use-decision-making/
+        titre: "City of Coquitlam's Community Baseline tool supports land use"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "In urban mobility, FME has streamlined the analysis of e-scooter program data, integrating statistics from two providers into a single dashboard."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-integration-14
+    question: Q9
+    enonce: "Selon une histoire publiée par Esri, CapMetro intègre avec FME des flux d'information disparates et les consolide dans ArcGIS Enterprise, ce qui crée une vue unifiée sur carte."
+    usage: expert
+    sources:
+      - url: https://www.esri.com/en-us/lg/industry/transportation/stories/how-capmetro-built-an-enterprise-gis-for-transit
+        titre: "How CapMetro built an enterprise GIS for transit"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Using FME, CapMetro integrates these disparate streams of information, and the information is consolidated into ArcGIS Enterprise, creating a unified, map-based view."
+    contradictions: []
+    verifie: null
+    note_verification: "Source d'Esri sur un cas de client ; indépendante de Safe Software, mais primaire pour Esri. Date de la page non lue."
+  - id: A-integration-15
+    question: Q9
+    enonce: "Selon l'histoire d'Esri, FME prend les données diverses issues de différents logiciels de CapMetro et les transforme en un format standard commun prêt pour ArcGIS Enterprise."
+    usage: expert
+    sources:
+      - url: https://www.esri.com/en-us/lg/industry/transportation/stories/how-capmetro-built-an-enterprise-gis-for-transit
+        titre: "How CapMetro built an enterprise GIS for transit"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME’s strength lies in its ability to take this diverse data from different software solutions and transform it into a common standard format, making it ready for ArcGIS Enterprise."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q8
+    manque: "Comparaison FeatureMerger / FeatureJoiner (sections « FeatureJoiner versus FeatureMerger » des pages) : titre repéré dans le texte mais phrases de comparaison non extraites ; à sourcer."
+  - question: Q9
+    manque: "Aucune source de niveau B (presse, publication académique, rapport municipal) trouvée pour un cas d'intégration avec FME : les cas San Jose et Coquitlam ne sont décrits que par Safe Software, CapMetro par Esri ; chiffres et dates de ces cas non repris ; à vérifier à la main."
+  - question: Q9
+    manque: "Cas canadien : Coquitlam (Colombie-Britannique) couvert par la page de Safe Software seulement ; aucun rapport propre à la ville lu."
+visuels:
+  - id: VIS-01
+    url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/featuremerger.htm
+    editeur: Safe Software
+    description: "Schéma et captures d'exemple de la page du FeatureMerger (ports Requestor, Supplier, sorties)."
+    utilite: "Référence pour redessiner un schéma de jointure par clé."
+    usage: REDRAW
+  - id: VIS-02
+    url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/pointonareaoverlayer.htm
+    editeur: Safe Software
+    description: "Exemple de la page : points de vendeurs et quartiers (point dans polygone)."
+    utilite: "Référence pour redessiner une jointure spatiale."
+    usage: REFERENCE_ONLY

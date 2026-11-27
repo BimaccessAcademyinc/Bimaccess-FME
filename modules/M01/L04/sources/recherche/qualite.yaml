@@ -1,0 +1,276 @@
+axe: qualite
+affirmations:
+  - id: A-qualite-01
+    question: Q6
+    enonce: "Selon sa page de référence, le transformer GeometryValidator détecte des problèmes choisis dans les entités qu'il reçoit, et peut aussi réparer ceux qu'il détecte."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/geometryvalidator.htm
+        titre: "FME Transformers : GeometryValidator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Detects selected issues in input features, and optionally repairs detected issues."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-02
+    question: Q6
+    enonce: "La détection du GeometryValidator porte sur les géométries ; ses attributs et les autres propriétés non géométriques ne sont pas traités."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/geometryvalidator.htm
+        titre: "FME Transformers : GeometryValidator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Issue detection only occurs within geometries, including geometric properties such as text rotation and arc sweep angle."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/geometryvalidator.htm
+        titre: "FME Transformers : GeometryValidator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "other non-geometric properties are not processed."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-03
+    question: Q6
+    enonce: "Selon sa page de référence, l'AttributeValidator valide un nombre quelconque d'attributs selon des conditions de test définies par l'utilisateur, aiguille l'entité selon le résultat et identifie les tests échoués."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/attributevalidator.htm
+        titre: "FME Transformers : AttributeValidator"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Validates any number of attributes against user-defined test conditions, routing the feature according to the outcome of the test(s) and identifying any tests it has failed."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-04
+    question: Q6
+    enonce: "Selon sa page de référence, le Tester évalue chaque entité selon un ou plusieurs tests définis par l'utilisateur : elle sort par le port Passed si elle remplit les conditions, par le port Failed sinon."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/tester.htm
+        titre: "FME Transformers : Tester"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "It evaluates each feature against one or more user-defined tests, and outputs the feature via the Passed port if it meets the defined conditions,"
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/tester.htm
+        titre: "FME Transformers : Tester"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "or via the Failed port if it fails the defined conditions."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-05
+    question: Q6
+    enonce: "Selon sa page de référence, le DuplicateFilter détecte les entités en double d'après la valeur d'un ou de plusieurs attributs clés."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/duplicatefilter.htm
+        titre: "FME Transformers : DuplicateFilter"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Detects duplicate features based on the value of one or more key attributes."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-06
+    question: Q6
+    enonce: "Selon sa page de référence, le Matcher détecte des entités qui se correspondent entre elles ; chaque ensemble de correspondances reçoit un nouvel attribut numérique, l'identifiant de correspondance (Match ID)."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/matcher.htm
+        titre: "FME Transformers : Matcher"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Detects features that are matches of each other."
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/matcher.htm
+        titre: "FME Transformers : Matcher"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Each set of matches is given a new numeric Match ID attribute that can be used to identify them as a matching group."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-07
+    question: Q6
+    enonce: "Selon sa page de référence, le ChangeDetector détecte les changements entre deux ensembles d'entités en entrée."
+    usage: narration
+    sources:
+      - url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/changedetector.htm
+        titre: "FME Transformers : ChangeDetector"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Detects changes between two sets of input features."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-08
+    question: Q7
+    enonce: "Une présentation de Safe Software décrit un outil de revue de données créé avec FME, qui identifie, isole et priorise des problèmes de qualité dans des jeux de données d'infrastructures souterraines."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/?p=199868
+        titre: "FME QA Review of Underground Infrastructure Data"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This presentation will cover how FME was used to create a data review tool that identifies, isolates, and prioritizes data quality issues within underground infrastructure datasets."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-09
+    question: Q7
+    enonce: "La page de cette présentation nomme The City of Waterloo et l'inscrit au FME World Tour 2018 ; elle ne précise pas le pays, ni si la ville est l'auteure de la présentation."
+    usage: expert
+    sources:
+      - url: https://fme.safe.com/?p=199868
+        titre: "FME QA Review of Underground Infrastructure Data"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The City of Waterloo"
+      - url: https://fme.safe.com/?p=199868
+        titre: "FME QA Review of Underground Infrastructure Data"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "FME World Tour 2018"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-10
+    question: Q7
+    enonce: "Selon cette présentation, l'outil produit en sortie des données spatiales sur les erreurs et des rapports de synthèse destinés aux gestionnaires."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/?p=199868
+        titre: "FME QA Review of Underground Infrastructure Data"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "As an output this tool generates spatial data pertaining to errors and summarized reports that can provide managers with an overview of the health of their data."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-11
+    question: Q7
+    enonce: "Selon cette présentation, FME a permis de modéliser des règles qui vont au-delà de celles du modèle de données : contraintes topologiques et normes de numérisation."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/?p=199868
+        titre: "FME QA Review of Underground Infrastructure Data"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Using FME it was possible to model rules that extended beyond those dictated by the data model but also those defined by topological constraints and digitization standards."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-12
+    question: Q7
+    enonce: "Selon cette présentation, les avantages de cette revue avec FME sont moins de temps de personnel consacré à une revue manuelle complexe et des résultats plus constants."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/?p=199868
+        titre: "FME QA Review of Underground Infrastructure Data"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Overall the advantages of using FME for this data review have been less staff time spent on complicated manual review, the results have been more consistent"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-13
+    question: Q7
+    enonce: "L'étude de cas de l'État du Tyrol (Autriche) présente un service de validation en ligne de la qualité des données, fondé sur FME Server."
+    usage: expert
+    sources:
+      - url: https://cdn.safe.com/resources/case-studies/CaseStudy_State-of-Tyrol.pdf
+        titre: "Case Study : State of Tyrol"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Crystal Clear Online QA and Data"
+      - url: https://cdn.safe.com/resources/case-studies/CaseStudy_State-of-Tyrol.pdf
+        titre: "Case Study : State of Tyrol"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Quality Assurance Validation Service"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-14
+    question: Q7
+    enonce: "Selon l'étude de cas du Tyrol, les contrôles de géométrie signalent des chevauchements, des trous et des éclats (slivers)."
+    usage: expert
+    sources:
+      - url: https://cdn.safe.com/resources/case-studies/CaseStudy_State-of-Tyrol.pdf
+        titre: "Case Study : State of Tyrol"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "and geometry – flagging overlaps, gaps, and slivers."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-15
+    question: Q7
+    enonce: "Selon l'étude de cas d'Armadale, publiée par 1Spatial, des espaces de travail FME ont été conçus pour valider des données A-SPEC, puis les transformer et les charger dans l'ancien système de gestion des actifs de la ville."
+    usage: expert
+    sources:
+      - url: https://1spatial.com/media/1xyp3bff/final-copy-city-of-armadale-case-study-v2-aw4.pdf
+        titre: "City of Armadale case study"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "workspaces were designed to validate A-SPEC data"
+      - url: https://1spatial.com/media/1xyp3bff/final-copy-city-of-armadale-case-study-v2-aw4.pdf
+        titre: "City of Armadale case study"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "and transform and load it into the city’s previous"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-qualite-16
+    question: Q7
+    enonce: "Selon cette étude de cas, le GDV Hub de 1Spatial (et non FME) a ramené la validation A-SPEC de jusqu'à 10 heures à moins d'une heure."
+    usage: expert
+    sources:
+      - url: https://1spatial.com/media/1xyp3bff/final-copy-city-of-armadale-case-study-v2-aw4.pdf
+        titre: "City of Armadale case study"
+        editeur: 1Spatial
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "validations from up to 10 hours to less than"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q6
+    manque: "Liste exacte des problèmes que détecte le GeometryValidator (page « GeometryValidator Issues Table ») : non lue ; à sourcer."
+  - question: Q7
+    manque: "Cas canadien de contrôle qualité : la page de la présentation « The City of Waterloo » ne dit pas le pays ; à vérifier à la main. Cas du Tyrol et d'Armadale : hors Canada."
+  - question: Q7
+    manque: "Source indépendante de Safe Software pour Waterloo et le Tyrol : non trouvée ; seul l'étude d'Armadale (1Spatial) est tierce."
+visuels:
+  - id: VIS-01
+    url: https://docs.safe.com/fme/html/FME-Form-Documentation/FME-Transformers/Transformers/geometryvalidator.htm
+    editeur: Safe Software
+    description: "Page de référence du GeometryValidator (texte, ports, tableau des problèmes)."
+    utilite: "Modèle pour redessiner un transformer de contrôle qualité avec ses ports."
+    usage: REFERENCE_ONLY
