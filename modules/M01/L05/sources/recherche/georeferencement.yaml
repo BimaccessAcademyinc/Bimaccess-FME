@@ -1,0 +1,306 @@
+axe: georeferencement
+affirmations:
+  - id: A-georeferencement-01
+    question: Q7
+    enonce: "En IFC2x3, le géoréférencement d'un modèle se fait par l'entité IfcSite, dont les attributs RefLatitude, RefLongitude et RefElevation reçoivent des coordonnées géographiques."
+    usage: expert
+    sources:
+      - url: https://isprs-annals.copernicus.org/articles/X-4-W6-2025/161/2025/isprs-annals-X-4-W6-2025-161-2025.pdf
+        titre: "ISPRS Annals X-4/W6-2025, 3D GeoInfo 2025, article 161 (géoréférencement IFC et facteur d'échelle)"
+        editeur: ISPRS Annals (Copernicus)
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "In IFC2x3, georeferencing is performed using IfcSite entity by assigning appropriate geographical coordinates to the RefLatitude, RefLongitude and RefElevation attributes."
+      - url: https://fig.net:443/resources/proceedings/fig_proceedings/fig2024/papers/ts10b/TS10B_frey_dahmen_et_al_12626.pdf
+        titre: "Conception, Validation and Publication of ETL Processes for the Conversion of Geospatial Data for openBIM Projects with FME"
+        editeur: FIG
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "geographic coordinates are stored in the IfcSite attributes RefLatitude, RefLongitude and RefElevation."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-georeferencement-02
+    question: Q7
+    enonce: "En IFC2x3, selon un article de l'ISPRS, le géoréférencement est limité au système géographique mondial et n'admet pas l'assignation directe d'un système projeté au modèle."
+    usage: contexte
+    sources:
+      - url: https://isprs-annals.copernicus.org/articles/X-4-W6-2025/161/2025/isprs-annals-X-4-W6-2025-161-2025.pdf
+        titre: "ISPRS Annals X-4/W6-2025, 3D GeoInfo 2025, article 161 (géoréférencement IFC et facteur d'échelle)"
+        editeur: ISPRS Annals (Copernicus)
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "This version of IFC is restricted to the global geographic CRS, and does not support the direct assignment of projected CRS to the models."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-georeferencement-03
+    question: Q7
+    enonce: "L'aide de BIMcollab indique que IfcMapConversion est pris en charge à partir de l'IFC4."
+    usage: expert
+    sources:
+      - url: https://helpcenter.bimcollab.com/en/articles/326917-coordinating-ifc-models-with-world-coordinate-system-information
+        titre: "Coordinating IFC Models with World Coordinate System information"
+        editeur: BIMcollab
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Starting from IFC4, IfcMapConversion is supported."
+      - url: https://isprs-annals.copernicus.org/articles/X-4-W6-2025/161/2025/isprs-annals-X-4-W6-2025-161-2025.pdf
+        titre: "ISPRS Annals X-4/W6-2025, 3D GeoInfo 2025, article 161 (géoréférencement IFC et facteur d'échelle)"
+        editeur: ISPRS Annals (Copernicus)
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "In IFC4.0, georeferencing is achieved using IfcMapConversion"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-georeferencement-04
+    question: Q7
+    enonce: "Les informations de géoréférencement d'un modèle IFC se lisent dans les éléments IfcMapConversion et IfcProjectedCRS."
+    usage: narration
+    sources:
+      - url: https://helpcenter.bimcollab.com/en/articles/326917-coordinating-ifc-models-with-world-coordinate-system-information
+        titre: "Coordinating IFC Models with World Coordinate System information"
+        editeur: BIMcollab
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "find the georeferencing information captured in IfcMapConversion and IfcProjectedCRS to verify the model's real-world position"
+      - url: https://docs.safe.com/fme/2024.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/Feature_Representation.htm
+        titre: "Industry Foundation Classes (IFC) Feature Representation"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "it will instead look for georeferenced coordinate system information on the IfcMapConversion and IfcProjectedCRS elements in the IFC dataset."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-georeferencement-05
+    question: Q7
+    enonce: "Parmi les options de géoréférencement que l'IFC propose, une consiste à définir un décalage entre le système de coordonnées du projet et le système de référence, avec une rotation du plan XY."
+    usage: contexte
+    sources:
+      - url: https://fig.net:443/resources/proceedings/fig_proceedings/fig2024/papers/ts10b/TS10B_frey_dahmen_et_al_12626.pdf
+        titre: "Conception, Validation and Publication of ETL Processes for the Conversion of Geospatial Data for openBIM Projects with FME"
+        editeur: FIG
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "defining an offset between the project coordinate system and the CRS, including a corresponding rotation of the XY plane."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-georeferencement-06
+    question: Q7
+    enonce: "Une classification des options de géoréférencement de l'IFC, les niveaux de géoréférencement (LoGeoRef), va de LoGeoRef 0 à LoGeoRef 50 ; elle n'est pas définie formellement dans la norme IFC."
+    usage: contexte
+    sources:
+      - url: https://fig.net:443/resources/proceedings/fig_proceedings/fig2024/papers/ts10b/TS10B_frey_dahmen_et_al_12626.pdf
+        titre: "Conception, Validation and Publication of ETL Processes for the Conversion of Geospatial Data for openBIM Projects with FME"
+        editeur: FIG
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "ranging from LoGeoRef 0 to LoGeoRef 50"
+      - url: https://fig.net:443/resources/proceedings/fig_proceedings/fig2024/papers/ts10b/TS10B_frey_dahmen_et_al_12626.pdf
+        titre: "Conception, Validation and Publication of ETL Processes for the Conversion of Geospatial Data for openBIM Projects with FME"
+        editeur: FIG
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Although not formally defined in the IFC standard, this classification is specified in the ISO"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-georeferencement-07
+    question: Q7
+    enonce: "Un message de la communauté Safe, daté du 14 mai 2021, renvoie à un document de buildingSMART Australasia intitulé « User guide for georeferencing in IFC » (le guide lui-même n'a pas pu être lu)."
+    usage: contexte
+    sources:
+      - url: https://community.safe.com/ideas/ifc-to-gml-support-reading-and-handling-of-the-coordinatesystem-30703
+        titre: "IFC to GML, support reading and handling of the coordinatesystem"
+        editeur: Safe Software (communauté)
+        niveau: C
+        consulte: 2026-11-27
+        extrait: 'BuildingSMART Australasia has written a "User guide for georeferencing in IFC" that explains this.'
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-georeferencement-08
+    question: Q7
+    enonce: "Un message du forum buildingSMART de janvier 2020 propose, pour l'IFC2x3 qui n'a pas d'entités de géolocalisation, de consigner les données de IfcMapConversion et IfcProjectedCRS dans des jeux de propriétés EPset_MapConversion et EPset_ProjectedCRS rattachés à IfcSite."
+    usage: contexte
+    sources:
+      - url: https://forums.buildingsmart.org/t/geolocation-standards-in-ifc2x3-and-ifc4/2329
+        titre: "Geolocation standards in IFC2X3 and IFC4"
+        editeur: buildingSMART (forum)
+        niveau: C
+        consulte: 2026-11-27
+        extrait: "The first issue is that IFC2X3 does not have geolocation entities."
+      - url: https://forums.buildingsmart.org/t/geolocation-standards-in-ifc2x3-and-ifc4/2329
+        titre: "Geolocation standards in IFC2X3 and IFC4"
+        editeur: buildingSMART (forum)
+        niveau: C
+        consulte: 2026-11-27
+        extrait: "These two psets must be associated with the relevant top level IfcSite entity."
+    contradictions: []
+    verifie: null
+    note_verification: "C'est une proposition de forum, pas une norme."
+  - id: A-georeferencement-09
+    question: Q8
+    enonce: "Selon la documentation de FME Form (lecteur IFC, version 2024.1), le lecteur cherche l'information de système de coordonnées géoréférencé sur IfcMapConversion et IfcProjectedCRS, puis place les entités selon la transformation de IfcMapConversion."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/2024.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/Feature_Representation.htm
+        titre: "Industry Foundation Classes (IFC) Feature Representation"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "it will instead look for georeferenced coordinate system information on the IfcMapConversion and IfcProjectedCRS elements in the IFC dataset."
+      - url: https://docs.safe.com/fme/2024.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/Feature_Representation.htm
+        titre: "Industry Foundation Classes (IFC) Feature Representation"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "will geolocate features using the transformation specified by the IfcMapConversion."
+    contradictions:
+      - version: "Un message de la communauté Safe (14 mai 2021) dit que le lecteur IFC de FME ne lit pas encore IfcMapConversion ni IfcProjectedCRS."
+        source: https://community.safe.com/ideas/ifc-to-gml-support-reading-and-handling-of-the-coordinatesystem-30703
+    verifie: null
+    note_verification: "Les dates diffèrent (message de 2021, documentation 2024.1) : probablement deux états du lecteur, à confirmer."
+  - id: A-georeferencement-10
+    question: Q8
+    enonce: "Le lecteur IFC_API de FME Form 2026.1 a un paramètre qui choisit entre coordonnées géoréférencées et coordonnées locales."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/2026.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api_reader.htm
+        titre: "Industry Foundation Classes (IFC) Reader Parameters"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Use this parameter to select whether the IFC_API reader reads Georeferenced or Local coordinates on features."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-georeferencement-11
+    question: Q8
+    enonce: "Avec les coordonnées géoréférencées, le lecteur applique la transformation de l'opération de coordonnées de l'IFC (IfcMapConversion ou IfcRigidOperation) et pose le système de coordonnées associé (IfcProjectedCRS ou IfcGeographicCRS) sur l'entité."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/2026.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api_reader.htm
+        titre: "Industry Foundation Classes (IFC) Reader Parameters"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Georeferenced coordinates will have the transformation specified by the IfcCoordinateOperation (either IfcMapConversion or IfcRigidOperation ) applied"
+      - url: https://docs.safe.com/fme/2026.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api_reader.htm
+        titre: "Industry Foundation Classes (IFC) Reader Parameters"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "the associated IfcCoordinateReferenceSystem (either IfcProjectedCRS or IfcGeographicCRS ) will be set as the coordinate system on the feature."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-georeferencement-12
+    question: Q8
+    enonce: "Avec les coordonnées locales, le lecteur n'applique pas l'opération de coordonnées de l'IFC et n'étiquette pas l'entité d'un système de coordonnées."
+    usage: expert
+    sources:
+      - url: https://docs.safe.com/fme/2026.1/html/FME-Form-Documentation/FME-ReadersWriters/ifc_api/ifc_api_reader.htm
+        titre: "Industry Foundation Classes (IFC) Reader Parameters"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Local coordinates will not have the IfcCoordinateOperation (either IfcMapConversion or IfcRigidOperation ) applied, and the feature will not be tagged with a coordinate system."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-georeferencement-13
+    question: Q8
+    enonce: "En mai 2021, un message de la communauté Safe indique que le lecteur IFC de FME ne lit pas encore IfcMapConversion ni IfcProjectedCRS, et que la transformation du local au projeté peut se faire avec 3DRotator, Scaler et OffSetter."
+    usage: contexte
+    sources:
+      - url: https://community.safe.com/ideas/ifc-to-gml-support-reading-and-handling-of-the-coordinatesystem-30703
+        titre: "IFC to GML, support reading and handling of the coordinatesystem"
+        editeur: Safe Software (communauté)
+        niveau: C
+        consulte: 2026-11-27
+        extrait: "The transformation from local into projected reference system, can be implemented with FME transformers: rotation (3DRotator), scale (Scaler) and translation (OffSetter)."
+      - url: https://community.safe.com/ideas/ifc-to-gml-support-reading-and-handling-of-the-coordinatesystem-30703
+        titre: "IFC to GML, support reading and handling of the coordinatesystem"
+        editeur: Safe Software (communauté)
+        niveau: C
+        consulte: 2026-11-27
+        extrait: "The problem today is that the IFC Reader in FME does not yet read IfcMapConversion and IfcProjectedCRS entities."
+    contradictions: []
+    verifie: null
+    note_verification: "Message d'utilisateur, daté ; l'état actuel du lecteur est dans A-georeferencement-09."
+  - id: A-georeferencement-14
+    question: Q8
+    enonce: "Un message de la communauté Safe signale qu'un transformateur personnalisé du FME Hub peut lire IfcMapConversion dans un fichier IFC et appliquer la transformation de coordonnées."
+    usage: contexte
+    sources:
+      - url: https://community.safe.com/ideas/ifc-to-gml-support-reading-and-handling-of-the-coordinatesystem-30703
+        titre: "IFC to GML, support reading and handling of the coordinatesystem"
+        editeur: Safe Software (communauté)
+        niveau: C
+        consulte: 2026-11-27
+        extrait: "There is now a custom transformer in the FME Hub that can read IfcMapConversion information from an IFC file and apply the coordinate transformation."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-georeferencement-15
+    question: Q8
+    enonce: "Dans une étude présentée à la FIG, les entités IfcMapConversion et IfcProjectedCRS n'ont pas pu être créées avec les fonctions standard d'écriture ou de création de FME ; les auteurs ont utilisé un transformateur personnalisé, IfcMapConversionWriter."
+    usage: expert
+    sources:
+      - url: https://fig.net:443/resources/proceedings/fig_proceedings/fig2024/papers/ts10b/TS10B_frey_dahmen_et_al_12626.pdf
+        titre: "Conception, Validation and Publication of ETL Processes for the Conversion of Geospatial Data for openBIM Projects with FME"
+        editeur: FIG
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "could not be created in FME using standard FME writer or creator functions."
+      - url: https://fig.net:443/resources/proceedings/fig_proceedings/fig2024/papers/ts10b/TS10B_frey_dahmen_et_al_12626.pdf
+        titre: "Conception, Validation and Publication of ETL Processes for the Conversion of Geospatial Data for openBIM Projects with FME"
+        editeur: FIG
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "a custom transformer called IfcMapConversionWriter, developed by Stijn Goedertier (2022), is used."
+    contradictions: []
+    verifie: null
+    note_verification: "Sens inverse de la leçon (données SIG vers IFC) ; utile comme limite d'écriture."
+  - id: A-georeferencement-16
+    question: Q8
+    enonce: "Un message de la communauté Safe indique que, pour écrire du CityGML, un Reprojector doit amener les données dans un système de coordonnées EPSG, parce que les systèmes locaux ne s'écrivent pas en CityGML."
+    usage: contexte
+    sources:
+      - url: https://community.safe.com/transformers-9/transfer-of-georeferencing-information-between-ifc-and-citygml-27933
+        titre: "Transfer of georeferencing information between IFC and CityGML"
+        editeur: Safe Software (communauté)
+        niveau: C
+        consulte: 2026-11-27
+        extrait: "a Reprojector should be used to reproject the data into an EPSG coordinate system, which will be written to CityGML."
+      - url: https://community.safe.com/transformers-9/transfer-of-georeferencing-information-between-ifc-and-citygml-27933
+        titre: "Transfer of georeferencing information between IFC and CityGML"
+        editeur: Safe Software (communauté)
+        niveau: C
+        consulte: 2026-11-27
+        extrait: "It is not possible to write local coordinate systems to CityGML"
+    contradictions: []
+    verifie: null
+    note_verification: "Réponse signalée comme venant d'un employé de Safe dans la recherche web ; non vérifié sur la page, d'où le niveau C."
+lacunes:
+  - question: Q7
+    manque: "Le guide de géoréférencement de buildingSMART (titre exact, édition, date, recommandations) : le PDF de buildingsmart.org est une image sans texte lisible, la page UCM de buildingSMART n'est pas lisible par script. Seuls des renvois indirects (message de communauté, article cité) existent. À vérifier à la main."
+  - question: Q7
+    manque: "Les attributs de IfcMapConversion (Eastings, Northings, hauteur, axe X, échelle) et la définition officielle d'IfcMapConversion et d'IfcProjectedCRS : les pages de la spécification IFC4.3 de buildingSMART refusent (HTTP 403, respecté). À sourcer, à vérifier à la main."
+  - question: Q7
+    manque: "Si IfcSite garde RefLatitude et RefLongitude en IFC4 : à sourcer (non lu directement)."
+  - question: Q8
+    manque: "Les transformateurs que FME emploie pour placer un modèle IFC, d'après un didacticiel ou une page de documentation de l'éditeur : introuvable. Seules des pages de la communauté (niveau C) les citent. La version de FME à partir de laquelle le lecteur lit IfcMapConversion : à sourcer."
+  - question: Q8
+    manque: "La doc 2024.1 lue est celle du lecteur IFC_API ; la page du lecteur IFC classique n'a pas de passage sur IfcMapConversion. Quel lecteur la leçon montre : à fixer avec l'expert."
+visuels:
+  - id: VIS-georeferencement-01
+    url: https://isprs-annals.copernicus.org/articles/X-4-W6-2025/161/2025/isprs-annals-X-4-W6-2025-161-2025.pdf
+    editeur: ISPRS Annals (Copernicus)
+    description: "Figure 1 de l'article, entités de géoréférencement du schéma IFC4x3 (légende : Source buildingSMART)."
+    utilite: "Référence pour redessiner le lien IfcCoordinateOperation, IfcMapConversion et système de coordonnées cible."
+    usage: REDRAW
