@@ -40,3 +40,4 @@ date,etape,alias,fournisseur,modele,entree,sortie,secondes,cout_estime,statut
 2026-11-27T05:41:23,FME001-M01-L01 planches 4K dessin S01,gemini-3-pro-image,gemini,gemini-3-pro-image,983,2593,32.2,,ok
 2026-11-27T05:41:32,FME001-M01-L01 planches 4K reperage S01,gemini-3.5-flash,gemini,gemini-3.5-flash,1302,250,5.1,,ok
 2026-11-27T05:41:35,FME001-M01-L01 planches 4K reperage S02,gemini-3.5-flash,gemini,gemini-3.5-flash,1346,357,6.7,,ok
+2026-11-27T14:45:14,FME001-M01-L01 essai outil illustrations test-fondateurs,gemini-3-pro-image,gemini,gemini-3-pro-image,611,1234,15.3,,ok
