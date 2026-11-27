@@ -36,7 +36,7 @@ N = {
  "theme": (X[4], Y1, BW, BH, "5", "DIRECTION ARTISTIQUE", "Thème et charte", "Fable·high (Opus au pilote)", "skill themes-planches", ["canevas de design", "seulement sans thème"], "CHARTE-FME001.md", ""),
  "voix": (X[0], YA, BW, BH, "6", "VOIX", "Voix provisoire muette", "Haiku · low · aucun coût", "skill voix (Studio)", ["minutage estimé, sous-titres", "écriture pour l'oreille contrôlée"], "voice.config, dictionnaire", ""),
  "compo": (X[0], YB, BW, BH, "8", "GRAPHISTE", "Planche sur le canevas", "Opus · high", "skill graphisme (Studio)", ["canevas de design (essai 3)", "zones de la charte verrouillées"], "planche de la scène", ""),
- "illus": (X[1], YB, BW, BH, "9", "GRAPHISTE (OUTIL)", "Illustrations", "Gemini 3.1 Flash Image 1K", "skill planche-image", ["illustrations.py · vtracer", "--approuve $"], "assets/*.svg", "paye"),
+ "illus": (X[1], YB, BW, BH, "9", "GRAPHISTE (OUTIL)", "Illustrations", "Gemini 3.1 Flash Image 1K", "skill planche-image", ["devis annoncé à Ilyas, puis", "--approuve $ · vtracer"], "assets/*.svg", "paye"),
  "porte3": (X[2], YB, BW, BH, "10", "ILYAS", "Porte de composition", "", "", ["valide ou corrige", "à la main sur le canevas"], "planche validée", "porte"),
  "export": (X[3], YB, BW, BH, "11", "SCRIPT", "Export en données", "aucun modèle", "skill scenes-gabarits", ["planche_vers_donnees", "refuse une planche incomplète"], "scenes/Sxx.json", ""),
  "gabarits": (X[0], YC, 500, BH, "12", "UNE FOIS PAR FORME", "Gabarits Remotion", "Opus · high (meilleur modèle)", "skills scenes (Studio), remotion-markup (4.0.533)", ["Frise, FicheRubriques ; puis Légende, Chaîne,", "Étoile, Territoire · src/engine/gabarits/"], "réutilisés par tout le programme", ""),
@@ -46,7 +46,7 @@ N = {
  "controle": (X[2], Y3, BW, BH, "16", "AGENT PRINCIPAL", "Contrôle de l'agent", "Opus · agent qa Sonnet·medium", "skills qa, planche-par-phrase", ["symboles, règles", "essais-qualite.md"], "verdict et corrections", ""),
  "railway": (X[3], Y3, BW, BH, "17", "RAILWAY", "Lecteur de relecture", "aucun modèle", "", ["fme-reader-review", "à part de CER001"], "…/FME001-M01-L01-*", ""),
  "final": (X[4], Y3, BW, BH, "18", "ILYAS", "Contrôle final", "", "", ["porte du sens", "sur le lecteur"], "ce qui est retenu", "porte"),
- "voixfin": (X[4], Y4, BW, BH, "19", "VOIX", "Voix finale", "Haiku·low + eleven_v4", "skill voice-production (V4)", ["coût annoncé à Ilyas", "--approuve caractères"], "mp3 + alignement", "paye"),
+ "voixfin": (X[4], Y4, BW, BH, "19", "VOIX", "Voix finale", "Haiku·low + eleven_v4", "skill voice-production (V4)", ["devis annoncé à Ilyas, puis", "--approuve caractères"], "mp3 + alignement", "paye"),
  "ecoute": (X[3], Y4, BW, BH, "20", "ILYAS", "Écoute", "", "", ["prononciation, rythme", "respirations entre les idées"], "voix retenue", "porte"),
  "recalage": (X[2], Y4, BW, BH, "21", "CODE · QA", "Recalage sur la vraie voix", "Sonnet · agent qa Sonnet·medium", "skills scenes-gabarits, qa", ["locutions recalées par sync", "test:play une seule fois"], "leçon prête", ""),
  "report": (X[1], Y4, BW, BH, "22", "AGENT PRINCIPAL", "Report dans le harnais", "Opus (session)", "export_studio.py (cours)", ["dépôt du cours, plugin Studio", "→ bimaccess-studio"], "harnais mis à jour", ""),
@@ -84,7 +84,7 @@ L = [
  ([(X[2]+BW/2, Y3), (X[2]+BW/2, 856), (X[4]+60, 856), (X[4]+60, YC+BH)], "retour", "corrections", (X[2]+BW/2+10, 870)),
  ([(X[4]+BW, Y3+70), (1374, Y3+70), (1374, YB+40), (X[4]+BW, YB+40)], "retour", "corrections", (1262, 866)),
  # voix finale seulement après la porte du sens, puis recalage
- ([(X[4]+BW/2, Y3+BH), (X[4]+BW/2, Y4)], "flux", "porte du sens passée", (X[4]+BW/2+8, Y3+BH+24)),
+ ([(X[4]+BW/2, Y3+BH), (X[4]+BW/2, Y4)], "flux", "porte du sens passée, devis accepté", (X[4]+BW/2+22, Y3+BH+26)),
  ([(X[4], Y4+70), (X[3]+BW, Y4+70)], "flux", None, None),
  ([(X[3]+30, Y4+BH), (X[3]+30, Y4+BH+10), (X[4]+BW-30, Y4+BH+10), (X[4]+BW-30, Y4+BH)], "retour", "reprise d'un clip", (X[3]+44, Y4+BH+26)),
  ([(X[3], Y4+70), (X[2]+BW, Y4+70)], "flux", None, None),
@@ -96,7 +96,7 @@ L = [
 
 
 ENCADRES = [
- ("DÉPENSES ET MESURES", MANQUE, X[0], Y5, 333, ["Voix payée seulement après la porte du sens", "Accord d'Ilyas : --approuve (scripts)", "tokens.py → registre.csv, appels.csv", "Registre : essais-qualite.md"]),
+ ("DÉPENSES ET MESURES", MANQUE, X[0], Y5, 333, ["Devis annoncé, accord d'Ilyas, puis dépense", "Voix payée seulement après le sens", "tokens.py → registre.csv, appels.csv", "Registre : essais-qualite.md"]),
  ("RÉUTILISATION", TERME, X[0]+353, Y5, 333, ["Bibliothèque, signature d'image, cache", "Gabarits de scène et de composition", "Composants de planche (essai 3)", "Skills Remotion figés en 4.0.533"]),
  ("HOOKS ET GARDES", LECTURE, X[0]+706, Y5, 334, ["Session : Stop → commit et push", "Dépôt FME : aucun hook de dépôt ;", "gardes dans sync, gabarits, --approuve", "Cours : garde_bash, gate.sh, commit-msg"]),
 ]
@@ -142,6 +142,15 @@ def boite(x, y, w, h, n, role, main, modele, skill, outils, fichier, genre):
     return s
 
 
+ACCORDS = [(X[1] - 20, YB + 70), (X[4] + BW / 2, Y3 + BH + 22)]
+
+
+def accord(x, y):
+    """Pastille « accord d'Ilyas sur le coût » posée sur un lien qui mène à une dépense."""
+    return [f'<circle cx="{x}" cy="{y}" r="11" fill="{LECTURE_FOND}" stroke="{LECTURE}" stroke-width="1.8"/>',
+            f'<text x="{x}" y="{y+4.5}" class="num" fill="{LECTURE}" text-anchor="middle">$</text>']
+
+
 def lien(pts, genre, etiquette, pos):
     couleur, dash, mk = ENCRE, "", "pointe"
     if genre == "retour":
@@ -169,6 +178,8 @@ def main():
         s += boite(*v)
     for v in L:
         s += lien(*v)
+    for x, y in ACCORDS:
+        s += accord(x, y)
     for titre, couleur, x, y, w, lignes in ENCADRES:
         s.append(f'<rect x="{x}" y="{y}" width="{w}" height="{BH}" fill="{PAPIER}" stroke="{couleur}" stroke-width="1.6"/>')
         s.append(f'<text x="{x+12}" y="{y+19}" class="piste" fill="{couleur}">{titre}</text>')
@@ -177,13 +188,18 @@ def main():
             s.append(f'<text x="{x+30}" y="{y+39+k*21}" class="note" fill="{ENCRE}">{esc(l)}</text>')
     s.append(f'<text x="{X[0]}" y="{H-50}" class="note" fill="{ENCRE2}">Modèle · effort : définitions d\'agents du plugin Studio et de .claude/agents (modèle intermédiaire, Sonnet, pour les données de scène : règle d\'Ilyas du 2026-11-27). Au pilote, Fable remplacé par Opus jusqu\'au 30 novembre (limite d\'usage).</text>')
     yl = H - 24
-    leg = [("texte", LECTURE, "modele", "modèle · effort"), ("texte", TERME, "skill", "skill"), ("rect", PAPIER, ENCRE, "étape"), ("rect", LECTURE_FOND, LECTURE, "porte d'Ilyas"), ("rect", PAPIER, MANQUE, "appel payant"),
+    leg = [("texte", LECTURE, "modele", "modèle · effort"), ("texte", TERME, "skill", "skill"), ("rect", PAPIER, ENCRE, "étape"), ("rect", LECTURE_FOND, LECTURE, "porte d'Ilyas"), ("rect", PAPIER, MANQUE, "appel payant"), ("accord", LECTURE, "", "accord sur le devis"),
            ("ligne", ENCRE, "", "flux"), ("ligne", ECRITURE, "6 4", "retour"), ("ligne", TERME, "2 4", "cycle")]
     x = 44
     for k, a, b, t in leg:
         if k == "texte":
             s.append(f'<text x="{x}" y="{yl}" class="{b}" fill="{a}">{esc(t)}</text>')
             x += len(t) * 7 + 30
+            continue
+        if k == "accord":
+            s += accord(x + 11, yl - 4)
+            s.append(f'<text x="{x+30}" y="{yl}" class="leg" fill="{ENCRE2}">{esc(t)}</text>')
+            x += 30 + len(t) * 7 + 34
             continue
         if k == "rect":
             s.append(f'<rect x="{x}" y="{yl-10}" width="22" height="12" fill="{a}" stroke="{b}" stroke-width="1.5"/>')

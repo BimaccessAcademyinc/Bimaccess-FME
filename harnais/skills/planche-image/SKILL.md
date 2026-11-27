@@ -27,6 +27,8 @@ Par défaut : Flash 3.1 (`gemini-3.1-flash-image`), décision d'Ilyas du 2026-11
 
 ## 0 bis. Dépenses
 
+**Le devis avant le dessin, comme pour la voix.** Avant toute commande d'illustrations, le graphiste écrit ses commandes et rend la main sans rien dessiner ; l'agent principal lance le script sans `--approuve`, qui affiche le devis sans appeler (« Coût estimé : N dessin(s) <modèle> <taille>, le reste en cache »), et le présente à Ilyas : nombre de dessins, modèle, prix unitaire, total, reprises comprises au plus. Ilyas approuve un montant ; la commande se relance avec `--approuve <montant>`. Une reprise au-delà du montant approuvé repasse par un devis.
+
 Aucun dessin ni repérage sans l'accord d'Ilyas, coût annoncé avant (règle du 2026-11-27). Sans `--approuve <montant en $>`, `planche_image.py` et `illustrations.py` affichent « Coût estimé : … » (dessins hors cache × prix du modèle, repérages) et n'appellent rien. Un agent délégué (graphiste) écrit ses commandes et rend la main ; l'agent principal annonce le coût, Ilyas approuve, puis la commande se relance avec `--approuve`. Prix des modèles d'image : `PRIX_IMAGE` dans `planche_image.py`, à revérifier sur la page de prix.
 
 ## 1. Le plan d'une scène (`content/design/planches/Sxx.json`)
