@@ -41,3 +41,24 @@ date,etape,alias,fournisseur,modele,entree,sortie,secondes,cout_estime,statut
 2026-11-27T05:41:32,FME001-M01-L01 planches 4K reperage S01,gemini-3.5-flash,gemini,gemini-3.5-flash,1302,250,5.1,,ok
 2026-11-27T05:41:35,FME001-M01-L01 planches 4K reperage S02,gemini-3.5-flash,gemini,gemini-3.5-flash,1346,357,6.7,,ok
 2026-11-27T14:45:14,FME001-M01-L01 essai outil illustrations test-fondateurs,gemini-3-pro-image,gemini,gemini-3-pro-image,611,1234,15.3,,ok
+2026-11-27T14:56:56,FME001-M01-L01 essai illustrations s02-ill-lieu,gemini-3-pro-image,gemini,gemini-3-pro-image,696,1306,14.6,,ok
+2026-11-27T14:56:56,FME001-M01-L01 essai illustrations s02-ill-sceau,gemini-3-pro-image,gemini,gemini-3-pro-image,691,1324,14.5,,ok
+2026-11-27T14:56:56,FME001-M01-L01 essai illustrations s02-ill-contrat,gemini-3-pro-image,gemini,gemini-3-pro-image,693,1273,14.9,,ok
+2026-11-27T14:56:57,FME001-M01-L01 essai illustrations s04-ill-batiment,gemini-3-pro-image,gemini,gemini-3-pro-image,686,1315,14.8,,ok
+2026-11-27T14:56:57,FME001-M01-L01 essai illustrations s04-ill-carte,gemini-3-pro-image,gemini,gemini-3-pro-image,684,1331,15.1,,ok
+2026-11-27T14:56:57,FME001-M01-L01 essai illustrations s02-ill-saif,gemini-3-pro-image,gemini,gemini-3-pro-image,710,1348,15.6,,ok
+2026-11-27T14:56:58,FME001-M01-L01 essai illustrations s02-ill-fondateurs,gemini-3-pro-image,gemini,gemini-3-pro-image,730,1335,16.0,,ok
+2026-11-27T14:56:58,FME001-M01-L01 essai illustrations s02-ill-logiciels,gemini-3-pro-image,gemini,gemini-3-pro-image,706,1325,16.1,,ok
+2026-11-27T14:57:13,FME001-M01-L01 essai illustrations s04-ill-feuille,gemini-3-pro-image,gemini,gemini-3-pro-image,711,1337,15.4,,ok
+2026-11-27T14:57:14,FME001-M01-L01 essai illustrations s04-ill-contour,gemini-3-pro-image,gemini,gemini-3-pro-image,652,1280,17.0,,ok
+2026-11-27T14:57:14,FME001-M01-L01 essai illustrations s04-ill-globe,gemini-3-pro-image,gemini,gemini-3-pro-image,641,1282,16.1,,ok
+2026-11-27T14:57:14,FME001-M01-L01 essai illustrations s04-ill-repere,gemini-3-pro-image,gemini,gemini-3-pro-image,620,1244,15.0,,ok
+2026-11-27T14:57:14,FME001-M01-L01 essai illustrations s04-ill-hachure,gemini-3-pro-image,gemini,gemini-3-pro-image,635,0,15.9,,ok
+2026-11-27T14:57:16,FME001-M01-L01 essai illustrations s04-ill-signes,gemini-3-pro-image,gemini,gemini-3-pro-image,657,1291,16.2,,ok
+2026-11-27T14:58:20,FME001-M01-L01 essai illustrations s02-ill-lieu,gemini-3-pro-image,gemini,gemini-3-pro-image,735,1320,15.1,,ok
+2026-11-27T14:58:20,FME001-M01-L01 essai illustrations s04-ill-hachure,gemini-3-pro-image,gemini,gemini-3-pro-image,635,0,15.3,,ok
+2026-11-27T14:58:20,FME001-M01-L01 essai illustrations s04-ill-carte,gemini-3-pro-image,gemini,gemini-3-pro-image,707,1327,15.6,,ok
+2026-11-27T14:58:20,FME001-M01-L01 essai illustrations s04-ill-batiment,gemini-3-pro-image,gemini,gemini-3-pro-image,701,1343,15.5,,ok
+2026-11-27T14:58:57,FME001-M01-L01 essai illustrations s04-ill-hachure,gemini-3-pro-image,gemini,gemini-3-pro-image,660,1282,15.4,,ok
+2026-11-27T15:02:00,FME001-M01-L01 essai illustrations s02-ill-contrat,gemini-3-pro-image,gemini,gemini-3-pro-image,0,0,0.5,,http 402
+2026-11-27T15:02:04,FME001-M01-L01 essai illustrations s02-ill-contrat,gemini-3-pro-image,gemini,gemini-3-pro-image,0,0,0.2,,http 402
