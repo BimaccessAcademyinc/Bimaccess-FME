@@ -1,0 +1,203 @@
+{
+  "_note": "Données de S03 d'après content/design/spec.md, section « ## S03 » (composition du graphiste, gabarit de composition « Légende »).",
+  "gabarit": "fiche-rubriques",
+  "scene": "S03",
+  "ecran": 9,
+  "titre": 0,
+  "source": 8,
+  "habillage": [
+    { "fichier": "echelle-graphique", "x": 1480, "y": 84, "largeur": 300 },
+    { "fichier": "rose-des-vents", "x": 1712, "y": 700, "largeur": 116 }
+  ],
+  "styles": {
+    "entete": {
+      "police": "capitales",
+      "graisse": 600,
+      "taille": 28,
+      "interligne": 1.15,
+      "interlettrage": 0.32,
+      "capitales": true,
+      "couleur": "encre"
+    },
+    "nom": {
+      "police": "capitales",
+      "graisse": 600,
+      "taille": 36,
+      "interlettrage": 0.3,
+      "capitales": true,
+      "couleur": "encre"
+    },
+    "entree": {
+      "police": "serif",
+      "graisse": 400,
+      "taille": 38,
+      "interligne": 1.2,
+      "italique": true,
+      "couleur": "encre"
+    },
+    "rubrique": {
+      "police": "serif",
+      "graisse": 400,
+      "taille": 26,
+      "interligne": 1.25,
+      "couleur": "encre"
+    }
+  },
+  "illustrations": {
+    "legende": { "fichier": "s04-ill-feuille", "x": 104, "y": 186, "largeur": 668 },
+    "symbole-format": { "fichier": "s02-ill-saif", "x": 154, "y": 358.4, "largeur": 50 },
+    "symbole-norme": { "fichier": "s02-ill-sceau", "x": 147, "y": 531.3, "largeur": 64 },
+    "symbole-logiciel": { "fichier": "s03-logiciel", "x": 145, "y": 647.6, "largeur": 68 },
+    "saif": { "fichier": "s02-ill-saif", "x": 840, "y": 186, "largeur": 300 },
+    "autre": { "fichier": "s03-feuille-vegetation", "x": 1164, "y": 306, "largeur": 260, "aplat": "fond" },
+    "logo": { "fichier": "fme-logo", "x": 900, "y": 670, "largeur": 360, "aplat": "fond" }
+  },
+  "feuille": { "illustration": "legende", "bandes": [286.7, 502.8, 632.6] },
+  "traces": {
+    "lecture": {
+      "points": [[942, 607.8], [942, 654]],
+      "couches": [
+        { "couleur": "encre", "epaisseur": 13 },
+        { "couleur": "chaussee", "epaisseur": 10 },
+        { "couleur": "lecture", "epaisseur": 5 }
+      ]
+    },
+    "pointe-lecture": { "d": "M930 654 L942 670 L954 654 Z", "couleur": "encre", "epaisseur": 2, "remplissage": "lecture" },
+    "ecriture": {
+      "points": [[1260, 756], [1340, 756], [1340, 496.4]],
+      "couches": [
+        { "couleur": "encre", "epaisseur": 11 },
+        { "couleur": "chaussee", "epaisseur": 8 },
+        { "couleur": "ecriture", "epaisseur": 4 }
+      ]
+    },
+    "pointe-ecriture": { "d": "M1330 496.4 L1340 480.4 L1350 496.4 Z", "couleur": "encre", "epaisseur": 2, "remplissage": "ecriture" },
+    "repere-format": { "points": [[835, 218], [790, 393.5], [480.7, 393.5]], "couleur": "encre", "epaisseur": 1.5 },
+    "point-format": { "d": "M832 218 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0 Z", "couleur": "encre", "epaisseur": 1, "remplissage": "encre" },
+    "repere-norme": { "points": [[835, 238], [812, 566.5], [470.8, 566.5]], "couleur": "encre", "epaisseur": 1.5 },
+    "point-norme": { "d": "M832 238 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0 Z", "couleur": "encre", "epaisseur": 1, "remplissage": "encre" },
+    "repere-logiciel": { "points": [[893, 712], [800, 670.8], [486.5, 670.8]], "couleur": "encre", "epaisseur": 1.5 },
+    "point-logiciel": { "d": "M890 712 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0 Z", "couleur": "encre", "epaisseur": 1, "remplissage": "encre" }
+  },
+  "textes": {
+    "legende-titre": { "ecran": 1, "style": "entete", "cx": 438.4, "y": 233, "place": "carte", "reserve": "aucune", "largeurMesuree": 151 },
+    "saif-nom": { "ecran": 2, "style": "nom", "cx": 990, "y": 206.4, "place": "carte", "dans": "saif", "reserve": "aucune", "largeurMesuree": 98 },
+    "format": { "ecran": 3, "style": "entree", "x": 224, "y": 370.7, "place": "carte", "reserve": "aucune", "largeurMesuree": 232.7 },
+    "norme": { "ecran": 4, "style": "entree", "x": 224, "y": 543.7, "place": "carte", "reserve": "aucune", "largeurMesuree": 222.8 },
+    "logiciel": { "ecran": 5, "style": "entree", "x": 224, "y": 648, "place": "carte", "reserve": "aucune", "largeurMesuree": 238.5 },
+    "form": { "ecran": 6, "style": "rubrique", "x": 248, "y": 712, "place": "carte", "reserve": "aucune", "largeurMesuree": 468.9 },
+    "flow": { "ecran": 7, "style": "rubrique", "x": 248, "y": 756, "place": "carte", "reserve": "aucune", "largeurMesuree": 484 }
+  },
+  "ordre": [
+    "legende",
+    "symbole-format",
+    "symbole-norme",
+    "symbole-logiciel",
+    "saif",
+    "autre",
+    "logo",
+    "lecture",
+    "pointe-lecture",
+    "ecriture",
+    "pointe-ecriture",
+    "repere-format",
+    "point-format",
+    "repere-norme",
+    "point-norme",
+    "repere-logiciel",
+    "point-logiciel"
+  ],
+  "etapes": [
+    {
+      "debut": true,
+      "etat": "S03-1",
+      "gestes": [
+        { "poser": "saif" },
+        { "bande": 1, "duree": 0.07 },
+        { "bande": 2, "duree": 0.07 },
+        { "bande": 3, "duree": 0.07 },
+        { "bande": 4, "duree": 0.07 },
+        { "poser": "symbole-format" },
+        { "poser": "symbole-norme" },
+        { "poser": "symbole-logiciel" },
+        { "poser": "legende-titre" }
+      ]
+    },
+    {
+      "locution": "SAIF et FME ne désignent pas",
+      "etat": "S03-2",
+      "gestes": [{ "frappe": "titre" }]
+    },
+    {
+      "locution": "SAIF est un format",
+      "etat": "S03-3",
+      "gestes": [
+        { "poser": "point-format" },
+        { "trace": "repere-format", "duree": 0.4 },
+        { "frappe": "format", "avec": true }
+      ]
+    },
+    {
+      "locution": "C'est aussi une norme",
+      "etat": "S03-4",
+      "gestes": [
+        { "poser": "point-norme" },
+        { "trace": "repere-norme", "duree": 0.45 },
+        { "frappe": "norme", "avec": true }
+      ]
+    },
+    {
+      "locution": "FME n'est ni un format",
+      "etat": "S03-5",
+      "gestes": [{ "balayage": "logo", "sens": "droite", "duree": 0.4 }]
+    },
+    {
+      "locution": "C'est un logiciel",
+      "etat": "S03-6",
+      "gestes": [
+        { "poser": "point-logiciel" },
+        { "trace": "repere-logiciel", "duree": 0.45 },
+        { "frappe": "logiciel", "avec": true }
+      ]
+    },
+    {
+      "locution": "Il lit des données dans un format",
+      "etat": "S03-7",
+      "gestes": [
+        { "trace": "lecture", "duree": 0.4 },
+        { "trace": "pointe-lecture", "duree": 0.1 }
+      ]
+    },
+    {
+      "locution": "les écrit dans un autre",
+      "etat": "S03-8",
+      "gestes": [
+        { "balayage": "autre", "sens": "droite", "duree": 0.3 },
+        { "trace": "ecriture", "duree": 0.4 },
+        { "trace": "pointe-ecriture", "duree": 0.1 }
+      ]
+    },
+    {
+      "locution": "L'éditeur le présente",
+      "etat": "S03-9"
+    },
+    {
+      "locution": "Elle comprend FME Form",
+      "etat": "S03-10",
+      "gestes": [{ "frappe": "form" }]
+    },
+    {
+      "locution": "et FME Flow",
+      "etat": "S03-FIN",
+      "gestes": [{ "frappe": "flow" }]
+    }
+  ],
+  "evidences": {
+    "format": { "x": 214, "y": 360.7, "largeur": 252.7, "hauteur": 65.6, "de": "SAIF est un format", "a": "C'est aussi une norme" },
+    "norme": { "x": 214, "y": 533.7, "largeur": 242.8, "hauteur": 65.6, "de": "C'est aussi une norme", "a": "FME n'est ni un format" },
+    "logiciel": { "x": 214, "y": 638, "largeur": 258.5, "hauteur": 65.6, "de": "C'est un logiciel", "a": "L'éditeur le présente" },
+    "logo": { "x": 890, "y": 660, "largeur": 380, "hauteur": 192.8, "de": "L'éditeur le présente", "a": "Elle comprend FME Form" },
+    "form": { "x": 238, "y": 702, "largeur": 488.9, "hauteur": 52.5, "de": "Elle comprend FME Form", "a": "et FME Flow" },
+    "flow": { "x": 238, "y": 746, "largeur": 504, "hauteur": 52.5, "de": "et FME Flow" }
+  }
+}

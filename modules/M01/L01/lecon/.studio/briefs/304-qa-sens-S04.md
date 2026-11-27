@@ -1,0 +1,1 @@
+Brief 304-qa-sens-S04 : rôle qa, lecture du sens de la scène S04 (FicheRubriques, données content/design/scenes/S04.json), planche par phrase et captures de .studio/qa/sens/S04/, image finale contre S04-FIN, composition R1 à R8, symboles. Aucune modification hors .studio/qa/. Rapport : .studio/qa/sens/lecture-S04.md.
