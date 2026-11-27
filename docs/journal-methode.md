@@ -102,3 +102,8 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 - Erreur de l'agent principal, corrigée : zone utile élargie à la marge de la charte, ce qui a fait sortir le bâtiment de S04 de la face et perdre la projection européenne. Règle : la zone utile d'un gabarit se tire de la charte (face de carte x 104 à 1424), pas d'une lecture de la consigne.
 - À reporter si l'essai est retenu : les gabarits dans le moteur source du harnais ; un champ d'échelle pour une fiche entière ; une mise en évidence calée sur la boîte d'un texte ; le dossier `content/design/scenes/` dans le modèle de projet.
 
+
+## 2026-11-27 · Essai 2 approuvé : scènes par gabarits
+
+- Résultat (détail : `docs/essais-qualite.md`) : données d'une scène en environ 7 min et 1,2 $ (modèle intermédiaire) contre 13,5 min et 5 $ de code sur mesure ; deux scènes en 8 min en parallèle ; gabarits Frise et FicheRubriques écrits une fois en 15 min ; feuille remplie corrigée (défaut relevé par Ilyas sur l'essai 1) ; qualité des images et des gestes inchangée.
+- Décision d'Ilyas : les cinq changements approuvés, portés dans `harnais/skills/scenes-gabarits/SKILL.md`, `CLAUDE.md` et le schéma de la chaîne. Goulot suivant : le graphiste (environ 15 min par scène), prochain essai : composition posée dans le canevas de design et écrite directement en données de gabarit.

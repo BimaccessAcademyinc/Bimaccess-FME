@@ -111,13 +111,13 @@
 <rect x="813" y="336" width="236" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="813" y1="360" x2="1049" y2="360" stroke="#23281F" stroke-width="0.8"/>
 <text x="823" y="352" class="num" fill="#23281F">9</text>
-<text x="841" y="352" class="role" fill="#545B4C">CODEUR</text>
-<text x="823" y="381" class="main" fill="#23281F">Scènes</text>
-<text x="823" y="400" class="outil" fill="#545B4C">Claude · skill scenes (Studio)</text>
-<text x="823" y="414" class="outil" fill="#545B4C">skills Remotion 4.0.533 (dépôt)</text>
-<text x="823" y="428" class="outil" fill="#545B4C">essai 2 : gabarits + données</text>
+<text x="841" y="352" class="role" fill="#545B4C">UN AGENT PAR SCÈNE</text>
+<text x="823" y="381" class="main" fill="#23281F">Scènes par gabarits</text>
+<text x="823" y="400" class="outil" fill="#545B4C">gabarits Remotion : Frise, Fiche…</text>
+<text x="823" y="414" class="outil" fill="#545B4C">données Sxx.json, modèle intermédiaire</text>
+<text x="823" y="428" class="outil" fill="#545B4C">en parallèle · feuille remplie</text>
 <line x1="823" y1="452" x2="1039" y2="452" stroke="#A3AA9B" stroke-width="0.7"/>
-<text x="823" y="467" class="fichier" fill="#1E6E3C">sNN.tsx / Sxx.json</text>
+<text x="823" y="467" class="fichier" fill="#1E6E3C">content/design/scenes/Sxx.json</text>
 <line x1="1051" y1="406.0" x2="1070" y2="406.0" stroke="#23281F" stroke-width="1.6" marker-end="url(#pointe)"/>
 <rect x="1074" y="336" width="236" height="140" fill="#FBFCF8" stroke="#23281F" stroke-width="1.4"/>
 <line x1="1074" y1="360" x2="1310" y2="360" stroke="#23281F" stroke-width="0.8"/>

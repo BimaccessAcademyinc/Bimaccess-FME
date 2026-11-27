@@ -25,6 +25,10 @@ Constat du 2026-11-27 (`docs/journal-methode.md`, et `bimaccess-studio/docs/pilo
 - Un essai reste un essai : une scène, comparée à la méthode en place, montrée comme essai.
 - Avant la voix, lire les décisions les plus récentes du rôle Voix du cours (état, notes d'essai), pas seulement sa configuration.
 
+## Méthode des scènes (approuvée par Ilyas le 2026-11-27, essais 1 et 2)
+
+Skill `harnais/skills/scenes-gabarits/` : (1) une scène de forme connue se fait par gabarit du moteur et fichier de données, pas en code sur mesure ; (2) modèle intermédiaire pour les données d'une scène, meilleur modèle pour écrire un gabarit et pour la composition ; (3) une scène par agent, en parallèle ; (4) la composition remplit la face de carte (x 104 à 1424), vérifiée par le gabarit ; (5) aucune réserve sous un texte posé dans une carte ou une feuille tant que les illustrations ne sont pas aux couleurs exactes des jetons. Modèle d'image par défaut : Flash 3.1.
+
 ## Disposition
 
 | Dossier | Contenu |
