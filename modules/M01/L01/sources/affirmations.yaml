@@ -1207,8 +1207,12 @@ affirmations:
 - id: A-sig-09
   question: Q12
   enonce: La plateforme FME comprend FME Form, pour construire les traitements, et FME Flow, pour les automatiser.
-  usage: expert
+  usage: narration
   sources:
+  - niveau: expert
+    ref: porte-expert.md#Q12
+    editeur: Ilyas (BIMaccess)
+    consulte: '2026-11-27'
   - url: https://www.geoconnexion.com/in-depth/beyond-geospatial-safe-softwares-journey-to-a-global-ai-driven-integration-platform
     titre: Beyond geospatial
     editeur: GeoConnexion
@@ -1216,9 +1220,9 @@ affirmations:
     consulte: '2026-11-27'
     extrait: Safe is a platform that includes FME Form for authoring workflows, and FME Flow for enterprise automation.
   contradictions: []
-  verifie: null
+  verifie: true
   note_verification: 'Ajoutée le 2026-11-27 ; source unique (propos de Safe Software rapportés par GeoConnexion) : à confirmer
-    par Ilyas.'
+    par Ilyas. Confirmée par Ilyas, porte Q12 (2026-11-27).'
 lacunes:
 - question: Q1
   manque: 'Texte intégral d''ISO 19101-1 non lu (iso.org répond 403) ; la définition vient d''une citation du W3C. Définition

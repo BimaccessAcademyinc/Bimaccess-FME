@@ -130,3 +130,11 @@ Réponse d'Ilyas : non posée. Appliqué, révisable : option 1, les étapes de 
 Ce que disent les sources : XYHT seul (presse spécialisée) [A-origines-23]. Question ajoutée le 2026-11-26, quand Ilyas a demandé que la leçon commence par le problème.
 
 Réponse d'Ilyas : oui, confirmé (2026-11-26). A-origines-23 passe en narration.
+
+# Troisième porte · ce qu'est FME (2026-11-27)
+
+## Q12 · La voix peut-elle dire que la plateforme FME comprend FME Form, pour construire les traitements, et FME Flow, pour les automatiser ?
+
+Ce que disent les sources : propos de Safe Software rapportés par GeoConnexion [A-sig-09]. Question ouverte quand Ilyas a relevé que la leçon ne dit pas ce qu'est FME (format, norme, méthode ou logiciel).
+
+Réponse d'Ilyas : oui, confirmé (2026-11-27).

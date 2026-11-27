@@ -27,6 +27,9 @@ Générée par `check_pack.py --remise` depuis `affirmations.yaml` : ne pas modi
 | A-nom-18 | FME permet de partager des données géographiques entre des logiciels différents. | forte | Q9 |
 | A-origines-23 | Les entreprises forestières utilisaient des logiciels différents, et le gouvernement ne voulait pas leur imposer un même éditeur. | forte | Q6 |
 | A-origines-24 | Safe Software commence par développer une technologie de traduction pour un format du gouvernement de la Colombie-Britannique, SAIF. | moyenne | Q6 |
+| A-nom-19 | FME est un logiciel : un ensemble d'applications qui traitent des données spatiales, le produit phare de Safe Software. | forte | Q4 |
+| A-nom-20 | Safe Software présente FME comme une plateforme d'intégration de données. | forte | Q4 |
+| A-sig-09 | La plateforme FME comprend FME Form, pour construire les traitements, et FME Flow, pour les automatiser. | forte | Q12 |
 
 ## Terminologie décidée
 
