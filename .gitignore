@@ -5,3 +5,4 @@ dist/
 __pycache__/
 modules/*/L*/banc/storyboard-*/
 reader/public/
+modules/*/L*/*/.studio/qa/
