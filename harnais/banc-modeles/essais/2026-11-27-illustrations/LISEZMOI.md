@@ -15,3 +15,14 @@ Comparaison : le graphisme de L01 a pris environ 73 min d'agents (spécification
 Conclusion : l'image dessine, la vision repère, le code pose le texte exact et révèle chaque zone sur ses mots. Une planche de scène coûte environ 20 s d'appels au lieu de 10 à 20 min d'agent.
 
 Limites vues : les modèles d'image plus récents (`gemini-3-pro-image`, `gemini-3.1-flash-image`) génèrent mais ne sont pas renvoyés par le point d'accès compatible OpenAI ; ils demandent l'API native (en-tête `x-goog-api-key`), qui permet aussi de donner des images de référence pour tenir le même style d'une scène à l'autre.
+
+## Image de référence, API native (après le redémarrage de la session)
+
+`gemini-3-pro-image`, API native (clé `x-goog-api-key` ajoutée par le proxy), planche `s03-sanstexte.png` donnée comme référence de style ; script `gen.py`.
+
+| Essai | Durée | Résultat |
+|---|---|---|
+| Planche de S01 sans texte (`s01-ref.png`) | 14,8 s | même papier, bordure, quadrillage, trait et bandeau de titre que la référence ; silhouettes au trait au lieu de pleines |
+| Planche de S05 sans texte (`s05-ref.png`) | 12,5 s | même style ; la « parcelle » devenue une icône de boîte |
+
+Les deux en parallèle : 15 s d'attente pour deux scènes. Le style tient d'une scène à l'autre avec une image de référence.
