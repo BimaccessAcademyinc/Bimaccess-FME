@@ -4,6 +4,7 @@ src/generated/
 public/audio/
 .studio/tmp/
 .studio/qa/shots/
+sources/pages/
 .env
 *.log
 .DS_Store

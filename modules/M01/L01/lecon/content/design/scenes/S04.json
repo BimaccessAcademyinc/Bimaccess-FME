@@ -69,37 +69,32 @@
       "fichier": "s04-ill-contour",
       "x": 340.4,
       "y": 639.4,
-      "largeur": 163.2,
-      "sur": "feuille"
+      "largeur": 163.2
     },
     "hachure": {
       "fichier": "s04-ill-hachure",
       "x": 825.7,
       "y": 361.3,
-      "largeur": 145.9,
-      "sur": "contour"
+      "largeur": 145.9
     },
     "signes": {
       "fichier": "s04-ill-signes",
       "x": 1113.9,
       "y": 383.2,
-      "largeur": 255.0,
-      "sur": "feuille"
+      "largeur": 255.0
     },
     "globe": {
       "fichier": "s04-ill-globe",
       "x": 817.0,
       "y": 684.6,
       "largeur": 106.1,
-      "decoupe": "cercle",
-      "sur": "feuille"
+      "decoupe": "cercle"
     },
     "repere": {
       "fichier": "s04-ill-repere",
       "x": 841.0,
       "y": 711.2,
-      "largeur": 32.6,
-      "sur": "globe"
+      "largeur": 32.6
     }
   },
   "feuille": {
@@ -147,7 +142,7 @@
       "y": 241.9,
       "place": "carte",
       "reserve": "aucune",
-      "sur": "feuille"
+      "largeurMesuree": 365
     },
     "geometrie": {
       "ecran": 2,
@@ -156,7 +151,7 @@
       "y": 308.2,
       "place": "carte",
       "reserve": "aucune",
-      "sur": "feuille"
+      "largeurMesuree": 472
     },
     "attributs": {
       "ecran": 3,
@@ -165,7 +160,7 @@
       "y": 520.4,
       "place": "carte",
       "reserve": "aucune",
-      "sur": "feuille"
+      "largeurMesuree": 126
     },
     "usage": {
       "ecran": 4,
@@ -174,7 +169,7 @@
       "y": 560.2,
       "place": "carte",
       "reserve": "aucune",
-      "sur": "feuille"
+      "largeurMesuree": 211
     },
     "systeme": {
       "ecran": 5,
@@ -183,7 +178,7 @@
       "y": 650.0,
       "place": "carte",
       "reserve": "aucune",
-      "sur": "feuille"
+      "largeurMesuree": 313
     }
   },
   "etapes": [

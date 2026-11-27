@@ -24,6 +24,14 @@
  *     embarquées suivent la signature. Un thème qui porte « signature » ne
  *     s'applique qu'à cette signature (sinon : thème par défaut, avertissement).
  *
+ * Voix : quand l'alignement ne reprend pas le texte mot pour mot (dictionnaire
+ * de prononciation : « T. V. A. » pour « TVA », nombre dit en toutes lettres),
+ * les mots dits sont ramenés aux mots écrits du storyboard (toWritten) : les
+ * sous-titres montrent le storyboard, les locutions s'y cherchent.
+ * Typographie française (lang fr) : espace insécable avant « : ; ? ! » et dans
+ * les guillemets des textes affichés (écran, exercices), jamais dans la
+ * narration.
+ *
  * Sorties : src/generated/{texts,narration,theme,assets,meta}.ts,
  * src/generated/fonts.css (polices de la signature, en ligne dans la page) et
  * public/audio/*.mp3 (copiés dans dist/audio/ par la construction).
@@ -42,7 +50,8 @@
  *
  * --scenes : après l'écriture, charge src/lesson/lesson.ts (Vite, rendu
  * serveur) pour exécuter les vérifications de chargement des scènes
- * (locutions said/b/word, ordered, sceneTexts, defineScene, defineLesson) ;
+ * (locutions said/b/word, ordered, sceneTexts, defineScene, defineLesson,
+ * données et composition des scènes à gabarit : GabaritError, docs/gabarits.md) ;
  * échoue (code 1) avec l'erreur nommée au lieu de livrer une page cassée.
  * `npm run check` et `npm run build` le passent.
  *
@@ -96,8 +105,9 @@ if (cfg.id && !/^[a-z0-9][a-z0-9-]*$/i.test(cfg.id)) fail(`studio.config.json : 
  * DESIGN.md : fond blanc à grille de points, Azeret Mono et IBM Plex Sans,
  * couleurs ACI, poignées, aucun coin arrondi), « carte » (signature « carte
  * topographique » : feuille imprimée à bordure graduée et carroyage, fond
- * #F1F3EC, Source Serif 4 et Barlow Condensed, aplats et traits, mise en
- * évidence tiretée bleue sans poignée, aucun coin arrondi ni ombre) et
+ * papier clair, Source Serif 4 et Barlow Condensed, aplats et traits, mise en
+ * évidence tiretée bleue sans poignée, aucun coin arrondi ni ombre ; palette
+ * neutre par défaut, celle du programme dans theme.json) et
  * « neutral » (signature neutre d'origine : fond papier, polices système,
  * coins arrondis).
  */
@@ -302,7 +312,6 @@ function estimateWords(text) {
   return { words, duration: round(Math.max(0.5, t - RATE.paragraph)) }
 }
 
-/** Mots datés d'un alignement ElevenLabs (caractères et instants). */
 /**
  * Ramène les mots dits (alignement de la voix, après le dictionnaire de
  * prononciation) aux mots écrits du storyboard : plus longue sous-suite commune
@@ -341,6 +350,7 @@ function toWritten(saidWords, text) {
   return out
 }
 
+/** Mots datés d'un alignement ElevenLabs (caractères et instants). */
 function wordsFromAlignment(al) {
   const a = al.alignment ?? al.normalized_alignment ?? al
   const ch = a.characters
@@ -464,9 +474,9 @@ for (const sc of STORY_CLIPS) {
         if (words.length === 0) fail(`${sc.id} : alignement vide (${m.alignment})`)
         duration = round(Number(m.duration_s) || words.at(-1)?.end || 0)
         if (words.at(-1) && words.at(-1).end > duration + 0.05) fail(`${sc.id} : duration_s (${duration} s) plus court que l'alignement (${words.at(-1).end} s)`)
-        // Le dictionnaire de prononciation change des mots (« FME » dit « F. M. E. »,
-        // balises d'accent) : les mots dits sont ramenés au texte écrit, pour que
-        // les sous-titres montrent le storyboard et que les locutions s'y cherchent
+        // Le dictionnaire de prononciation change des mots (« TVA » dit « T. V. A. »,
+        // « 1993 » dit en toutes lettres) : les mots dits sont ramenés au texte écrit,
+        // pour que les sous-titres montrent le storyboard et que les locutions s'y cherchent
         const said = tokens(words.map((w) => w.text).join(" ")).join(" ")
         const written = tokens(sc.text).join(" ")
         if (said !== written) {
@@ -511,10 +521,20 @@ for (const key of Object.keys(extraBeats)) if (!CLIPS[key]) fail(`repères pour 
  * (couleur de l'ombre décalée des panneaux). `grid` :
  * pas de la grille de points en pixels de composition (0 = aucune grille).
  *
- * carte : jetons de la charte « carte topographique » (tokens.json de la
- * charte, noms en camelCase : encre-2 → encre2, relief-maitresse →
- * reliefMaitresse, lecture-fond → lectureFond…), polices `serif` (Source
- * Serif 4) et `capitales` (Barlow Condensed). Les clés communes que lisent le
+ * carte : jetons de la signature « carte topographique », sous les noms des
+ * chartes de carte (tokens.json d'une charte, en camelCase : encre-2 →
+ * encre2, relief-maitresse → reliefMaitresse, lecture-fond → lectureFond…),
+ * polices `serif` (Source Serif 4) et `capitales` (Barlow Condensed). Les
+ * valeurs par défaut sont NEUTRES : papier et encre gris, gris d'interface,
+ * conventions de la carte imprimée (relief brun, eau bleue, végétation verte,
+ * chaussée blanche, route rouge), bleu de la mise en évidence et du choix,
+ * or du manque ; aucun jeton propre à un programme (le terme nouveau en
+ * encre, le lien en encre-2 souligné, l'image en gris). La palette d'un
+ * programme (charte FME001 : fond #F1F3EC choisi par Ilyas, terme vert, lien
+ * brun, gris verts) se met tout entière dans content/design/theme.json
+ * (new-project.mjs --theme <fichier> l'y copie). Contrastes de la palette
+ * neutre (WCAG) : encre 13,9 sur fond, encre2 6,3, lecture 4,8 ; lecture n'est
+ * pas un texte sur survol ni sur lectureFond, comme dans la charte FME001. Les clés communes que lisent le
  * moteur et les scènes (background, ink, accent…) en sont DÉRIVÉES après la
  * fusion avec theme.json (CARTE_ALIASES) : un thème qui change « lecture »
  * change aussi accent, blue, cyan, grip, sauf si la clé commune est donnée
@@ -528,8 +548,6 @@ for (const key of Object.keys(extraBeats)) if (!CLIPS[key]) fail(`repères pour 
  */
 const SYSTEM_SANS = "system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
 const SYSTEM_MONO = "ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace"
-/** Fond de la signature carte (charte § 2 : aucun autre fond de page). */
-const CARTE_FOND = "#F1F3EC"
 /** Clés communes du thème → jeton de la charte carte dont elles prennent la valeur (ou valeur fixe). */
 const CARTE_ALIASES = {
   colors: {
@@ -640,12 +658,13 @@ const DEFAULT_THEMES = {
     typingCps: 35,
   },
   carte: {
+    // Palette neutre de la signature : aucune couleur de programme (elle vient de content/design/theme.json)
     colors: {
-      fond: CARTE_FOND,
-      papier: "#FBFCF8",
-      encre: "#23281F",
-      encre2: "#545B4C",
-      carroyage: "#7D8576",
+      fond: "#F2F2EF",
+      papier: "#FBFBF9",
+      encre: "#232420",
+      encre2: "#575954",
+      carroyage: "#83857F",
       relief: "#B08A62",
       reliefMaitresse: "#8E6640",
       chaussee: "#FFFFFF",
@@ -655,15 +674,15 @@ const DEFAULT_THEMES = {
       eauFond: "#BFD5E6",
       vegetation: "#6E8B4E",
       vegetationFond: "#D3DFC3",
-      imageClair: "#9DAF8A",
-      imageFonce: "#5F7550",
-      terme: "#1E6E3C",
+      imageClair: "#B3B5AF",
+      imageFonce: "#6A6C66",
+      terme: "#232420",
       manque: "#C99700",
       manqueFond: "#FBF1C8",
-      lien: "#7A4A22",
-      lienSurvol: "#4F2E12",
-      survol: "#E5E9DD",
-      verrouTrait: "#A3AA9B",
+      lien: "#575954",
+      lienSurvol: "#232420",
+      survol: "#E7E7E3",
+      verrouTrait: "#A8A9A4",
     },
     fonts: {
       serif: "'Source Serif 4', Georgia, serif",
@@ -716,9 +735,8 @@ if (signature === "bimaccess") {
   }
 }
 if (signature === "carte") {
-  // Charte carte : aplats et traits, angles vifs ; un seul fond de page
+  // Signature carte : aplats et traits, angles vifs
   if (Number(THEME.radius) !== 0) warn(`thème : « radius » vaut ${THEME.radius} ; la signature carte n'a aucun coin arrondi : le lecteur l'ignore`)
-  if (String(THEME.colors.background).toUpperCase() !== CARTE_FOND) warn(`thème : fond ${THEME.colors.background} ; la signature carte a un fond ${CARTE_FOND} partout (charte, § 2 : aucun autre fond de page)`)
   if (Number(THEME.grid) !== 0) warn(`thème : « grid » vaut ${THEME.grid} ; la signature carte n'a pas de grille de points (la feuille porte un carroyage) : le lecteur l'ignore`)
 }
 

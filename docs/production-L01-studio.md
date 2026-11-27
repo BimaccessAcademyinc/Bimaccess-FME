@@ -47,3 +47,15 @@ Devis lu dans la sortie de `illustrations.py` lancé sans `--approuve` sur les 2
 1. L'autre session est-elle arrêtée ? Sans ta réponse, `lecon/` ne bouge pas.
 2. Les compositions et les 22 commandes de l'autre session pour S01, S03, S05, S06, S07 : les graphistes de cette chaîne les lisent comme point de départ (gain de temps), ou repartent de zéro ?
 3. Le plafond de 2,95 $ pour les illustrations, à engager seulement après le devis exact de l'étape 2.
+
+## Décision d'Ilyas du 2026-11-27, et ce qui change
+
+« Le devis est trop cher, viser beaucoup plus bas ; utilise ce qui a déjà été créé dans les essais pour économiser tokens et temps. » La leçon se fait dans `lecon/` (l'ancienne version reste dans l'historique git ; sa composition est gardée dans `lecon/.studio/reprise/`).
+
+| Scène | Reprise | Travail restant | Dessins |
+|---|---|---|---|
+| S01, S05, S06, S07 | scènes codées et SVG de `lecon-gabarits`, chargées par le nouveau moteur (TypeScript en 0) | aucun avant la porte du sens | 0 |
+| S02, S04 | données et 14 illustrations de `lecon-gabarits` | places, tailles et largeurs de texte pour le nouveau contrôle (un agent des données par scène, en parallèle) | 0 |
+| S03 | ancienne composition (gabarit « Légende de carte ») | graphiste : les 4 dessins commandés remplacés par des symboles déjà dessinés (`design/symboles/`) ou des tracés du moteur ; puis données ou code | 0 visé |
+
+Devis visé : **0 $** de dessin (au lieu de 2,95 $). La voix V4 est gardée : 0 caractère.

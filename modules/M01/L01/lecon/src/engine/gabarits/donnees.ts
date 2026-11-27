@@ -9,6 +9,7 @@
  */
 import { THEME } from "../../generated/theme"
 import type { Point } from "../anim"
+import { PAGE } from "../signature"
 
 /** Données de gabarit fausses : le message dit le fichier, le champ et quoi faire. */
 export class GabaritError extends Error {
@@ -26,8 +27,6 @@ export type Sens = keyof typeof SENS
 
 export type StyleD = {
   readonly police: string
-  /** Clé de la police dans THEME.fonts (« serif », « capitales ») : métriques des contrôles de composition. */
-  readonly famille: string
   readonly graisse: number
   readonly taille: number
   readonly interligne: number
@@ -36,7 +35,7 @@ export type StyleD = {
   readonly capitales: boolean
   readonly italique: boolean
 }
-export type IllustrationD = { readonly id: string; readonly fichier: string; readonly x: number; readonly y: number; readonly largeur: number; readonly aplat: string | null; readonly decoupe: "cercle" | null; readonly sur: string | null }
+export type IllustrationD = { readonly id: string; readonly fichier: string; readonly x: number; readonly y: number; readonly largeur: number; readonly aplat: string | null; readonly decoupe: "cercle" | null }
 export type TexteD = {
   readonly id: string
   readonly ecran: number
@@ -45,15 +44,15 @@ export type TexteD = {
   readonly cx: number | null
   readonly y: number
   readonly largeur: number | null
-  /** Ancienne largeur mesurée de la spécification : acceptée, sans effet (les contrôles mesurent le texte, controles.ts). */
+  /** Largeur mesurée à la planche d'un texte sans « largeur » (contrôles de composition seulement ; aucun effet sur le rendu). */
   readonly largeurMesuree: number | null
-  /** Ancien nombre de lignes : accepté, sans effet (les contrôles calculent le retour à la ligne, controles.ts). */
+  /** Nombre de lignes d'un texte à « largeur » (contrôles de composition seulement ; aucun effet sur le rendu). */
   readonly lignes: number | null
+  /** « face » (posé sur la face) ou « carte » (posé dans une illustration : carte, feuille, cartouche). */
+  readonly place: "face" | "carte"
   /** Couleur de la réserve (jeton résolu), null : aucune. */
   readonly reserve: string | null
   readonly dans: string | null
-  /** Support (illustration) sur lequel le texte est posé : seul chevauchement permis (contrôle 4). */
-  readonly sur: string | null
   readonly langue: string | null
 }
 export type CoucheD = { readonly couleur: string; readonly epaisseur: number }
@@ -172,7 +171,7 @@ export class Lecteur {
   couleur(o: Obj, cle: string, chemin: string, defaut?: string): string {
     const v = o[cle]
     if (v === undefined && defaut !== undefined) return COULEURS[defaut] ?? defaut
-    if (typeof v !== "string" || COULEURS[v] === undefined) this.faute(j(chemin, cle), `jeton de couleur ${decrire(v)} inconnu du thème`, `écrire un nom de jeton de content/design/theme.json (encre, papier, fond, terme, ecriture, chaussee, carroyage, lecture, lien…), jamais une valeur #RRVVBB`)
+    if (typeof v !== "string" || COULEURS[v] === undefined) this.faute(j(chemin, cle), `jeton de couleur ${decrire(v)} inconnu du thème`, `écrire un nom de jeton du thème de la signature (${Object.keys(COULEURS).join(", ")}), jamais une valeur #RRVVBB`)
     return COULEURS[v] as string
   }
 
@@ -221,7 +220,6 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
     const o = L.objet(v, c, ["police", "graisse", "taille", "interligne", "couleur", "interlettrage", "capitales", "italique"])
     styles.set(id, {
       police: L.police(o, "police", c),
-      famille: o.police as string,
       graisse: L.nombre(o, "graisse", c, true) ?? 400,
       taille: L.nombre(o, "taille", c),
       interligne: L.nombre(o, "interligne", c, true) ?? 1.2,
@@ -244,7 +242,7 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
   for (const [id, v] of L.table(racine.illustrations, "illustrations")) {
     const c = `illustrations.${id}`
     declarer(id, c)
-    const o = L.objet(v, c, ["fichier", "x", "y", "largeur", "aplat", "decoupe", "sur"])
+    const o = L.objet(v, c, ["fichier", "x", "y", "largeur", "aplat", "decoupe"])
     illustrations.set(id, {
       id,
       fichier: L.texte(o, "fichier", c),
@@ -253,7 +251,6 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
       largeur: L.nombre(o, "largeur", c),
       aplat: o.aplat === undefined ? null : L.couleur(o, "aplat", c),
       decoupe: o.decoupe === undefined ? null : L.choix(o, "decoupe", c, ["cercle"] as const),
-      sur: L.texte(o, "sur", c, true),
     })
   }
 
@@ -261,14 +258,28 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
   for (const [id, v] of L.table(racine.textes, "textes")) {
     const c = `textes.${id}`
     declarer(id, c)
-    const o = L.objet(v, c, ["ecran", "style", "x", "cx", "y", "largeur", "largeurMesuree", "lignes", "place", "reserve", "dans", "sur", "langue"])
+    const o = L.objet(v, c, ["ecran", "style", "x", "cx", "y", "largeur", "largeurMesuree", "lignes", "place", "reserve", "dans", "langue"])
     const style = L.texte(o, "style", c)
     if (!styles.has(style)) L.faute(`${c}.style`, `style « ${style} » absent de « styles »`, `le déclarer dans « styles » (styles connus : ${[...styles.keys()].join(", ") || "aucun"})`)
     const x = L.nombre(o, "x", c, true)
     const cx = L.nombre(o, "cx", c, true)
     if ((x === null) === (cx === null)) L.faute(c, "il faut « x » (bord gauche du texte) ou « cx » (centre), un seul des deux", "recopier la place de la spécification")
     const place = L.choix(o, "place", c, ["face", "carte"] as const, "face")
-    const reserve = L.choix(o, "reserve", c, ["fond", "papier", "aucune"] as const, place === "face" ? "fond" : "aucune")
+    // Réserve : un jeton du thème, ou « aucune » ; défaut : le fond de la signature sur la face, aucune dans une carte
+    let reserve: string | null
+    if (o.reserve === undefined) reserve = place === "face" ? (COULEURS[PAGE.reserve] ?? null) : null
+    else if (o.reserve === "aucune") reserve = null
+    else reserve = L.couleur(o, "reserve", c)
+    const largeur = L.nombre(o, "largeur", c, true)
+    const largeurMesuree = L.nombre(o, "largeurMesuree", c, true)
+    const lignes = L.entier(o, "lignes", c, true)
+    // Les contrôles de composition (plan.ts) mesurent chaque texte : sa boîte doit être connue
+    if (largeur === null && largeurMesuree === null) L.faute(c, "largeur du texte inconnue", "donner « largeurMesuree » (largeur du texte sur une ligne, mesurée à la planche ou dans la spécification), ou « largeur » et « lignes » pour un texte qui revient à la ligne")
+    if (largeur !== null && largeurMesuree !== null) L.faute(c, "« largeur » et « largeurMesuree » ensemble", "« largeur » (retour à la ligne) avec « lignes », ou « largeurMesuree » pour un texte sur une ligne")
+    if (largeur !== null && lignes === null) L.faute(`${c}.lignes`, "nombre de lignes manquant pour un texte à « largeur »", "écrire le nombre de lignes vu à la planche (1, 2…)")
+    if (largeur === null && lignes !== null) L.faute(`${c}.lignes`, "« lignes » sans « largeur »", "un texte sans « largeur » tient sur une ligne : retirer « lignes »")
+    if (lignes !== null && lignes < 1) L.faute(`${c}.lignes`, "zéro ligne", "écrire 1 ou plus")
+    if ((largeur ?? 1) <= 0 || (largeurMesuree ?? 1) <= 0) L.faute(c, "largeur nulle ou négative", "recopier la largeur de la planche")
     textes.set(id, {
       id,
       ecran: L.entier(o, "ecran", c),
@@ -276,12 +287,12 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
       x,
       cx,
       y: L.nombre(o, "y", c),
-      largeur: L.nombre(o, "largeur", c, true),
-      largeurMesuree: L.nombre(o, "largeurMesuree", c, true),
-      lignes: L.entier(o, "lignes", c, true),
-      reserve: reserve === "aucune" ? null : (COULEURS[reserve] ?? null),
+      largeur,
+      largeurMesuree,
+      lignes,
+      place,
+      reserve,
       dans: L.texte(o, "dans", c, true),
-      sur: L.texte(o, "sur", c, true),
       langue: L.texte(o, "langue", c, true),
     })
   }
@@ -301,7 +312,7 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
         return { couleur: L.couleur(ko, "couleur", cc), epaisseur: L.nombre(ko, "epaisseur", cc) }
       })
       if (couches.length === 0) L.faute(`${c}.couches`, "liste vide", "une couche au moins, ou retirer « couches »")
-    } else couches = [{ couleur: L.couleur(o, "couleur", c, "encre"), epaisseur: L.nombre(o, "epaisseur", c) }]
+    } else couches = [{ couleur: L.couleur(o, "couleur", c, "ink"), epaisseur: L.nombre(o, "epaisseur", c) }]
     traces.set(id, {
       id,
       chemin: c,
@@ -317,7 +328,7 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
     const c = "frise"
     if (racine.frise === undefined) L.faute(c, "absent", "décrire la ligne de la frise : { \"de\": [x, y], \"a\": [x, y], \"epaisseur\": 3, \"pointe\": [[x, y], [x, y], [x, y]] }")
     const o = L.objet(racine.frise, c, ["de", "a", "couleur", "epaisseur", "pointe"])
-    frise = { de: L.point(o.de, `${c}.de`), a: L.point(o.a, `${c}.a`), couleur: L.couleur(o, "couleur", c, "encre"), epaisseur: L.nombre(o, "epaisseur", c), pointe: L.points(o.pointe, `${c}.pointe`, 3) }
+    frise = { de: L.point(o.de, `${c}.de`), a: L.point(o.a, `${c}.a`), couleur: L.couleur(o, "couleur", c, "ink"), epaisseur: L.nombre(o, "epaisseur", c), pointe: L.points(o.pointe, `${c}.pointe`, 3) }
   }
 
   const annees = new Map<string, AnneesD>()
@@ -330,9 +341,9 @@ export function lire(gabarit: NomGabarit, brut: unknown): Donnees {
       id,
       de: L.point(o.de, `${c}.de`),
       a: L.point(o.a, `${c}.a`),
-      couleur: L.couleur(o, "couleur", c, "encre"),
+      couleur: L.couleur(o, "couleur", c, "ink"),
       epaisseur: L.nombre(o, "epaisseur", c),
-      claire: { de: L.point(k.de, `${c}.claire.de`), a: L.point(k.a, `${c}.claire.a`), couleur: L.couleur(k, "couleur", `${c}.claire`, "papier"), epaisseur: L.nombre(k, "epaisseur", `${c}.claire`) },
+      claire: { de: L.point(k.de, `${c}.claire.de`), a: L.point(k.a, `${c}.claire.a`), couleur: L.couleur(k, "couleur", `${c}.claire`, "panel"), epaisseur: L.nombre(k, "epaisseur", `${c}.claire`) },
     })
   }
 

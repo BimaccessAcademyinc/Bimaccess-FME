@@ -22,7 +22,10 @@
  *     scène : verrouillée, non terminée, rien d'enregistré comme terminé ;
  *   - rechargement : scène, état et Suivant restaurés, dernière image, pause ;
  *     données conservées contradictoires (geste après le clip) sans erreur ;
- *   - lecture/pause à l'espace, navigation aux flèches ;
+ *   - lecture/pause à l'espace, navigation aux flèches ; vitesse de lecture
+ *     (narration-rate, ×0,5 à ×2) appliquée au lecteur et gardée au
+ *     rechargement ; bouton pour revoir (narration-replay) : retour au début
+ *     de la scène, lecture relancée ;
  *   - une mise en évidence au plus à la fois ([data-highlight="on"]) : à la
  *     dernière image de chaque scène et après la validation d'un exercice ;
  *   - écran étroit (390 px, vertical) : pas de défilement horizontal,
@@ -436,6 +439,26 @@ async function run(browser, target) {
       await page.keyboard.press(" ")
       const resumed = await until(page, () => document.querySelector('[data-testid="stage"]')?.getAttribute("data-playing") === "true", undefined, 3000)
       check(paused && resumed, `${sceneId} : espace met en pause puis relance la narration`)
+      // Vitesse de lecture et bouton pour revoir
+      const rate = page.getByTestId("narration-rate")
+      if ((await rate.count()) === 1 && (await page.getByTestId("narration-replay").count()) === 1) {
+        await rate.selectOption("1.5")
+        check(await until(page, () => document.querySelector('[data-testid="stage"]')?.getAttribute("data-rate") === "1.5", undefined, 3000), `${sceneId} : vitesse ×1,5 appliquée au lecteur (data-rate)`)
+        await rate.selectOption("1")
+        await page.waitForTimeout(900)
+        const before = Number(await stageAttr(page, "frame"))
+        await page.getByTestId("narration-replay").click()
+        const replayed = await until(
+          page,
+          (f) => {
+            const st = document.querySelector('[data-testid="stage"]')
+            return st !== null && Number(st.getAttribute("data-frame")) < f && st.getAttribute("data-playing") === "true"
+          },
+          before,
+          3000,
+        )
+        check(replayed, `${sceneId} : revoir ramène la scène au début (image ${before} avant) et relance la lecture`)
+      } else check(false, `${sceneId} : contrôles « revoir » (narration-replay) et vitesse (narration-rate) présents`)
     }
     const voice = await stageAttr(page, "voice")
     if (voice) await voicePlays(page, voice, sceneId)
@@ -499,6 +522,15 @@ async function run(browser, target) {
   check(sounding.length === 0, `rechargement : aucune voix ne joue en revisite${sounding.length ? ` (${sounding.join(", ")})` : ""}`)
   if (exerciseScenes.includes(n)) {
     check((await page.locator('[data-testid="stage"] [data-validated="true"]').count()) === 1, "rechargement : exercice restauré (validé, choix conservé)")
+  }
+  // Vitesse de lecture choisie : gardée par le navigateur d'une visite à l'autre
+  if ((await page.getByTestId("narration-rate").count()) === 1) {
+    await page.getByTestId("narration-rate").selectOption("1.25")
+    await page.reload()
+    await page.getByTestId("start").click()
+    await atScene(page, n, n, "rechargement (vitesse)")
+    check((await page.getByTestId("narration-rate").inputValue()) === "1.25" && (await stageAttr(page, "rate")) === "1.25", "rechargement : vitesse de lecture gardée (×1,25)")
+    await page.getByTestId("narration-rate").selectOption("1")
   }
   // Retour en arrière : scène précédente rouverte à sa dernière image, puis flèche droite
   if (n > 1) {

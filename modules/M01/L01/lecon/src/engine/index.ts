@@ -26,8 +26,10 @@ export {
   verdictOf,
 } from "./exercise"
 export { defineLesson, defineScene, LessonError, type SceneInput } from "./scene"
+// Scène pas encore construite : narrations et exercice du storyboard branchés, textes d'écran posés, aucune composition
+export { sceneEnAttente } from "./attente"
 // Signature graphique (studio.config.json « signature », « program », « programColor »)
-export { BIM, CARTE, PROGRAM_COLOR, SHEET_SHADOW, type Signature } from "./signature"
+export { BIM, type Cadre, CARTE, type MiseEnPage, PAGE, PROGRAM_COLOR, SHEET_SHADOW, type Signature } from "./signature"
 export { asset, type Illustration, illustration, type SceneTexts, sceneTexts, TextError } from "./texts"
 export {
   clipOf,
@@ -47,6 +49,7 @@ export {
   voice,
 } from "./timeline"
 export type { AnyScene, Clip, ClipTrigger, LessonDef, SceneDef, SceneKind, SceneModel, SceneStatus, SceneViewProps, StatusInput, Voice, Word } from "./types"
+// Outils de dessin de Remotion (paths, shapes, layout-utils, animation-utils), même version exacte que remotion
 export * from "./outils"
 // Gabarits de scène pilotés par des données (content/design/scenes/Sxx.json ; docs/gabarits.md)
-export { cssDe, FicheRubriques, Frise, GabaritError, poser, type SceneDeGabarit, Source, sourceHref, Texte, VIDE_MIN_HAUTEUR, VIDE_MIN_LARGEUR, ZONE } from "./gabarits"
+export { COMPOSITION, cssDe, FicheRubriques, Frise, GabaritError, poser, type SceneDeGabarit, Source, sourceHref, Texte, ZONE } from "./gabarits"

@@ -6,15 +6,17 @@
  *   import data from "../../../content/design/scenes/S02.json"
  *   export const s02 = defineScene(Frise.scene(data))
  *
- *   Frise           forme de S02 : ligne et pointe à l'image 0, jalons et
- *                   tracés, cases des années (deux couches, même vitesse),
+ *   Frise           frise chronologique : ligne et pointe à l'image 0, jalons
+ *                   et tracés, cases des années (deux couches, même vitesse),
  *                   éléments au-dessus et au-dessous de la ligne
- *   FicheRubriques  forme de S04 : feuille révélée bande par bande (une seule
- *                   découpe), rubriques, objet qui voyage d'une boîte à
+ *   FicheRubriques  fiche à rubriques : feuille révélée bande par bande (une
+ *                   seule découpe), rubriques, objet qui voyage d'une boîte à
  *                   l'autre, traits et filets
  *
- * Les données se contrôlent au chargement du module (npm run check, build) :
- * GabaritError, avec le fichier, le champ et quoi faire.
+ * Mise en page (face utile, débord, titre, mention de source) et jetons : ceux
+ * de la signature active (PAGE, signature.ts ; THEME). Les données et la
+ * composition finale se contrôlent au chargement du module (npm run check,
+ * build) : GabaritError, avec le fichier, le champ et quoi faire.
  */
 import type { Voice } from "../types"
 import { lire, type NomGabarit } from "./donnees"
@@ -23,7 +25,7 @@ import { vueDe } from "./vue"
 
 export { GabaritError } from "./donnees"
 export { cssDe, poser, Source, sourceHref, Texte } from "./pieces"
-export { DEBORD_FRISE, mesurer, VIDE_MIN_HAUTEUR, VIDE_MIN_LARGEUR, ZONE } from "./controles"
+export { COMPOSITION, ZONE } from "./plan"
 
 /** Ce que `defineScene` attend d'une scène narrée. */
 export type SceneDeGabarit = { readonly id: string; readonly clip: Voice; readonly View: () => ReturnType<ReturnType<typeof vueDe>> }
@@ -33,8 +35,8 @@ function gabarit(nom: NomGabarit, data: unknown): SceneDeGabarit {
   return { id: plan.d.scene, clip: plan.V, View: vueDe(plan) }
 }
 
-/** Gabarit « frise » (forme de S02). */
+/** Gabarit « frise » (frise chronologique). */
 export const Frise = { scene: (data: unknown): SceneDeGabarit => gabarit("frise", data) } as const
 
-/** Gabarit « fiche à rubriques » (forme de S04). */
+/** Gabarit « fiche à rubriques ». */
 export const FicheRubriques = { scene: (data: unknown): SceneDeGabarit => gabarit("fiche-rubriques", data) } as const

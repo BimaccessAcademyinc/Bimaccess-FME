@@ -19,10 +19,11 @@
  *                          proscrits) et dictionnaire de prononciation
  *   quota                  caractères utilisés et restants sur le compte
  *   generate --approuve <caractères> [--only S02-01|S02 …] [--force] [--no-beats] [--no-quota-check]
- *                          sans --approuve couvrant les caractères à synthétiser (accord
- *                          d'Ilyas), annonce le coût et ne génère rien
  *                          génère les clips nouveaux ou modifiés, un par un ;
- *                          manifeste écrit après chaque clip (relancer reprend)
+ *                          manifeste écrit après chaque clip (relancer reprend).
+ *                          Dépense : sans --approuve couvrant les caractères à
+ *                          synthétiser (montant approuvé par Ilyas), annonce le
+ *                          coût (caractères, crédits estimés) et ne génère rien
  *   verify                 manifeste ↔ storyboard, fichiers, alignements,
  *                          durées, repères proposés, fichiers orphelins
  *   voices [--lang fr] [--search "texte"] [--json]
@@ -30,8 +31,9 @@
  *                          catégorie, langues, accent, genre, usage ; --lang
  *                          garde les voix qui annoncent cette langue (ou
  *                          aucune). Lecture seule, aucun caractère dépensé
- *   try "<phrase avec {}>" [--variants "A|B|C"] [--voice <voice_id>] [--out dossier]
- *                          court essai de prononciation, hors du contenu
+ *   try "<phrase avec {}>" --approuve <caractères> [--variants "A|B|C"] [--voice <voice_id>] [--out dossier]
+ *                          court essai de prononciation, hors du contenu ; payant
+ *                          comme generate : coût annoncé, refus sans --approuve
  *                          (défaut : .studio/tmp/voice-try/) ; --voice essaie
  *                          une autre voix que celle de la configuration, sans
  *                          la modifier (défaut : .studio/tmp/voice-try/<voice_id>/,
@@ -47,7 +49,14 @@
  *   ELEVENLABS_BASE_URL  autre adresse de l'API (défaut https://api.elevenlabs.io),
  *                        par exemple un faux serveur d'essai
  *
- * Codes de sortie : 0 succès, 1 erreur, 2 clé absente ou mal formée (generate, quota, voices, try).
+ * Dépenses (règle d'Ilyas du 2026-11-27) : aucun appel payant sans son accord, et
+ * le coût s'annonce avant. generate et try comptent les caractères à envoyer
+ * (après le dictionnaire) et refusent tant que --approuve ne les couvre pas ;
+ * un agent délégué prépare la commande et rend la main, l'agent principal
+ * annonce le coût. status, extract, lint, verify, quota et voices ne dépensent rien.
+ *
+ * Codes de sortie : 0 succès, 1 erreur, 2 clé absente ou mal formée (generate, quota, voices, try),
+ * 3 dépense non approuvée (generate, try : coût annoncé, rien envoyé).
  */
 import { createHash } from "node:crypto"
 import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from "node:fs"
@@ -101,16 +110,17 @@ if (!command || opt.help || command === "help") {
 
 /* ── Projet ─────────────────────────────────────────────────────────────── */
 
+// Réglages par défaut : recette V4 du rôle Voix du cours (sans voix choisie : voice_id vient de voice.config.yaml)
 const DEFAULT_VOICE = {
   voice_id: "",
   voice_name: "",
-  model_id: "eleven_multilingual_v2",
+  model_id: "eleven_v4",
   language_code: "",
   output_format: "mp3_44100_128",
-  voice_settings: { stability: 0.5, similarity_boost: 0.75, style: 0, use_speaker_boost: true, speed: 1 },
+  voice_settings: { stability: 0.5, similarity_boost: 0.9, style: 0, use_speaker_boost: true, speed: 1 },
   apply_text_normalization: "",
   seed: null,
-  context_between_clips: false,
+  context_between_clips: true,
   dictionary: "content/voice/pronunciations.yaml",
   max_chars_per_clip: null,
   request_timeout_s: 300,
@@ -594,6 +604,30 @@ function beatsFor(row, saidWords, screenTexts, propose) {
 
 /* ── Commandes ──────────────────────────────────────────────────────────── */
 
+/* ── Dépenses ───────────────────────────────────────────────────────────── */
+
+/** Crédits par caractère constatés par le rôle Voix du cours (compte BIMaccess) ; un autre modèle : non estimé. */
+const CREDITS_PAR_CARACTERE = { eleven_v4: 0.44 }
+
+/**
+ * Aucun appel payant sans accord : le coût s'annonce, et la commande refuse
+ * (code 3, rien envoyé) tant que --approuve <caractères> ne couvre pas les
+ * caractères à envoyer.
+ */
+function requireApproval(what, chars, model, relance) {
+  const rate = CREDITS_PAR_CARACTERE[model]
+  const cost = `${chars} caractères à synthétiser${rate ? ` (environ ${Math.ceil(chars * rate)} crédits en ${model}, ${String(rate).replace(".", ",")} crédit par caractère, tarif constaté par le rôle Voix du cours)` : ` (${model} : tarif non connu ici, le lire sur le compte)`}`
+  const given = opt.approuve === undefined || opt.approuve === true ? null : Number(opt.approuve)
+  if (given !== null && !(Number.isFinite(given) && given >= 0)) die(`--approuve : nombre de caractères attendu, trouvé « ${opt.approuve} »`)
+  if (given !== null && given >= chars) {
+    say(`dépense approuvée : ${chars} caractères (accord : ${given})`)
+    return
+  }
+  errLine(`${what} : coût annoncé : ${cost}.`)
+  if (given !== null) errLine(`--approuve ${given} ne couvre pas les ${chars} caractères : rien n'est envoyé`)
+  die(`aucune dépense sans l'accord d'Ilyas : annoncer ce coût, obtenir son accord sur un montant, puis relancer avec --approuve ${chars} (${relance})`, 3)
+}
+
 function cmdStatus() {
   const P = loadProject()
   const story = readStory(P)
@@ -612,6 +646,7 @@ function cmdStatus() {
   for (const e of events.filter((x) => x.kind === "removed")) say(`${e.id} : n'existe plus dans le storyboard (retiré au prochain extract ou generate)`)
   if (!manifest) say(`aucun manifeste : contenu sans voix pour l'instant (minutage estimé, sous-titres)`)
   say(`${todo} clip(s) à générer (${chars} caractères), ${rows.length - todo} à jour, ${rows.length} au total`)
+  if (todo) say(`devis : ${chars} caractères${CREDITS_PAR_CARACTERE[P.vc.model_id] ? `, environ ${Math.ceil(chars * CREDITS_PAR_CARACTERE[P.vc.model_id])} crédits en ${P.vc.model_id}` : ""} ; après l'accord d'Ilyas : npm run voice -- generate --approuve ${chars}`)
   if (todo && !KEY) say("ELEVENLABS_API_KEY absente : sans voix, le contenu se joue avec un minutage estimé et des sous-titres")
 }
 
@@ -725,9 +760,7 @@ async function cmdGenerate() {
   const chars = plan.reduce((s, x) => s + x.tts.text.length, 0)
   say(`à générer : ${todo.length} clip(s), ${chars} caractères ; ${kept} clip(s) gardé(s)`)
   // Dépenses (règle d'Ilyas, 2026-11-27) : coût annoncé avant, aucune synthèse sans son accord
-  if (!(Number(opt.approuve) >= chars)) {
-    die(`coût annoncé : ${chars} caractères à synthétiser (environ ${Math.ceil(chars * 0.44)} crédits au tarif V4 constaté, 0,44 par caractère). Aucune dépense sans l'accord d'Ilyas : annoncer ce coût, obtenir son accord, puis relancer avec --approuve ${chars}`)
-  }
+  requireApproval("generate", chars, P.vc.model_id, `npm run voice -- generate --approuve ${chars}${opt.only.length ? ` --only ${opt.only.join(",")}` : ""}${opt.force ? " --force" : ""}`)
 
   if (!opt["no-quota-check"]) {
     try {
@@ -954,11 +987,13 @@ async function cmdTry() {
   }
   checkVoiceConfig(P)
   const variants = opt.variants ? String(opt.variants).split("|") : [null]
+  const texts = variants.map((v) => (v === null ? phrase : phrase.includes("{}") ? phrase.split("{}").join(v) : `${phrase} ${v}`))
+  const tryChars = texts.reduce((n, t) => n + t.length, 0)
+  requireApproval("try", tryChars, P.vc.model_id, `même commande avec --approuve ${tryChars}`)
   const dir = resolve(P.ROOT, opt.out ?? (opt.voice ? join(".studio/tmp/voice-try", String(opt.voice)) : ".studio/tmp/voice-try"))
   mkdirSync(dir, { recursive: true })
   const lines = []
-  for (const [i, v] of variants.entries()) {
-    const text = v === null ? phrase : phrase.includes("{}") ? phrase.split("{}").join(v) : `${phrase} ${v}`
+  for (const [i, text] of texts.entries()) {
     let r
     try {
       r = await synthesize(P.vc, text)

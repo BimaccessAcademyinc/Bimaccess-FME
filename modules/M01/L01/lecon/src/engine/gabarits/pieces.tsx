@@ -1,14 +1,15 @@
 /**
- * Pièces des gabarits, reprises de l'essai 1 (src/lesson/components/
- * s02-s04-commun.tsx et s01-commun.tsx), en px de scène 1920 × 1080 :
+ * Pièces des gabarits, en px de scène 1920 × 1080 :
  *
  *   poser   boîte d'une illustration posée par sa largeur ; sa hauteur suit son
  *           `viewBox` (jamais étirée)
  *   Texte   texte posé sur sa réserve (2 px en haut et en bas, 6 px à gauche et
  *           à droite), balayé avec elle, ou réserve posée à l'instant où le
  *           texte paraît (frappe)
- *   Source  mention de source en marge, calée par le bas à y 820, filet de
- *           220 px, lien vers l'adresse de la scène (content/sources.json)
+ *   Source  mention de source à la place que donne la signature active
+ *           (PAGE.source : colonne de marge en carte, bas gauche en bimaccess,
+ *           haut droit en neutral), filet au-dessus, lien vers l'adresse de
+ *           la scène (content/sources.json)
  *
  * Aucune mesure de texte au rendu : le cache de `measureText` garderait une
  * mesure faite avant le chargement des polices. Un texte centré l'est par le
@@ -18,6 +19,7 @@ import { type CSSProperties, type ReactNode, useState } from "react"
 import SOURCES from "../../../content/sources.json"
 import { THEME } from "../../generated/theme"
 import { useT, Wipe, type WipeDir } from "../anim"
+import { PAGE } from "../signature"
 import type { Illustration } from "../texts"
 import { GabaritError, type StyleD } from "./donnees"
 
@@ -124,20 +126,25 @@ export function Texte({
 /** Adresse de la mention de source d'une scène (content/sources.json, clé `sources`). */
 export function sourceHref(id: string, where: string): string {
   const href = (SOURCES.sources as Readonly<Record<string, string | undefined>>)[id]
-  if (!href) throw new GabaritError(`${where} : aucune adresse pour la scène ${id} dans content/sources.json. À faire : ajouter « "${id}": "<adresse tirée du pack>" » sous « sources », ou retirer « source » des données`)
+  if (!href) throw new GabaritError(`${where} : aucune adresse pour la scène ${id} dans content/sources.json. À faire : ajouter « "${id}": "<adresse de la source>" » sous « sources » (adresse tirée des sources de la leçon), ou retirer « source » des données`)
   return href
 }
 
+/** Couleur d'un jeton nommé par la mise en page, sinon `repli` (thème qui n'a pas ce jeton). */
+const jeton = (nom: string, repli: string): string => (C as Readonly<Record<string, string | undefined>>)[nom] ?? repli
+const S = PAGE.source
+
 /**
- * Mention de source (marge) : x 1448, bas à y 820, 250 px au plus ; serif
- * italique 400, 24 px, interligne 1,2, couleur `lien` (survol `lienSurvol`),
- * soulignée ; filet `encre` 1,2 px de 220 px, 10 px au-dessus. À l'image 0.
+ * Mention de source, à la place de la signature active (PAGE.source : bord
+ * gauche, bas du bloc, largeur) ; police `body` 400, taille et italique de
+ * la signature, interligne 1,2, couleur du jeton `couleur` (survol `survol`),
+ * soulignée ; filet `ink` 1,2 px de `filet` px, 10 px au-dessus. À l'image 0.
  */
 export function Source({ href, children, testId }: { readonly href: string; readonly children: ReactNode; readonly testId: string }) {
   const [hover, setHover] = useState(false)
   return (
-    <div style={{ position: "absolute", left: 1448, bottom: 1080 - 820, width: 250 }}>
-      <div aria-hidden="true" style={{ width: 220, height: 1.2, background: C.encre, marginBottom: 10 }} />
+    <div style={{ position: "absolute", left: S.x, bottom: 1080 - S.bas, width: S.largeur }}>
+      <div aria-hidden="true" style={{ width: S.filet, height: 1.2, background: C.ink, marginBottom: 10 }} />
       <a
         data-testid={testId}
         href={href}
@@ -145,7 +152,7 @@ export function Source({ href, children, testId }: { readonly href: string; read
         rel="noopener"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        style={{ display: "block", fontFamily: THEME.fonts.serif, fontStyle: "italic", fontWeight: 400, fontSize: 24, lineHeight: 1.2, color: hover ? C.lienSurvol : C.lien, textDecoration: "underline", textUnderlineOffset: 3, cursor: "pointer", pointerEvents: "auto", background: C.fond, padding: 2, margin: -2 }}
+        style={{ display: "block", fontFamily: THEME.fonts.body, fontStyle: S.italique ? "italic" : "normal", fontWeight: 400, fontSize: S.taille, lineHeight: 1.2, color: hover ? jeton(S.survol, C.ink) : jeton(S.couleur, C.accent), textDecoration: "underline", textUnderlineOffset: 3, cursor: "pointer", pointerEvents: "auto", background: jeton(PAGE.reserve, C.background), padding: 2, margin: -2 }}
       >
         {children}
       </a>

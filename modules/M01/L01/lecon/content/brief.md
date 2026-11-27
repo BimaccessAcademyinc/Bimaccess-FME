@@ -7,16 +7,16 @@
 | Objectif | 1. raconter le problème de départ (des logiciels différents qui doivent échanger des données géographiques) et la réponse que FME y apporte ; 2. dire qui a créé FME et quand (Safe Software, 1993 ; FME, 1996) ; 3. dire ce qu'est FME (un logiciel, une plateforme d'intégration de données, avec FME Form et FME Flow) et le distinguer d'un format et d'une norme comme SAIF ; 4. reconnaître les trois parties d'une entité géographique (géométrie, attributs, système de coordonnées)  ; 5. expliquer que FME lit, transforme puis écrit les données, comme un moteur au milieu des formats |
 | Durée maximale | 8 minutes (6 à 8) |
 | Langue | fr |
-| Voix | sans voix pour l'instant, sous-titres seulement : revue de l'animation (décision d'Ilyas, 2026-11-26) ; la voix d'usage (Alexandre Boutin, eleven_v3) est préparée dans content/voice/ sans génération |
+| Voix | voix V4 d'usage, sept clips déjà générés (repris de lecon-gabarits, content/voice/) ; gardés tant que le texte dit ne change pas ; un clip qui change se regénère sur devis |
 | Contrôle automatique | Playwright utilisable (find-playwright.mjs : Playwright 1.63.0, Chromium 158) |
 | Ton | clair et direct, narration à la troisième personne |
 | Interactivité | aucun exercice (décision d'Ilyas, 2026-11-27 : « y'avait pas besoin d'exercice ») |
-| Signature | bimaccess (charte CAD 2D de BIMaccess) |
+| Signature | carte (feuille topographique imprimée) |
 | Programme | FME001, leçon FME001-M01-L01, couleur de programme vert ACI #00A64F |
 | Dépôt de la formation | hors du dépôt de la formation ; projet dans `/home/user/Bimaccess-FME` (dépôt pilote du module FME001) |
 | Règles du projet | `/home/user/bimaccess-studio/chaine/agents/REGLES.md`, à lire comme règles d'écriture de BIMaccess : § 2.3, 2.4, 2.7, 2.8 (une scène, une affirmation ; questions d'ouverture et de pont ; rien de nommé avant sa leçon ; l'accroche), § 3 à 8, § 11 (grille d'Ilyas). Ne s'appliquent pas : § 1.2 sur le pack (remplacé par la ligne Sources), § 2.1, 2.2, 2.5, 2.6 (filtre de certification et durée propres à CER001), les mentions du bâtiment fil rouge de CER001, de l'IFC et du BoK |
 | Autorité du contenu | Ilyas (exactitude technique, sens pédagogique, exemples, questions, publication) |
-| Charte | signature BIMaccess : `/home/user/BIMaccess-Learning-Platform/design-system/DESIGN.md` fait foi ; thème des planches choisi par Ilyas parmi quatre, à l'étape suivant le storyboard |
+| Charte | `/home/user/Bimaccess-FME/design/CHARTE-FME001.md` fait foi ; thème `content/design/theme.json` (repris de lecon-gabarits) ; symboles dessinés `/home/user/Bimaccess-FME/design/symboles/`, bibliothèque `/home/user/Bimaccess-FME/design/bibliotheque/` |
 
 ## Sources
 
@@ -39,8 +39,15 @@ Aucun texte écrit par Ilyas à ce jour. Ses décisions de porte sont des contra
 ## Défauts retenus
 
 - Durée 6 à 8 minutes, 5 à 7 scènes, phrases de 22 mots au plus.
-- Un seul exercice, en mode conséquence.
 - Le siège à Surrey seulement pour « Safe Software en bref » ; ni effectif, ni nombre de formats, ni noms des produits actuels (Q7, Q9).
+
+## Reprise (décision d'Ilyas, 2026-11-27)
+
+Utiliser ce qui a déjà été créé dans les essais, pour économiser tokens et temps : storyboard, voix, sources, repères, données et illustrations de S02 et S04, scènes codées S01, S05, S06, S07 et leurs SVG, tous repris de `lecon-gabarits`. Composition de l'ancienne version de `lecon/` dans `.studio/reprise/`. Pack de recherche dans `../sources/`, pas refait.
+
+## Dépenses approuvées
+
+Aucune à ce jour. Ilyas trouve le devis de 2,95 $ trop cher : viser beaucoup plus bas. Règle de cette production : aucun dessin neuf tant qu'un SVG existant (symboles, bibliothèque, essais) ou un tracé du moteur peut servir ; un dessin neuf indispensable passe par un devis.
 
 ## Hors sujet
 
