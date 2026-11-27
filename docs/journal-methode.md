@@ -67,3 +67,10 @@ D'où vient chaque changement du harnais essayé ici : la date, ce qui a été c
 | Sans voix, la planche par phrase se fait sur le minutage estimé du lecteur | `harnais/skills/planche-par-phrase-studio/planche.mjs` : 7 planches, une capture au milieu de chaque phrase | l'outil sert aussi avec la voix (même format d'alignement) |
 | Défauts vus à la planche par phrase : éléments calés en milieu de phrase (S02, S07), compositions qui laissent la moitié de la face vide (S01, S02), couleurs de routes sans légende (S06), mentions de source sans lien | 4 scènes à corriger sur 7 | les adresses des sources vont dans `content/sources.json`, tirées du pack ; calage au début de la phrase rappelé aux graphistes |
 | Ilyas : aucune voix pour l'instant, revue de l'animation avec sous-titres | | la voix ne se génère qu'à sa demande ; préparation gardée |
+
+## 2026-11-27 · Voix et planches image (méthode B)
+
+- Voix ElevenLabs des 7 clips (3 min 31 s, 3 628 caractères) en 1 min 30 s ; années ajoutées au dictionnaire ; la sync ramène désormais les mots dits (alias, balises d'accent) au texte écrit : sous-titres et locutions suivent le storyboard (défaut corrigé dans `scripts/sync.mjs`, à reporter dans le template).
+- Méthode B (`modules/M01/L01/lecon-image/`, skill `harnais/skills/planche-image/`) : un plan court par scène écrit par le modèle de langage ; dessin sans texte par le modèle d'image (S01 d'abord, puis S01 en référence de style pour les six autres, en parallèle) ; boîtes par la vision ; papier rendu transparent ; scène générique `src/engine/planche.tsx` (révélation par masque sur locution, textes exacts posés par le code, mise en évidence, logo, source).
+- Mesures : appels d'image et de vision 59 s pour 7 scènes ; 21,6 min de session du « go » au push, outillage compris (correctif de sync, script, scène générique, lecteur des variantes) ; coût estimé dans le registre et l'appels.csv.
+- Limites : pas de tracé au trait (balayage de boîte), pas de mouvement géométrique (S04, S05 : apparitions successives), feuilles de S06 sans passage du tireté au plein, lignes de repère de S03 absentes.
