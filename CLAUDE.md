@@ -29,7 +29,7 @@ Constat du 2026-11-27 (`docs/journal-methode.md`, et `bimaccess-studio/docs/pilo
 
 Skill `harnais/skills/scenes-gabarits/` : (1) une scène de forme connue se fait par gabarit du moteur et fichier de données, pas en code sur mesure ; (2) modèle intermédiaire pour les données d'une scène, meilleur modèle pour écrire un gabarit et pour la composition ; (3) une scène par agent, en parallèle ; (4) la composition remplit la face de carte (x 104 à 1424), vérifiée par le gabarit ; (5) aucune réserve sous un texte posé dans une carte ou une feuille tant que les illustrations ne sont pas aux couleurs exactes des jetons. Modèle d'image par défaut : Flash 3.1.
 
-La composition est l'affaire du graphiste (décision d'Ilyas du 2026-11-27) : aucune porte d'Ilyas sur une planche, la chaîne ne s'arrête pas pour l'attendre. Le graphiste contrôle sa planche (feuille remplie, rien sur un trait, contrôles du gabarit et de l'export) ; Ilyas juge sur le lecteur, et peut corriger lui-même sur le canevas s'il le veut.
+La composition est l'affaire du graphiste (décision d'Ilyas du 2026-11-27) : aucune porte d'Ilyas sur une planche, la chaîne ne s'arrête pas pour l'attendre. Le remplissage juste vient du skill en amont (règles de composition, gabarit de composition) et d'un contrôle bloquant en fin de chaîne (`npm run check` refuse un vide, une mise en évidence ou un texte hors face, un texte sur un trait, un chevauchement), jamais d'une remarque après coup. Ilyas juge sur le lecteur. La composition sur le canevas de design (essai 3) n'est pas retenue.
 
 ## Disposition
 
