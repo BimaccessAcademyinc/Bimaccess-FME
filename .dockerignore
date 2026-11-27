@@ -1,0 +1,9 @@
+.git
+**/node_modules
+**/dist
+**/.studio/tmp
+**/.studio/qa
+modules/*/L*/banc
+modules/*/L*/sources/pages
+reader/public
+harnais/mesures
