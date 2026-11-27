@@ -108,74 +108,137 @@ Mise en évidence : A, rectangle x 140, y 720, 430 × 108 (les trois fenêtres),
 
 ## S02 · Safe Software commence par traduire vers SAIF
 
-Objet étudié : oui à partir de « la première version de son logiciel » ; FME s'y montre par son nom (jalon 1996 et nom d'origine) et par le logo « FME by Safe Software » (`fme-logo.svg`, couleurs d'origine, jamais recoloré ni déformé), jamais par une fenêtre ni une capture. Avant, la voix parle du contrat, de l'entreprise et de la traduction.
+Version de l'essai « illustrations commandées » : composition refaite par le graphiste, chaque élément qui paraît à son propre moment est une illustration commandée au modèle d'image (`content/design/illustrations/s02-ill-*.json`, SVG dans `content/design/assets/`). Les textes, la frise, les jalons, les cases des années, les routes et leurs pointes, la mise en évidence et le logo sont au code. Elle remplace la composition « dessins SVG à la main » (`s02-frise.svg`, que cette version n'emploie plus).
 
-Agrandissement (porte du sens, 2026-11-26) : la composition prend la face de x 104 à 1424 et de y 188 à 856 ; textes de 26 px au moins sur la face (la mention de source garde les 24 px de la marge, communs à toutes les scènes).
+D'où vient l'idée : la voix date deux faits, donc une frise graduée en années, avec au départ le document qui fait tout commencer (le contrat, scellé quand il est remporté) ; la traduction se dessine comme ce que FME dessinera plus tard, des routes d'écriture vers un format ; le siège se dit au présent, donc une carte de lieu hors de la frise, au-dessus de son bout ouvert, avec la limite en tiret-point de la Colombie-Britannique déjà vue en S01.
 
-**Composition** (état final) :
+Objet étudié : oui à partir de la phrase « Trois ans après la fondation, en 1996, leur entreprise sort la première version de son logiciel, FME » ; il se montre par le logo `fme-logo` (couleurs d'origine, jamais déformé ni recoloré, une seule fois à l'écran) et par son nom d'origine, jamais par une fenêtre ni une capture. Avant, la voix parle du contrat, de l'entreprise et de la traduction.
 
-- Carte des fondateurs : décor, x 104 à 544, y 210 à 430 (le même dessin qu'en S01). `Don Murray · Dale Lutz` (rang 3, `X.screen(2)`) centré dans le bandeau, boîte x 108 à 540, y 214 à 274.
-- Feuille du contrat : décor, x 104 à 544, y 450 à 706 (document : bordure 2 px, contour 0,8 px, filet double sous le titre à y 524 et 527). `Contrat du gouvernement` (rang 2, `X.screen(1)`) : serif 600, 32 px, interligne 1,15, `encre`, x 128, y 474, largeur mesurée 400. À la première image.
-- Rubrique : groupe `s02-frise-rubrique` (filet `carroyage` 0,8 px de x 128 à 520, y 652) et `Appel d'offres remporté` (rang 4, `X.screen(3)`) : ligne de rubrique, serif 400, 30 px, interligne 1,25, x 128, y 596, largeur mesurée 341.
-- Frise : décor, trait simple `encre` 3 px de (544, 578) à (1398, 578), qui part du bord droit du contrat, et bout ouvert (pointe pleine, sommet à 1424, 578). Aucune case et aucun jalon à la première image.
-- Jalon 1993 : trait vertical `encre` 2,5 px **tracé par le code**, de (900, 555) à (900, 601). `1993 · Fondation de Safe Software` (rang 5, `X.screen(4)`) : serif 400, 30 px, interligne 1,15, `encre`, aligné à droite sur x 900, haut à y 609, largeur maximale 250 (deux lignes : « 1993 · Fondation » / « de Safe Software », 234 et 235 px) ; réserve `fond`.
-- Jalon 1996 : trait vertical tracé par le code, de (1350, 555) à (1350, 601). `1996 · Première version de FME` (rang 8, `X.screen(7)`) : même style, aligné à droite sur x 1350, haut à y 609, largeur maximale 350 (« 1996 · Première version » / « de FME », 334 px au plus) ; réserve `fond`.
-- Cases des années : groupe `s02-frise-annees`, x 900 à 1350, y 571 à 585, trois cases d'une année (150 px) : `encre`, `papier`, `encre`, seulement entre les deux jalons dits.
-- Logo `ASSETS["fme-logo"]` (`fme-logo.svg`, `viewBox` 216 × 103,7, couleurs d'origine) : sous le jalon 1996, aligné à droite sur x 1350, en x 1130, y 690, 220 × 106 ; sous le libellé du jalon (qui finit vers y 680), au-dessus du nom d'origine, hors des routes de traduction et de SAIF ; balayé à gauche → droite (0,3 s) sur « la première version de son logiciel ».
-- `Feature Manipulation Engine` (rang 9, `X.screen(8)`) : ligne de rubrique en serif **italique** 400, 30 px (le nom d'origine est de l'anglais, charte § 3), `encre`, aligné à droite sur x 1350, haut à y 804 (boîte x 957 à 1350, y 804 à 842), sous le logo, sans lettre agrandie ni détachée ; réserve `fond` ; tapé sur « à l'origine Feature Manipulation Engine ».
-- Feuille SAIF : groupe `s02-frise-saif`, x 1110 à 1370, y 268 à 480, bandeau fermé à y 342, au-dessus de la frise, entre les deux jalons. `SAIF` (rang 6, `X.screen(5)`) : nom de lieu, Barlow 600, 40 px, capitales, 0,3 em, couleur `terme` (terme nouveau de S02), centré dans le bandeau (boîte x 1114 à 1366, y 272 à 342). Le corps de la feuille reste vide : la remise ne dit pas le genre de donnée que porte SAIF.
-- Fenêtres des logiciels : groupe `s02-frise-logiciels`, trois fenêtres de 130 × 89, x 664 à 794, y 226, 324 et 422 (en colonne, à gauche de SAIF ; mêmes trois dessins qu'en S01).
-- Routes de traduction : **tracées par le code**, trois routes d'écriture, chacune faite de trois traits superposés (bord `encre` 13 px, chaussée `chaussee` 9 px, axe `ecriture` 5 px), **bouts ronds**, même chemin, même instant, même durée, de la fenêtre vers SAIF :
-  - route 1 : `[[802, 270], [930, 270], [984, 324], [1080, 324]]`
-  - route 2 : `[[802, 368], [1080, 368]]`
-  - route 3 : `[[802, 466], [930, 466], [984, 412], [1080, 412]]`
-- Pointes de sens : groupe `s02-frise-pointes`, trois triangles `ecriture` à bord `encre` 2 px, de x 1074 à 1106, centrés à y 324, 368, 412 (le bout de chaque route, contre le bord gauche de SAIF).
-- `Traduction` (rang 7, `X.screen(6)`) : nom de lieu petit, Barlow 600, 28 px, capitales, 0,24 em, `encre`, x 845, y 188 (haut), largeur mesurée 191, au-dessus des routes ; réserve `fond`.
-- Carte de lieu : groupe `s02-frise-lieu`, x 560 à 880, y 770 à 856, hors de la frise, en bas, à gauche du logo (déplacée de x 1104 pour laisser la place au logo et au nom d'origine sous le jalon 1996) ; signe de localité (cercle 2,5 px, point central) en (602, 813). `Siège : Surrey` (rang 10, `X.screen(9)`) : toponyme, serif italique 400, 32 px, `encre`, x 628, y 793 (haut), largeur mesurée 188. Sans date.
-- Titre `Safe Software commence par traduire.` (rang 1, `X.screen(0)`) : x 104, y 84, largeur mesurée 1199.
-- Marge : `D'après Safe Software et la presse spécialisée` (rang 11, `X.screen(10)`), bloc x 1448, bas à y 820, deux lignes, filet à y 753 environ ; lien vers l'adresse de S02 de `content/sources.json` ; échelle et rose.
+Règle de placement : toutes les coordonnées en px de scène 1920 × 1080, boîte = coin haut gauche, largeur × hauteur. Une illustration se pose par sa largeur ; sa hauteur suit son `viewBox` (jamais étirée). Chaque illustration a un aplat `papier` opaque sous ses traits : elle couvre les amorces du carroyage qu'elle recouvre. Aucun texte n'est posé sur un trait : chaque texte a sa place mesurée sur l'aperçu de l'illustration, dans une zone vide, et reçoit une réserve (fond du texte, 2 px en haut et en bas, 6 px à gauche et à droite) `papier` dans une carte ou une feuille, `fond` sur la face. Contrôle fait sur maquette (aperçus posés aux places ci-dessous, textes mesurés avec Source Serif 4 et Barlow Condensed) : aucun texte sur un trait d'illustration, aucun texte sur une amorce du carroyage, rien sous y 860 hors des mises en évidence, rien dans la zone d'action.
 
-Amorces : `Traduction` (y 186 à 226 avec sa réserve), les deux libellés de jalon (y 607 à 680), `Feature Manipulation Engine` (y 702 à 744) et la mention de source ne touchent aucune croix (les croix (730, 692), (958, 692) et (1186, 692) vont de y 684 à 700, entre les libellés et le nom d'origine). Les croix (274, 236) et (502, 236) sont sous la carte des fondateurs, (274, 464), (502, 464), (274, 692) et (502, 692) sous le contrat, (730, 236) et (730, 464) sous la première et la troisième fenêtre, (1186, 464) sous SAIF. Le nom `SAIF`, la rubrique et `Siège : Surrey` sont sur l'aplat `papier` de leur feuille.
+### Illustrations
+
+| Illustration (`ASSETS[…]`) | Ce qu'elle montre (aperçu regardé) | x | y | largeur × hauteur | Arrivée |
+|---|---|---|---|---|---|
+| `s02-ill-fondateurs` (`viewBox` 1051 × 665) | carte de rôle `papier`, bandeau vide fermé par un filet, deux hommes debout en silhouettes d'échelle pleines `encre`, sur un sol | 104 | 186 | 332 × 210 | première image |
+| `s02-ill-contrat` (714 × 950) | feuille portrait `papier`, bandeau de titre vide fermé par un filet double, corps vide | 104 | 410 | 332 × 442 | première image |
+| `s02-ill-sceau` (745 × 820) | sceau rond neutre : bord festonné, double cercle, rosace au trait, deux rubans ; ni drapeau, ni feuille d'érable, ni couronne, ni blason, ni lettre | 276 | 684 | 140 × 154 | « Le gouvernement lance » |
+| `s02-ill-logiciels` (400 × 1031) | trois fenêtres de logiciel empilées, barre de titre à deux cases, zones de travail différentes : boîtes liées, tableau, dessin (contour et trait) ; sans nom ni logo | 482 | 274,5 | 110 × 283,5 | « Pour échanger avec lui » |
+| `s02-ill-saif` (744 × 1046) | feuille de format à double cadre, bandeau vide fermé par un filet, corps : courbes de niveau `relief` et une rivière (`eau-fond`, berges `lecture`) | 800 | 247 | 204 × 287 | « Le gouvernement a son format » |
+| `s02-ill-lieu` (935 × 593) | carte de lieu `papier` : limite de territoire en tiret-point à gauche, signe de localité (cercle et point) à droite de la limite, moitié droite vide | 1124 | 196 | 300 × 190 | « Son siège est à Surrey » |
+| `fme-logo` (216 × 103,7, fichier de la charte) | logo « FME by Safe Software », couleurs d'origine | 1040 | 704 | 190 × 91 | « Trois ans après la fondation » (enchaîné) |
+
+Places mesurées dans les aperçus (px de scène) : bandeau des fondateurs, intérieur y 189 à 227 ; bandeau du contrat, intérieur y 414 à 474, filet double de y 474 à 478, corps de y 478 à 848 ; fenêtres de logiciel, boîtes y 276 à 359, 377 à 458, 476 à 557, bord droit x 591,5 ; feuille SAIF, bandeau intérieur y 251 à 300, filet y 300 à 301, cadre intérieur bas y 529 ; carte de lieu, centre du signe (1203, 291), rayon 10, limite en tiret-point à gauche de x 1180.
+
+### Tracés du code
+
+| Élément | Géométrie (px de scène) | Style |
+|---|---|---|
+| Frise | trait de (436, 580), bord droit du contrat, à (1406, 580), puis pointe pleine (1406, 571), (1424, 580), (1406, 589) : bout droit ouvert, sans jalon | `encre` 3 px, pointe pleine `encre` ; posée à la première image, sans tracé |
+| Jalon 1993 | (462, 560) à (462, 600) | `encre` 2,5 px, bouts nets |
+| Jalon 1996 | (1024, 560) à (1024, 600) | `encre` 2,5 px |
+| Cases des années, seulement entre les deux jalons dits | couche A : (462, 580) à (1024, 580), `encre` 14 px ; couche B, la case du milieu : (649, 580) à (837, 580), `papier` 10 px, posée sur A | cases `encre`, `papier`, `encre` d'une année chacune (187 px), bord `encre` de 2 px autour de la case claire |
+| Routes de traduction (trois routes d'écriture) | route 1 : (591,5, 318) à (786, 318) ; route 2 : (591,5, 418) à (786, 418) ; route 3 : (591,5, 517) à (786, 517) | chacune trois `Trace` superposés, même chemin, même instant, même durée : bord `encre` 11 px, chaussée `chaussee` #FFFFFF 8 px, axe `ecriture` 4 px ; bouts nets (ils touchent la fenêtre et la base de la pointe : aucun bout ne se voit) |
+| Pointes de sens | trois triangles (786, y − 10), (800, y), (786, y + 10) pour y = 318, 418, 517 : la pointe touche le bord gauche de SAIF | `Trace` fermé, contour `encre` 2 px, `fill` `ecriture` |
+
+### Textes
+
+| Rang (`X.screen(i)`) | Texte | Style | Place (px de scène) | Réserve |
+|---|---|---|---|---|
+| 0 | `Safe Software commence par traduire.` | titre de scène (`Title`) | x 104, y 84, une ligne, 1190 px | `fond` |
+| 1 | `Contrat du gouvernement` | serif 600, 24 px, interligne 1,15, `encre` | centré sur x 270 dans le bandeau du contrat, boîte x 121 à 419, y 430 à 458, une ligne (298 px) | `papier` |
+| 2 | `Don Murray · Dale Lutz` | Barlow Condensed 600, 24 px, capitales, interlettrage 0,16 em, `encre` | centré sur x 270 dans le bandeau des fondateurs, boîte x 122 à 418, y 194 à 223 (295 px) | `papier` |
+| 3 | `Appel d'offres remporté` | ligne de rubrique, serif 400, 28 px, interligne 1,25, `encre` | x 124, y 496, largeur maximale 292 : deux lignes (« Appel d'offres », « remporté »), boîte jusqu'à y 566 ; le sceau est plus bas (y 684) | `papier` |
+| 4 | `1993 · Fondation de Safe Software` | serif 400, 30 px, interligne 1,15, `encre` | x 478 (jalon + 16), y 608, une ligne, x 478 à 950 | `fond` |
+| 5 | `SAIF` | nom de lieu, Barlow Condensed 600, 34 px, capitales, 0,3 em, couleur `terme` | centré sur x 902 dans le bandeau de SAIF, boîte x 856 à 948, y 256 à 295 | `papier` |
+| 6 | `Traduction` | nom de lieu petit, Barlow Condensed 600, 26 px, capitales, 0,24 em, `encre` | centré sur x 696, entre les fenêtres et SAIF, au-dessus de la route 1, boîte x 607 à 785, y 262 à 292 (route 1 commence à y 312,5) | `fond` |
+| 7 | `1996 · Première version de FME` | même style que le rang 4 | x 1040 (jalon + 16), y 608, largeur maximale 250 : deux lignes (« 1996 · Première », « version de FME »), boîte x 1040 à 1261, y 608 à 677 | `fond` |
+| 8 | `Feature Manipulation Engine` | ligne de rubrique en serif italique 400, 28 px, interligne 1,15, `encre` (nom d'origine, anglais en italique) ; aucune lettre agrandie ni détachée | x 1040, y 815, une ligne, x 1040 à 1404, sous le logo | `fond` |
+| 9 | `Siège : Surrey` | toponyme, serif italique 400, 30 px, `encre` | dans la moitié vide de la carte de lieu, à droite du signe : x 1229, y 273, boîte jusqu'à x 1404, y 309 (bord intérieur de la carte : x 1422) | `papier` |
+| 10 | `D'après Safe Software et la presse spécialisée` | mention de source (règle commune) | marge, x 1448, calée par le bas à y 820, deux lignes, filet à y 752 ; lien vers l'adresse de S02 de `content/sources.json` | `fond` |
+
+Habillage de marge : `echelle-graphique` à x 1480, y 84, 300 × 34 ; `rose-des-vents` à x 1712, y 700, 116 × 116 ; à la première image.
+
+Ordre de pose (dessous vers dessus) : feuille de `SceneRoot`, illustrations, frise et cases, jalons, routes, pointes, textes et leurs réserves, mise en évidence.
+
+### États
 
 | État | Ce qui est visible |
 |---|---|
-| S02-1 | carte des fondateurs, feuille du contrat titrée, frise en trait simple à bout ouvert, mention de source, échelle, rose ; zone du titre vide |
-| S02-2 | + rubrique `Appel d'offres remporté` |
+| S02-1 | carte des fondateurs et leurs noms, contrat titré au corps vide, frise en trait simple à bout ouvert qui part du contrat, mention de source, échelle, rose ; zone du titre vide |
+| S02-2 | + `Appel d'offres remporté` dans le contrat, puis le sceau en bas à droite du contrat |
 | S02-3 | + jalon 1993 et son libellé |
 | S02-4 | + feuille SAIF et son nom |
-| S02-5 | + les trois fenêtres de logiciel |
-| S02-6 | + routes de traduction, pointes, `Traduction` |
-| S02-7 | + titre tapé |
-| S02-8 | mise en évidence sur les routes et `Traduction` |
-| S02-9 | + jalon 1996, cases des années, son libellé |
-| S02-10 | + logo `FME by Safe Software` sous le jalon 1996 |
-| S02-11 | + `Feature Manipulation Engine` sous le logo |
-| S02-12 | la mise en évidence passe au jalon 1996, au logo et à son nom |
-| S02-FIN | mise en évidence éteinte ; + carte de lieu ; composition finale : la frise et ses deux jalons, le contrat et les fondateurs au départ, SAIF et ses routes entre les jalons, le logo et le nom d'origine sous 1996, la carte de lieu à part |
+| S02-5 | + les trois fenêtres, les trois routes de traduction et leurs pointes, `Traduction` |
+| S02-6 | + titre tapé |
+| S02-7 | mise en évidence sur `Traduction` |
+| S02-8 | mise en évidence éteinte ; + jalon 1996, cases des années, son libellé, le logo, `Feature Manipulation Engine` |
+| S02-9 | mise en évidence sur le libellé du jalon 1996 |
+| S02-10 | la mise en évidence passe à `Feature Manipulation Engine` |
+| S02-11 | la mise en évidence passe au logo |
+| S02-FIN | mise en évidence éteinte ; + carte de lieu et `Siège : Surrey` ; composition finale : les fondateurs et le contrat scellé au départ de la frise, les deux jalons et leurs cases, SAIF et ses routes entre les jalons, le logo et le nom d'origine sous 1996, la carte de lieu à part, en haut à droite |
 
-Chaque élément arrive **au début de la phrase qui le dit**, sur la première locution de la phrase, jamais après (porte du sens) ; plusieurs éléments d'une même phrase s'enchaînent, le suivant partant à la fin du geste du précédent.
+### Apparitions
+
+Chaque élément arrive au début de la phrase qui le dit (REGLES 5.2, contrat du lecteur § 5) ; les éléments d'une même phrase s'enchaînent, le suivant partant à la fin du geste du précédent (instant de la locution + durée de ce qui précède, jamais un instant écrit à la main). Les mises en évidence, qui désignent sans rien ajouter, suivent les mots de la voix (REGLES 5.3).
 
 | Étape | Élément | Locution (mot pour mot, unique dans le clip S02-01) | Mouvement |
 |---|---|---|---|
-| 1 | décor de `s02-frise.svg` (fondateurs, contrat, frise), `Don Murray · Dale Lutz`, `Contrat du gouvernement`, mention de source, `echelle-graphique`, `rose-des-vents` | (début de scène, posé à la première image) | aucun (`at={0} dur={0}`) |
-| 2 | groupe `s02-frise-rubrique`, puis `Appel d'offres remporté` | « Le gouvernement lance » | la rubrique se balaie de haut en bas (0,25 s), puis le texte se tape |
-| 3 | jalon 1993 `[[900, 555], [900, 601]]`, puis `1993 · Fondation de Safe Software` | « De ce contrat naît » | trait tracé de haut en bas (0,25 s), puis libellé tapé |
-| 4 | groupe `s02-frise-saif` avec `SAIF` | « Le gouvernement a son format » | balayage gauche → droite (0,3 s), feuille et nom ensemble |
-| 5 | groupe `s02-frise-logiciels` | « Pour échanger avec lui » | balayage haut → bas (0,3 s) : les fenêtres paraissent l'une après l'autre |
-| 6 | routes 1, 2, 3, puis groupe `s02-frise-pointes`, puis `Traduction` | même phrase, à la fin des fenêtres (+ 0,3 s) | les neuf traits ensemble, à vitesse constante (0,4 s), des fenêtres vers SAIF ; les pointes se balaient de gauche à droite à l'arrivée (0,15 s) ; puis le libellé se tape |
-| 7 | titre | « Murray et Lutz commencent par ce travail » | frappe (`Title`) |
-| 8 | mise en évidence A | même phrase, à la fin de la frappe du titre | tireté tracé en 0,25 s |
-| 9 | jalon 1996 `[[1350, 555], [1350, 601]]`, groupe `s02-frise-annees`, `1996 · Première version de FME` | « Trois ans après la fondation » | trait tracé de haut en bas (0,25 s), puis les cases se balaient de gauche à droite, de 1993 vers 1996 (0,3 s), puis libellé tapé |
-| 10 | logo `fme-logo` | « la première version de son logiciel » | balayage gauche → droite (0,3 s) |
-| 11 | `Feature Manipulation Engine` | « à l'origine Feature Manipulation Engine » | frappe |
-| 12 | mise en évidence B (A s'éteint d'un coup) | « FME fait passer » | tireté tracé en 0,25 s |
-| 13 | mise en évidence éteinte ; groupe `s02-frise-lieu` avec `Siège : Surrey` | « Son siège est à Surrey » | balayage gauche → droite (0,3 s), carte et toponyme ensemble |
+| 1 | `s02-ill-fondateurs`, `s02-ill-contrat`, rangs 1 et 2, frise et sa pointe, mention de source, échelle, rose | (début de scène, posés à la première image) | aucun (`at={0} dur={0}`) |
+| 2 | rang 3, puis `s02-ill-sceau` | « Le gouvernement lance » | frappe de la rubrique ; puis le sceau se balaie de haut en bas (0,3 s), posé comme un tampon |
+| 3 | jalon 1993, puis rang 4 | « De ce contrat naît » | trait tracé de haut en bas (0,25 s), puis libellé tapé |
+| 4 | `s02-ill-saif` avec le rang 5 | « Le gouvernement a son format » | balayage gauche → droite (0,4 s), feuille et nom dans le même balayage |
+| 5 | `s02-ill-logiciels`, puis les trois routes et leurs pointes, puis le rang 6 | « Pour échanger avec lui » | fenêtres : balayage haut → bas (0,4 s) ; routes : les neuf traits ensemble, à vitesse constante, des fenêtres vers SAIF (0,4 s) ; pointes posées à l'arrivée (0,1 s) ; `Traduction` balayé gauche → droite (0,3 s) |
+| 6 | rang 0 (titre) | « Murray et Lutz commencent par ce travail » | frappe (`Title`) |
+| 7 | mise en évidence sur `Traduction` | « une technologie de traduction pour SAIF » | tireté tracé en 0,25 s |
+| 8 | mise en évidence éteinte ; jalon 1996, cases des années, rang 7, `fme-logo`, rang 8 | « Trois ans après la fondation » | jalon tracé de haut en bas (0,25 s) ; cases tracées de gauche à droite, de 1993 vers 1996, à vitesse constante (couche A en 0,45 s, couche B partant quand A atteint x 649, 0,15 s) ; libellé tapé ; logo balayé gauche → droite (0,3 s) ; nom d'origine tapé |
+| 9 | mise en évidence sur le rang 7 | « la première version de son logiciel » | tireté tracé en 0,25 s |
+| 10 | mise en évidence sur le rang 8 | « à l'origine Feature Manipulation Engine » | idem, l'ancienne disparaît d'un coup |
+| 11 | mise en évidence sur le logo | « FME fait passer » | idem |
+| 12 | mise en évidence éteinte ; `s02-ill-lieu`, puis rang 9 | « Son siège est à Surrey » | carte balayée gauche → droite (0,4 s), puis toponyme tapé |
 
-Mise en évidence : A, rectangle x 798, y 178, 308 × 305 (les routes et leur étiquette, borné par le bord des fenêtres et celui de SAIF), de la fin de la frappe du titre à « FME fait passer » ; B, rectangle x 947, y 589, 413 × 273 (le libellé du jalon 1996, le logo et le nom d'origine, sous le trait du jalon), de « FME fait passer » à « Son siège est à Surrey ». Aucune à la fin : la carte de lieu est un sujet à part, une mise en évidence restée sur 1996 la ferait lire comme datée.
+Image fixe : aucune ne dépasse 8 s pendant la voix (la plus longue va de « FME fait passer » à « Son siège est à Surrey », environ 7,4 s).
 
-`data-board` : `S02-1` à `0`, puis `S02-2` à `S02-12` et `S02-FIN` sur les instants des étapes 2 à 13 du tableau, dans cet ordre.
+`data-board` : `S02-1` à `0`, puis `S02-2` à `S02-11` et `S02-FIN` sur les instants des étapes 2 à 12, dans cet ordre.
 
-Écran étroit : rien de simplifié ; les fenêtres de S02 (130 × 89) redisent celles de S01, et leurs routes de 9 à 13 px restent lisibles réduites ; les libellés de jalon sont sur deux lignes pour garder 30 px.
+### Mise en évidence
+
+Rectangle tireté `lecture` 2,5 px (10 6), angles vifs, sans poignée, à 10 px de l'élément, tracé en 0,25 s depuis le coin haut gauche (`at` = instant de l'étape) ; une seule à la fois, l'ancienne disparaît d'un coup.
+
+| Désigne | Rectangle (x, y, largeur × hauteur) | De | À |
+|---|---|---|---|
+| `Traduction` | 597, 252, 198 × 50 (dans l'intervalle entre les fenêtres, x 591,5, et SAIF, x 800 ; au-dessus de la route 1) | « une technologie de traduction pour SAIF » | « Trois ans après la fondation » |
+| libellé du jalon 1996 | 1030, 598, 241 × 89 | « la première version de son logiciel » | « à l'origine Feature Manipulation Engine » |
+| `Feature Manipulation Engine` | 1030, 805, 384 × 52 | « à l'origine Feature Manipulation Engine » | « FME fait passer » |
+| logo `fme-logo` | 1030, 694, 210 × 111 | « FME fait passer » | « Son siège est à Surrey » |
+
+Aucune à la fin : la carte de lieu est un sujet à part, une mise en évidence restée sur 1996 la ferait lire comme datée. Le storyboard demande la mise en évidence « sur les routes et leur étiquette » : un rectangle autour des routes passerait sur les cadres des fenêtres et de SAIF, que les routes touchent ; elle se pose donc sur l'étiquette seule, dans l'intervalle libre.
+
+### Couleurs par fonction
+
+`encre` #23281F textes, cartes, silhouettes, frise, jalons, cases foncées, bord des routes, contour des pointes ; `papier` #FBFCF8 cartes, contrat, SAIF, fenêtres, case claire, réserves des textes dans une carte ; `fond` #F1F3EC réserves des textes sur la face ; `ecriture` #C4472B axe et pointes des routes de traduction (des données écrites vers le format SAIF) ; `chaussee` #FFFFFF chaussée des routes ; `terme` #1E6E3C le nom `SAIF`, terme nouveau de la scène ; `relief`, `eau-fond`, `lecture` (berges) seulement dans la feuille de format SAIF ; `lecture` #2F6DA8 la mise en évidence ; `lien` #7A4A22 la mention de source ; le logo garde ses couleurs d'origine.
+
+Écran étroit : textes de 24 px au moins ; routes de 11 px ; silhouettes, sceau et fenêtres gardent leur forme réduits au quart ; rien n'a été simplifié.
+
+### Ce que le code doit faire (S02)
+
+| # | Besoin | Ce que le code fait |
+|---|---|---|
+| 1 | Frise présente à la première image | `Trace` avec `at={0}` et une durée nulle, ou à défaut un trait posé sans animation ; jamais tracé au début de la scène |
+| 2 | Cases des années | deux `Trace` superposés (couche A `encre` 14 px, couche B `papier` 10 px), même vitesse, B partant quand A atteint x 649 |
+| 3 | Pointes de sens | `Trace` fermé (`points` du triangle, `fill` `ecriture`, `color` `encre`, `width` 2), posé à la fin du tracé des routes |
+| 4 | Textes dans une carte | réserve `papier` dans le même élément que le texte ; textes sur la face : réserve `fond` ; balayée ou tapée avec le texte |
+| 5 | Illustrations | `Svg name="s02-ill-…"` par sa largeur, hauteur calculée depuis le `viewBox` ; elles portent `width` et `height` à la racine et un groupe `<g id="dessin">` non préfixé : ne pas s'appuyer sur cet identifiant (aucune `parts` dans cette scène) |
+| 6 | Logo | `Svg name="fme-logo"`, 190 px de large, jamais recoloré |
+
+### Points ouverts (S02)
+
+| # | Point | Proposition |
+|---|---|---|
+| 1 | Le contenu de la feuille SAIF (courbes de niveau et rivière) dit « données géographiques » ; la remise ne dit pas quel genre de donnée porte SAIF | à confirmer par Ilyas ; sinon corps vide, comme la version de la chaîne |
+| 2 | `Don Murray · Dale Lutz` en interlettrage 0,16 em au lieu de 0,32 em (en-tête de cartouche) : la carte ne peut pas dépasser 332 px, largeur imposée par le contrat dessiné (bandeau de 14 % de sa hauteur) | à reprendre si le contrat est redessiné avec un bandeau plus haut |
+| 3 | Les fondateurs de S02 sont une illustration commandée, ceux de S01 et S06 restent dessinés à la main | si l'essai est retenu, la même illustration pour les trois scènes |
+| 4 | `SAIF` en couleur `terme` (gardé de la version de la chaîne) | à confirmer |
 
 ## Ce que le code doit faire (écarts de la coque, rapport 06)
 
@@ -201,71 +264,133 @@ Mise en évidence : A, rectangle x 798, y 178, 308 × 305 (les routes et leur é
 
 ## S04 · Une entité géographique porte trois parties
 
-Signature : carte, charte suivie `/home/user/Bimaccess-FME/design/CHARTE-FME001.md` (jetons `design/tokens.json`). D'où vient l'idée : la convention du métier du bâtiment qui met le plan au-dessus de l'élévation, alignés (le contour sur la carte, le bâtiment réel dessous, à la même largeur), et la fiche d'objet à bandeau et rubriques de la charte (§ 5, « Comment se dessine une entité géographique »).
+Version de l'essai « illustrations commandées » : composition refaite par le graphiste, chaque élément qui paraît à son propre moment est une illustration commandée au modèle d'image (`content/design/illustrations/s04-ill-*.json`, SVG dans `content/design/assets/`). Les textes, le trait du bâtiment vers la feuille, le filet de la ligne d'attribut et la mise en évidence sont au code. Elle remplace la composition « dessins SVG à la main » (`s03-carte.svg`, `s03-contour.svg`, `s03-batiment.svg`, `s03-entite.svg`, que cette version n'emploie plus).
 
-Objet étudié : non. La voix parle de l'entité géographique (« on l'appelle une entité géographique ») ; « C'est sur elle que FME travaille » nomme l'outil sans le montrer : aucune fenêtre, aucun nom d'outil à l'écran.
+D'où vient l'idée : la convention du dessin en projection européenne, vue de face au-dessus de la vue de dessus (le bâtiment réel en élévation au-dessus de son contour sur la carte, dans le même axe) ; et la fiche d'objet de la charte (§ 5, « Comment se dessine une entité géographique »), qui grandit rubrique par rubrique (charte § 7, « Une rubrique qui se déroule » ; REGLES 5.3, un conteneur grandit rangée par rangée, aucune case réservée vide).
 
-**Composition** (px de scène 1920 × 1080) :
+Objet étudié : non. La voix parle de l'entité géographique ; « C'est sur elle que FME travaille » nomme l'outil sans le montrer : aucune fenêtre, aucun logo, aucun nom d'outil à l'écran.
 
-- Habillage posé à la première image (`at={0} dur={0}`) : `ASSETS["echelle-graphique"]` en x 1480, y 84, 300 × 34 (la scène n'a pas de légende : l'échelle prend la place du haut de la légende) ; `ASSETS["rose-des-vents"]` en x 1712, y 700, 116 × 116.
-- Titre `Une entité géographique a trois parties.` (Écran, rang 1) : x 104, y 84, Serif 600 66 px, une ligne (largeur mesurée avec Source Serif 4 : 1 234 px, fin à x 1 338), filet double de 300 px dessous (composant `Title`).
-- Fond de carte `ASSETS["s03-carte"]` en x 104, y 210, 600 × 310 : îlots et rues au trait `carroyage` 1,2 px, limites de parcelles 0,8 px ; posé à la première image.
-- Contour du bâtiment `ASSETS["s03-contour"]` (206 × 126, contour `encre` 3 px) : à la première image en x 327, y 287 (contour réel de x 330 à 530, y 290 à 410, dans l'îlot du centre) ; il se déplace ensuite vers x 821, y 327 (contour de x 824 à 1 024, y 330 à 450, dans la rubrique Géométrie), même taille. Groupe `s03-contour-hachure` : la hachure de surface, cachée jusqu'à sa locution.
-- Bâtiment réel `ASSETS["s03-batiment"]` en x 300, y 600, 260 × 221 (élévation de la bibliothèque, échelle 1,3 : façade de x 334 à 526, sol à y 811), aligné sous le contour de la carte.
-- Trait « représente » : de (526, 720), façade droite du bâtiment, à (796, 720), bord gauche de la feuille ; `encre` 2 px, bouts nets, sans pointe ; tracé par le code (`Trace`), du bâtiment vers la feuille.
-- Feuille `ASSETS["s03-entite"]` en x 796, y 196, 628 × 654 (feuille `papier` de x 800 à 1 420, y 200 à 846, bordure 2 px, contour 0,8 px décalé de 3,6 px ; bandeau de y 200 à 256). Décor du fichier (groupe `s03-entite-feuille` et ce qui n'est dans aucun groupe révélé) : la feuille et le filet du bandeau. Groupes révélés chacun sur sa locution : `s03-entite-geometrie` (filet bas de la rubrique Géométrie, y 490), `s03-entite-signes` (un point, une ligne, une surface hachurée, de x 1 130 à 1 370, y 352 à 429), `s03-entite-attributs` (filet bas de la rubrique Attributs, y 620), `s03-entite-usage` (filet `carroyage` sous la ligne d'attribut, y 600, x 824 à 1 396), `s03-entite-systeme` (globe au trait, centre 904, 760, rayon 66), `s03-entite-globe-contour` (petit contour posé sur le globe, x 912 à 940, y 732 à 752).
-- Textes de la feuille, posés par le code, tous à x 824 (24 px de la bordure) :
-  - `Entité géographique` (Écran, rang 2) : en-tête de cartouche (Barlow 600, 24 px, capitales, 0,32 em ; 337 px), haut du texte à y 216, couleur `terme` (`THEME.colors.terme`, #1E6E3C) : c'est le terme nouveau, au moment où la voix le nomme ;
-  - `Géométrie : points, lignes, surfaces` (Écran, rang 3) : titre de rubrique (Barlow 600, 24 px, capitales, 0,16 em ; 473 px), haut à y 274, `encre` ;
-  - `Attributs` (Écran, rang 4) : titre de rubrique, haut à y 508, `encre` ;
-  - `Usage : bureaux` (Écran, rang 5) : ligne de rubrique (Serif 400, 28 px, interligne 1,25 ; 213 px), haut à y 554, `encre` ;
-  - `Système de coordonnées` (Écran, rang 6) : titre de rubrique, haut à y 638, `encre`.
-- Mention de source `D'après Safe Software et l'OGC` (Écran, rang 7) dans la marge : filet `encre` 0,8 px de 220 px en x 1 448, y 764 ; texte en mention de source (Serif italique 400, 24 px, `lien` #7A4A22, interligne 1,15) en x 1 448, haut à y 772, 250 px de large au plus : deux lignes (« D'après Safe Software » 228 px, puis « et l'OGC »), fin vers y 827, hors de la zone d'action ; lien cliquable vers la référence (REGLES 4.6) ; posée à la première image.
+Règle de placement : comme S02 (px de scène 1920 × 1080, illustration posée par sa largeur, hauteur suivant son `viewBox`, aplat `papier` opaque sous ses traits, texte jamais sur un trait, réserve `papier` dans la feuille, `fond` sur la face). Contrôle fait sur maquette : aucun texte sur un trait d'illustration ni sur une amorce du carroyage, rien sous y 860, rien dans la zone d'action.
 
-Réserves du carroyage (amorces en x 274, 502, 730, 958, 1 186, 1 414, 1 642 et y 236, 464, 692, 920) : le titre (y 84 à 170) et la mention de source (x 1 448 à 1 698, y 764 à 827) ne contiennent aucune amorce ; le code leur donne tout de même un fond `fond` (`THEME.colors.fond`) avec 2 px de marge, pour qu'une amorce ne passe jamais sous un texte si la place bouge. Les textes de la feuille reposent sur le `papier` de la feuille, qui couvre les amorces 958, 1 186 et 1 414 sur les trois rangées ; le fichier porte sous la feuille un aplat `fond` de x 796 à 1 424, pour que le bras droit de l'amorce de x 1 414 (jusqu'à x 1 422) ne dépasse pas entre la bordure et le contour. L'amorce (502, 692) tombe dans le bâtiment, couverte par sa façade `papier`. Les amorces du fond de carte restent visibles : aucun texte n'y est posé.
+### Illustrations
 
-Zones libres : rien sous y 860 ; sous-titres (y ≥ 880, x < 1 300) et zone d'action (x 1 454, y 834, 360 × 140) vides.
+| Illustration (`ASSETS[…]`) | Ce qu'elle montre (aperçu regardé) | x | y | largeur × hauteur | Arrivée |
+|---|---|---|---|---|---|
+| `s04-ill-carte` (`viewBox` 1183 × 586) | fond de carte au trait `carroyage` dans un cadre : îlots orthogonaux, rues en double trait ; l'îlot central, plus grand, est vide | 104 | 440 | 650 × 322 | première image |
+| `s04-ill-contour` (817 × 571) | le contour d'un bâtiment vu de dessus : rectangle à trait `encre` épais, intérieur `papier` | 349 | 544 | 160 × 112 | première image, dans l'îlot central ; se déplace ensuite |
+| `s04-ill-batiment` (996 × 630) | élévation d'un immeuble de bureaux : façade `papier`, acrotère, fenêtres en grille sur six niveaux, porte d'entrée, ligne de sol | 264 | 192 | 330 × 209 | « La donnée, elle » (enchaîné) |
+| `s04-ill-feuille` (863 × 863) | feuille d'entité à double cadre : bandeau, puis trois rubriques séparées par des filets, toutes vides ; une bande étroite sous la troisième | 777 | 192 | 647 × 647 | par bandes (ci-dessous) |
+| `s04-ill-signes` (1029 × 194) | les trois signes de géométrie : un point plein, une ligne, une surface hachurée à contour épais | 1120 | 376,5 | 250 × 47 | « Sa géométrie porte » (enchaîné) |
+| `s04-ill-hachure` (1129 × 710) | une plage de hachures fines à 45°, sans contour | 837,5 | 355 | 143 × 90 | « Ici, le contour forme une surface » |
+| `s04-ill-globe` (670 × 669) | globe au trait : cercle `papier`, équateur, deux parallèles, un méridien ; sans continent | 829 | 672 | 104 × 104 | « Son système de coordonnées » (enchaîné) |
+| `s04-ill-repere` (455 × 317) | petite emprise de bâtiment : rectangle à contour épais, hachures denses | 852,5 | 698 | 32 × 22 | « Son système de coordonnées » (enchaîné) |
+
+Places mesurées dans les aperçus (px de scène) : îlot central de la carte, intérieur x 321,6 à 536,4, y 529 à 670,8 ; façade du bâtiment de x 288 à 570,5, acrotère jusqu'à y 210,6, sol à y 398,7 ; feuille : cadre extérieur gauche à x 780, intérieur x 804,7 à 1396,3 ; bandeau y 219,7 à 286,5 (filet jusqu'à 288,7) ; rubrique 1 y 288,7 à 496,4 ; rubrique 2 y 497,1 à 623,1 ; rubrique 3 y 623,8 à 794 ; bande basse y 794 à 811 ; contour : trait de 2,5 px, intérieur x 831,5 à 986,5, y 346,5 à 453,5 quand il est dans la rubrique.
+
+La feuille grandit par bandes : la même illustration `s04-ill-feuille`, posée à x 777, y 192, 647 px, est découpée en quatre bandes horizontales (chacune coupe juste sous un filet, donc chaque état de la feuille paraît fermé), chacune balayée de haut en bas sur sa locution :
+
+| Bande | Contenu | y (px de scène) | Locution |
+|---|---|---|---|
+| B1 | haut du double cadre et bandeau | 192 à 289,5 | « La donnée, elle » |
+| B2 | rubrique Géométrie | 289,5 à 497,9 | « Sa géométrie porte » |
+| B3 | rubrique Attributs | 497,9 à 624,6 | « Ses attributs la décrivent » |
+| B4 | rubrique Système de coordonnées, bande basse et bas du cadre | 624,6 à 839 | « Son système de coordonnées » |
+
+### Tracés du code
+
+| Élément | Géométrie (px de scène) | Style |
+|---|---|---|
+| Trait « représente » | de (570,5, 253), bord droit de la façade, à (780, 253), cadre gauche de la feuille, au milieu du bandeau | `encre` 2 px, bouts nets, sans pointe ; tracé du bâtiment vers la feuille |
+| Filet de la ligne d'attribut | de (829, 593) à (1372, 593) | `carroyage` 1,2 px |
+
+Le contour se déplace (`Move`, même échelle) de x 349, y 544 (dans l'îlot) à x 829, y 344 (dans la rubrique Géométrie, sous son titre), en ligne droite, 0,3 s, easeOutCubic. Il passe au-dessus de la feuille (ordre de pose). Après son départ, l'îlot central de la carte reste vide, sans trou dans le dessin : la carte a été commandée avec cet îlot vide.
+
+### Textes
+
+| Rang (`X.screen(i)`) | Texte | Style | Place (px de scène) | Réserve |
+|---|---|---|---|---|
+| 0 | `Une entité géographique a trois parties.` | titre de scène (`Title`) | x 104, y 84, une ligne, 1225 px | `fond` |
+| 1 | `Entité géographique` | en-tête de cartouche, Barlow Condensed 600, 26 px, capitales, 0,32 em, couleur `terme` (terme nouveau, au moment où il se nomme) | centré sur x 1100,5 dans le bandeau, boîte x 918 à 1283, y 238 à 268 | `papier` |
+| 2 | `Géométrie : points, lignes, surfaces` | titre de rubrique, Barlow Condensed 600, 24 px, capitales, 0,16 em, `encre` | x 829, y 303, boîte jusqu'à x 1301, y 332 | `papier` |
+| 3 | `Attributs` | titre de rubrique | x 829, y 511, boîte jusqu'à x 955, y 540 | `papier` |
+| 4 | `Usage : bureaux` | ligne de rubrique, serif 400, 28 px, interligne 1,25, `encre` | x 829, y 550, boîte jusqu'à x 1040, y 585 ; filet dessous à y 593 | `papier` |
+| 5 | `Système de coordonnées` | titre de rubrique | x 829, y 638, boîte jusqu'à x 1142, y 667 | `papier` |
+| 6 | `D'après Safe Software et l'OGC` | mention de source (règle commune) | marge, x 1448, calée par le bas à y 820, deux lignes (« D'après Safe Software et », « l'OGC » selon la coupure du navigateur), filet à y 752 ; lien vers l'adresse de S04 de `content/sources.json` | `fond` |
+
+Habillage de marge : `echelle-graphique` à x 1480, y 84, 300 × 34 ; `rose-des-vents` à x 1712, y 700, 116 × 116 ; à la première image.
+
+Ordre de pose (dessous vers dessus) : feuille de `SceneRoot`, carte, bandes de la feuille, bâtiment, trait, contour (qui se déplace), hachures, signes, globe, emprise sur le globe, textes et leurs réserves, mise en évidence.
+
+### États
 
 | État | Ce qui est visible |
 |---|---|
-| S04-1 | habillage, fond de carte et contour seul dessus, mention de source ; le titre se tape |
-| S04-2 | en plus : la feuille vide (bandeau sans texte), le bâtiment réel à gauche, le trait du bâtiment vers la feuille |
-| S04-3 | `Entité géographique` tapé dans le bandeau, en `terme` ; mise en évidence sur le bandeau |
-| S04-4 | rubrique Géométrie : son titre et son filet, le contour arrivé de la carte, puis les trois signes, puis la hachure du contour ; mise en évidence sur la rubrique Géométrie |
-| S04-5 | rubrique Attributs : titre, filet, puis `Usage : bureaux` et son filet ; mise en évidence sur la rubrique Attributs |
-| S04-FIN | rubrique Système de coordonnées : titre, globe, puis le contour posé sur le globe ; mise en évidence sur cette rubrique, jusqu'à la fin : la feuille entière, le bâtiment à gauche, le fond de carte (îlot vide) en haut à gauche |
+| S04-1 | le fond de carte et, dans l'îlot central, le contour seul ; mention de source, échelle, rose ; le titre se tape |
+| S04-2 | mise en évidence sur le contour, dans la carte |
+| S04-3 | mise en évidence éteinte ; + bandeau de la feuille (B1), bâtiment réel au-dessus de la carte, trait du bâtiment vers le bandeau, `Entité géographique` en `terme` |
+| S04-4 | mise en évidence sur `Entité géographique` |
+| S04-5 | + rubrique Géométrie (B2) et son titre ; le contour quitte la carte et se pose dans la rubrique ; les trois signes ; mise en évidence sur la rubrique Géométrie |
+| S04-6 | + les hachures dans le contour |
+| S04-7 | + rubrique Attributs (B3), son titre, `Usage : bureaux` et son filet ; mise en évidence sur la rubrique Attributs |
+| S04-FIN | + rubrique Système de coordonnées (B4), son titre, le globe, l'emprise posée sur le globe ; mise en évidence sur cette rubrique jusqu'à la fin ; composition finale : le bâtiment relié à la feuille entière, la carte à l'îlot vide dessous |
+
+### Apparitions
+
+Chaque élément arrive au début de la phrase qui le dit ; les éléments d'une même phrase s'enchaînent (instant de la locution + durée de ce qui précède). Les mises en évidence suivent les mots de la voix.
 
 | Étape | Élément | Locution (mot pour mot, unique dans le clip S04-01) | Mouvement |
 |---|---|---|---|
-| 1 | habillage, fond de carte, contour sur la carte, mention de source et son filet | (début de scène, posés à la première image) | aucun |
-| 2 | titre `Une entité géographique a trois parties.` | « Traduire une donnée » | frappe à la cadence du thème |
-| 3 | feuille `ASSETS["s03-entite"]` (décor : feuille et filet du bandeau) | « La donnée, elle » | balayage haut → bas, 0,4 s |
-| 4 | bâtiment `ASSETS["s03-batiment"]` | « représente le bâtiment réel » | balayage bas → haut (du sol au toit), 0,5 s |
-| 5 | trait de (526, 720) à (796, 720) | « représente le bâtiment réel » | tracé par le code, du bâtiment vers la feuille, à vitesse constante, en même temps que l'étape 4 |
-| 6 | `Entité géographique`, couleur `terme` | « on l'appelle une entité géographique » | frappe |
-| 7 | titre `Géométrie : points, lignes, surfaces` et groupe `s03-entite-geometrie` | « Sa géométrie porte » | balayage haut → bas (la rubrique se déroule) |
-| 8 | contour `ASSETS["s03-contour"]` | « Sa géométrie porte » | déplacement en ligne droite de (327, 287) à (821, 327), même échelle, 0,3 s, easeOutCubic (`Move`) |
-| 9 | groupe `s03-entite-signes` | « en points, lignes ou surfaces » | balayage gauche → droite |
-| 10 | groupe `s03-contour-hachure` | « Ici, le contour forme une surface » | balayage gauche → droite dans le contour |
-| 11 | titre `Attributs` et groupe `s03-entite-attributs` | « Ses attributs la décrivent » | balayage haut → bas |
-| 12 | `Usage : bureaux` et groupe `s03-entite-usage` | « l'usage, des bureaux » | balayage gauche → droite (texte et filet ensemble) |
-| 13 | titre `Système de coordonnées` et groupe `s03-entite-systeme` | « Son système de coordonnées » | balayage haut → bas |
-| 14 | groupe `s03-entite-globe-contour` | « lui donne sa position » | balayage haut → bas (le contour se pose sur le globe) |
+| 1 | `s04-ill-carte`, `s04-ill-contour` dans l'îlot, mention de source, échelle, rose | (début de scène, posés à la première image) | aucun (`at={0} dur={0}`) |
+| 2 | rang 0 (titre) | « Traduire une donnée » | frappe (`Title`) |
+| 3 | mise en évidence sur le contour | « Sur une carte, un bâtiment » | tireté tracé en 0,25 s |
+| 4 | mise en évidence éteinte ; bande B1, puis `s04-ill-batiment`, puis le trait, puis rang 1 | « La donnée, elle » | B1 balayée haut → bas (0,25 s) ; bâtiment balayé bas → haut, du sol au toit (0,5 s) ; trait tracé du bâtiment vers le bandeau (0,4 s) ; `Entité géographique` tapé |
+| 5 | mise en évidence sur le rang 1 | « on l'appelle une entité géographique » | tireté tracé en 0,25 s |
+| 6 | bande B2, puis rang 2 et, en même temps, le déplacement du contour, puis `s04-ill-signes` | « Sa géométrie porte » | B2 balayée haut → bas (0,25 s) ; titre tapé pendant que le contour se déplace (0,3 s) ; signes balayés gauche → droite (0,3 s) à la fin de la frappe |
+| 7 | `s04-ill-hachure` | « Ici, le contour forme une surface » | balayage gauche → droite dans le contour (0,4 s) |
+| 8 | bande B3, puis rang 3, puis rang 4 et son filet | « Ses attributs la décrivent » | B3 balayée haut → bas (0,25 s) ; titre tapé ; `Usage : bureaux` tapé pendant que le filet se trace de gauche à droite |
+| 9 | bande B4, puis rang 5, puis `s04-ill-globe`, puis `s04-ill-repere` | « Son système de coordonnées » | B4 balayée haut → bas (0,25 s) ; titre tapé ; globe balayé haut → bas (0,3 s) ; l'emprise se pose sur le globe, balayée haut → bas (0,2 s) |
 
-Le titre est présent dès les premiers mots ; la feuille arrive sur « La donnée, elle », un peu avant « représente le bâtiment réel » que donne le storyboard, pour que le trait du bâtiment arrive sur une chose déjà nommée et ne finisse pas dans le vide (la feuille est « la donnée » de la phrase).
+« C'est sur elle que FME travaille » ne change rien à l'écran. Image fixe : aucune ne dépasse 8 s pendant la voix (la plus longue, de la fin de l'étape 4 à « Sa géométrie porte », environ 6,5 s).
 
-Mise en évidence (une seule à la fois, rectangle tireté `lecture` 2,5 px, motif 10 6, sans poignée, tracé en 0,25 s depuis le coin haut gauche : le code passe à `Highlight` l'instant `at` de l'étape de `focusAt`, écart 4 du rapport 06 ; l'ancienne disparaît d'un coup quand la nouvelle se trace) :
+`data-board` : `S04-1` à `0`, `S04-2` à « Sur une carte, un bâtiment », `S04-3` à « La donnée, elle », `S04-4` à « on l'appelle une entité géographique », `S04-5` à « Sa géométrie porte », `S04-6` à « Ici, le contour forme une surface », `S04-7` à « Ses attributs la décrivent », `S04-FIN` à « Son système de coordonnées ».
 
-- le bandeau, autour du texte `Entité géographique` à 10 px (x 814, y 206, environ 357 × 46), de « on l'appelle une entité géographique » à « Sa géométrie porte » ;
-- la rubrique Géométrie, rectangle en retrait de 10 px dans la rubrique (x 810, y 266, 600 × 214), de « Sa géométrie porte » à « Ses attributs la décrivent » ;
-- la rubrique Attributs (x 810, y 500, 600 × 110), de « Ses attributs la décrivent » à « Son système de coordonnées » ;
-- la rubrique Système de coordonnées (x 810, y 630, 600 × 206), de « Son système de coordonnées » jusqu'à la fin de la scène (la dernière phrase parle d'elle ; elle fait partie de S04-FIN).
+### Mise en évidence
 
-Les rubriques se touchent : leur rectangle est en retrait de 10 px dans la rubrique, et non autour, pour ne pas mordre sur la voisine. Aucun cercle dans cette scène (écart 5 du rapport 06 sans effet).
+Rectangle tireté `lecture` 2,5 px (10 6), angles vifs, sans poignée, tracé en 0,25 s depuis le coin haut gauche (`at` = instant de l'étape) ; une seule à la fois.
 
-Couleurs par fonction : `encre` #23281F textes, traits, contour, bâtiment, globe, signes ; `carroyage` #7D8576 fond de carte et filet sous la ligne d'attribut (jamais du texte) ; `terme` #1E6E3C le seul texte `Entité géographique` ; `papier` #FBFCF8 feuille et façade ; `fond` #F1F3EC réserves ; `lecture` #2F6DA8 la seule mise en évidence ; `lien` #7A4A22 la mention de source. Aucune couleur de thème cartographique : il n'y a pas de feuille de format dans cette scène.
+| Désigne | Rectangle (x, y, largeur × hauteur) | De | À |
+|---|---|---|---|
+| le contour, dans la carte | 339, 534, 180 × 132 (à 10 px du contour, à 5 px des traits de l'îlot) | « Sur une carte, un bâtiment » | « La donnée, elle » |
+| `Entité géographique` | 908, 228, 385 × 50 (dans le bandeau, à 8 px de ses traits) | « on l'appelle une entité géographique » | « Sa géométrie porte » |
+| rubrique Géométrie | 814,7, 298,7, 571,6 × 187,7 (en retrait de 10 px dans la rubrique) | « Sa géométrie porte » | « Ses attributs la décrivent » |
+| rubrique Attributs | 814,7, 507,1, 571,6 × 106 | « Ses attributs la décrivent » | « Son système de coordonnées » |
+| rubrique Système de coordonnées | 814,7, 633,8, 571,6 × 150,2 | « Son système de coordonnées » | fin de la scène (état final) |
 
-Écran étroit (téléphone à l'horizontale, scène réduite au quart environ) : le contour (3 px), le globe et le bâtiment restent lisibles ; les filets de 0,8 px et la hachure de 1,2 px s'effacent sans perte de sens (la surface reste un contour épais) ; aucun texte sous 24 px.
+Les rubriques se touchent : leur rectangle est en retrait de 10 px dans la rubrique, et non autour, pour ne pas mordre sur la voisine ni passer sur un filet.
+
+### Couleurs par fonction
+
+`encre` #23281F textes, contour, bâtiment, cadre de la feuille, signes, globe, emprise, trait ; `carroyage` #7D8576 fond de carte et filet de la ligne d'attribut (jamais du texte) ; `terme` #1E6E3C le seul texte `Entité géographique` ; `papier` #FBFCF8 feuille, façade, intérieur du contour, réserves des textes de la feuille ; `fond` #F1F3EC réserve du titre ; `lecture` #2F6DA8 la mise en évidence ; `lien` #7A4A22 la mention de source. Aucune couleur de thème cartographique : il n'y a pas de feuille de format dans cette scène.
+
+Écran étroit : textes de 24 px au moins ; le contour (2,5 px), le bâtiment et la feuille restent lisibles réduits au quart ; les hachures fines et le carroyage de la carte deviennent une trame grise, sans perte de sens (la surface reste un contour plein de trame) ; le globe (104 px) garde son cercle et son équateur.
+
+### Ce que le code doit faire (S04)
+
+| # | Besoin | Ce que le code fait |
+|---|---|---|
+| 1 | Feuille qui grandit par bandes | pour chaque bande, un `Wipe dir="down"` positionné à x 777, y = haut de la bande, 647 px de large, hauteur de la bande, `overflow: hidden`, qui contient `Svg name="s04-ill-feuille"` posé à `left 0, top` = décalage (0 ; −97,5 ; −305,9 ; −432,6), 647 × 647, `at={0} dur={0}` ; le moteur n'a pas de découpe d'une illustration en bandes (proposition : une prop `bands` de `Svg`) |
+| 2 | Contour qui passe de la carte à la rubrique | `Move` de `{ x: 349, y: 544 }` à `{ x: 829, y: 344 }`, même échelle, autour de `Svg name="s04-ill-contour"` posé à la première image |
+| 3 | Textes dans la feuille | réserve `papier` dans le même élément que le texte |
+| 4 | Illustrations | `Svg name="s04-ill-…"` par sa largeur ; `width`, `height` et `<g id="dessin">` non préfixé à la racine de chaque fichier : aucune `parts`, ne pas s'appuyer sur cet identifiant |
+
+### Points ouverts (S04)
+
+| # | Point | Proposition |
+|---|---|---|
+| 1 | La carte et le bâtiment ne portent pas de nom à l'écran ; la voix les nomme (« Sur une carte », « le bâtiment réel ») et ils se reconnaissent sans explication | aucun texte ajouté ; si Ilyas veut les nommer, deux textes à écrire dans `## Écran` par le scénariste |
+| 2 | Bâtiment au-dessus de la carte (projection européenne) au lieu de la carte au-dessus du bâtiment : le trait doit arriver sur le bandeau, seule partie de la feuille déjà là quand la voix dit « représente le bâtiment réel » | décision de composition, à confirmer sur planche |
+| 3 | `s04-ill-hachure` pèse 562 ko (au-delà des 200 ko des règles SVG) et ses hachures sont plus fines que la charte (environ 4 px d'écart au lieu de 9) | à redessiner plus grossière dès que le modèle d'image répond ; sinon garder telle quelle |
+| 4 | Le bâtiment a six niveaux (la commande en demandait trois) | sans effet sur le sens ; à redessiner seulement si Ilyas le demande |
 
 ## Points ouverts du groupe b
 
