@@ -1,0 +1,494 @@
+axe: modeles
+affirmations:
+  - id: A-modeles-01
+    question: Q7
+    enonce: "Un schéma d'application est un schéma conceptuel des données requises par une ou plusieurs applications (ISO 19109)."
+    usage: expert
+    sources:
+      - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+        titre: "ISO 19109:2005 Geographic information, Rules for application schema (extrait)"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "An application schema is a conceptual schema for data required by one or more applications."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-02
+    question: Q7
+    enonce: "Dans ISO 19109, une entité (feature) est une abstraction de phénomènes du monde réel."
+    usage: expert
+    sources:
+      - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+        titre: "ISO 19109:2005 Geographic information, Rules for application schema (extrait)"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "abstraction of real-world phenomena"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-03
+    question: Q7
+    enonce: "Dans ISO 19109, un attribut d'entité est une caractéristique d'une entité."
+    usage: expert
+    sources:
+      - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+        titre: "ISO 19109:2005 Geographic information, Rules for application schema (extrait)"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "characteristic of a feature"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-04
+    question: Q7
+    enonce: "ISO 19109 distingue, pour définir des entités, leur regroupement en types, les attributs de chaque type, les relations entre les types et le comportement des entités."
+    usage: expert
+    sources:
+      - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+        titre: "ISO 19109:2005 Geographic information, Rules for application schema (extrait)"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This International Standard distinguishes four aspects of defining features:"
+      - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+        titre: "ISO 19109:2005 Geographic information, Rules for application schema (extrait)"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "the attributes associated with each type, the relationships among the types and the behaviour of the features."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-05
+    question: Q7
+    enonce: "Dans GDAL, la classe OGRFeatureDefn représente le schéma, c'est-à-dire l'ensemble des définitions de champs, d'un groupe d'entités liées, normalement une couche entière."
+    usage: contexte
+    sources:
+      - url: https://gdal.org/en/stable/user/vector_data_model.html
+        titre: "Vector Data Model, GDAL documentation"
+        editeur: GDAL / OSGeo
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The OGRFeatureDefn class captures the schema (set of field definitions) for a group of related features (normally a whole layer)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-06
+    question: Q8
+    enonce: "ISO 19107 traite la géométrie vectorielle et la topologie, jusqu'à trois dimensions."
+    usage: expert
+    sources:
+      - url: https://standards.iteh.ai/catalog/standards/iso/acd5af2e-2319-4a2d-b94b-d75be70b7b36/iso-19107-2003
+        titre: "ISO 19107:2003 Geographic information, Spatial schema"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "It treats vector geometry and topology up to three dimensions."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-07
+    question: Q8
+    enonce: "Le shapefile stocke de la géométrie non topologique et des attributs pour les entités spatiales d'un jeu de données."
+    usage: narration
+    sources:
+      - url: https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf
+        titre: "ESRI Shapefile Technical Description"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "A shapefile stores nontopological geometry and attribute information for the spatial features in a data set."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-08
+    question: Q8
+    enonce: "Dans un shapefile, toutes les formes non nulles doivent être du même type de forme."
+    usage: narration
+    sources:
+      - url: https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf
+        titre: "ESRI Shapefile Technical Description"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "All the non-Null shapes in a shapefile are required to be of the same shape type."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-09
+    question: Q8
+    enonce: "Dans le modèle vectoriel de GDAL, chaque champ de géométrie a son propre indicateur de type de géométrie autorisé ; plusieurs champs de géométrie peuvent être associés à une même définition d'entité."
+    usage: contexte
+    sources:
+      - url: https://gdal.org/en/stable/user/vector_data_model.html
+        titre: "Vector Data Model, GDAL documentation"
+        editeur: GDAL / OSGeo
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Each geometry field has its own indicator of geometry type allowed"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-10
+    question: Q8
+    enonce: "Les géodatabases d'Esri prennent en charge des capacités que les shapefiles n'ont pas, comme les domaines d'attributs et les sous-types."
+    usage: narration
+    sources:
+      - url: https://pro.arcgis.com/en/pro-app/latest/tool-reference/appendices/geoprocessing-considerations-for-shapefile-output.htm
+        titre: "Geoprocessing considerations for shapefile output, ArcGIS Pro"
+        editeur: Esri
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "In addition, they do not support capabilities found in geodatabases, such as domains and subtypes."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-11
+    question: Q8
+    enonce: "GDAL présente à l'application un modèle de données abstrait raster unique et un modèle de données abstrait vectoriel unique, quel que soit le format."
+    usage: narration
+    sources:
+      - url: https://gdal.org/en/stable/
+        titre: "GDAL documentation"
+        editeur: GDAL / OSGeo
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "As a library, it presents a single raster abstract data model and single vector abstract data model to the calling application for all supported formats."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-12
+    question: Q8
+    enonce: "ISO 19101-1 définit une couverture (coverage) comme une entité qui renvoie des valeurs pour toute position directe de son domaine ; une image raster en est un exemple."
+    usage: expert
+    sources:
+      - url: https://cdn.standards.iteh.ai/samples/59164/0ccf5036e7cb46c196c18432af34f6b4/ISO-19101-1-2014.pdf
+        titre: "ISO 19101-1:2014 Geographic information, Reference model (extrait)"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "feature (4.1.11) that acts as a function to return values from its range for any direct position within its"
+      - url: https://cdn.standards.iteh.ai/samples/59164/0ccf5036e7cb46c196c18432af34f6b4/ISO-19101-1-2014.pdf
+        titre: "ISO 19101-1:2014 Geographic information, Reference model (extrait)"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "EXAMPLE 1 Raster (4.1.30) image."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-13
+    question: Q8
+    enonce: "Le pilote GML de GDAL détecte des attributs placés dans des éléments GML imbriqués (hiérarchie d'attributs non plate), présents dans certains profils GML comme celui d'Ordnance Survey MasterMap."
+    usage: narration
+    sources:
+      - url: https://gdal.org/en/stable/drivers/vector/gml.html
+        titre: "GML, Geography Markup Language, GDAL documentation"
+        editeur: GDAL / OSGeo
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Feature attributes in nested GML elements (non-flat attribute hierarchy) that can be found in some GML profiles, such as UK Ordnance Survey MasterMap, are detected."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-14
+    question: Q8
+    enonce: "Le modèle des Simple Features de l'OGC part d'une classe Geometry de base, avec des sous-classes Point, Curve, Surface et GeometryCollection."
+    usage: narration
+    sources:
+      - url: https://www.ogc.org/standards/sfa
+        titre: "Simple Feature Access, Part 1: Common Architecture, OGC"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The base Geometry class has subclasses for Point, Curve, Surface and GeometryCollection."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-15
+    question: Q8
+    enonce: "Dans les Simple Features de l'OGC, chaque objet géométrique est associé à un système de référence spatial qui décrit l'espace de coordonnées où il est défini."
+    usage: narration
+    sources:
+      - url: https://www.ogc.org/standards/sfa
+        titre: "Simple Feature Access, Part 1: Common Architecture, OGC"
+        editeur: OGC
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Each geometric object is associated with a Spatial Reference System, which describes the coordinate space in which the geometric object is defined."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-16
+    question: Q9
+    enonce: "Safe Software écrit que traduire entre modèles de données est considérablement plus difficile que traduire entre formats, et que cela touche les composantes spatiales et non spatiales des données."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability, blogue de Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Translating between data models is considerably more interesting and difficult than translating between formats."
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability, blogue de Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "This affects both the spatial and non-spatial components of the data."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-17
+    question: Q8
+    enonce: "Safe Software cite comme exemple de transformation de représentation spatiale le passage de coordonnées (x,y) stockées dans des colonnes numériques à une géométrie de point stockée dans une colonne de géométrie."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability, blogue de Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "(x,y) coordinates stored in numeric columns"
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability, blogue de Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "point geometry stored in a geometry column"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-18
+    question: Q8
+    enonce: "Safe Software cite comme autre exemple le passage d'attributs de surfaces associés à un point intérieur à des attributs associés directement aux entités surfaciques."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability, blogue de Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "area feature attributes associated with an inside point"
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability, blogue de Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "attributes associated with area features directly"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-19
+    question: Q8
+    enonce: "Safe Software note que certains formats sont fortement normalisés, répartissant les données en des centaines de tables ou de couches, et d'autres non."
+    usage: narration
+    sources:
+      - url: https://fme.safe.com/blog/2009/04/challenges-in-spatial-database-interoperability/
+        titre: "Challenges in Spatial Database Interoperability, blogue de Safe Software"
+        editeur: Safe Software
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "some formats are highly normalized, breaking data into hundreds of tables or layers, and others are not"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-20
+    question: Q9
+    enonce: "Selon ISO 19109, le passage d'un schéma d'application à un autre peut être difficile, voire impossible, si les deux schémas sont trop divergents."
+    usage: expert
+    sources:
+      - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+        titre: "ISO 19109:2005 Geographic information, Rules for application schema (extrait)"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The mapping from one application schema to another application schema may be difficult and even impossible if the two schemas are too divergent."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-21
+    question: Q9
+    enonce: "Selon ISO 19109, une interopérabilité complète n'est possible que si le fournisseur et l'utilisateur ont des schémas d'application identiques."
+    usage: expert
+    sources:
+      - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+        titre: "ISO 19109:2005 Geographic information, Rules for application schema (extrait)"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Complete interoperability can only occur when user and supplier have identical application schemas."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-22
+    question: Q9
+    enonce: "Dans le modèle de transfert décrit par ISO 19109, une première mise en correspondance va du schéma d'application du fournisseur au schéma des données échangées, puis une seconde va de ce schéma à celui de l'utilisateur."
+    usage: expert
+    sources:
+      - url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+        titre: "ISO 19109:2005 Geographic information, Rules for application schema (extrait)"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "a second mapping will be made from this application schema to the application schema of the user."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-23
+    question: Q9
+    enonce: "Dans la directive INSPIRE, l'harmonisation transforme les données sources, décrites par un schéma source, vers le modèle de données de la directive, le schéma cible."
+    usage: narration
+    sources:
+      - url: https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299218824/HALE_COS__Ingles_Patricio.pdf
+        titre: "Land Cover spatial datasets harmonization in Portugal using HALE, présentation de la DGT"
+        editeur: DGT (Portugal)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "Harmonization involves the transformation of the source data (source schema) in the data model described by the Directive (target schema)"
+      - url: https://journal.fi/njs/article/view/4306/5275
+        titre: "Implementation of INSPIRE Schema Transformation Service, Nordic Journal of Surveying and Real Estate Research 8:1"
+        editeur: Nordic Journal of Surveying and Real Estate Research
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "the required data interoperability will be achieved through data transformations that are executed between the member states’ national data forms and the common INSPIRE data forms"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-24
+    question: Q9
+    enonce: "Une publication académique décrit que les États membres de l'UE stockent leurs jeux de données dans leurs propres structures de bases de données et systèmes de coordonnées, généralement incompatibles entre eux."
+    usage: expert
+    sources:
+      - url: https://journal.fi/njs/article/view/4306/5275
+        titre: "Implementation of INSPIRE Schema Transformation Service, Nordic Journal of Surveying and Real Estate Research 8:1"
+        editeur: Nordic Journal of Surveying and Real Estate Research
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "Currently the EU member states are storing their spatial data sets in their own database structures and coordinate systems that are usually not compatible with each other."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-25
+    question: Q9
+    enonce: "Au niveau schématique, d'après cette publication, les transformations changent la structure des données et le vocabulaire du schéma."
+    usage: contexte
+    sources:
+      - url: https://journal.fi/njs/article/view/4306/5275
+        titre: "Implementation of INSPIRE Schema Transformation Service, Nordic Journal of Surveying and Real Estate Research 8:1"
+        editeur: Nordic Journal of Surveying and Real Estate Research
+        niveau: B
+        consulte: 2026-11-27
+        extrait: "At schematic level, the transformations are focused on changing data’s structure and schema vocabulary."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-26
+    question: Q9
+    enonce: "Le guide technique du JRC pour le service de transformation de schémas INSPIRE classe les services de transformation en réseau par domaine : formats de données, systèmes de coordonnées de référence et schémas logiques."
+    usage: contexte
+    sources:
+      - url: https://cnig.gouv.fr/IMG/documents_wordpress/2015/01/JRC_INSPIRE-TransformService_TG_v2-0.pdf
+        titre: "Technical Guidance for the INSPIRE Schema Transformation Network Service, version 2.0"
+        editeur: JRC (Commission européenne)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "transforming data formats, coordinate reference systems (CRS) and logical schemas."
+    contradictions: []
+    verifie: null
+    note_verification: "Le document porte la mention Status: Draft (version 2.0)."
+  - id: A-modeles-27
+    question: Q9
+    enonce: "Dans le cas d'une carte d'occupation du sol portugaise, une table de correspondance fait coïncider les attributs du modèle source avec la structure du modèle cible, et décrit classes, attributs, énumérations, listes de codes et associations des deux modèles."
+    usage: expert
+    sources:
+      - url: https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299218824/HALE_COS__Ingles_Patricio.pdf
+        titre: "Land Cover spatial datasets harmonization in Portugal using HALE, présentation de la DGT"
+        editeur: DGT (Portugal)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "The matching table identifies and describes the classes, attributes, enumerations, code lists and associations between classes of both models."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-28
+    question: Q9
+    enonce: "La DGT portugaise a décidé d'harmoniser sa carte d'occupation du sol COS selon les spécifications de la directive INSPIRE."
+    usage: expert
+    sources:
+      - url: https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299218824/HALE_COS__Ingles_Patricio.pdf
+        titre: "Land Cover spatial datasets harmonization in Portugal using HALE, présentation de la DGT"
+        editeur: DGT (Portugal)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "it was decided to proceed with the harmonization of COS according to the specifications of INSPIRE Directive."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-29
+    question: Q9
+    enonce: "La carte COS 2010 présente une structure hiérarchique de cinq niveaux, avec 225 classes au niveau le plus détaillé."
+    usage: expert
+    sources:
+      - url: https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299218824/HALE_COS__Ingles_Patricio.pdf
+        titre: "Land Cover spatial datasets harmonization in Portugal using HALE, présentation de la DGT"
+        editeur: DGT (Portugal)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "COS2010 presents an hierarchical structure with five levels, corresponding to 225 classes at the most detailed level (N5)."
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-30
+    question: Q9
+    enonce: "HALE (HUMBOLDT Alignment Editor) est un outil libre qui permet d'établir des relations entre un schéma source et un schéma cible et de transformer les données automatiquement."
+    usage: contexte
+    sources:
+      - url: https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299218824/HALE_COS__Ingles_Patricio.pdf
+        titre: "Land Cover spatial datasets harmonization in Portugal using HALE, présentation de la DGT"
+        editeur: DGT (Portugal)
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "It allows the user to establish relationships between schemas (source and target) and transform SDS automatically"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+  - id: A-modeles-31
+    question: Q9
+    enonce: "Le comité ISO/TC 211 liste une norme ISO 19166, « BIM to GIS conceptual mapping (B2GM) »."
+    usage: contexte
+    sources:
+      - url: https://committee.iso.org/sites/tc211/home/projects/projects---complete-list/iso-19107.html
+        titre: "ISO/TC 211, liste complète des projets"
+        editeur: ISO
+        niveau: A
+        consulte: 2026-11-27
+        extrait: "ISO 19166 Geographic information — BIM to GIS conceptual mapping (B2GM)"
+    contradictions: []
+    verifie: null
+    note_verification: ""
+lacunes:
+  - question: Q7
+    manque: "Le texte intégral d'ISO 19109 (classes d'entités, associations, règles en UML) n'a été lu que sur l'extrait public de 2005 : iso.org refuse (403) ; l'édition 2015/2025 n'a pas été lue. À sourcer."
+  - question: Q8
+    manque: "Aucune source lue ne décrit en toutes lettres 'attributs à plat contre structures imbriquées' pour le shapefile ou la comparaison simple/topologique d'OGC Simple Features ; la page Bentley sur l'écart avec Simple Feature Access n'a pas pu être lue (URL avec espace refusée par le script). À sourcer."
+  - question: Q8
+    manque: "Détail de la topologie arcs-nœuds (ISO 19107, TP_Complex) : seuls les titres de chapitres et la portée sont lus. À sourcer."
+  - question: Q9
+    manque: "Aucune définition de 'schema mapping' par l'OGC ni guide INSPIRE actuel lu : seul le guide technique JRC v2.0 (mention Draft) et deux travaux de projet (DGT, Nordic Journal) ; core.ac.uk (403) et ijsdir (404) non lus. À sourcer."
+visuels:
+  - id: VIS-01
+    url: https://cdn.standards.iteh.ai/samples/39891/c281ac12b30444a2b8cd105138b6c638/ISO-19109-2005.pdf
+    editeur: ISO
+    description: "Figures 1 et 2 d'ISO 19109 : échange de données par transfert (schéma d'application du fournisseur, de l'utilisateur) et par transactions."
+    utilite: "Montre où se placent les deux mises en correspondance de schémas entre fournisseur et utilisateur."
+    usage: REDRAW
+  - id: VIS-02
+    url: https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299218824/HALE_COS__Ingles_Patricio.pdf
+    editeur: DGT (Portugal)
+    description: "Diagramme du processus d'harmonisation : analyse des données, mise en correspondance, transformation, validation, publication."
+    utilite: "Cas réel de passage d'un schéma source à un schéma cible, utile comme référence d'un déroulé."
+    usage: REFERENCE_ONLY
